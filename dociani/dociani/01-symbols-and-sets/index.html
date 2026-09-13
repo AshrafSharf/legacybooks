@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 1: Symbols and Sets &mdash; Modern Algebra: Structure and Method</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Georgia', 'Cambria', 'Times New Roman', serif;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #2d2d2d;
+  background: #fdf6f0;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.3;
+}
+a { color: #8b1a1a; text-decoration: none; }
+a:hover { text-decoration: underline; color: #d4582a; }
+
+/* ===== KaTeX overrides ===== */
+.katex { font-size: 1.3em; }
+.katex-display { font-size: 1.35em; margin: 1.5rem 0; overflow-x: auto; }
+
+/* ===== HERO HEADER ===== */
+.hero {
+  background: linear-gradient(135deg, #8b1a1a 0%, #5c1010 40%, #1a1a2e 100%);
+  color: #fff;
+  padding: 3.5rem 2rem 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '1';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18rem;
+  font-weight: 900;
+  opacity: 0.06;
+  font-family: 'Segoe UI', sans-serif;
+  pointer-events: none;
+}
+.hero .book-title {
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-bottom: 0.3rem;
+}
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin: 0.3rem 0 0.5rem;
+}
+.hero .subtitle {
+  font-size: 1.15rem;
+  opacity: 0.9;
+  font-style: italic;
+}
+.hero .authors {
+  font-size: 0.85rem;
+  opacity: 0.65;
+  margin-top: 0.7rem;
+  letter-spacing: 0.08em;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+/* ===== TABLE OF CONTENTS ===== */
+.toc {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.8rem 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 2px 12px rgba(139,26,26,0.08);
+  border-left: 5px solid #8b1a1a;
+}
+.toc h2 {
+  font-size: 1.3rem;
+  color: #8b1a1a;
+  margin-bottom: 1rem;
+}
+.toc ol {
+  padding-left: 1.4rem;
+}
+.toc li {
+  margin-bottom: 0.35rem;
+}
+.toc a {
+  color: #2d2d2d;
+  border-bottom: 1px dashed #d4582a;
+}
+.toc a:hover { color: #8b1a1a; border-bottom-style: solid; }
+
+/* ===== OVERVIEW CARD ===== */
+.overview {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.8rem 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.overview h2 { font-size: 1.5rem; color: #8b1a1a; margin-bottom: 0.8rem; }
+.overview ul {
+  list-style: none; padding: 0;
+}
+.overview li {
+  padding: 0.35rem 0 0.35rem 1.6rem;
+  position: relative;
+}
+.overview li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  color: #d4582a;
+  font-weight: bold;
+}
+
+/* ===== SECTION CARDS ===== */
+.section-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 2rem 2rem 1.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+}
+.section-card h2 {
+  font-size: 2rem;
+  color: #8b1a1a;
+  margin-bottom: 0.3rem;
+}
+.section-num {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #d4582a;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 700;
+}
+.section-card h3 {
+  font-size: 1.35rem;
+  color: #4a3728;
+  margin: 1.5rem 0 0.5rem;
+}
+.section-card p { margin-bottom: 1rem; }
+
+/* ===== HIGHLIGHT BOXES ===== */
+.box {
+  border-radius: 8px;
+  padding: 1.2rem 1.4rem;
+  margin: 1.3rem 0;
+  border-left: 5px solid;
+}
+.box-definition { border-color: #8b1a1a; background: #fce8e8; }
+.box-insight   { border-color: #d4582a; background: #fef3ec; }
+.box-caution   { border-color: #7f1d1d; background: #fef2f2; }
+.box-example   { border-color: #276749; background: #f0f7f0; }
+.box-practice  { border-color: #4a5568; background: #f7fafc; }
+.box-formula   { border-color: #2b4c7e; background: #ebf0ff; }
+
+.box .box-label {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.5rem;
+}
+.box-definition .box-label { color: #8b1a1a; }
+.box-insight .box-label    { color: #d4582a; }
+.box-caution .box-label    { color: #7f1d1d; }
+.box-example .box-label    { color: #276749; }
+.box-practice .box-label   { color: #4a5568; }
+.box-formula .box-label    { color: #2b4c7e; }
+
+/* ===== SVG DIAGRAMS ===== */
+.diagram-wrap {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  text-align: center;
+}
+.diagram-wrap svg {
+  max-width: 100%;
+  height: auto;
+}
+.diagram-caption {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #8b1a1a;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+/* ===== WORKED PROBLEMS ===== */
+.worked-problems {
+  background: #fff;
+  border-radius: 10px;
+  padding: 2rem 2rem 1.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+}
+.worked-problems > h2 {
+  font-size: 2rem;
+  color: #8b1a1a;
+  margin-bottom: 1rem;
+}
+.problem {
+  margin-bottom: 1.8rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #ece2d8;
+}
+.problem:last-child { border-bottom: none; padding-bottom: 0; }
+.problem-header {
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 700;
+  color: #4a5568;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+/* ===== QUICK REFERENCE ===== */
+.quick-ref {
+  background: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+  border-top: 4px solid #2b4c7e;
+}
+.quick-ref h2 { font-size: 1.6rem; color: #2b4c7e; margin-bottom: 1rem; }
+.quick-ref table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.05rem;
+}
+.quick-ref th, .quick-ref td {
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid #e8e0d8;
+}
+.quick-ref th {
+  font-family: 'Segoe UI', sans-serif;
+  color: #2b4c7e;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ===== NAV FOOTER ===== */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-top: 2px solid #ece2d8;
+  margin-top: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.95rem;
+}
+.chapter-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  background: #8b1a1a;
+  color: #fff;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.chapter-nav a:hover { background: #d4582a; text-decoration: none; }
+.chapter-nav .disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  background: #999;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .hero h1 { font-size: 2rem; }
+  .hero::before { font-size: 10rem; }
+  .container { padding: 1.2rem 1rem 2rem; }
+  .section-card, .overview, .toc, .worked-problems, .quick-ref { padding: 1.3rem; }
+  .box { padding: 1rem 1.1rem; }
+  .chapter-nav { flex-direction: column; gap: 0.8rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== HERO ==================== -->
+<header class="hero">
+  <div class="book-title">Modern Algebra: Structure and Method</div>
+  <h1>Chapter 1: Symbols and Sets</h1>
+  <div class="subtitle">Numbers, Order, Sets, Subsets, and the Language of Algebra</div>
+  <div class="authors">Mary P. Dolciani &middot; Simon L. Berman &middot; Julius Freilich</div>
+</header>
+
+<main class="container">
+
+<!-- ==================== TABLE OF CONTENTS ==================== -->
+<nav class="toc">
+  <h2>In This Chapter</h2>
+  <ol>
+    <li><a href="#sec-1-1">Representing Numbers on a Line: Order Relations</a></li>
+    <li><a href="#sec-1-2">Comparing Numbers: The Sign of Equality</a></li>
+    <li><a href="#sec-1-3">Comparing Numbers: The Signs of Inequality</a></li>
+    <li><a href="#sec-1-4">Grouping Numbers in Sets and Subsets</a></li>
+    <li><a href="#sec-1-5">Kinds of Sets</a></li>
+    <li><a href="#sec-1-6">The Graph of a Set</a></li>
+    <li><a href="#sec-1-7">How Subsets Relate to Sets</a></li>
+    <li><a href="#sec-1-8">Punctuation Marks in Algebra</a></li>
+    <li><a href="#sec-1-9">Order of Operations</a></li>
+  </ol>
+</nav>
+
+<!-- ==================== OVERVIEW ==================== -->
+<div class="overview">
+  <h2>What You'll Learn</h2>
+  <ul>
+    <li>How to represent arithmetic numbers on a number line and compare them using order</li>
+    <li>The meaning and correct use of the equality sign (\(=\)) and inequality signs (\(<\), \(>\), \(\neq\))</li>
+    <li>What a <strong>set</strong> is, how to specify sets by roster, rule, and graph</li>
+    <li>The difference between finite, infinite, and empty sets</li>
+    <li>How <strong>subsets</strong> and <strong>proper subsets</strong> relate to sets</li>
+    <li>Using grouping symbols (parentheses, brackets, braces, bars) to remove ambiguity</li>
+    <li>The standard <strong>order of operations</strong> for evaluating numerical expressions</li>
+  </ul>
+</div>
+
+<!-- ==================== SECTION 1-1 ==================== -->
+<section class="section-card" id="sec-1-1">
+  <div class="section-num">Section 1&ndash;1</div>
+  <h2>Representing Numbers on a Line: Order Relations</h2>
+
+  <p>In arithmetic you learned how to <em>use</em> numbers. In algebra, your initial aim is to discover some of the <strong>properties</strong> of the numbers of arithmetic. By "property" we mean a distinguishing trait or essential quality &mdash; just as sweetness is a property of sugar and hardness is a property of diamonds.</p>
+
+  <p>One of the most fundamental properties of numbers is that they can be <strong>lined up</strong> or <strong>ordered</strong>. We illustrate this with the <em>number line</em> (also called the <em>number scale</em>):</p>
+
+  <!-- SVG: Number Line -->
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 700 100" xmlns="http://www.w3.org/2000/svg" style="max-width:700px;">
+      <!-- Main line -->
+      <line x1="30" y1="50" x2="660" y2="50" stroke="#2d2d2d" stroke-width="2"/>
+      <!-- Arrowhead -->
+      <polygon points="660,50 650,44 650,56" fill="#2d2d2d"/>
+      <!-- Tick marks and labels -->
+      <g font-family="Georgia, serif" font-size="16" fill="#2d2d2d" text-anchor="middle">
+        <!-- 0 -->
+        <line x1="50" y1="40" x2="50" y2="60" stroke="#2d2d2d" stroke-width="2"/>
+        <text x="50" y="80">0</text>
+        <!-- 1/2 -->
+        <line x1="110" y1="44" x2="110" y2="56" stroke="#8b1a1a" stroke-width="1.5"/>
+        <text x="110" y="80" font-size="13" fill="#8b1a1a">&frac12;</text>
+        <!-- 1 -->
+        <line x1="170" y1="40" x2="170" y2="60" stroke="#2d2d2d" stroke-width="2"/>
+        <text x="170" y="80">1</text>
+        <!-- 3/2 -->
+        <line x1="230" y1="44" x2="230" y2="56" stroke="#8b1a1a" stroke-width="1.5"/>
+        <text x="230" y="80" font-size="13" fill="#8b1a1a">1&frac12;</text>
+        <!-- 2 -->
+        <line x1="290" y1="40" x2="290" y2="60" stroke="#2d2d2d" stroke-width="2"/>
+        <text x="290" y="80">2</text>
+        <!-- 3 -->
+        <line x1="410" y1="40" x2="410" y2="60" stroke="#2d2d2d" stroke-width="2"/>
+        <text x="410" y="80">3</text>
+        <!-- 4 -->
+        <line x1="530" y1="40" x2="530" y2="60" stroke="#2d2d2d" stroke-width="2"/>
+        <text x="530" y="80">4</text>
+        <!-- 5 -->
+        <line x1="650" y1="40" x2="650" y2="60" stroke="#2d2d2d" stroke-width="2"/>
+        <text x="650" y="80">5</text>
+      </g>
+      <!-- Colored dots for some points -->
+      <circle cx="50" cy="50" r="5" fill="#8b1a1a"/>
+      <circle cx="170" cy="50" r="5" fill="#8b1a1a"/>
+      <circle cx="290" cy="50" r="5" fill="#8b1a1a"/>
+      <circle cx="410" cy="50" r="5" fill="#8b1a1a"/>
+      <circle cx="530" cy="50" r="5" fill="#8b1a1a"/>
+      <circle cx="650" cy="50" r="5" fill="#8b1a1a"/>
+      <!-- Fractional dots -->
+      <circle cx="110" cy="50" r="4" fill="#d4582a"/>
+      <circle cx="230" cy="50" r="4" fill="#d4582a"/>
+      <!-- Label -->
+      <text x="350" y="22" font-family="'Segoe UI', sans-serif" font-size="13" fill="#8b1a1a" text-anchor="middle" font-style="italic">Figure 1-1: The Number Line</text>
+    </svg>
+  </div>
+  <div class="diagram-caption">The number line extends to the right without end (shown by the arrowhead). Each point corresponds to exactly one arithmetic number.</div>
+
+  <div class="box box-definition">
+    <div class="box-label">Definition &mdash; Coordinate and Graph</div>
+    <p>The number paired with a point on the number line is called the <strong>coordinate</strong> of that point. The point paired with a number is called the <strong>graph</strong> of that number.</p>
+  </div>
+
+  <p>The number scale shows which of two numbers is larger. For example, since \(1\) is smaller than \(5\), the point labeled \(1\) lies to the <em>left</em> of the point labeled \(5\). In general:</p>
+
+  <div class="box box-insight">
+    <div class="box-label">Key Insight &mdash; Order on the Number Line</div>
+    <p>Any number <strong>less than</strong> \(a\) corresponds to a point <em>to the left</em> of the graph of \(a\). Any number <strong>greater than</strong> \(a\) corresponds to a point <em>to the right</em> of the graph of \(a\).</p>
+  </div>
+
+  <h3>Between</h3>
+  <p>We say \(3\) is <strong>between</strong> \(1\) and \(5\) because \(3\) is greater than \(1\) but less than \(5\). The phrase "the numbers between \(1\) and \(5\)" excludes both endpoints. Writing "between \(1\) and \(5\), <em>inclusive</em>" means we include both \(1\) and \(5\).</p>
+</section>
+
+<!-- ==================== SECTION 1-2 ==================== -->
+<section class="section-card" id="sec-1-2">
+  <div class="section-num">Section 1&ndash;2</div>
+  <h2>Comparing Numbers: The Sign of Equality</h2>
+
+  <p>Every number can be represented in many ways. The number eight can be written as the Roman numeral <strong>VIII</strong>, the Arabic numeral <strong>8</strong>, or by expressions such as \(1 + 7\), \(5 + 3\), \(2 \times 4\), or \(\dfrac{16}{2}\). Each of these is a <strong>numerical expression</strong> (or <strong>numeral</strong>) &mdash; a name or symbol for a number.</p>
+
+  <div class="box box-definition">
+    <div class="box-label">Definition &mdash; The Equals Sign</div>
+    <p>The symbol \(=\) stands for the words <strong>"equals"</strong> or <strong>"is equal to."</strong> A statement like \(1 + 7 = 5 + 3\) asserts that both sides name the <em>same number</em>.</p>
+  </div>
+
+  <p>A statement of equality is <strong>true</strong> when both sides designate the same number, and <strong>false</strong> otherwise. For instance:</p>
+  <ul style="margin:0.5rem 0 1rem 1.5rem;">
+    <li>\(2 + 4 = 3 + 3\) is <strong>true</strong> (both sides equal \(6\))</li>
+    <li>\(1 + 7 = 4 + 5\) is <strong>false</strong> (\(8 \neq 9\))</li>
+  </ul>
+</section>
+
+<!-- ==================== SECTION 1-3 ==================== -->
+<section class="section-card" id="sec-1-3">
+  <div class="section-num">Section 1&ndash;3</div>
+  <h2>Comparing Numbers: The Signs of Inequality</h2>
+
+  <p>When two expressions do <em>not</em> represent the same number, we use <strong>inequality symbols</strong> to compare them:</p>
+
+  <div class="box box-formula">
+    <div class="box-label">Inequality Symbols</div>
+    <div style="overflow-x:auto;">
+    <table style="width:100%;border-collapse:collapse;font-size:1.05rem;">
+      <tr><td style="padding:0.4rem 0.8rem;border-bottom:1px solid #c5d3e8;">\(\neq\)</td><td style="padding:0.4rem;border-bottom:1px solid #c5d3e8;">"is not equal to"</td><td style="padding:0.4rem;border-bottom:1px solid #c5d3e8;">\(7 \neq 6 - 3\)</td></tr>
+      <tr><td style="padding:0.4rem 0.8rem;border-bottom:1px solid #c5d3e8;">\(>\)</td><td style="padding:0.4rem;border-bottom:1px solid #c5d3e8;">"is greater than"</td><td style="padding:0.4rem;border-bottom:1px solid #c5d3e8;">\(5 > 3\)</td></tr>
+      <tr><td style="padding:0.4rem 0.8rem;">\(<\)</td><td style="padding:0.4rem;">"is less than"</td><td style="padding:0.4rem;">\(3 < 5\)</td></tr>
+    </table>
+    </div>
+  </div>
+
+  <p>The statements \(5 > 3\) and \(3 < 5\) carry the <em>same information</em>: five is a larger number than three. A useful mnemonic: <strong>the symbol always points at the smaller number</strong> like an arrowhead.</p>
+
+  <div class="box box-insight">
+    <div class="box-label">Key Insight &mdash; Double Inequalities</div>
+    <p>You can chain inequalities. Writing \(1 < 8 < 9\) means "8 is greater than 1 <em>and</em> less than 9." This tells you \(8\) lies between \(1\) and \(9\) on the number line.</p>
+  </div>
+</section>
+
+<!-- ==================== SECTION 1-4 ==================== -->
+<section class="section-card" id="sec-1-4">
+  <div class="section-num">Section 1&ndash;4</div>
+  <h2>Grouping Numbers in Sets and Subsets</h2>
+
+  <p>In everyday language, you are familiar with groups: a flock of birds, a collection of stamps, a team of players. In mathematics, a well-defined collection of objects is called a <strong>set</strong>. Each object in a set is called a <strong>member</strong> or <strong>element</strong> of the set.</p>
+
+  <div class="box box-definition">
+    <div class="box-label">Definition &mdash; Set</div>
+    <p>A <strong>set</strong> is any collection of objects so well described that you can always tell whether or not a given object belongs to it.</p>
+  </div>
+
+  <p>We use a <strong>capital letter</strong> to name a set and list its elements within <strong>braces</strong> \(\{\;\}\). For example:</p>
+  $$R = \{0, 3, 7, 8, 14\}$$
+  <p>This reads: "<em>R</em> is the set of numbers 0, 3, 7, 8, 14."</p>
+
+  <div class="box box-formula">
+    <div class="box-label">Membership Symbols</div>
+    <p>\(\in\) means "<strong>is an element of</strong>" &nbsp;&nbsp;&mdash;&nbsp;&nbsp; \(\notin\) means "<strong>is not an element of</strong>"</p>
+    <p style="margin-top:0.5rem;">Since \(R = \{0,3,7,8,14\}\), we write \(3 \in R\) and \(4 \notin R\).</p>
+  </div>
+
+  <h3>Two Ways to Specify a Set</h3>
+  <ol style="margin:0.5rem 0 1rem 1.5rem;">
+    <li><strong>Roster method</strong> &mdash; list every element: \(\{1, 2, 3, 4, 5, 6, 7, 8, 9\}\)</li>
+    <li><strong>Rule method</strong> &mdash; describe the elements: \(\{\text{whole numbers between 0 and 10}\}\) or \(\{\text{one-digit numbers except 0}\}\)</li>
+  </ol>
+</section>
+
+<!-- ==================== SECTION 1-5 ==================== -->
+<section class="section-card" id="sec-1-5">
+  <div class="section-num">Section 1&ndash;5</div>
+  <h2>Kinds of Sets</h2>
+
+  <h3>Finite Sets</h3>
+  <p>A set is <strong>finite</strong> if the process of counting its elements comes to an end. For example:</p>
+  $$\{\text{two-digit numbers}\} = \{10, 11, 12, \ldots, 99\}$$
+  <p>Here the three dots "\(\ldots\)" mean "and so on through."</p>
+
+  <h3>Infinite Sets</h3>
+  <p>A set is <strong>infinite</strong> if counting its elements would never end:</p>
+  $$\{0, 1, 2, 3, 4, 5, 6, \ldots\}$$
+  <p>The three dots after the 6 indicate the roster continues without end.</p>
+
+  <div class="box box-caution">
+    <div class="box-label">Caution &mdash; Large vs. Infinite</div>
+    <p>Having many elements does not make a set infinite. The set of all grains of sand on a beach is enormous, but still <em>finite</em>. A set is infinite only when counting could never be completed.</p>
+  </div>
+
+  <h3>The Empty Set</h3>
+  <p>Can a set have <em>no</em> elements? Consider the set of whole numbers between 8 and 9. No whole number exists in that interval, so the set contains nothing. This is the <strong>empty set</strong> (or <strong>null set</strong>), written with the special symbol:</p>
+  $$\varnothing$$
+
+  <div class="box box-caution">
+    <div class="box-label">Caution</div>
+    <p>\(\{0\}\) is <strong>not</strong> the empty set &mdash; it is a set containing one element (the number zero). The empty set is written as \(\varnothing\) (without braces), never as \(\{0\}\).</p>
+  </div>
+</section>
+
+<!-- ==================== SECTION 1-6 ==================== -->
+<section class="section-card" id="sec-1-6">
+  <div class="section-num">Section 1&ndash;6</div>
+  <h2>The Graph of a Set</h2>
+
+  <p>A third way to specify a set of numbers is by showing them as points on the number line. The collection of points corresponding to a set is called the <strong>graph of the set</strong>.</p>
+
+  <div class="box box-formula">
+    <div class="box-label">Three Methods to Specify a Set</div>
+    <ol style="margin:0 0 0 1.4rem;">
+      <li><strong>Roster</strong> &mdash; list the elements: \(\{1, 2, 3\}\)</li>
+      <li><strong>Rule</strong> &mdash; describe the elements: \(\{\text{whole numbers between 0 and 4}\}\)</li>
+      <li><strong>Graph</strong> &mdash; locate the elements on the number line</li>
+    </ol>
+  </div>
+
+  <!-- SVG: Set Graphs on Number Line -->
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg" style="max-width:700px;">
+      <!-- Graph 1: {1, 2, 3} -->
+      <text x="20" y="32" font-family="Georgia, serif" font-size="14" fill="#4a5568" font-style="italic">{1, 2, 3}</text>
+      <line x1="60" y1="50" x2="620" y2="50" stroke="#bbb" stroke-width="1.5"/>
+      <g font-family="Georgia, serif" font-size="13" fill="#999" text-anchor="middle">
+        <line x1="100" y1="44" x2="100" y2="56" stroke="#bbb" stroke-width="1.5"/>
+        <text x="100" y="72">0</text>
+        <line x1="200" y1="44" x2="200" y2="56" stroke="#bbb" stroke-width="1.5"/>
+        <text x="200" y="72">1</text>
+        <line x1="300" y1="44" x2="300" y2="56" stroke="#bbb" stroke-width="1.5"/>
+        <text x="300" y="72">2</text>
+        <line x1="400" y1="44" x2="400" y2="56" stroke="#bbb" stroke-width="1.5"/>
+        <text x="400" y="72">3</text>
+        <line x1="500" y1="44" x2="500" y2="56" stroke="#bbb" stroke-width="1.5"/>
+        <text x="500" y="72">4</text>
+        <line x1="600" y1="44" x2="600" y2="56" stroke="#bbb" stroke-width="1.5"/>
+        <text x="600" y="72">5</text>
+      </g>
+      <!-- Filled dots -->
+      <circle cx="200" cy="50" r="6" fill="#8b1a1a"/>
+      <circle cx="300" cy="50" r="6" fill="#8b1a1a"/>
+      <circle cx="400" cy="50" r="6" fill="#8b1a1a"/>
+
+      <!-- Graph 2: numbers between 1 and 3, including 3 -->
+      <text x="20" y="120" font-family="Georgia, serif" font-size="14" fill="#4a5568" font-style="italic">Between 1 and 3, including 3</text>
+      <line x1="60" y1="140" x2="620" y2="140" stroke="#bbb" stroke-width="1.5"/>
+      <g font-family="Georgia, serif" font-size="13" fill="#999" text-anchor="middle">
+        <line x1="100" y1="134" x2="100" y2="146" stroke="#bbb" stroke-width="1.5"/>
+        <text x="100" y="162">0</text>
+        <line x1="200" y1="134" x2="200" y2="146" stroke="#bbb" stroke-width="1.5"/>
+        <text x="200" y="162">1</text>
+        <line x1="300" y1="134" x2="300" y2="146" stroke="#bbb" stroke-width="1.5"/>
+        <text x="300" y="162">2</text>
+        <line x1="400" y1="134" x2="400" y2="146" stroke="#bbb" stroke-width="1.5"/>
+        <text x="400" y="162">3</text>
+        <line x1="500" y1="134" x2="500" y2="146" stroke="#bbb" stroke-width="1.5"/>
+        <text x="500" y="162">4</text>
+        <line x1="600" y1="134" x2="600" y2="146" stroke="#bbb" stroke-width="1.5"/>
+        <text x="600" y="162">5</text>
+      </g>
+      <!-- Thick segment from 1 to 3 -->
+      <line x1="200" y1="140" x2="400" y2="140" stroke="#d4582a" stroke-width="4"/>
+      <!-- Open circle at 1, filled at 3 -->
+      <circle cx="200" cy="140" r="6" fill="#fdf6f0" stroke="#d4582a" stroke-width="2.5"/>
+      <circle cx="400" cy="140" r="6" fill="#d4582a"/>
+
+      <!-- Graph 3: numbers greater than 3 -->
+      <text x="20" y="210" font-family="Georgia, serif" font-size="14" fill="#4a5568" font-style="italic">Numbers greater than 3</text>
+      <line x1="60" y1="230" x2="620" y2="230" stroke="#bbb" stroke-width="1.5"/>
+      <g font-family="Georgia, serif" font-size="13" fill="#999" text-anchor="middle">
+        <line x1="100" y1="224" x2="100" y2="236" stroke="#bbb" stroke-width="1.5"/>
+        <text x="100" y="248">0</text>
+        <line x1="200" y1="224" x2="200" y2="236" stroke="#bbb" stroke-width="1.5"/>
+        <text x="200" y="248">1</text>
+        <line x1="300" y1="224" x2="300" y2="236" stroke="#bbb" stroke-width="1.5"/>
+        <text x="300" y="248">2</text>
+        <line x1="400" y1="224" x2="400" y2="236" stroke="#bbb" stroke-width="1.5"/>
+        <text x="400" y="248">3</text>
+        <line x1="500" y1="224" x2="500" y2="236" stroke="#bbb" stroke-width="1.5"/>
+        <text x="500" y="248">4</text>
+        <line x1="600" y1="224" x2="600" y2="236" stroke="#bbb" stroke-width="1.5"/>
+        <text x="600" y="248">5</text>
+      </g>
+      <!-- Ray from 3 to right -->
+      <line x1="400" y1="230" x2="620" y2="230" stroke="#276749" stroke-width="4"/>
+      <polygon points="620,230 610,224 610,236" fill="#276749"/>
+      <!-- Open circle at 3 -->
+      <circle cx="400" cy="230" r="6" fill="#fdf6f0" stroke="#276749" stroke-width="2.5"/>
+    </svg>
+  </div>
+  <div class="diagram-caption">Three types of set graphs: discrete points (top), a closed-open interval (middle), and a ray extending infinitely (bottom). Filled circles include the point; open circles exclude it.</div>
+</section>
+
+<!-- ==================== SECTION 1-7 ==================== -->
+<section class="section-card" id="sec-1-7">
+  <div class="section-num">Section 1&ndash;7</div>
+  <h2>How Subsets Relate to Sets</h2>
+
+  <p>Suppose \(R = \{0, 1, 2\}\) and we form a new set \(M = \{0, 2\}\). Every element of \(M\) also belongs to \(R\). We say that \(M\) is a <strong>subset</strong> of \(R\).</p>
+
+  <div class="box box-definition">
+    <div class="box-label">Definition &mdash; Subset</div>
+    <p>Set \(A\) is a <strong>subset</strong> of set \(B\) if every element of \(A\) is also an element of \(B\). A subset that does <em>not</em> contain all elements of the original set is called a <strong>proper subset</strong>.</p>
+  </div>
+
+  <p>For \(R = \{0, 1, 2\}\), the proper subsets obtained by removing one or two elements are:</p>
+  $$\{0, 1\},\;\{0, 2\},\;\{1, 2\},\;\{0\},\;\{1\},\;\{2\}$$
+  <p>Additionally, the <strong>empty set</strong> \(\varnothing\) is a proper subset of every set (except itself), and every set is an <strong>improper subset</strong> of itself.</p>
+
+  <!-- SVG: Venn-style Subset Diagram -->
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 420 220" xmlns="http://www.w3.org/2000/svg" style="max-width:420px;">
+      <!-- Outer set R -->
+      <rect x="30" y="20" rx="20" ry="20" width="360" height="180" fill="none" stroke="#8b1a1a" stroke-width="2.5" stroke-dasharray="6,3"/>
+      <text x="370" y="45" font-family="'Segoe UI', sans-serif" font-size="18" fill="#8b1a1a" font-weight="700">R</text>
+      <!-- Inner set M -->
+      <ellipse cx="190" cy="120" rx="110" ry="60" fill="#fce8e8" stroke="#d4582a" stroke-width="2"/>
+      <text x="280" y="90" font-family="'Segoe UI', sans-serif" font-size="16" fill="#d4582a" font-weight="700">M</text>
+      <!-- Elements -->
+      <g font-family="Georgia, serif" font-size="20" fill="#2d2d2d" text-anchor="middle">
+        <text x="140" y="128">0</text>
+        <text x="230" y="128">2</text>
+      </g>
+      <!-- Element 1 outside M but inside R -->
+      <text x="320" y="160" font-family="Georgia, serif" font-size="20" fill="#8b1a1a" text-anchor="middle">1</text>
+      <!-- Caption -->
+      <text x="210" y="14" font-family="'Segoe UI', sans-serif" font-size="12" fill="#4a5568" text-anchor="middle">M = {0, 2} is a proper subset of R = {0, 1, 2}</text>
+    </svg>
+  </div>
+  <div class="diagram-caption">Venn-style diagram showing \(M \subseteq R\). Every element of \(M\) also belongs to \(R\), but \(R\) contains the element \(1\) that \(M\) does not.</div>
+</section>
+
+<!-- ==================== SECTION 1-8 ==================== -->
+<section class="section-card" id="sec-1-8">
+  <div class="section-num">Section 1&ndash;8</div>
+  <h2>Punctuation Marks in Algebra</h2>
+
+  <p>Just as punctuation clarifies meaning in English, <strong>grouping symbols</strong> remove ambiguity in mathematics. Consider the expression \(3 \times 2 + 4\). Does it equal 10 or 18? Without grouping, the expression is ambiguous.</p>
+
+  <div class="box box-formula">
+    <div class="box-label">Symbols of Inclusion</div>
+    <p>These symbols enclose an expression to be treated as a single quantity:</p>
+    <ul style="margin:0.5rem 0 0 1.4rem;">
+      <li><strong>Parentheses</strong>: \(3(2 + 4)\)</li>
+      <li><strong>Brackets</strong>: \(3[2 + 4]\)</li>
+      <li><strong>Braces</strong>: \(3\{2 + 4\}\)</li>
+      <li><strong>Bar (fraction bar)</strong>: \(\dfrac{16 - 4}{4 - 1}\)</li>
+    </ul>
+  </div>
+
+  <p>With grouping symbols the meaning is clear:</p>
+  <ul style="margin:0 0 1rem 1.5rem;">
+    <li>\((3 \times 2) + 4 = 6 + 4 = 10\)</li>
+    <li>\(3 \times (2 + 4) = 3 \times 6 = 18\)</li>
+  </ul>
+
+  <div class="box box-insight">
+    <div class="box-label">Key Insight &mdash; Nested Grouping</div>
+    <p>When grouping symbols are nested, simplify <strong>from the innermost</strong> outward:</p>
+    <p style="margin-top:0.5rem;">\(5[3 + (7 \times 2)] = 5[3 + 14] = 5[17] = 85\)</p>
+  </div>
+
+  <p>The fraction bar acts as both a division sign and a grouping symbol. For example:</p>
+  $$\frac{16 - 4}{4 - 1} = \frac{12}{3} = 4$$
+</section>
+
+<!-- ==================== SECTION 1-9 ==================== -->
+<section class="section-card" id="sec-1-9">
+  <div class="section-num">Section 1&ndash;9</div>
+  <h2>Order of Operations</h2>
+
+  <p>When an expression contains no grouping symbols, mathematicians agree on a standard <strong>order of operations</strong> to avoid ambiguity:</p>
+
+  <div class="box box-formula">
+    <div class="box-label">Order of Operations</div>
+    <ol style="margin:0.3rem 0 0 1.4rem;">
+      <li><strong>Simplify</strong> within each symbol of inclusion (innermost first).</li>
+      <li>Perform <strong>multiplications and divisions</strong> from left to right.</li>
+      <li>Perform <strong>additions and subtractions</strong> from left to right.</li>
+    </ol>
+  </div>
+
+  <div class="box box-example">
+    <div class="box-label">Example</div>
+    <p>Simplify \(11 + 2(6 + 4) - 3(1 + 3)\).</p>
+    <p><strong>Step 1</strong> (grouping): \(= 11 + 2(10) - 3(4)\)</p>
+    <p><strong>Step 2</strong> (multiply): \(= 11 + 20 - 12\)</p>
+    <p><strong>Step 3</strong> (add/subtract left to right): \(= 31 - 12 = 19\)</p>
+  </div>
+
+  <div class="box box-caution">
+    <div class="box-label">Caution</div>
+    <p>Do not simply work left to right ignoring the hierarchy. In \(5 + 3 \times 2\), the multiplication comes first: \(5 + 3 \times 2 = 5 + 6 = 11\), <strong>not</strong> \(16\).</p>
+  </div>
+</section>
+
+<!-- ==================== WORKED PROBLEMS ==================== -->
+<div class="worked-problems">
+  <h2>Worked Problems</h2>
+
+  <!-- Problem 1 -->
+  <div class="problem">
+    <div class="problem-header">Problem 1 &mdash; Equality</div>
+    <div class="box box-practice">
+      <div class="box-label">Question</div>
+      <p>Is the statement \(2 \times 4 = 2 \times 2 \times 2\) true or false?</p>
+    </div>
+    <div class="box box-example">
+      <div class="box-label">Solution</div>
+      <p><strong>True</strong>, because \(2 \times 4 = 8\) and \(2 \times 2 \times 2 = 8\). Both sides designate the same number.</p>
+    </div>
+  </div>
+
+  <!-- Problem 2 -->
+  <div class="problem">
+    <div class="problem-header">Problem 2 &mdash; Inequality</div>
+    <div class="box box-practice">
+      <div class="box-label">Question</div>
+      <p>Replace the question mark with \(=\), \(<\), or \(>\) to make a true statement: \(8 \times 6\;?\;40 + 8\).</p>
+    </div>
+    <div class="box box-example">
+      <div class="box-label">Solution</div>
+      <p>\(8 \times 6 = 48\) and \(40 + 8 = 48\). Since both sides are equal:</p>
+      $$8 \times 6 = 40 + 8$$
+    </div>
+  </div>
+
+  <!-- Problem 3 -->
+  <div class="problem">
+    <div class="problem-header">Problem 3 &mdash; Sets (Roster and Rule)</div>
+    <div class="box box-practice">
+      <div class="box-label">Question</div>
+      <p>Specify the set of numbers 1, 2, 3, 4, 5, 6, 7, 8, 9 by (a) roster and (b) rule.</p>
+    </div>
+    <div class="box box-example">
+      <div class="box-label">Solution</div>
+      <p>(a) <strong>Roster:</strong> \(\{1, 2, 3, 4, 5, 6, 7, 8, 9\}\)</p>
+      <p>(b) <strong>Rule:</strong> \(\{\text{whole numbers between 0 and 10}\}\), or equivalently, \(\{\text{one-digit numbers except 0}\}\).</p>
+    </div>
+  </div>
+
+  <!-- Problem 4 -->
+  <div class="problem">
+    <div class="problem-header">Problem 4 &mdash; Subsets</div>
+    <div class="box box-practice">
+      <div class="box-label">Question</div>
+      <p>Given \(A = \{2, 4, 6, 8\}\), list the subset of \(A\) consisting of all elements that are multiples of 4.</p>
+    </div>
+    <div class="box box-example">
+      <div class="box-label">Solution</div>
+      <p>The multiples of 4 in set \(A\) are 4 and 8. Therefore the subset is:</p>
+      $$\{4, 8\}$$
+    </div>
+  </div>
+
+  <!-- Problem 5 -->
+  <div class="problem">
+    <div class="problem-header">Problem 5 &mdash; Simplifying with Grouping Symbols</div>
+    <div class="box box-practice">
+      <div class="box-label">Question</div>
+      <p>Simplify: \([60 - (3 \times 2)] \div 10\)</p>
+    </div>
+    <div class="box box-example">
+      <div class="box-label">Solution</div>
+      <p><strong>Step 1</strong> &mdash; innermost grouping: \(3 \times 2 = 6\)</p>
+      <p><strong>Step 2</strong> &mdash; brackets: \(60 - 6 = 54\)</p>
+      <p><strong>Step 3</strong> &mdash; divide: \(54 \div 10 = 5.4\)</p>
+      $$[60 - (3 \times 2)] \div 10 = [60 - 6] \div 10 = 54 \div 10 = 5.4$$
+    </div>
+  </div>
+
+  <!-- Problem 6 -->
+  <div class="problem">
+    <div class="problem-header">Problem 6 &mdash; Order of Operations</div>
+    <div class="box box-practice">
+      <div class="box-label">Question</div>
+      <p>Simplify: \(25 \times 2 - 7 \times 7\)</p>
+    </div>
+    <div class="box box-example">
+      <div class="box-label">Solution</div>
+      <p><strong>Step 1</strong> &mdash; multiplications (left to right): \(25 \times 2 = 50\) and \(7 \times 7 = 49\)</p>
+      <p><strong>Step 2</strong> &mdash; subtraction: \(50 - 49 = 1\)</p>
+      $$25 \times 2 - 7 \times 7 = 50 - 49 = 1$$
+    </div>
+  </div>
+</div>
+
+<!-- ==================== QUICK REFERENCE ==================== -->
+<div class="quick-ref">
+  <h2>Quick Reference &mdash; Chapter 1 Summary</h2>
+  <div style="overflow-x:auto;">
+  <table>
+    <thead>
+      <tr><th>Concept</th><th>Notation / Rule</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Number line</td><td>Numbers increase to the right; each number has a unique point (graph) and each point has a unique number (coordinate).</td></tr>
+      <tr><td>Equality</td><td>\(a = b\) &mdash; both expressions name the same number</td></tr>
+      <tr><td>Inequality</td><td>\(\neq\), \(<\), \(>\) &mdash; the symbol always points at the smaller number</td></tr>
+      <tr><td>Set (roster)</td><td>\(\{1, 3, 5\}\) &mdash; list elements in braces</td></tr>
+      <tr><td>Set (rule)</td><td>\(\{\text{odd numbers between 0 and 6}\}\)</td></tr>
+      <tr><td>Membership</td><td>\(\in\) (belongs to), \(\notin\) (does not belong to)</td></tr>
+      <tr><td>Empty set</td><td>\(\varnothing\) &mdash; contains no elements</td></tr>
+      <tr><td>Finite / Infinite</td><td>Finite: counting ends. Infinite: counting never ends (\(\ldots\)).</td></tr>
+      <tr><td>Subset</td><td>\(A \subseteq B\) if every element of \(A\) is also in \(B\). Proper subset: \(A\) does not contain all of \(B\).</td></tr>
+      <tr><td>Grouping symbols</td><td>Parentheses \((\;)\), brackets \([\;]\), braces \(\{\;\}\), fraction bar</td></tr>
+      <tr><td>Order of operations</td><td>1. Grouping (innermost first) &rarr; 2. Multiply/Divide (left to right) &rarr; 3. Add/Subtract (left to right)</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<!-- ==================== KEY VOCABULARY ==================== -->
+<div class="section-card">
+  <h2>Key Vocabulary</h2>
+  <div style="columns:2;column-gap:2rem;">
+    <p><strong>Property</strong> &mdash; a distinguishing trait</p>
+    <p><strong>Number line</strong> &mdash; a uniformly scaled line pairing points with numbers</p>
+    <p><strong>Coordinate</strong> &mdash; the number paired with a point</p>
+    <p><strong>Graph</strong> &mdash; the point paired with a number</p>
+    <p><strong>Numeral</strong> &mdash; a name or symbol for a number</p>
+    <p><strong>Numerical expression</strong> &mdash; same as numeral</p>
+    <p><strong>Set</strong> &mdash; a well-defined collection of objects</p>
+    <p><strong>Element / Member</strong> &mdash; an object in a set</p>
+    <p><strong>Roster</strong> &mdash; listing elements in braces</p>
+    <p><strong>Rule</strong> &mdash; describing elements in braces</p>
+    <p><strong>Finite set</strong> &mdash; counting its elements ends</p>
+    <p><strong>Infinite set</strong> &mdash; counting never ends</p>
+    <p><strong>Empty / Null set</strong> (\(\varnothing\)) &mdash; no elements</p>
+    <p><strong>Subset</strong> &mdash; all elements also in another set</p>
+    <p><strong>Proper subset</strong> &mdash; a subset missing at least one element of the original</p>
+    <p><strong>Symbol of inclusion</strong> &mdash; grouping symbol</p>
+    <p><strong>Order of operations</strong> &mdash; standard evaluation sequence</p>
+    <p><strong>One-to-one correspondence</strong> &mdash; each element of one set has exactly one partner in another</p>
+  </div>
+</div>
+
+<!-- ==================== NAVIGATION ==================== -->
+<nav class="chapter-nav">
+  <span class="disabled">&larr; Previous Chapter</span>
+  <span style="font-size:0.85rem;color:#888;">Chapter 1 of 15</span>
+  <a href="../02-variables-and-open-sentences/index.html">Chapter 2: Variables and Open Sentences &rarr;</a>
+</nav>
+
+</main>
+
+<!-- ==================== KaTeX Scripts ==================== -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+        ],
+        throwOnError: false
+    });
+});
+</script>
+</body>
+</html>

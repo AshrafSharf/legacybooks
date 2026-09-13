@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2 — The Number System | Practical Algebra</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', 'Cambria', 'Times New Roman', serif;
+            background: #fdf8f3;
+            color: #2d2d2d;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+        .hero {
+            background: linear-gradient(135deg, #0d4f4f 0%, #1a2332 100%);
+            color: white;
+            padding: 3rem 2rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero .chapter-num {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 6rem;
+            font-weight: 800;
+            opacity: 0.12;
+            position: absolute;
+            top: -0.5rem;
+            right: 2rem;
+            line-height: 1;
+        }
+        .hero h1 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .hero .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.85;
+            font-style: italic;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        h2 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #0d4f4f;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #c0602b;
+        }
+        h3 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #0d4f4f;
+            font-size: 1.5rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+        /* Highlight boxes */
+        .box { padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 5px solid; }
+        .box-definition { border-color: #0d4f4f; background: #e8f4f4; }
+        .box-insight { border-color: #c0602b; background: #fef3ec; }
+        .box-caution { border-color: #9b2c2c; background: #fef2f2; }
+        .box-example { border-color: #276749; background: #f0f7f0; }
+        .box-practice { border-color: #6b46c1; background: #f5f0ff; }
+        .box-formula { border-color: #2b6cb0; background: #ebf4ff; }
+        .box-label {
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .box-definition .box-label { color: #0d4f4f; }
+        .box-insight .box-label { color: #c0602b; }
+        .box-caution .box-label { color: #9b2c2c; }
+        .box-example .box-label { color: #276749; }
+        .box-practice .box-label { color: #6b46c1; }
+        .box-formula .box-label { color: #2b6cb0; }
+        /* Navigation */
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e2d9ce;
+        }
+        .nav-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #0d4f4f;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .nav-btn:hover { background: #0a3d3d; }
+        svg { max-width: 100%; height: auto; display: block; margin: 1.5rem auto; }
+        .katex { font-size: 1.3em; }
+
+        .katex-display { margin: 1.5rem 0; overflow-x: auto; font-size: 1.35em; }
+        /* Objectives list */
+        .objectives-list { list-style: none; padding: 0; }
+        .objectives-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .objectives-list li::before {
+            content: '\2713';
+            position: absolute;
+            left: 0;
+            color: #276749;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        /* Section divider */
+        .section-divider {
+            height: 3px;
+            background: linear-gradient(90deg, #0d4f4f, #c0602b, transparent);
+            border: none;
+            margin: 2.5rem 0;
+            border-radius: 2px;
+        }
+        /* Worked problem styling */
+        .worked-problem { margin-bottom: 1rem; }
+        .step { margin: 0.5rem 0 0.5rem 1rem; }
+        .step-label {
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            color: #276749;
+            font-size: 0.95rem;
+        }
+        /* Summary table */
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .summary-table th,
+        .summary-table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid #d4dce4;
+        }
+        .summary-table th {
+            font-family: 'Segoe UI', sans-serif;
+            background: #2b6cb0;
+            color: white;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .summary-table tr:nth-child(even) {
+            background: #f0f6ff;
+        }
+        .summary-table td:last-child {
+            font-family: 'Georgia', serif;
+        }
+        /* SVG diagram labels */
+        .diagram-caption {
+            text-align: center;
+            font-style: italic;
+            color: #555;
+            font-size: 1rem;
+            margin-top: -0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        /* Responsive */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .hero .chapter-num { font-size: 4rem; }
+            h2 { font-size: 1.6rem; }
+            h3 { font-size: 1.3rem; }
+            .card { padding: 1.25rem; }
+            .box { padding: 1rem; }
+            .nav-footer { flex-direction: column; gap: 1rem; }
+            .nav-btn { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== HERO ==================== -->
+    <div class="hero">
+        <div class="chapter-num">2</div>
+        <div style="position:relative">
+            <p style="font-family: 'Segoe UI',sans-serif; text-transform:uppercase; letter-spacing:0.2em; font-size:0.9rem; opacity:0.7; margin-bottom:0.5rem;">Chapter 2</p>
+            <h1>The Number System</h1>
+            <p class="subtitle">Extending arithmetic into the world of signed numbers, absolute value, and the real number hierarchy</p>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- ==================== WHAT YOU'LL LEARN ==================== -->
+        <div class="card">
+            <h2>What You'll Learn</h2>
+            <ul class="objectives-list">
+                <li>Understand positive and negative numbers on the number line</li>
+                <li>Compute absolute values and distances between numbers</li>
+                <li>Add, subtract, multiply, and divide signed numbers with proper sign handling</li>
+                <li>Raise signed numbers to higher powers (even vs. odd exponents)</li>
+                <li>Identify irrational numbers and classify numbers within the real number system</li>
+                <li>Evaluate algebraic expressions containing signed numbers</li>
+            </ul>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ==================== SECTION 1: THE REAL NUMBER SYSTEM ==================== -->
+        <div class="card">
+            <h2>The Real Number System</h2>
+
+            <p>The numbers you first learned to count with are called <strong>natural numbers</strong> (or counting numbers): \(1, 2, 3, 4, \ldots\) They are whole numbers greater than zero. You learned to add, subtract, multiply, and divide them. But some divisions&mdash;such as \(5 \div 2\) or \(7 \div 3\)&mdash;do not produce whole numbers. To handle these results, <strong>fractions</strong> were introduced.</p>
+
+            <p>Arithmetic uses whole numbers, zero, and fractions. But there is a limitation: you cannot subtract a larger number from a smaller one and stay within this system. To overcome this, mathematicians invented <strong>negative numbers</strong>&mdash;numbers less than zero. For every positive number there exists a corresponding negative (opposite) number.</p>
+
+            <div class="box box-definition">
+                <div class="box-label">Definition &mdash; Key Number Sets</div>
+                <ul style="margin-left: 1.5rem;">
+                    <li><strong>Natural numbers</strong> (counting numbers): \(1, 2, 3, 4, \ldots\)</li>
+                    <li><strong>Whole numbers</strong>: \(0, 1, 2, 3, 4, \ldots\) (natural numbers plus zero)</li>
+                    <li><strong>Integers</strong>: \(\ldots, -3, -2, -1, 0, 1, 2, 3, \ldots\) (whole numbers and their negatives)</li>
+                    <li><strong>Rational numbers</strong>: numbers expressible as \(\dfrac{p}{q}\) where \(p, q\) are integers and \(q \neq 0\)</li>
+                    <li><strong>Irrational numbers</strong>: numbers that <em>cannot</em> be expressed as a ratio of integers (e.g., \(\pi\), \(\sqrt{2}\))</li>
+                    <li><strong>Real numbers</strong>: all rational and irrational numbers together</li>
+                </ul>
+            </div>
+
+            <h3>Irrational Numbers</h3>
+            <p>Some numbers cannot be written as fractions of integers. Two famous examples:</p>
+            <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                <li>\(\pi \approx 3.14159\ldots\) &mdash; the ratio of a circle's circumference to its diameter</li>
+                <li>\(\sqrt{2} \approx 1.41421\ldots\) &mdash; the length of the diagonal of a unit square</li>
+            </ul>
+            <p>Their decimal representations go on forever without repeating. These are <strong>irrational numbers</strong>. Together, the rational and irrational numbers form the complete family of <strong>real numbers</strong>.</p>
+
+            <h3>The Real Number Hierarchy</h3>
+            <p>The real number system can be visualized as nested sets, where each set contains all the sets inside it:</p>
+
+            <!-- SVG: Real Number System Hierarchy (nested sets) -->
+            <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" style="max-width: 680px;" role="img" aria-label="Nested diagram of the real number system showing Natural numbers inside Whole numbers inside Integers inside Rational numbers inside Real numbers, with Irrational numbers also inside Real numbers.">
+                <!-- Real Numbers (outermost) -->
+                <rect x="10" y="10" width="680" height="380" rx="24" fill="#fdf8f3" stroke="#2b6cb0" stroke-width="3"/>
+                <text x="350" y="42" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#2b6cb0">REAL NUMBERS</text>
+
+                <!-- Rational Numbers -->
+                <rect x="30" y="55" width="460" height="320" rx="20" fill="#ebf4ff" stroke="#0d4f4f" stroke-width="2.5"/>
+                <text x="260" y="82" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#0d4f4f">RATIONAL NUMBERS</text>
+                <text x="260" y="102" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#555">(can be written as p/q)</text>
+
+                <!-- Integers -->
+                <rect x="55" y="115" width="380" height="240" rx="16" fill="#e8f4f4" stroke="#0d4f4f" stroke-width="2"/>
+                <text x="245" y="140" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#0d4f4f">INTEGERS</text>
+                <text x="245" y="158" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#555">...  &minus;3, &minus;2, &minus;1, 0, 1, 2, 3, ...</text>
+
+                <!-- Whole Numbers -->
+                <rect x="85" y="172" width="300" height="165" rx="14" fill="#f0f7f0" stroke="#276749" stroke-width="2"/>
+                <text x="235" y="196" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#276749">WHOLE NUMBERS</text>
+                <text x="235" y="214" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#555">0, 1, 2, 3, 4, ...</text>
+
+                <!-- Natural Numbers (innermost) -->
+                <rect x="120" y="228" width="230" height="92" rx="12" fill="#fef3ec" stroke="#c0602b" stroke-width="2"/>
+                <text x="235" y="255" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#c0602b">NATURAL NUMBERS</text>
+                <text x="235" y="275" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#555">1, 2, 3, 4, 5, ...</text>
+                <text x="235" y="305" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#888">(counting numbers)</text>
+
+                <!-- Negative integers label -->
+                <text x="90" y="350" font-family="Georgia, serif" font-size="12" fill="#666">Negative integers: &minus;1, &minus;2, &minus;3, ...</text>
+
+                <!-- Fractions label (rational but not integer) -->
+                <text x="50" y="390" font-family="Georgia, serif" font-size="12" fill="#666">Fractions: &frac12;, &minus;&frac34;, 0.75, ...</text>
+
+                <!-- Irrational Numbers (separate region inside Real) -->
+                <rect x="510" y="55" width="165" height="320" rx="20" fill="#f5f0ff" stroke="#6b46c1" stroke-width="2.5"/>
+                <text x="592" y="82" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#6b46c1">IRRATIONAL</text>
+                <text x="592" y="102" text-anchor="middle" font-family="Segoe UI, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#6b46c1">NUMBERS</text>
+                <text x="592" y="155" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#6b46c1">&pi;</text>
+                <text x="592" y="190" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b46c1">&radic;2</text>
+                <text x="592" y="225" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b46c1">&radic;3</text>
+                <text x="592" y="260" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6b46c1">e</text>
+                <text x="592" y="310" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#888">(cannot be written</text>
+                <text x="592" y="326" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#888">as p/q)</text>
+            </svg>
+            <p class="diagram-caption">Figure 2.1 &mdash; The hierarchy of the real number system</p>
+
+            <div class="box box-insight">
+                <div class="box-label">Key Insight</div>
+                <p>Every natural number is also a whole number, every whole number is also an integer, and every integer is also a rational number. But not every real number is rational&mdash;irrational numbers like \(\pi\) and \(\sqrt{2}\) fill in the "gaps" on the number line that fractions cannot reach.</p>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ==================== SECTION 2: SIGNED NUMBERS & THE NUMBER LINE ==================== -->
+        <div class="card">
+            <h2>Signed Numbers and the Number Line</h2>
+
+            <p>You are already familiar with signed numbers from everyday life. A thermometer has temperatures above zero (positive, indicated by \(+\)) and below zero (negative, indicated by \(-\)). If \(+15\) represents 15&deg; above zero, then \(-15\) represents 15&deg; below zero.</p>
+
+            <p>Signed numbers represent <strong>opposites</strong>: profit and loss, north and south, above and below sea level. A <strong>positive number</strong> may be written with a plus sign or with no sign at all; a <strong>negative number</strong> must always carry a minus sign.</p>
+
+            <h3>The Number Line</h3>
+            <p>The <strong>number line</strong> represents all real numbers as points on a line. Every point corresponds to exactly one real number, and every real number corresponds to exactly one point.</p>
+
+            <!-- SVG: Number Line -->
+            <svg viewBox="0 0 740 120" xmlns="http://www.w3.org/2000/svg" style="max-width: 720px;" role="img" aria-label="Horizontal number line from negative 8 to positive 8, with zero at center, negative side shaded blue and positive side shaded orange.">
+                <!-- Negative region shading -->
+                <rect x="42" y="38" width="310" height="24" rx="4" fill="#e8f4f4" opacity="0.5"/>
+                <!-- Positive region shading -->
+                <rect x="388" y="38" width="310" height="24" rx="4" fill="#fef3ec" opacity="0.5"/>
+
+                <!-- Main axis line -->
+                <line x1="30" y1="50" x2="710" y2="50" stroke="#2d2d2d" stroke-width="2.5"/>
+                <!-- Arrowheads -->
+                <polygon points="20,50 32,44 32,56" fill="#2d2d2d"/>
+                <polygon points="720,50 708,44 708,56" fill="#2d2d2d"/>
+
+                <!-- Tick marks and labels -->
+                <g font-family="Georgia, serif" font-size="14" text-anchor="middle" fill="#2d2d2d">
+                    <!-- -8 -->
+                    <line x1="50" y1="42" x2="50" y2="58" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="50" y="78">&minus;8</text>
+                    <!-- -7 -->
+                    <line x1="90" y1="42" x2="90" y2="58" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="90" y="78">&minus;7</text>
+                    <!-- -6 -->
+                    <line x1="130" y1="42" x2="130" y2="58" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="130" y="78">&minus;6</text>
+                    <!-- -5 -->
+                    <line x1="170" y1="42" x2="170" y2="58" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="170" y="78">&minus;5</text>
+                    <!-- -4 -->
+                    <line x1="210" y1="42" x2="210" y2="58" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="210" y="78">&minus;4</text>
+                    <!-- -3 -->
+                    <line x1="250" y1="42" x2="250" y2="58" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="250" y="78">&minus;3</text>
+                    <!-- -2 -->
+                    <line x1="290" y1="42" x2="290" y2="58" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="290" y="78">&minus;2</text>
+                    <!-- -1 -->
+                    <line x1="330" y1="42" x2="330" y2="58" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="330" y="78">&minus;1</text>
+                    <!-- 0 (origin) -->
+                    <line x1="370" y1="36" x2="370" y2="64" stroke="#c0602b" stroke-width="3"/>
+                    <text x="370" y="78" font-weight="700" fill="#c0602b">0</text>
+                    <!-- +1 -->
+                    <line x1="410" y1="42" x2="410" y2="58" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="410" y="78">1</text>
+                    <!-- +2 -->
+                    <line x1="450" y1="42" x2="450" y2="58" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="450" y="78">2</text>
+                    <!-- +3 -->
+                    <line x1="490" y1="42" x2="490" y2="58" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="490" y="78">3</text>
+                    <!-- +4 -->
+                    <line x1="530" y1="42" x2="530" y2="58" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="530" y="78">4</text>
+                    <!-- +5 -->
+                    <line x1="570" y1="42" x2="570" y2="58" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="570" y="78">5</text>
+                    <!-- +6 -->
+                    <line x1="610" y1="42" x2="610" y2="58" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="610" y="78">6</text>
+                    <!-- +7 -->
+                    <line x1="650" y1="42" x2="650" y2="58" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="650" y="78">7</text>
+                    <!-- +8 -->
+                    <line x1="690" y1="42" x2="690" y2="58" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="690" y="78">8</text>
+                </g>
+
+                <!-- Direction labels -->
+                <text x="180" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#0d4f4f">Negative direction &larr;</text>
+                <text x="560" y="24" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600" fill="#c0602b">&rarr; Positive direction</text>
+
+                <!-- Origin label -->
+                <text x="370" y="105" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#c0602b" font-style="italic">origin</text>
+            </svg>
+            <p class="diagram-caption">Figure 2.2 &mdash; The horizontal number line with the origin at zero</p>
+
+            <div class="box box-insight">
+                <div class="box-label">Key Insight &mdash; Comparing Signed Numbers</div>
+                <p>On the number line, a number is <strong>greater</strong> if it lies further to the right. This means any positive number is greater than any negative number. For example, \(+10\) is greater than \(-30\), even though \(|-30| = 30\) is numerically larger than \(|+10| = 10\).</p>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ==================== SECTION 3: ABSOLUTE VALUE ==================== -->
+        <div class="card">
+            <h2>Absolute Value</h2>
+
+            <div class="box box-definition">
+                <div class="box-label">Definition &mdash; Absolute Value</div>
+                <p>The <strong>absolute value</strong> of a number \(n\), written \(|n|\), is its distance from zero on the number line, regardless of direction. Absolute value is always non-negative.</p>
+                $$|n| = \begin{cases} n & \text{if } n \geq 0 \\ -n & \text{if } n < 0 \end{cases}$$
+            </div>
+
+            <p>Since \(+3\) and \(-3\) are each three units from zero, they have the same absolute value:</p>
+            $$|+3| = 3 \qquad \text{and} \qquad |-3| = 3$$
+
+            <p>Similarly:</p>
+            $$|+5| = 5 \qquad \text{and} \qquad |-5| = 5$$
+
+            <p>Notice that the absolute value of \(-5\) is <em>greater</em> than the absolute value of \(+3\), even though \(+3\) is the larger number on the number line. Absolute value strips away the sign and measures only distance.</p>
+
+            <div class="box box-insight">
+                <div class="box-label">Key Insight &mdash; Two Ways to Think About It</div>
+                <p><strong>Geometric view:</strong> \(|n|\) is the distance from \(n\) to zero on the number line.<br>
+                <strong>Algebraic view:</strong> \(|n|\) is the value of a number when its sign is ignored.</p>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ==================== SECTION 4: ADDING SIGNED NUMBERS ==================== -->
+        <div class="card">
+            <h2>Adding Signed Numbers</h2>
+
+            <p>When we say <em>add</em> in algebra, we really mean <em>combine</em>&mdash;finding a single number that represents the total of two quantities taken together.</p>
+
+            <div class="box box-formula">
+                <div class="box-label">Rule 1 &mdash; Adding Numbers with Like Signs</div>
+                <p>To add two numbers with <strong>the same sign</strong>, add their absolute values and prefix their common sign.</p>
+                $$\underbrace{(+4) + (+6)}_{\text{same sign: both }+} = +(|{+4}| + |{+6}|) = +(4+6) = +10$$
+                $$\underbrace{(-4) + (-6)}_{\text{same sign: both }-} = -(|{-4}| + |{-6}|) = -(4+6) = -10$$
+            </div>
+
+            <div class="box box-formula">
+                <div class="box-label">Rule 2 &mdash; Adding Numbers with Unlike Signs</div>
+                <p>To add two numbers with <strong>opposite signs</strong>, subtract the smaller absolute value from the larger, then prefix the sign of the number with the larger absolute value.</p>
+                $$\underbrace{(+4) + (-6)}_{\text{unlike signs}} = -(|{-6}| - |{+4}|) = -(6-4) = -2$$
+            </div>
+
+            <div class="box box-caution">
+                <div class="box-label">Common Mistake</div>
+                <p>Don't confuse the <strong>sign of the number</strong> (positive or negative quality) with the <strong>sign of operation</strong> (adding or subtracting). In expressions like \(-5 + (-8)\), the parentheses help distinguish between the two. Without parentheses, this simplifies to \(-5 - 8\).</p>
+            </div>
+
+            <h3>Combining Multiple Signed Numbers</h3>
+            <p>When adding a series of positive and negative values, a convenient method is:</p>
+            <ol style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                <li>Add all the positive numbers (their sum is positive)</li>
+                <li>Add all the negative numbers (their sum is negative)</li>
+                <li>Combine the two sums using Rule 2</li>
+            </ol>
+            <p>For example:</p>
+            $$20.2 + 3.7 - 12.9 + 1.1 - 6.4$$
+            $$\text{Positives: } 20.2 + 3.7 + 1.1 = +25.0$$
+            $$\text{Negatives: } -12.9 + (-6.4) = -19.3$$
+            $$\text{Combined: } 25.0 + (-19.3) = +5.7$$
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ==================== SECTION 5: SUBTRACTING SIGNED NUMBERS ==================== -->
+        <div class="card">
+            <h2>Subtracting Signed Numbers</h2>
+
+            <p>Subtraction can be thought of as finding the <strong>directed distance</strong> from one position to another on the number line. Unlike arithmetic (where you never subtract a larger number from a smaller one), in algebra we often do&mdash;this is precisely why negative numbers were invented.</p>
+
+            <div class="box box-formula">
+                <div class="box-label">Rule 3 &mdash; Subtraction of Signed Numbers</div>
+                <p>To subtract a number, <strong>add its opposite</strong> (its additive inverse):</p>
+                $$a - b = a + (-b)$$
+                <p>Change the sign of the subtrahend (the number being subtracted) and then add.</p>
+            </div>
+
+            <p>This single rule covers every combination of signs:</p>
+
+            <div style="overflow-x: auto;">
+                <table class="summary-table" style="font-size: 1.05rem;">
+                    <thead>
+                        <tr>
+                            <th>Problem</th>
+                            <th>Rewritten as Addition</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>\(+5 - (+3)\)</td>
+                            <td>\(+5 + (-3)\)</td>
+                            <td>\(+2\)</td>
+                        </tr>
+                        <tr>
+                            <td>\(+5 - (-3)\)</td>
+                            <td>\(+5 + (+3)\)</td>
+                            <td>\(+8\)</td>
+                        </tr>
+                        <tr>
+                            <td>\(-5 - (+3)\)</td>
+                            <td>\(-5 + (-3)\)</td>
+                            <td>\(-8\)</td>
+                        </tr>
+                        <tr>
+                            <td>\(-5 - (-3)\)</td>
+                            <td>\(-5 + (+3)\)</td>
+                            <td>\(-2\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="box box-insight">
+                <div class="box-label">Key Insight &mdash; Subtracting a Negative</div>
+                <p>Subtracting a negative number is the same as <strong>adding</strong> its positive counterpart. This is because the "opposite of a negative" is positive: \(-(-b) = +b\). So \(5 - (-3) = 5 + 3 = 8\).</p>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ==================== SECTION 6: MULTIPLYING SIGNED NUMBERS ==================== -->
+        <div class="card">
+            <h2>Multiplying Signed Numbers</h2>
+
+            <div class="box box-formula">
+                <div class="box-label">Rule 4 &mdash; Same Signs &rarr; Positive Product</div>
+                <p>When multiplying two numbers with <strong>the same sign</strong>, the product is <strong>positive</strong>.</p>
+                $$(+3)(+4) = +12 \qquad \text{and} \qquad (-3)(-4) = +12$$
+            </div>
+
+            <div class="box box-formula">
+                <div class="box-label">Rule 5 &mdash; Different Signs &rarr; Negative Product</div>
+                <p>When multiplying two numbers with <strong>different signs</strong>, the product is <strong>negative</strong>.</p>
+                $$(-3)(+4) = -12 \qquad \text{and} \qquad (+3)(-4) = -12$$
+            </div>
+
+            <h3>More Than Two Factors</h3>
+
+            <div class="box box-formula">
+                <div class="box-label">Rule 6 &mdash; Multiple Factors</div>
+                <p>When multiplying more than two numbers:</p>
+                <ul style="margin-left: 1.5rem;">
+                    <li><strong>Odd</strong> number of negative factors &rarr; product is <strong>negative</strong></li>
+                    <li><strong>Even</strong> number of negative factors &rarr; product is <strong>positive</strong></li>
+                    <li>If <strong>any</strong> factor is zero, the entire product is <strong>zero</strong></li>
+                </ul>
+                $$(2)(-3)(4)(-5) = +120 \quad \text{(two negatives = even)}$$
+                $$(-2)(+3)(-4)(-5) = -120 \quad \text{(three negatives = odd)}$$
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ==================== SECTION 7: DIVIDING SIGNED NUMBERS ==================== -->
+        <div class="card">
+            <h2>Dividing Signed Numbers</h2>
+
+            <div class="box box-formula">
+                <div class="box-label">Rule &mdash; Sign of the Quotient</div>
+                <p>Division follows the <strong>same sign rules</strong> as multiplication:</p>
+                <ul style="margin-left: 1.5rem;">
+                    <li><strong>Same signs</strong> &rarr; quotient is <strong>positive</strong>: \(\;\dfrac{+6}{+3} = +2\), \(\;\dfrac{-6}{-3} = +2\)</li>
+                    <li><strong>Different signs</strong> &rarr; quotient is <strong>negative</strong>: \(\;\dfrac{+6}{-3} = -2\), \(\;\dfrac{-6}{+3} = -2\)</li>
+                </ul>
+            </div>
+
+            <div class="box box-caution">
+                <div class="box-label">Caution &mdash; Division by Zero</div>
+                <p>Division by zero is <strong>undefined</strong>. There is no number that satisfies \(\dfrac{a}{0}\) for any value of \(a\). Whenever you encounter a zero in the denominator, the expression has no value.</p>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ==================== SECTION 8: POWERS OF NEGATIVES ==================== -->
+        <div class="card">
+            <h2>Even and Odd Powers of Negative Numbers</h2>
+
+            <p>Raising a negative number to a power is just repeated multiplication. The sign of the result depends on whether the exponent is even or odd:</p>
+
+            <div class="box box-formula">
+                <div class="box-label">Rule &mdash; Powers of Negatives</div>
+                <p><strong>Odd powers</strong> of negative numbers are <strong>negative</strong>:</p>
+                $$(-2)^3 = (-2)(-2)(-2) = -8$$
+                <p><strong>Even powers</strong> of negative numbers are <strong>positive</strong>:</p>
+                $$(-2)^4 = (-2)(-2)(-2)(-2) = +16$$
+            </div>
+
+            <p>This follows directly from Rule 6: an odd exponent means an odd number of negative factors (negative result), while an even exponent means an even number (positive result).</p>
+
+            <p>A few more examples:</p>
+            $$(-4)^2 = +16 \qquad (-3)^2 = +9 \qquad (-5)^3 = -125 \qquad (-1)^9 = -1$$
+
+            <div class="box box-insight">
+                <div class="box-label">Key Insight &mdash; Pattern</div>
+                <p>Even powers always produce positive results; odd powers preserve the negative sign. This holds for any negative base, including variables: \((-a)^4 = +a^4\) and \((-a)^3 = -a^3\).</p>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ==================== WORKED PROBLEMS ==================== -->
+        <div class="card">
+            <h2>Worked Problems</h2>
+
+            <!-- Problem 1 -->
+            <div class="box box-practice">
+                <div class="box-label">Problem 1 &mdash; Same-Sign Addition</div>
+                <p>Compute: \(\;-7 + (-3)\)</p>
+            </div>
+            <div class="box box-example">
+                <div class="box-label">Solution</div>
+                <div class="worked-problem">
+                    <div class="step">
+                        <span class="step-label">Step 1:</span> Both numbers are negative (same sign). Use Rule 1.
+                    </div>
+                    <div class="step">
+                        <span class="step-label">Step 2:</span> Add the absolute values: \(|-7| + |-3| = 7 + 3 = 10\).
+                    </div>
+                    <div class="step">
+                        <span class="step-label">Step 3:</span> Prefix the common sign (negative):
+                    </div>
+                    $$-7 + (-3) = -10$$
+                </div>
+            </div>
+
+            <!-- Problem 2 -->
+            <div class="box box-practice">
+                <div class="box-label">Problem 2 &mdash; Unlike-Sign Addition</div>
+                <p>Compute: \(\;-15 + 8\)</p>
+            </div>
+            <div class="box box-example">
+                <div class="box-label">Solution</div>
+                <div class="worked-problem">
+                    <div class="step">
+                        <span class="step-label">Step 1:</span> The signs are different. Use Rule 2.
+                    </div>
+                    <div class="step">
+                        <span class="step-label">Step 2:</span> Subtract the smaller absolute value from the larger: \(|-15| - |8| = 15 - 8 = 7\).
+                    </div>
+                    <div class="step">
+                        <span class="step-label">Step 3:</span> The number with the larger absolute value is \(-15\) (negative), so prefix \(-\):
+                    </div>
+                    $$-15 + 8 = -7$$
+                </div>
+            </div>
+
+            <!-- Problem 3 -->
+            <div class="box box-practice">
+                <div class="box-label">Problem 3 &mdash; Subtracting a Negative</div>
+                <p>Compute: \(\;5 - (-3)\)</p>
+            </div>
+            <div class="box box-example">
+                <div class="box-label">Solution</div>
+                <div class="worked-problem">
+                    <div class="step">
+                        <span class="step-label">Step 1:</span> Apply Rule 3: change the sign of the subtrahend and add.
+                    </div>
+                    $$5 - (-3) = 5 + (+3)$$
+                    <div class="step">
+                        <span class="step-label">Step 2:</span> Now both are positive (same sign), so add:
+                    </div>
+                    $$5 + 3 = 8$$
+                </div>
+            </div>
+
+            <!-- Problem 4 -->
+            <div class="box box-practice">
+                <div class="box-label">Problem 4 &mdash; Multiplying Two Negatives</div>
+                <p>Compute: \(\;(-4)(-6)\)</p>
+            </div>
+            <div class="box box-example">
+                <div class="box-label">Solution</div>
+                <div class="worked-problem">
+                    <div class="step">
+                        <span class="step-label">Step 1:</span> Both factors are negative (same sign). By Rule 4, the product is positive.
+                    </div>
+                    <div class="step">
+                        <span class="step-label">Step 2:</span> Multiply the absolute values: \(4 \times 6 = 24\).
+                    </div>
+                    $$(-4)(-6) = +24$$
+                </div>
+            </div>
+
+            <!-- Problem 5 -->
+            <div class="box box-practice">
+                <div class="box-label">Problem 5 &mdash; Even vs. Odd Powers</div>
+                <p>Compute: \(\;(-2)^3\) and \(\;(-2)^4\)</p>
+            </div>
+            <div class="box box-example">
+                <div class="box-label">Solution</div>
+                <div class="worked-problem">
+                    <p><strong>Part (a): \((-2)^3\)</strong></p>
+                    <div class="step">
+                        <span class="step-label">Step 1:</span> Expand: \((-2)^3 = (-2)(-2)(-2)\).
+                    </div>
+                    <div class="step">
+                        <span class="step-label">Step 2:</span> Three negative factors (odd) &rarr; negative result.
+                    </div>
+                    $$(-2)^3 = -8$$
+
+                    <p style="margin-top: 1rem;"><strong>Part (b): \((-2)^4\)</strong></p>
+                    <div class="step">
+                        <span class="step-label">Step 1:</span> Expand: \((-2)^4 = (-2)(-2)(-2)(-2)\).
+                    </div>
+                    <div class="step">
+                        <span class="step-label">Step 2:</span> Four negative factors (even) &rarr; positive result.
+                    </div>
+                    $$(-2)^4 = +16$$
+                </div>
+            </div>
+
+            <!-- Problem 6 -->
+            <div class="box box-practice">
+                <div class="box-label">Problem 6 &mdash; Absolute Value Computation</div>
+                <p>Compute: \(\;|-7| - |3|\)</p>
+            </div>
+            <div class="box box-example">
+                <div class="box-label">Solution</div>
+                <div class="worked-problem">
+                    <div class="step">
+                        <span class="step-label">Step 1:</span> Evaluate each absolute value: \(|-7| = 7\) and \(|3| = 3\).
+                    </div>
+                    <div class="step">
+                        <span class="step-label">Step 2:</span> Subtract:
+                    </div>
+                    $$|-7| - |3| = 7 - 3 = 4$$
+                </div>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ==================== QUICK REFERENCE ==================== -->
+        <div class="card">
+            <h2>Quick Reference</h2>
+
+            <div class="box box-formula" style="padding: 1rem;">
+                <div class="box-label">Summary of Sign Rules</div>
+                <div style="overflow-x: auto;">
+                    <table class="summary-table">
+                        <thead>
+                            <tr>
+                                <th>Operation</th>
+                                <th>Rule</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Addition</strong> (like signs)</td>
+                                <td>Add absolute values; prefix common sign</td>
+                                <td>\(-9 + (-7) = -16\)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Addition</strong> (unlike signs)</td>
+                                <td>Subtract absolute values; prefix sign of larger</td>
+                                <td>\(9 + (-7) = +2\)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Subtraction</strong></td>
+                                <td>Add the opposite: \(a - b = a + (-b)\)</td>
+                                <td>\(9 - (+7) = 9 + (-7) = +2\)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Multiplication</strong> (same signs)</td>
+                                <td>Product is positive</td>
+                                <td>\((-3)(-4) = +12\)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Multiplication</strong> (diff. signs)</td>
+                                <td>Product is negative</td>
+                                <td>\((-3)(4) = -12\)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Division</strong> (same signs)</td>
+                                <td>Quotient is positive</td>
+                                <td>\(\frac{-6}{-3} = +2\)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Division</strong> (diff. signs)</td>
+                                <td>Quotient is negative</td>
+                                <td>\(\frac{-6}{+3} = -2\)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Even power of negative</strong></td>
+                                <td>Result is positive</td>
+                                <td>\((-2)^4 = +16\)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Odd power of negative</strong></td>
+                                <td>Result is negative</td>
+                                <td>\((-2)^3 = -8\)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="box box-definition" style="margin-top: 1.5rem;">
+                <div class="box-label">Absolute Value</div>
+                $$|n| = \begin{cases} n & \text{if } n \geq 0 \\ -n & \text{if } n < 0 \end{cases}$$
+                <p style="margin-top: 0.5rem;">Distance from zero on the number line. Always \(\geq 0\).</p>
+            </div>
+
+            <div class="box box-definition">
+                <div class="box-label">Real Number Classification</div>
+                <p>\(\text{Natural} \subset \text{Whole} \subset \text{Integers} \subset \text{Rational} \subset \text{Real}\), and \(\text{Irrational} \subset \text{Real}\).</p>
+            </div>
+        </div>
+
+        <!-- ==================== NAVIGATION ==================== -->
+        <div class="nav-footer">
+            <a href="../01-some-basic-concepts/index.html" class="nav-btn">&larr; Previous: Some Basic Concepts</a>
+            <a href="../03-monomials-and-polynomials/index.html" class="nav-btn">Next: Monomials and Polynomials &rarr;</a>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+</body>
+</html>

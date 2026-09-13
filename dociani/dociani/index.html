@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Table of Contents | Modern Algebra: Structure and Method</title>
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Georgia', 'Cambria', 'Times New Roman', serif;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #2d2d2d;
+  background: #fdf6f0;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.3;
+}
+a { color: #8b1a1a; text-decoration: none; }
+a:hover { text-decoration: underline; color: #d4582a; }
+
+/* ===== HERO HEADER ===== */
+.hero {
+  background: linear-gradient(135deg, #8b1a1a 0%, #5c1010 40%, #1a1a2e 100%);
+  color: #fff;
+  padding: 3.5rem 2rem 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '📖';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12rem;
+  opacity: 0.06;
+  pointer-events: none;
+}
+.hero .book-title {
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-bottom: 0.3rem;
+}
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin: 0.3rem 0 0.5rem;
+}
+.hero .subtitle {
+  font-size: 1.15rem;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+/* ===== TABLE OF CONTENTS ===== */
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.toc-item {
+  margin-bottom: 0.75rem;
+}
+.toc-link {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  text-decoration: none;
+  color: #2d2d2d;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  border-left: 5px solid #8b1a1a;
+}
+.toc-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  text-decoration: none;
+}
+.toc-link:active {
+  transform: translateY(0);
+}
+.chapter-number {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #8b1a1a;
+  min-width: 3rem;
+  text-align: center;
+  line-height: 1;
+}
+.chapter-info {
+  flex: 1;
+}
+.chapter-title {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #8b1a1a;
+  display: block;
+}
+.chapter-arrow {
+  font-size: 1.5rem;
+  color: #d4582a;
+  transition: transform 0.15s ease;
+}
+.toc-link:hover .chapter-arrow {
+  transform: translateX(4px);
+}
+.footer-note {
+  text-align: center;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 2px solid #e2d9ce;
+  color: #777;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <p class="book-title">Modern Algebra: Structure and Method</p>
+  <h1>Table of Contents</h1>
+  <p class="subtitle">Mary P. Dolciani · Simon L. Berman · Julius Freilich</p>
+</div>
+
+<div class="container">
+  <ol class="toc-list">
+    <li class="toc-item">
+      <a class="toc-link" href="01-symbols-and-sets/index.html">
+        <span class="chapter-number">1</span>
+        <span class="chapter-info">
+          <span class="chapter-title">Symbols and Sets</span>
+        </span>
+        <span class="chapter-arrow">→</span>
+      </a>
+    </li>
+    <li class="toc-item">
+      <a class="toc-link" href="02-variables-and-open-sentences/index.html">
+        <span class="chapter-number">2</span>
+        <span class="chapter-info">
+          <span class="chapter-title">Variables and Open Sentences</span>
+        </span>
+        <span class="chapter-arrow">→</span>
+      </a>
+    </li>
+    <li class="toc-item">
+      <a class="toc-link" href="03-axioms-equations-and-problem-solving/index.html">
+        <span class="chapter-number">3</span>
+        <span class="chapter-info">
+          <span class="chapter-title">Axioms, Equations, and Problem Solving</span>
+        </span>
+        <span class="chapter-arrow">→</span>
+      </a>
+    </li>
+    <li class="toc-item">
+      <a class="toc-link" href="04-the-negative-numbers/index.html">
+        <span class="chapter-number">4</span>
+        <span class="chapter-info">
+          <span class="chapter-title">The Negative Numbers</span>
+        </span>
+        <span class="chapter-arrow">→</span>
+      </a>
+    </li>
+    <li class="toc-item">
+      <a class="toc-link" href="05-equations-inequalities-and-problem-solving/index.html">
+        <span class="chapter-number">5</span>
+        <span class="chapter-info">
+          <span class="chapter-title">Equations, Inequalities, and Problem Solving</span>
+        </span>
+        <span class="chapter-arrow">→</span>
+      </a>
+    </li>
+    <li class="toc-item">
+      <a class="toc-link" href="06-working-with-polynomials/index.html">
+        <span class="chapter-number">6</span>
+        <span class="chapter-info">
+          <span class="chapter-title">Working with Polynomials</span>
+        </span>
+        <span class="chapter-arrow">→</span>
+      </a>
+    </li>
+    <li class="toc-item">
+      <a class="toc-link" href="07-special-products-and-factoring/index.html">
+        <span class="chapter-number">7</span>
+        <span class="chapter-info">
+          <span class="chapter-title">Special Products and Factoring</span>
+        </span>
+        <span class="chapter-arrow">→</span>
+      </a>
+    </li>
+    <li class="toc-item">
+      <a class="toc-link" href="08-working-with-fractions/index.html">
+        <span class="chapter-number">8</span>
+        <span class="chapter-info">
+          <span class="chapter-title">Working with Fractions</span>
+        </span>
+        <span class="chapter-arrow">→</span>
+      </a>
+    </li>
+    <li class="toc-item">
+      <a class="toc-link" href="09-graphs/index.html">
+        <span class="chapter-number">9</span>
+        <span class="chapter-info">
+          <span class="chapter-title">Graphs</span>
+        </span>
+        <span class="chapter-arrow">→</span>
+      </a>
+    </li>
+    <li class="toc-item">
+      <a class="toc-link" href="10-sentences-in-two-variables/index.html">
+        <span class="chapter-number">10</span>
+        <span class="chapter-info">
+          <span class="chapter-title">Sentences in Two Variables</span>
+        </span>
+        <span class="chapter-arrow">→</span>
+      </a>
+    </li>
+    <li class="toc-item">
+      <a class="toc-link" href="11-the-real-numbers/index.html">
+        <span class="chapter-number">11</span>
+        <span class="chapter-info">
+          <span class="chapter-title">The Real Numbers</span>
+        </span>
+        <span class="chapter-arrow">→</span>
+      </a>
+    </li>
+    <li class="toc-item">
+      <a class="toc-link" href="12-functions-and-variation/index.html">
+        <span class="chapter-number">12</span>
+        <span class="chapter-info">
+          <span class="chapter-title">Functions and Variation</span>
+        </span>
+        <span class="chapter-arrow">→</span>
+      </a>
+    </li>
+    <li class="toc-item">
+      <a class="toc-link" href="13-quadratic-equations-and-inequalities/index.html">
+        <span class="chapter-number">13</span>
+        <span class="chapter-info">
+          <span class="chapter-title">Quadratic Equations and Inequalities</span>
+        </span>
+        <span class="chapter-arrow">→</span>
+      </a>
+    </li>
+    <li class="toc-item">
+      <a class="toc-link" href="14-geometry-and-trigonometry/index.html">
+        <span class="chapter-number">14</span>
+        <span class="chapter-info">
+          <span class="chapter-title">Geometry and Trigonometry</span>
+        </span>
+        <span class="chapter-arrow">→</span>
+      </a>
+    </li>
+    <li class="toc-item">
+      <a class="toc-link" href="15-comprehensive-review-and-tests/index.html">
+        <span class="chapter-number">15</span>
+        <span class="chapter-info">
+          <span class="chapter-title">Comprehensive Review and Tests</span>
+        </span>
+        <span class="chapter-arrow">→</span>
+      </a>
+    </li>
+  </ol>
+
+  <p class="footer-note">Modern Algebra: Structure and Method — 15 Chapters</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 11 — Ratio, Proportion, and Variation | Practical Algebra</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', 'Cambria', 'Times New Roman', serif;
+            background: #fdf8f3;
+            color: #2d2d2d;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+        .hero {
+            background: linear-gradient(135deg, #0d4f4f 0%, #1a2332 100%);
+            color: white;
+            padding: 3rem 2rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero .chapter-num {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 6rem;
+            font-weight: 800;
+            opacity: 0.12;
+            position: absolute;
+            top: -0.5rem;
+            right: 2rem;
+            line-height: 1;
+        }
+        .hero h1 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .hero .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.85;
+            font-style: italic;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        h2 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #0d4f4f;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #c0602b;
+        }
+        h3 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #0d4f4f;
+            font-size: 1.5rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+        p { margin-bottom: 1rem; }
+        ul, ol { margin: 0.75rem 0 1.25rem 1.5rem; }
+        li { margin-bottom: 0.4rem; }
+        /* Highlight boxes */
+        .box { padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 5px solid; }
+        .box-definition { border-color: #0d4f4f; background: #e8f4f4; }
+        .box-insight { border-color: #c0602b; background: #fef3ec; }
+        .box-caution { border-color: #9b2c2c; background: #fef2f2; }
+        .box-example { border-color: #276749; background: #f0f7f0; }
+        .box-practice { border-color: #6b46c1; background: #f5f0ff; }
+        .box-formula { border-color: #2b6cb0; background: #ebf4ff; }
+        .box-label {
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .box-definition .box-label { color: #0d4f4f; }
+        .box-insight .box-label { color: #c0602b; }
+        .box-caution .box-label { color: #9b2c2c; }
+        .box-example .box-label { color: #276749; }
+        .box-practice .box-label { color: #6b46c1; }
+        .box-formula .box-label { color: #2b6cb0; }
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.25rem 0;
+            font-size: 1.05rem;
+        }
+        th, td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e2d9ce;
+        }
+        th {
+            background: #0d4f4f;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        tr:nth-child(even) { background: #f9f5f0; }
+        /* Solution toggle */
+        .solution-toggle {
+            background: #276749;
+            color: white;
+            border: none;
+            padding: 0.5rem 1.25rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-top: 0.75rem;
+            transition: background 0.2s;
+        }
+        .solution-toggle:hover { background: #1e5438; }
+        .solution-content {
+            display: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px dashed #276749;
+        }
+        .solution-content.show { display: block; }
+        /* Step markers */
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin: 0.75rem 0;
+        }
+        .step-num {
+            flex-shrink: 0;
+            width: 2rem;
+            height: 2rem;
+            background: #0d4f4f;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        .step-body { flex: 1; padding-top: 0.15rem; }
+        /* Navigation */
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e2d9ce;
+        }
+        .nav-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #0d4f4f;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .nav-btn:hover { background: #0a3d3d; }
+        svg { max-width: 100%; height: auto; display: block; margin: 1.5rem auto; }
+        .katex { font-size: 1.3em; }
+
+        .katex-display { margin: 1.5rem 0; overflow-x: auto; font-size: 1.35em; }
+        .overview-list { list-style: none; margin-left: 0; }
+        .overview-list li { padding: 0.35rem 0; }
+        .overview-list li::before {
+            content: "\2713";
+            color: #276749;
+            font-weight: 700;
+            margin-right: 0.6rem;
+        }
+        .diagram-caption {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            font-size: 0.95rem;
+            margin-top: -0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .ref-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 2rem; }
+            .hero .chapter-num { font-size: 4rem; }
+            h2 { font-size: 1.6rem; }
+            .card { padding: 1.25rem; }
+            .box { padding: 1.25rem; }
+            .nav-footer { flex-direction: column; gap: 1rem; }
+            .nav-btn { text-align: center; }
+            .ref-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+    <div class="chapter-num">11</div>
+    <div style="position:relative">
+        <p style="font-family: 'Segoe UI',sans-serif; text-transform:uppercase; letter-spacing:0.2em; font-size:0.9rem; opacity:0.7; margin-bottom:0.5rem;">Chapter 11</p>
+        <h1>Ratio, Proportion, and Variation</h1>
+        <p class="subtitle">Comparing quantities and discovering how variables change together</p>
+    </div>
+</div>
+
+<div class="container">
+
+<!-- ============ OVERVIEW ============ -->
+<div class="card">
+    <h2>What You'll Learn</h2>
+    <ul class="overview-list">
+        <li>Write ratios and reduce them to lowest terms</li>
+        <li>Set up and solve proportions using cross multiplication</li>
+        <li>Recognize and work with direct proportion (direct variation)</li>
+        <li>Recognize and work with inverse proportion (inverse variation)</li>
+        <li>Handle joint variation and combined variation</li>
+        <li>Apply ratios and proportions to real-world problems: scale drawings, similar triangles, mixtures, and more</li>
+    </ul>
+</div>
+
+<!-- ============ SECTION 1: RATIO ============ -->
+<div class="card">
+    <h2>1. Ratio</h2>
+
+    <p>One of the most natural things humans do with numbers is <strong>compare</strong> them. A <em>ratio</em> gives us a way to compare two quantities by division rather than by subtraction.</p>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Ratio</div>
+        <p>If \(a\) and \(b\) are quantities expressed in the <strong>same unit of measure</strong>, the <em>ratio of \(a\) to \(b\)</em> is the quotient</p>
+        $$\frac{a}{b} \qquad (b \neq 0)$$
+        <p style="margin-bottom:0">A ratio may also be written as \(a : b\) or \(a \div b\). Always express a ratio in <strong>lowest terms</strong>.</p>
+    </div>
+
+    <p>For example, if one person is 22 years old and another is 33 years old, the ratio of their ages is</p>
+    $$\frac{22}{33} = \frac{2}{3} \qquad \text{or} \quad 2:3$$
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight</div>
+        <p style="margin-bottom:0">Because a ratio is a quotient, the <strong>units cancel</strong>. The ratio \(20\text{ ft} : 50\text{ ft}\) is simply \(2:5\). However, both quantities <em>must</em> be in the same unit before you form the ratio. For instance, to compare 3 yards with 7 feet, first convert: \(3 \text{ yd} = 9 \text{ ft}\), giving a ratio of \(9:7\).</p>
+    </div>
+
+    <h3>Quick Examples</h3>
+    <div style="overflow-x:auto;">
+    <table>
+        <thead>
+            <tr><th>Comparison</th><th>Ratio (lowest terms)</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>15 days to 35 days</td><td>\(3:7\)</td></tr>
+            <tr><td>7 dozen to 6 dozen</td><td>\(7:6\)</td></tr>
+            <tr><td>25 gallons to 50 gallons</td><td>\(1:2\)</td></tr>
+            <tr><td>45 dimes to 12 quarters</td><td>\(45 \text{ dimes} = 450\text{c},\; 12 \text{ quarters} = 300\text{c} \Rightarrow 3:2\)</td></tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+
+<!-- ============ SECTION 2: PROPORTION ============ -->
+<div class="card">
+    <h2>2. Proportion</h2>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Proportion</div>
+        <p>A <em>proportion</em> is an equation stating that two ratios are equal:</p>
+        $$\frac{a}{b} = \frac{c}{d} \qquad \text{or equivalently} \quad a : b = c : d$$
+        <p style="margin-bottom:0">We read this as &ldquo;\(a\) is to \(b\) as \(c\) is to \(d\).&rdquo;</p>
+    </div>
+
+    <h3>Means and Extremes</h3>
+    <p>In the proportion \(a : b = c : d\):</p>
+    <ul>
+        <li><strong>Extremes</strong> &mdash; the outer terms: \(a\) and \(d\)</li>
+        <li><strong>Means</strong> &mdash; the inner terms: \(b\) and \(c\)</li>
+    </ul>
+
+    <div class="box box-formula">
+        <div class="box-label">Cross-Multiplication Theorem</div>
+        <p>If \(b \neq 0\) and \(d \neq 0\), and if \(\dfrac{a}{b} = \dfrac{c}{d}\), then</p>
+        $$a \cdot d = b \cdot c$$
+        <p style="margin-bottom:0">The <strong>product of the extremes</strong> equals the <strong>product of the means</strong>. This is the fundamental tool for solving proportions.</p>
+    </div>
+
+    <p><strong>Proof sketch:</strong> Start with \(\frac{a}{b} = \frac{c}{d}\). Multiply both sides by \(bd\):</p>
+    $$\frac{a}{b} \cdot bd = \frac{c}{d} \cdot bd \implies a \cdot d = b \cdot c \quad \checkmark$$
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight</div>
+        <p style="margin-bottom:0">A proportion is just an equation, so <em>all the rules of equations</em> apply. Cross multiplication is simply a shortcut for clearing the denominators. You can also interchange means or extremes: if \(a:b = c:d\), then \(a:c = b:d\), \(d:b = c:a\), and \(d:c = b:a\).</p>
+    </div>
+</div>
+
+<!-- ============ SECTION 3: SOLVING PROPORTIONS ============ -->
+<div class="card">
+    <h2>3. Solving Proportions</h2>
+
+    <p>When three of the four terms in a proportion are known, cross multiplication lets us find the missing term.</p>
+
+    <div class="box box-example">
+        <div class="box-label">Example &mdash; Solving a Basic Proportion</div>
+        <p><strong>Problem:</strong> Solve \(\dfrac{3}{x} = \dfrac{9}{15}\).</p>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">Cross multiply: \(3 \cdot 15 = 9 \cdot x\)</div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">Simplify: \(45 = 9x\)</div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">Divide both sides by 9: \(x = 5\)</div>
+        </div>
+        <p style="margin-bottom:0"><strong>Check:</strong> \(\frac{3}{5} = \frac{9}{15} = \frac{3}{5}\) &check;</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example &mdash; Proportion with an Expression</div>
+        <p><strong>Problem:</strong> Solve \(\dfrac{5}{x - 2} = \dfrac{4}{7}\).</p>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">Cross multiply: \(5 \cdot 7 = 4(x - 2)\)</div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">Simplify: \(35 = 4x - 8\)</div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">Add 8: \(43 = 4x\)</div>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">Divide: \(x = \dfrac{43}{4} = 10\tfrac{3}{4}\)</div>
+        </div>
+    </div>
+</div>
+
+<!-- ============ SECTION 4: DIRECT VARIATION ============ -->
+<div class="card">
+    <h2>4. Direct Variation (Direct Proportion)</h2>
+
+    <p>When two quantities increase (or decrease) together at a constant rate, they are in <em>direct variation</em>.</p>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Direct Variation</div>
+        <p>If two variables \(x\) and \(y\) are related so that</p>
+        $$\frac{y}{x} = k \qquad \text{(constant)}$$
+        <p>then \(y\) <strong>varies directly as</strong> \(x\). Equivalently,</p>
+        $$y = kx$$
+        <p style="margin-bottom:0">The constant \(k\) is called the <strong>constant of variation</strong> (or constant of proportionality).</p>
+    </div>
+
+    <p>Consider traveling at a constant speed of 60 mph. The relationship between time \(t\) and distance \(d\) is:</p>
+
+    <div style="overflow-x:auto;">
+    <table>
+        <thead>
+            <tr><th>\(t\) (hours)</th><th>1</th><th>2</th><th>3</th><th>6</th><th>10</th><th>12</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>\(d\) (miles)</td><td>60</td><td>120</td><td>180</td><td>360</td><td>600</td><td>720</td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <p>Every ratio \(\frac{t}{d}\) equals \(\frac{1}{60}\). The distance varies directly as time with \(k = 60\), giving \(d = 60t\).</p>
+
+    <!-- SVG: Direct Variation Graph -->
+    <svg viewBox="0 0 500 360" width="500" xmlns="http://www.w3.org/2000/svg" style="max-width:480px;">
+        <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                <polygon points="0 0, 10 3.5, 0 7" fill="#2d2d2d"/>
+            </marker>
+        </defs>
+        <!-- Grid lines -->
+        <g stroke="#e2d9ce" stroke-width="0.5">
+            <line x1="60" y1="300" x2="470" y2="300"/>
+            <line x1="60" y1="240" x2="470" y2="240"/>
+            <line x1="60" y1="180" x2="470" y2="180"/>
+            <line x1="60" y1="120" x2="470" y2="120"/>
+            <line x1="60" y1="60" x2="470" y2="60"/>
+            <line x1="120" y1="20" x2="120" y2="310"/>
+            <line x1="180" y1="20" x2="180" y2="310"/>
+            <line x1="240" y1="20" x2="240" y2="310"/>
+            <line x1="300" y1="20" x2="300" y2="310"/>
+            <line x1="360" y1="20" x2="360" y2="310"/>
+            <line x1="420" y1="20" x2="420" y2="310"/>
+        </g>
+        <!-- Axes -->
+        <line x1="60" y1="310" x2="60" y2="20" stroke="#2d2d2d" stroke-width="2" marker-end="url(#arrowhead)"/>
+        <line x1="50" y1="300" x2="470" y2="300" stroke="#2d2d2d" stroke-width="2" marker-end="url(#arrowhead)"/>
+        <!-- Axis labels -->
+        <text x="475" y="305" font-family="Georgia, serif" font-size="14" fill="#2d2d2d">x</text>
+        <text x="50" y="15" font-family="Georgia, serif" font-size="14" fill="#2d2d2d">y</text>
+        <!-- Tick labels x-axis -->
+        <text x="120" y="325" font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="middle">1</text>
+        <text x="180" y="325" font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="middle">2</text>
+        <text x="240" y="325" font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="middle">3</text>
+        <text x="300" y="325" font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="middle">4</text>
+        <text x="360" y="325" font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="middle">5</text>
+        <text x="420" y="325" font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="middle">6</text>
+        <!-- Tick labels y-axis -->
+        <text x="45" y="244" font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="end">3</text>
+        <text x="45" y="184" font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="end">6</text>
+        <text x="45" y="124" font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="end">9</text>
+        <text x="45" y="64" font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="end">12</text>
+        <!-- Origin -->
+        <text x="50" y="318" font-family="Georgia, serif" font-size="12" fill="#666">0</text>
+        <!-- Direct variation line y = 2x (scaled: each unit = 60px on x, 20px per unit on y) -->
+        <!-- Using scale: x-unit=60px from 60, y-unit=20px per unit, y=kx with k=2 -->
+        <!-- Points: (0,0)->(60,300), (1,2)->(120,260), (2,4)->(180,220), (3,6)->(240,180), (4,8)->(300,140), (5,10)->(360,100), (6,12)->(420,60) -->
+        <line x1="60" y1="300" x2="430" y2="26" stroke="#c0602b" stroke-width="3"/>
+        <!-- Data points -->
+        <circle cx="60" cy="300" r="5" fill="#c0602b"/>
+        <circle cx="120" cy="260" r="5" fill="#c0602b"/>
+        <circle cx="180" cy="220" r="5" fill="#c0602b"/>
+        <circle cx="240" cy="180" r="5" fill="#c0602b"/>
+        <circle cx="300" cy="140" r="5" fill="#c0602b"/>
+        <circle cx="360" cy="100" r="5" fill="#c0602b"/>
+        <circle cx="420" cy="60" r="5" fill="#c0602b"/>
+        <!-- Label -->
+        <text x="370" y="80" font-family="Georgia, serif" font-size="15" fill="#c0602b" font-style="italic">y = kx</text>
+        <!-- Title -->
+        <text x="265" y="350" font-family="'Segoe UI', sans-serif" font-size="14" fill="#0d4f4f" text-anchor="middle" font-weight="600">Direct Variation: straight line through the origin</text>
+    </svg>
+    <p class="diagram-caption">Figure 1. The graph of direct variation is always a straight line through the origin.</p>
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight &mdash; Recognizing Direct Variation</div>
+        <p style="margin-bottom:0">If doubling one quantity doubles the other, you have direct variation. The graph is a <strong>straight line through the origin</strong>, and the slope of that line is the constant of variation \(k\).</p>
+    </div>
+</div>
+
+<!-- ============ SECTION 5: INVERSE VARIATION ============ -->
+<div class="card">
+    <h2>5. Inverse Variation (Inverse Proportion)</h2>
+
+    <p>Sometimes when one quantity <em>increases</em>, the other <em>decreases</em> so that their product stays constant. This is <em>inverse variation</em>.</p>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Inverse Variation</div>
+        <p>If two variables \(x\) and \(y\) are related so that</p>
+        $$x \cdot y = k \qquad \text{(constant)}$$
+        <p>then \(y\) <strong>varies inversely as</strong> \(x\). Equivalently,</p>
+        $$y = \frac{k}{x}$$
+        <p style="margin-bottom:0">The constant \(k\) is again called the <strong>constant of variation</strong>.</p>
+    </div>
+
+    <p>Consider the relationship between the pressure \(p\) and volume \(V\) of a gas at constant temperature:</p>
+
+    <div style="overflow-x:auto;">
+    <table>
+        <thead>
+            <tr><th>\(p\) (psi)</th><th>50</th><th>40</th><th>20</th><th>15</th><th>10</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>\(V\) (cu. in.)</td><td>200</td><td>250</td><td>500</td><td>667</td><td>1000</td></tr>
+            <tr><td>\(p \cdot V\)</td><td>10,000</td><td>10,000</td><td>10,000</td><td>10,000</td><td>10,000</td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <p>Every product \(p \cdot V = 10{,}000\). Pressure and volume are inversely proportional with \(k = 10{,}000\).</p>
+
+    <!-- SVG: Inverse Variation Graph (Hyperbola) -->
+    <svg viewBox="0 0 500 380" width="500" xmlns="http://www.w3.org/2000/svg" style="max-width:480px;">
+        <defs>
+            <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                <polygon points="0 0, 10 3.5, 0 7" fill="#2d2d2d"/>
+            </marker>
+        </defs>
+        <!-- Grid lines -->
+        <g stroke="#e2d9ce" stroke-width="0.5">
+            <line x1="60" y1="310" x2="470" y2="310"/>
+            <line x1="60" y1="260" x2="470" y2="260"/>
+            <line x1="60" y1="210" x2="470" y2="210"/>
+            <line x1="60" y1="160" x2="470" y2="160"/>
+            <line x1="60" y1="110" x2="470" y2="110"/>
+            <line x1="60" y1="60" x2="470" y2="60"/>
+            <line x1="120" y1="30" x2="120" y2="320"/>
+            <line x1="180" y1="30" x2="180" y2="320"/>
+            <line x1="240" y1="30" x2="240" y2="320"/>
+            <line x1="300" y1="30" x2="300" y2="320"/>
+            <line x1="360" y1="30" x2="360" y2="320"/>
+            <line x1="420" y1="30" x2="420" y2="320"/>
+        </g>
+        <!-- Axes -->
+        <line x1="60" y1="320" x2="60" y2="30" stroke="#2d2d2d" stroke-width="2" marker-end="url(#arrowhead2)"/>
+        <line x1="50" y1="310" x2="470" y2="310" stroke="#2d2d2d" stroke-width="2" marker-end="url(#arrowhead2)"/>
+        <!-- Axis labels -->
+        <text x="475" y="315" font-family="Georgia, serif" font-size="14" fill="#2d2d2d">x</text>
+        <text x="50" y="25" font-family="Georgia, serif" font-size="14" fill="#2d2d2d">y</text>
+        <!-- Tick labels x-axis -->
+        <text x="120" y="335" font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="middle">1</text>
+        <text x="180" y="335" font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="middle">2</text>
+        <text x="240" y="335" font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="middle">3</text>
+        <text x="300" y="335" font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="middle">4</text>
+        <text x="360" y="335" font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="middle">5</text>
+        <text x="420" y="335" font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="middle">6</text>
+        <!-- Tick labels y-axis -->
+        <text x="45" y="314" font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="end">0</text>
+        <text x="45" y="264" font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="end">2</text>
+        <text x="45" y="214" font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="end">4</text>
+        <text x="45" y="164" font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="end">6</text>
+        <text x="45" y="114" font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="end">8</text>
+        <text x="45" y="64" font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="end">10</text>
+        <!-- Hyperbola y = k/x with k=8, scale: x-unit=60, y-unit=25 per unit -->
+        <!-- Points: x=0.5->y=16(off), x=0.8->y=10, x=1->y=8, x=1.33->y=6, x=2->y=4, x=2.67->y=3, x=4->y=2, x=5.33->y=1.5, x=8->y=1 -->
+        <!-- Pixel: px = 60 + x*60, py = 310 - y*25 -->
+        <path d="M 108,60 C 108,60 115,78 120,110 C 128,155 140,185 150,210 C 165,240 180,260 210,278 C 240,290 280,298 340,304 C 380,307 420,308 460,309"
+              fill="none" stroke="#0d4f4f" stroke-width="3"/>
+        <!-- Data points for y=8/x: (1,8), (2,4), (4,2), (8,1) -->
+        <circle cx="120" cy="110" r="5" fill="#0d4f4f"/>
+        <circle cx="180" cy="210" r="5" fill="#0d4f4f"/>
+        <circle cx="240" cy="243" r="5" fill="#0d4f4f"/>
+        <circle cx="300" cy="260" r="5" fill="#0d4f4f"/>
+        <circle cx="360" cy="270" r="5" fill="#0d4f4f"/>
+        <circle cx="420" cy="277" r="5" fill="#0d4f4f"/>
+        <!-- Label -->
+        <text x="155" y="90" font-family="Georgia, serif" font-size="15" fill="#0d4f4f" font-style="italic">y = k/x</text>
+        <!-- Title -->
+        <text x="265" y="370" font-family="'Segoe UI', sans-serif" font-size="14" fill="#0d4f4f" text-anchor="middle" font-weight="600">Inverse Variation: a hyperbola approaching the axes</text>
+    </svg>
+    <p class="diagram-caption">Figure 2. The graph of inverse variation is a hyperbola &mdash; as \(x\) grows, \(y\) shrinks toward zero.</p>
+
+    <div class="box box-caution">
+        <div class="box-label">Common Mistake</div>
+        <p style="margin-bottom:0">Don&rsquo;t confuse inverse variation with negative variation. In inverse variation, as one variable increases the other <em>decreases</em>, but both can remain positive. The key test: check whether the <strong>product</strong> \(xy\) is constant (inverse) or the <strong>quotient</strong> \(y/x\) is constant (direct).</p>
+    </div>
+</div>
+
+<!-- ============ SECTION 6: JOINT & COMBINED VARIATION ============ -->
+<div class="card">
+    <h2>6. Joint and Combined Variation</h2>
+
+    <h3>Joint Variation</h3>
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Joint Variation</div>
+        <p>If \(x\) varies directly as the <strong>product</strong> of two or more variables, \(x\) is said to <em>vary jointly</em> as those variables:</p>
+        $$x = k \cdot a \cdot b \qquad \text{or equivalently} \quad \frac{x}{ab} = k$$
+        <p style="margin-bottom:0">Notice that \(x\) varies directly with each variable when the others are held constant.</p>
+    </div>
+
+    <p>For example, the area of a triangle \(A = \frac{1}{2}bh\) shows that area varies jointly as the base \(b\) and height \(h\) (with \(k = \frac{1}{2}\)).</p>
+
+    <h3>Combined Variation</h3>
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Combined Variation</div>
+        <p><em>Combined variation</em> mixes direct and inverse variation in a single relationship:</p>
+        $$x = \frac{k \cdot y}{z}$$
+        <p style="margin-bottom:0">Here \(x\) varies <strong>directly</strong> as \(y\) and <strong>inversely</strong> as \(z\).</p>
+    </div>
+
+    <div class="box box-formula">
+        <div class="box-label">Summary of Variation Types</div>
+        <div style="overflow-x:auto;">
+        <table>
+            <thead>
+                <tr><th>Type</th><th>Equation</th><th>Meaning</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Direct</td><td>\(y = kx\)</td><td>\(y/x\) is constant</td></tr>
+                <tr><td>Inverse</td><td>\(y = k/x\)</td><td>\(xy\) is constant</td></tr>
+                <tr><td>Joint</td><td>\(z = kxy\)</td><td>\(z/(xy)\) is constant</td></tr>
+                <tr><td>Combined</td><td>\(z = kx/y\)</td><td>\(zy/x\) is constant</td></tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+</div>
+
+<!-- ============ SECTION 7: SIMILAR TRIANGLES ============ -->
+<div class="card">
+    <h2>7. Application: Similar Triangles</h2>
+
+    <p><strong>Similar triangles</strong> have the same shape but not necessarily the same size. Their corresponding angles are equal, and their corresponding sides are <em>proportional</em>.</p>
+
+    <!-- SVG: Similar Triangles -->
+    <svg viewBox="0 0 520 300" width="520" xmlns="http://www.w3.org/2000/svg" style="max-width:500px;">
+        <!-- Larger triangle ABC -->
+        <polygon points="40,260 260,260 260,60" fill="none" stroke="#0d4f4f" stroke-width="2.5"/>
+        <!-- Side labels for large triangle -->
+        <text x="150" y="280" font-family="Georgia, serif" font-size="16" fill="#0d4f4f" text-anchor="middle" font-weight="700">b = 8</text>
+        <text x="274" y="165" font-family="Georgia, serif" font-size="16" fill="#0d4f4f" text-anchor="start" font-weight="700">a = 10</text>
+        <text x="130" y="150" font-family="Georgia, serif" font-size="16" fill="#c0602b" text-anchor="end" font-weight="700">c = 6</text>
+        <!-- Vertex labels -->
+        <text x="25" y="270" font-family="'Segoe UI', sans-serif" font-size="15" fill="#2d2d2d" font-weight="700">A</text>
+        <text x="265" y="278" font-family="'Segoe UI', sans-serif" font-size="15" fill="#2d2d2d" font-weight="700">B</text>
+        <text x="265" y="52" font-family="'Segoe UI', sans-serif" font-size="15" fill="#2d2d2d" font-weight="700">C</text>
+        <!-- Right angle marker at B -->
+        <polyline points="240,260 240,240 260,240" fill="none" stroke="#0d4f4f" stroke-width="1.5"/>
+
+        <!-- Smaller triangle DEF -->
+        <polygon points="320,260 430,260 430,130" fill="none" stroke="#c0602b" stroke-width="2.5"/>
+        <!-- Side labels for small triangle -->
+        <text x="375" y="280" font-family="Georgia, serif" font-size="15" fill="#c0602b" text-anchor="middle" font-weight="700">4</text>
+        <text x="444" y="200" font-family="Georgia, serif" font-size="15" fill="#c0602b" text-anchor="start" font-weight="700">5</text>
+        <text x="362" y="190" font-family="Georgia, serif" font-size="15" fill="#0d4f4f" text-anchor="end" font-weight="700">3</text>
+        <!-- Vertex labels -->
+        <text x="305" y="270" font-family="'Segoe UI', sans-serif" font-size="15" fill="#2d2d2d" font-weight="700">D</text>
+        <text x="435" y="278" font-family="'Segoe UI', sans-serif" font-size="15" fill="#2d2d2d" font-weight="700">E</text>
+        <text x="435" y="125" font-family="'Segoe UI', sans-serif" font-size="15" fill="#2d2d2d" font-weight="700">F</text>
+        <!-- Right angle marker at E -->
+        <polyline points="410,260 410,240 430,240" fill="none" stroke="#c0602b" stroke-width="1.5"/>
+
+        <!-- Proportion label -->
+        <text x="260" y="20" font-family="Georgia, serif" font-size="15" fill="#2d2d2d" text-anchor="middle" font-style="italic">Corresponding sides are proportional:</text>
+        <text x="260" y="42" font-family="Georgia, serif" font-size="15" fill="#2d2d2d" text-anchor="middle">3/6 = 4/8 = 5/10 = 1/2</text>
+    </svg>
+    <p class="diagram-caption">Figure 3. Similar triangles: sides of the smaller triangle are exactly half the corresponding sides of the larger triangle (ratio 1:2).</p>
+
+    <p>If triangle \(ABC\) has sides 6, 8, 10 and is similar to triangle \(DEF\) with sides 3, 4, 5, then the ratio of corresponding sides is constant:</p>
+    $$\frac{3}{6} = \frac{4}{8} = \frac{5}{10} = \frac{1}{2}$$
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight &mdash; Applications of Proportion</div>
+        <p style="margin-bottom:0">Proportions appear everywhere: <strong>scale drawings</strong> (architectural plans, maps), <strong>similar figures</strong> (geometry), <strong>unit conversion</strong>, <strong>recipe scaling</strong>, and <strong>gear ratios</strong>. In each case, two ratios are set equal and the unknown is found by cross multiplication.</p>
+    </div>
+</div>
+
+<!-- ============ WORKED PROBLEMS ============ -->
+<div class="card">
+    <h2>Worked Problems</h2>
+
+    <!-- Problem 1 -->
+    <div class="box box-practice">
+        <div class="box-label">Problem 1 &mdash; Solving a Proportion</div>
+        <p style="margin-bottom:0">If \(\dfrac{3}{x} = \dfrac{9}{15}\), find \(x\).</p>
+    </div>
+    <div class="box box-example">
+        <div class="box-label">Solution</div>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">Cross multiply: \(3 \cdot 15 = 9 \cdot x\)</div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">Simplify: \(45 = 9x\)</div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">Divide both sides by 9: \(\;x = \dfrac{45}{9} = 5\)</div>
+        </div>
+        <p style="margin-bottom:0"><strong>Check:</strong> \(\frac{3}{5} = 0.6\) and \(\frac{9}{15} = 0.6\) &check;</p>
+    </div>
+
+    <!-- Problem 2 -->
+    <div class="box box-practice">
+        <div class="box-label">Problem 2 &mdash; Direct Variation</div>
+        <p style="margin-bottom:0">\(y\) varies directly as \(x\). If \(y = 12\) when \(x = 4\), find \(y\) when \(x = 7\).</p>
+    </div>
+    <div class="box box-example">
+        <div class="box-label">Solution</div>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">Write the equation: \(y = kx\)</div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">Find \(k\): \(12 = k \cdot 4 \implies k = 3\)</div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">Write the specific equation: \(y = 3x\)</div>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">Substitute \(x = 7\): \(y = 3(7) = 21\)</div>
+        </div>
+        <p style="margin-bottom:0"><strong>Answer:</strong> \(y = 21\) when \(x = 7\).</p>
+    </div>
+
+    <!-- Problem 3 -->
+    <div class="box box-practice">
+        <div class="box-label">Problem 3 &mdash; Inverse Variation</div>
+        <p style="margin-bottom:0">\(y\) varies inversely as \(x\). If \(y = 6\) when \(x = 8\), find \(y\) when \(x = 12\).</p>
+    </div>
+    <div class="box box-example">
+        <div class="box-label">Solution</div>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">Write the equation: \(xy = k\)</div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">Find \(k\): \(8 \cdot 6 = 48\), so \(k = 48\)</div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">Write the specific equation: \(xy = 48\), or \(y = \dfrac{48}{x}\)</div>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">Substitute \(x = 12\): \(y = \dfrac{48}{12} = 4\)</div>
+        </div>
+        <p style="margin-bottom:0"><strong>Answer:</strong> \(y = 4\) when \(x = 12\).</p>
+    </div>
+
+    <!-- Problem 4 -->
+    <div class="box box-practice">
+        <div class="box-label">Problem 4 &mdash; Joint Variation</div>
+        <p style="margin-bottom:0">\(z\) varies jointly as \(x\) and \(y\). If \(z = 60\) when \(x = 3\) and \(y = 4\), find \(z\) when \(x = 5\) and \(y = 2\).</p>
+    </div>
+    <div class="box box-example">
+        <div class="box-label">Solution</div>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">Write the equation: \(z = kxy\)</div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">Find \(k\): \(60 = k(3)(4) = 12k \implies k = 5\)</div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">Write the specific equation: \(z = 5xy\)</div>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">Substitute \(x = 5,\; y = 2\): \(z = 5(5)(2) = 50\)</div>
+        </div>
+        <p style="margin-bottom:0"><strong>Answer:</strong> \(z = 50\) when \(x = 5\) and \(y = 2\).</p>
+    </div>
+
+    <!-- Problem 5 -->
+    <div class="box box-practice">
+        <div class="box-label">Problem 5 &mdash; Ratio / Mixture Problem</div>
+        <p style="margin-bottom:0">Paint is mixed in the ratio \(3:5\) (Part A to Part B). If you need 24 liters of paint in total, how much of each part do you need?</p>
+    </div>
+    <div class="box box-example">
+        <div class="box-label">Solution</div>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">Total parts: \(3 + 5 = 8\) parts</div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">Value of one part: \(\dfrac{24}{8} = 3\) liters per part</div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">Part A: \(3 \times 3 = 9\) liters</div>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">Part B: \(5 \times 3 = 15\) liters</div>
+        </div>
+        <p style="margin-bottom:0"><strong>Check:</strong> \(9 + 15 = 24\) liters, and \(9:15 = 3:5\) &check;</p>
+    </div>
+
+    <!-- Problem 6 -->
+    <div class="box box-practice">
+        <div class="box-label">Problem 6 &mdash; Similar Triangles</div>
+        <p style="margin-bottom:0">Two similar triangles have corresponding sides. The first triangle has sides 3, 4, 5. The second has sides 6, \(?\), 10. Find the missing side.</p>
+    </div>
+    <div class="box box-example">
+        <div class="box-label">Solution</div>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">Identify the scale factor. Compare known corresponding sides: \(\dfrac{6}{3} = 2\) and \(\dfrac{10}{5} = 2\).</div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">The scale factor is 2. The missing side corresponds to 4 in the first triangle.</div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">Set up the proportion: \(\dfrac{4}{?} = \dfrac{3}{6}\)</div>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">Cross multiply: \(4 \cdot 6 = 3 \cdot {?} \implies 24 = 3 \cdot {?} \implies {?} = 8\)</div>
+        </div>
+        <p style="margin-bottom:0"><strong>Answer:</strong> The missing side is 8. The second triangle has sides 6, 8, 10.</p>
+    </div>
+</div>
+
+<!-- ============ QUICK REFERENCE ============ -->
+<div class="card">
+    <h2>Quick Reference</h2>
+
+    <div class="ref-grid">
+        <div class="box box-formula" style="margin:0;">
+            <div class="box-label">Ratio</div>
+            <p style="margin-bottom:0">$$\frac{a}{b} = a : b$$</p>
+            <p style="margin-bottom:0; font-size:0.95rem;">Always in lowest terms; same units required.</p>
+        </div>
+        <div class="box box-formula" style="margin:0;">
+            <div class="box-label">Proportion</div>
+            <p style="margin-bottom:0">$$\frac{a}{b} = \frac{c}{d} \implies ad = bc$$</p>
+            <p style="margin-bottom:0; font-size:0.95rem;">Cross-multiply to solve for unknowns.</p>
+        </div>
+        <div class="box box-formula" style="margin:0;">
+            <div class="box-label">Direct Variation</div>
+            <p style="margin-bottom:0">$$y = kx \quad \left(\frac{y}{x} = k\right)$$</p>
+            <p style="margin-bottom:0; font-size:0.95rem;">Quotient is constant; line through origin.</p>
+        </div>
+        <div class="box box-formula" style="margin:0;">
+            <div class="box-label">Inverse Variation</div>
+            <p style="margin-bottom:0">$$y = \frac{k}{x} \quad (xy = k)$$</p>
+            <p style="margin-bottom:0; font-size:0.95rem;">Product is constant; hyperbola shape.</p>
+        </div>
+        <div class="box box-formula" style="margin:0;">
+            <div class="box-label">Joint Variation</div>
+            <p style="margin-bottom:0">$$z = kxy$$</p>
+            <p style="margin-bottom:0; font-size:0.95rem;">Direct variation with a product of variables.</p>
+        </div>
+        <div class="box box-formula" style="margin:0;">
+            <div class="box-label">Combined Variation</div>
+            <p style="margin-bottom:0">$$z = \frac{kx}{y}$$</p>
+            <p style="margin-bottom:0; font-size:0.95rem;">Mix of direct and inverse.</p>
+        </div>
+    </div>
+
+    <div class="box box-insight" style="margin-top:1.5rem;">
+        <div class="box-label">The Four-Step Method for Variation Problems</div>
+        <ol>
+            <li><strong>Set up</strong> the equation with the constant \(k\) (decide the type of variation).</li>
+            <li><strong>Find \(k\)</strong> using the given pair(s) of values.</li>
+            <li><strong>Write the specific equation</strong> with the known value of \(k\).</li>
+            <li><strong>Substitute</strong> the new values and solve for the unknown.</li>
+        </ol>
+    </div>
+</div>
+
+<!-- ============ NAVIGATION ============ -->
+<div class="nav-footer">
+    <a href="../10-inequalities/index.html" class="nav-btn">&larr; Previous: Ch 10 &mdash; Inequalities</a>
+    <a href="../12-solving-everyday-problems/index.html" class="nav-btn">Next: Ch 12 &mdash; Solving Everyday Problems &rarr;</a>
+</div>
+
+</div><!-- end container -->
+
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "\\[", right: "\\]", display: true},
+                {left: "\\(", right: "\\)", display: false}
+            ],
+            throwOnError: false
+        });
+    });
+</script>
+</body>
+</html>

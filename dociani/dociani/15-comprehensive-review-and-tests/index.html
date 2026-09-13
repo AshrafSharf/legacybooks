@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 15: Comprehensive Review and Tests &mdash; Modern Algebra: Structure and Method</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Georgia', 'Cambria', 'Times New Roman', serif;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #2d2d2d;
+  background: #fdf6f0;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.3;
+}
+a { color: #8b1a1a; text-decoration: none; }
+a:hover { text-decoration: underline; color: #d4582a; }
+
+/* ===== KaTeX overrides ===== */
+.katex { font-size: 1.3em; }
+.katex-display { font-size: 1.35em; margin: 1.5rem 0; overflow-x: auto; }
+
+/* ===== HERO HEADER ===== */
+.hero {
+  background: linear-gradient(135deg, #8b1a1a 0%, #5c1010 40%, #1a1a2e 100%);
+  color: #fff;
+  padding: 3.5rem 2rem 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '15';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18rem;
+  font-weight: 900;
+  opacity: 0.06;
+  font-family: 'Segoe UI', sans-serif;
+  pointer-events: none;
+}
+.hero .book-title {
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-bottom: 0.3rem;
+}
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin: 0.3rem 0 0.5rem;
+}
+.hero .subtitle {
+  font-size: 1.15rem;
+  opacity: 0.9;
+  font-style: italic;
+}
+.hero .authors {
+  font-size: 0.85rem;
+  opacity: 0.65;
+  margin-top: 0.7rem;
+  letter-spacing: 0.08em;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+/* ===== TABLE OF CONTENTS ===== */
+.toc {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.8rem 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 2px 12px rgba(139,26,26,0.08);
+  border-left: 5px solid #8b1a1a;
+}
+.toc h2 {
+  font-size: 1.3rem;
+  color: #8b1a1a;
+  margin-bottom: 1rem;
+}
+.toc ol {
+  padding-left: 1.4rem;
+}
+.toc li {
+  margin-bottom: 0.35rem;
+}
+.toc a {
+  color: #2d2d2d;
+  border-bottom: 1px dashed #d4582a;
+}
+.toc a:hover { color: #8b1a1a; border-bottom-style: solid; }
+
+/* ===== OVERVIEW CARD ===== */
+.overview {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.8rem 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.overview h2 { font-size: 1.5rem; color: #8b1a1a; margin-bottom: 0.8rem; }
+.overview ul {
+  list-style: none; padding: 0;
+}
+.overview li {
+  padding: 0.35rem 0 0.35rem 1.6rem;
+  position: relative;
+}
+.overview li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  color: #d4582a;
+  font-weight: bold;
+}
+
+/* ===== SECTION CARDS ===== */
+.section-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 2rem 2rem 1.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+}
+.section-card h2 {
+  font-size: 2rem;
+  color: #8b1a1a;
+  margin-bottom: 0.3rem;
+}
+.section-num {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #d4582a;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 700;
+}
+.section-card h3 {
+  font-size: 1.35rem;
+  color: #4a3728;
+  margin: 1.5rem 0 0.5rem;
+}
+.section-card p { margin-bottom: 1rem; }
+
+/* ===== HIGHLIGHT BOXES ===== */
+.box {
+  border-radius: 8px;
+  padding: 1.2rem 1.4rem;
+  margin: 1.3rem 0;
+  border-left: 5px solid;
+}
+.box-definition { border-color: #8b1a1a; background: #fce8e8; }
+.box-insight   { border-color: #d4582a; background: #fef3ec; }
+.box-caution   { border-color: #7f1d1d; background: #fef2f2; }
+.box-example   { border-color: #276749; background: #f0f7f0; }
+.box-practice  { border-color: #4a5568; background: #f7fafc; }
+.box-formula   { border-color: #2b4c7e; background: #ebf0ff; }
+
+.box .box-label {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.5rem;
+}
+.box-definition .box-label { color: #8b1a1a; }
+.box-insight .box-label    { color: #d4582a; }
+.box-caution .box-label    { color: #7f1d1d; }
+.box-example .box-label    { color: #276749; }
+.box-practice .box-label   { color: #4a5568; }
+.box-formula .box-label    { color: #2b4c7e; }
+
+/* ===== SVG DIAGRAMS ===== */
+.diagram-wrap {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  text-align: center;
+}
+.diagram-wrap svg {
+  max-width: 100%;
+  height: auto;
+}
+.diagram-caption {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #8b1a1a;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+/* ===== WORKED PROBLEMS ===== */
+.worked-problems {
+  background: #fff;
+  border-radius: 10px;
+  padding: 2rem 2rem 1.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+}
+.worked-problems > h2 {
+  font-size: 2rem;
+  color: #8b1a1a;
+  margin-bottom: 1rem;
+}
+.problem {
+  margin-bottom: 1.8rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #ece2d8;
+}
+.problem:last-child { border-bottom: none; padding-bottom: 0; }
+.problem-header {
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 700;
+  color: #4a5568;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+/* ===== QUICK REFERENCE ===== */
+.quick-ref {
+  background: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+  border-top: 4px solid #2b4c7e;
+}
+.quick-ref h2 { font-size: 1.6rem; color: #2b4c7e; margin-bottom: 1rem; }
+.quick-ref h3 { font-size: 1.2rem; color: #4a3728; margin: 1.3rem 0 0.6rem; font-family: 'Segoe UI', sans-serif; }
+.quick-ref table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.05rem;
+}
+.quick-ref th, .quick-ref td {
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid #e8e0d8;
+}
+.quick-ref th {
+  font-family: 'Segoe UI', sans-serif;
+  color: #2b4c7e;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ===== CHAPTER SUMMARY GRID ===== */
+.chapter-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.2rem 0;
+}
+.chapter-grid-item {
+  background: #fdf6f0;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  border-left: 4px solid #8b1a1a;
+  transition: box-shadow 0.2s;
+}
+.chapter-grid-item:hover {
+  box-shadow: 0 2px 10px rgba(139,26,26,0.12);
+}
+.chapter-grid-item h4 {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.85rem;
+  color: #8b1a1a;
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+}
+.chapter-grid-item a {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #8b1a1a;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.chapter-grid-item p {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin: 0;
+  color: #4a3728;
+}
+
+/* ===== TEST PREP ===== */
+.tips-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.2rem 0;
+}
+.tip-card {
+  background: #fef3ec;
+  border-radius: 8px;
+  padding: 1.1rem 1.3rem;
+  border-top: 3px solid #d4582a;
+}
+.tip-card h4 {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.9rem;
+  color: #d4582a;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+.tip-card p, .tip-card ul {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin: 0;
+}
+.tip-card ul { padding-left: 1.2rem; margin-top: 0.3rem; }
+.tip-card li { margin-bottom: 0.2rem; }
+
+.pitfall-card {
+  background: #fef2f2;
+  border-radius: 8px;
+  padding: 1.1rem 1.3rem;
+  border-top: 3px solid #7f1d1d;
+}
+.pitfall-card h4 {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.9rem;
+  color: #7f1d1d;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+.pitfall-card p {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ===== NAV FOOTER ===== */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-top: 2px solid #ece2d8;
+  margin-top: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.95rem;
+}
+.chapter-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  background: #8b1a1a;
+  color: #fff;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.chapter-nav a:hover { background: #d4582a; text-decoration: none; }
+.chapter-nav .disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  background: #999;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .hero h1 { font-size: 2rem; }
+  .hero::before { font-size: 10rem; }
+  .container { padding: 1.2rem 1rem 2rem; }
+  .section-card, .overview, .toc, .worked-problems, .quick-ref { padding: 1.3rem; }
+  .box { padding: 1rem 1.1rem; }
+  .chapter-nav { flex-direction: column; gap: 0.8rem; }
+  .chapter-grid { grid-template-columns: 1fr; }
+  .tips-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== HERO ==================== -->
+<header class="hero">
+  <div class="book-title">Modern Algebra: Structure and Method</div>
+  <h1>Chapter 15: Comprehensive Review and Tests</h1>
+  <div class="subtitle">Review Your Algebra &mdash; A Complete Reference for the Entire Course</div>
+  <div class="authors">Mary P. Dolciani &middot; Simon L. Berman &middot; Julius Freilich</div>
+</header>
+
+<main class="container">
+
+<!-- ==================== TABLE OF CONTENTS ==================== -->
+<nav class="toc">
+  <h2>In This Chapter</h2>
+  <ol>
+    <li><a href="#roadmap">Topic Roadmap: How It All Connects</a></li>
+    <li><a href="#summaries">Chapter Summaries (Ch 1&ndash;14)</a></li>
+    <li><a href="#formulas">Key Formulas and Properties Reference</a></li>
+    <li><a href="#problems">Cumulative Review Problems with Solutions</a></li>
+    <li><a href="#test-prep">Test Preparation Guide</a></li>
+  </ol>
+</nav>
+
+<!-- ==================== OVERVIEW ==================== -->
+<div class="overview">
+  <h2>Purpose of This Chapter</h2>
+  <ul>
+    <li>Pause and look back at everything you have learned across Chapters 1&ndash;14</li>
+    <li>Find concise <strong>summaries</strong> of every major topic in one place</li>
+    <li>Use the <strong>formulas reference</strong> as a quick-look-up resource for tests and homework</li>
+    <li>Work through <strong>cumulative problems</strong> that combine ideas from multiple chapters</li>
+    <li>Review <strong>common pitfalls</strong> and test-taking strategies to sharpen your skills</li>
+    <li>See how algebra&rsquo;s big ideas &mdash; from sets to trigonometry &mdash; connect in a unified framework</li>
+  </ul>
+</div>
+
+<!-- ==================== TOPIC ROADMAP SVG ==================== -->
+<section class="section-card" id="roadmap">
+  <div class="section-num">Section 15&ndash;0</div>
+  <h2>Topic Roadmap: How It All Connects</h2>
+
+  <p>The diagram below shows the logical flow of ideas through the course. Each chapter builds on what came before, and the arrows show direct dependencies. Use this map to identify which earlier topics to revisit when you encounter difficulties.</p>
+
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 800 620" xmlns="http://www.w3.org/2000/svg" style="max-width:800px;">
+      <defs>
+        <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+          <polygon points="0 0, 8 3, 0 6" fill="#8b1a1a"/>
+        </marker>
+        <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
+          <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#8b1a1a" flood-opacity="0.12"/>
+        </filter>
+        <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#8b1a1a"/><stop offset="100%" stop-color="#5c1010"/></linearGradient>
+        <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#d4582a"/><stop offset="100%" stop-color="#b84420"/></linearGradient>
+        <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2b4c7e"/><stop offset="100%" stop-color="#1d3557"/></linearGradient>
+        <linearGradient id="bg4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#276749"/><stop offset="100%" stop-color="#1a4a33"/></linearGradient>
+      </defs>
+
+      <!-- LAYER 1: Foundation (y~40) -->
+      <rect x="20" y="20" width="150" height="46" rx="8" fill="url(#bg1)" filter="url(#shadow)"/>
+      <text x="95" y="48" text-anchor="middle" fill="#fff" font-family="'Segoe UI',sans-serif" font-size="11" font-weight="700">Ch 1: Symbols &amp; Sets</text>
+
+      <rect x="200" y="20" width="180" height="46" rx="8" fill="url(#bg1)" filter="url(#shadow)"/>
+      <text x="290" y="48" text-anchor="middle" fill="#fff" font-family="'Segoe UI',sans-serif" font-size="11" font-weight="700">Ch 2: Variables &amp; Open Sent.</text>
+
+      <rect x="410" y="20" width="190" height="46" rx="8" fill="url(#bg1)" filter="url(#shadow)"/>
+      <text x="505" y="48" text-anchor="middle" fill="#fff" font-family="'Segoe UI',sans-serif" font-size="11" font-weight="700">Ch 3: Axioms &amp; Equations</text>
+
+      <!-- LAYER 2: Number System (y~120) -->
+      <rect x="50" y="110" width="180" height="46" rx="8" fill="url(#bg2)" filter="url(#shadow)"/>
+      <text x="140" y="138" text-anchor="middle" fill="#fff" font-family="'Segoe UI',sans-serif" font-size="11" font-weight="700">Ch 4: Negative Numbers</text>
+
+      <rect x="280" y="110" width="240" height="46" rx="8" fill="url(#bg2)" filter="url(#shadow)"/>
+      <text x="400" y="138" text-anchor="middle" fill="#fff" font-family="'Segoe UI',sans-serif" font-size="11" font-weight="700">Ch 5: Equations &amp; Inequalities</text>
+
+      <!-- LAYER 3: Algebra Tools (y~210) -->
+      <rect x="20" y="200" width="185" height="46" rx="8" fill="url(#bg3)" filter="url(#shadow)"/>
+      <text x="112" y="228" text-anchor="middle" fill="#fff" font-family="'Segoe UI',sans-serif" font-size="11" font-weight="700">Ch 6: Polynomials</text>
+
+      <rect x="230" y="200" width="210" height="46" rx="8" fill="url(#bg3)" filter="url(#shadow)"/>
+      <text x="335" y="228" text-anchor="middle" fill="#fff" font-family="'Segoe UI',sans-serif" font-size="11" font-weight="700">Ch 7: Spec. Products &amp; Factoring</text>
+
+      <rect x="470" y="200" width="175" height="46" rx="8" fill="url(#bg3)" filter="url(#shadow)"/>
+      <text x="557" y="228" text-anchor="middle" fill="#fff" font-family="'Segoe UI',sans-serif" font-size="11" font-weight="700">Ch 8: Fractions</text>
+
+      <!-- LAYER 4: Graphing & Systems (y~300) -->
+      <rect x="50" y="290" width="150" height="46" rx="8" fill="url(#bg4)" filter="url(#shadow)"/>
+      <text x="125" y="318" text-anchor="middle" fill="#fff" font-family="'Segoe UI',sans-serif" font-size="11" font-weight="700">Ch 9: Graphs</text>
+
+      <rect x="240" y="290" width="225" height="46" rx="8" fill="url(#bg4)" filter="url(#shadow)"/>
+      <text x="352" y="318" text-anchor="middle" fill="#fff" font-family="'Segoe UI',sans-serif" font-size="11" font-weight="700">Ch 10: Sentences in Two Var.</text>
+
+      <!-- LAYER 5: Advanced Topics (y~390) -->
+      <rect x="20" y="380" width="170" height="46" rx="8" fill="url(#bg1)" filter="url(#shadow)"/>
+      <text x="105" y="408" text-anchor="middle" fill="#fff" font-family="'Segoe UI',sans-serif" font-size="11" font-weight="700">Ch 11: Real Numbers</text>
+
+      <rect x="220" y="380" width="195" height="46" rx="8" fill="url(#bg1)" filter="url(#shadow)"/>
+      <text x="317" y="408" text-anchor="middle" fill="#fff" font-family="'Segoe UI',sans-serif" font-size="11" font-weight="700">Ch 12: Functions &amp; Variation</text>
+
+      <!-- LAYER 6: Quadratics & Geometry (y~470) -->
+      <rect x="50" y="470" width="240" height="46" rx="8" fill="url(#bg2)" filter="url(#shadow)"/>
+      <text x="170" y="498" text-anchor="middle" fill="#fff" font-family="'Segoe UI',sans-serif" font-size="11" font-weight="700">Ch 13: Quadratic Eqs. &amp; Inequalities</text>
+
+      <rect x="330" y="470" width="230" height="46" rx="8" fill="url(#bg2)" filter="url(#shadow)"/>
+      <text x="445" y="498" text-anchor="middle" fill="#fff" font-family="'Segoe UI',sans-serif" font-size="11" font-weight="700">Ch 14: Geometry &amp; Trigonometry</text>
+
+      <!-- LAYER 7: This Chapter (y~560) -->
+      <rect x="170" y="555" width="310" height="50" rx="10" fill="url(#bg3)" filter="url(#shadow)" stroke="#d4582a" stroke-width="2"/>
+      <text x="325" y="585" text-anchor="middle" fill="#fff" font-family="'Segoe UI',sans-serif" font-size="13" font-weight="700">Ch 15: Comprehensive Review &amp; Tests</text>
+
+      <!-- ===== ARROWS ===== -->
+      <!-- L1 -> L2 -->
+      <line x1="95" y1="66" x2="140" y2="110" stroke="#8b1a1a" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+      <line x1="290" y1="66" x2="400" y2="110" stroke="#8b1a1a" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+      <line x1="505" y1="66" x2="400" y2="110" stroke="#8b1a1a" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+      <!-- L2 -> L3 -->
+      <line x1="140" y1="156" x2="112" y2="200" stroke="#8b1a1a" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+      <line x1="400" y1="156" x2="335" y2="200" stroke="#8b1a1a" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+      <line x1="400" y1="156" x2="557" y2="200" stroke="#8b1a1a" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+      <!-- L3 -> L3 (Ch6 -> Ch7) -->
+      <line x1="205" y1="223" x2="230" y2="223" stroke="#8b1a1a" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+      <!-- Ch7 -> Ch8 -->
+      <line x1="440" y1="223" x2="470" y2="223" stroke="#8b1a1a" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+      <!-- L3 -> L4 -->
+      <line x1="112" y1="246" x2="125" y2="290" stroke="#8b1a1a" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+      <line x1="335" y1="246" x2="352" y2="290" stroke="#8b1a1a" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+      <!-- L4 -> L4 (Ch9 -> Ch10) -->
+      <line x1="200" y1="313" x2="240" y2="313" stroke="#8b1a1a" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+      <!-- L4 -> L5 -->
+      <line x1="125" y1="336" x2="105" y2="380" stroke="#8b1a1a" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+      <line x1="352" y1="336" x2="317" y2="380" stroke="#8b1a1a" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+      <!-- L5 -> L6 -->
+      <line x1="105" y1="426" x2="170" y2="470" stroke="#8b1a1a" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+      <line x1="317" y1="426" x2="170" y2="470" stroke="#8b1a1a" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+      <line x1="317" y1="426" x2="445" y2="470" stroke="#8b1a1a" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+      <!-- L6 -> L7 -->
+      <line x1="170" y1="516" x2="280" y2="555" stroke="#8b1a1a" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+      <line x1="445" y1="516" x2="380" y2="555" stroke="#8b1a1a" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+      <!-- Side labels -->
+      <text x="680" y="48" font-family="'Segoe UI',sans-serif" font-size="10" fill="#999" font-style="italic">Foundation</text>
+      <text x="680" y="138" font-family="'Segoe UI',sans-serif" font-size="10" fill="#999" font-style="italic">Number System</text>
+      <text x="680" y="228" font-family="'Segoe UI',sans-serif" font-size="10" fill="#999" font-style="italic">Algebra Tools</text>
+      <text x="680" y="318" font-family="'Segoe UI',sans-serif" font-size="10" fill="#999" font-style="italic">Graphing</text>
+      <text x="680" y="408" font-family="'Segoe UI',sans-serif" font-size="10" fill="#999" font-style="italic">Advanced</text>
+      <text x="680" y="498" font-family="'Segoe UI',sans-serif" font-size="10" fill="#999" font-style="italic">Culmination</text>
+    </svg>
+    <div class="diagram-caption">Figure 15-1: Roadmap of Topics &mdash; Arrows show how each chapter builds on previous ones</div>
+  </div>
+
+  <div class="box box-insight">
+    <div class="box-label">Key Insight</div>
+    <p>Algebra is not a collection of disconnected rules. The <strong>properties of real numbers</strong> (commutative, associative, distributive) form the foundation, and every technique you have learned &mdash; from factoring to solving quadratics to trigonometry &mdash; is built logically on that foundation.</p>
+  </div>
+</section>
+
+<!-- ==================== CHAPTER SUMMARIES ==================== -->
+<section class="section-card" id="summaries">
+  <div class="section-num">Section 15&ndash;1 through 15&ndash;9</div>
+  <h2>Chapter Summaries</h2>
+
+  <p>Below is a concise recap of the key ideas from each chapter. Use these summaries to identify topics you need to revisit in depth.</p>
+
+  <div class="chapter-grid">
+    <div class="chapter-grid-item">
+      <a href="../01-symbols-and-sets/">Ch 1: Symbols and Sets</a>
+      <p>Number lines, order relations, set notation (roster and rule), finite/infinite/empty sets, subsets, grouping symbols, and the order of operations.</p>
+    </div>
+    <div class="chapter-grid-item">
+      <a href="../02-variables-and-open-sentences/">Ch 2: Variables and Open Sentences</a>
+      <p>Variables as placeholders, evaluating expressions, open sentences, replacement sets, and solution sets of equations and inequalities.</p>
+    </div>
+    <div class="chapter-grid-item">
+      <a href="../03-axioms-equations-and-problem-solving/">Ch 3: Axioms, Equations, and Problem Solving</a>
+      <p>The fundamental axioms (closure, commutative, associative, distributive, identity, inverse), transformation of equations by addition and multiplication, and translating word problems into algebraic equations.</p>
+    </div>
+    <div class="chapter-grid-item">
+      <a href="../04-the-negative-numbers/">Ch 4: The Negative Numbers</a>
+      <p>Extending the number line, directed numbers, absolute value, and the four operations (addition, subtraction, multiplication, division) with signed numbers.</p>
+    </div>
+    <div class="chapter-grid-item">
+      <a href="../05-equations-inequalities-and-problem-solving/">Ch 5: Equations, Inequalities, and Problem Solving</a>
+      <p>Solving equations with variables on both sides, properties of inequality, solving and graphing inequalities, and multi-step word problems (consecutive integers, angles, distance-rate-time, mixtures).</p>
+    </div>
+    <div class="chapter-grid-item">
+      <a href="../06-working-with-polynomials/">Ch 6: Working with Polynomials</a>
+      <p>Classifying polynomials (monomials, binomials, trinomials), adding, subtracting, multiplying, and dividing polynomials, and the laws of exponents.</p>
+    </div>
+    <div class="chapter-grid-item">
+      <a href="../07-special-products-and-factoring/">Ch 7: Special Products and Factoring</a>
+      <p>Factoring out the GCF, difference of squares, trinomial squares, factoring quadratic trinomials, and solving equations by factoring.</p>
+    </div>
+    <div class="chapter-grid-item">
+      <a href="../08-working-with-fractions/">Ch 8: Working with Fractions</a>
+      <p>Algebraic fractions, reducing to lowest terms, multiplication and division of fractions, LCD, addition and subtraction, complex fractions, and fractional equations.</p>
+    </div>
+    <div class="chapter-grid-item">
+      <a href="../09-graphs/">Ch 9: Graphs</a>
+      <p>Ordered pairs, the coordinate plane, graphing linear equations, slope, the slope-intercept form \(y = mx + b\), and statistical graphs (bar, broken-line, circle).</p>
+    </div>
+    <div class="chapter-grid-item">
+      <a href="../10-sentences-in-two-variables/">Ch 10: Sentences in Two Variables</a>
+      <p>Systems of linear equations (consistent, inconsistent, dependent), solving by graphing, addition/subtraction method, substitution method, and graphing systems of inequalities.</p>
+    </div>
+    <div class="chapter-grid-item">
+      <a href="../11-the-real-numbers/">Ch 11: The Real Numbers</a>
+      <p>Rational numbers as fractions and repeating decimals, irrational numbers, the real number line (completeness), square roots, simplifying radicals, and the Pythagorean theorem.</p>
+    </div>
+    <div class="chapter-grid-item">
+      <a href="../12-functions-and-variation/">Ch 12: Functions and Variation</a>
+      <p>Relations and functions, domain and range, function notation, direct variation (\(y = kx\)), inverse variation (\(xy = k\)), joint variation, and writing formulas.</p>
+    </div>
+    <div class="chapter-grid-item">
+      <a href="../13-quadratic-equations-and-inequalities/">Ch 13: Quadratic Equations and Inequalities</a>
+      <p>Solving quadratics by factoring, completing the square, and the quadratic formula; the discriminant; sum and product of roots; and graphing parabolas.</p>
+    </div>
+    <div class="chapter-grid-item">
+      <a href="../14-geometry-and-trigonometry/">Ch 14: Geometry and Trigonometry</a>
+      <p>Points, lines, planes, rays, angles, triangles, standard position of angles, tangent/sine/cosine functions, solving right triangles, similar triangles, and vectors (resultants and components).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== KEY FORMULAS AND PROPERTIES ==================== -->
+<section class="section-card" id="formulas">
+  <div class="section-num">Complete Reference</div>
+  <h2>Key Formulas and Properties Reference</h2>
+
+  <h3>Fundamental Properties of Real Numbers</h3>
+  <div class="box box-formula">
+    <div class="box-label">Properties of Addition and Multiplication</div>
+    <p><strong>Closure:</strong> If \(a\) and \(b\) are real numbers, then \(a + b\) and \(a \cdot b\) are real numbers.</p>
+    <p><strong>Commutative:</strong> \(a + b = b + a\) and \(a \cdot b = b \cdot a\)</p>
+    <p><strong>Associative:</strong> \((a + b) + c = a + (b + c)\) and \((a \cdot b) \cdot c = a \cdot (b \cdot c)\)</p>
+    <p><strong>Distributive:</strong> \(a(b + c) = ab + ac\)</p>
+    <p><strong>Identity:</strong> \(a + 0 = a\) and \(a \cdot 1 = a\)</p>
+    <p><strong>Inverse:</strong> \(a + (-a) = 0\) and \(a \cdot \tfrac{1}{a} = 1\) (for \(a \neq 0\))</p>
+    <p><strong>Zero property:</strong> \(a \cdot 0 = 0\)</p>
+  </div>
+
+  <h3>Laws of Exponents</h3>
+  <div class="box box-formula">
+    <div class="box-label">Exponent Rules</div>
+    <p>\(a^m \cdot a^n = a^{m+n}\) &emsp; \(\dfrac{a^m}{a^n} = a^{m-n}\) (for \(a \neq 0\)) &emsp; \((a^m)^n = a^{mn}\)</p>
+    <p>\((ab)^n = a^n b^n\) &emsp; \(\left(\dfrac{a}{b}\right)^n = \dfrac{a^n}{b^n}\) &emsp; \(a^0 = 1\) (for \(a \neq 0\))</p>
+  </div>
+
+  <h3>Special Products and Factoring</h3>
+  <div class="box box-formula">
+    <div class="box-label">Key Factoring Patterns</div>
+    <p><strong>Difference of squares:</strong> \(a^2 - b^2 = (a + b)(a - b)\)</p>
+    <p><strong>Trinomial square:</strong> \(a^2 + 2ab + b^2 = (a + b)^2\) &emsp; \(a^2 - 2ab + b^2 = (a - b)^2\)</p>
+    <p><strong>Quadratic trinomial:</strong> \(ax^2 + bx + c\) &mdash; find factors of \(ac\) that add to \(b\)</p>
+  </div>
+
+  <h3>Linear Equations and Graphing</h3>
+  <div class="box box-formula">
+    <div class="box-label">Lines and Slope</div>
+    <p><strong>Slope-intercept form:</strong> \(y = mx + b\) where \(m\) is slope and \(b\) is the \(y\)-intercept</p>
+    <p><strong>Slope formula:</strong> \(m = \dfrac{y_2 - y_1}{x_2 - x_1}\)</p>
+    <p><strong>Parallel lines:</strong> Same slope, different intercept &emsp; <strong>Standard form:</strong> \(ax + by = c\)</p>
+  </div>
+
+  <h3>Quadratic Equations</h3>
+  <div class="box box-formula">
+    <div class="box-label">The Quadratic Formula and Discriminant</div>
+    <p>For \(ax^2 + bx + c = 0\) with \(a \neq 0\):</p>
+    $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+    <p><strong>Discriminant:</strong> \(\Delta = b^2 - 4ac\)</p>
+    <p>If \(\Delta > 0\): two distinct real roots &emsp; If \(\Delta = 0\): one repeated root &emsp; If \(\Delta < 0\): no real roots</p>
+    <p><strong>Sum of roots:</strong> \(r_1 + r_2 = -\tfrac{b}{a}\) &emsp; <strong>Product of roots:</strong> \(r_1 \cdot r_2 = \tfrac{c}{a}\)</p>
+  </div>
+
+  <h3>Radicals and Real Numbers</h3>
+  <div class="box box-formula">
+    <div class="box-label">Square Root Properties</div>
+    <p><strong>Product property:</strong> \(\sqrt{ab} = \sqrt{a} \cdot \sqrt{b}\) &emsp; (for \(a \geq 0, b \geq 0\))</p>
+    <p><strong>Quotient property:</strong> \(\sqrt{\dfrac{a}{b}} = \dfrac{\sqrt{a}}{\sqrt{b}}\) &emsp; (for \(a \geq 0, b > 0\))</p>
+    <p><strong>Rationalizing:</strong> \(\dfrac{1}{\sqrt{a}} = \dfrac{\sqrt{a}}{a}\) &emsp; \(\dfrac{1}{a + \sqrt{b}} = \dfrac{a - \sqrt{b}}{a^2 - b}\)</p>
+    <p><strong>Pythagorean theorem:</strong> In a right triangle, \(a^2 + b^2 = c^2\)</p>
+  </div>
+
+  <h3>Variation</h3>
+  <div class="box box-formula">
+    <div class="box-label">Direct, Inverse, and Joint Variation</div>
+    <p><strong>Direct:</strong> \(y = kx\) &emsp; (as \(x\) increases, \(y\) increases proportionally)</p>
+    <p><strong>Inverse:</strong> \(xy = k\) or \(y = \dfrac{k}{x}\) &emsp; (as \(x\) increases, \(y\) decreases)</p>
+    <p><strong>Joint:</strong> \(z = kxy\) &emsp; \(z\) varies jointly as \(x\) and \(y\)</p>
+    <p><strong>Proportions:</strong> If \(\dfrac{a}{b} = \dfrac{c}{d}\), then \(ad = bc\) (cross-multiplication)</p>
+  </div>
+
+  <h3>Trigonometric Functions</h3>
+  <div class="box box-formula">
+    <div class="box-label">Right Triangle Trigonometry</div>
+    <p>For a right triangle with acute angle \(A\), opposite side \(a\), adjacent side \(b\), and hypotenuse \(c\):</p>
+    $$\sin A = \frac{a}{c} \qquad \cos A = \frac{b}{c} \qquad \tan A = \frac{a}{b}$$
+    <p><strong>Pythagorean identity:</strong> \(\sin^2 A + \cos^2 A = 1\)</p>
+    <p><strong>Relationship:</strong> \(\tan A = \dfrac{\sin A}{\cos A}\)</p>
+    <p><strong>Similar triangles:</strong> The sides of two similar triangles are proportional: \(\dfrac{a}{a'} = \dfrac{b}{b'} = \dfrac{c}{c'}\)</p>
+  </div>
+
+  <h3>Common Geometry Formulas</h3>
+  <div class="box box-formula">
+    <div class="box-label">Area, Perimeter, and Volume</div>
+    <p><strong>Rectangle:</strong> \(A = lw\), \(P = 2l + 2w\) &emsp; <strong>Square:</strong> \(A = s^2\), \(P = 4s\)</p>
+    <p><strong>Triangle:</strong> \(A = \tfrac{1}{2}bh\) &emsp; <strong>Circle:</strong> \(A = \pi r^2\), \(C = 2\pi r\)</p>
+    <p><strong>Trapezoid:</strong> \(A = \tfrac{1}{2}h(B + b)\)</p>
+    <p><strong>Rectangular solid:</strong> \(V = lwh\) &emsp; <strong>Cube:</strong> \(V = s^3\) &emsp; <strong>Cylinder:</strong> \(V = \pi r^2 h\)</p>
+  </div>
+
+  <h3>Vectors</h3>
+  <div class="box box-formula">
+    <div class="box-label">Vector Operations</div>
+    <p><strong>Resultant of perpendicular vectors:</strong> \(|\mathbf{R}| = \sqrt{V_1^2 + V_2^2}\)</p>
+    <p><strong>Direction:</strong> \(\tan \theta = \dfrac{V_2}{V_1}\)</p>
+    <p><strong>Components:</strong> Horizontal: \(V_x = V \cos \theta\), &ensp; Vertical: \(V_y = V \sin \theta\)</p>
+  </div>
+</section>
+
+<!-- ==================== CUMULATIVE REVIEW PROBLEMS ==================== -->
+<div class="worked-problems" id="problems">
+  <h2>Cumulative Review Problems with Full Solutions</h2>
+
+  <p>These eight problems span the entire course. Each one combines ideas from multiple chapters. Work through them carefully, and refer to the chapter summaries and formulas above as needed.</p>
+
+  <!-- PROBLEM 1: Properties & Simplification (Ch 1-3, 6) -->
+  <div class="problem">
+    <div class="problem-header">Problem 1 &mdash; Properties and Simplification (Ch 1&ndash;3, 6)</div>
+    <div class="box box-practice">
+      <div class="box-label">Problem</div>
+      <p>Give a reason (property, definition, or principle) to justify each step:</p>
+      $$729 + (93 + 71) = 729 + (71 + 93) = (729 + 71) + 93 = 800 + 93 = 893$$
+    </div>
+    <div class="box box-example">
+      <div class="box-label">Solution</div>
+      <p><strong>Step 1:</strong> \(729 + (93 + 71) = 729 + (71 + 93)\) &mdash; <em>Commutative property of addition</em> (reordering within the parentheses).</p>
+      <p><strong>Step 2:</strong> \(729 + (71 + 93) = (729 + 71) + 93\) &mdash; <em>Associative property of addition</em> (regrouping to make computation easier).</p>
+      <p><strong>Step 3:</strong> \((729 + 71) + 93 = 800 + 93 = 893\) &mdash; <em>Substitution principle</em> (replacing \(729 + 71\) with its value, 800).</p>
+    </div>
+  </div>
+
+  <!-- PROBLEM 2: Factoring & Solving (Ch 7, 13) -->
+  <div class="problem">
+    <div class="problem-header">Problem 2 &mdash; Factoring and Solving a Quadratic Equation (Ch 7, 13)</div>
+    <div class="box box-practice">
+      <div class="box-label">Problem</div>
+      <p>Solve by factoring: \(3x^2 - 21x^3 = 0\). Then solve \(x^2 - 6x + 3 = 0\) using the quadratic formula.</p>
+    </div>
+    <div class="box box-example">
+      <div class="box-label">Solution</div>
+      <p><strong>Part (a):</strong> Factor out the GCF:</p>
+      $$3x^2 - 21x^3 = 3x^2(1 - 7x) = 0$$
+      <p>Setting each factor to zero: \(3x^2 = 0 \Rightarrow x = 0\), and \(1 - 7x = 0 \Rightarrow x = \tfrac{1}{7}\).</p>
+      <p>Solution set: \(\left\{0,\; \tfrac{1}{7}\right\}\).</p>
+      <p><strong>Part (b):</strong> For \(x^2 - 6x + 3 = 0\), we have \(a = 1\), \(b = -6\), \(c = 3\):</p>
+      $$x = \frac{-(-6) \pm \sqrt{(-6)^2 - 4(1)(3)}}{2(1)} = \frac{6 \pm \sqrt{36 - 12}}{2} = \frac{6 \pm \sqrt{24}}{2}$$
+      <p>Simplify: \(\sqrt{24} = 2\sqrt{6}\), so \(x = \dfrac{6 \pm 2\sqrt{6}}{2} = 3 \pm \sqrt{6}\).</p>
+      <p>Solution set: \(\{3 + \sqrt{6},\; 3 - \sqrt{6}\}\).</p>
+    </div>
+  </div>
+
+  <!-- PROBLEM 3: Fractions & Equations (Ch 8, 5) -->
+  <div class="problem">
+    <div class="problem-header">Problem 3 &mdash; Algebraic Fractions and Equations (Ch 8, 5)</div>
+    <div class="box box-practice">
+      <div class="box-label">Problem</div>
+      <p>Solve: \(\dfrac{2t}{3} + \dfrac{3t}{4} + \dfrac{17}{6} = 0\)</p>
+    </div>
+    <div class="box box-example">
+      <div class="box-label">Solution</div>
+      <p>The LCD of 3, 4, and 6 is <strong>12</strong>. Multiply every term by 12:</p>
+      $$12 \cdot \frac{2t}{3} + 12 \cdot \frac{3t}{4} + 12 \cdot \frac{17}{6} = 0$$
+      $$8t + 9t + 34 = 0$$
+      $$17t + 34 = 0$$
+      $$17t = -34$$
+      $$t = -2$$
+      <p><strong>Check:</strong> \(\tfrac{2(-2)}{3} + \tfrac{3(-2)}{4} + \tfrac{17}{6} = -\tfrac{4}{3} - \tfrac{3}{2} + \tfrac{17}{6} = -\tfrac{8}{6} - \tfrac{9}{6} + \tfrac{17}{6} = \tfrac{0}{6} = 0\) &#10003;</p>
+    </div>
+  </div>
+
+  <!-- PROBLEM 4: Systems of Equations (Ch 10, Word Problem Ch 5) -->
+  <div class="problem">
+    <div class="problem-header">Problem 4 &mdash; Systems of Equations and Word Problems (Ch 5, 10)</div>
+    <div class="box box-practice">
+      <div class="box-label">Problem</div>
+      <p>Mrs. Adams buys 2 yards of silk and 8 yards of cotton for $8.30. Mrs. Sherman pays $7.85 for 3 yards of the silk and 5.5 yards of the cotton. Find the cost per yard of each.</p>
+    </div>
+    <div class="box box-example">
+      <div class="box-label">Solution</div>
+      <p>Let \(s\) = cost per yard of silk, \(c\) = cost per yard of cotton.</p>
+      <p><strong>System:</strong></p>
+      $$2s + 8c = 8.30 \quad \text{...(1)}$$
+      $$3s + 5.5c = 7.85 \quad \text{...(2)}$$
+      <p>Multiply (1) by 3 and (2) by 2 to eliminate \(s\):</p>
+      $$6s + 24c = 24.90$$
+      $$6s + 11c = 15.70$$
+      <p>Subtract: \(13c = 9.20\), so \(c = \$0.708 \approx \$0.71\).</p>
+      <p>Hmm, let us be more precise. \(c = \frac{9.20}{13} \approx 0.708\). To avoid rounding issues, substitute back exactly:</p>
+      <p>From (1): \(2s = 8.30 - 8(0.708) = 8.30 - 5.664 = 2.636\), so \(s \approx 1.318 \approx \$1.32\).</p>
+      <p>More cleanly in fractions: multiply (1) by 10: \(20s + 80c = 83\). Multiply (2) by 10: \(30s + 55c = 78.5\), then by 2: \(60s + 110c = 157\). Multiply first by 3: \(60s + 240c = 249\). Subtract: \(130c = 92\), giving \(c = \tfrac{92}{130} = \tfrac{46}{65} \approx 0.708\). Then \(s = \tfrac{83 - 80 \cdot \frac{46}{65}}{20} = \tfrac{83 - \frac{3680}{65}}{20} = \tfrac{\frac{5395 - 3680}{65}}{20} = \tfrac{1715}{1300} = \tfrac{343}{260} \approx 1.32\).</p>
+      <p><strong>Silk costs approximately $1.32 per yard; cotton costs approximately $0.71 per yard.</strong></p>
+    </div>
+  </div>
+
+  <!-- PROBLEM 5: Radicals and the Pythagorean Theorem (Ch 11) -->
+  <div class="problem">
+    <div class="problem-header">Problem 5 &mdash; Radicals and the Pythagorean Theorem (Ch 11)</div>
+    <div class="box box-practice">
+      <div class="box-label">Problem</div>
+      <p>Find the diagonal of a cube whose edge measures 4 inches.</p>
+    </div>
+    <div class="box box-example">
+      <div class="box-label">Solution</div>
+      <p>First find the diagonal of one face. A face is a square with side 4.</p>
+      $$d_{\text{face}} = \sqrt{4^2 + 4^2} = \sqrt{16 + 16} = \sqrt{32} = 4\sqrt{2}$$
+      <p>The space diagonal goes from one corner to the opposite corner, using the face diagonal as one leg and the edge as the other:</p>
+      $$d_{\text{space}} = \sqrt{(4\sqrt{2})^2 + 4^2} = \sqrt{32 + 16} = \sqrt{48} = 4\sqrt{3}$$
+      <p>Since \(\sqrt{3} \approx 1.732\), the diagonal is approximately \(4(1.732) = 6.93\) inches.</p>
+      <p><strong>The diagonal of the cube is \(4\sqrt{3} \approx 6.9\) inches.</strong></p>
+    </div>
+  </div>
+
+  <!-- PROBLEM 6: Functions and Variation (Ch 12) -->
+  <div class="problem">
+    <div class="problem-header">Problem 6 &mdash; Functions and Variation (Ch 12)</div>
+    <div class="box box-practice">
+      <div class="box-label">Problem</div>
+      <p>The force \(F\) varies inversely as the square of the distance \(d\). If \(F = 28\) when \(d = 6\), find \(F\) when \(d = 9\).</p>
+    </div>
+    <div class="box box-example">
+      <div class="box-label">Solution</div>
+      <p>Since \(F\) varies inversely as \(d^2\), we write \(F = \dfrac{k}{d^2}\).</p>
+      <p><strong>Find \(k\):</strong> When \(F = 28\) and \(d = 6\):</p>
+      $$28 = \frac{k}{6^2} = \frac{k}{36} \quad \Rightarrow \quad k = 28 \times 36 = 1008$$
+      <p><strong>Find \(F\) when \(d = 9\):</strong></p>
+      $$F = \frac{1008}{9^2} = \frac{1008}{81} = 12\tfrac{4}{9} \approx 12.4$$
+      <p><strong>\(F = \dfrac{1008}{81} = 12\tfrac{4}{9}\).</strong></p>
+    </div>
+  </div>
+
+  <!-- PROBLEM 7: Graphing and Inequalities (Ch 9, 5) -->
+  <div class="problem">
+    <div class="problem-header">Problem 7 &mdash; Graphing, Slope, and Inequalities (Ch 5, 9, 10)</div>
+    <div class="box box-practice">
+      <div class="box-label">Problem</div>
+      <p>(a) Find the equation of the line parallel to \(3x - y = 2\) and passing through \((2, 4)\).</p>
+      <p>(b) Graph the solution set of \(x^2 + 2x > 3\).</p>
+    </div>
+    <div class="box box-example">
+      <div class="box-label">Solution</div>
+      <p><strong>Part (a):</strong> Rewrite \(3x - y = 2\) in slope-intercept form: \(y = 3x - 2\). The slope is \(m = 3\).</p>
+      <p>A parallel line has the same slope. Using point-slope form with \((2, 4)\):</p>
+      $$y - 4 = 3(x - 2) \quad \Rightarrow \quad y = 3x - 2$$
+      <p>Interestingly, the point \((2, 4)\) lies <em>on</em> the original line: \(3(2) - 4 = 2\) &#10003;. So the answer is the same line: \(y = 3x - 2\), or equivalently, \(3x - y = 2\).</p>
+      <p><strong>Part (b):</strong> Solve \(x^2 + 2x - 3 > 0\). Factor: \((x + 3)(x - 1) > 0\).</p>
+      <p>The roots are \(x = -3\) and \(x = 1\). The product is positive when both factors have the same sign:</p>
+      <p>When \(x < -3\): both negative, product positive &#10003;</p>
+      <p>When \(-3 < x < 1\): opposite signs, product negative &#10007;</p>
+      <p>When \(x > 1\): both positive, product positive &#10003;</p>
+      <p><strong>Solution set:</strong> \(\{x \mid x < -3 \text{ or } x > 1\}\). On the number line, shade the rays to the left of \(-3\) and to the right of \(1\), with open circles at \(-3\) and \(1\).</p>
+    </div>
+  </div>
+
+  <!-- PROBLEM 8: Trigonometry and Vectors (Ch 14) -->
+  <div class="problem">
+    <div class="problem-header">Problem 8 &mdash; Trigonometry and Vectors (Ch 14)</div>
+    <div class="box box-practice">
+      <div class="box-label">Problem</div>
+      <p>A pilot begins descent 4300 feet from the runway at an altitude of 750 feet. (a) Find the angle of descent to the nearest degree. (b) If a west wind blows at 60 m.p.h. while an airplane heads north at 300 m.p.h., find the resultant speed and direction.</p>
+    </div>
+    <div class="box box-example">
+      <div class="box-label">Solution</div>
+      <p><strong>Part (a):</strong> The plane descends from height 750 ft over a distance of 4300 ft. Using the sine ratio (opposite over hypotenuse):</p>
+      $$\sin \theta = \frac{750}{4300} = 0.1744$$
+      <p>From the table, \(\sin 10^{\circ} \approx 0.1736\). So \(\theta \approx 10^{\circ}\).</p>
+      <p><strong>The angle of descent is approximately 10&deg;.</strong></p>
+      <p><strong>Part (b):</strong> The airplane velocity (300 m.p.h. north) and wind velocity (60 m.p.h. east) are perpendicular. The resultant:</p>
+      $$|\mathbf{V}| = \sqrt{300^2 + 60^2} = \sqrt{90000 + 3600} = \sqrt{93600} \approx 306 \text{ m.p.h.}$$
+      <p>Direction: \(\tan A = \dfrac{60}{300} = 0.2000\). From the table, \(\tan 11^{\circ} \approx 0.1944\), \(\tan 12^{\circ} \approx 0.2126\). So \(A \approx 11^{\circ}\) east of north.</p>
+      <p><strong>The airplane flies at approximately 306 m.p.h. at a heading 11&deg; east of north.</strong></p>
+    </div>
+  </div>
+
+</div>
+
+<!-- ==================== TEST PREPARATION GUIDE ==================== -->
+<section class="section-card" id="test-prep">
+  <div class="section-num">Test Preparation</div>
+  <h2>Test Preparation Guide</h2>
+
+  <p>As the textbook says: &ldquo;When you climb a mountain trail, you pay close attention to each obstruction until at some moment you pause, look back, and realize how far you have come.&rdquo; Here are strategies and pitfalls to help you prepare for your final examination.</p>
+
+  <h3>Study Strategies</h3>
+  <div class="tips-grid">
+    <div class="tip-card">
+      <h4>Know the Properties Cold</h4>
+      <p>Many test questions ask you to <em>justify</em> each step. Be sure you can name the commutative, associative, distributive, identity, and inverse properties on sight.</p>
+    </div>
+    <div class="tip-card">
+      <h4>Practice Factoring Fluently</h4>
+      <p>Factoring is the gateway to solving quadratics, simplifying fractions, and reducing expressions. Drill all four types:</p>
+      <ul>
+        <li>GCF extraction</li>
+        <li>Difference of squares</li>
+        <li>Trinomial squares</li>
+        <li>General trinomials</li>
+      </ul>
+    </div>
+    <div class="tip-card">
+      <h4>Draw Diagrams Always</h4>
+      <p>For word problems, geometry, and trigonometry, a sketch will clarify which formula to use and which values you know.</p>
+    </div>
+    <div class="tip-card">
+      <h4>Check Your Answers</h4>
+      <p>Substitute solutions back into the <em>original</em> equation. This catches sign errors, extraneous roots (from squaring both sides), and arithmetic mistakes.</p>
+    </div>
+  </div>
+
+  <h3>Common Pitfalls to Avoid</h3>
+  <div class="tips-grid">
+    <div class="pitfall-card">
+      <h4>Sign Errors with Negatives</h4>
+      <p>Remember: \(-(-a) = a\), and when distributing a negative sign, <em>every</em> term inside changes sign. The most common source of mistakes in all of algebra.</p>
+    </div>
+    <div class="pitfall-card">
+      <h4>Forgetting to Flip the Inequality</h4>
+      <p>When you multiply or divide both sides of an inequality by a <em>negative</em> number, the direction of the inequality reverses: if \(a > b\) and \(c < 0\), then \(ac < bc\).</p>
+    </div>
+    <div class="pitfall-card">
+      <h4>Squaring Is Not Distributive</h4>
+      <p>\((a + b)^2 \neq a^2 + b^2\). The correct expansion is \(a^2 + 2ab + b^2\). This error appears in factoring, completing the square, and the Pythagorean theorem.</p>
+    </div>
+    <div class="pitfall-card">
+      <h4>Division by Zero</h4>
+      <p>Never divide by an expression that could equal zero. When solving fractional equations, always check that your solution does not make a denominator zero.</p>
+    </div>
+    <div class="pitfall-card">
+      <h4>Extraneous Roots from Squaring</h4>
+      <p>When you square both sides of an equation (radical equations), you may introduce false solutions. Always check by substituting back.</p>
+    </div>
+    <div class="pitfall-card">
+      <h4>Mixing Up Sin, Cos, and Tan</h4>
+      <p>Use the mnemonic <strong>SOH-CAH-TOA</strong>: Sin = Opposite/Hypotenuse, Cos = Adjacent/Hypotenuse, Tan = Opposite/Adjacent. Label your triangle before computing.</p>
+    </div>
+  </div>
+
+  <div class="box box-insight">
+    <div class="box-label">Final Thought</div>
+    <p>Mathematics is cumulative. Every new topic rests on what came before. If you find yourself struggling with Chapter 13 or 14, trace back through the roadmap to identify the earlier concept that needs strengthening. A solid grasp of the <strong>properties of real numbers</strong> and <strong>equation-solving techniques</strong> will carry you through every challenge ahead.</p>
+  </div>
+</section>
+
+<!-- ==================== QUICK REFERENCE SUMMARY ==================== -->
+<div class="quick-ref">
+  <h2>Quick Reference: Chapter-by-Chapter Key Skills</h2>
+  <div style="overflow-x:auto;">
+  <table>
+    <thead>
+      <tr>
+        <th>Chapter</th>
+        <th>Core Skill</th>
+        <th>Key Formula / Concept</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>Set notation &amp; number lines</td><td>\(\{1, 2, 3, \ldots\}\), roster/rule, \(\subset\)</td></tr>
+      <tr><td>2</td><td>Evaluating expressions</td><td>Replacement set, solution set</td></tr>
+      <tr><td>3</td><td>Solving linear equations</td><td>Addition &amp; multiplication properties of equality</td></tr>
+      <tr><td>4</td><td>Operations with negatives</td><td>\(a - b = a + (-b)\); \((-a)(-b) = ab\)</td></tr>
+      <tr><td>5</td><td>Inequalities &amp; word problems</td><td>If \(a > b\) and \(c < 0\), then \(ac < bc\)</td></tr>
+      <tr><td>6</td><td>Polynomial arithmetic</td><td>\(a^m \cdot a^n = a^{m+n}\)</td></tr>
+      <tr><td>7</td><td>Factoring</td><td>\(a^2 - b^2 = (a+b)(a-b)\)</td></tr>
+      <tr><td>8</td><td>Algebraic fractions</td><td>LCD, \(\frac{a}{b} \cdot \frac{c}{d} = \frac{ac}{bd}\)</td></tr>
+      <tr><td>9</td><td>Graphing lines</td><td>\(y = mx + b\); \(m = \frac{\Delta y}{\Delta x}\)</td></tr>
+      <tr><td>10</td><td>Systems of equations</td><td>Substitution, addition/subtraction methods</td></tr>
+      <tr><td>11</td><td>Radicals &amp; real numbers</td><td>\(\sqrt{ab} = \sqrt{a}\cdot\sqrt{b}\); \(a^2 + b^2 = c^2\)</td></tr>
+      <tr><td>12</td><td>Functions &amp; variation</td><td>\(y = kx\); \(xy = k\)</td></tr>
+      <tr><td>13</td><td>Quadratic equations</td><td>\(x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\)</td></tr>
+      <tr><td>14</td><td>Trigonometry &amp; vectors</td><td>\(\sin A = \frac{\text{opp}}{\text{hyp}}\); \(|\mathbf{R}| = \sqrt{V_1^2 + V_2^2}\)</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<!-- ==================== NAVIGATION ==================== -->
+<nav class="chapter-nav">
+  <a href="../14-geometry-and-trigonometry/index.html">&larr; Chapter 14: Geometry and Trigonometry</a>
+  <span style="font-size:0.85rem;color:#888;">Chapter 15 of 15</span>
+  <span class="disabled">Last Chapter &rarr;</span>
+</nav>
+
+</main>
+
+<!-- ==================== KaTeX Scripts ==================== -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+        ],
+        throwOnError: false
+    });
+});
+</script>
+</body>
+</html>

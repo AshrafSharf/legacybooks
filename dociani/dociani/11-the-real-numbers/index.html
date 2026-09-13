@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 11 — The Real Numbers | Modern Algebra: Structure and Method</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', 'Cambria', 'Times New Roman', serif;
+            background: #fdf6f0;
+            color: #2d2d2d;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+
+        /* Hero Header */
+        .hero {
+            background: linear-gradient(135deg, #8b1a1a 0%, #1a1a2e 100%);
+            color: white;
+            padding: 3rem 2rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero .chapter-num {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 8rem;
+            font-weight: 800;
+            opacity: 0.10;
+            position: absolute;
+            top: -0.5rem;
+            right: 2rem;
+            line-height: 1;
+        }
+        .hero h1 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .hero .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.85;
+            font-style: italic;
+        }
+        .hero .book-title {
+            font-size: 0.95rem;
+            opacity: 0.6;
+            margin-top: 0.5rem;
+        }
+
+        /* Container */
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+        /* Cards */
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Headings */
+        h2 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #8b1a1a;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #d4582a;
+        }
+        h3 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #8b1a1a;
+            font-size: 1.5rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+        h4 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #5a3e3e;
+            font-size: 1.2rem;
+            margin: 1.2rem 0 0.5rem;
+        }
+        p { margin-bottom: 1rem; }
+        ul, ol { margin: 0.75rem 0 1.25rem 1.5rem; }
+        li { margin-bottom: 0.4rem; }
+
+        /* Highlight Boxes */
+        .box { padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 5px solid; }
+        .box-definition { border-color: #8b1a1a; background: #fce8e8; }
+        .box-insight { border-color: #d4582a; background: #fef3ec; }
+        .box-caution { border-color: #7f1d1d; background: #fef2f2; }
+        .box-example { border-color: #276749; background: #f0f7f0; }
+        .box-practice { border-color: #4a5568; background: #f7fafc; }
+        .box-formula { border-color: #2b4c7e; background: #ebf0ff; }
+
+        .box-label {
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .box-definition .box-label { color: #8b1a1a; }
+        .box-insight .box-label { color: #d4582a; }
+        .box-caution .box-label { color: #7f1d1d; }
+        .box-example .box-label { color: #276749; }
+        .box-practice .box-label { color: #4a5568; }
+        .box-formula .box-label { color: #2b4c7e; }
+
+        /* SVG diagrams */
+        .svg-container {
+            text-align: center;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+        .svg-container svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Steps in solutions */
+        .step { margin: 0.75rem 0; }
+        .step-num {
+            display: inline-block;
+            background: #8b1a1a;
+            color: #fff;
+            width: 1.6rem;
+            height: 1.6rem;
+            line-height: 1.6rem;
+            text-align: center;
+            border-radius: 50%;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-right: 0.5rem;
+            font-family: 'Segoe UI', sans-serif;
+            vertical-align: middle;
+        }
+
+        /* KaTeX overrides */
+        .katex { font-size: 1.3em; }
+        .katex-display { font-size: 1.35em; margin: 1.5rem 0; overflow-x: auto; }
+
+        /* Navigation Footer */
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e2d9ce;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .nav-footer a {
+            color: #8b1a1a;
+            text-decoration: none;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border: 2px solid #8b1a1a;
+            border-radius: 8px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .nav-footer a:hover {
+            background: #8b1a1a;
+            color: #fff;
+        }
+        .nav-footer .chapter-list {
+            color: #5a3e3e;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        /* Overview list */
+        .overview-list { list-style: none; margin-left: 0; }
+        .overview-list li {
+            padding: 0.5rem 0 0.5rem 2rem;
+            position: relative;
+        }
+        .overview-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            background: #d4582a;
+            border-radius: 50%;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        th, td {
+            padding: 0.5rem 1rem;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background: #8b1a1a;
+            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+        }
+        td { background: #fff; }
+
+        /* Section divider */
+        .section-divider {
+            width: 60px;
+            height: 4px;
+            background: #d4582a;
+            border: none;
+            margin: 2rem auto;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 2rem; }
+            .hero .chapter-num { font-size: 5rem; }
+            .container { padding: 1rem; }
+            .card { padding: 1.25rem; }
+            .nav-footer { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ====== HERO HEADER ====== -->
+<header class="hero">
+    <div class="chapter-num">11</div>
+    <h1>The Real Numbers</h1>
+    <div class="subtitle">Rational and irrational numbers, square roots, radicals, and the completeness of the number line</div>
+    <div class="book-title">Modern Algebra: Structure and Method &mdash; Dolciani et al.</div>
+</header>
+
+<div class="container">
+
+    <!-- ====== OVERVIEW ====== -->
+    <div class="card">
+        <h2>What You'll Learn</h2>
+        <ul class="overview-list">
+            <li>The nature of rational numbers and the property of density</li>
+            <li>Decimal forms of rational numbers: terminating and repeating decimals</li>
+            <li>Irrational numbers and the proof that \(\sqrt{2}\) is irrational</li>
+            <li>The real number line and the completeness property</li>
+            <li>Square roots: principal roots, product and quotient properties</li>
+            <li>Simplifying radicals to simplest radical form</li>
+            <li>Adding, subtracting, multiplying, and dividing radical expressions</li>
+            <li>Rationalizing denominators</li>
+        </ul>
+    </div>
+
+    <!-- ====== 11-1: RATIONAL NUMBERS ====== -->
+    <div class="card">
+        <h2>11-1 &middot; The Nature of Rational Numbers</h2>
+        <p>
+            You define a number system by giving a set of numbers and telling how to add and multiply its members.
+            Starting with the positive integers \(\{1, 2, 3, 4, \ldots\}\), you extend to fractions, then to zero and the negative integers and fractions, arriving at the <strong>rational numbers</strong>.
+        </p>
+
+        <div class="box box-definition">
+            <div class="box-label">Definition &mdash; Rational Number</div>
+            <p>
+                A <strong>rational number</strong> is any number that can be expressed as the ratio of two integers:
+            </p>
+            $$\frac{a}{b}, \quad \text{where } a, b \in \mathbb{Z} \text{ and } b \neq 0$$
+            <p>
+                The system of rational numbers is closed under addition, subtraction, multiplication, and division (except by zero). These are called the <strong>rational operations</strong>.
+            </p>
+        </div>
+
+        <p>
+            A rational number can be expressed in an unlimited number of ways. For example:
+        </p>
+        $$\frac{5}{6} = \frac{-5}{-6} = \frac{10}{12} = \frac{15}{18} = \frac{20}{24}$$
+
+        <div class="box box-insight">
+            <div class="box-label">Key Insight &mdash; Density of Rational Numbers</div>
+            <p>
+                Between every pair of distinct rational numbers there is an infinite set of rational numbers.
+                For instance, a rational number between \(\frac{1}{4}\) and \(\frac{1}{3}\) is their average:
+            </p>
+            $$\frac{1}{2}\!\left(\frac{1}{4} + \frac{1}{3}\right) = \frac{1}{2} \cdot \frac{7}{12} = \frac{7}{24}$$
+            <p>
+                This process can be repeated without end, so the rationals are <strong>dense</strong>: between any two, there are infinitely many more.
+            </p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ====== 11-2: DECIMAL FORMS ====== -->
+    <div class="card">
+        <h2>11-2 &middot; Decimal Forms of Rational Numbers</h2>
+        <p>
+            To change a common fraction to a decimal, carry out the indicated division. Every rational number produces either a <strong>terminating</strong> or a <strong>repeating</strong> decimal.
+        </p>
+
+        <div class="box box-formula">
+            <div class="box-label">Two Types of Rational Decimals</div>
+            <table>
+                <tr>
+                    <th>Terminating</th>
+                    <th>Repeating</th>
+                </tr>
+                <tr>
+                    <td>\(\dfrac{3}{16} = 0.1875\)</td>
+                    <td>\(\dfrac{1}{12} = 0.08\overline{3}\)</td>
+                </tr>
+                <tr>
+                    <td>\(\dfrac{2}{25} = 0.08\)</td>
+                    <td>\(\dfrac{7}{11} = 0.\overline{63}\)</td>
+                </tr>
+                <tr>
+                    <td>\(\dfrac{3}{50} = 0.06\)</td>
+                    <td>\(\dfrac{10}{11} = 0.\overline{90}\)</td>
+                </tr>
+            </table>
+        </div>
+
+        <h3>Converting Repeating Decimals to Fractions</h3>
+
+        <div class="box box-example">
+            <div class="box-label">Worked Example 1 &mdash; Repeating Decimal to Fraction</div>
+            <p><strong>Write \(0.3\overline{24}\) as a common fraction.</strong></p>
+            <div class="step"><span class="step-num">1</span> Let \(N = 0.32424\ldots\)</div>
+            <div class="step"><span class="step-num">2</span> The repeating block has 2 digits. Multiply by \(10^2 = 100\):</div>
+            $$100N = 32.424\ldots$$
+            <div class="step"><span class="step-num">3</span> Also: \(N = 0.324\ldots\). To align the repeating parts, multiply by 1:</div>
+            $$N = 0.324\ldots$$
+            <div class="step"><span class="step-num">4</span> Subtract:</div>
+            $$99N = 32.1 \implies N = \frac{32.1}{99} = \frac{321}{990} = \frac{107}{330}$$
+            <p><strong>Answer: \(0.3\overline{24} = \dfrac{107}{330}\)</strong></p>
+        </div>
+
+        <div class="box box-insight">
+            <div class="box-label">Key Insight &mdash; Rounding Decimals</div>
+            <p>
+                To round a decimal, add 1 to the last digit kept if the first digit dropped is 5 or more; otherwise, leave the digits unchanged.
+                For example, \(\frac{1}{12} = 0.08\overline{3} \approx 0.083\) (to three decimal places).
+            </p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ====== 11-3: IRRATIONAL NUMBERS ====== -->
+    <div class="card">
+        <h2>11-3 &middot; Roots of Numbers and Irrational Numbers</h2>
+        <p>
+            The operation of raising to a power is called <strong>involution</strong>. Its inverse operation is called <strong>extracting a root</strong> (evolution).
+        </p>
+
+        <div class="box box-definition">
+            <div class="box-label">Definition &mdash; nth Root</div>
+            <p>
+                For any positive integer \(n\), a number \(x\) is an \(n\)th root of the number \(a\) if it satisfies \(x^n = a\).
+                The expression \(\sqrt[n]{a}\) is called a <strong>radical</strong>; \(n\) is the <strong>root index</strong> and \(a\) is the <strong>radicand</strong>.
+            </p>
+            <p>
+                With no root index, \(\sqrt{\phantom{x}}\) indicates <em>square root</em>:
+                \(\sqrt{81} = 9\), \(\sqrt{125}\) requires \(\sqrt[3]{125} = 5\).
+            </p>
+        </div>
+
+        <p>
+            Every positive number has two square roots &mdash; one positive (the <strong>principal root</strong>, written \(\sqrt{a}\)) and one negative (written \(-\sqrt{a}\)).
+            Together they are written \(\pm\sqrt{a}\).
+        </p>
+
+        <h3>The Proof That \(\sqrt{2}\) Is Irrational</h3>
+
+        <div class="box box-formula">
+            <div class="box-label">Theorem &mdash; Irrationality of Square Roots of Non-Perfect Squares</div>
+            <p>
+                If the square root of a positive integer is a rational number \(\frac{a}{b}\) (in lowest terms), then \(b = 1\) and the root is itself an integer.
+                Therefore, only integers which are perfect squares can have rational square roots.
+            </p>
+            <p><strong>Proof sketch for \(\sqrt{2}\):</strong></p>
+            <ol>
+                <li>Assume \(\sqrt{2} = \frac{a}{b}\) where \(a\) and \(b\) are positive integers with no common factors.</li>
+                <li>Then \(2 = \frac{a^2}{b^2}\), so \(a^2 = 2b^2\).</li>
+                <li>Since \(a^2\) is even, \(a\) must be even. Write \(a = 2k\).</li>
+                <li>Then \(4k^2 = 2b^2\), so \(b^2 = 2k^2\), meaning \(b\) is also even.</li>
+                <li>But \(a\) and \(b\) both even contradicts our assumption that they share no common factors.</li>
+            </ol>
+            <p>Therefore, \(\sqrt{2}\) cannot be expressed as a ratio of integers &mdash; it is <strong>irrational</strong>.</p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ====== 11-4: THE REAL NUMBER LINE ====== -->
+    <div class="card">
+        <h2>11-4 &middot; The Real Number Line</h2>
+        <p>
+            Together, the rational and irrational numbers form the <strong>real number system</strong>.
+            The reals have all the properties you have studied &mdash; including density &mdash; plus one crucial additional property:
+        </p>
+
+        <div class="box box-definition">
+            <div class="box-label">Property &mdash; Completeness of the Real Numbers</div>
+            <p>
+                On the number line, <strong>each point</strong> corresponds to exactly one real number, and <strong>each real number</strong> corresponds to exactly one point on the line.
+            </p>
+            <p>
+                Terminating and repeating decimals represent rational numbers. Decimals that neither terminate nor repeat represent <strong>irrational numbers</strong>.
+            </p>
+        </div>
+
+        <!-- SVG: The Real Number Line -->
+        <div class="svg-container">
+            <svg viewBox="-10 -10 720 200" width="720" height="200" xmlns="http://www.w3.org/2000/svg" aria-label="The real number line showing rational and irrational numbers">
+                <rect x="0" y="0" width="700" height="185" fill="#fdf6f0" rx="8"/>
+
+                <!-- Main number line -->
+                <line x1="30" y1="80" x2="670" y2="80" stroke="#2d2d2d" stroke-width="2.5"/>
+                <polygon points="670,80 660,75 660,85" fill="#2d2d2d"/>
+                <polygon points="30,80 40,75 40,85" fill="#2d2d2d"/>
+
+                <!-- Tick marks and integer labels -->
+                <line x1="110" y1="72" x2="110" y2="88" stroke="#2d2d2d" stroke-width="2"/>
+                <text x="104" y="106" font-size="14" fill="#2d2d2d" font-family="Georgia" font-weight="bold">&minus;2</text>
+
+                <line x1="210" y1="72" x2="210" y2="88" stroke="#2d2d2d" stroke-width="2"/>
+                <text x="204" y="106" font-size="14" fill="#2d2d2d" font-family="Georgia" font-weight="bold">&minus;1</text>
+
+                <line x1="310" y1="72" x2="310" y2="88" stroke="#2d2d2d" stroke-width="2"/>
+                <text x="307" y="106" font-size="14" fill="#2d2d2d" font-family="Georgia" font-weight="bold">0</text>
+
+                <line x1="410" y1="72" x2="410" y2="88" stroke="#2d2d2d" stroke-width="2"/>
+                <text x="407" y="106" font-size="14" fill="#2d2d2d" font-family="Georgia" font-weight="bold">1</text>
+
+                <line x1="510" y1="72" x2="510" y2="88" stroke="#2d2d2d" stroke-width="2"/>
+                <text x="507" y="106" font-size="14" fill="#2d2d2d" font-family="Georgia" font-weight="bold">2</text>
+
+                <line x1="610" y1="72" x2="610" y2="88" stroke="#2d2d2d" stroke-width="2"/>
+                <text x="607" y="106" font-size="14" fill="#2d2d2d" font-family="Georgia" font-weight="bold">3</text>
+
+                <!-- Rational points (blue) -->
+                <!-- 1/2 = 0.5 at x = 310 + 50 = 360 -->
+                <circle cx="360" cy="80" r="5" fill="#2b4c7e"/>
+                <text x="350" y="65" font-size="11" fill="#2b4c7e" font-family="Georgia" font-weight="bold">1/2</text>
+
+                <!-- -3/4 = -0.75 at x = 310 - 75 = 235 -->
+                <circle cx="235" cy="80" r="5" fill="#2b4c7e"/>
+                <text x="218" y="65" font-size="11" fill="#2b4c7e" font-family="Georgia" font-weight="bold">&minus;3/4</text>
+
+                <!-- 5/3 ≈ 1.667 at x = 310 + 166.7 = 477 -->
+                <circle cx="477" cy="80" r="5" fill="#2b4c7e"/>
+                <text x="467" y="65" font-size="11" fill="#2b4c7e" font-family="Georgia" font-weight="bold">5/3</text>
+
+                <!-- Irrational points (coral/orange) -->
+                <!-- √2 ≈ 1.414 at x = 310 + 141.4 = 451 -->
+                <circle cx="451" cy="80" r="6" fill="#d4582a" stroke="#fff" stroke-width="1.5"/>
+                <text x="439" y="128" font-size="12" fill="#d4582a" font-family="Georgia" font-weight="bold">&radic;2</text>
+
+                <!-- π ≈ 3.14159 at x = 310 + 314.2 = 624 (close to 3 tick) -->
+                <circle cx="624" cy="80" r="6" fill="#d4582a" stroke="#fff" stroke-width="1.5"/>
+                <text x="619" y="128" font-size="12" fill="#d4582a" font-family="Georgia" font-weight="bold">&pi;</text>
+
+                <!-- -√3 ≈ -1.732 at x = 310 - 173.2 = 137 -->
+                <circle cx="137" cy="80" r="6" fill="#d4582a" stroke="#fff" stroke-width="1.5"/>
+                <text x="120" y="128" font-size="12" fill="#d4582a" font-family="Georgia" font-weight="bold">&minus;&radic;3</text>
+
+                <!-- Legend -->
+                <circle cx="60" cy="155" r="5" fill="#2b4c7e"/>
+                <text x="72" y="160" font-size="12" fill="#2b4c7e" font-family="Segoe UI, sans-serif">Rational</text>
+                <circle cx="165" cy="155" r="6" fill="#d4582a" stroke="#fff" stroke-width="1.5"/>
+                <text x="177" y="160" font-size="12" fill="#d4582a" font-family="Segoe UI, sans-serif">Irrational</text>
+
+                <!-- Title -->
+                <text x="350" y="175" font-size="13" fill="#666" font-family="Georgia" text-anchor="middle" font-style="italic">Together, rationals and irrationals fill every point on the line.</text>
+            </svg>
+        </div>
+        <p style="text-align:center; font-size:0.95rem; color:#666; margin-top:-0.5rem;">
+            <em>Figure 11-1.</em> The real number line: rational numbers (blue) and irrational numbers (coral) together fill every point.
+        </p>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ====== 11-5: SQUARE ROOTS & PYTHAGOREAN THEOREM ====== -->
+    <div class="card">
+        <h2>11-5 &middot; Geometric Interpretation of Square Roots</h2>
+        <p>
+            How can you locate irrational square roots on the number line without using decimal approximations?
+            The answer comes from the <strong>Pythagorean theorem</strong>:
+        </p>
+
+        <div class="box box-formula">
+            <div class="box-label">Theorem &mdash; The Pythagorean Theorem</div>
+            <p>
+                In any right triangle, the square of the length of the hypotenuse equals the sum of the squares of the lengths of the other two sides:
+            </p>
+            $$c^2 = a^2 + b^2$$
+        </div>
+
+        <h3>Constructing \(\sqrt{2}\) on the Number Line</h3>
+        <p>
+            Draw a square with side length 1. By the Pythagorean theorem, its diagonal has length \(\sqrt{1^2 + 1^2} = \sqrt{2}\).
+            Using a compass centered at the origin with radius equal to this diagonal, you can mark the point \(\sqrt{2}\) on the number line.
+        </p>
+
+        <!-- SVG: √2 on the number line via unit square diagonal -->
+        <div class="svg-container">
+            <svg viewBox="-10 -10 560 310" width="560" height="310" xmlns="http://www.w3.org/2000/svg" aria-label="Constructing square root of 2 on the number line using the diagonal of a unit square">
+                <rect x="0" y="0" width="540" height="295" fill="#fdf6f0" rx="8"/>
+
+                <!-- Grid lines (light) -->
+                <line x1="100" y1="40" x2="100" y2="250" stroke="#e8ddd5" stroke-width="0.8"/>
+                <line x1="200" y1="40" x2="200" y2="250" stroke="#e8ddd5" stroke-width="0.8"/>
+                <line x1="300" y1="40" x2="300" y2="250" stroke="#e8ddd5" stroke-width="0.8"/>
+                <line x1="400" y1="40" x2="400" y2="250" stroke="#e8ddd5" stroke-width="0.8"/>
+                <line x1="100" y1="150" x2="400" y2="150" stroke="#e8ddd5" stroke-width="0.8"/>
+
+                <!-- Number line (x-axis) -->
+                <line x1="50" y1="250" x2="500" y2="250" stroke="#2d2d2d" stroke-width="2.5"/>
+                <polygon points="500,250 490,245 490,255" fill="#2d2d2d"/>
+
+                <!-- Tick marks -->
+                <line x1="100" y1="244" x2="100" y2="256" stroke="#2d2d2d" stroke-width="2"/>
+                <text x="93" y="273" font-size="14" fill="#2d2d2d" font-family="Georgia" font-weight="bold">&minus;1</text>
+
+                <line x1="200" y1="244" x2="200" y2="256" stroke="#2d2d2d" stroke-width="2"/>
+                <text x="197" y="273" font-size="14" fill="#2d2d2d" font-family="Georgia" font-weight="bold">0</text>
+
+                <line x1="300" y1="244" x2="300" y2="256" stroke="#2d2d2d" stroke-width="2"/>
+                <text x="297" y="273" font-size="14" fill="#2d2d2d" font-family="Georgia" font-weight="bold">1</text>
+
+                <line x1="400" y1="244" x2="400" y2="256" stroke="#2d2d2d" stroke-width="2"/>
+                <text x="397" y="273" font-size="14" fill="#2d2d2d" font-family="Georgia" font-weight="bold">2</text>
+
+                <!-- Unit square: from (200,250) to (300,250) to (300,150) to (200,150) -->
+                <rect x="200" y="150" width="100" height="100" fill="rgba(43,76,126,0.08)" stroke="#2b4c7e" stroke-width="2" stroke-dasharray="6,3"/>
+
+                <!-- Side labels -->
+                <text x="243" y="268" font-size="12" fill="#2b4c7e" font-family="Georgia" font-weight="bold">1</text>
+                <text x="304" y="205" font-size="12" fill="#2b4c7e" font-family="Georgia" font-weight="bold">1</text>
+
+                <!-- Diagonal -->
+                <line x1="200" y1="250" x2="300" y2="150" stroke="#8b1a1a" stroke-width="2.5"/>
+                <text x="230" y="192" font-size="13" fill="#8b1a1a" font-family="Georgia" font-weight="bold" transform="rotate(-45,250,195)">&radic;2</text>
+
+                <!-- Arc from diagonal endpoint to number line -->
+                <!-- radius = √2 * 100px ≈ 141.4px. Arc from (300,150) sweeping to (341.4, 250) -->
+                <path d="M 300 150 A 141.4 141.4 0 0 1 341.4 250" fill="none" stroke="#d4582a" stroke-width="2" stroke-dasharray="5,4"/>
+
+                <!-- √2 point on number line ≈ 200 + 141.4 = 341.4 -->
+                <circle cx="341.4" cy="250" r="6" fill="#d4582a" stroke="#fff" stroke-width="2"/>
+                <text x="327" y="290" font-size="14" fill="#d4582a" font-family="Georgia" font-weight="bold">&radic;2</text>
+
+                <!-- Origin point -->
+                <circle cx="200" cy="250" r="4" fill="#2d2d2d"/>
+
+                <!-- Corner markers on the square -->
+                <circle cx="200" cy="250" r="3" fill="#2b4c7e"/>
+                <circle cx="300" cy="250" r="3" fill="#2b4c7e"/>
+                <circle cx="300" cy="150" r="3" fill="#2b4c7e"/>
+                <circle cx="200" cy="150" r="3" fill="#2b4c7e"/>
+
+                <!-- Right-angle marker -->
+                <polyline points="290,250 290,240 300,240" fill="none" stroke="#2b4c7e" stroke-width="1.5"/>
+
+                <!-- Title -->
+                <text x="270" y="28" font-size="13" fill="#666" font-family="Georgia" text-anchor="middle" font-style="italic">The diagonal of a unit square has length &radic;2.</text>
+            </svg>
+        </div>
+        <p style="text-align:center; font-size:0.95rem; color:#666; margin-top:-0.5rem;">
+            <em>Figure 11-2.</em> Constructing \(\sqrt{2}\) on the number line using the diagonal of a unit square and a compass arc.
+        </p>
+
+        <p>
+            By building on this construction &mdash; drawing new right triangles with one side equal to a previously constructed root &mdash; you can locate \(\sqrt{3}\), \(\sqrt{4}\), \(\sqrt{5}\), and so on:
+        </p>
+        $$(\sqrt{2})^2 + 1^2 = 3 \implies \sqrt{3}, \qquad (\sqrt{3})^2 + 1^2 = 4 \implies \sqrt{4} = 2, \qquad (\sqrt{4})^2 + 1^2 = 5 \implies \sqrt{5}$$
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ====== 11-6: PROPERTIES OF SQUARE ROOTS ====== -->
+    <div class="card">
+        <h2>11-6 &middot; Properties of Square Roots</h2>
+        <p>
+            Two fundamental properties let you work with square roots algebraically. They apply when all radicands are non-negative.
+        </p>
+
+        <div class="box box-formula">
+            <div class="box-label">Product Property of Square Roots</div>
+            <p>If \(a \geq 0\) and \(b \geq 0\), then:</p>
+            $$\sqrt{ab} = \sqrt{a} \cdot \sqrt{b}$$
+        </div>
+
+        <div class="box box-formula">
+            <div class="box-label">Quotient Property of Square Roots</div>
+            <p>If \(a \geq 0\) and \(b > 0\), then:</p>
+            $$\sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}}$$
+        </div>
+
+        <div class="box box-example">
+            <div class="box-label">Worked Example 2 &mdash; Using the Product Property</div>
+            <p><strong>Evaluate \(\sqrt{2025}\).</strong></p>
+            <div class="step"><span class="step-num">1</span> Factor: \(2025 = 5 \times 405 = 5 \times 5 \times 81 = 5^2 \times 9^2\)</div>
+            <div class="step"><span class="step-num">2</span> Apply the product property:</div>
+            $$\sqrt{2025} = \sqrt{5^2 \times 9^2} = \sqrt{5^2} \cdot \sqrt{9^2} = 5 \times 9 = 45$$
+            <div class="step"><span class="step-num">3</span> Check: \(45 \times 45 = 2025\) \(\checkmark\)</div>
+            <p><strong>Answer: \(\sqrt{2025} = 45\)</strong></p>
+        </div>
+
+        <div class="box box-example">
+            <div class="box-label">Worked Example 3 &mdash; Using the Quotient Property</div>
+            <p><strong>Evaluate \(\sqrt{\dfrac{3600}{2401}}\).</strong></p>
+            <div class="step"><span class="step-num">1</span> Factor each:</div>
+            $$3600 = 6^2 \times 10^2, \qquad 2401 = 7^2 \times 7^2 = 7^4$$
+            <div class="step"><span class="step-num">2</span> Apply the quotient property:</div>
+            $$\sqrt{\frac{3600}{2401}} = \frac{\sqrt{3600}}{\sqrt{2401}} = \frac{6 \times 10}{7 \times 7} = \frac{60}{49}$$
+            <p><strong>Answer: \(\sqrt{\dfrac{3600}{2401}} = \dfrac{60}{49}\)</strong></p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ====== 11-7: SIMPLIFYING RADICALS ====== -->
+    <div class="card">
+        <h2>11-7 &middot; Simplifying Radicals</h2>
+        <p>
+            An expression containing a square-root radical is in <strong>simplest form</strong> when it satisfies three conditions:
+        </p>
+
+        <div class="box box-formula">
+            <div class="box-label">Simplest Radical Form &mdash; Three Conditions</div>
+            <ol>
+                <li>No integral radicand has a <strong>square factor</strong> other than 1.</li>
+                <li>No <strong>fractions</strong> appear under a radical sign.</li>
+                <li>No <strong>radicals</strong> appear in a denominator.</li>
+            </ol>
+        </div>
+
+        <h4>Simplifying radicands with square factors:</h4>
+        $$\sqrt{20} = \sqrt{4 \cdot 5} = 2\sqrt{5}$$
+        $$\sqrt{72} = \sqrt{36 \cdot 2} = 6\sqrt{2}$$
+        $$3\sqrt{96} = 3\sqrt{16 \cdot 6} = 3 \cdot 4\sqrt{6} = 12\sqrt{6}$$
+
+        <h4>Eliminating fractions under a radical:</h4>
+        $$\sqrt{\frac{3}{5}} = \frac{\sqrt{3}}{\sqrt{5}} = \frac{\sqrt{3}}{\sqrt{5}} \cdot \frac{\sqrt{5}}{\sqrt{5}} = \frac{\sqrt{15}}{5}$$
+
+        <h4>Rationalizing the denominator:</h4>
+        $$\frac{1}{\sqrt{2}} = \frac{1}{\sqrt{2}} \cdot \frac{\sqrt{2}}{\sqrt{2}} = \frac{\sqrt{2}}{2}$$
+        $$\frac{2\sqrt{3}}{3\sqrt{8}} = \frac{2\sqrt{3}}{3\sqrt{8}} \cdot \frac{\sqrt{2}}{\sqrt{2}} = \frac{2\sqrt{6}}{3\sqrt{16}} = \frac{2\sqrt{6}}{12} = \frac{\sqrt{6}}{6}$$
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ====== 11-8: ADDITION & SUBTRACTION OF RADICALS ====== -->
+    <div class="card">
+        <h2>11-8 &middot; Addition and Subtraction of Radicals</h2>
+        <p>
+            Radicals with the same radicand are called <strong>like radicals</strong>. You can combine them using the distributive property, just as you combine like terms in algebra:
+        </p>
+        $$6\sqrt{2} + 5\sqrt{2} = (6 + 5)\sqrt{2} = 11\sqrt{2}$$
+        $$5\sqrt{6} - 8\sqrt{5} + 2\sqrt{6} + 6\sqrt{5} = 7\sqrt{6} - 2\sqrt{5}$$
+
+        <div class="box box-caution">
+            <div class="box-label">Caution &mdash; Unlike Radicals</div>
+            <p>
+                Radicals with <em>different</em> radicands cannot be combined into a single term:
+            </p>
+            $$\sqrt{2} + \sqrt{3} \neq \sqrt{5}$$
+            <p>The sum can only be <em>indicated</em>, not simplified further.</p>
+        </div>
+
+        <div class="box box-example">
+            <div class="box-label">Worked Example 4 &mdash; Combining Radicals</div>
+            <p><strong>Simplify \(-2\sqrt{48} + 7\sqrt{3} + 2\sqrt{147}\).</strong></p>
+            <div class="step"><span class="step-num">1</span> Simplify each radical:</div>
+            $$\sqrt{48} = \sqrt{16 \cdot 3} = 4\sqrt{3}, \qquad \sqrt{147} = \sqrt{49 \cdot 3} = 7\sqrt{3}$$
+            <div class="step"><span class="step-num">2</span> Substitute:</div>
+            $$-2(4\sqrt{3}) + 7\sqrt{3} + 2(7\sqrt{3})$$
+            $$= -8\sqrt{3} + 7\sqrt{3} + 14\sqrt{3}$$
+            <div class="step"><span class="step-num">3</span> Combine like radicals:</div>
+            $$= (-8 + 7 + 14)\sqrt{3} = 13\sqrt{3}$$
+            <p><strong>Answer: \(13\sqrt{3}\)</strong></p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ====== 11-9: MULTIPLICATION OF RADICALS ====== -->
+    <div class="card">
+        <h2>11-9 &middot; Multiplication of Radicals</h2>
+        <p>
+            The product property lets you multiply radicals directly. Combine the coefficients, combine the radicands, then simplify.
+        </p>
+
+        <div class="box box-formula">
+            <div class="box-label">Multiplication Rules</div>
+            $$\sqrt{a} \cdot \sqrt{b} = \sqrt{ab}$$
+            $$(m\sqrt{a})(n\sqrt{b}) = mn\sqrt{ab}$$
+            <p>Always simplify the result to simplest radical form.</p>
+        </div>
+
+        <h4>Examples of multiplication:</h4>
+        $$\sqrt{7} \cdot \sqrt{3} = \sqrt{21}$$
+        $$\sqrt{3} \cdot \sqrt{27} = \sqrt{81} = 9$$
+        $$(2\sqrt{5})(4\sqrt{2}) = 8\sqrt{10}$$
+
+        <h4>Using the distributive property:</h4>
+        $$\sqrt{x}(\sqrt{x} - 3) = x - 3\sqrt{x}$$
+        $$2\sqrt{6}(3\sqrt{2} + \sqrt{3}) = 6\sqrt{12} + 2\sqrt{18} = 12\sqrt{3} + 6\sqrt{2}$$
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ====== 11-10: DIVISION & RATIONALIZING ====== -->
+    <div class="card">
+        <h2>11-10 &middot; Division of Radicals and Rationalizing Denominators</h2>
+        <p>
+            The process of changing a fraction with an irrational denominator to an equivalent fraction with a rational denominator is called <strong>rationalizing the denominator</strong>. This makes numerical approximation much easier.
+        </p>
+
+        <div class="box box-formula">
+            <div class="box-label">Method &mdash; Rationalizing a Single-Term Denominator</div>
+            <p>
+                Multiply both numerator and denominator by the radical in the denominator:
+            </p>
+            $$\frac{a}{\sqrt{b}} = \frac{a}{\sqrt{b}} \cdot \frac{\sqrt{b}}{\sqrt{b}} = \frac{a\sqrt{b}}{b}$$
+        </div>
+
+        <div class="box box-example">
+            <div class="box-label">Worked Example 5 &mdash; Rationalizing a Denominator</div>
+            <p><strong>Simplify \(\dfrac{6}{\sqrt{3}}\).</strong></p>
+            <div class="step"><span class="step-num">1</span> Multiply numerator and denominator by \(\sqrt{3}\):</div>
+            $$\frac{6}{\sqrt{3}} \cdot \frac{\sqrt{3}}{\sqrt{3}} = \frac{6\sqrt{3}}{3} = 2\sqrt{3}$$
+            <p><strong>Answer: \(2\sqrt{3}\)</strong></p>
+        </div>
+
+        <div class="box box-example">
+            <div class="box-label">Worked Example 6 &mdash; Simplify and Rationalize</div>
+            <p><strong>Simplify \(\dfrac{21\sqrt{5}}{7\sqrt{25}}\).</strong></p>
+            <div class="step"><span class="step-num">1</span> Simplify the denominator: \(\sqrt{25} = 5\).</div>
+            $$\frac{21\sqrt{5}}{7 \cdot 5} = \frac{21\sqrt{5}}{35} = \frac{3\sqrt{5}}{5}$$
+            <p><strong>Answer: \(\dfrac{3\sqrt{5}}{5}\)</strong></p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ====== APPROXIMATING IRRATIONAL ROOTS ====== -->
+    <div class="card">
+        <h2>Approximating Irrational Square Roots</h2>
+        <p>
+            The textbook presents a method for finding successive decimal digits of irrational square roots, based on the <strong>property of pairs of divisors</strong>:
+        </p>
+
+        <div class="box box-insight">
+            <div class="box-label">Key Insight &mdash; Divisor Pairs</div>
+            <p>
+                If you divide a number by a divisor smaller than its square root, the quotient will be larger than the square root, and vice versa.
+                So the square root always lies <em>between</em> the divisor and the quotient.
+            </p>
+        </div>
+
+        <div class="box box-formula">
+            <div class="box-label">Method &mdash; Successive Approximation (Babylonian Method)</div>
+            <ol>
+                <li>Choose a first approximation \(a\) (the integer whose square is nearest to \(n\)).</li>
+                <li>Divide: compute \(\frac{n}{a}\).</li>
+                <li>Average: \(\text{new } a = \frac{1}{2}\!\left(a + \frac{n}{a}\right)\).</li>
+                <li>Repeat steps 2&ndash;3 until the desired accuracy is reached.</li>
+            </ol>
+        </div>
+
+        <div class="box box-practice">
+            <div class="box-label">Practice &mdash; Approximate \(\sqrt{17}\)</div>
+            <table>
+                <tr>
+                    <th>Step</th>
+                    <th>Approximation \(a\)</th>
+                    <th>\(17 \div a\)</th>
+                    <th>Average</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>\(4\)</td>
+                    <td>\(4.25\)</td>
+                    <td>\(\frac{4 + 4.25}{2} = 4.125\)</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>\(4.125\)</td>
+                    <td>\(4.1212\ldots\)</td>
+                    <td>\(\frac{4.125 + 4.1212}{2} \approx 4.1231\)</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>\(4.1231\)</td>
+                    <td>\(4.12311\ldots\)</td>
+                    <td>\(\approx 4.12311\)</td>
+                </tr>
+            </table>
+            <p style="margin-top:0.75rem;">
+                \(\sqrt{17} \approx 4.1231\) (accurate to 4 decimal places).
+            </p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ====== QUICK REFERENCE ====== -->
+    <div class="card">
+        <h2>Quick Reference</h2>
+
+        <div class="box box-formula">
+            <div class="box-label">The Number System Hierarchy</div>
+            <p style="text-align:center; font-size:1.05rem;">
+                \(\mathbb{N}\) (Natural) \(\subset\) \(\mathbb{Z}\) (Integers) \(\subset\) \(\mathbb{Q}\) (Rationals) \(\subset\) \(\mathbb{R}\) (Reals)
+            </p>
+            <p style="text-align:center;">
+                \(\mathbb{R} = \mathbb{Q} \cup \mathbb{Q}'\), where \(\mathbb{Q}'\) denotes the irrational numbers.
+            </p>
+        </div>
+
+        <div class="box box-formula">
+            <div class="box-label">Essential Radical Rules</div>
+            <table>
+                <tr>
+                    <th>Rule</th>
+                    <th>Formula</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td style="text-align:left;">Product Property</td>
+                    <td>\(\sqrt{ab} = \sqrt{a}\cdot\sqrt{b}\)</td>
+                    <td>\(\sqrt{12} = 2\sqrt{3}\)</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left;">Quotient Property</td>
+                    <td>\(\sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}}\)</td>
+                    <td>\(\sqrt{\frac{9}{4}} = \frac{3}{2}\)</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left;">Like Radicals</td>
+                    <td>\(m\sqrt{a} \pm n\sqrt{a} = (m \pm n)\sqrt{a}\)</td>
+                    <td>\(3\sqrt{5} + 7\sqrt{5} = 10\sqrt{5}\)</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left;">Rationalizing</td>
+                    <td>\(\frac{a}{\sqrt{b}} = \frac{a\sqrt{b}}{b}\)</td>
+                    <td>\(\frac{4}{\sqrt{2}} = 2\sqrt{2}\)</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left;">Pythagorean Theorem</td>
+                    <td>\(c = \sqrt{a^2 + b^2}\)</td>
+                    <td>\(\sqrt{3^2+4^2}=5\)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="box box-formula">
+            <div class="box-label">Common Square Roots to Know</div>
+            <table>
+                <tr>
+                    <th>\(n\)</th>
+                    <th>1</th><th>4</th><th>9</th><th>16</th><th>25</th><th>36</th><th>49</th><th>64</th><th>81</th><th>100</th>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold; background:#fce8e8;">\(\sqrt{n}\)</td>
+                    <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="box box-caution">
+            <div class="box-label">Common Mistakes</div>
+            <ul>
+                <li>Writing \(\sqrt{a + b} = \sqrt{a} + \sqrt{b}\). This is <strong>false</strong>! The product property applies to products, not sums.</li>
+                <li>Forgetting that \(\sqrt{a^2} = |a|\), not simply \(a\) (it equals the <em>non-negative</em> value).</li>
+                <li>Leaving a radical in the denominator &mdash; always rationalize.</li>
+                <li>Combining unlike radicals: \(3\sqrt{2} + 5\sqrt{3} \neq 8\sqrt{5}\).</li>
+                <li>Claiming negative numbers have real square roots &mdash; \(\sqrt{-4}\) is not a real number.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ====== NAVIGATION FOOTER ====== -->
+    <nav class="nav-footer">
+        <a href="../10-sentences-in-two-variables/">&larr; Ch 10: Sentences in Two Variables</a>
+        <span class="chapter-list">Chapter 11 of 15</span>
+        <a href="../12-functions-and-variation/">Ch 12: Functions and Variation &rarr;</a>
+    </nav>
+
+</div>
+
+<!-- KaTeX rendering -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+        ],
+        throwOnError: false
+    });
+});
+</script>
+</body>
+</html>

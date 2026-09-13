@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1 — Some Basic Concepts | Practical Algebra</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', 'Cambria', 'Times New Roman', serif;
+            background: #fdf8f3;
+            color: #2d2d2d;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+        .hero {
+            background: linear-gradient(135deg, #0d4f4f 0%, #1a2332 100%);
+            color: white;
+            padding: 3rem 2rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero .chapter-num {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 8rem;
+            font-weight: 800;
+            opacity: 0.10;
+            position: absolute;
+            top: -0.5rem;
+            right: 2rem;
+            line-height: 1;
+        }
+        .hero h1 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .hero .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.85;
+            font-style: italic;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        h2 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #0d4f4f;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #c0602b;
+        }
+        h3 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #0d4f4f;
+            font-size: 1.5rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+        p { margin-bottom: 1rem; }
+        ul, ol { margin: 0.75rem 0 1.25rem 1.5rem; }
+        li { margin-bottom: 0.4rem; }
+        /* Highlight boxes */
+        .box { padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 5px solid; }
+        .box-definition { border-color: #0d4f4f; background: #e8f4f4; }
+        .box-insight { border-color: #c0602b; background: #fef3ec; }
+        .box-caution { border-color: #9b2c2c; background: #fef2f2; }
+        .box-example { border-color: #276749; background: #f0f7f0; }
+        .box-practice { border-color: #6b46c1; background: #f5f0ff; }
+        .box-formula { border-color: #2b6cb0; background: #ebf4ff; }
+        .box-label {
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .box-definition .box-label { color: #0d4f4f; }
+        .box-insight .box-label { color: #c0602b; }
+        .box-caution .box-label { color: #9b2c2c; }
+        .box-example .box-label { color: #276749; }
+        .box-practice .box-label { color: #6b46c1; }
+        .box-formula .box-label { color: #2b6cb0; }
+        /* Navigation */
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e2d9ce;
+        }
+        .nav-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #0d4f4f;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .nav-btn:hover { background: #0a3d3d; }
+        .nav-btn.disabled {
+            background: #b0b0b0;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+        svg { max-width: 100%; height: auto; display: block; margin: 1.5rem auto; }
+        .katex { font-size: 1.3em; }
+
+        .katex-display { margin: 1.5rem 0; overflow-x: auto; font-size: 1.35em; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        th, td {
+            padding: 0.6rem 1rem;
+            border: 1px solid #d4cdc4;
+            text-align: left;
+        }
+        th {
+            background: #0d4f4f;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        td { background: #fff; }
+        tr:nth-child(even) td { background: #faf7f3; }
+        .overview-list { list-style: none; margin-left: 0; }
+        .overview-list li {
+            padding: 0.4rem 0 0.4rem 1.8rem;
+            position: relative;
+        }
+        .overview-list li::before {
+            content: '✦';
+            color: #c0602b;
+            position: absolute;
+            left: 0;
+            font-size: 1rem;
+        }
+        .section-divider {
+            height: 3px;
+            background: linear-gradient(90deg, #0d4f4f, #c0602b, transparent);
+            border: none;
+            margin: 2.5rem 0;
+            border-radius: 2px;
+        }
+        .solution-toggle {
+            background: #276749;
+            color: white;
+            border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 6px;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            margin-top: 0.75rem;
+            transition: background 0.2s;
+        }
+        .solution-toggle:hover { background: #1e5438; }
+        .solution-content {
+            display: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px dashed #276749;
+        }
+        .solution-content.show { display: block; }
+        .accent { color: #c0602b; font-weight: 600; }
+        .teal { color: #0d4f4f; font-weight: 600; }
+        code {
+            background: #f0ece6;
+            padding: 0.1em 0.4em;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .hero .chapter-num { font-size: 5rem; }
+            h2 { font-size: 1.6rem; }
+            h3 { font-size: 1.3rem; }
+            .card { padding: 1.25rem; }
+            .box { padding: 1rem; }
+            .nav-footer { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============================== HERO ============================== -->
+<div class="hero">
+    <div class="chapter-num">1</div>
+    <div style="position:relative">
+        <p style="font-family: 'Segoe UI',sans-serif; text-transform:uppercase; letter-spacing:0.2em; font-size:0.9rem; opacity:0.7; margin-bottom:0.5rem;">Chapter 1</p>
+        <h1>Some Basic Concepts</h1>
+        <p class="subtitle">Building the bridge from arithmetic to the language of algebra</p>
+    </div>
+</div>
+
+<div class="container">
+
+<!-- ============================== OVERVIEW ============================== -->
+<div class="card">
+    <h2>What You'll Learn</h2>
+    <ul class="overview-list">
+        <li>How algebra extends arithmetic by using letters to represent unknown numbers</li>
+        <li>The axioms of equality that underpin every algebraic manipulation</li>
+        <li>Translating everyday word statements into algebraic expressions</li>
+        <li>Multiplication notation, terms, factors, and coefficients</li>
+        <li>The Commutative, Associative, and Distributive laws</li>
+        <li>Order of operations and the role of parentheses</li>
+        <li>Exponents: base, exponent, and power</li>
+        <li>Combining like terms to simplify algebraic expressions</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<!-- ============================== SECTION 1: FROM ARITHMETIC TO ALGEBRA ============================== -->
+<div class="card">
+    <h2>From Arithmetic to Algebra</h2>
+
+    <p>Algebra is a logical outgrowth of arithmetic. Most algebraic problems are built on the four fundamental operations you already know:</p>
+
+    <div class="box box-formula">
+        <div class="box-label">The Four Fundamental Operations</div>
+        <table>
+            <tr><th>Operation</th><th>Symbol</th><th>Result is called</th></tr>
+            <tr><td>Addition</td><td>\(+\)</td><td><strong>Sum</strong></td></tr>
+            <tr><td>Subtraction</td><td>\(-\)</td><td><strong>Difference</strong></td></tr>
+            <tr><td>Multiplication</td><td>\(\times\)</td><td><strong>Product</strong></td></tr>
+            <tr><td>Division</td><td>\(\div\)</td><td><strong>Quotient</strong></td></tr>
+        </table>
+    </div>
+
+    <p>The key difference? In algebra, <span class="accent">letters are used to represent numbers</span> whose values we don't yet know. Finding these unknown values is one of the central activities in algebra.</p>
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight</div>
+        <p>Algebra lets us translate long word statements into brief mathematical expressions. For example, "the sum of five times a number and two times the same number is equal to seven times the number" becomes simply:</p>
+        $$5n + 2n = 7n$$
+    </div>
+</div>
+
+<!-- ============================== SECTION 2: AXIOMS OF EQUALITY ============================== -->
+<div class="card">
+    <h2>Axioms of Equality</h2>
+
+    <p>An <span class="teal">axiom</span> is a basic assumption accepted as true without proof. The following axioms of equality are fundamental to all algebraic manipulation:</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Axioms of Equality</div>
+        <p><strong>1. Addition:</strong> If equals are added to equals, the sums are equal.</p>
+        $$\text{If } a = b, \text{ then } a + c = b + c$$
+        <p><strong>2. Subtraction:</strong> If equals are subtracted from equals, the differences are equal.</p>
+        $$\text{If } a = b, \text{ then } a - c = b - c$$
+        <p><strong>3. Multiplication:</strong> If equals are multiplied by equals, the products are equal.</p>
+        $$\text{If } a = b, \text{ then } a \cdot c = b \cdot c$$
+        <p><strong>4. Division:</strong> If equals are divided by equals, the quotients are equal <em>(provided the divisor is not zero)</em>.</p>
+        $$\text{If } a = b \text{ and } c \neq 0, \text{ then } \frac{a}{c} = \frac{b}{c}$$
+        <p><strong>5. Transitivity:</strong> If \(a = c\) and \(b = c\), then \(a = b\).</p>
+    </div>
+
+    <div class="box box-caution">
+        <div class="box-label">Caution</div>
+        <p>Division by zero is <strong>undefined</strong>. Expressions like \(\dfrac{5}{0}\) and \(\dfrac{x}{0}\) are meaningless. When a letter appears in the denominator, you must ensure it does not represent zero. For instance, in \(\dfrac{6}{x - 3}\), the value \(x = 3\) would make the denominator zero, resulting in an impossible division.</p>
+    </div>
+</div>
+
+<!-- ============================== SECTION 3: ALGEBRAIC REPRESENTATION ============================== -->
+<div class="card">
+    <h2>Algebraic Representation</h2>
+
+    <p>Algebra allows us to convert word statements into precise mathematical shorthand. Here is a quick reference for translating everyday phrases:</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Translation Guide</div>
+        <table>
+            <tr><th>\(+\) Addition</th><th>\(-\) Subtraction</th><th>\(\times\) Multiplication</th><th>\(\div\) Division</th><th>\(=\) Equals</th></tr>
+            <tr>
+                <td>sum, and, plus, added to, increased by</td>
+                <td>minus, subtract, less, less than, difference, decreased by</td>
+                <td>times, product, multiplied by</td>
+                <td>quotient, divided by, ratio</td>
+                <td>is, is equal to, equals, was</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example</div>
+        <p>"Three times a number subtracted from eight times the same number equals five times the number."</p>
+        <p>Let \(n\) represent the number:</p>
+        $$8n - 3n = 5n$$
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example</div>
+        <p>"The sum of \(x\) and \(ab\), divided by the quantity three minus \(y\)."</p>
+        $$\frac{x + ab}{3 - y}$$
+    </div>
+</div>
+
+<!-- ============================== SECTION 4: MULTIPLICATION NOTATION ============================== -->
+<div class="card">
+    <h2>Multiplication Notation</h2>
+
+    <p>In arithmetic, multiplication is shown with the \(\times\) sign. In algebra, we avoid \(\times\) because it could be confused with the letter \(x\). Instead, we use these equivalent notations:</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Ways to Write "8 times n"</div>
+        $$8 \times n \;=\; 8 \cdot n \;=\; 8(n) \;=\; 8n$$
+        <p>The last form, \(8n\), with the multiplication sign omitted entirely, is <strong>preferred</strong> in algebra.</p>
+    </div>
+
+    <p>For two numbers, parentheses are often preferred over a raised dot to avoid confusion with a decimal point. Thus, "5 times 7 times \(y\)" may be written as \((5)(7)y\) or simply \(35y\).</p>
+
+    <p>Similarly, the division symbol \(\div\) is rarely used in algebra. Instead, we write fractions:</p>
+    $$x \div y \;=\; \frac{x}{y} \;=\; x:y$$
+</div>
+
+<!-- ============================== SECTION 5: TERMS, FACTORS, COEFFICIENTS ============================== -->
+<div class="card">
+    <h2>Terms, Factors, and Coefficients</h2>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Term</div>
+        <p>A <strong>term</strong> is either a single number or letter, or the product (or quotient) of several numbers or letters. Examples: \(7\), \(\;5a\), \(\;xyz\), \(\;\dfrac{3ay}{2}\).</p>
+    </div>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Factor</div>
+        <p>A <strong>factor</strong> is one of the individual numbers or letters multiplied together to form a term. In \(5c^2d\), the factors are \(5\), \(c^2\), and \(d\).</p>
+        <ul>
+            <li><strong>Numerical factor:</strong> a digit (e.g., the 7 in \(7xyz\))</li>
+            <li><strong>Literal factor:</strong> a letter (e.g., the \(x\), \(y\), \(z\) in \(7xyz\))</li>
+        </ul>
+    </div>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Coefficient</div>
+        <p>Any factor (or group of factors) is called the <strong>coefficient</strong> of the remaining factors. In \(4ab\):</p>
+        <ul>
+            <li>\(4\) is the <em>numerical coefficient</em> of \(ab\)</li>
+            <li>\(4a\) is the coefficient of \(b\)</li>
+            <li>\(ab\) is the <em>literal coefficient</em> of \(4\)</li>
+        </ul>
+        <p>If a letter has no written coefficient, its numerical coefficient is understood to be 1. Thus \(a\) means \(1 \cdot a\).</p>
+    </div>
+
+    <!-- SVG Diagram: Terms, Factors, Coefficients -->
+    <h3>Visual Breakdown</h3>
+    <svg viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg" style="max-width: 650px;">
+        <!-- Background -->
+        <rect x="0" y="0" width="700" height="340" rx="12" fill="#fdf8f3"/>
+
+        <!-- Title -->
+        <text x="350" y="32" text-anchor="middle" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="700" fill="#0d4f4f">Anatomy of an Algebraic Expression</text>
+
+        <!-- The expression -->
+        <text x="350" y="80" text-anchor="middle" font-family="Georgia, Cambria, serif" font-size="36" fill="#2d2d2d">
+            <tspan fill="#2b6cb0" font-weight="700">4</tspan><tspan fill="#c0602b" font-weight="700">a</tspan><tspan fill="#c0602b" font-weight="700">b</tspan><tspan fill="#2d2d2d"> + </tspan><tspan fill="#2b6cb0" font-weight="700">3</tspan><tspan fill="#c0602b" font-weight="700">x</tspan><tspan fill="#2d2d2d"> − </tspan><tspan fill="#2b6cb0" font-weight="700">7</tspan>
+        </text>
+
+        <!-- Brace under "4ab" -->
+        <path d="M 175 92 Q 175 106 210 106 Q 245 106 245 92" stroke="#0d4f4f" stroke-width="2" fill="none"/>
+        <line x1="210" y1="106" x2="210" y2="118" stroke="#0d4f4f" stroke-width="2"/>
+        <text x="210" y="136" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#0d4f4f">Term 1</text>
+
+        <!-- Brace under "3x" -->
+        <path d="M 335 92 Q 335 106 360 106 Q 385 106 385 92" stroke="#0d4f4f" stroke-width="2" fill="none"/>
+        <line x1="360" y1="106" x2="360" y2="118" stroke="#0d4f4f" stroke-width="2"/>
+        <text x="360" y="136" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#0d4f4f">Term 2</text>
+
+        <!-- Brace under "7" -->
+        <path d="M 480 92 Q 480 106 495 106 Q 510 106 510 92" stroke="#0d4f4f" stroke-width="2" fill="none"/>
+        <line x1="495" y1="106" x2="495" y2="118" stroke="#0d4f4f" stroke-width="2"/>
+        <text x="495" y="136" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#0d4f4f">Term 3</text>
+
+        <!-- Detailed breakdown of Term 1 -->
+        <rect x="40" y="160" width="280" height="160" rx="10" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="2"/>
+        <text x="180" y="185" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#2b6cb0">Breakdown of 4ab</text>
+
+        <!-- Factor boxes inside -->
+        <rect x="60" y="200" width="70" height="44" rx="6" fill="#fff" stroke="#2b6cb0" stroke-width="1.5"/>
+        <text x="95" y="228" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="700" fill="#2b6cb0">4</text>
+
+        <rect x="145" y="200" width="70" height="44" rx="6" fill="#fff" stroke="#c0602b" stroke-width="1.5"/>
+        <text x="180" y="228" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="700" fill="#c0602b">a</text>
+
+        <rect x="230" y="200" width="70" height="44" rx="6" fill="#fff" stroke="#c0602b" stroke-width="1.5"/>
+        <text x="265" y="228" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="700" fill="#c0602b">b</text>
+
+        <!-- Labels below each factor -->
+        <text x="95" y="264" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#2b6cb0" font-weight="600">Numerical</text>
+        <text x="95" y="278" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#2b6cb0" font-weight="600">Factor</text>
+
+        <text x="180" y="264" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#c0602b" font-weight="600">Literal</text>
+        <text x="180" y="278" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#c0602b" font-weight="600">Factor</text>
+
+        <text x="265" y="264" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#c0602b" font-weight="600">Literal</text>
+        <text x="265" y="278" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#c0602b" font-weight="600">Factor</text>
+
+        <!-- Coefficient annotation -->
+        <text x="180" y="308" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#0d4f4f" font-weight="600">4 = numerical coefficient of ab</text>
+
+        <!-- Key box on the right -->
+        <rect x="370" y="160" width="290" height="160" rx="10" fill="#fef3ec" stroke="#c0602b" stroke-width="2"/>
+        <text x="515" y="185" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#c0602b">Key Vocabulary</text>
+
+        <text x="390" y="212" font-family="Segoe UI, sans-serif" font-size="13" fill="#2d2d2d"><tspan font-weight="700" fill="#0d4f4f">Term:</tspan> a number, letter, or product</text>
+        <text x="390" y="234" font-family="Segoe UI, sans-serif" font-size="13" fill="#2d2d2d">separated by + or − signs</text>
+
+        <text x="390" y="260" font-family="Segoe UI, sans-serif" font-size="13" fill="#2d2d2d"><tspan font-weight="700" fill="#0d4f4f">Factor:</tspan> one part of a product</text>
+
+        <text x="390" y="286" font-family="Segoe UI, sans-serif" font-size="13" fill="#2d2d2d"><tspan font-weight="700" fill="#0d4f4f">Coefficient:</tspan> the multiplier of</text>
+        <text x="390" y="306" font-family="Segoe UI, sans-serif" font-size="13" fill="#2d2d2d">the remaining factors in a term</text>
+    </svg>
+</div>
+
+<hr class="section-divider">
+
+<!-- ============================== SECTION 6: COMMUTATIVE LAW ============================== -->
+<div class="card">
+    <h2>The Commutative Law</h2>
+
+    <p>The <span class="teal">commutative law</span> states that the result of addition or multiplication is the same regardless of the order of the numbers.</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Commutative Law</div>
+        <p><strong>For Addition:</strong></p>
+        $$a + b = b + a$$
+        <p><strong>For Multiplication:</strong></p>
+        $$a \cdot b = b \cdot a$$
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Examples</div>
+        <p>\(4 + 9 = 9 + 4 = 13\)</p>
+        <p>\(x + y = y + x\)</p>
+        <p>\(3 \cdot 7 = 7 \cdot 3 = 21\)</p>
+        <p>\(ab = ba\)</p>
+    </div>
+
+    <div class="box box-caution">
+        <div class="box-label">Caution &mdash; Does NOT Apply to Subtraction or Division</div>
+        <p>The commutative law does <strong>not</strong> hold for subtraction or division:</p>
+        $$7 - 3 \neq 3 - 7 \qquad \qquad 8 \div 4 \neq 4 \div 8$$
+        <p>In general: \(b - a \neq a - b\) and \(\dfrac{a}{b} \neq \dfrac{b}{a}\).</p>
+    </div>
+</div>
+
+<!-- ============================== SECTION 7: ASSOCIATIVE LAW ============================== -->
+<div class="card">
+    <h2>The Associative Law</h2>
+
+    <p>The <span class="teal">associative law</span> states that the sum (or product) of three or more quantities is the same regardless of how we group them.</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Associative Law</div>
+        <p><strong>For Addition:</strong></p>
+        $$(a + b) + c = a + (b + c) = a + b + c$$
+        <p><strong>For Multiplication:</strong></p>
+        $$(a \cdot b) \cdot c = a \cdot (b \cdot c) = a \cdot b \cdot c$$
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Examples</div>
+        <p>\((2 + 5) + 8 = 2 + (5 + 8) = 15\)</p>
+        <p>\(2 \cdot 3 \cdot 4 = (2 \cdot 3) \cdot 4 = 2 \cdot (3 \cdot 4) = 24\)</p>
+        <p>\(c \cdot d \cdot f = c(df) = (cd)f = cdf\)</p>
+    </div>
+
+    <div class="box box-caution">
+        <div class="box-label">Caution &mdash; Does NOT Apply to Subtraction or Division</div>
+        <p>The associative law does <strong>not</strong> hold for subtraction or division:</p>
+        $$(10 - 5) - 2 = 3 \quad \text{but} \quad 10 - (5 - 2) = 7$$
+        $$(24 \div 6) \div 2 = 2 \quad \text{but} \quad 24 \div (6 \div 2) = 8$$
+    </div>
+</div>
+
+<!-- ============================== SECTION 8: DISTRIBUTIVE LAW ============================== -->
+<div class="card">
+    <h2>The Distributive Law</h2>
+
+    <p>The <span class="teal">distributive law</span> connects multiplication with addition (or subtraction). It states that multiplying a single factor by a sum is the same as multiplying the factor by each term and then adding the results.</p>
+
+    <div class="box box-formula">
+        <div class="box-label">The Distributive Law</div>
+        $$a(b + c) = ab + ac$$
+        <p>Extended for more terms:</p>
+        $$a(b + c + d) = ab + ac + ad$$
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Examples</div>
+        <p><strong>Two terms:</strong></p>
+        $$2(3 + 4) = 2 \cdot 3 + 2 \cdot 4 = 6 + 8 = 14$$
+        $$a(a + b) = a^2 + ab$$
+        <p><strong>With coefficients:</strong></p>
+        $$2b(ab + bc) = 2ab^2 + 2b^2c$$
+        <p><strong>Extended (three terms):</strong></p>
+        $$2a(2a + 3b - 4ad) = 4a^2 + 6ab - 8a^2d$$
+        $$3ab(a^2 - 2ad + b) = 3a^3b - 6a^2bd + 3ab^2$$
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight</div>
+        <p>Notice the exponent rule: when a factor is multiplied by itself, the exponents add. For instance, \(a \cdot a = a^2\) and \(b \cdot b^2 = b^3\). We will explore exponent rules more deeply in Chapter 6.</p>
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ============================== SECTION 9: ORDER OF OPERATIONS ============================== -->
+<div class="card">
+    <h2>Order of Operations</h2>
+
+    <p>Since we cannot perform every operation at once, we follow a strict order:</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Rules for Order of Operations</div>
+        <ol>
+            <li><strong>Parentheses first:</strong> Evaluate expressions inside parentheses (innermost first).</li>
+            <li><strong>Exponents next:</strong> Evaluate powers.</li>
+            <li><strong>Multiplication and Division:</strong> Work left to right.</li>
+            <li><strong>Addition and Subtraction:</strong> Work left to right.</li>
+        </ol>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Step-by-Step Example</div>
+        <p>Evaluate: \(6 + 3(2) - \dfrac{4}{2}\)</p>
+        <p><strong>Step 1 &mdash; Multiply:</strong> \(3(2) = 6\)</p>
+        <p><strong>Step 2 &mdash; Divide:</strong> \(\dfrac{4}{2} = 2\)</p>
+        <p><strong>Step 3 &mdash; Add and subtract left to right:</strong> \(6 + 6 - 2 = 10\)</p>
+    </div>
+</div>
+
+<!-- ============================== SECTION 10: PARENTHESES ============================== -->
+<div class="card">
+    <h2>Parentheses</h2>
+
+    <p>Parentheses serve three important roles in algebra:</p>
+
+    <div class="box box-definition">
+        <div class="box-label">Three Uses of Parentheses</div>
+        <ol>
+            <li><strong>Expressing multiplication</strong> without a times sign: \(2(3)\), \((2)3\), or \((2)(3)\).</li>
+            <li><strong>Grouping terms</strong> to be treated as a single number: \(2(x + y)\) means "twice the sum of \(x\) and \(y\)."</li>
+            <li><strong>Controlling the order of operations:</strong> \(4(3 + 2) = 4 \cdot 5 = 20\), but without parentheses, \(4 \cdot 3 + 2 = 12 + 2 = 14\).</li>
+        </ol>
+    </div>
+
+    <div class="box box-caution">
+        <div class="box-label">Caution</div>
+        <p>Parentheses can completely change the meaning of an expression!</p>
+        $$4(3 + 2) = 20 \qquad \text{vs.} \qquad 4 \cdot 3 + 2 = 14$$
+        <p>Always evaluate the inside of parentheses first.</p>
+    </div>
+</div>
+
+<!-- ============================== SECTION 11: EXPONENTS ============================== -->
+<div class="card">
+    <h2>Exponents</h2>
+
+    <p>When a factor is multiplied by itself repeatedly, we use <span class="accent">exponent notation</span> to express it concisely.</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Exponent Notation</div>
+        $$\underbrace{a \cdot a \cdot a \cdots a}_{n \text{ factors}} = a^n$$
+        <p>Here, <strong>\(a\)</strong> is the <span class="teal">base</span>, <strong>\(n\)</strong> is the <span class="teal">exponent</span>, and the result \(a^n\) is the <span class="teal">power</span>.</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Examples</div>
+        <ul>
+            <li>\(a \cdot a = a^2\) &mdash; read "a squared" or "a to the second power"</li>
+            <li>\(2 \cdot 2 \cdot 2 = 2^3 = 8\) &mdash; read "2 cubed" or "2 to the third power"</li>
+            <li>\(y \cdot y \cdot y \cdot y \cdot y = y^5\)</li>
+            <li>\((a + b)(a + b) = (a+b)^2\)</li>
+        </ul>
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight</div>
+        <p>An exponent applies <strong>only</strong> to the factor directly before it. In \(bx^3\), the exponent 3 applies to \(x\) alone, giving \(b \cdot x \cdot x \cdot x\). If you want the exponent to apply to both \(b\) and \(x\), you must write \((bx)^3\).</p>
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight</div>
+        <p>If no exponent is written, it is understood to be 1. Thus \(y = y^1\) and \(4 = 4^1\).</p>
+    </div>
+
+    <!-- SVG: base, exponent, power diagram -->
+    <svg viewBox="0 0 520 180" xmlns="http://www.w3.org/2000/svg" style="max-width:460px;">
+        <rect x="0" y="0" width="520" height="180" rx="12" fill="#fdf8f3"/>
+        <!-- 2^3 = 8 big display -->
+        <text x="140" y="90" text-anchor="middle" font-family="Georgia, Cambria, serif" font-size="60" fill="#2d2d2d">2</text>
+        <text x="175" y="60" text-anchor="middle" font-family="Georgia, Cambria, serif" font-size="34" fill="#c0602b" font-weight="700">3</text>
+        <text x="220" y="90" text-anchor="middle" font-family="Georgia, Cambria, serif" font-size="44" fill="#2d2d2d">=</text>
+        <text x="280" y="90" text-anchor="middle" font-family="Georgia, Cambria, serif" font-size="60" fill="#0d4f4f" font-weight="700">8</text>
+
+        <!-- Labels with arrows -->
+        <!-- base label -->
+        <line x1="140" y1="100" x2="140" y2="135" stroke="#2b6cb0" stroke-width="2"/>
+        <text x="140" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" fill="#2b6cb0" font-weight="700">base</text>
+
+        <!-- exponent label -->
+        <line x1="175" y1="42" x2="175" y2="20" stroke="#c0602b" stroke-width="2"/>
+        <text x="175" y="15" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" fill="#c0602b" font-weight="700">exponent</text>
+
+        <!-- power label -->
+        <line x1="280" y1="100" x2="280" y2="135" stroke="#0d4f4f" stroke-width="2"/>
+        <text x="280" y="155" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" fill="#0d4f4f" font-weight="700">power</text>
+
+        <!-- Verbal annotation -->
+        <text x="420" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#666">"2 to the third</text>
+        <text x="420" y="73" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#666">power" or</text>
+        <text x="420" y="91" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#666">"2 cubed"</text>
+        <text x="420" y="125" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#666">means</text>
+        <text x="420" y="148" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#2d2d2d" font-weight="600">2 &times; 2 &times; 2</text>
+    </svg>
+</div>
+
+<!-- ============================== SECTION 12: LIKE TERMS ============================== -->
+<div class="card">
+    <h2>Combining Like Terms</h2>
+
+    <p><span class="teal">Like terms</span> are terms that have the same literal parts (same letters with the same exponents). Only like terms can be combined.</p>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Like Terms</div>
+        <p>Terms are <strong>like</strong> if they have identical literal coefficients (the same variables raised to the same powers). To combine them, add or subtract their numerical coefficients.</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Examples</div>
+        <p><strong>Can be combined:</strong></p>
+        $$3a + 4a = 7a \qquad \qquad 6x^2 - 2x^2 = 4x^2$$
+        <p><strong>Cannot be combined:</strong></p>
+        $$3a + 5b \quad \text{(unlike terms &mdash; different letters)}$$
+        $$2x + 3x^2 \quad \text{(unlike terms &mdash; different exponents)}$$
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Simplification Example</div>
+        <p>Simplify: \(6a + 2a^2 - 3a - a^2\)</p>
+        <p>Group like terms:</p>
+        $$= (6a - 3a) + (2a^2 - a^2) = 3a + a^2$$
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Simplification Example</div>
+        <p>Simplify: \(4a + 3b + 6a - b + 7\)</p>
+        <p>Combine like terms: \((4a + 6a) + (3b - b) + 7\)</p>
+        $$= 10a + 2b + 7$$
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ============================== SECTION 13: SUMMARY ============================== -->
+<div class="card">
+    <h2>Laws at a Glance</h2>
+
+    <div class="box box-formula">
+        <div class="box-label">Quick Reference &mdash; Three Fundamental Laws</div>
+        <table>
+            <tr><th>Law</th><th>For Addition</th><th>For Multiplication</th></tr>
+            <tr>
+                <td><strong>Commutative</strong></td>
+                <td>\(a + b = b + a\)</td>
+                <td>\(ab = ba\)</td>
+            </tr>
+            <tr>
+                <td><strong>Associative</strong></td>
+                <td>\((a+b)+c = a+(b+c)\)</td>
+                <td>\((ab)c = a(bc)\)</td>
+            </tr>
+            <tr>
+                <td><strong>Distributive</strong></td>
+                <td colspan="2" style="text-align:center;">\(a(b + c) = ab + ac\)</td>
+            </tr>
+        </table>
+        <p style="margin-top:1rem; font-size:0.95rem;"><em>The commutative and associative laws do <strong>not</strong> apply to subtraction or division.</em></p>
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ============================== WORKED PROBLEMS ============================== -->
+<div class="card">
+    <h2>Worked Problems</h2>
+
+    <!-- Problem 1 -->
+    <div class="box box-practice">
+        <div class="box-label">Problem 1 &mdash; Evaluate an Expression</div>
+        <p>Evaluate \(3(a + b) + 2a - \dfrac{b}{2}\) when \(a = 5\) and \(b = 4\).</p>
+        <button class="solution-toggle" onclick="this.nextElementSibling.classList.toggle('show')">Show Solution</button>
+        <div class="solution-content">
+            <div class="box box-example" style="margin-top:0;">
+                <div class="box-label">Solution</div>
+                <p><strong>Step 1 &mdash; Substitute:</strong></p>
+                $$3(5 + 4) + 2(5) - \frac{4}{2}$$
+                <p><strong>Step 2 &mdash; Parentheses:</strong></p>
+                $$3(9) + 2(5) - \frac{4}{2}$$
+                <p><strong>Step 3 &mdash; Multiply and divide:</strong></p>
+                $$27 + 10 - 2$$
+                <p><strong>Step 4 &mdash; Add and subtract:</strong></p>
+                $$= \boxed{35}$$
+            </div>
+        </div>
+    </div>
+
+    <!-- Problem 2 -->
+    <div class="box box-practice">
+        <div class="box-label">Problem 2 &mdash; Simplify by Combining Like Terms</div>
+        <p>Simplify: \(6a + 2a^2 - 3a - a^2\)</p>
+        <button class="solution-toggle" onclick="this.nextElementSibling.classList.toggle('show')">Show Solution</button>
+        <div class="solution-content">
+            <div class="box box-example" style="margin-top:0;">
+                <div class="box-label">Solution</div>
+                <p>Group the like terms:</p>
+                $$= (6a - 3a) + (2a^2 - a^2)$$
+                <p>Combine the numerical coefficients:</p>
+                $$= \boxed{3a + a^2}$$
+            </div>
+        </div>
+    </div>
+
+    <!-- Problem 3 -->
+    <div class="box box-practice">
+        <div class="box-label">Problem 3 &mdash; Apply the Distributive Law</div>
+        <p>Expand: \(4ab(2ab + 3ac - cd)\)</p>
+        <button class="solution-toggle" onclick="this.nextElementSibling.classList.toggle('show')">Show Solution</button>
+        <div class="solution-content">
+            <div class="box box-example" style="margin-top:0;">
+                <div class="box-label">Solution</div>
+                <p>Distribute \(4ab\) to each term inside the parentheses:</p>
+                $$4ab \cdot 2ab + 4ab \cdot 3ac - 4ab \cdot cd$$
+                <p>Multiply the numerical coefficients and combine the literal factors:</p>
+                $$= 8a^2b^2 + 12a^2bc - 4abcd$$
+                $$= \boxed{8a^2b^2 + 12a^2bc - 4abcd}$$
+            </div>
+        </div>
+    </div>
+
+    <!-- Problem 4 -->
+    <div class="box box-practice">
+        <div class="box-label">Problem 4 &mdash; Translate Words to Algebra</div>
+        <p>Express algebraically: "twice the sum of \(b\) and 18, decreased by 9."</p>
+        <button class="solution-toggle" onclick="this.nextElementSibling.classList.toggle('show')">Show Solution</button>
+        <div class="solution-content">
+            <div class="box box-example" style="margin-top:0;">
+                <div class="box-label">Solution</div>
+                <p>"The sum of \(b\) and 18" &rarr; \((b + 18)\)</p>
+                <p>"Twice the sum" &rarr; \(2(b + 18)\)</p>
+                <p>"Decreased by 9" &rarr; subtract 9</p>
+                $$= \boxed{2(b + 18) - 9}$$
+            </div>
+        </div>
+    </div>
+
+    <!-- Problem 5 -->
+    <div class="box box-practice">
+        <div class="box-label">Problem 5 &mdash; Identify Base, Exponent, and Power</div>
+        <p>In the equation \(x^2 = y\), identify the base, the exponent, and the power.</p>
+        <button class="solution-toggle" onclick="this.nextElementSibling.classList.toggle('show')">Show Solution</button>
+        <div class="solution-content">
+            <div class="box box-example" style="margin-top:0;">
+                <div class="box-label">Solution</div>
+                <ul>
+                    <li>The <strong>base</strong> is \(x\) &mdash; the repeated factor.</li>
+                    <li>The <strong>exponent</strong> is \(2\) &mdash; it tells us \(x\) is used as a factor twice.</li>
+                    <li>The <strong>power</strong> is \(y\) &mdash; the result of the multiplication \(x \cdot x\).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Problem 6 -->
+    <div class="box box-practice">
+        <div class="box-label">Problem 6 &mdash; Full Simplification</div>
+        <p>Simplify: \(2(a + b) - a + 3b\)</p>
+        <button class="solution-toggle" onclick="this.nextElementSibling.classList.toggle('show')">Show Solution</button>
+        <div class="solution-content">
+            <div class="box box-example" style="margin-top:0;">
+                <div class="box-label">Solution</div>
+                <p><strong>Step 1 &mdash; Distribute:</strong></p>
+                $$2a + 2b - a + 3b$$
+                <p><strong>Step 2 &mdash; Combine like terms:</strong></p>
+                $$= (2a - a) + (2b + 3b)$$
+                $$= \boxed{a + 5b}$$
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ============================== QUICK REFERENCE ============================== -->
+<div class="card">
+    <h2>Chapter 1 &mdash; Quick Reference</h2>
+
+    <div class="box box-formula">
+        <div class="box-label">Core Definitions</div>
+        <table>
+            <tr><th>Concept</th><th>Meaning</th></tr>
+            <tr><td><strong>Literal number</strong></td><td>A letter used to represent a number</td></tr>
+            <tr><td><strong>Term</strong></td><td>A single number/letter or a product of numbers and letters</td></tr>
+            <tr><td><strong>Factor</strong></td><td>One part of a product</td></tr>
+            <tr><td><strong>Numerical coefficient</strong></td><td>The number multiplying the literal part of a term</td></tr>
+            <tr><td><strong>Literal coefficient</strong></td><td>The letter(s) multiplying the numerical part</td></tr>
+            <tr><td><strong>Expression</strong></td><td>One or more terms connected by \(+\) or \(-\)</td></tr>
+            <tr><td><strong>Monomial</strong></td><td>An expression with one term</td></tr>
+            <tr><td><strong>Binomial</strong></td><td>An expression with two terms</td></tr>
+            <tr><td><strong>Trinomial</strong></td><td>An expression with three terms</td></tr>
+            <tr><td><strong>Base</strong></td><td>The repeated factor in a power</td></tr>
+            <tr><td><strong>Exponent</strong></td><td>How many times the base is used as a factor</td></tr>
+            <tr><td><strong>Power</strong></td><td>The result of raising a base to an exponent</td></tr>
+            <tr><td><strong>Like terms</strong></td><td>Terms with the same literal parts and exponents</td></tr>
+        </table>
+    </div>
+
+    <div class="box box-formula">
+        <div class="box-label">Key Formulas and Laws</div>
+        <table>
+            <tr><th>Law / Rule</th><th>Formula</th></tr>
+            <tr><td>Commutative (addition)</td><td>\(a + b = b + a\)</td></tr>
+            <tr><td>Commutative (multiplication)</td><td>\(ab = ba\)</td></tr>
+            <tr><td>Associative (addition)</td><td>\((a+b)+c = a+(b+c)\)</td></tr>
+            <tr><td>Associative (multiplication)</td><td>\((ab)c = a(bc)\)</td></tr>
+            <tr><td>Distributive</td><td>\(a(b+c) = ab + ac\)</td></tr>
+            <tr><td>Extended distributive</td><td>\(a(b+c+d) = ab+ac+ad\)</td></tr>
+            <tr><td>Exponent notation</td><td>\(\underbrace{a \cdot a \cdots a}_{n} = a^n\)</td></tr>
+            <tr><td>Order of operations</td><td>Parentheses, Exponents, Multiply/Divide (L&rarr;R), Add/Subtract (L&rarr;R)</td></tr>
+        </table>
+    </div>
+
+    <div class="box box-formula">
+        <div class="box-label">Axioms of Equality</div>
+        <table>
+            <tr><th>If \(a = b\), then...</th><th>Name</th></tr>
+            <tr><td>\(a + c = b + c\)</td><td>Addition axiom</td></tr>
+            <tr><td>\(a - c = b - c\)</td><td>Subtraction axiom</td></tr>
+            <tr><td>\(ac = bc\)</td><td>Multiplication axiom</td></tr>
+            <tr><td>\(\dfrac{a}{c} = \dfrac{b}{c}\) (where \(c \neq 0\))</td><td>Division axiom</td></tr>
+            <tr><td>If \(a = c\) and \(b = c\), then \(a = b\)</td><td>Transitive property</td></tr>
+        </table>
+    </div>
+</div>
+
+<!-- ============================== NAVIGATION ============================== -->
+<div class="nav-footer">
+    <span class="nav-btn disabled">No Previous Chapter</span>
+    <a href="../02-the-number-system/index.html" class="nav-btn">Next: The Number System &rarr;</a>
+</div>
+
+</div><!-- end container -->
+
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "\\[", right: "\\]", display: true},
+                {left: "\\(", right: "\\)", display: false}
+            ],
+            throwOnError: false
+        });
+    });
+</script>
+</body>
+</html>

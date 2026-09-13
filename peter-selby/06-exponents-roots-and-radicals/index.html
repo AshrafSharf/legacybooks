@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 6 — Exponents, Roots, and Radicals | Practical Algebra</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', 'Cambria', 'Times New Roman', serif;
+            background: #fdf8f3;
+            color: #2d2d2d;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+        .hero {
+            background: linear-gradient(135deg, #0d4f4f 0%, #1a2332 100%);
+            color: white;
+            padding: 3rem 2rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero .chapter-num {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 6rem;
+            font-weight: 800;
+            opacity: 0.12;
+            position: absolute;
+            top: -0.5rem;
+            right: 2rem;
+            line-height: 1;
+        }
+        .hero h1 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .hero .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.85;
+            font-style: italic;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        h2 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #0d4f4f;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #c0602b;
+        }
+        h3 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #0d4f4f;
+            font-size: 1.5rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+        h4 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #0d4f4f;
+            font-size: 1.2rem;
+            margin: 1rem 0 0.5rem;
+        }
+        p { margin-bottom: 1rem; }
+        ul, ol { margin: 0.75rem 0 1.25rem 1.5rem; }
+        li { margin-bottom: 0.4rem; }
+
+        /* Highlight boxes */
+        .box { padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 5px solid; }
+        .box-definition { border-color: #0d4f4f; background: #e8f4f4; }
+        .box-insight { border-color: #c0602b; background: #fef3ec; }
+        .box-caution { border-color: #9b2c2c; background: #fef2f2; }
+        .box-example { border-color: #276749; background: #f0f7f0; }
+        .box-practice { border-color: #6b46c1; background: #f5f0ff; }
+        .box-formula { border-color: #2b6cb0; background: #ebf4ff; }
+        .box-label {
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .box-definition .box-label { color: #0d4f4f; }
+        .box-insight .box-label { color: #c0602b; }
+        .box-caution .box-label { color: #9b2c2c; }
+        .box-example .box-label { color: #276749; }
+        .box-practice .box-label { color: #6b46c1; }
+        .box-formula .box-label { color: #2b6cb0; }
+
+        /* Overview list */
+        .overview-list { list-style: none; margin-left: 0; }
+        .overview-list li {
+            padding: 0.4rem 0 0.4rem 2rem;
+            position: relative;
+        }
+        .overview-list li::before {
+            content: '✦';
+            color: #c0602b;
+            position: absolute;
+            left: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        /* Solution toggle */
+        details { margin-top: 0.75rem; }
+        details summary {
+            cursor: pointer;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            color: #276749;
+            padding: 0.5rem 0;
+            user-select: none;
+        }
+        details summary:hover { color: #1a4d30; }
+        details[open] summary { margin-bottom: 0.5rem; }
+        .solution-steps { padding: 1rem 1.25rem; background: rgba(39,103,73,0.06); border-radius: 6px; }
+        .solution-steps p { margin-bottom: 0.6rem; }
+
+        /* Quick-reference table */
+        .ref-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .ref-table th, .ref-table td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid #e2d9ce; }
+        .ref-table th {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0d4f4f;
+            color: #fff;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .ref-table tr:nth-child(even) { background: #f9f5f0; }
+        .ref-table td:first-child { font-weight: 600; color: #0d4f4f; white-space: nowrap; }
+        .overflow-x { overflow-x: auto; }
+
+        /* Navigation */
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e2d9ce;
+        }
+        .nav-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #0d4f4f;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            transition: background 0.2s;
+            font-size: 1rem;
+        }
+        .nav-btn:hover { background: #0a3d3d; }
+
+        /* SVG styles */
+        svg { max-width: 100%; height: auto; display: block; margin: 1.5rem auto; }
+        .katex { font-size: 1.3em; }
+
+        .katex-display { margin: 1.5rem 0; overflow-x: auto; font-size: 1.35em; }
+
+        /* Section divider */
+        .section-divider {
+            height: 3px;
+            background: linear-gradient(90deg, #c0602b, #0d4f4f, #c0602b);
+            border: none;
+            margin: 2.5rem 0;
+            border-radius: 2px;
+            opacity: 0.3;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 2rem; }
+            .hero .chapter-num { font-size: 4rem; }
+            h2 { font-size: 1.6rem; }
+            .card { padding: 1.25rem; }
+            .box { padding: 1rem; }
+            .nav-footer { flex-direction: column; align-items: stretch; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============ HERO HEADER ============ -->
+<div class="hero">
+    <div class="chapter-num">6</div>
+    <div style="position:relative">
+        <p style="font-family: 'Segoe UI',sans-serif; text-transform:uppercase; letter-spacing:0.2em; font-size:0.9rem; opacity:0.7; margin-bottom:0.5rem;">Chapter 6</p>
+        <h1>Exponents, Roots, and Radicals</h1>
+        <p class="subtitle">Mastering the laws of exponents and the algebra of radicals</p>
+    </div>
+</div>
+
+<div class="container">
+
+<!-- ============ OVERVIEW ============ -->
+<div class="card">
+    <h2>What You'll Learn</h2>
+    <p>This chapter builds on your earlier work with powers and square roots, giving you a complete toolkit for manipulating exponents and radicals. By the end, you will be able to:</p>
+    <ul class="overview-list">
+        <li>Apply the five laws of exponents to simplify algebraic expressions</li>
+        <li>Work with zero and negative exponents</li>
+        <li>Convert between standard notation and scientific notation</li>
+        <li>Connect radicals to fractional exponents</li>
+        <li>Simplify, add, subtract, multiply, and divide radicals</li>
+        <li>Rationalize denominators containing radicals</li>
+        <li>Solve simple radical equations</li>
+    </ul>
+</div>
+
+<!-- ============ SECTION 1: LAWS OF EXPONENTS ============ -->
+<div class="card">
+    <h2>1. The Laws of Exponents</h2>
+
+    <p>Recall that an exponent tells us how many times the <em>base</em> is used as a factor. For a real number \(a\) and a positive integer \(m\):</p>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Positive Integer Exponent</div>
+        $$a^m = \underbrace{a \cdot a \cdot a \cdots a}_{m \text{ factors}}$$
+    </div>
+
+    <p>Five fundamental rules govern how exponents behave. Together they let us simplify nearly any expression that involves powers.</p>
+
+    <!-- SVG EXPONENT RULES CHART -->
+    <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" style="max-width:720px;" aria-label="Exponent Rules Reference Chart">
+        <defs>
+            <linearGradient id="headerGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#0d4f4f"/>
+                <stop offset="100%" stop-color="#1a2332"/>
+            </linearGradient>
+            <filter id="cardShadow">
+                <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.12"/>
+            </filter>
+        </defs>
+
+        <!-- Title banner -->
+        <rect x="50" y="10" width="700" height="52" rx="10" fill="url(#headerGrad)"/>
+        <text x="400" y="43" text-anchor="middle" fill="#fff" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="22" font-weight="700">Laws of Exponents &mdash; Quick Reference</text>
+
+        <!-- Rule cards -->
+        <!-- Rule 1 -->
+        <rect x="50" y="80" width="340" height="120" rx="10" fill="#fff" filter="url(#cardShadow)"/>
+        <rect x="50" y="80" width="340" height="36" rx="10" fill="#0d4f4f"/>
+        <rect x="50" y="106" width="340" height="10" fill="#0d4f4f"/>
+        <text x="70" y="104" fill="#fff" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700">Rule 1 &mdash; Product Rule</text>
+        <text x="220" y="150" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#2d2d2d">a<tspan font-size="16" baseline-shift="super">m</tspan> · a<tspan font-size="16" baseline-shift="super">n</tspan> = a<tspan font-size="16" baseline-shift="super">m+n</tspan></text>
+        <text x="220" y="182" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#666" font-style="italic">Keep the base, add the exponents</text>
+
+        <!-- Rule 2 -->
+        <rect x="410" y="80" width="340" height="120" rx="10" fill="#fff" filter="url(#cardShadow)"/>
+        <rect x="410" y="80" width="340" height="36" rx="10" fill="#0d4f4f"/>
+        <rect x="410" y="106" width="340" height="10" fill="#0d4f4f"/>
+        <text x="430" y="104" fill="#fff" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700">Rule 2 &mdash; Power of a Power</text>
+        <text x="580" y="150" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#2d2d2d">(a<tspan font-size="16" baseline-shift="super">m</tspan>)<tspan font-size="16" baseline-shift="super">n</tspan> = a<tspan font-size="16" baseline-shift="super">mn</tspan></text>
+        <text x="580" y="182" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#666" font-style="italic">Keep the base, multiply the exponents</text>
+
+        <!-- Rule 3 -->
+        <rect x="50" y="220" width="340" height="120" rx="10" fill="#fff" filter="url(#cardShadow)"/>
+        <rect x="50" y="220" width="340" height="36" rx="10" fill="#c0602b"/>
+        <rect x="50" y="246" width="340" height="10" fill="#c0602b"/>
+        <text x="70" y="244" fill="#fff" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700">Rule 3 &mdash; Quotient Rule</text>
+        <text x="220" y="290" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#2d2d2d">a<tspan font-size="16" baseline-shift="super">m</tspan> &#xF7; a<tspan font-size="16" baseline-shift="super">n</tspan> = a<tspan font-size="16" baseline-shift="super">m&#x2212;n</tspan></text>
+        <text x="220" y="322" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#666" font-style="italic">Keep the base, subtract the exponents</text>
+
+        <!-- Rule 4 -->
+        <rect x="410" y="220" width="340" height="120" rx="10" fill="#fff" filter="url(#cardShadow)"/>
+        <rect x="410" y="220" width="340" height="36" rx="10" fill="#c0602b"/>
+        <rect x="410" y="246" width="340" height="10" fill="#c0602b"/>
+        <text x="430" y="244" fill="#fff" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700">Rule 4 &mdash; Power of a Product</text>
+        <text x="580" y="290" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#2d2d2d">(ab)<tspan font-size="16" baseline-shift="super">n</tspan> = a<tspan font-size="16" baseline-shift="super">n</tspan> b<tspan font-size="16" baseline-shift="super">n</tspan></text>
+        <text x="580" y="322" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#666" font-style="italic">Distribute the exponent to each factor</text>
+
+        <!-- Rule 5 -->
+        <rect x="230" y="360" width="340" height="120" rx="10" fill="#fff" filter="url(#cardShadow)"/>
+        <rect x="230" y="360" width="340" height="36" rx="10" fill="#2b6cb0"/>
+        <rect x="230" y="386" width="340" height="10" fill="#2b6cb0"/>
+        <text x="250" y="384" fill="#fff" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700">Rule 5 &mdash; Power of a Quotient</text>
+        <text x="400" y="435" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#2d2d2d">(a/b)<tspan font-size="16" baseline-shift="super">n</tspan> = a<tspan font-size="16" baseline-shift="super">n</tspan> / b<tspan font-size="16" baseline-shift="super">n</tspan></text>
+        <text x="400" y="465" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#666" font-style="italic">Distribute the exponent to top and bottom</text>
+    </svg>
+
+    <div class="box box-formula">
+        <div class="box-label">The Five Laws of Exponents</div>
+        <div class="overflow-x">
+        $$\begin{aligned}
+        \textbf{1. Product Rule:}\quad & a^m \cdot a^n = a^{m+n} \\[6pt]
+        \textbf{2. Power of a Power:}\quad & (a^m)^n = a^{mn} \\[6pt]
+        \textbf{3. Quotient Rule:}\quad & \frac{a^m}{a^n} = a^{m-n} \quad (a \neq 0) \\[6pt]
+        \textbf{4. Power of a Product:}\quad & (ab)^n = a^n \cdot b^n \\[6pt]
+        \textbf{5. Power of a Quotient:}\quad & \left(\frac{a}{b}\right)^n = \frac{a^n}{b^n} \quad (b \neq 0)
+        \end{aligned}$$
+        </div>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example</div>
+        <p>Simplify \(x^3 \cdot x^5\).</p>
+        <p><strong>Solution:</strong> By the Product Rule, keep the base and add the exponents:</p>
+        $$x^3 \cdot x^5 = x^{3+5} = x^8$$
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example</div>
+        <p>Simplify \((b^4)^3\).</p>
+        <p><strong>Solution:</strong> By the Power of a Power rule, multiply the exponents:</p>
+        $$(b^4)^3 = b^{4 \cdot 3} = b^{12}$$
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ============ SECTION 2: ZERO AND NEGATIVE EXPONENTS ============ -->
+<div class="card">
+    <h2>2. Zero and Negative Exponents</h2>
+
+    <h3>The Zero Exponent</h3>
+    <p>What happens when we divide equal powers? Using the Quotient Rule:</p>
+    $$\frac{x^5}{x^5} = x^{5-5} = x^0$$
+    <p>But any nonzero quantity divided by itself equals 1. So we define:</p>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Zero Exponent</div>
+        $$a^0 = 1 \qquad (a \neq 0)$$
+        <p style="margin-top:0.5rem;margin-bottom:0;">Every nonzero base raised to the zero power equals 1. Thus \(7^0 = 1\), \(153^0 = 1\), and \((15x^4)^0 = 1\).</p>
+    </div>
+
+    <div class="box box-caution">
+        <div class="box-label">Common Mistake</div>
+        <p style="margin-bottom:0;">Watch where the exponent applies! In \(15x^0\), the exponent zero applies only to \(x\), not to 15. So \(15x^0 = 15 \cdot 1 = 15\). Compare this with \((15x)^0 = 1\).</p>
+    </div>
+
+    <h3>Negative Exponents</h3>
+    <p>What if the exponent in the denominator is larger? For example:</p>
+    $$\frac{x^2}{x^5} = \frac{x \cdot x}{x \cdot x \cdot x \cdot x \cdot x} = \frac{1}{x^3}$$
+    <p>But by the Quotient Rule, \(\frac{x^2}{x^5} = x^{2-5} = x^{-3}\). This motivates the definition:</p>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Negative Exponent</div>
+        $$a^{-n} = \frac{1}{a^n} \qquad \text{and} \qquad \frac{1}{a^{-n}} = a^n \qquad (a \neq 0)$$
+        <p style="margin-top:0.5rem;margin-bottom:0;">A negative exponent moves a factor between numerator and denominator, flipping the sign of the exponent.</p>
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight</div>
+        <p style="margin-bottom:0;">Negative exponents do <em>not</em> make a number negative. They create a reciprocal. For instance, \(2^{-3} = \frac{1}{2^3} = \frac{1}{8}\), which is positive.</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example</div>
+        <p>Write \(v^{-4}\) using only positive exponents.</p>
+        <p><strong>Solution:</strong></p>
+        $$v^{-4} = \frac{1}{v^4}$$
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ============ SECTION 3: SCIENTIFIC NOTATION ============ -->
+<div class="card">
+    <h2>3. Scientific Notation</h2>
+
+    <p>Very large or very small numbers are unwieldy to write in standard form. <strong>Scientific notation</strong> uses powers of 10 to express them compactly.</p>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Scientific Notation</div>
+        <p style="margin-bottom:0.5rem;">A number is in scientific notation when it is written as:</p>
+        $$a \times 10^n \qquad \text{where } 1 \le |a| < 10 \text{ and } n \text{ is an integer}$$
+    </div>
+
+    <h3>Converting to Scientific Notation</h3>
+    <ul>
+        <li><strong>Large numbers</strong> &mdash; move the decimal point <em>left</em>; the exponent is <em>positive</em>.</li>
+        <li><strong>Small numbers</strong> &mdash; move the decimal point <em>right</em>; the exponent is <em>negative</em>.</li>
+    </ul>
+
+    <div class="box box-example">
+        <div class="box-label">Examples</div>
+        $$3{,}400{,}000 = 3.4 \times 10^6 \qquad \text{(decimal moved 6 places left)}$$
+        $$0.0025 = 2.5 \times 10^{-3} \qquad \text{(decimal moved 3 places right)}$$
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight</div>
+        <p style="margin-bottom:0;">The exponent on 10 counts the number of places the decimal point moved. A positive exponent means the original number is large (greater than 10); a negative exponent means it is small (less than 1).</p>
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ============ SECTION 4: ROOTS AND RADICALS ============ -->
+<div class="card">
+    <h2>4. Roots and Radicals</h2>
+
+    <p>Raising a number to a power and extracting a root are <em>inverse operations</em>. The notation \(\sqrt[m]{a}\) means "the \(m\)th root of \(a\)."</p>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; The nth Root</div>
+        <p style="margin-bottom:0.5rem;">If \(n^m = a\), then \(n = \sqrt[m]{a}\).</p>
+        <p style="margin-bottom:0;">The symbol \(\sqrt{\phantom{x}}\) is the <strong>radical sign</strong>, \(a\) is the <strong>radicand</strong>, and \(m\) is the <strong>index</strong>. When no index is written, it is assumed to be 2 (square root).</p>
+    </div>
+
+    <p>Some examples to build intuition:</p>
+
+    <div class="box box-example">
+        <div class="box-label">Examples</div>
+        $$\sqrt{9} = 3 \quad \text{because } 3^2 = 9$$
+        $$\sqrt{25} = 5 \quad \text{because } 5^2 = 25$$
+        $$\sqrt[3]{8} = 2 \quad \text{because } 2^3 = 8$$
+        $$\sqrt[3]{-8} = -2 \quad \text{because } (-2)^3 = -8$$
+        $$\sqrt[4]{81} = 3 \quad \text{because } 3^4 = 81$$
+    </div>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Principal Square Root</div>
+        <p style="margin-bottom:0;">\(\sqrt{n}\) denotes the <strong>positive</strong> (principal) square root of \(n\). The negative square root is written \(-\sqrt{n}\). For example, \(\sqrt{16} = 4\), while \(-\sqrt{16} = -4\).</p>
+    </div>
+
+    <h3>Roots of Fractions</h3>
+    <p>The root of a fraction is found by taking the root of the numerator and the root of the denominator separately:</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Root of a Fraction</div>
+        $$\sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}} \qquad (b > 0)$$
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example</div>
+        $$\sqrt{\frac{9}{16}} = \frac{\sqrt{9}}{\sqrt{16}} = \frac{3}{4}$$
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ============ SECTION 5: FRACTIONAL EXPONENTS ============ -->
+<div class="card">
+    <h2>5. Fractional Exponents</h2>
+
+    <p>Fractional exponents provide an alternative notation for radicals. The key observation is:</p>
+    $$x^{1/2} \cdot x^{1/2} = x^{1/2 + 1/2} = x^1 = x$$
+    <p>Since \(\sqrt{x} \cdot \sqrt{x} = x\) as well, it follows that \(x^{1/2} = \sqrt{x}\). More generally:</p>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Fractional Exponents</div>
+        $$x^{1/n} = \sqrt[n]{x}$$
+        <p style="margin-top:0.5rem;">And for a fractional exponent with a numerator other than 1:</p>
+        $$x^{m/n} = \sqrt[n]{x^m} = \left(\sqrt[n]{x}\right)^m$$
+        <p style="margin-bottom:0;">The <strong>denominator</strong> of the fraction is the <strong>index</strong> of the radical; the <strong>numerator</strong> is the <strong>power</strong> of the radicand.</p>
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight &mdash; Two Paths, Same Answer</div>
+        <p style="margin-bottom:0;">When computing \(a^{m/n}\), you can either take the \(n\)th root first and then raise to the \(m\)th power, or raise to the \(m\)th power first and then take the \(n\)th root. Choosing the root first usually keeps the numbers smaller.</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Examples</div>
+        $$4^{1/2} = \sqrt{4} = 2$$
+        $$27^{1/3} = \sqrt[3]{27} = 3$$
+        $$8^{2/3} = \left(\sqrt[3]{8}\right)^2 = 2^2 = 4$$
+        $$(16a^8)^{1/2} = \sqrt{16a^8} = 4a^4 \quad (a > 0)$$
+    </div>
+
+    <h3>Absolute Value and Even Roots</h3>
+    <p>When taking an even root of an even power, the result is always non-negative. To guarantee this, we use absolute value:</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Even Root of an Even Power</div>
+        $$\sqrt{x^2} = |x| \qquad \text{or equivalently} \qquad (x^2)^{1/2} = |x|$$
+    </div>
+
+    <p>For example, \(\sqrt{(-3)^2} = \sqrt{9} = 3 = |-3|\).</p>
+</div>
+
+<hr class="section-divider">
+
+<!-- ============ SECTION 6: SIMPLIFYING RADICALS ============ -->
+<div class="card">
+    <h2>6. Simplifying Radicals</h2>
+
+    <p>A radical can be simplified if any of the following apply:</p>
+    <ul>
+        <li>The radicand is a perfect square (e.g., \(\sqrt{36} = 6\)).</li>
+        <li>The radicand contains a factor that is a perfect square (e.g., \(\sqrt{48}\)).</li>
+        <li>The radicand is a fraction (e.g., \(\sqrt{\tfrac{2}{3}}\)).</li>
+    </ul>
+
+    <div class="box box-formula">
+        <div class="box-label">Product and Quotient Rules for Radicals</div>
+        $$\sqrt{ab} = \sqrt{a} \cdot \sqrt{b} \qquad \text{and} \qquad \sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}}$$
+    </div>
+
+    <h3>Procedure: Simplifying a Square Root</h3>
+    <ol>
+        <li>Factor the radicand to find the largest perfect-square factor.</li>
+        <li>Apply the product rule: \(\sqrt{ab} = \sqrt{a}\cdot\sqrt{b}\).</li>
+        <li>Take the square root of the perfect square.</li>
+    </ol>
+
+    <div class="box box-example">
+        <div class="box-label">Example</div>
+        <p>Simplify \(\sqrt{48}\).</p>
+        $$\sqrt{48} = \sqrt{16 \cdot 3} = \sqrt{16} \cdot \sqrt{3} = 4\sqrt{3}$$
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example</div>
+        <p>Simplify \(\sqrt{50}\).</p>
+        $$\sqrt{50} = \sqrt{25 \cdot 2} = \sqrt{25} \cdot \sqrt{2} = 5\sqrt{2}$$
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ============ SECTION 7: ADDING AND SUBTRACTING RADICALS ============ -->
+<div class="card">
+    <h2>7. Adding and Subtracting Radicals</h2>
+
+    <p>Radicals can be combined by addition or subtraction only when they are <strong>like radicals</strong> &mdash; that is, when they have the same index and the same radicand. The process uses the distributive law:</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Combining Like Radicals</div>
+        $$a\sqrt{x} + b\sqrt{x} = (a + b)\sqrt{x}$$
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example</div>
+        <p>Simplify \(4\sqrt{5} + 3\sqrt{5} - 2\sqrt{5}\).</p>
+        $$4\sqrt{5} + 3\sqrt{5} - 2\sqrt{5} = (4 + 3 - 2)\sqrt{5} = 5\sqrt{5}$$
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight</div>
+        <p style="margin-bottom:0;">Sometimes radicals that look different become like radicals after simplification. Always simplify each radical <em>first</em>, then combine.</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example</div>
+        <p>Simplify \(3\sqrt{8} - \sqrt{50} + 6\sqrt{32}\).</p>
+        <p>First, simplify each term:</p>
+        $$3\sqrt{8} = 3\sqrt{4 \cdot 2} = 3 \cdot 2\sqrt{2} = 6\sqrt{2}$$
+        $$\sqrt{50} = \sqrt{25 \cdot 2} = 5\sqrt{2}$$
+        $$6\sqrt{32} = 6\sqrt{16 \cdot 2} = 6 \cdot 4\sqrt{2} = 24\sqrt{2}$$
+        <p>Now combine:</p>
+        $$6\sqrt{2} - 5\sqrt{2} + 24\sqrt{2} = 25\sqrt{2}$$
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ============ SECTION 8: MULTIPLYING AND DIVIDING RADICALS ============ -->
+<div class="card">
+    <h2>8. Multiplying and Dividing Radicals</h2>
+
+    <h3>Multiplying Radicals</h3>
+
+    <div class="box box-formula">
+        <div class="box-label">Product Rule for Radicals</div>
+        $$\sqrt{a} \cdot \sqrt{b} = \sqrt{ab}$$
+        <p style="margin-top:0.5rem;margin-bottom:0;">Also: \((\sqrt{a})^2 = a\).</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Examples</div>
+        $$\sqrt{3} \cdot \sqrt{4} = \sqrt{12} = 2\sqrt{3}$$
+        $$\sqrt{2} \cdot \sqrt{18} = \sqrt{36} = 6$$
+        $$5\sqrt{2} \cdot 3\sqrt{2} = 15\sqrt{4} = 15 \cdot 2 = 30$$
+    </div>
+
+    <h3>Multiplying Polynomials with Radicals</h3>
+    <p>Use the distributive law (or FOIL for two binomials), then simplify.</p>
+
+    <div class="box box-example">
+        <div class="box-label">Example &mdash; Monomial times Binomial</div>
+        $$\sqrt{3}\left(7 - \sqrt{3}\right) = 7\sqrt{3} - \sqrt{3}\cdot\sqrt{3} = 7\sqrt{3} - 3$$
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example &mdash; Binomial times Binomial</div>
+        $$(4 + \sqrt{2})(2 - \sqrt{2}) = 8 - 4\sqrt{2} + 2\sqrt{2} - \sqrt{4} = 8 - 2\sqrt{2} - 2 = 6 - 2\sqrt{2}$$
+    </div>
+
+    <h3>Dividing Radicals</h3>
+    <p>To divide radicals, divide the coefficients and divide the radicands, then simplify:</p>
+
+    <div class="box box-example">
+        <div class="box-label">Example</div>
+        $$\frac{6\sqrt{24}}{2\sqrt{3}} = \frac{6}{2} \cdot \sqrt{\frac{24}{3}} = 3\sqrt{8} = 3 \cdot 2\sqrt{2} = 6\sqrt{2}$$
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ============ SECTION 9: RATIONALIZING DENOMINATORS ============ -->
+<div class="card">
+    <h2>9. Rationalizing Denominators</h2>
+
+    <p>A fraction is not in simplest form if its denominator contains a radical. <strong>Rationalizing</strong> eliminates radicals from the denominator.</p>
+
+    <h3>Simple Denominators</h3>
+    <p>Multiply numerator and denominator by the radical in the denominator:</p>
+
+    <div class="box box-example">
+        <div class="box-label">Example</div>
+        $$\frac{2}{\sqrt{3}} = \frac{2}{\sqrt{3}} \cdot \frac{\sqrt{3}}{\sqrt{3}} = \frac{2\sqrt{3}}{3}$$
+    </div>
+
+    <h3>Binomial Denominators &mdash; Using the Conjugate</h3>
+    <p>When the denominator is a binomial involving a square root, multiply by its <strong>conjugate</strong> &mdash; the same expression with the opposite middle sign. This uses the difference-of-squares identity:</p>
+    $$(a + b)(a - b) = a^2 - b^2$$
+
+    <div class="box box-formula">
+        <div class="box-label">Rationalizing a Binomial Denominator</div>
+        $$\frac{1}{\sqrt{a} + \sqrt{b}} = \frac{1}{\sqrt{a} + \sqrt{b}} \cdot \frac{\sqrt{a} - \sqrt{b}}{\sqrt{a} - \sqrt{b}} = \frac{\sqrt{a} - \sqrt{b}}{a - b}$$
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example</div>
+        <p>Rationalize \(\displaystyle\frac{3 + \sqrt{2}}{2 - \sqrt{2}}\).</p>
+        <p><strong>Solution:</strong> Multiply by the conjugate \(\frac{2 + \sqrt{2}}{2 + \sqrt{2}}\):</p>
+        $$\frac{(3 + \sqrt{2})(2 + \sqrt{2})}{(2 - \sqrt{2})(2 + \sqrt{2})} = \frac{6 + 3\sqrt{2} + 2\sqrt{2} + 2}{4 - 2} = \frac{8 + 5\sqrt{2}}{2}$$
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ============ SECTION 10: SOLVING RADICAL EQUATIONS ============ -->
+<div class="card">
+    <h2>10. Solving Radical Equations</h2>
+
+    <p>A <strong>radical equation</strong> is an equation in which the variable appears under a radical sign. The key technique is to <em>isolate the radical</em>, then <em>square both sides</em>.</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Procedure for Solving Radical Equations</div>
+        <ol style="margin-bottom:0;">
+            <li>Isolate the radical term on one side of the equation.</li>
+            <li>Square both sides to eliminate the radical.</li>
+            <li>Solve the resulting equation.</li>
+            <li><strong>Check</strong> your answer in the original equation (squaring can introduce extraneous solutions).</li>
+        </ol>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example</div>
+        <p>Solve \(\sqrt{2x} - 2 = 4\).</p>
+        <p><strong>Step 1:</strong> Isolate the radical: \(\sqrt{2x} = 6\).</p>
+        <p><strong>Step 2:</strong> Square both sides: \(2x = 36\).</p>
+        <p><strong>Step 3:</strong> Solve: \(x = 18\).</p>
+        <p><strong>Step 4:</strong> Check: \(\sqrt{2 \cdot 18} - 2 = \sqrt{36} - 2 = 6 - 2 = 4\). &#10003;</p>
+    </div>
+
+    <div class="box box-caution">
+        <div class="box-label">Caution &mdash; Extraneous Roots</div>
+        <p style="margin-bottom:0;">Since \(\sqrt{x}\) always means the <em>positive</em> square root, equations like \(\sqrt{x} = -3\) have <strong>no solution</strong>. Always check your answer. If it fails the check, it is an extraneous root.</p>
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ============ WORKED PROBLEMS ============ -->
+<div class="card">
+    <h2>Worked Problems</h2>
+
+    <!-- Problem 1 -->
+    <div class="box box-practice">
+        <div class="box-label">Problem 1</div>
+        <p style="margin-bottom:0;">Simplify \((2x^3 y^2)^4\).</p>
+    </div>
+    <div class="box box-example">
+        <div class="box-label">Solution</div>
+        <p>Apply the Power of a Product rule: distribute the exponent 4 to each factor.</p>
+        $$(2x^3 y^2)^4 = 2^4 \cdot (x^3)^4 \cdot (y^2)^4$$
+        <p>Evaluate each term using the Power of a Power rule:</p>
+        $$= 16 \cdot x^{12} \cdot y^{8} = 16x^{12}y^{8}$$
+    </div>
+
+    <!-- Problem 2 -->
+    <div class="box box-practice">
+        <div class="box-label">Problem 2</div>
+        <p style="margin-bottom:0;">Rewrite \(3x^{-2}\) using only positive exponents.</p>
+    </div>
+    <div class="box box-example">
+        <div class="box-label">Solution</div>
+        <p>The negative exponent applies only to \(x\), not to the coefficient 3. Move \(x^{-2}\) to the denominator:</p>
+        $$3x^{-2} = 3 \cdot \frac{1}{x^2} = \frac{3}{x^2}$$
+    </div>
+
+    <!-- Problem 3 -->
+    <div class="box box-practice">
+        <div class="box-label">Problem 3</div>
+        <p style="margin-bottom:0;">Write \(0.00047\) in scientific notation.</p>
+    </div>
+    <div class="box box-example">
+        <div class="box-label">Solution</div>
+        <p>Move the decimal point to the right until we have a number between 1 and 10:</p>
+        $$0.00047 = 4.7 \times 10^{-4}$$
+        <p>We moved the decimal point 4 places to the right, so the exponent is \(-4\).</p>
+    </div>
+
+    <!-- Problem 4 -->
+    <div class="box box-practice">
+        <div class="box-label">Problem 4</div>
+        <p style="margin-bottom:0;">Simplify \(\sqrt{72}\).</p>
+    </div>
+    <div class="box box-example">
+        <div class="box-label">Solution</div>
+        <p>Find the largest perfect-square factor of 72. Since \(72 = 36 \times 2\):</p>
+        $$\sqrt{72} = \sqrt{36 \cdot 2} = \sqrt{36} \cdot \sqrt{2} = 6\sqrt{2}$$
+    </div>
+
+    <!-- Problem 5 -->
+    <div class="box box-practice">
+        <div class="box-label">Problem 5</div>
+        <p style="margin-bottom:0;">Rationalize the denominator: \(\displaystyle\frac{5}{\sqrt{3}}\).</p>
+    </div>
+    <div class="box box-example">
+        <div class="box-label">Solution</div>
+        <p>Multiply numerator and denominator by \(\sqrt{3}\):</p>
+        $$\frac{5}{\sqrt{3}} = \frac{5}{\sqrt{3}} \cdot \frac{\sqrt{3}}{\sqrt{3}} = \frac{5\sqrt{3}}{3}$$
+    </div>
+
+    <!-- Problem 6 -->
+    <div class="box box-practice">
+        <div class="box-label">Problem 6</div>
+        <p style="margin-bottom:0;">Evaluate \(8^{2/3}\).</p>
+    </div>
+    <div class="box box-example">
+        <div class="box-label">Solution</div>
+        <p>The denominator 3 tells us to take the cube root; the numerator 2 tells us to square the result:</p>
+        $$8^{2/3} = \left(\sqrt[3]{8}\right)^2 = 2^2 = 4$$
+        <p>Alternatively: \(8^{2/3} = \sqrt[3]{8^2} = \sqrt[3]{64} = 4\). Same answer either way.</p>
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ============ QUICK REFERENCE ============ -->
+<div class="card">
+    <h2>Quick Reference</h2>
+    <div class="overflow-x">
+    <table class="ref-table">
+        <thead>
+            <tr><th>Rule / Property</th><th>Formula</th><th>Example</th></tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Product Rule</td>
+                <td>\(a^m \cdot a^n = a^{m+n}\)</td>
+                <td>\(x^3 \cdot x^4 = x^7\)</td>
+            </tr>
+            <tr>
+                <td>Power of a Power</td>
+                <td>\((a^m)^n = a^{mn}\)</td>
+                <td>\((y^2)^5 = y^{10}\)</td>
+            </tr>
+            <tr>
+                <td>Quotient Rule</td>
+                <td>\(\frac{a^m}{a^n} = a^{m-n}\)</td>
+                <td>\(\frac{z^8}{z^3} = z^5\)</td>
+            </tr>
+            <tr>
+                <td>Power of a Product</td>
+                <td>\((ab)^n = a^n b^n\)</td>
+                <td>\((3x)^2 = 9x^2\)</td>
+            </tr>
+            <tr>
+                <td>Power of a Quotient</td>
+                <td>\(\left(\frac{a}{b}\right)^n = \frac{a^n}{b^n}\)</td>
+                <td>\(\left(\frac{x}{2}\right)^3 = \frac{x^3}{8}\)</td>
+            </tr>
+            <tr>
+                <td>Zero Exponent</td>
+                <td>\(a^0 = 1\; (a \neq 0)\)</td>
+                <td>\(7^0 = 1\)</td>
+            </tr>
+            <tr>
+                <td>Negative Exponent</td>
+                <td>\(a^{-n} = \frac{1}{a^n}\)</td>
+                <td>\(5^{-2} = \frac{1}{25}\)</td>
+            </tr>
+            <tr>
+                <td>Fractional Exponent</td>
+                <td>\(a^{m/n} = \sqrt[n]{a^m}\)</td>
+                <td>\(27^{2/3} = 9\)</td>
+            </tr>
+            <tr>
+                <td>Product of Radicals</td>
+                <td>\(\sqrt{a}\cdot\sqrt{b} = \sqrt{ab}\)</td>
+                <td>\(\sqrt{2}\cdot\sqrt{8} = 4\)</td>
+            </tr>
+            <tr>
+                <td>Quotient of Radicals</td>
+                <td>\(\sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}}\)</td>
+                <td>\(\sqrt{\frac{9}{4}} = \frac{3}{2}\)</td>
+            </tr>
+            <tr>
+                <td>Rationalizing</td>
+                <td>Multiply by conjugate</td>
+                <td>\(\frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2}\)</td>
+            </tr>
+            <tr>
+                <td>Even Root of Even Power</td>
+                <td>\(\sqrt{x^2} = |x|\)</td>
+                <td>\(\sqrt{(-5)^2} = 5\)</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+
+<!-- ============ NAVIGATION ============ -->
+<div class="nav-footer">
+    <a href="../05-fractions/index.html" class="nav-btn">&larr; Previous: Ch 5 &mdash; Fractions</a>
+    <a href="../07-linear-and-fractional-equations-and-formulas/index.html" class="nav-btn">Next: Ch 7 &mdash; Linear &amp; Fractional Equations &rarr;</a>
+</div>
+
+</div><!-- end .container -->
+
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "\\[", right: "\\]", display: true},
+                {left: "\\(", right: "\\)", display: false}
+            ],
+            throwOnError: false
+        });
+    });
+</script>
+</body>
+</html>

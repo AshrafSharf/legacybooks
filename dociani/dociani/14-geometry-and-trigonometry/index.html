@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 14: Geometry and Trigonometry — Modern Algebra</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<style>
+  /* ── Reset & Base ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Georgia', 'Cambria', 'Times New Roman', serif;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #2d2d2d;
+    background: #fdf6f0;
+  }
+
+  /* ── KaTeX Sizing ── */
+  .katex { font-size: 1.3em; }
+  .katex-display { font-size: 1.35em; margin: 1.5rem 0; overflow-x: auto; }
+
+  /* ── Hero Header ── */
+  .hero {
+    background: linear-gradient(135deg, #8b1a1a 0%, #1a1a2e 100%);
+    color: #fff;
+    padding: 3.5rem 2rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '14';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16rem;
+    font-weight: 900;
+    opacity: 0.06;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    pointer-events: none;
+  }
+  .hero .book-title {
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  }
+  .hero h1 {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    position: relative;
+  }
+  .hero .subtitle {
+    font-size: 1.15rem;
+    opacity: 0.85;
+    font-style: italic;
+  }
+  .hero .page-ref {
+    font-size: 0.85rem;
+    opacity: 0.55;
+    margin-top: 0.75rem;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  /* ── Container ── */
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+  }
+
+  /* ── Headings ── */
+  h2 {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 2rem;
+    color: #8b1a1a;
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 2px solid #e8c4b8;
+  }
+  h3 {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.5rem;
+    color: #8b1a1a;
+    margin: 2rem 0 0.75rem;
+  }
+  h4 {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.2rem;
+    color: #d4582a;
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  /* ── Overview Card ── */
+  .overview-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.75rem 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 2px 12px rgba(139,26,26,0.08);
+    border-left: 5px solid #8b1a1a;
+  }
+  .overview-card h3 {
+    margin-top: 0;
+    color: #8b1a1a;
+  }
+  .overview-card ul {
+    padding-left: 1.5rem;
+  }
+  .overview-card li {
+    margin-bottom: 0.4rem;
+  }
+
+  /* ── Highlight Boxes ── */
+  .box {
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.25rem 0;
+    border-left: 5px solid;
+  }
+  .box-definition {
+    border-color: #8b1a1a;
+    background: #fce8e8;
+  }
+  .box-insight {
+    border-color: #d4582a;
+    background: #fef3ec;
+  }
+  .box-caution {
+    border-color: #7f1d1d;
+    background: #fef2f2;
+  }
+  .box-example {
+    border-color: #276749;
+    background: #f0f7f0;
+  }
+  .box-practice {
+    border-color: #4a5568;
+    background: #f7fafc;
+  }
+  .box-formula {
+    border-color: #2b4c7e;
+    background: #ebf0ff;
+  }
+  .box .box-label {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+  }
+  .box-definition .box-label { color: #8b1a1a; }
+  .box-insight .box-label   { color: #d4582a; }
+  .box-caution .box-label   { color: #7f1d1d; }
+  .box-example .box-label   { color: #276749; }
+  .box-practice .box-label  { color: #4a5568; }
+  .box-formula .box-label   { color: #2b4c7e; }
+
+  /* ── Section Card ── */
+  .section-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+  .section-card h3 { margin-top: 0; }
+
+  /* ── Section Number Badge ── */
+  .section-num {
+    display: inline-block;
+    background: #8b1a1a;
+    color: #fff;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.15rem 0.65rem;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+  }
+
+  /* ── SVG Diagram ── */
+  .diagram-wrap {
+    text-align: center;
+    margin: 2rem 0;
+  }
+  .diagram-wrap svg {
+    max-width: 100%;
+    height: auto;
+  }
+  .diagram-caption {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    margin-top: 0.5rem;
+  }
+
+  /* ── Worked Problems ── */
+  .worked-problem {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.5rem 1.75rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border-top: 4px solid #d4582a;
+  }
+  .worked-problem h4 {
+    margin-top: 0;
+    color: #8b1a1a;
+  }
+  .step-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.75rem 0;
+    overflow-x: auto;
+    display: block;
+  }
+  .step-table td {
+    padding: 0.4rem 0.75rem;
+    vertical-align: top;
+    border-bottom: 1px solid #f0e6e0;
+  }
+  .step-table td:first-child {
+    white-space: nowrap;
+    font-weight: 600;
+    color: #8b1a1a;
+    width: 1%;
+  }
+  .step-table td:last-child {
+    color: #666;
+    font-size: 0.95rem;
+    font-style: italic;
+  }
+
+  /* ── Quick Reference ── */
+  .quick-ref {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .quick-ref-item {
+    background: #ebf0ff;
+    border: 1px solid #c7d4f0;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    text-align: center;
+  }
+  .quick-ref-item .ref-title {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #2b4c7e;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.4rem;
+  }
+
+  /* ── Navigation ── */
+  .chapter-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    padding: 1.5rem 0;
+    border-top: 2px solid #e8c4b8;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  }
+  .chapter-nav a {
+    text-decoration: none;
+    color: #8b1a1a;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: background 0.2s;
+  }
+  .chapter-nav a:hover {
+    background: #fce8e8;
+  }
+  .chapter-nav .nav-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #999;
+    display: block;
+  }
+
+  /* ── Trig Table ── */
+  .trig-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 1rem;
+  }
+  .trig-table th {
+    background: #8b1a1a;
+    color: #fff;
+    padding: 0.6rem 1rem;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .trig-table td {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #e8c4b8;
+    text-align: center;
+  }
+  .trig-table tr:nth-child(even) td {
+    background: #fef8f4;
+  }
+
+  /* ── Misc ── */
+  p { margin-bottom: 1rem; }
+  ul, ol { margin-bottom: 1rem; padding-left: 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  strong { color: #8b1a1a; }
+  code { background: #f5ebe4; padding: 0.1em 0.4em; border-radius: 3px; font-size: 0.95em; }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.9rem; }
+    .hero::before { font-size: 10rem; }
+    .container { padding: 1.25rem 1rem; }
+    .section-card, .overview-card, .worked-problem { padding: 1.25rem; }
+    h2 { font-size: 1.6rem; }
+    h3 { font-size: 1.3rem; }
+    .quick-ref { grid-template-columns: 1fr; }
+    .diagram-wrap svg { max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ HERO HEADER ═══════════════ -->
+<header class="hero">
+  <div class="book-title">Modern Algebra: Structure and Method &mdash; Dolciani</div>
+  <h1>Geometry and Trigonometry</h1>
+  <div class="subtitle">Points, lines, triangles, and the trigonometric functions&mdash;connecting algebra to geometry</div>
+  <div class="page-ref">Chapter 14 &nbsp;|&nbsp; Pages 547&ndash;590</div>
+</header>
+
+<div class="container">
+
+<!-- ═══════════════ OVERVIEW ═══════════════ -->
+<div class="overview-card">
+  <h3>What You'll Learn</h3>
+  <ul>
+    <li>The <strong>structure of geometry</strong>: axioms about points, lines, and planes</li>
+    <li><strong>Angles and triangles</strong>: rays, angle measurement, and triangle properties</li>
+    <li>The <strong>Pythagorean Theorem</strong>: \(a^2 + b^2 = c^2\) and its applications</li>
+    <li><strong>Special right triangles</strong>: the 30-60-90 and 45-45-90 families</li>
+    <li><strong>Similar triangles</strong>: proportional sides and the AA similarity principle</li>
+    <li><strong>Trigonometric ratios</strong>: sine, cosine, and tangent defined on the unit circle</li>
+    <li>How to <strong>use trigonometric ratios</strong> to solve right triangles</li>
+    <li><strong>Applications of trigonometry</strong>: angles of elevation and depression in real-world problems</li>
+  </ul>
+</div>
+
+
+<!-- ═══════════════ 14-1: ANGLES AND TRIANGLES ═══════════════ -->
+<h2><span class="section-num">14-1</span> Angles and Triangles</h2>
+
+<p>This chapter marks a shift from the purely algebraic to the geometric. The study of geometry examines the properties of <strong>points</strong>, <strong>lines</strong>, <strong>planes</strong>, <strong>triangles</strong>, <strong>circles</strong>, and other figures made up of points. Just as algebra studies the properties of sets of numbers, geometry studies properties of sets of points.</p>
+
+<div class="box box-definition">
+  <div class="box-label">Definition &mdash; Ray</div>
+  <p>If a point \(P\) with coordinate \(p\) is taken on a line, then the set of points consisting of \(P\) and all points whose coordinates equal or exceed \(p\) is called a <strong>ray proceeding from \(P\)</strong>. The point \(P\) is called the <strong>endpoint</strong> of the ray.</p>
+</div>
+
+<div class="box box-definition">
+  <div class="box-label">Definition &mdash; Angle</div>
+  <p>An <strong>angle</strong> is a set of points consisting of two rays proceeding from the same point. The point is called the <strong>vertex</strong>, and the rays are called the <strong>sides</strong> of the angle. If the union of the two rays is a line, the angle is called a <strong>straight angle</strong> (measure 180&deg;).</p>
+</div>
+
+<h4>Types of Angles</h4>
+<ul>
+  <li><strong>Acute angle</strong>: measure greater than 0&deg; and less than 90&deg;</li>
+  <li><strong>Right angle</strong>: measure exactly 90&deg;</li>
+  <li><strong>Obtuse angle</strong>: measure greater than 90&deg; and less than 180&deg;</li>
+  <li><strong>Straight angle</strong>: measure exactly 180&deg;</li>
+</ul>
+
+<div class="box box-definition">
+  <div class="box-label">Definition &mdash; Triangle</div>
+  <p>If \(A\), \(B\), and \(C\) are three noncollinear points, the set of points comprising the segments \(\overline{AB}\), \(\overline{BC}\), and \(\overline{AC}\) is a <strong>triangle</strong>. If one angle is a right angle, the triangle is a <strong>right triangle</strong>; the side opposite the right angle is called the <strong>hypotenuse</strong>.</p>
+</div>
+
+<div class="box box-formula">
+  <div class="box-label">Theorem &mdash; Angle Sum Property</div>
+  <p>The sum of the measures of the angles of any triangle is \(180°\).</p>
+  $$m\angle A + m\angle B + m\angle C = 180°$$
+</div>
+
+<div class="box box-insight">
+  <div class="box-label">Key Insight</div>
+  <p>A triangle can have <em>at most one</em> right angle or obtuse angle, because the measures of the three angles must sum to 180&deg;. This means at least two angles in every triangle are acute.</p>
+</div>
+
+
+<!-- ═══════════════ 14-2: THE PYTHAGOREAN THEOREM ═══════════════ -->
+<h2><span class="section-num">14-2</span> The Pythagorean Theorem</h2>
+
+<p>One of the most important results in all of mathematics is the Pythagorean Theorem, which relates the three sides of a right triangle.</p>
+
+<div class="box box-formula">
+  <div class="box-label">Pythagorean Theorem</div>
+  <p>In any right triangle, the square of the length of the hypotenuse equals the sum of the squares of the lengths of the other two sides:</p>
+  $$a^2 + b^2 = c^2$$
+  <p>where \(c\) is the hypotenuse, and \(a\) and \(b\) are the legs.</p>
+</div>
+
+<!-- SVG: Right triangle with labeled sides -->
+<div class="diagram-wrap">
+  <svg viewBox="0 0 380 280" width="380" height="280" xmlns="http://www.w3.org/2000/svg">
+    <!-- Triangle -->
+    <polygon points="50,240 310,240 310,60" fill="none" stroke="#8b1a1a" stroke-width="2.5" stroke-linejoin="round"/>
+    <!-- Right angle marker -->
+    <polyline points="285,240 285,215 310,215" fill="none" stroke="#8b1a1a" stroke-width="1.5"/>
+    <!-- Labels -->
+    <text x="170" y="265" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#2d2d2d" font-style="italic">a</text>
+    <text x="330" y="155" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#2d2d2d" font-style="italic">b</text>
+    <text x="160" y="140" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#8b1a1a" font-weight="bold" font-style="italic">c</text>
+    <!-- Vertices -->
+    <text x="35" y="255" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="16" fill="#d4582a" font-weight="700">A</text>
+    <text x="318" y="255" text-anchor="start" font-family="'Segoe UI', sans-serif" font-size="16" fill="#d4582a" font-weight="700">B</text>
+    <text x="318" y="50" text-anchor="start" font-family="'Segoe UI', sans-serif" font-size="16" fill="#d4582a" font-weight="700">C</text>
+    <!-- Formula -->
+    <text x="190" y="22" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#2b4c7e" font-style="italic">a&sup2; + b&sup2; = c&sup2;</text>
+  </svg>
+  <div class="diagram-caption">Figure 14-1. A right triangle with legs \(a\) and \(b\), and hypotenuse \(c\).</div>
+</div>
+
+<div class="box box-insight">
+  <div class="box-label">Key Insight &mdash; Converse</div>
+  <p>The converse is also true: if a triangle has sides of length \(a\), \(b\), and \(c\) with \(a^2 + b^2 = c^2\), then the triangle is a right triangle with the right angle opposite the side of length \(c\).</p>
+</div>
+
+<p>You can use the Pythagorean Theorem to determine whether a triangle is a right triangle. For example, a triangle with sides 5, 12, and 13 is a right triangle because \(5^2 + 12^2 = 25 + 144 = 169 = 13^2\). But a triangle with sides 1, 2, and 3 is not (and in fact cannot even form a triangle, since \(1 + 2 = 3\)).</p>
+
+
+<!-- ═══════════════ 14-3: SPECIAL RIGHT TRIANGLES ═══════════════ -->
+<h2><span class="section-num">14-3</span> Special Right Triangles</h2>
+
+<p>Two families of right triangles appear so frequently in mathematics that their side ratios should be memorized.</p>
+
+<h3>The 45-45-90 Triangle</h3>
+
+<p>When a right triangle has two equal legs, both acute angles measure 45&deg;. If each leg has length \(s\), then by the Pythagorean Theorem the hypotenuse is:</p>
+$$c = \sqrt{s^2 + s^2} = \sqrt{2s^2} = s\sqrt{2}$$
+
+<div class="box box-formula">
+  <div class="box-label">45-45-90 Side Ratios</div>
+  <p>The sides are in the ratio \(\;1 : 1 : \sqrt{2}\).</p>
+  <p>If each leg is \(s\), then: <strong>Leg = \(s\)</strong>, &nbsp; <strong>Leg = \(s\)</strong>, &nbsp; <strong>Hypotenuse = \(s\sqrt{2}\)</strong>.</p>
+</div>
+
+<!-- SVG: 45-45-90 triangle -->
+<div class="diagram-wrap">
+  <svg viewBox="0 0 320 280" width="320" height="280" xmlns="http://www.w3.org/2000/svg">
+    <!-- Triangle -->
+    <polygon points="40,240 240,240 240,40" fill="none" stroke="#8b1a1a" stroke-width="2.5" stroke-linejoin="round"/>
+    <!-- Right angle marker -->
+    <polyline points="215,240 215,215 240,215" fill="none" stroke="#8b1a1a" stroke-width="1.5"/>
+    <!-- Angle arcs -->
+    <path d="M 70,240 A 30,30 0 0,0 54,218" fill="none" stroke="#d4582a" stroke-width="1.5"/>
+    <path d="M 240,70 A 30,30 0 0,0 218,56" fill="none" stroke="#d4582a" stroke-width="1.5"/>
+    <!-- Angle labels -->
+    <text x="82" y="228" font-family="Georgia, serif" font-size="14" fill="#d4582a">45&deg;</text>
+    <text x="218" y="90" font-family="Georgia, serif" font-size="14" fill="#d4582a">45&deg;</text>
+    <!-- Side labels -->
+    <text x="135" y="265" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#2d2d2d" font-style="italic">s</text>
+    <text x="258" y="145" text-anchor="start" font-family="Georgia, serif" font-size="18" fill="#2d2d2d" font-style="italic">s</text>
+    <text x="120" y="130" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#8b1a1a" font-weight="bold" font-style="italic">s&radic;2</text>
+  </svg>
+  <div class="diagram-caption">Figure 14-2. The 45-45-90 triangle with side ratio \(1 : 1 : \sqrt{2}\).</div>
+</div>
+
+<h3>The 30-60-90 Triangle</h3>
+
+<p>Consider an equilateral triangle with side length \(2s\). Drawing an altitude from one vertex to the opposite side bisects that side and creates two congruent 30-60-90 right triangles. The shorter leg (opposite 30&deg;) is \(s\), the hypotenuse is \(2s\), and the longer leg (opposite 60&deg;) is:</p>
+$$b = \sqrt{(2s)^2 - s^2} = \sqrt{4s^2 - s^2} = \sqrt{3s^2} = s\sqrt{3}$$
+
+<div class="box box-formula">
+  <div class="box-label">30-60-90 Side Ratios</div>
+  <p>The sides are in the ratio \(\;1 : \sqrt{3} : 2\).</p>
+  <p>If the shorter leg is \(s\), then: <strong>Short leg = \(s\)</strong>, &nbsp; <strong>Long leg = \(s\sqrt{3}\)</strong>, &nbsp; <strong>Hypotenuse = \(2s\)</strong>.</p>
+</div>
+
+<!-- SVG: 30-60-90 triangle -->
+<div class="diagram-wrap">
+  <svg viewBox="0 0 360 300" width="360" height="300" xmlns="http://www.w3.org/2000/svg">
+    <!-- Triangle -->
+    <polygon points="40,260 300,260 300,60" fill="none" stroke="#8b1a1a" stroke-width="2.5" stroke-linejoin="round"/>
+    <!-- Right angle marker -->
+    <polyline points="275,260 275,235 300,235" fill="none" stroke="#8b1a1a" stroke-width="1.5"/>
+    <!-- Angle arcs -->
+    <path d="M 300,230 A 30,30 0 0,0 282,260" fill="none" stroke="#d4582a" stroke-width="1.5"/>
+    <path d="M 80,260 A 40,40 0 0,0 60,235" fill="none" stroke="#d4582a" stroke-width="1.5"/>
+    <!-- Angle labels -->
+    <text x="90" y="250" font-family="Georgia, serif" font-size="14" fill="#d4582a">30&deg;</text>
+    <text x="270" y="230" font-family="Georgia, serif" font-size="14" fill="#d4582a">60&deg;</text>
+    <!-- Side labels -->
+    <text x="165" y="285" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#2d2d2d" font-style="italic">s&radic;3</text>
+    <text x="318" y="165" text-anchor="start" font-family="Georgia, serif" font-size="18" fill="#2d2d2d" font-style="italic">s</text>
+    <text x="145" y="145" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#8b1a1a" font-weight="bold" font-style="italic">2s</text>
+  </svg>
+  <div class="diagram-caption">Figure 14-3. The 30-60-90 triangle with side ratio \(1 : \sqrt{3} : 2\).</div>
+</div>
+
+<div class="box box-caution">
+  <div class="box-label">Caution</div>
+  <p>In the 30-60-90 triangle, the <em>shorter</em> leg is always opposite the 30&deg; angle and the <em>longer</em> leg is always opposite the 60&deg; angle. Mixing them up is a common error. Remember: the larger the angle, the longer the opposite side.</p>
+</div>
+
+
+<!-- ═══════════════ 14-4: SIMILAR TRIANGLES ═══════════════ -->
+<h2><span class="section-num">14-4</span> Similar Triangles</h2>
+
+<p>Two triangles are <strong>similar</strong> if they have the same shape, though not necessarily the same size. This means their corresponding angles are equal and their corresponding sides are proportional.</p>
+
+<div class="box box-definition">
+  <div class="box-label">Definition &mdash; Similar Triangles</div>
+  <p>Triangles \(\triangle ABC\) and \(\triangle DEF\) are <strong>similar</strong> (written \(\triangle ABC \sim \triangle DEF\)) if their corresponding angles are congruent and their corresponding sides are in proportion:</p>
+  $$\frac{AB}{DE} = \frac{BC}{EF} = \frac{AC}{DF}$$
+</div>
+
+<div class="box box-formula">
+  <div class="box-label">AA Similarity Principle</div>
+  <p>If two angles of one triangle are equal in measure to two angles of another triangle, then the triangles are <strong>similar</strong>. (Since the angle sum is always 180&deg;, the third angles must also be equal.)</p>
+</div>
+
+<div class="box box-insight">
+  <div class="box-label">Key Insight</div>
+  <p>All 30-60-90 triangles are similar to each other, and all 45-45-90 triangles are similar to each other. That is why the side <em>ratios</em> given above work for every triangle of that type, regardless of its actual size. Similarity is the bridge between angle measurement and side measurement.</p>
+</div>
+
+
+<!-- ═══════════════ 14-5: TRIGONOMETRIC RATIOS ═══════════════ -->
+<h2><span class="section-num">14-5</span> Trigonometric Ratios</h2>
+
+<p>The word <strong>trigonometry</strong> means "triangle measure." The trigonometric functions assign a real number to each angle by using the coordinates of points on the <strong>unit circle</strong> (a circle of radius 1 centered at the origin).</p>
+
+<div class="section-card">
+<h3>The Unit-Circle Definitions</h3>
+
+<p>Place an angle in <strong>standard position</strong>: vertex at the origin, initial ray along the positive \(x\)-axis. The terminal ray intersects the unit circle at a point \(P(x, y)\).</p>
+
+<div class="box box-definition">
+  <div class="box-label">Sine, Cosine, and Tangent</div>
+  <p>For an angle \(A\) in standard position, if \(P(x, y)\) is the point where the terminal ray meets the unit circle:</p>
+  $$\sin A = y \qquad \cos A = x \qquad \tan A = \frac{y}{x} \;\;(x \neq 0)$$
+</div>
+
+<p>More generally, for <em>any</em> point \(Q(x, y)\) on the terminal ray at distance \(r = \sqrt{x^2 + y^2}\) from the origin:</p>
+
+$$\sin A = \frac{y}{r}, \qquad \cos A = \frac{x}{r}, \qquad \tan A = \frac{y}{x}$$
+</div>
+
+<h3>Right-Triangle Definitions</h3>
+
+<p>In any right triangle, for an acute angle \(A\):</p>
+
+<div class="box box-formula">
+  <div class="box-label">SOH-CAH-TOA</div>
+  $$\sin A = \frac{\text{opposite}}{\text{hypotenuse}}, \qquad \cos A = \frac{\text{adjacent}}{\text{hypotenuse}}, \qquad \tan A = \frac{\text{opposite}}{\text{adjacent}}$$
+</div>
+
+<div class="box box-formula">
+  <div class="box-label">Fundamental Pythagorean Identity</div>
+  <p>For every angle \(A\):</p>
+  $$\sin^2 A + \cos^2 A = 1$$
+  <p>This follows directly from the Pythagorean Theorem applied to the unit circle.</p>
+</div>
+
+<h3>Values for Special Angles</h3>
+
+<div style="overflow-x:auto;">
+<table class="trig-table">
+  <tr>
+    <th>Angle</th>
+    <th>\(\sin\)</th>
+    <th>\(\cos\)</th>
+    <th>\(\tan\)</th>
+  </tr>
+  <tr>
+    <td>\(0°\)</td>
+    <td>\(0\)</td>
+    <td>\(1\)</td>
+    <td>\(0\)</td>
+  </tr>
+  <tr>
+    <td>\(30°\)</td>
+    <td>\(\dfrac{1}{2}\)</td>
+    <td>\(\dfrac{\sqrt{3}}{2}\)</td>
+    <td>\(\dfrac{1}{\sqrt{3}} = \dfrac{\sqrt{3}}{3}\)</td>
+  </tr>
+  <tr>
+    <td>\(45°\)</td>
+    <td>\(\dfrac{\sqrt{2}}{2}\)</td>
+    <td>\(\dfrac{\sqrt{2}}{2}\)</td>
+    <td>\(1\)</td>
+  </tr>
+  <tr>
+    <td>\(60°\)</td>
+    <td>\(\dfrac{\sqrt{3}}{2}\)</td>
+    <td>\(\dfrac{1}{2}\)</td>
+    <td>\(\sqrt{3}\)</td>
+  </tr>
+  <tr>
+    <td>\(90°\)</td>
+    <td>\(1\)</td>
+    <td>\(0\)</td>
+    <td>undefined</td>
+  </tr>
+</table>
+</div>
+
+<div class="box box-insight">
+  <div class="box-label">Key Insight &mdash; Relationship Between Sine and Cosine</div>
+  <p>Since \(\tan A = \frac{\sin A}{\cos A}\), you can always find the tangent if you know the sine and cosine. Also notice that \(\sin A = \cos(90° - A)\) and \(\cos A = \sin(90° - A)\): the sine and cosine are <strong>cofunctions</strong> of complementary angles.</p>
+</div>
+
+
+<!-- ═══════════════ 14-6: USING TRIGONOMETRIC RATIOS ═══════════════ -->
+<h2><span class="section-num">14-6</span> Using Trigonometric Ratios</h2>
+
+<p>To <strong>solve a right triangle</strong> means to find all unknown sides and angles. By combining the Pythagorean Theorem with the sine, cosine, and tangent functions, you can solve any right triangle given sufficient information.</p>
+
+<div class="section-card">
+  <h3>Strategy for Solving Right Triangles</h3>
+  <ol>
+    <li>Identify the right angle and label the sides relative to the given acute angle.</li>
+    <li>Choose the trigonometric ratio that involves the <strong>known</strong> side and the <strong>unknown</strong> side.</li>
+    <li>Set up the equation and solve for the unknown.</li>
+    <li>Use \(a^2 + b^2 = c^2\) or the angle sum property to find any remaining parts.</li>
+  </ol>
+</div>
+
+
+<!-- ═══════════════ 14-7: APPLICATIONS OF TRIGONOMETRY ═══════════════ -->
+<h2><span class="section-num">14-7</span> Applications of Trigonometry</h2>
+
+<p>Trigonometry has wide-ranging applications in surveying, navigation, architecture, and physics. Two of the most common scenarios involve <strong>angles of elevation</strong> and <strong>angles of depression</strong>.</p>
+
+<div class="box box-definition">
+  <div class="box-label">Definition &mdash; Angle of Elevation and Depression</div>
+  <p>The <strong>angle of elevation</strong> is the angle formed between the horizontal and the line of sight when looking <em>upward</em> at an object. The <strong>angle of depression</strong> is the angle formed between the horizontal and the line of sight when looking <em>downward</em>.</p>
+</div>
+
+<!-- SVG: Angle of elevation diagram -->
+<div class="diagram-wrap">
+  <svg viewBox="0 0 460 260" width="460" height="260" xmlns="http://www.w3.org/2000/svg">
+    <!-- Ground line -->
+    <line x1="30" y1="220" x2="430" y2="220" stroke="#999" stroke-width="1.5" stroke-dasharray="6,4"/>
+    <!-- Observer -->
+    <circle cx="60" cy="205" r="8" fill="#8b1a1a"/>
+    <line x1="60" y1="213" x2="60" y2="220" stroke="#8b1a1a" stroke-width="2"/>
+    <text x="60" y="245" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="13" fill="#666">Observer</text>
+    <!-- Building -->
+    <rect x="350" y="50" width="60" height="170" fill="none" stroke="#2d2d2d" stroke-width="2"/>
+    <text x="380" y="40" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="13" fill="#666">Object</text>
+    <!-- Height label -->
+    <line x1="420" y1="50" x2="420" y2="220" stroke="#2b4c7e" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="440" y="140" text-anchor="start" font-family="Georgia, serif" font-size="15" fill="#2b4c7e" font-style="italic">h</text>
+    <!-- Line of sight -->
+    <line x1="60" y1="205" x2="350" y2="55" stroke="#d4582a" stroke-width="2"/>
+    <!-- Horizontal from observer -->
+    <line x1="60" y1="205" x2="200" y2="205" stroke="#8b1a1a" stroke-width="1.5"/>
+    <!-- Angle arc -->
+    <path d="M 110,205 A 50,50 0 0,0 98,180" fill="none" stroke="#d4582a" stroke-width="2"/>
+    <text x="125" y="193" font-family="Georgia, serif" font-size="14" fill="#d4582a" font-style="italic">&theta;</text>
+    <!-- Distance label -->
+    <text x="210" y="238" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#2d2d2d" font-style="italic">d</text>
+    <line x1="70" y1="228" x2="345" y2="228" stroke="#2d2d2d" stroke-width="1" marker-start="url(#arrowL)" marker-end="url(#arrowR)"/>
+    <defs>
+      <marker id="arrowR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#2d2d2d"/></marker>
+      <marker id="arrowL" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto"><path d="M8,0 L0,3 L8,6" fill="#2d2d2d"/></marker>
+    </defs>
+    <!-- Caption label -->
+    <text x="230" y="18" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#8b1a1a">tan &theta; = h / d</text>
+  </svg>
+  <div class="diagram-caption">Figure 14-4. Angle of elevation \(\theta\): the observer looks up at an object of height \(h\) at horizontal distance \(d\). Then \(\tan \theta = h/d\).</div>
+</div>
+
+
+<!-- ═══════════════ WORKED PROBLEMS ═══════════════ -->
+<h2>Worked Problems</h2>
+
+<!-- Problem 1 -->
+<div class="worked-problem">
+  <h4>Problem 1 &mdash; Pythagorean Theorem</h4>
+  <p>A right triangle has legs of length 5 and 12. Find the hypotenuse.</p>
+  <div class="box box-example">
+    <div class="box-label">Solution</div>
+    <table class="step-table"><tbody>
+      <tr><td>Step 1:</td><td>Apply the Pythagorean Theorem.</td></tr>
+      <tr><td></td><td>$$c^2 = a^2 + b^2 = 5^2 + 12^2 = 25 + 144 = 169$$</td></tr>
+      <tr><td>Step 2:</td><td>Take the positive square root.</td></tr>
+      <tr><td></td><td>$$c = \sqrt{169} = 13$$</td></tr>
+    </tbody></table>
+    <p>The hypotenuse is <strong>13</strong>. (Note: 5, 12, 13 is a Pythagorean triple.)</p>
+  </div>
+</div>
+
+<!-- Problem 2 -->
+<div class="worked-problem">
+  <h4>Problem 2 &mdash; 45-45-90 Triangle</h4>
+  <p>In a right triangle \(\triangle ABC\), \(AC = BC\) and \(AB = 2\). Find \(AC\) and \(BC\).</p>
+  <div class="box box-example">
+    <div class="box-label">Solution</div>
+    <table class="step-table"><tbody>
+      <tr><td>Step 1:</td><td>Since both legs are equal and \(\angle C = 90°\), this is a 45-45-90 triangle.</td></tr>
+      <tr><td>Step 2:</td><td>Let each leg be \(s\). Then the hypotenuse is \(s\sqrt{2} = 2\).</td></tr>
+      <tr><td>Step 3:</td><td>Solve for \(s\):</td></tr>
+      <tr><td></td><td>$$s = \frac{2}{\sqrt{2}} = \frac{2\sqrt{2}}{2} = \sqrt{2}$$</td></tr>
+    </tbody></table>
+    <p>Both \(AC\) and \(BC\) equal \(\sqrt{2} \approx 1.414\).</p>
+  </div>
+</div>
+
+<!-- Problem 3 -->
+<div class="worked-problem">
+  <h4>Problem 3 &mdash; 30-60-90 Triangle</h4>
+  <p>A 30-60-90 triangle has a hypotenuse of length 10. Find the lengths of both legs.</p>
+  <div class="box box-example">
+    <div class="box-label">Solution</div>
+    <table class="step-table"><tbody>
+      <tr><td>Step 1:</td><td>In a 30-60-90 triangle, hypotenuse \(= 2s\), so \(2s = 10\) and \(s = 5\).</td></tr>
+      <tr><td>Step 2:</td><td>The short leg (opposite 30&deg;) is \(s = 5\).</td></tr>
+      <tr><td>Step 3:</td><td>The long leg (opposite 60&deg;) is \(s\sqrt{3} = 5\sqrt{3} \approx 8.66\).</td></tr>
+    </tbody></table>
+    <p>The legs are <strong>5</strong> and <strong>\(5\sqrt{3}\)</strong>.</p>
+  </div>
+</div>
+
+<!-- Problem 4 -->
+<div class="worked-problem">
+  <h4>Problem 4 &mdash; Using Trigonometric Ratios (Ladder Problem)</h4>
+  <p>How long a ladder is needed to reach a window 25 feet above the ground, if the ladder makes an angle of 75&deg; with the ground?</p>
+  <div class="box box-example">
+    <div class="box-label">Solution</div>
+    <table class="step-table"><tbody>
+      <tr><td>Step 1:</td><td>The window height is the side opposite the 75&deg; angle; the ladder is the hypotenuse.</td></tr>
+      <tr><td>Step 2:</td><td>Use the sine ratio:</td></tr>
+      <tr><td></td><td>$$\sin 75° = \frac{25}{\ell}$$</td></tr>
+      <tr><td>Step 3:</td><td>Solve for \(\ell\):</td></tr>
+      <tr><td></td><td>$$\ell = \frac{25}{\sin 75°} = \frac{25}{0.9659} \approx 25.9$$</td></tr>
+    </tbody></table>
+    <p>You would need approximately a <strong>26-foot</strong> ladder.</p>
+  </div>
+</div>
+
+<!-- Problem 5 -->
+<div class="worked-problem">
+  <h4>Problem 5 &mdash; Angle of Elevation</h4>
+  <p>A surveyor stands 200 feet from the base of a building. The angle of elevation to the top of the building is 35&deg;. How tall is the building?</p>
+  <div class="box box-example">
+    <div class="box-label">Solution</div>
+    <table class="step-table"><tbody>
+      <tr><td>Step 1:</td><td>The height \(h\) is opposite the 35&deg; angle; the distance 200 ft is adjacent.</td></tr>
+      <tr><td>Step 2:</td><td>Use the tangent ratio:</td></tr>
+      <tr><td></td><td>$$\tan 35° = \frac{h}{200}$$</td></tr>
+      <tr><td>Step 3:</td><td>Solve for \(h\):</td></tr>
+      <tr><td></td><td>$$h = 200 \cdot \tan 35° = 200 \times 0.7002 \approx 140.0$$</td></tr>
+    </tbody></table>
+    <p>The building is approximately <strong>140 feet</strong> tall.</p>
+  </div>
+</div>
+
+<!-- Problem 6 -->
+<div class="worked-problem">
+  <h4>Problem 6 &mdash; Angle of Depression</h4>
+  <p>From the top of a cliff 150 meters high, the angle of depression to a boat at sea is 20&deg;. How far is the boat from the base of the cliff?</p>
+  <div class="box box-example">
+    <div class="box-label">Solution</div>
+    <table class="step-table"><tbody>
+      <tr><td>Step 1:</td><td>The angle of depression from the cliff top equals the angle of elevation from the boat (alternate interior angles).</td></tr>
+      <tr><td>Step 2:</td><td>In the right triangle: the cliff height 150 m is opposite the 20&deg; angle; the horizontal distance \(d\) is adjacent.</td></tr>
+      <tr><td>Step 3:</td><td>Use the tangent ratio:</td></tr>
+      <tr><td></td><td>$$\tan 20° = \frac{150}{d}$$</td></tr>
+      <tr><td>Step 4:</td><td>Solve for \(d\):</td></tr>
+      <tr><td></td><td>$$d = \frac{150}{\tan 20°} = \frac{150}{0.3640} \approx 412.1$$</td></tr>
+    </tbody></table>
+    <p>The boat is approximately <strong>412 meters</strong> from the base of the cliff.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ QUICK REFERENCE ═══════════════ -->
+<h2>Quick Reference</h2>
+
+<div class="quick-ref">
+  <div class="quick-ref-item">
+    <div class="ref-title">Pythagorean Theorem</div>
+    <p>\(a^2 + b^2 = c^2\)</p>
+  </div>
+  <div class="quick-ref-item">
+    <div class="ref-title">45-45-90 Sides</div>
+    <p>\(s : s : s\sqrt{2}\)</p>
+  </div>
+  <div class="quick-ref-item">
+    <div class="ref-title">30-60-90 Sides</div>
+    <p>\(s : s\sqrt{3} : 2s\)</p>
+  </div>
+  <div class="quick-ref-item">
+    <div class="ref-title">Sine</div>
+    <p>\(\sin A = \dfrac{\text{opp}}{\text{hyp}} = \dfrac{y}{r}\)</p>
+  </div>
+  <div class="quick-ref-item">
+    <div class="ref-title">Cosine</div>
+    <p>\(\cos A = \dfrac{\text{adj}}{\text{hyp}} = \dfrac{x}{r}\)</p>
+  </div>
+  <div class="quick-ref-item">
+    <div class="ref-title">Tangent</div>
+    <p>\(\tan A = \dfrac{\text{opp}}{\text{adj}} = \dfrac{y}{x}\)</p>
+  </div>
+  <div class="quick-ref-item">
+    <div class="ref-title">Pythagorean Identity</div>
+    <p>\(\sin^2 A + \cos^2 A = 1\)</p>
+  </div>
+  <div class="quick-ref-item">
+    <div class="ref-title">Angle Sum</div>
+    <p>\(m\angle A + m\angle B + m\angle C = 180°\)</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ NAVIGATION ═══════════════ -->
+<nav class="chapter-nav">
+  <a href="../13-quadratic-equations-and-inequalities/">
+    <span class="nav-label">Previous</span>
+    Ch 13: Quadratic Equations and Inequalities
+  </a>
+  <a href="../15-comprehensive-review-and-tests/">
+    <span class="nav-label">Next</span>
+    Ch 15: Comprehensive Review and Tests
+  </a>
+</nav>
+
+</div><!-- .container -->
+
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+        ],
+        throwOnError: false
+    });
+});
+</script>
+</body>
+</html>

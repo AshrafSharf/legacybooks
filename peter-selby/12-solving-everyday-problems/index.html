@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 12 — Solving Everyday Problems | Practical Algebra</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', 'Cambria', 'Times New Roman', serif;
+            background: #fdf8f3;
+            color: #2d2d2d;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+        .hero {
+            background: linear-gradient(135deg, #0d4f4f 0%, #1a2332 100%);
+            color: white;
+            padding: 3rem 2rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero .chapter-num {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 6rem;
+            font-weight: 800;
+            opacity: 0.12;
+            position: absolute;
+            top: -0.5rem;
+            right: 2rem;
+            line-height: 1;
+        }
+        .hero h1 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .hero .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.85;
+            font-style: italic;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        h2 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #0d4f4f;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #c0602b;
+        }
+        h3 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #0d4f4f;
+            font-size: 1.5rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+        h4 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #0d4f4f;
+            font-size: 1.2rem;
+            margin: 1rem 0 0.5rem;
+        }
+        p { margin-bottom: 1rem; }
+        ul, ol { margin: 0.75rem 0 1.25rem 1.5rem; }
+        li { margin-bottom: 0.4rem; }
+        strong { color: #1a2332; }
+        code {
+            background: #f0ebe4;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.25rem 0;
+            font-size: 1.05rem;
+        }
+        th, td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e2d9ce;
+        }
+        th {
+            background: #0d4f4f;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        tr:nth-child(even) { background: #faf6f0; }
+        tr:hover { background: #f0ebe4; }
+
+        /* Highlight boxes */
+        .box { padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 5px solid; }
+        .box-definition { border-color: #0d4f4f; background: #e8f4f4; }
+        .box-insight { border-color: #c0602b; background: #fef3ec; }
+        .box-caution { border-color: #9b2c2c; background: #fef2f2; }
+        .box-example { border-color: #276749; background: #f0f7f0; }
+        .box-practice { border-color: #6b46c1; background: #f5f0ff; }
+        .box-formula { border-color: #2b6cb0; background: #ebf4ff; }
+        .box-label {
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .box-definition .box-label { color: #0d4f4f; }
+        .box-insight .box-label { color: #c0602b; }
+        .box-caution .box-label { color: #9b2c2c; }
+        .box-example .box-label { color: #276749; }
+        .box-practice .box-label { color: #6b46c1; }
+        .box-formula .box-label { color: #2b6cb0; }
+
+        /* Step markers */
+        .step-list { list-style: none; margin-left: 0; counter-reset: step-counter; }
+        .step-list li {
+            counter-increment: step-counter;
+            padding-left: 3rem;
+            position: relative;
+            margin-bottom: 1rem;
+        }
+        .step-list li::before {
+            content: "Step " counter(step-counter);
+            position: absolute;
+            left: 0;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            font-size: 0.8rem;
+            color: #fff;
+            background: #c0602b;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            top: 0.3rem;
+        }
+
+        /* Overview list */
+        .learn-list { list-style: none; margin-left: 0; }
+        .learn-list li {
+            padding: 0.5rem 0 0.5rem 2rem;
+            position: relative;
+        }
+        .learn-list li::before {
+            content: "▸";
+            position: absolute;
+            left: 0.5rem;
+            color: #c0602b;
+            font-weight: bold;
+        }
+
+        /* Problem-solution pair */
+        .problem-solution { margin: 2rem 0; }
+        .problem-solution .box:first-child { margin-bottom: 0; border-radius: 8px 8px 0 0; }
+        .problem-solution .box:last-child { margin-top: 0; border-radius: 0 0 8px 8px; }
+
+        /* Solution steps */
+        .solution-step {
+            margin: 0.75rem 0;
+            padding: 0.5rem 0;
+        }
+
+        /* Separator */
+        .section-sep {
+            height: 3px;
+            background: linear-gradient(90deg, #c0602b 0%, #0d4f4f 50%, #c0602b 100%);
+            border: none;
+            border-radius: 2px;
+            margin: 2.5rem 0;
+            opacity: 0.3;
+        }
+
+        /* Navigation */
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e2d9ce;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .nav-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #0d4f4f;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .nav-btn:hover { background: #0a3d3d; }
+        .nav-btn-review {
+            background: #c0602b;
+        }
+        .nav-btn-review:hover { background: #a04f22; }
+
+        svg { max-width: 100%; height: auto; display: block; margin: 1.5rem auto; }
+        .katex { font-size: 1.3em; }
+
+        .katex-display { margin: 1.5rem 0; overflow-x: auto; font-size: 1.35em; }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .hero .chapter-num { font-size: 4rem; }
+            h2 { font-size: 1.6rem; }
+            h3 { font-size: 1.3rem; }
+            .card { padding: 1.25rem; }
+            .box { padding: 1rem; }
+            .nav-footer { flex-direction: column; align-items: stretch; text-align: center; }
+        }
+
+        /* Word-to-symbol table */
+        .symbol-table td:first-child {
+            font-weight: bold;
+            color: #0d4f4f;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 1.4rem;
+            text-align: center;
+            width: 60px;
+        }
+        .symbol-table td:nth-child(2) {
+            color: #c0602b;
+            font-weight: 600;
+        }
+
+        /* SVG container */
+        .svg-container {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="chapter-num">12</div>
+        <div style="position:relative">
+            <p style="font-family: 'Segoe UI',sans-serif; text-transform:uppercase; letter-spacing:0.2em; font-size:0.9rem; opacity:0.7; margin-bottom:0.5rem;">Chapter 12</p>
+            <h1>Solving Everyday Problems</h1>
+            <p class="subtitle">Translating real-world situations into algebraic equations and solving them</p>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- OVERVIEW CARD -->
+        <div class="card">
+            <h2>What You'll Learn</h2>
+            <p>This final chapter brings together all the algebraic skills you have built throughout this book. You will learn to read word problems, translate them into equations, solve those equations, and verify your answers. The problems span everyday scenarios: numbers, ages, money, distance, mixtures, work, geometry, and investments.</p>
+            <ul class="learn-list">
+                <li>Translate verbal expressions of mathematical relationships into algebraic symbols</li>
+                <li>Apply a four-step strategy: <strong>Read, Represent, Translate, Solve, Check</strong></li>
+                <li>Solve number problems with one and two unknowns</li>
+                <li>Set up and solve age problems using time relationships</li>
+                <li>Formulate coin and money problems with multiple denominations</li>
+                <li>Tackle distance-rate-time problems: separation, closure, round trip, and overtake</li>
+                <li>Mix solutions, blends, or products using mixture equations</li>
+                <li>Model work-rate problems where multiple agents combine effort</li>
+                <li>Handle geometry problems by translating shapes into equations</li>
+                <li>Solve simple-interest investment problems with multiple accounts</li>
+            </ul>
+        </div>
+
+        <hr class="section-sep">
+
+        <!-- SECTION 1: PROBLEM-SOLVING STRATEGY -->
+        <div class="card">
+            <h2>The Problem-Solving Strategy</h2>
+            <p>Every word problem, regardless of its specific topic, follows the same disciplined process. Master these steps and no problem will feel alien.</p>
+
+            <div class="box box-definition">
+                <div class="box-label">The Four Steps of Problem Solving</div>
+                <ol class="step-list">
+                    <li><strong>Represent the unknowns.</strong> Assign a variable (usually \(x\)) to one unknown. Express all other unknowns in terms of that variable.</li>
+                    <li><strong>Translate into an equation.</strong> Read the problem sentence by sentence and convert each relationship into algebraic form.</li>
+                    <li><strong>Solve the equation.</strong> Use the algebraic techniques from previous chapters to find the value(s) of the unknowns.</li>
+                    <li><strong>Check in the original problem.</strong> Substitute your answers back into the <em>original word statement</em>, not your equation (which might itself be wrong).</li>
+                </ol>
+            </div>
+
+            <div class="box box-caution">
+                <div class="box-label">Common Mistake</div>
+                <p><strong>Never check your answer in your own equation.</strong> If you set up the equation incorrectly, the solution will satisfy the equation but not the problem. Always go back to the original words.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 2: TRANSLATING WORDS TO SYMBOLS -->
+        <div class="card">
+            <h2>Translating Words to Symbols</h2>
+            <p>The first hurdle in word problems is converting English into algebra. The chart below maps common phrases to their mathematical operations.</p>
+
+            <table class="symbol-table">
+                <tr><th>Symbol</th><th>Key Words</th><th>Example</th></tr>
+                <tr>
+                    <td>\(+\)</td>
+                    <td>sum, plus, added to, increased by, more than</td>
+                    <td>"8 increased by 3" &rarr; \(8 + 3\)</td>
+                </tr>
+                <tr>
+                    <td>\(-\)</td>
+                    <td>minus, less, decreased by, diminished by, exceeds</td>
+                    <td>"9 decreased by 4" &rarr; \(9 - 4\)</td>
+                </tr>
+                <tr>
+                    <td>\(\times\)</td>
+                    <td>times, product, multiplied by, of</td>
+                    <td>"half of 8" &rarr; \(\tfrac{1}{2} \times 8\)</td>
+                </tr>
+                <tr>
+                    <td>\(\div\)</td>
+                    <td>quotient, divided by, ratio</td>
+                    <td>"quotient of \(n\) and 3" &rarr; \(\tfrac{n}{3}\)</td>
+                </tr>
+                <tr>
+                    <td>\(=\)</td>
+                    <td>equals, is, is equal to, was equal to, the result is</td>
+                    <td>"half of 8 is 4" &rarr; \(\tfrac{1}{2}(8) = 4\)</td>
+                </tr>
+                <tr>
+                    <td>\(x\)</td>
+                    <td>a number, a certain number, unknown</td>
+                    <td>"a number added to 5" &rarr; \(x + 5\)</td>
+                </tr>
+            </table>
+
+            <div class="box box-insight">
+                <div class="box-label">Key Insight</div>
+                <p><strong>"Exceeds" and "Excess":</strong> The phrase "\(a\) exceeds \(b\) by \(c\)" means \(a - b = c\). Mentally replace <em>exceeds</em> with <em>is greater than</em>, and <em>excess</em> with <em>difference</em>. This small translation trick eliminates a very common source of errors.</p>
+            </div>
+
+            <div class="box box-insight">
+                <div class="box-label">Key Insight</div>
+                <p><strong>Three ways to express the same relationship:</strong></p>
+                $$\text{larger} - \text{smaller} = \text{difference}$$
+                $$\text{larger} = \text{smaller} + \text{difference}$$
+                $$\text{smaller} = \text{larger} - \text{difference}$$
+                <p>Choose whichever form makes your equation simplest to solve.</p>
+            </div>
+        </div>
+
+        <hr class="section-sep">
+
+        <!-- SECTION 3: NUMBER PROBLEMS -->
+        <div class="card">
+            <h2>Number Problems</h2>
+
+            <h3>One Unknown</h3>
+            <p>In a one-unknown number problem, one relationship defines the variable and a single equation captures the constraint.</p>
+
+            <div class="box box-example">
+                <div class="box-label">Quick Example</div>
+                <p><strong>Problem:</strong> Twice a certain number increased by 12 equals 26. Find the number.</p>
+                <p>Let \(n\) = the number.</p>
+                $$2n + 12 = 26 \;\Longrightarrow\; 2n = 14 \;\Longrightarrow\; n = 7$$
+                <p><strong>Check:</strong> \(2(7) + 12 = 14 + 12 = 26\). Confirmed.</p>
+            </div>
+
+            <h3>Two Unknowns</h3>
+            <p>With two unknowns you need two relationships. You may either express both unknowns in terms of one letter (Method 1) or use two letters and solve a system (Method 2).</p>
+
+            <div class="box box-example">
+                <div class="box-label">Quick Example</div>
+                <p><strong>Problem:</strong> One number is 3 more than twice the other. Their sum is 18. Find them.</p>
+                <p>Let \(s\) = smaller number. Then the larger is \(2s + 3\).</p>
+                $$s + (2s + 3) = 18 \;\Longrightarrow\; 3s + 3 = 18 \;\Longrightarrow\; s = 5$$
+                <p>Larger: \(2(5) + 3 = 13\). <strong>Check:</strong> \(5 + 13 = 18\) and \(13 = 2(5) + 3\). Confirmed.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 4: AGE PROBLEMS -->
+        <div class="card">
+            <h2>Age Problems</h2>
+            <p>Age problems rely on one key fact: <strong>the difference between two people's ages stays constant forever.</strong> Two rules guide the setup:</p>
+
+            <div class="box box-formula">
+                <div class="box-label">Age Rules</div>
+                <p><strong>Rule 1 (Future age):</strong> Add the given years to the present age.</p>
+                $$\text{Age in } k \text{ years} = \text{present age} + k$$
+                <p><strong>Rule 2 (Past age):</strong> Subtract the given years from the present age.</p>
+                $$\text{Age } k \text{ years ago} = \text{present age} - k$$
+            </div>
+
+            <div class="box box-example">
+                <div class="box-label">Example &mdash; Father and Son</div>
+                <p><strong>Problem:</strong> A man is 9 times as old as his son. In 3 years the father will be only 5 times as old as his son. Find their ages.</p>
+                <p>Let \(x\) = son's age now. Then \(9x\) = father's age now.</p>
+                <p>In 3 years: son is \(x + 3\), father is \(9x + 3\).</p>
+                $$9x + 3 = 5(x + 3)$$
+                $$9x + 3 = 5x + 15 \;\Longrightarrow\; 4x = 12 \;\Longrightarrow\; x = 3$$
+                <p>Son is <strong>3 years old</strong>, father is <strong>27 years old</strong>.</p>
+                <p><strong>Check:</strong> In 3 years they will be 6 and 30. Is \(30 = 5 \times 6\)? Yes.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 5: COIN / MONEY PROBLEMS -->
+        <div class="card">
+            <h2>Coin and Money Problems</h2>
+            <p>The core principle: <strong>total value = (number of items) &times; (value per item)</strong>. When you have two types of coins, you get two relationships: one for the <em>count</em> and one for the <em>value</em>.</p>
+
+            <div class="box box-formula">
+                <div class="box-label">Coin Problem Setup</div>
+                <p>If you have \(d\) dimes and \(q\) quarters:</p>
+                $$\text{Count equation: } d + q = \text{total coins}$$
+                $$\text{Value equation: } 0.10d + 0.25q = \text{total value in dollars}$$
+                <p>Or, to avoid decimals, work in cents:</p>
+                $$10d + 25q = \text{total value in cents}$$
+            </div>
+        </div>
+
+        <!-- SECTION 6: DISTANCE-RATE-TIME PROBLEMS -->
+        <div class="card">
+            <h2>Distance-Rate-Time Problems</h2>
+            <p>All motion problems rest on the fundamental relationship:</p>
+
+            <div class="box box-formula">
+                <div class="box-label">The Distance Formula</div>
+                $$d = r \times t$$
+                <p>where \(d\) = distance, \(r\) = rate (speed), and \(t\) = time. Rearranged:</p>
+                $$r = \frac{d}{t} \qquad\qquad t = \frac{d}{r}$$
+                <p>Units must be consistent. If rate is in mph, distance is in miles and time is in hours.</p>
+            </div>
+
+            <p>Motion problems come in four classic varieties:</p>
+
+            <h3>1. Separation (Opposite Directions)</h3>
+            <p>Two travelers leave the same point at the same time, heading in opposite directions. The sum of their distances equals the total separation.</p>
+
+            <!-- SVG: Distance-Rate-Time Diagram -->
+            <div class="svg-container">
+                <svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg" style="max-width:700px;">
+                    <!-- Road line -->
+                    <line x1="50" y1="100" x2="650" y2="100" stroke="#2d2d2d" stroke-width="2" stroke-dasharray="8,4"/>
+                    <!-- Starting point -->
+                    <circle cx="350" cy="100" r="8" fill="#c0602b"/>
+                    <text x="350" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#c0602b" font-weight="700">Start</text>
+                    <!-- Left car -->
+                    <rect x="80" y="86" width="60" height="28" rx="6" fill="#0d4f4f"/>
+                    <text x="110" y="105" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="white" font-weight="600">Car B</text>
+                    <line x1="140" y1="100" x2="340" y2="100" stroke="#0d4f4f" stroke-width="3"/>
+                    <polygon points="140,94 150,100 140,106" fill="#0d4f4f"/>
+                    <!-- Right car -->
+                    <rect x="560" y="86" width="60" height="28" rx="6" fill="#276749"/>
+                    <text x="590" y="105" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="white" font-weight="600">Car A</text>
+                    <line x1="360" y1="100" x2="560" y2="100" stroke="#276749" stroke-width="3"/>
+                    <polygon points="560,94 550,100 560,106" fill="#276749"/>
+                    <!-- Distance labels -->
+                    <text x="245" y="140" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#0d4f4f" font-style="italic">d&#x2082; = r&#x2082; &times; t</text>
+                    <text x="460" y="140" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#276749" font-style="italic">d&#x2081; = r&#x2081; &times; t</text>
+                    <!-- Total distance -->
+                    <line x1="110" y1="165" x2="590" y2="165" stroke="#c0602b" stroke-width="2"/>
+                    <line x1="110" y1="158" x2="110" y2="172" stroke="#c0602b" stroke-width="2"/>
+                    <line x1="590" y1="158" x2="590" y2="172" stroke="#c0602b" stroke-width="2"/>
+                    <text x="350" y="185" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#c0602b" font-weight="700">Total distance = d&#x2081; + d&#x2082;</text>
+                </svg>
+            </div>
+
+            <h3>2. Closure (Toward Each Other)</h3>
+            <p>Two travelers start far apart and move toward each other. The sum of their distances equals the initial separation.</p>
+
+            <h3>3. Round Trip</h3>
+            <p>Same traveler, same route, different speeds each way. The key: <strong>distance going = distance returning</strong>.</p>
+
+            <h3>4. Overtake (Same Direction)</h3>
+            <p>A faster traveler starts later and catches up to a slower one. The key: <strong>both travel the same distance</strong>, but the first traveler has a head start in time.</p>
+
+            <div class="box box-insight">
+                <div class="box-label">Key Insight</div>
+                <p><strong>Draw a diagram!</strong> For every motion problem, sketch the situation. Label starting points, directions, rates, and times. The diagram often makes the equation obvious.</p>
+            </div>
+
+            <h4>Setting Up a Distance-Rate-Time Table</h4>
+            <p>A table keeps the information organized:</p>
+            <table>
+                <tr><th></th><th>Rate</th><th>Time</th><th>Distance = Rate &times; Time</th></tr>
+                <tr><td><strong>Traveler 1</strong></td><td>\(r_1\)</td><td>\(t_1\)</td><td>\(r_1 \cdot t_1\)</td></tr>
+                <tr><td><strong>Traveler 2</strong></td><td>\(r_2\)</td><td>\(t_2\)</td><td>\(r_2 \cdot t_2\)</td></tr>
+            </table>
+            <p>Fill in what you know, use a variable for what you don't, then write an equation based on the problem type (sum of distances, equal distances, etc.).</p>
+        </div>
+
+        <!-- SECTION 7: MIXTURE PROBLEMS -->
+        <div class="card">
+            <h2>Mixture Problems</h2>
+            <p>Mixture problems appear in many guises &mdash; blending coffees, mixing chemical solutions, combining investments &mdash; but they all follow one principle:</p>
+
+            <div class="box box-formula">
+                <div class="box-label">The Mixture Principle</div>
+                $$\text{Amount}_1 \times \text{Concentration}_1 + \text{Amount}_2 \times \text{Concentration}_2 = \text{Total Amount} \times \text{Final Concentration}$$
+            </div>
+
+            <!-- SVG: Mixture Diagram -->
+            <div class="svg-container">
+                <svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="max-width:680px;">
+                    <!-- Container 1 -->
+                    <rect x="30" y="40" width="120" height="130" rx="8" fill="none" stroke="#0d4f4f" stroke-width="3"/>
+                    <rect x="33" y="80" width="114" height="87" rx="0" fill="#0d4f4f" opacity="0.2"/>
+                    <text x="90" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#0d4f4f">Solution A</text>
+                    <text x="90" y="115" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#0d4f4f">x liters</text>
+                    <text x="90" y="140" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#0d4f4f">40%</text>
+                    <!-- Plus sign -->
+                    <text x="195" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="32" fill="#c0602b" font-weight="700">+</text>
+                    <!-- Container 2 -->
+                    <rect x="240" y="40" width="120" height="130" rx="8" fill="none" stroke="#276749" stroke-width="3"/>
+                    <rect x="243" y="60" width="114" height="107" rx="0" fill="#276749" opacity="0.2"/>
+                    <text x="300" y="30" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#276749">Solution B</text>
+                    <text x="300" y="105" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#276749">(10 &minus; x) L</text>
+                    <text x="300" y="130" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#276749">70%</text>
+                    <!-- Equals sign -->
+                    <text x="410" y="115" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="32" fill="#c0602b" font-weight="700">=</text>
+                    <!-- Result container -->
+                    <rect x="460" y="30" width="160" height="150" rx="8" fill="none" stroke="#c0602b" stroke-width="3"/>
+                    <rect x="463" y="60" width="154" height="117" rx="0" fill="#c0602b" opacity="0.15"/>
+                    <text x="540" y="22" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#c0602b">Mixture</text>
+                    <text x="540" y="105" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#c0602b">10 liters</text>
+                    <text x="540" y="130" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#c0602b">50%</text>
+                    <!-- Equation below -->
+                    <text x="340" y="210" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#2d2d2d" font-style="italic">0.4x + 0.7(10 &minus; x) = 0.5(10)</text>
+                </svg>
+            </div>
+        </div>
+
+        <!-- SECTION 8: WORK PROBLEMS -->
+        <div class="card">
+            <h2>Work Problems</h2>
+            <p>When multiple workers (or pipes, machines, etc.) combine their efforts, we use the concept of <strong>work rate</strong>: the fraction of a job completed per unit time.</p>
+
+            <div class="box box-formula">
+                <div class="box-label">Combined Work Rate Formula</div>
+                <p>If worker A can complete a job in \(a\) hours and worker B in \(b\) hours, their combined time \(t\) satisfies:</p>
+                $$\frac{1}{a} + \frac{1}{b} = \frac{1}{t}$$
+                <p>Each fraction represents a <em>rate</em>: the portion of the job done per hour.</p>
+            </div>
+
+            <!-- SVG: Work Problem Diagram -->
+            <div class="svg-container">
+                <svg viewBox="0 0 660 200" xmlns="http://www.w3.org/2000/svg" style="max-width:660px;">
+                    <!-- Worker A -->
+                    <rect x="30" y="30" width="160" height="80" rx="10" fill="#0d4f4f" opacity="0.12" stroke="#0d4f4f" stroke-width="2"/>
+                    <text x="110" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#0d4f4f">Pipe A</text>
+                    <text x="110" y="85" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#0d4f4f">Rate = 1/a per hour</text>
+                    <!-- Worker B -->
+                    <rect x="30" y="120" width="160" height="80" rx="10" fill="#276749" opacity="0.12" stroke="#276749" stroke-width="2"/>
+                    <text x="110" y="150" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#276749">Pipe B</text>
+                    <text x="110" y="175" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#276749">Rate = 1/b per hour</text>
+                    <!-- Arrows -->
+                    <line x1="190" y1="70" x2="280" y2="115" stroke="#0d4f4f" stroke-width="2" marker-end="url(#arrowTeal)"/>
+                    <line x1="190" y1="160" x2="280" y2="115" stroke="#276749" stroke-width="2" marker-end="url(#arrowGreen)"/>
+                    <!-- Plus -->
+                    <text x="235" y="100" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" fill="#c0602b" font-weight="700">+</text>
+                    <!-- Combined -->
+                    <rect x="290" y="80" width="190" height="70" rx="10" fill="#c0602b" opacity="0.12" stroke="#c0602b" stroke-width="2"/>
+                    <text x="385" y="107" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#c0602b">Combined</text>
+                    <text x="385" y="132" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#c0602b">Rate = 1/a + 1/b</text>
+                    <!-- Equals -->
+                    <text x="505" y="120" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="22" fill="#2d2d2d" font-weight="700">=</text>
+                    <!-- Result -->
+                    <rect x="530" y="80" width="110" height="70" rx="10" fill="#2b6cb0" opacity="0.12" stroke="#2b6cb0" stroke-width="2"/>
+                    <text x="585" y="107" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#2b6cb0">Together</text>
+                    <text x="585" y="132" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#2b6cb0">Time = t hours</text>
+                    <!-- Arrow markers -->
+                    <defs>
+                        <marker id="arrowTeal" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+                            <path d="M0,0 L8,4 L0,8 Z" fill="#0d4f4f"/>
+                        </marker>
+                        <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+                            <path d="M0,0 L8,4 L0,8 Z" fill="#276749"/>
+                        </marker>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+
+        <!-- SECTION 9: MORE PROBLEM TYPES -->
+        <div class="card">
+            <h2>More Problem Types</h2>
+
+            <h3>Percentage Problems</h3>
+            <p>The relationship between percentage (\(P\)), base (\(B\)), and rate (\(R\)) is:</p>
+
+            <div class="box box-formula">
+                <div class="box-label">Percentage Formula</div>
+                $$P = R \times B$$
+                <p>Three variations: (1) Find the percentage: \(P = R \times B\). (2) Find the rate: \(R = P / B\). (3) Find the base: \(B = P / R\).</p>
+            </div>
+
+            <h3>Geometry Problems</h3>
+            <p>Translate perimeter, area, and angle relationships into equations. Common setups:</p>
+            <ul>
+                <li><strong>Perimeter of a rectangle:</strong> \(2l + 2w = P\), combined with a relationship between \(l\) and \(w\)</li>
+                <li><strong>Triangle angles:</strong> \(A + B + C = 180°\), combined with given relationships</li>
+                <li><strong>Complementary angles:</strong> \(x + y = 90°\)</li>
+                <li><strong>Supplementary angles:</strong> \(x + y = 180°\)</li>
+            </ul>
+
+            <h3>Investment / Interest Problems</h3>
+            <div class="box box-formula">
+                <div class="box-label">Simple Interest Formula</div>
+                $$I = P \cdot r \cdot t$$
+                <p>where \(I\) = interest earned, \(P\) = principal, \(r\) = annual rate (as decimal), \(t\) = time in years.</p>
+                <p>When money is split between two investments at different rates, you get a system:</p>
+                $$P_1 + P_2 = \text{Total Principal}$$
+                $$r_1 P_1 + r_2 P_2 = \text{Total Interest}$$
+            </div>
+
+            <h3>Lever / Balance Problems</h3>
+            <div class="box box-formula">
+                <div class="box-label">Lever Principle (Archimedes)</div>
+                $$w_1 \times d_1 = w_2 \times d_2$$
+                <p>where \(w_1, w_2\) are weights and \(d_1, d_2\) are distances from the fulcrum.</p>
+            </div>
+        </div>
+
+        <hr class="section-sep">
+
+        <!-- WORKED PROBLEMS -->
+        <div class="card">
+            <h2>Worked Problems</h2>
+
+            <!-- Problem 1: Number -->
+            <h3>Problem 1 &mdash; Consecutive Integers</h3>
+            <div class="problem-solution">
+                <div class="box box-practice">
+                    <div class="box-label">Problem</div>
+                    <p>The sum of three consecutive integers is 72. Find the three integers.</p>
+                </div>
+                <div class="box box-example">
+                    <div class="box-label">Solution</div>
+                    <p><strong>Step 1 &mdash; Represent:</strong> Let \(n\) = the first integer. Then the three consecutive integers are \(n\), \(n+1\), and \(n+2\).</p>
+                    <p><strong>Step 2 &mdash; Translate:</strong></p>
+                    $$n + (n + 1) + (n + 2) = 72$$
+                    <p><strong>Step 3 &mdash; Solve:</strong></p>
+                    $$3n + 3 = 72$$
+                    $$3n = 69$$
+                    $$n = 23$$
+                    <p>The three integers are \(23\), \(24\), and \(25\).</p>
+                    <p><strong>Step 4 &mdash; Check:</strong> \(23 + 24 + 25 = 72\). Confirmed.</p>
+                </div>
+            </div>
+
+            <hr class="section-sep">
+
+            <!-- Problem 2: Age -->
+            <h3>Problem 2 &mdash; Age Problem</h3>
+            <div class="problem-solution">
+                <div class="box box-practice">
+                    <div class="box-label">Problem</div>
+                    <p>Maria is 4 years older than twice Ana's age. The sum of their ages is 25. How old is each?</p>
+                </div>
+                <div class="box box-example">
+                    <div class="box-label">Solution</div>
+                    <p><strong>Step 1 &mdash; Represent:</strong> Let \(a\) = Ana's age. Then Maria's age is \(2a + 4\).</p>
+                    <p><strong>Step 2 &mdash; Translate:</strong></p>
+                    $$a + (2a + 4) = 25$$
+                    <p><strong>Step 3 &mdash; Solve:</strong></p>
+                    $$3a + 4 = 25$$
+                    $$3a = 21$$
+                    $$a = 7$$
+                    <p>Ana is <strong>7 years old</strong>. Maria is \(2(7) + 4 = \textbf{18 years old}\).</p>
+                    <p><strong>Step 4 &mdash; Check:</strong> Is Maria 4 more than twice Ana? \(2 \times 7 + 4 = 18\). Yes. Sum: \(7 + 18 = 25\). Confirmed.</p>
+                </div>
+            </div>
+
+            <hr class="section-sep">
+
+            <!-- Problem 3: Coin -->
+            <h3>Problem 3 &mdash; Coin Problem</h3>
+            <div class="problem-solution">
+                <div class="box box-practice">
+                    <div class="box-label">Problem</div>
+                    <p>A person has 15 coins consisting of dimes and quarters. The total value is $2.85. How many of each coin?</p>
+                </div>
+                <div class="box box-example">
+                    <div class="box-label">Solution</div>
+                    <p><strong>Step 1 &mdash; Represent:</strong> Let \(d\) = number of dimes, \(q\) = number of quarters.</p>
+                    <p><strong>Step 2 &mdash; Translate (working in cents):</strong></p>
+                    $$d + q = 15 \quad \text{...(count)}$$
+                    $$10d + 25q = 285 \quad \text{...(value)}$$
+                    <p><strong>Step 3 &mdash; Solve:</strong> From the first equation, \(d = 15 - q\). Substitute:</p>
+                    $$10(15 - q) + 25q = 285$$
+                    $$150 - 10q + 25q = 285$$
+                    $$15q = 135$$
+                    $$q = 9$$
+                    <p>So \(d = 15 - 9 = 6\).</p>
+                    <p>There are <strong>6 dimes</strong> and <strong>9 quarters</strong>.</p>
+                    <p><strong>Step 4 &mdash; Check:</strong> Count: \(6 + 9 = 15\). Value: \(6 \times \$0.10 + 9 \times \$0.25 = \$0.60 + \$2.25 = \$2.85\). Confirmed.</p>
+                </div>
+            </div>
+
+            <hr class="section-sep">
+
+            <!-- Problem 4: Distance -->
+            <h3>Problem 4 &mdash; Distance (Separation)</h3>
+            <div class="problem-solution">
+                <div class="box box-practice">
+                    <div class="box-label">Problem</div>
+                    <p>Two cars leave the same point at the same time, traveling in opposite directions at 50 mph and 60 mph. How long until they are 330 miles apart?</p>
+                </div>
+                <div class="box box-example">
+                    <div class="box-label">Solution</div>
+                    <p><strong>Step 1 &mdash; Represent:</strong> Let \(t\) = time traveled (hours).</p>
+                    <p><strong>Step 2 &mdash; Translate:</strong> The sum of their distances equals 330 miles.</p>
+                    <table>
+                        <tr><th></th><th>Rate</th><th>Time</th><th>Distance</th></tr>
+                        <tr><td>Car A</td><td>50 mph</td><td>\(t\)</td><td>\(50t\)</td></tr>
+                        <tr><td>Car B</td><td>60 mph</td><td>\(t\)</td><td>\(60t\)</td></tr>
+                    </table>
+                    $$50t + 60t = 330$$
+                    <p><strong>Step 3 &mdash; Solve:</strong></p>
+                    $$110t = 330$$
+                    $$t = 3 \text{ hours}$$
+                    <p><strong>Step 4 &mdash; Check:</strong> Car A travels \(50 \times 3 = 150\) miles. Car B travels \(60 \times 3 = 180\) miles. Total: \(150 + 180 = 330\) miles. Confirmed.</p>
+                </div>
+            </div>
+
+            <hr class="section-sep">
+
+            <!-- Problem 5: Mixture -->
+            <h3>Problem 5 &mdash; Mixture Problem</h3>
+            <div class="problem-solution">
+                <div class="box box-practice">
+                    <div class="box-label">Problem</div>
+                    <p>How many liters of a 40% acid solution must be mixed with a 70% acid solution to produce 10 liters of a 50% solution?</p>
+                </div>
+                <div class="box box-example">
+                    <div class="box-label">Solution</div>
+                    <p><strong>Step 1 &mdash; Represent:</strong> Let \(x\) = liters of 40% solution. Then \((10 - x)\) = liters of 70% solution.</p>
+                    <p><strong>Step 2 &mdash; Translate:</strong> (acid from A) + (acid from B) = (acid in mixture)</p>
+                    $$0.40x + 0.70(10 - x) = 0.50(10)$$
+                    <p><strong>Step 3 &mdash; Solve:</strong></p>
+                    $$0.40x + 7.0 - 0.70x = 5.0$$
+                    $$-0.30x = -2.0$$
+                    $$x = \frac{2.0}{0.30} = \frac{20}{3} = 6\tfrac{2}{3} \text{ liters}$$
+                    <p>So use \(6\frac{2}{3}\) liters of 40% and \(3\frac{1}{3}\) liters of 70%.</p>
+                    <p><strong>Step 4 &mdash; Check:</strong> Acid from A: \(0.40 \times \frac{20}{3} = \frac{8}{3}\). Acid from B: \(0.70 \times \frac{10}{3} = \frac{7}{3}\). Total acid: \(\frac{8}{3} + \frac{7}{3} = 5\). Is \(5 = 0.50 \times 10\)? Yes. Confirmed.</p>
+                </div>
+            </div>
+
+            <hr class="section-sep">
+
+            <!-- Problem 6: Work -->
+            <h3>Problem 6 &mdash; Work Problem</h3>
+            <div class="problem-solution">
+                <div class="box box-practice">
+                    <div class="box-label">Problem</div>
+                    <p>Pipe A can fill a pool in 6 hours. Pipe B can fill it in 4 hours. How long will it take both pipes working together?</p>
+                </div>
+                <div class="box box-example">
+                    <div class="box-label">Solution</div>
+                    <p><strong>Step 1 &mdash; Represent:</strong> Let \(t\) = time (hours) to fill the pool together.</p>
+                    <p>Pipe A's rate: \(\frac{1}{6}\) of the pool per hour. Pipe B's rate: \(\frac{1}{4}\) of the pool per hour.</p>
+                    <p><strong>Step 2 &mdash; Translate:</strong></p>
+                    $$\frac{1}{6} + \frac{1}{4} = \frac{1}{t}$$
+                    <p><strong>Step 3 &mdash; Solve:</strong> Find a common denominator (12):</p>
+                    $$\frac{2}{12} + \frac{3}{12} = \frac{1}{t}$$
+                    $$\frac{5}{12} = \frac{1}{t}$$
+                    $$t = \frac{12}{5} = 2.4 \text{ hours} = 2 \text{ hours } 24 \text{ minutes}$$
+                    <p><strong>Step 4 &mdash; Check:</strong> In 2.4 hours, Pipe A fills \(\frac{2.4}{6} = 0.4\) of the pool. Pipe B fills \(\frac{2.4}{4} = 0.6\) of the pool. Together: \(0.4 + 0.6 = 1.0\) (the whole pool). Confirmed.</p>
+                </div>
+            </div>
+
+            <hr class="section-sep">
+
+            <!-- Problem 7: Investment -->
+            <h3>Problem 7 &mdash; Investment Problem</h3>
+            <div class="problem-solution">
+                <div class="box box-practice">
+                    <div class="box-label">Problem</div>
+                    <p>A total of $5,000 is invested in two accounts: one paying 5% annually and the other 8% annually. The total annual income from both investments is $340. How much is invested at each rate?</p>
+                </div>
+                <div class="box box-example">
+                    <div class="box-label">Solution</div>
+                    <p><strong>Step 1 &mdash; Represent:</strong> Let \(x\) = amount at 5%. Then \((5000 - x)\) = amount at 8%.</p>
+                    <p><strong>Step 2 &mdash; Translate:</strong></p>
+                    $$0.05x + 0.08(5000 - x) = 340$$
+                    <p><strong>Step 3 &mdash; Solve:</strong></p>
+                    $$0.05x + 400 - 0.08x = 340$$
+                    $$-0.03x = -60$$
+                    $$x = 2000$$
+                    <p>Invested at 5%: <strong>$2,000</strong>. Invested at 8%: \(5000 - 2000 =\) <strong>$3,000</strong>.</p>
+                    <p><strong>Step 4 &mdash; Check:</strong> Interest from 5%: \(0.05 \times 2000 = \$100\). Interest from 8%: \(0.08 \times 3000 = \$240\). Total: \(\$100 + \$240 = \$340\). Confirmed.</p>
+                </div>
+            </div>
+        </div>
+
+        <hr class="section-sep">
+
+        <!-- QUICK REFERENCE CARD -->
+        <div class="card">
+            <h2>Quick Reference</h2>
+
+            <div class="box box-formula">
+                <div class="box-label">Problem-Solving Strategy</div>
+                <p><strong>1. Represent</strong> &rarr; <strong>2. Translate</strong> &rarr; <strong>3. Solve</strong> &rarr; <strong>4. Check (in the original words!)</strong></p>
+            </div>
+
+            <table>
+                <tr><th>Problem Type</th><th>Key Equation</th></tr>
+                <tr>
+                    <td><strong>Consecutive Integers</strong></td>
+                    <td>\(n + (n+1) + (n+2) = \text{sum}\)</td>
+                </tr>
+                <tr>
+                    <td><strong>Age Problems</strong></td>
+                    <td>Future: age \(+ k\); Past: age \(- k\); difference stays constant</td>
+                </tr>
+                <tr>
+                    <td><strong>Coin / Money</strong></td>
+                    <td>\(\text{value}_1 \cdot \text{count}_1 + \text{value}_2 \cdot \text{count}_2 = \text{total value}\)</td>
+                </tr>
+                <tr>
+                    <td><strong>Distance-Rate-Time</strong></td>
+                    <td>\(d = r \times t\)</td>
+                </tr>
+                <tr>
+                    <td><strong>Separation</strong></td>
+                    <td>\(d_1 + d_2 = \text{total apart}\)</td>
+                </tr>
+                <tr>
+                    <td><strong>Closure</strong></td>
+                    <td>\(d_1 + d_2 = \text{initial apart}\)</td>
+                </tr>
+                <tr>
+                    <td><strong>Round Trip</strong></td>
+                    <td>\(d_{\text{go}} = d_{\text{return}}\)</td>
+                </tr>
+                <tr>
+                    <td><strong>Overtake</strong></td>
+                    <td>\(d_{\text{fast}} = d_{\text{slow}}\) (different times)</td>
+                </tr>
+                <tr>
+                    <td><strong>Mixture</strong></td>
+                    <td>\(A_1 c_1 + A_2 c_2 = A_{\text{mix}} c_{\text{mix}}\)</td>
+                </tr>
+                <tr>
+                    <td><strong>Work Rate</strong></td>
+                    <td>\(\dfrac{1}{a} + \dfrac{1}{b} = \dfrac{1}{t}\)</td>
+                </tr>
+                <tr>
+                    <td><strong>Percentage</strong></td>
+                    <td>\(P = R \times B\)</td>
+                </tr>
+                <tr>
+                    <td><strong>Simple Interest</strong></td>
+                    <td>\(I = P \cdot r \cdot t\)</td>
+                </tr>
+                <tr>
+                    <td><strong>Lever / Balance</strong></td>
+                    <td>\(w_1 d_1 = w_2 d_2\)</td>
+                </tr>
+            </table>
+
+            <div class="box box-caution">
+                <div class="box-label">Final Reminder</div>
+                <p>Always check your answer against the <strong>original word statement</strong>, not against the equation you wrote. A correct solution to a wrong equation is still a wrong answer!</p>
+            </div>
+        </div>
+
+        <!-- KEY INSIGHTS SUMMARY -->
+        <div class="card">
+            <h2>Key Insights</h2>
+
+            <div class="box box-insight">
+                <div class="box-label">Insight 1 &mdash; Meaning First</div>
+                <p>Before writing any symbols, make sure you understand what the words mean. "Decreased by," "diminished by," and "less" all signal subtraction. "Increased by," "added to," and "more than" all signal addition. Getting the operation wrong dooms the entire solution.</p>
+            </div>
+
+            <div class="box box-insight">
+                <div class="box-label">Insight 2 &mdash; Draw a Picture</div>
+                <p>For motion and mixture problems, a quick diagram transforms confusion into clarity. Label every quantity you know and every unknown. The equation often writes itself once the diagram is in front of you.</p>
+            </div>
+
+            <div class="box box-insight">
+                <div class="box-label">Insight 3 &mdash; Use a Table</div>
+                <p>Distance-rate-time problems, coin problems, and mixture problems all benefit from a table with columns for the known and unknown quantities. Fill in what you know, assign a variable to what you don't, and the relationships emerge naturally.</p>
+            </div>
+
+            <div class="box box-insight">
+                <div class="box-label">Insight 4 &mdash; One Variable When Possible</div>
+                <p>If two quantities are linked (e.g., their sum is 15), express both in terms of a single variable: \(d\) and \(15 - d\). This avoids the need for simultaneous equations and keeps the algebra simpler.</p>
+            </div>
+
+            <div class="box box-insight">
+                <div class="box-label">Insight 5 &mdash; The Check Is Non-Negotiable</div>
+                <p>Checking is not optional busywork &mdash; it is the only way to catch a modeling error. An algebraically correct solution to a wrongly formed equation gives a wrong answer. Always verify against the <em>original words</em>.</p>
+            </div>
+        </div>
+
+        <!-- NAVIGATION -->
+        <div class="nav-footer">
+            <a href="../11-ratio-proportion-and-variation/index.html" class="nav-btn">&larr; Previous: Ratio, Proportion, and Variation</a>
+            <a href="../01-some-basic-concepts/index.html" class="nav-btn nav-btn-review">Back to Chapter 1: Review &rarr;</a>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+</body>
+</html>

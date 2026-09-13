@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 8 — Functions and Graphs | Practical Algebra</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', 'Cambria', 'Times New Roman', serif;
+            background: #fdf8f3;
+            color: #2d2d2d;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+        .hero {
+            background: linear-gradient(135deg, #0d4f4f 0%, #1a2332 100%);
+            color: white;
+            padding: 3rem 2rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero .chapter-num {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 6rem;
+            font-weight: 800;
+            opacity: 0.12;
+            position: absolute;
+            top: -0.5rem;
+            right: 2rem;
+            line-height: 1;
+        }
+        .hero h1 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .hero .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.85;
+            font-style: italic;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        h2 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #0d4f4f;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #c0602b;
+        }
+        h3 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #0d4f4f;
+            font-size: 1.5rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+        h4 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #0d4f4f;
+            font-size: 1.2rem;
+            margin: 1rem 0 0.5rem;
+        }
+        p { margin-bottom: 1rem; }
+        ul, ol { margin: 0.75rem 0 1.25rem 1.5rem; }
+        li { margin-bottom: 0.4rem; }
+        strong { color: #1a3a3a; }
+        /* Highlight boxes */
+        .box { padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 5px solid; }
+        .box-definition { border-color: #0d4f4f; background: #e8f4f4; }
+        .box-insight { border-color: #c0602b; background: #fef3ec; }
+        .box-caution { border-color: #9b2c2c; background: #fef2f2; }
+        .box-example { border-color: #276749; background: #f0f7f0; }
+        .box-practice { border-color: #6b46c1; background: #f5f0ff; }
+        .box-formula { border-color: #2b6cb0; background: #ebf4ff; }
+        .box-label {
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .box-definition .box-label { color: #0d4f4f; }
+        .box-insight .box-label { color: #c0602b; }
+        .box-caution .box-label { color: #9b2c2c; }
+        .box-example .box-label { color: #276749; }
+        .box-practice .box-label { color: #6b46c1; }
+        .box-formula .box-label { color: #2b6cb0; }
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 1.05rem;
+        }
+        th, td {
+            padding: 0.6rem 1rem;
+            text-align: center;
+            border: 1px solid #d4cfc7;
+        }
+        th {
+            background: #0d4f4f;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+        }
+        td { background: #fff; }
+        tr:nth-child(even) td { background: #faf7f2; }
+        /* Solution toggle */
+        details { margin: 1rem 0; }
+        details summary {
+            cursor: pointer;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            color: #0d4f4f;
+            padding: 0.5rem 0;
+            user-select: none;
+        }
+        details summary:hover { color: #c0602b; }
+        details[open] summary { margin-bottom: 0.5rem; }
+        /* Navigation */
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e2d9ce;
+        }
+        .nav-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #0d4f4f;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .nav-btn:hover { background: #0a3d3d; }
+        svg { max-width: 100%; height: auto; display: block; margin: 1.5rem auto; }
+        .katex { font-size: 1.3em; }
+
+        .katex-display { margin: 1.5rem 0; overflow-x: auto; font-size: 1.35em; }
+        /* Overview list */
+        .overview-list { list-style: none; margin-left: 0; }
+        .overview-list li { padding: 0.3rem 0 0.3rem 1.8rem; position: relative; }
+        .overview-list li::before {
+            content: '▸';
+            color: #c0602b;
+            font-weight: bold;
+            position: absolute;
+            left: 0.4rem;
+        }
+        /* Quadrant label style */
+        .quadrant-label {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 14px;
+            fill: #0d4f4f;
+            font-weight: 700;
+        }
+        /* Step markers for worked solutions */
+        .step-marker {
+            display: inline-block;
+            background: #0d4f4f;
+            color: white;
+            width: 1.6rem;
+            height: 1.6rem;
+            line-height: 1.6rem;
+            border-radius: 50%;
+            text-align: center;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-right: 0.5rem;
+            flex-shrink: 0;
+        }
+        .step { display: flex; align-items: baseline; margin-bottom: 0.75rem; }
+        .step-content { flex: 1; }
+        /* Responsive */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .hero .chapter-num { font-size: 4rem; }
+            h2 { font-size: 1.6rem; }
+            .card { padding: 1.25rem; }
+            .box { padding: 1rem; }
+            .nav-footer { flex-direction: column; align-items: stretch; text-align: center; }
+        }
+        .svg-container { overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="chapter-num">8</div>
+        <div style="position:relative">
+            <p style="font-family: 'Segoe UI',sans-serif; text-transform:uppercase; letter-spacing:0.2em; font-size:0.9rem; opacity:0.7; margin-bottom:0.5rem;">Chapter 8</p>
+            <h1>Functions and Graphs</h1>
+            <p class="subtitle">Turning equations into pictures &mdash; plotting points, drawing lines, and reading the stories graphs tell</p>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- ============================================================ -->
+        <!--  OVERVIEW CARD                                                -->
+        <!-- ============================================================ -->
+        <div class="card">
+            <h2>What You'll Learn</h2>
+            <ul class="overview-list">
+                <li>Set up a rectangular (Cartesian) coordinate system and label its four quadrants</li>
+                <li>Plot ordered pairs \((x,\,y)\) and identify the abscissa and ordinate</li>
+                <li>Understand functions, independent variables, and dependent variables</li>
+                <li>Graph linear equations using intercepts and the slope-intercept form</li>
+                <li>Calculate slope and interpret its meaning (positive, negative, zero, undefined)</li>
+                <li>Find \(x\)- and \(y\)-intercepts of any linear equation</li>
+                <li>Identify parallel and perpendicular lines from their slopes</li>
+                <li>Solve pairs of linear equations graphically and algebraically</li>
+                <li>Glimpse nonlinear functions through the parabola \(y = x^2\)</li>
+            </ul>
+        </div>
+
+        <!-- ============================================================ -->
+        <!--  SECTION 1 — ORDERED PAIRS & COORDINATES                     -->
+        <!-- ============================================================ -->
+        <div class="card">
+            <h2>1. Ordered Pairs and the Coordinate Plane</h2>
+
+            <p>Every point on a flat surface can be described by two numbers &mdash; its <strong>coordinates</strong>. We write them as an <strong>ordered pair</strong> \((x,\,y)\), where the first number tells us the horizontal position and the second number tells us the vertical position.</p>
+
+            <div class="box box-definition">
+                <div class="box-label">Definition &mdash; Ordered Pair</div>
+                <p style="margin-bottom:0">An <strong>ordered pair</strong> \((x,\,y)\) gives the location of a point. The <strong>first component</strong> \(x\) (called the <em>abscissa</em>) is the horizontal distance from the origin; the <strong>second component</strong> \(y\) (called the <em>ordinate</em>) is the vertical distance from the origin.</p>
+            </div>
+
+            <h3>The Rectangular Coordinate System</h3>
+
+            <p>The <strong>Cartesian coordinate system</strong> (named after Ren&eacute; Descartes) is formed by placing two perpendicular number lines so that their zero points coincide at the <strong>origin</strong> \(O\).</p>
+
+            <ul>
+                <li>The horizontal line is the <strong>\(x\)-axis</strong>.</li>
+                <li>The vertical line is the <strong>\(y\)-axis</strong>.</li>
+                <li>Together the axes divide the plane into four <strong>quadrants</strong>, numbered I&ndash;IV counterclockwise from the upper right.</li>
+            </ul>
+
+            <!-- SVG: Coordinate Plane with Four Quadrants and Points -->
+            <div class="svg-container">
+            <svg viewBox="-220 -220 440 440" width="440" xmlns="http://www.w3.org/2000/svg" style="font-family: 'Segoe UI', Helvetica, Arial, sans-serif;">
+                <!-- Grid lines -->
+                <g stroke="#e2ddd5" stroke-width="0.5">
+                    <line x1="-200" y1="-180" x2="-200" y2="180"/>
+                    <line x1="-160" y1="-180" x2="-160" y2="180"/>
+                    <line x1="-120" y1="-180" x2="-120" y2="180"/>
+                    <line x1="-80" y1="-180" x2="-80" y2="180"/>
+                    <line x1="-40" y1="-180" x2="-40" y2="180"/>
+                    <line x1="40" y1="-180" x2="40" y2="180"/>
+                    <line x1="80" y1="-180" x2="80" y2="180"/>
+                    <line x1="120" y1="-180" x2="120" y2="180"/>
+                    <line x1="160" y1="-180" x2="160" y2="180"/>
+                    <line x1="200" y1="-180" x2="200" y2="180"/>
+                    <line x1="-200" y1="-160" x2="200" y2="-160"/>
+                    <line x1="-200" y1="-120" x2="200" y2="-120"/>
+                    <line x1="-200" y1="-80" x2="200" y2="-80"/>
+                    <line x1="-200" y1="-40" x2="200" y2="-40"/>
+                    <line x1="-200" y1="40" x2="200" y2="40"/>
+                    <line x1="-200" y1="80" x2="200" y2="80"/>
+                    <line x1="-200" y1="120" x2="200" y2="120"/>
+                    <line x1="-200" y1="160" x2="200" y2="160"/>
+                </g>
+                <!-- Axes -->
+                <line x1="-210" y1="0" x2="210" y2="0" stroke="#2d2d2d" stroke-width="2" marker-end="url(#arrowhead1)"/>
+                <line x1="0" y1="210" x2="0" y2="-210" stroke="#2d2d2d" stroke-width="2" marker-end="url(#arrowhead1)"/>
+                <defs>
+                    <marker id="arrowhead1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                        <polygon points="0 0, 8 3, 0 6" fill="#2d2d2d"/>
+                    </marker>
+                </defs>
+                <!-- Tick marks and labels on x-axis -->
+                <g font-size="12" fill="#2d2d2d" text-anchor="middle">
+                    <line x1="-200" y1="-4" x2="-200" y2="4" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="-200" y="18">-5</text>
+                    <line x1="-160" y1="-4" x2="-160" y2="4" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="-160" y="18">-4</text>
+                    <line x1="-120" y1="-4" x2="-120" y2="4" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="-120" y="18">-3</text>
+                    <line x1="-80" y1="-4" x2="-80" y2="4" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="-80" y="18">-2</text>
+                    <line x1="-40" y1="-4" x2="-40" y2="4" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="-40" y="18">-1</text>
+                    <line x1="40" y1="-4" x2="40" y2="4" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="40" y="18">1</text>
+                    <line x1="80" y1="-4" x2="80" y2="4" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="80" y="18">2</text>
+                    <line x1="120" y1="-4" x2="120" y2="4" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="120" y="18">3</text>
+                    <line x1="160" y1="-4" x2="160" y2="4" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="160" y="18">4</text>
+                    <line x1="200" y1="-4" x2="200" y2="4" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="200" y="18">5</text>
+                </g>
+                <!-- Tick marks and labels on y-axis -->
+                <g font-size="12" fill="#2d2d2d" text-anchor="end">
+                    <line x1="-4" y1="-200" x2="4" y2="-200" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="-8" y="-196">5</text>
+                    <line x1="-4" y1="-160" x2="4" y2="-160" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="-8" y="-156">4</text>
+                    <line x1="-4" y1="-120" x2="4" y2="-120" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="-8" y="-116">3</text>
+                    <line x1="-4" y1="-80" x2="4" y2="-80" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="-8" y="-76">2</text>
+                    <line x1="-4" y1="-40" x2="4" y2="-40" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="-8" y="-36">1</text>
+                    <line x1="-4" y1="40" x2="4" y2="40" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="-8" y="44">-1</text>
+                    <line x1="-4" y1="80" x2="4" y2="80" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="-8" y="84">-2</text>
+                    <line x1="-4" y1="120" x2="4" y2="120" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="-8" y="124">-3</text>
+                    <line x1="-4" y1="160" x2="4" y2="160" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="-8" y="164">-4</text>
+                    <line x1="-4" y1="200" x2="4" y2="200" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <text x="-8" y="204">-5</text>
+                </g>
+                <!-- Axis labels -->
+                <text x="210" y="-8" font-size="15" font-weight="700" fill="#0d4f4f" text-anchor="end" font-style="italic">x</text>
+                <text x="12" y="-204" font-size="15" font-weight="700" fill="#0d4f4f" font-style="italic">y</text>
+                <text x="12" y="14" font-size="12" fill="#2d2d2d">O</text>
+                <!-- Quadrant labels -->
+                <text x="100" y="-90" class="quadrant-label" text-anchor="middle" font-size="16" opacity="0.45">I</text>
+                <text x="88" y="-74" font-size="10" fill="#0d4f4f" text-anchor="middle" opacity="0.45">(+, +)</text>
+                <text x="-100" y="-90" class="quadrant-label" text-anchor="middle" font-size="16" opacity="0.45">II</text>
+                <text x="-112" y="-74" font-size="10" fill="#0d4f4f" text-anchor="middle" opacity="0.45">(&minus;, +)</text>
+                <text x="-100" y="100" class="quadrant-label" text-anchor="middle" font-size="16" opacity="0.45">III</text>
+                <text x="-112" y="116" font-size="10" fill="#0d4f4f" text-anchor="middle" opacity="0.45">(&minus;, &minus;)</text>
+                <text x="100" y="100" class="quadrant-label" text-anchor="middle" font-size="16" opacity="0.45">IV</text>
+                <text x="88" y="116" font-size="10" fill="#0d4f4f" text-anchor="middle" opacity="0.45">(+, &minus;)</text>
+                <!-- Plotted points -->
+                <!-- A = (2, 3) -->
+                <circle cx="80" cy="-120" r="5" fill="#c0602b"/>
+                <text x="92" y="-125" font-size="12" fill="#c0602b" font-weight="600">A (2, 3)</text>
+                <!-- B = (-1, 4) -->
+                <circle cx="-40" cy="-160" r="5" fill="#c0602b"/>
+                <text x="-28" y="-165" font-size="12" fill="#c0602b" font-weight="600">B (&minus;1, 4)</text>
+                <!-- C = (-3, -2) -->
+                <circle cx="-120" cy="80" r="5" fill="#c0602b"/>
+                <text x="-108" y="75" font-size="12" fill="#c0602b" font-weight="600">C (&minus;3, &minus;2)</text>
+                <!-- D = (0, 5) -->
+                <circle cx="0" cy="-200" r="5" fill="#c0602b"/>
+                <text x="14" y="-194" font-size="12" fill="#c0602b" font-weight="600">D (0, 5)</text>
+                <!-- E = (4, -3) -->
+                <circle cx="160" cy="120" r="5" fill="#c0602b"/>
+                <text x="136" y="140" font-size="12" fill="#c0602b" font-weight="600">E (4, &minus;3)</text>
+            </svg>
+            </div>
+
+            <div class="box box-insight">
+                <div class="box-label">Key Insight &mdash; Reading Coordinates</div>
+                <p style="margin-bottom:0"><strong>Always read \(x\) first, then \(y\).</strong> Start at the origin: move right (positive) or left (negative) for the \(x\)-value, then up (positive) or down (negative) for the \(y\)-value. The order matters &mdash; \((2,\,5)\) and \((5,\,2)\) are entirely different points!</p>
+            </div>
+
+            <h3>Signs in Each Quadrant</h3>
+
+            <table>
+                <tr><th>Quadrant</th><th>\(x\)</th><th>\(y\)</th><th>Example</th></tr>
+                <tr><td><strong>I</strong> (upper right)</td><td>\(+\)</td><td>\(+\)</td><td>\((2, 3)\)</td></tr>
+                <tr><td><strong>II</strong> (upper left)</td><td>\(-\)</td><td>\(+\)</td><td>\((-1, 4)\)</td></tr>
+                <tr><td><strong>III</strong> (lower left)</td><td>\(-\)</td><td>\(-\)</td><td>\((-3, -2)\)</td></tr>
+                <tr><td><strong>IV</strong> (lower right)</td><td>\(+\)</td><td>\(-\)</td><td>\((4, -3)\)</td></tr>
+            </table>
+        </div>
+
+        <!-- ============================================================ -->
+        <!--  SECTION 2 — FUNCTIONS                                        -->
+        <!-- ============================================================ -->
+        <div class="card">
+            <h2>2. Functions</h2>
+
+            <p>When two variables are linked by a rule so that <em>each value of \(x\) produces exactly one value of \(y\)</em>, we call the rule a <strong>function</strong>.</p>
+
+            <div class="box box-definition">
+                <div class="box-label">Definition &mdash; Function</div>
+                <p>A <strong>function</strong> is a relation in which every first component (input) has exactly one second component (output). We write \(y = f(x)\), read &ldquo;\(y\) equals \(f\) of \(x\)&rdquo;.</p>
+                <ul style="margin-bottom:0">
+                    <li><strong>Independent variable</strong> (\(x\)) &mdash; the input; we freely choose its values.</li>
+                    <li><strong>Dependent variable</strong> (\(y\)) &mdash; the output; its value depends on \(x\).</li>
+                    <li><strong>Domain</strong> &mdash; the set of all allowable \(x\)-values.</li>
+                    <li><strong>Range</strong> &mdash; the set of all resulting \(y\)-values.</li>
+                </ul>
+            </div>
+
+            <div class="box box-example">
+                <div class="box-label">Example &mdash; Generating Ordered Pairs</div>
+                <p>For the function \(y = 2x\), each value of \(x\) produces a unique \(y\):</p>
+                <table>
+                    <tr><th>\(x\)</th><th>\(y = 2x\)</th><th>Ordered pair</th></tr>
+                    <tr><td>\(-2\)</td><td>\(-4\)</td><td>\((-2,\,-4)\)</td></tr>
+                    <tr><td>\(0\)</td><td>\(0\)</td><td>\((0,\,0)\)</td></tr>
+                    <tr><td>\(1\)</td><td>\(2\)</td><td>\((1,\,2)\)</td></tr>
+                    <tr><td>\(3\)</td><td>\(6\)</td><td>\((3,\,6)\)</td></tr>
+                </table>
+                <p style="margin-bottom:0">Because every \(x\) gives exactly one \(y\), this relation is indeed a function.</p>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!--  SECTION 3 — LINEAR FUNCTIONS & SLOPE                         -->
+        <!-- ============================================================ -->
+        <div class="card">
+            <h2>3. Linear Functions and Slope</h2>
+
+            <p>A <strong>linear equation</strong> in two variables is one where both variables have exponent 1 and there are no products of variables. When graphed, it always produces a <strong>straight line</strong>.</p>
+
+            <div class="box box-formula">
+                <div class="box-label">Formula &mdash; Slope-Intercept Form</div>
+                <p>The most common form of a linear equation is:</p>
+                $$y = mx + b$$
+                <ul style="margin-bottom:0">
+                    <li>\(m\) = <strong>slope</strong> (steepness of the line)</li>
+                    <li>\(b\) = <strong>\(y\)-intercept</strong> (where the line crosses the \(y\)-axis)</li>
+                </ul>
+            </div>
+
+            <h3>Slope: Rise over Run</h3>
+
+            <p>The <strong>slope</strong> of a line measures how steeply it rises or falls. Given two points \((x_1,\,y_1)\) and \((x_2,\,y_2)\):</p>
+
+            <div class="box box-formula">
+                <div class="box-label">Formula &mdash; Slope</div>
+                $$m = \frac{y_2 - y_1}{x_2 - x_1} = \frac{\text{rise}}{\text{run}}$$
+            </div>
+
+            <!-- SVG: Graph of y = 2x + 1 with slope triangle -->
+            <h4>Graph of \(y = 2x + 1\) with Slope Triangle</h4>
+            <div class="svg-container">
+            <svg viewBox="-180 -200 440 400" width="440" xmlns="http://www.w3.org/2000/svg" style="font-family: 'Segoe UI', Helvetica, Arial, sans-serif;">
+                <!-- Grid -->
+                <g stroke="#e8e3dc" stroke-width="0.5">
+                    <line x1="-160" y1="-180" x2="-160" y2="180"/><line x1="-120" y1="-180" x2="-120" y2="180"/>
+                    <line x1="-80" y1="-180" x2="-80" y2="180"/><line x1="-40" y1="-180" x2="-40" y2="180"/>
+                    <line x1="40" y1="-180" x2="40" y2="180"/><line x1="80" y1="-180" x2="80" y2="180"/>
+                    <line x1="120" y1="-180" x2="120" y2="180"/><line x1="160" y1="-180" x2="160" y2="180"/>
+                    <line x1="200" y1="-180" x2="200" y2="180"/><line x1="240" y1="-180" x2="240" y2="180"/>
+                    <line x1="-160" y1="-160" x2="240" y2="-160"/><line x1="-160" y1="-120" x2="240" y2="-120"/>
+                    <line x1="-160" y1="-80" x2="240" y2="-80"/><line x1="-160" y1="-40" x2="240" y2="-40"/>
+                    <line x1="-160" y1="40" x2="240" y2="40"/><line x1="-160" y1="80" x2="240" y2="80"/>
+                    <line x1="-160" y1="120" x2="240" y2="120"/><line x1="-160" y1="160" x2="240" y2="160"/>
+                </g>
+                <!-- Axes -->
+                <line x1="-170" y1="0" x2="255" y2="0" stroke="#2d2d2d" stroke-width="2" marker-end="url(#arr2)"/>
+                <line x1="0" y1="190" x2="0" y2="-190" stroke="#2d2d2d" stroke-width="2" marker-end="url(#arr2)"/>
+                <defs>
+                    <marker id="arr2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                        <polygon points="0 0, 8 3, 0 6" fill="#2d2d2d"/>
+                    </marker>
+                </defs>
+                <!-- Axis tick labels -->
+                <g font-size="11" fill="#2d2d2d" text-anchor="middle">
+                    <text x="-160" y="16">-4</text><text x="-120" y="16">-3</text>
+                    <text x="-80" y="16">-2</text><text x="-40" y="16">-1</text>
+                    <text x="40" y="16">1</text><text x="80" y="16">2</text>
+                    <text x="120" y="16">3</text><text x="160" y="16">4</text>
+                    <text x="200" y="16">5</text><text x="240" y="16">6</text>
+                </g>
+                <g font-size="11" fill="#2d2d2d" text-anchor="end">
+                    <text x="-8" y="-156">4</text><text x="-8" y="-116">3</text>
+                    <text x="-8" y="-76">2</text><text x="-8" y="-36">1</text>
+                    <text x="-8" y="44">-1</text><text x="-8" y="84">-2</text>
+                    <text x="-8" y="124">-3</text><text x="-8" y="164">-4</text>
+                </g>
+                <text x="255" y="-8" font-size="14" font-weight="700" fill="#0d4f4f" font-style="italic">x</text>
+                <text x="10" y="-182" font-size="14" font-weight="700" fill="#0d4f4f" font-style="italic">y</text>
+                <!-- Line y = 2x + 1: passes through (-1,-1), (0,1), (1,3), (2,5) -->
+                <line x1="-120" y1="140" x2="200" y2="-180" stroke="#c0602b" stroke-width="2.5"/>
+                <!-- Slope triangle from (1,3) to (2,5) -->
+                <!-- Run: x from 1 to 2 => 40 to 80 at y = -120 (y=3) -->
+                <!-- Rise: y from 3 to 5 => -120 to -200 at x = 80 (x=2) -->
+                <line x1="40" y1="-120" x2="80" y2="-120" stroke="#0d4f4f" stroke-width="2" stroke-dasharray="6,3"/>
+                <line x1="80" y1="-120" x2="80" y2="-200" stroke="#0d4f4f" stroke-width="2" stroke-dasharray="6,3"/>
+                <!-- Labels for slope triangle -->
+                <text x="60" y="-104" font-size="12" fill="#0d4f4f" text-anchor="middle" font-weight="600">run = 1</text>
+                <text x="108" y="-155" font-size="12" fill="#0d4f4f" text-anchor="start" font-weight="600">rise = 2</text>
+                <!-- Points -->
+                <circle cx="0" cy="-40" r="5" fill="#c0602b"/>
+                <text x="10" y="-46" font-size="11" fill="#c0602b" font-weight="600">(0, 1)</text>
+                <circle cx="40" cy="-120" r="5" fill="#c0602b"/>
+                <text x="14" y="-126" font-size="11" fill="#c0602b" font-weight="600">(1, 3)</text>
+                <circle cx="80" cy="-200" r="4" fill="#c0602b"/>
+                <!-- y-intercept label -->
+                <text x="-12" y="-46" font-size="11" fill="#276749" font-weight="700" text-anchor="end">b = 1</text>
+                <!-- Equation label -->
+                <text x="170" y="-130" font-size="14" fill="#c0602b" font-weight="700" font-style="italic">y = 2x + 1</text>
+                <!-- Slope annotation -->
+                <text x="60" y="-82" font-size="13" fill="#0d4f4f" font-weight="700" text-anchor="middle">m = 2/1 = 2</text>
+            </svg>
+            </div>
+
+            <div class="box box-insight">
+                <div class="box-label">Key Insight &mdash; What Slope Tells You</div>
+                <p style="margin-bottom:0">Slope is the <em>rate of change</em>. A slope of \(m = 2\) means that for every 1 unit you move to the right, the line rises 2 units. Think of it as &ldquo;rise over run&rdquo; &mdash; the vertical change divided by the horizontal change.</p>
+            </div>
+
+            <!-- SVG: Four Types of Slope -->
+            <h3>Types of Slope</h3>
+            <div class="svg-container">
+            <svg viewBox="0 0 680 180" width="680" xmlns="http://www.w3.org/2000/svg" style="font-family: 'Segoe UI', Helvetica, Arial, sans-serif;">
+                <!-- Positive slope -->
+                <g transform="translate(10,10)">
+                    <rect x="0" y="0" width="150" height="160" rx="8" fill="#f0f7f0" stroke="#276749" stroke-width="1.5"/>
+                    <line x1="20" y1="130" x2="130" y2="30" stroke="#276749" stroke-width="3" stroke-linecap="round"/>
+                    <polygon points="126,34 134,28 130,40" fill="#276749"/>
+                    <text x="75" y="155" font-size="13" fill="#276749" text-anchor="middle" font-weight="700">Positive slope</text>
+                    <text x="75" y="18" font-size="11" fill="#276749" text-anchor="middle">m &gt; 0 &mdash; rises</text>
+                </g>
+                <!-- Negative slope -->
+                <g transform="translate(175,10)">
+                    <rect x="0" y="0" width="150" height="160" rx="8" fill="#fef3ec" stroke="#c0602b" stroke-width="1.5"/>
+                    <line x1="20" y1="30" x2="130" y2="130" stroke="#c0602b" stroke-width="3" stroke-linecap="round"/>
+                    <polygon points="126,126 134,132 122,130" fill="#c0602b"/>
+                    <text x="75" y="155" font-size="13" fill="#c0602b" text-anchor="middle" font-weight="700">Negative slope</text>
+                    <text x="75" y="18" font-size="11" fill="#c0602b" text-anchor="middle">m &lt; 0 &mdash; falls</text>
+                </g>
+                <!-- Zero slope -->
+                <g transform="translate(340,10)">
+                    <rect x="0" y="0" width="150" height="160" rx="8" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="1.5"/>
+                    <line x1="20" y1="80" x2="130" y2="80" stroke="#2b6cb0" stroke-width="3" stroke-linecap="round"/>
+                    <polygon points="126,76 134,80 126,84" fill="#2b6cb0"/>
+                    <text x="75" y="155" font-size="13" fill="#2b6cb0" text-anchor="middle" font-weight="700">Zero slope</text>
+                    <text x="75" y="18" font-size="11" fill="#2b6cb0" text-anchor="middle">m = 0 &mdash; horizontal</text>
+                </g>
+                <!-- Undefined slope -->
+                <g transform="translate(505,10)">
+                    <rect x="0" y="0" width="150" height="160" rx="8" fill="#f5f0ff" stroke="#6b46c1" stroke-width="1.5"/>
+                    <line x1="75" y1="25" x2="75" y2="135" stroke="#6b46c1" stroke-width="3" stroke-linecap="round"/>
+                    <polygon points="71,29 75,19 79,29" fill="#6b46c1"/>
+                    <text x="75" y="155" font-size="13" fill="#6b46c1" text-anchor="middle" font-weight="700">Undefined slope</text>
+                    <text x="75" y="18" font-size="11" fill="#6b46c1" text-anchor="middle">m undefined &mdash; vertical</text>
+                </g>
+            </svg>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!--  SECTION 4 — INTERCEPTS & GRAPHING                            -->
+        <!-- ============================================================ -->
+        <div class="card">
+            <h2>4. Intercepts and Graphing Linear Equations</h2>
+
+            <p>The <strong>intercepts</strong> are the points where a line crosses the axes &mdash; they give you two easy points for drawing the graph.</p>
+
+            <div class="box box-formula">
+                <div class="box-label">Formula &mdash; Finding Intercepts</div>
+                <ul style="margin-bottom:0">
+                    <li><strong>\(x\)-intercept</strong>: Set \(y = 0\) and solve for \(x\). The point is \((x,\;0)\).</li>
+                    <li><strong>\(y\)-intercept</strong>: Set \(x = 0\) and solve for \(y\). The point is \((0,\;y)\).</li>
+                </ul>
+            </div>
+
+            <div class="box box-example">
+                <div class="box-label">Example &mdash; Intercepts of \(4x - 2y = 8\)</div>
+                <p><strong>\(x\)-intercept</strong> (set \(y = 0\)):</p>
+                $$4x - 0 = 8 \;\;\Longrightarrow\;\; x = 2 \quad\Rightarrow\quad (2,\;0)$$
+                <p><strong>\(y\)-intercept</strong> (set \(x = 0\)):</p>
+                $$0 - 2y = 8 \;\;\Longrightarrow\;\; y = -4 \quad\Rightarrow\quad (0,\;-4)$$
+            </div>
+
+            <h3>Two Methods for Graphing</h3>
+
+            <p><strong>Method 1 &mdash; Intercept method:</strong> Find the \(x\)- and \(y\)-intercepts, plot them, connect with a straight line, and check with a third point.</p>
+
+            <p><strong>Method 2 &mdash; Slope-intercept method:</strong> Write the equation as \(y = mx + b\). Plot the \(y\)-intercept \((0,\,b)\). From that point, use the slope &ldquo;rise over run&rdquo; to locate a second point. Draw the line.</p>
+
+            <div class="box box-caution">
+                <div class="box-label">Common Mistake</div>
+                <p style="margin-bottom:0">Always find <strong>at least three points</strong> when graphing. Two points determine a line, but the third point <em>checks your work</em>. If all three are not collinear, you have an arithmetic error somewhere!</p>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!--  SECTION 5 — PARALLEL & PERPENDICULAR                        -->
+        <!-- ============================================================ -->
+        <div class="card">
+            <h2>5. Parallel and Perpendicular Lines</h2>
+
+            <p>The slope of a line tells you not only how steep it is but also how it relates to other lines.</p>
+
+            <div class="box box-formula">
+                <div class="box-label">Rules &mdash; Parallel &amp; Perpendicular</div>
+                <p><strong>Parallel lines</strong> have the <em>same slope</em>:</p>
+                $$m_1 = m_2$$
+                <p><strong>Perpendicular lines</strong> have slopes that are <em>negative reciprocals</em>:</p>
+                $$m_1 \cdot m_2 = -1 \qquad\text{or equivalently}\qquad m_2 = -\frac{1}{m_1}$$
+            </div>
+
+            <div class="box box-example">
+                <div class="box-label">Example &mdash; Parallel Lines</div>
+                <p>The lines \(y = 2x + 1\) and \(y = 2x - 3\) both have slope \(m = 2\).</p>
+                <p style="margin-bottom:0">Since \(m_1 = m_2 = 2\), the lines are <strong>parallel</strong> &mdash; they will never intersect.</p>
+            </div>
+
+            <div class="box box-example">
+                <div class="box-label">Example &mdash; Perpendicular Lines</div>
+                <p>Line A has slope \(m_1 = 3\). Line B has slope \(m_2 = -\tfrac{1}{3}\).</p>
+                <p style="margin-bottom:0">Check: \(3 \times \bigl(-\tfrac{1}{3}\bigr) = -1\). The lines are <strong>perpendicular</strong>.</p>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!--  SECTION 6 — SYSTEMS OF EQUATIONS                             -->
+        <!-- ============================================================ -->
+        <div class="card">
+            <h2>6. Systems of Linear Equations</h2>
+
+            <p>A single linear equation in two unknowns has infinitely many solutions (every point on the line). To find a <em>unique</em> solution, you need <strong>two equations</strong> &mdash; a <strong>system</strong>.</p>
+
+            <h3>Graphical Solution</h3>
+
+            <p>Graph both equations on the same coordinate plane. The <strong>point of intersection</strong> is the solution &mdash; it is the one ordered pair that satisfies both equations simultaneously.</p>
+
+            <!-- SVG: Two intersecting lines -->
+            <div class="svg-container">
+            <svg viewBox="-180 -200 420 400" width="420" xmlns="http://www.w3.org/2000/svg" style="font-family: 'Segoe UI', Helvetica, Arial, sans-serif;">
+                <!-- Grid -->
+                <g stroke="#e8e3dc" stroke-width="0.5">
+                    <line x1="-160" y1="-180" x2="220" y2="-180"/>
+                    <line x1="-160" y1="-140" x2="220" y2="-140"/>
+                    <line x1="-160" y1="-100" x2="220" y2="-100"/>
+                    <line x1="-160" y1="-60" x2="220" y2="-60"/>
+                    <line x1="-160" y1="-20" x2="220" y2="-20"/>
+                    <line x1="-160" y1="20" x2="220" y2="20"/>
+                    <line x1="-160" y1="60" x2="220" y2="60"/>
+                    <line x1="-160" y1="100" x2="220" y2="100"/>
+                    <line x1="-160" y1="140" x2="220" y2="140"/>
+                    <line x1="-160" y1="180" x2="220" y2="180"/>
+                    <line x1="-160" y1="-180" x2="-160" y2="180"/>
+                    <line x1="-120" y1="-180" x2="-120" y2="180"/>
+                    <line x1="-80" y1="-180" x2="-80" y2="180"/>
+                    <line x1="-40" y1="-180" x2="-40" y2="180"/>
+                    <line x1="40" y1="-180" x2="40" y2="180"/>
+                    <line x1="80" y1="-180" x2="80" y2="180"/>
+                    <line x1="120" y1="-180" x2="120" y2="180"/>
+                    <line x1="160" y1="-180" x2="160" y2="180"/>
+                    <line x1="200" y1="-180" x2="200" y2="180"/>
+                </g>
+                <!-- Axes -->
+                <line x1="-170" y1="0" x2="230" y2="0" stroke="#2d2d2d" stroke-width="2" marker-end="url(#arr3)"/>
+                <line x1="0" y1="190" x2="0" y2="-190" stroke="#2d2d2d" stroke-width="2" marker-end="url(#arr3)"/>
+                <defs>
+                    <marker id="arr3" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                        <polygon points="0 0, 8 3, 0 6" fill="#2d2d2d"/>
+                    </marker>
+                </defs>
+                <!-- Tick labels -->
+                <g font-size="11" fill="#2d2d2d" text-anchor="middle">
+                    <text x="-160" y="16">-4</text><text x="-120" y="16">-3</text>
+                    <text x="-80" y="16">-2</text><text x="-40" y="16">-1</text>
+                    <text x="40" y="16">1</text><text x="80" y="16">2</text>
+                    <text x="120" y="16">3</text><text x="160" y="16">4</text>
+                    <text x="200" y="16">5</text>
+                </g>
+                <g font-size="11" fill="#2d2d2d" text-anchor="end">
+                    <text x="-8" y="-176">4.5</text><text x="-8" y="-136">3.5</text>
+                    <text x="-8" y="-96">2.5</text><text x="-8" y="-56">1.5</text>
+                    <text x="-8" y="-16">0.5</text>
+                    <text x="-8" y="24">-0.5</text><text x="-8" y="64">-1.5</text>
+                    <text x="-8" y="104">-2.5</text><text x="-8" y="144">-3.5</text>
+                    <text x="-8" y="184">-4.5</text>
+                </g>
+                <text x="230" y="-8" font-size="14" font-weight="700" fill="#0d4f4f" font-style="italic">x</text>
+                <text x="10" y="-182" font-size="14" font-weight="700" fill="#0d4f4f" font-style="italic">y</text>
+
+                <!-- Line 1: 2x - y = 5 => y = 2x - 5 -->
+                <!-- Points: (0,-5), (1,-3), (2,-1), (3,1), (4,3), (5,5) -->
+                <!-- scale: 1 unit = 40px, y is inverted -->
+                <line x1="-40" y1="280" x2="220" y2="-200" stroke="#c0602b" stroke-width="2.5"/>
+                <text x="185" y="-150" font-size="12" fill="#c0602b" font-weight="700" font-style="italic">y = 2x &minus; 5</text>
+
+                <!-- Line 2: x + y = 7 => y = 7 - x => y = -x + 7 -->
+                <!-- Points: (0,7), (2,5), (4,3), (7,0) -->
+                <line x1="-80" y1="-360" x2="220" y2="160" stroke="#2b6cb0" stroke-width="2.5"/>
+                <text x="168" y="110" font-size="12" fill="#2b6cb0" font-weight="700" font-style="italic">y = &minus;x + 7</text>
+
+                <!-- Intersection at (4, 3) -->
+                <circle cx="160" cy="-120" r="6" fill="none" stroke="#0d4f4f" stroke-width="2.5"/>
+                <circle cx="160" cy="-120" r="3" fill="#0d4f4f"/>
+                <text x="172" y="-128" font-size="13" fill="#0d4f4f" font-weight="700">(4, 3)</text>
+                <text x="172" y="-112" font-size="10" fill="#0d4f4f">Solution!</text>
+            </svg>
+            </div>
+
+            <p>The system \(2x - y = 5\) and \(x + y = 7\) has the unique solution \((4,\,3)\). We can verify: \(2(4) - 3 = 5\) and \(4 + 3 = 7\). Both check out.</p>
+
+            <h3>Three Possible Outcomes</h3>
+
+            <table>
+                <tr><th>Case</th><th>Graph</th><th>Solution</th></tr>
+                <tr><td><strong>Consistent</strong> (independent)</td><td>Lines intersect at one point</td><td>Exactly one solution</td></tr>
+                <tr><td><strong>Inconsistent</strong></td><td>Lines are parallel (same slope, different intercept)</td><td>No solution</td></tr>
+                <tr><td><strong>Dependent</strong></td><td>Lines are identical (same equation)</td><td>Infinitely many solutions</td></tr>
+            </table>
+
+            <h3>Algebraic Methods</h3>
+
+            <h4>Elimination</h4>
+            <p>Add or subtract equations to cancel one variable, then solve for the other.</p>
+
+            <h4>Substitution</h4>
+            <p>Solve one equation for one variable, then substitute that expression into the other equation.</p>
+
+            <div class="box box-insight">
+                <div class="box-label">Key Insight &mdash; Why Both Methods?</div>
+                <p style="margin-bottom:0">Graphing gives you a visual picture and is great for understanding. Algebraic methods (elimination and substitution) give you exact answers without the imprecision of reading a graph. Master both!</p>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!--  SECTION 7 — NONLINEAR PREVIEW                               -->
+        <!-- ============================================================ -->
+        <div class="card">
+            <h2>7. A Glimpse Beyond: Nonlinear Functions</h2>
+
+            <p>Not every equation produces a straight line. When the exponent of a variable is greater than 1, the graph curves. The simplest example is the <strong>parabola</strong> \(y = x^2\).</p>
+
+            <div class="svg-container">
+            <svg viewBox="-180 -200 360 280" width="360" xmlns="http://www.w3.org/2000/svg" style="font-family: 'Segoe UI', Helvetica, Arial, sans-serif;">
+                <!-- Grid -->
+                <g stroke="#e8e3dc" stroke-width="0.5">
+                    <line x1="-160" y1="-180" x2="160" y2="-180"/>
+                    <line x1="-160" y1="-140" x2="160" y2="-140"/>
+                    <line x1="-160" y1="-100" x2="160" y2="-100"/>
+                    <line x1="-160" y1="-60" x2="160" y2="-60"/>
+                    <line x1="-160" y1="-20" x2="160" y2="-20"/>
+                    <line x1="-160" y1="20" x2="160" y2="20"/>
+                    <line x1="-160" y1="60" x2="160" y2="60"/>
+                    <line x1="-160" y1="-180" x2="-160" y2="60"/>
+                    <line x1="-120" y1="-180" x2="-120" y2="60"/>
+                    <line x1="-80" y1="-180" x2="-80" y2="60"/>
+                    <line x1="-40" y1="-180" x2="-40" y2="60"/>
+                    <line x1="40" y1="-180" x2="40" y2="60"/>
+                    <line x1="80" y1="-180" x2="80" y2="60"/>
+                    <line x1="120" y1="-180" x2="120" y2="60"/>
+                    <line x1="160" y1="-180" x2="160" y2="60"/>
+                </g>
+                <!-- Axes -->
+                <line x1="-170" y1="0" x2="170" y2="0" stroke="#2d2d2d" stroke-width="2" marker-end="url(#arr4)"/>
+                <line x1="0" y1="70" x2="0" y2="-190" stroke="#2d2d2d" stroke-width="2" marker-end="url(#arr4)"/>
+                <defs>
+                    <marker id="arr4" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                        <polygon points="0 0, 8 3, 0 6" fill="#2d2d2d"/>
+                    </marker>
+                </defs>
+                <!-- Tick labels -->
+                <g font-size="11" fill="#2d2d2d" text-anchor="middle">
+                    <text x="-160" y="16">-4</text><text x="-120" y="16">-3</text>
+                    <text x="-80" y="16">-2</text><text x="-40" y="16">-1</text>
+                    <text x="40" y="16">1</text><text x="80" y="16">2</text>
+                    <text x="120" y="16">3</text><text x="160" y="16">4</text>
+                </g>
+                <g font-size="11" fill="#2d2d2d" text-anchor="end">
+                    <text x="-8" y="24">-0.5</text>
+                    <text x="-8" y="-16">0.5</text>
+                    <text x="-8" y="-36">1</text>
+                    <text x="-8" y="-76">2</text>
+                    <text x="-8" y="-116">3</text>
+                    <text x="-8" y="-156">4</text>
+                </g>
+                <text x="170" y="-8" font-size="14" font-weight="700" fill="#0d4f4f" font-style="italic">x</text>
+                <text x="10" y="-182" font-size="14" font-weight="700" fill="#0d4f4f" font-style="italic">y</text>
+                <!-- Parabola y = x^2, scale 40px per unit -->
+                <path d="M -130,-169.5 Q -120,-144 -110,-121 Q -100,-100 -90,-81 Q -80,-64 -70,-49 Q -60,-36 -50,-25 Q -40,-16 -30,-9 Q -20,-4 -10,-1 Q 0,0 10,-1 Q 20,-4 30,-9 Q 40,-16 50,-25 Q 60,-36 70,-49 Q 80,-64 90,-81 Q 100,-100 110,-121 Q 120,-144 130,-169.5" fill="none" stroke="#c0602b" stroke-width="2.5" stroke-linecap="round"/>
+                <!-- Points -->
+                <circle cx="0" cy="0" r="4" fill="#c0602b"/>
+                <circle cx="40" cy="-40" r="4" fill="#c0602b"/>
+                <circle cx="-40" cy="-40" r="4" fill="#c0602b"/>
+                <circle cx="80" cy="-160" r="4" fill="#c0602b"/>
+                <circle cx="-80" cy="-160" r="4" fill="#c0602b"/>
+                <!-- Labels -->
+                <text x="10" y="16" font-size="11" fill="#c0602b" font-weight="600">(0, 0)</text>
+                <text x="50" y="-44" font-size="11" fill="#c0602b" font-weight="600">(1, 1)</text>
+                <text x="-78" y="-44" font-size="11" fill="#c0602b" font-weight="600" text-anchor="end">(&minus;1, 1)</text>
+                <text x="90" y="-164" font-size="11" fill="#c0602b" font-weight="600">(2, 4)</text>
+                <text x="-88" y="-164" font-size="11" fill="#c0602b" font-weight="600" text-anchor="end">(&minus;2, 4)</text>
+                <!-- Curve label -->
+                <text x="105" y="-110" font-size="14" fill="#c0602b" font-weight="700" font-style="italic">y = x&sup2;</text>
+            </svg>
+            </div>
+
+            <p>Notice that the parabola is <em>symmetric</em> about the \(y\)-axis &mdash; the point \((-2,\,4)\) mirrors \((2,\,4)\). This is because \((-x)^2 = x^2\). We will study quadratic equations in depth in Chapter 9.</p>
+        </div>
+
+        <!-- ============================================================ -->
+        <!--  SECTION 8 — SUMMARY RULES                                   -->
+        <!-- ============================================================ -->
+        <div class="card">
+            <h2>Summary of Key Rules</h2>
+
+            <div class="box box-formula">
+                <div class="box-label">Rule 1</div>
+                <p style="margin-bottom:0">The graph of a <strong>first-degree (linear) equation</strong> is always a <strong>straight line</strong>.</p>
+            </div>
+
+            <div class="box box-formula">
+                <div class="box-label">Rule 2</div>
+                <p style="margin-bottom:0">If a point lies on the graph of an equation, its coordinates <strong>satisfy</strong> the equation (make it a true statement).</p>
+            </div>
+
+            <div class="box box-formula">
+                <div class="box-label">Rule 3</div>
+                <p style="margin-bottom:0">Conversely, the coordinates of a point <strong>not</strong> on the graph do <strong>not</strong> satisfy the equation.</p>
+            </div>
+
+            <div class="box box-formula">
+                <div class="box-label">Rule 4</div>
+                <p style="margin-bottom:0">The graph of a first-degree equation in <strong>one unknown</strong> is a line that lies on an axis or is parallel to an axis (e.g., \(x = 3\) is a vertical line; \(y = -2\) is a horizontal line).</p>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!--  WORKED PROBLEMS                                              -->
+        <!-- ============================================================ -->
+        <div class="card">
+            <h2>Worked Problems</h2>
+
+            <!-- Problem 1 -->
+            <div class="box box-practice">
+                <div class="box-label">Problem 1 &mdash; Plotting Points</div>
+                <p style="margin-bottom:0">Plot the points \(A(2,\,3)\), \(B(-1,\,4)\), \(C(-3,\,-2)\), and \(D(0,\,5)\) on a coordinate plane. Identify which quadrant each point lies in.</p>
+            </div>
+            <div class="box box-example">
+                <div class="box-label">Solution</div>
+                <div class="step"><span class="step-marker">1</span><span class="step-content">Draw the \(x\)- and \(y\)-axes and mark a scale.</span></div>
+                <div class="step"><span class="step-marker">2</span><span class="step-content">\(A(2,\,3)\): Move 2 right, 3 up &mdash; <strong>Quadrant I</strong>.</span></div>
+                <div class="step"><span class="step-marker">3</span><span class="step-content">\(B(-1,\,4)\): Move 1 left, 4 up &mdash; <strong>Quadrant II</strong>.</span></div>
+                <div class="step"><span class="step-marker">4</span><span class="step-content">\(C(-3,\,-2)\): Move 3 left, 2 down &mdash; <strong>Quadrant III</strong>.</span></div>
+                <div class="step"><span class="step-marker">5</span><span class="step-content">\(D(0,\,5)\): \(x = 0\), so the point lies on the <strong>\(y\)-axis</strong> (not in any quadrant).</span></div>
+                <p style="margin-bottom:0"><em>See the coordinate plane diagram in Section 1 above for the plot.</em></p>
+            </div>
+
+            <!-- Problem 2 -->
+            <div class="box box-practice">
+                <div class="box-label">Problem 2 &mdash; Finding Slope</div>
+                <p style="margin-bottom:0">Find the slope of the line passing through \((1,\,2)\) and \((4,\,8)\).</p>
+            </div>
+            <div class="box box-example">
+                <div class="box-label">Solution</div>
+                <p>Apply the slope formula with \((x_1,\,y_1) = (1,\,2)\) and \((x_2,\,y_2) = (4,\,8)\):</p>
+                $$m = \frac{y_2 - y_1}{x_2 - x_1} = \frac{8 - 2}{4 - 1} = \frac{6}{3} = 2$$
+                <p style="margin-bottom:0">The slope is \(m = 2\). This means the line rises 2 units for every 1 unit it moves to the right.</p>
+            </div>
+
+            <!-- Problem 3 -->
+            <div class="box box-practice">
+                <div class="box-label">Problem 3 &mdash; Graphing a Line</div>
+                <p style="margin-bottom:0">Graph \(y = -x + 3\). Identify the slope and \(y\)-intercept.</p>
+            </div>
+            <div class="box box-example">
+                <div class="box-label">Solution</div>
+                <p>The equation is already in slope-intercept form \(y = mx + b\):</p>
+                <div class="step"><span class="step-marker">1</span><span class="step-content">Slope: \(m = -1\). The line falls 1 unit for each unit to the right.</span></div>
+                <div class="step"><span class="step-marker">2</span><span class="step-content">\(y\)-intercept: \(b = 3\), giving the point \((0,\,3)\).</span></div>
+                <div class="step"><span class="step-marker">3</span><span class="step-content">From \((0,\,3)\), move right 1 and down 1 to get \((1,\,2)\).</span></div>
+                <div class="step"><span class="step-marker">4</span><span class="step-content">Check point: when \(x = 3\), \(y = -3 + 3 = 0\), giving \((3,\,0)\) &mdash; the \(x\)-intercept.</span></div>
+                <p>All three points &mdash; \((0,\,3)\), \((1,\,2)\), and \((3,\,0)\) &mdash; lie on the same straight line.</p>
+
+                <!-- Small inline SVG for y = -x + 3 -->
+                <div class="svg-container">
+                <svg viewBox="-60 -180 320 260" width="320" xmlns="http://www.w3.org/2000/svg" style="font-family: 'Segoe UI', Helvetica, Arial, sans-serif;">
+                    <g stroke="#e8e3dc" stroke-width="0.5">
+                        <line x1="-40" y1="-160" x2="240" y2="-160"/><line x1="-40" y1="-120" x2="240" y2="-120"/>
+                        <line x1="-40" y1="-80" x2="240" y2="-80"/><line x1="-40" y1="-40" x2="240" y2="-40"/>
+                        <line x1="-40" y1="40" x2="240" y2="40"/>
+                        <line x1="-40" y1="-160" x2="-40" y2="60"/><line x1="40" y1="-160" x2="40" y2="60"/>
+                        <line x1="80" y1="-160" x2="80" y2="60"/><line x1="120" y1="-160" x2="120" y2="60"/>
+                        <line x1="160" y1="-160" x2="160" y2="60"/><line x1="200" y1="-160" x2="200" y2="60"/>
+                        <line x1="240" y1="-160" x2="240" y2="60"/>
+                    </g>
+                    <line x1="-50" y1="0" x2="250" y2="0" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <line x1="0" y1="65" x2="0" y2="-170" stroke="#2d2d2d" stroke-width="1.5"/>
+                    <g font-size="10" fill="#2d2d2d" text-anchor="middle">
+                        <text x="-40" y="14">-1</text><text x="40" y="14">1</text><text x="80" y="14">2</text>
+                        <text x="120" y="14">3</text><text x="160" y="14">4</text><text x="200" y="14">5</text>
+                    </g>
+                    <g font-size="10" fill="#2d2d2d" text-anchor="end">
+                        <text x="-6" y="-36">1</text><text x="-6" y="-76">2</text>
+                        <text x="-6" y="-116">3</text><text x="-6" y="-156">4</text>
+                        <text x="-6" y="44">-1</text>
+                    </g>
+                    <!-- Line y = -x + 3: from (-1,4) to (5,-2) -->
+                    <line x1="-40" y1="-160" x2="200" y2="80" stroke="#c0602b" stroke-width="2.5"/>
+                    <!-- Points -->
+                    <circle cx="0" cy="-120" r="5" fill="#c0602b"/>
+                    <text x="12" y="-126" font-size="11" fill="#c0602b" font-weight="600">(0, 3)</text>
+                    <circle cx="40" cy="-80" r="5" fill="#c0602b"/>
+                    <text x="52" y="-84" font-size="11" fill="#c0602b" font-weight="600">(1, 2)</text>
+                    <circle cx="120" cy="0" r="5" fill="#c0602b"/>
+                    <text x="132" y="-6" font-size="11" fill="#c0602b" font-weight="600">(3, 0)</text>
+                    <text x="160" y="-100" font-size="13" fill="#c0602b" font-weight="700" font-style="italic">y = &minus;x + 3</text>
+                </svg>
+                </div>
+            </div>
+
+            <!-- Problem 4 -->
+            <div class="box box-practice">
+                <div class="box-label">Problem 4 &mdash; Finding an Equation</div>
+                <p style="margin-bottom:0">Find the equation of the line that passes through \((2,\,5)\) with slope \(m = 3\).</p>
+            </div>
+            <div class="box box-example">
+                <div class="box-label">Solution</div>
+                <p>Use the point-slope form and convert to slope-intercept form:</p>
+                <div class="step"><span class="step-marker">1</span><span class="step-content">Start with \(y = mx + b\) and substitute \(m = 3\), \(x = 2\), \(y = 5\):</span></div>
+                $$5 = 3(2) + b$$
+                $$5 = 6 + b$$
+                $$b = -1$$
+                <div class="step"><span class="step-marker">2</span><span class="step-content">Write the equation:</span></div>
+                $$\boxed{y = 3x - 1}$$
+                <p style="margin-bottom:0"><strong>Check:</strong> At \(x = 2\): \(y = 3(2) - 1 = 5\). Correct!</p>
+            </div>
+
+            <!-- Problem 5 -->
+            <div class="box box-practice">
+                <div class="box-label">Problem 5 &mdash; Finding Intercepts</div>
+                <p style="margin-bottom:0">Find the \(x\)- and \(y\)-intercepts of \(2x + 3y = 6\).</p>
+            </div>
+            <div class="box box-example">
+                <div class="box-label">Solution</div>
+                <p><strong>\(x\)-intercept</strong> (set \(y = 0\)):</p>
+                $$2x + 3(0) = 6 \;\;\Longrightarrow\;\; 2x = 6 \;\;\Longrightarrow\;\; x = 3$$
+                <p>So the \(x\)-intercept is \((3,\;0)\).</p>
+
+                <p><strong>\(y\)-intercept</strong> (set \(x = 0\)):</p>
+                $$2(0) + 3y = 6 \;\;\Longrightarrow\;\; 3y = 6 \;\;\Longrightarrow\;\; y = 2$$
+                <p style="margin-bottom:0">So the \(y\)-intercept is \((0,\;2)\).</p>
+            </div>
+
+            <!-- Problem 6 -->
+            <div class="box box-practice">
+                <div class="box-label">Problem 6 &mdash; Parallel Lines</div>
+                <p style="margin-bottom:0">Are the lines \(y = 2x + 1\) and \(y = 2x - 3\) parallel?</p>
+            </div>
+            <div class="box box-example">
+                <div class="box-label">Solution</div>
+                <div class="step"><span class="step-marker">1</span><span class="step-content">Identify slopes: Line 1 has \(m_1 = 2\). Line 2 has \(m_2 = 2\).</span></div>
+                <div class="step"><span class="step-marker">2</span><span class="step-content">Since \(m_1 = m_2 = 2\), the lines have the <strong>same slope</strong>.</span></div>
+                <div class="step"><span class="step-marker">3</span><span class="step-content">The \(y\)-intercepts differ (\(b_1 = 1 \neq -3 = b_2\)), so they are not the same line.</span></div>
+                <p style="margin-bottom:0"><strong>Conclusion:</strong> Yes, the lines are <strong>parallel</strong>. They will never intersect, forming an inconsistent system if treated as simultaneous equations.</p>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!--  QUICK REFERENCE CARD                                         -->
+        <!-- ============================================================ -->
+        <div class="card">
+            <h2>Quick Reference</h2>
+
+            <div class="box box-formula">
+                <div class="box-label">Slope-Intercept Form</div>
+                $$y = mx + b$$
+                <p style="margin-bottom:0">\(m\) = slope, \(b\) = \(y\)-intercept</p>
+            </div>
+
+            <div class="box box-formula">
+                <div class="box-label">Slope Between Two Points</div>
+                $$m = \frac{y_2 - y_1}{x_2 - x_1}$$
+            </div>
+
+            <div class="box box-formula">
+                <div class="box-label">Intercepts</div>
+                <p>\(x\)-intercept: set \(y = 0\), solve for \(x\)</p>
+                <p style="margin-bottom:0">\(y\)-intercept: set \(x = 0\), solve for \(y\)</p>
+            </div>
+
+            <div class="box box-formula">
+                <div class="box-label">Parallel &amp; Perpendicular</div>
+                <p>Parallel: \(m_1 = m_2\)</p>
+                <p style="margin-bottom:0">Perpendicular: \(m_1 \cdot m_2 = -1\)</p>
+            </div>
+
+            <div class="box box-formula">
+                <div class="box-label">Solving Systems</div>
+                <p><strong>Graphically:</strong> Graph both lines; the intersection is the solution.</p>
+                <p><strong>Elimination:</strong> Add/subtract equations to cancel one variable.</p>
+                <p style="margin-bottom:0"><strong>Substitution:</strong> Solve one equation for a variable, plug into the other.</p>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!--  NAVIGATION                                                   -->
+        <!-- ============================================================ -->
+        <div class="nav-footer">
+            <a href="../07-linear-and-fractional-equations-and-formulas/index.html" class="nav-btn">&larr; Previous: Linear &amp; Fractional Equations</a>
+            <a href="../09-quadratic-equations/index.html" class="nav-btn">Next: Quadratic Equations &rarr;</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+</body>
+</html>

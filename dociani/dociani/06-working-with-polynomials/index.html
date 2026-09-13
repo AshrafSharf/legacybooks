@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 6 — Working with Polynomials | Modern Algebra: Structure and Method</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<style>
+  /* ===== RESET & BASE ===== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Georgia', 'Cambria', 'Times New Roman', serif;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #2d2d2d;
+    background: #fdf6f0;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.3;
+  }
+  a { color: #8b1a1a; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ===== KaTeX overrides ===== */
+  .katex { font-size: 1.3em; }
+  .katex-display { font-size: 1.35em; margin: 1.5rem 0; overflow-x: auto; }
+
+  /* ===== HERO HEADER ===== */
+  .hero {
+    background: linear-gradient(135deg, #8b1a1a 0%, #5c1212 40%, #1a1a2e 100%);
+    color: #fff;
+    padding: 3.5rem 2rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '6';
+    position: absolute;
+    right: -0.05em;
+    top: -0.18em;
+    font-size: 18rem;
+    font-weight: 900;
+    opacity: 0.07;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-book {
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 0.25rem;
+  }
+  .hero-chapter {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #f5a87a;
+    margin-bottom: 0.3rem;
+  }
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+  }
+  .hero-sub {
+    font-size: 1.1rem;
+    opacity: 0.88;
+    max-width: 640px;
+  }
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 1.85rem; }
+    .hero { padding: 2.5rem 1.2rem 2rem; }
+    .hero::before { font-size: 10rem; }
+  }
+
+  /* ===== MAIN CONTAINER ===== */
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+  }
+
+  /* ===== OVERVIEW CARD ===== */
+  .overview-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem 2rem 1.6rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 2px 16px rgba(139,26,26,0.08);
+    border-top: 4px solid #8b1a1a;
+  }
+  .overview-card h2 {
+    font-size: 1.5rem;
+    color: #8b1a1a;
+    margin-bottom: 1rem;
+  }
+  .overview-card ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.45rem 1.5rem;
+  }
+  .overview-card li {
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 1.02rem;
+    line-height: 1.55;
+  }
+  .overview-card li::before {
+    content: '\25B8';
+    position: absolute;
+    left: 0;
+    color: #d4582a;
+    font-size: 1.1rem;
+  }
+  @media (max-width: 640px) {
+    .overview-card ul { grid-template-columns: 1fr; }
+  }
+
+  /* ===== SECTIONS ===== */
+  .section {
+    margin-bottom: 2.5rem;
+  }
+  .section h2 {
+    font-size: 2rem;
+    color: #8b1a1a;
+    margin-bottom: 0.25rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid #e8c9b8;
+  }
+  .section h2 .sec-num {
+    color: #d4582a;
+    font-weight: 700;
+    margin-right: 0.3rem;
+  }
+  .section h3 {
+    font-size: 1.35rem;
+    color: #5c1212;
+    margin: 1.5rem 0 0.6rem;
+  }
+
+  /* ===== HIGHLIGHT BOXES ===== */
+  .box {
+    border-left: 5px solid;
+    border-radius: 6px;
+    padding: 1.2rem 1.5rem;
+    margin: 1.25rem 0;
+  }
+  .box p:last-child { margin-bottom: 0; }
+
+  .box-def   { border-color: #8b1a1a; background: #fce8e8; }
+  .box-insight { border-color: #d4582a; background: #fef3ec; }
+  .box-caution { border-color: #7f1d1d; background: #fef2f2; }
+  .box-example { border-color: #276749; background: #f0f7f0; }
+  .box-practice { border-color: #4a5568; background: #f7fafc; }
+  .box-formula  { border-color: #2b4c7e; background: #ebf0ff; }
+
+  .box-label {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 0.92rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.5rem;
+  }
+  .box-def .box-label   { color: #8b1a1a; }
+  .box-insight .box-label { color: #d4582a; }
+  .box-caution .box-label { color: #7f1d1d; }
+  .box-example .box-label { color: #276749; }
+  .box-practice .box-label { color: #4a5568; }
+  .box-formula .box-label  { color: #2b4c7e; }
+
+  /* ===== SOLUTION STEPS ===== */
+  .steps { margin: 0.6rem 0 0.3rem; }
+  .steps .step {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+    align-items: baseline;
+  }
+  .step-num {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 0.82rem;
+    color: #fff;
+    background: #276749;
+    width: 1.55rem;
+    height: 1.55rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+  }
+  .step-body { flex: 1; }
+
+  /* ===== SVG diagrams ===== */
+  .diagram-wrap {
+    text-align: center;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+  }
+  .diagram-wrap svg {
+    max-width: 100%;
+    height: auto;
+  }
+  .diagram-caption {
+    font-size: 0.92rem;
+    color: #666;
+    margin-top: 0.4rem;
+    font-style: italic;
+  }
+
+  /* ===== QUICK REFERENCE TABLE ===== */
+  .ref-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  @media (max-width: 640px) {
+    .ref-grid { grid-template-columns: 1fr; }
+  }
+  .ref-card {
+    background: #fff;
+    border: 1px solid #d4d4d4;
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+  }
+  .ref-card h4 {
+    font-size: 0.95rem;
+    color: #2b4c7e;
+    margin-bottom: 0.4rem;
+  }
+
+  /* ===== NAV FOOTER ===== */
+  .chapter-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #e8c9b8;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .chapter-nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #8b1a1a;
+    padding: 0.5rem 1.1rem;
+    border: 2px solid #8b1a1a;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .chapter-nav a:hover {
+    background: #8b1a1a;
+    color: #fff;
+    text-decoration: none;
+  }
+  .chapter-nav .nav-label {
+    font-size: 0.82rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+  }
+
+  /* ===== UTILITY ===== */
+  p { margin-bottom: 0.85rem; }
+  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+  li { margin-bottom: 0.3rem; }
+  strong { color: #3d1212; }
+  .text-center { text-align: center; }
+  .mt-1 { margin-top: 1rem; }
+  .mt-2 { margin-top: 2rem; }
+  .mb-1 { margin-bottom: 1rem; }
+  .indent { margin-left: 1.5rem; }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-book">Modern Algebra: Structure and Method &mdash; Dolciani</div>
+    <div class="hero-chapter">Chapter 6</div>
+    <h1>Working with Polynomials</h1>
+    <p class="hero-sub">Master the language of algebra: add, subtract, multiply, and divide polynomials using the laws of exponents, the distributive property, and systematic long division.</p>
+  </div>
+</header>
+
+<main class="container">
+
+<!-- ============ OVERVIEW ============ -->
+<div class="overview-card">
+  <h2>What You'll Learn</h2>
+  <ul>
+    <li>Identify monomials, binomials, trinomials and their degrees</li>
+    <li>Add and subtract polynomials by combining like terms</li>
+    <li>Apply the rule of exponents for multiplication: \(b^m \cdot b^n = b^{m+n}\)</li>
+    <li>Multiply monomials and raise monomials to powers</li>
+    <li>Multiply a polynomial by a monomial using the distributive property</li>
+    <li>Multiply two polynomials (including FOIL for binomials)</li>
+    <li>Solve area problems that require polynomial multiplication</li>
+    <li>Apply the rule of exponents for division: \(\frac{b^m}{b^n} = b^{m-n}\)</li>
+    <li>Divide a polynomial by a monomial term-by-term</li>
+    <li>Perform long division of polynomials</li>
+  </ul>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 6-1 / 6-2: Adding and Subtracting Polynomials        -->
+<!-- ============================================================ -->
+<section class="section" id="s6-1">
+  <h2><span class="sec-num">6-1 &amp; 6-2</span> Adding and Subtracting Polynomials</h2>
+
+  <div class="box box-def">
+    <div class="box-label">Definition &mdash; Polynomial Vocabulary</div>
+    <p>A <strong>monomial</strong> is a single term: a numeral, a variable, or a product of a numeral and one or more variables (e.g., \(7\), \(x\), \(-2xy\)).</p>
+    <p>A <strong>polynomial</strong> is a monomial or the indicated sum of monomials. Special names:</p>
+    <ul style="list-style:none; padding-left:0;">
+      <li><strong>Binomial</strong> &mdash; polynomial of <em>two</em> terms (e.g., \(5y^2 + 7\))</li>
+      <li><strong>Trinomial</strong> &mdash; polynomial of <em>three</em> terms (e.g., \(a^2 - 2ab + b^2\))</li>
+    </ul>
+  </div>
+
+  <div class="box box-def">
+    <div class="box-label">Definition &mdash; Degree</div>
+    <p>The <strong>degree of a monomial</strong> is the sum of the exponents of all its variables. For example, \(3x^2y^5z\) has degree \(2+5+1=8\).</p>
+    <p>The <strong>degree of a polynomial</strong> is the greatest degree among its terms. The polynomial \(5x^4 - 7x^3y^2 + 2xy\) has term-degrees 4, 5, and 2, so its degree is <strong>5</strong>.</p>
+  </div>
+
+  <h3>Adding Polynomials</h3>
+  <p>To add two polynomials, use the commutative, associative, and distributive properties to <strong>combine similar (like) terms</strong>&mdash;terms with exactly the same variable factors.</p>
+
+  <div class="box box-example">
+    <div class="box-label">Worked Example 1 &mdash; Adding Polynomials</div>
+    <p><strong>Find the sum:</strong> &nbsp;\((5x^2y + 15) + (7x^2y - 3x + 2)\)</p>
+    <div class="steps">
+      <div class="step"><span class="step-num">1</span><div class="step-body">Group like terms: \((5 + 7)x^2y - 3x + (15 + 2)\)</div></div>
+      <div class="step"><span class="step-num">2</span><div class="step-body">Simplify: \(12x^2y - 3x + 17\)</div></div>
+    </div>
+    <p><strong>Check</strong> (let \(x=2, y=3\)): &nbsp;First polynomial: \(5 \cdot 4 \cdot 3 + 15 = 75\). &nbsp;Second: \(7 \cdot 4 \cdot 3 - 6 + 2 = 80\). &nbsp;Sum: \(75 + 80 = 155\). &nbsp;Result: \(12 \cdot 4 \cdot 3 - 6 + 17 = 155\). &nbsp;\(\checkmark\)</p>
+  </div>
+
+  <div class="box box-insight">
+    <div class="box-label">Key Insight &mdash; Checking with Evaluation</div>
+    <p>You can verify any polynomial computation by substituting small numerical values for the variables and comparing. <strong>Avoid choosing 0 or 1</strong>, since those can mask errors (any power of 1 is 1; any term with 0 vanishes).</p>
+  </div>
+
+  <h3>Subtracting Polynomials</h3>
+  <p>To subtract a polynomial, <strong>add the opposite of each term</strong> of the subtrahend, then combine like terms.</p>
+
+  <div class="box box-example">
+    <div class="box-label">Worked Example 2 &mdash; Subtracting Polynomials</div>
+    <p><strong>Simplify:</strong> &nbsp;\((5z + 6) - (2z - 8)\)</p>
+    <div class="steps">
+      <div class="step"><span class="step-num">1</span><div class="step-body">Distribute the negative: \(5z + 6 - 2z + 8\)</div></div>
+      <div class="step"><span class="step-num">2</span><div class="step-body">Combine like terms: \(3z + 14\)</div></div>
+    </div>
+  </div>
+
+  <div class="box box-insight">
+    <div class="box-label">Key Insight &mdash; Arranging Terms</div>
+    <p>When working with polynomials, arrange terms in order of <strong>decreasing degree</strong> (or increasing degree) in a chosen variable. For example: \(a^3 + 6a^2 + 12a + 8\).</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 6-3: Laws of Exponents for Multiplication            -->
+<!-- ============================================================ -->
+<section class="section" id="s6-3">
+  <h2><span class="sec-num">6-3</span> The Product of Powers</h2>
+
+  <p>Since \(b^4 = b \cdot b \cdot b \cdot b\), the product of two powers of the same base can be found by counting factors:</p>
+  $$b^4 \cdot b^2 = \underbrace{(b \cdot b \cdot b \cdot b)}_{4\text{ factors}} \cdot \underbrace{(b \cdot b)}_{2\text{ factors}} = b^{4+2} = b^6$$
+
+  <div class="box box-formula">
+    <div class="box-label">Rule of Exponents for Multiplication</div>
+    <p>For all positive integers \(m\) and \(n\):</p>
+    $$b^m \cdot b^n = b^{m+n}$$
+    <p>The bases <strong>must be the same</strong>. You cannot simplify \(x^3 \cdot y^2\) this way because the bases differ.</p>
+  </div>
+
+  <p>To multiply monomials, multiply the numerical coefficients and apply the exponent rule to each matching variable factor:</p>
+  $$(2r^3)(-3r^2z^5) = (2 \cdot -3)(r^{3+2})(z^5) = -6r^5z^5$$
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 6-4: Powers of Monomials                             -->
+<!-- ============================================================ -->
+<section class="section" id="s6-4">
+  <h2><span class="sec-num">6-4</span> Powers of Monomials</h2>
+
+  <div class="box box-formula">
+    <div class="box-label">Rule of Exponents &mdash; Power of a Product</div>
+    <p>For every positive integer \(m\):</p>
+    $$(ab)^m = a^m \, b^m$$
+    <p><strong>Example:</strong> &nbsp;\((-3x)^4 = (-3)^4 \cdot x^4 = 81x^4\)</p>
+  </div>
+
+  <div class="box box-formula">
+    <div class="box-label">Rule of Exponents &mdash; Power of a Power</div>
+    <p>For all positive integers \(m\) and \(n\):</p>
+    $$(b^m)^n = b^{mn}$$
+    <p><strong>Example:</strong> &nbsp;\((b^2)^3 = b^{2 \cdot 3} = b^6\)</p>
+  </div>
+
+  <p>Both rules combine naturally:</p>
+  $$(-7h^7v^3)^3 = (-7)^3 (h^7)^3 (v^3)^3 = -343\,h^{21}v^9$$
+
+  <div class="box box-caution">
+    <div class="box-label">Caution &mdash; Sign in Even vs. Odd Powers</div>
+    <p>A <strong>negative base raised to an even power</strong> yields a positive result: \((-3)^4 = 81\). A <strong>negative base raised to an odd power</strong> stays negative: \((-3)^3 = -27\). Watch the parentheses: \(-3^4 = -(3^4) = -81\), but \((-3)^4 = 81\).</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 6-5: Multiplying a Polynomial by a Monomial          -->
+<!-- ============================================================ -->
+<section class="section" id="s6-5">
+  <h2><span class="sec-num">6-5</span> Multiplying a Polynomial by a Monomial</h2>
+
+  <p>The <strong>distributive property</strong> extends naturally: multiply each term of the polynomial by the monomial, then add the products.</p>
+
+  <div class="box box-formula">
+    <div class="box-label">Distributive Property</div>
+    $$a(b + c + d) = ab + ac + ad$$
+  </div>
+
+  <div class="box box-example">
+    <div class="box-label">Worked Example 3 &mdash; Monomial Times Polynomial</div>
+    <p><strong>Find the product:</strong> &nbsp;\(-7y^2(3y^3 - 2y^2 + 1)\)</p>
+    <div class="steps">
+      <div class="step"><span class="step-num">1</span><div class="step-body">Multiply each term: \((-7y^2)(3y^3) + (-7y^2)(-2y^2) + (-7y^2)(1)\)</div></div>
+      <div class="step"><span class="step-num">2</span><div class="step-body">Apply exponent rules: \(-21y^5 + 14y^4 - 7y^2\)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 6-6: Multiplying Two Polynomials                     -->
+<!-- ============================================================ -->
+<section class="section" id="s6-6">
+  <h2><span class="sec-num">6-6</span> Multiplying Two Polynomials</h2>
+
+  <p>To multiply one polynomial by another, use the distributive property: <strong>multiply each term of one polynomial by each term of the other</strong>, then combine like terms.</p>
+
+  <div class="box box-example">
+    <div class="box-label">Worked Example 4 &mdash; Multiplying Two Binomials</div>
+    <p><strong>Find the product:</strong> &nbsp;\((2x + 3)(4x + 5)\)</p>
+    <div class="steps">
+      <div class="step"><span class="step-num">1</span><div class="step-body">Apply distributive property: \((2x)(4x + 5) + 3(4x + 5)\)</div></div>
+      <div class="step"><span class="step-num">2</span><div class="step-body">Multiply each pair: \(8x^2 + 10x + 12x + 15\)</div></div>
+      <div class="step"><span class="step-num">3</span><div class="step-body">Combine like terms: \(8x^2 + 22x + 15\)</div></div>
+    </div>
+  </div>
+
+  <!-- SVG: Area model for polynomial multiplication -->
+  <div class="diagram-wrap">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" width="520" height="340" role="img" aria-label="Area model showing (2x + 3)(4x + 5) as a rectangle divided into four parts">
+      <!-- Title -->
+      <text x="260" y="24" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#5c1212">Area Model: (2x + 3)(4x + 5)</text>
+
+      <!-- Outer rectangle -->
+      <rect x="90" y="60" width="360" height="230" rx="4" fill="none" stroke="#2d2d2d" stroke-width="2.5"/>
+
+      <!-- Vertical divider at x=330 (4x | 5 split) -->
+      <line x1="330" y1="60" x2="330" y2="290" stroke="#2d2d2d" stroke-width="2"/>
+      <!-- Horizontal divider at y=190 (2x | 3 split) -->
+      <line x1="90" y1="190" x2="450" y2="190" stroke="#2d2d2d" stroke-width="2"/>
+
+      <!-- Top-left cell: 2x * 4x = 8x^2 -->
+      <rect x="91" y="61" width="238" height="128" fill="#fce8e8" opacity="0.7"/>
+      <text x="210" y="132" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#8b1a1a">8x&sup2;</text>
+
+      <!-- Top-right cell: 2x * 5 = 10x -->
+      <rect x="331" y="61" width="118" height="128" fill="#fef3ec" opacity="0.7"/>
+      <text x="390" y="132" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#d4582a">10x</text>
+
+      <!-- Bottom-left cell: 3 * 4x = 12x -->
+      <rect x="91" y="191" width="238" height="98" fill="#fef3ec" opacity="0.7"/>
+      <text x="210" y="248" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#d4582a">12x</text>
+
+      <!-- Bottom-right cell: 3 * 5 = 15 -->
+      <rect x="331" y="191" width="118" height="98" fill="#ebf0ff" opacity="0.7"/>
+      <text x="390" y="248" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#2b4c7e">15</text>
+
+      <!-- Top labels (width) -->
+      <text x="210" y="52" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#2d2d2d">4x</text>
+      <text x="390" y="52" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#2d2d2d">5</text>
+      <!-- Brace-like bracket top -->
+      <line x1="90" y1="42" x2="450" y2="42" stroke="#999" stroke-width="1"/>
+      <line x1="90" y1="42" x2="90" y2="47" stroke="#999" stroke-width="1"/>
+      <line x1="450" y1="42" x2="450" y2="47" stroke="#999" stroke-width="1"/>
+      <line x1="330" y1="42" x2="330" y2="47" stroke="#999" stroke-width="1"/>
+
+      <!-- Left labels (height) -->
+      <text x="78" y="132" text-anchor="end" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#2d2d2d">2x</text>
+      <text x="78" y="248" text-anchor="end" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#2d2d2d">3</text>
+
+      <!-- Result below -->
+      <text x="260" y="320" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#2d2d2d">Total area = 8x&sup2; + 10x + 12x + 15 = <tspan font-weight="700" fill="#8b1a1a">8x&sup2; + 22x + 15</tspan></text>
+    </svg>
+    <div class="diagram-caption">The area model shows each partial product as a sub-rectangle. Combine like terms (10x + 12x) to get the final result.</div>
+  </div>
+
+  <div class="box box-insight">
+    <div class="box-label">Key Insight &mdash; The Vertical Format</div>
+    <p>You can also multiply vertically, working left to right, just like arithmetic long multiplication:</p>
+    <div class="indent" style="font-family: monospace; font-size: 1.05rem; line-height: 1.6; margin: 0.5rem 0 0.3rem 2rem;">
+      <div>&nbsp;&nbsp;&nbsp; 4x + 5</div>
+      <div style="text-decoration: underline;">&times;&nbsp; 2x + 3</div>
+      <div>&nbsp; 8x&sup2; + 10x &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&larr; 2x(4x + 5)</div>
+      <div style="text-decoration: underline;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12x + 15 &larr; 3(4x + 5)</div>
+      <div>&nbsp; 8x&sup2; + 22x + 15</div>
+    </div>
+  </div>
+
+  <h3>Special Products</h3>
+  <p>Several patterns emerge from binomial multiplication and are worth memorizing:</p>
+
+  <div class="box box-formula">
+    <div class="box-label">Important Identities</div>
+    <ul style="list-style:none; padding-left:0;">
+      <li><strong>Square of a sum:</strong> &nbsp;\((x + y)^2 = x^2 + 2xy + y^2\)</li>
+      <li><strong>Square of a difference:</strong> &nbsp;\((x - y)^2 = x^2 - 2xy + y^2\)</li>
+      <li><strong>Difference of squares:</strong> &nbsp;\((x + y)(x - y) = x^2 - y^2\)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 6-7: Problems about Areas                            -->
+<!-- ============================================================ -->
+<section class="section" id="s6-7">
+  <h2><span class="sec-num">6-7</span> Problems about Areas</h2>
+
+  <p>Area problems give you a real-world context for polynomial multiplication. A sketch is almost always the key to setting up the equation correctly.</p>
+
+  <div class="box box-example">
+    <div class="box-label">Worked Example 5 &mdash; Foundation Area Problem</div>
+    <p><strong>Problem:</strong> A building foundation is rectangular with 2-foot-thick concrete walls. The inside length is twice the inside width. The area of the concrete (top face) is 496 square feet. Find the inside dimensions.</p>
+    <div class="steps">
+      <div class="step"><span class="step-num">1</span><div class="step-body">Let \(w\) = inside width (ft). Then inside length \(= 2w\).</div></div>
+      <div class="step"><span class="step-num">2</span><div class="step-body">Outer dimensions: width \(= w + 4\), length \(= 2w + 4\) (add 2 ft on each side).</div></div>
+      <div class="step"><span class="step-num">3</span><div class="step-body">Area of concrete = Total area &minus; Inner area:
+        $$(2w + 4)(w + 4) - (2w)(w) = 496$$</div></div>
+      <div class="step"><span class="step-num">4</span><div class="step-body">Expand: \(2w^2 + 8w + 4w + 16 - 2w^2 = 496\), so \(12w + 16 = 496\).</div></div>
+      <div class="step"><span class="step-num">5</span><div class="step-body">Solve: \(12w = 480\), hence \(w = 40\) and \(2w = 80\).</div></div>
+    </div>
+    <p><strong>Answer:</strong> Inside width = 40 ft, inside length = 80 ft.</p>
+    <p><strong>Check:</strong> Outer area \(= 84 \times 44 = 3696\). Inner area \(= 80 \times 40 = 3200\). Concrete area \(= 3696 - 3200 = 496\). &nbsp;\(\checkmark\)</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 6-8: Powers of Polynomials                           -->
+<!-- ============================================================ -->
+<section class="section" id="s6-8">
+  <h2><span class="sec-num">6-8</span> Powers of Polynomials</h2>
+
+  <p>The area of a square with side \(s\) is \(s^2\); the volume of a cube with edge \(s\) is \(s^3\). When \(s\) is itself a polynomial, to <strong>expand</strong> means to express the power as a sum of monomials.</p>
+
+  <div class="box box-example">
+    <div class="box-label">Worked Example 6 &mdash; Expanding \((2x - 3)^2\)</div>
+    <p><strong>Expand:</strong> &nbsp;\((2x - 3)^2 = (2x - 3)(2x - 3)\)</p>
+    <div class="steps">
+      <div class="step"><span class="step-num">1</span><div class="step-body">Apply the identity \((a - b)^2 = a^2 - 2ab + b^2\) with \(a = 2x\), \(b = 3\):</div></div>
+      <div class="step"><span class="step-num">2</span><div class="step-body">\((2x)^2 - 2(2x)(3) + 3^2 = 4x^2 - 12x + 9\)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 6-9: Laws of Exponents for Division                  -->
+<!-- ============================================================ -->
+<section class="section" id="s6-9">
+  <h2><span class="sec-num">6-9</span> Laws of Exponents for Division</h2>
+
+  <p>Division of powers with the same base follows naturally from multiplication:</p>
+
+  <div class="box box-formula">
+    <div class="box-label">Rule of Exponents for Division</div>
+    <p>For positive integers \(m\) and \(n\) and \(b \neq 0\):</p>
+    <ul style="list-style:none; padding-left:0;">
+      <li>If \(m > n\): &nbsp;\(\displaystyle\frac{b^m}{b^n} = b^{m-n}\)</li>
+      <li>If \(m < n\): &nbsp;\(\displaystyle\frac{b^m}{b^n} = \frac{1}{b^{n-m}}\)</li>
+      <li>If \(m = n\): &nbsp;\(\displaystyle\frac{b^m}{b^n} = 1\) &nbsp;(equivalently, \(b^0 = 1\) for \(b \neq 0\))</li>
+    </ul>
+  </div>
+
+  <div class="box box-formula">
+    <div class="box-label">Property of Quotients</div>
+    <p>For nonzero \(c\) and \(d\):</p>
+    $$\frac{xy}{cd} = \frac{x}{c} \cdot \frac{y}{d}$$
+    <p>This lets you divide the numerical and variable parts of a monomial separately.</p>
+  </div>
+
+  <p><strong>Example:</strong></p>
+  $$\frac{-40d^5e}{-5de^3} = \frac{-40}{-5} \cdot \frac{d^5}{d} \cdot \frac{e}{e^3} = 8d^4 \cdot \frac{1}{e^2} = \frac{8d^4}{e^2}$$
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 6-10: Dividing by a Monomial                         -->
+<!-- ============================================================ -->
+<section class="section" id="s6-10">
+  <h2><span class="sec-num">6-10</span> Dividing a Polynomial by a Monomial</h2>
+
+  <p>Just as \(\frac{93 + 48}{3} = \frac{93}{3} + \frac{48}{3} = 31 + 16 = 47\), you divide each term of the polynomial by the monomial:</p>
+
+  $$\frac{ax + ay}{a} = \frac{ax}{a} + \frac{ay}{a} = x + y$$
+
+  <div class="box box-example">
+    <div class="box-label">Worked Example 7 &mdash; Dividing by a Monomial</div>
+    <p><strong>Simplify:</strong> &nbsp;\(\displaystyle\frac{12a^3 - 3a}{3a}\)</p>
+    <div class="steps">
+      <div class="step"><span class="step-num">1</span><div class="step-body">Divide each term: \(\displaystyle\frac{12a^3}{3a} - \frac{3a}{3a}\)</div></div>
+      <div class="step"><span class="step-num">2</span><div class="step-body">Simplify: \(4a^2 - 1\)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 6-11: Dividing a Polynomial by a Polynomial          -->
+<!-- ============================================================ -->
+<section class="section" id="s6-11">
+  <h2><span class="sec-num">6-11</span> Dividing a Polynomial by a Polynomial</h2>
+
+  <p>Polynomial long division follows the same pattern as arithmetic long division: <strong>divide, multiply, subtract, bring down</strong>, and repeat.</p>
+
+  <div class="box box-example">
+    <div class="box-label">Worked Example 8 &mdash; Polynomial Long Division</div>
+    <p><strong>Divide:</strong> &nbsp;\((x^2 + 5x + 6) \div (x + 2)\)</p>
+    <div class="steps">
+      <div class="step"><span class="step-num">1</span><div class="step-body">Divide leading terms: \(\frac{x^2}{x} = x\). Multiply: \(x(x+2) = x^2 + 2x\).</div></div>
+      <div class="step"><span class="step-num">2</span><div class="step-body">Subtract: \((x^2 + 5x + 6) - (x^2 + 2x) = 3x + 6\).</div></div>
+      <div class="step"><span class="step-num">3</span><div class="step-body">Divide leading terms: \(\frac{3x}{x} = 3\). Multiply: \(3(x+2) = 3x + 6\).</div></div>
+      <div class="step"><span class="step-num">4</span><div class="step-body">Subtract: \((3x + 6) - (3x + 6) = 0\). Remainder is 0.</div></div>
+    </div>
+    <p><strong>Answer:</strong> &nbsp;\(x + 3\)</p>
+    <p><strong>Check:</strong> &nbsp;\((x + 2)(x + 3) = x^2 + 5x + 6\). &nbsp;\(\checkmark\)</p>
+  </div>
+
+  <div class="box box-insight">
+    <div class="box-label">Key Insight &mdash; Missing Terms</div>
+    <p>When a power of the variable is missing from the dividend, insert it with <strong>coefficient 0</strong> as a placeholder. For example, to divide \(m^3 - 7\) by \(m^2 + 2m + 1\), write the dividend as \(m^3 + 0m^2 + 0m - 7\).</p>
+  </div>
+
+  <div class="box box-formula">
+    <div class="box-label">General Division Relationship</div>
+    $$\frac{\text{Dividend}}{\text{Divisor}} = \text{Quotient} + \frac{\text{Remainder}}{\text{Divisor}}$$
+    <p>The process stops when the remainder is 0, or when its degree is less than the degree of the divisor.</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- PRACTICE PROBLEMS                                            -->
+<!-- ============================================================ -->
+<section class="section" id="practice">
+  <h2>Practice Problems</h2>
+
+  <div class="box box-practice">
+    <div class="box-label">Practice 1 &mdash; Combining Like Terms</div>
+    <p>Simplify: &nbsp;\((3x^3 - 5x^2 + 8) + (-x - 10) + (2x^2 - 4x^3 + x)\)</p>
+    <details style="margin-top:0.5rem;">
+      <summary style="cursor:pointer; font-weight:600; color:#4a5568;">Show Solution</summary>
+      <div style="margin-top:0.5rem;">
+        <p>Group like terms: \((3 - 4)x^3 + (-5 + 2)x^2 + (-1 + 1)x + (8 - 10)\)</p>
+        <p>\(= -x^3 - 3x^2 + 0x - 2 = -x^3 - 3x^2 - 2\)</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="box box-practice">
+    <div class="box-label">Practice 2 &mdash; Exponent Rules</div>
+    <p>Simplify: &nbsp;\((-2a^3b^2)^3 \cdot (5a^2b)\)</p>
+    <details style="margin-top:0.5rem;">
+      <summary style="cursor:pointer; font-weight:600; color:#4a5568;">Show Solution</summary>
+      <div style="margin-top:0.5rem;">
+        <p>\((-2)^3(a^3)^3(b^2)^3 \cdot 5a^2b = -8a^9b^6 \cdot 5a^2b\)</p>
+        <p>\(= -40a^{11}b^7\)</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="box box-practice">
+    <div class="box-label">Practice 3 &mdash; Multiplying Polynomials</div>
+    <p>Find the product: &nbsp;\((3y - 4)(4y - 6)\)</p>
+    <details style="margin-top:0.5rem;">
+      <summary style="cursor:pointer; font-weight:600; color:#4a5568;">Show Solution</summary>
+      <div style="margin-top:0.5rem;">
+        <p>\(3y \cdot 4y + 3y \cdot (-6) + (-4) \cdot 4y + (-4)(-6)\)</p>
+        <p>\(= 12y^2 - 18y - 16y + 24 = 12y^2 - 34y + 24\)</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="box box-practice">
+    <div class="box-label">Practice 4 &mdash; Area Problem</div>
+    <p>A square garden is bordered by a path that is 2 feet wide. The area of the path is 184 square feet. How long is a side of the garden?</p>
+    <details style="margin-top:0.5rem;">
+      <summary style="cursor:pointer; font-weight:600; color:#4a5568;">Show Solution</summary>
+      <div style="margin-top:0.5rem;">
+        <p>Let \(s\) = side of the garden. Outer square has side \(s + 4\).</p>
+        <p>Path area: \((s + 4)^2 - s^2 = 184\)</p>
+        <p>\(s^2 + 8s + 16 - s^2 = 184\)</p>
+        <p>\(8s + 16 = 184\), so \(8s = 168\), hence \(s = 21\) feet.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="box box-practice">
+    <div class="box-label">Practice 5 &mdash; Polynomial Long Division</div>
+    <p>Divide: &nbsp;\((4n^2 - 29n + 45) \div (n - 5)\)</p>
+    <details style="margin-top:0.5rem;">
+      <summary style="cursor:pointer; font-weight:600; color:#4a5568;">Show Solution</summary>
+      <div style="margin-top:0.5rem;">
+        <p>\(\frac{4n^2}{n} = 4n\). &nbsp;Multiply: \(4n(n-5) = 4n^2 - 20n\). &nbsp;Subtract: \(-9n + 45\).</p>
+        <p>\(\frac{-9n}{n} = -9\). &nbsp;Multiply: \(-9(n-5) = -9n + 45\). &nbsp;Subtract: \(0\).</p>
+        <p><strong>Quotient:</strong> \(4n - 9\)</p>
+        <p><strong>Check:</strong> \((n-5)(4n-9) = 4n^2 - 9n - 20n + 45 = 4n^2 - 29n + 45\). \(\checkmark\)</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="box box-practice">
+    <div class="box-label">Practice 6 &mdash; Division with Remainder</div>
+    <p>Divide: &nbsp;\((2x^3 + 3x^2 - 5x + 7) \div (x + 3)\)</p>
+    <details style="margin-top:0.5rem;">
+      <summary style="cursor:pointer; font-weight:600; color:#4a5568;">Show Solution</summary>
+      <div style="margin-top:0.5rem;">
+        <p>\(\frac{2x^3}{x} = 2x^2\). Multiply \(2x^2(x+3) = 2x^3 + 6x^2\). Subtract: \(-3x^2 - 5x + 7\).</p>
+        <p>\(\frac{-3x^2}{x} = -3x\). Multiply \(-3x(x+3) = -3x^2 - 9x\). Subtract: \(4x + 7\).</p>
+        <p>\(\frac{4x}{x} = 4\). Multiply \(4(x+3) = 4x + 12\). Subtract: \(-5\).</p>
+        <p><strong>Answer:</strong> \(2x^2 - 3x + 4 + \dfrac{-5}{x + 3}\)</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- QUICK REFERENCE                                              -->
+<!-- ============================================================ -->
+<section class="section" id="quick-ref">
+  <h2>Quick Reference</h2>
+
+  <div class="ref-grid">
+    <div class="ref-card">
+      <h4>Product of Powers</h4>
+      <p>\(b^m \cdot b^n = b^{m+n}\)</p>
+    </div>
+    <div class="ref-card">
+      <h4>Power of a Product</h4>
+      <p>\((ab)^m = a^m b^m\)</p>
+    </div>
+    <div class="ref-card">
+      <h4>Power of a Power</h4>
+      <p>\((b^m)^n = b^{mn}\)</p>
+    </div>
+    <div class="ref-card">
+      <h4>Quotient of Powers</h4>
+      <p>\(\dfrac{b^m}{b^n} = b^{m-n}\) &nbsp;(when \(m > n\))</p>
+    </div>
+    <div class="ref-card">
+      <h4>Square of a Sum</h4>
+      <p>\((a + b)^2 = a^2 + 2ab + b^2\)</p>
+    </div>
+    <div class="ref-card">
+      <h4>Square of a Difference</h4>
+      <p>\((a - b)^2 = a^2 - 2ab + b^2\)</p>
+    </div>
+    <div class="ref-card">
+      <h4>Difference of Squares</h4>
+      <p>\((a+b)(a-b) = a^2 - b^2\)</p>
+    </div>
+    <div class="ref-card">
+      <h4>Zero Exponent</h4>
+      <p>\(b^0 = 1\) &nbsp;(for \(b \neq 0\))</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NAV FOOTER ============ -->
+<nav class="chapter-nav">
+  <a href="../05-equations-inequalities-and-problem-solving/">
+    <span>&larr;</span>
+    <span>
+      <span class="nav-label">Previous</span>
+      Ch 5: Equations &amp; Inequalities
+    </span>
+  </a>
+  <a href="../07-special-products-and-factoring/">
+    <span>
+      <span class="nav-label">Next</span>
+      Ch 7: Special Products &amp; Factoring
+    </span>
+    <span>&rarr;</span>
+  </a>
+</nav>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+        ],
+        throwOnError: false
+    });
+});
+</script>
+</body>
+</html>

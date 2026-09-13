@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2 — Variables and Open Sentences | Modern Algebra: Structure and Method</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', 'Cambria', 'Times New Roman', serif;
+            background: #fdf6f0;
+            color: #2d2d2d;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+        .hero {
+            background: linear-gradient(135deg, #8b1a1a 0%, #1a1a2e 100%);
+            color: white;
+            padding: 3rem 2rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero .chapter-num {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 8rem;
+            font-weight: 800;
+            opacity: 0.10;
+            position: absolute;
+            top: -0.5rem;
+            right: 2rem;
+            line-height: 1;
+        }
+        .hero h1 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .hero .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.85;
+            font-style: italic;
+        }
+        .hero .book-title {
+            font-size: 0.95rem;
+            opacity: 0.65;
+            margin-top: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        h2 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #8b1a1a;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #d4582a;
+        }
+        h3 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #8b1a1a;
+            font-size: 1.5rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+        p { margin-bottom: 1rem; }
+        ul, ol { margin: 0.75rem 0 1.25rem 1.5rem; }
+        li { margin-bottom: 0.4rem; }
+
+        /* Highlight boxes */
+        .box { padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 5px solid; }
+        .box-definition { border-color: #8b1a1a; background: #fce8e8; }
+        .box-insight   { border-color: #d4582a; background: #fef3ec; }
+        .box-caution   { border-color: #7f1d1d; background: #fef2f2; }
+        .box-example   { border-color: #276749; background: #f0f7f0; }
+        .box-practice  { border-color: #4a5568; background: #f7fafc; }
+        .box-formula   { border-color: #2b4c7e; background: #ebf0ff; }
+        .box-label {
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .box-definition .box-label { color: #8b1a1a; }
+        .box-insight .box-label   { color: #d4582a; }
+        .box-caution .box-label   { color: #7f1d1d; }
+        .box-example .box-label   { color: #276749; }
+        .box-practice .box-label  { color: #4a5568; }
+        .box-formula .box-label   { color: #2b4c7e; }
+
+        /* Navigation */
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e2d9ce;
+        }
+        .nav-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #8b1a1a;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .nav-btn:hover { background: #6b1414; }
+        .nav-center {
+            font-family: 'Segoe UI', sans-serif;
+            color: #8b1a1a;
+            font-weight: 600;
+        }
+
+        svg { max-width: 100%; height: auto; display: block; margin: 1.5rem auto; }
+        .katex { font-size: 1.3em; }
+        .katex-display { margin: 1.5rem 0; overflow-x: auto; font-size: 1.35em; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            overflow-x: auto;
+            display: block;
+        }
+        th, td {
+            padding: 0.6rem 1rem;
+            border: 1px solid #d4cdc4;
+            text-align: center;
+            white-space: nowrap;
+        }
+        th {
+            background: #8b1a1a;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        td { background: #fff; }
+        tr:nth-child(even) td { background: #fdf6f0; }
+
+        .overview-list { list-style: none; margin-left: 0; }
+        .overview-list li {
+            padding: 0.4rem 0 0.4rem 1.8rem;
+            position: relative;
+        }
+        .overview-list li::before {
+            content: '\2726';
+            color: #d4582a;
+            position: absolute;
+            left: 0;
+            font-size: 1.1rem;
+        }
+
+        .step-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 0.5rem 1rem;
+            margin: 1rem 0;
+        }
+        .step-num {
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            color: #8b1a1a;
+            font-size: 1.1rem;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+        @media (max-width: 650px) {
+            .two-col { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .hero .chapter-num { font-size: 5rem; }
+            table { font-size: 0.9rem; }
+        }
+
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem 2rem;
+            margin: 1rem 0;
+        }
+        .vocab-grid span {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.95rem;
+            padding: 0.25rem 0;
+            border-bottom: 1px dotted #d4cdc4;
+        }
+        @media (max-width: 500px) {
+            .vocab-grid { grid-template-columns: 1fr; }
+        }
+
+        .quote-box {
+            border-left: 4px solid #d4582a;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            background: #fef8f4;
+            font-style: italic;
+            color: #555;
+        }
+        .quote-box .attribution {
+            font-style: normal;
+            font-weight: 600;
+            color: #8b1a1a;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- =========================================================
+     HERO HEADER
+     ========================================================= -->
+<div class="hero">
+    <span class="chapter-num">02</span>
+    <h1>Variables and Open Sentences</h1>
+    <p class="subtitle">From general symbols to specific solutions</p>
+    <p class="book-title">Modern Algebra: Structure and Method &mdash; Dolciani et al.</p>
+</div>
+
+<div class="container">
+
+    <!-- =========================================================
+         CHAPTER EPIGRAPH
+         ========================================================= -->
+    <div class="quote-box">
+        "Investigate before you invest."
+        <div class="attribution">&mdash; Chapter 2 Opening Proverb</div>
+    </div>
+
+    <!-- =========================================================
+         OVERVIEW
+         ========================================================= -->
+    <div class="card">
+        <h2>What You'll Learn</h2>
+        <ul class="overview-list">
+            <li><strong>Section 2-1:</strong> Evaluate algebraic expressions by substituting values for variables</li>
+            <li><strong>Section 2-2:</strong> Identify factors, coefficients, bases, and exponents in algebraic terms</li>
+            <li><strong>Section 2-3:</strong> Solve open sentences&mdash;equations and inequalities&mdash;using replacement sets</li>
+            <li><strong>Section 2-4:</strong> Translate algebraic symbols into English phrases</li>
+            <li><strong>Section 2-5:</strong> Translate English phrases into algebraic expressions</li>
+            <li><strong>Section 2-6:</strong> Solve word problems using the four-step method</li>
+        </ul>
+    </div>
+
+    <!-- =========================================================
+         SECTION 2-1: EVALUATING ALGEBRAIC EXPRESSIONS
+         ========================================================= -->
+    <div class="card">
+        <h2>2-1 &middot; Evaluating Algebraic Expressions</h2>
+
+        <p>Just as the word "vegetables" stands for any element of a set of edible plants, a <strong>variable</strong> is a letter that stands for any element of a specified set of numbers. For instance, we can describe the set of multiples of 3:</p>
+
+        $$A = \{0,\; 3,\; 6,\; 9,\; \dots\} = \{3n \mid n \in \{0,1,2,3,\dots\}\}$$
+
+        <p>Here \(n\) is a variable. Each specific value you substitute for \(n\) gives one element of set \(A\).</p>
+
+        <div class="box box-definition">
+            <div class="box-label">Definition &mdash; Variable</div>
+            <p>A <strong>variable</strong> is a symbol that may represent any of the elements of a specified set. The set whose elements serve as replacements is called the <strong>replacement set</strong> (or <strong>domain</strong>) of the variable. A variable with exactly one value is called a <strong>constant</strong>.</p>
+        </div>
+
+        <h3>Multiplication Notation</h3>
+        <p>When a product involves a variable, the multiplication symbol is typically omitted:</p>
+        <ul>
+            <li>\(3 \times n\) is written \(3n\) (read "three times \(n\)")</li>
+            <li>\(a \times b\) is written \(ab\) (read "\(a\) times \(b\)")</li>
+            <li>A raised dot may also indicate multiplication: \(2 \cdot n\) means \(2 \times n\)</li>
+        </ul>
+
+        <div class="box box-caution">
+            <div class="box-label">Caution</div>
+            <p>With two specific numerals, you cannot omit the symbol: \(8 \times 7\) must be written \(8 \cdot 7\) or \(8(7)\), not \(87\), which means eighty-seven.</p>
+        </div>
+
+        <div class="box box-definition">
+            <div class="box-label">Definition &mdash; Key Terms</div>
+            <p>A <strong>variable expression</strong> (or <strong>open expression</strong>) is an expression containing a variable&mdash;its value is "left open" until you specify the variable's value.</p>
+            <p style="margin-bottom:0;">A <strong>term</strong> is an algebraic expression written as a product or quotient of numerals or variables or both. For example, \(7\), \(2d\), \(3xy\), and \(\dfrac{m}{n-1}\) are all terms.</p>
+        </div>
+
+        <!-- SVG: Variable evaluation flowchart -->
+        <svg viewBox="0 0 600 200" width="600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Variable evaluation process diagram">
+            <defs>
+                <marker id="arrow1" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#8b1a1a"/>
+                </marker>
+            </defs>
+            <!-- Boxes -->
+            <rect x="10" y="60" width="140" height="70" rx="10" fill="#fce8e8" stroke="#8b1a1a" stroke-width="2"/>
+            <text x="80" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#8b1a1a" font-weight="700">Expression</text>
+            <text x="80" y="112" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#2d2d2d" font-style="italic">3n</text>
+
+            <rect x="230" y="60" width="140" height="70" rx="10" fill="#fef3ec" stroke="#d4582a" stroke-width="2"/>
+            <text x="300" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#d4582a" font-weight="700">Substitute</text>
+            <text x="300" y="112" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#2d2d2d" font-style="italic">n = 4</text>
+
+            <rect x="450" y="60" width="140" height="70" rx="10" fill="#f0f7f0" stroke="#276749" stroke-width="2"/>
+            <text x="520" y="90" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#276749" font-weight="700">Value</text>
+            <text x="520" y="112" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#2d2d2d" font-style="italic">3(4) = 12</text>
+
+            <!-- Arrows -->
+            <line x1="150" y1="95" x2="225" y2="95" stroke="#8b1a1a" stroke-width="2" marker-end="url(#arrow1)"/>
+            <line x1="370" y1="95" x2="445" y2="95" stroke="#8b1a1a" stroke-width="2" marker-end="url(#arrow1)"/>
+
+            <!-- Labels on arrows -->
+            <text x="188" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#555">replace</text>
+            <text x="408" y="85" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#555">evaluate</text>
+        </svg>
+
+        <h3>Evaluating with a Replacement Set</h3>
+        <p>To <strong>evaluate</strong> an expression means to determine the number it represents for each value of the variable. If \(r \in \{2, 3, 5, 8\}\), we evaluate \(\frac{1}{2}r\) and \(5r\):</p>
+
+        <table>
+            <tr><th>\(r\)</th><th>\(\tfrac{1}{2}r\)</th><th>\(5r\)</th></tr>
+            <tr><td>2</td><td>\(\tfrac{1}{2}(2) = 1\)</td><td>\(5(2) = 10\)</td></tr>
+            <tr><td>3</td><td>\(\tfrac{1}{2}(3) = \tfrac{3}{2}\)</td><td>\(5(3) = 15\)</td></tr>
+            <tr><td>5</td><td>\(\tfrac{1}{2}(5) = \tfrac{5}{2}\)</td><td>\(5(5) = 25\)</td></tr>
+            <tr><td>8</td><td>\(\tfrac{1}{2}(8) = 4\)</td><td>\(5(8) = 40\)</td></tr>
+        </table>
+    </div>
+
+    <!-- =========================================================
+         SECTION 2-2: FACTORS, COEFFICIENTS, EXPONENTS
+         ========================================================= -->
+    <div class="card">
+        <h2>2-2 &middot; Factors, Coefficients, and Exponents</h2>
+
+        <p>When two or more numbers are multiplied, each is called a <strong>factor</strong> of the product. For example, 3 and 7 are factors of 21; the product \(6x\) has factors 1, 2, 3, 6, \(x\), \(2x\), \(3x\), and \(6x\) itself.</p>
+
+        <div class="box box-definition">
+            <div class="box-label">Definition &mdash; Coefficient</div>
+            <p>Each factor of a product is the <strong>coefficient</strong> of the product of the other factors. In the product \(\frac{1}{2}xy\), the number \(\frac{1}{2}\) is the coefficient of \(xy\), the expression \(\frac{1}{2}x\) is the coefficient of \(y\), and \(\frac{1}{2}y\) is the coefficient of \(x\). The <strong>numerical coefficient</strong> is the numerical part of a term. The coefficient of \(a\) is 1, since \(a = 1 \cdot a\).</p>
+        </div>
+
+        <h3>Exponents and Powers</h3>
+
+        <p>When a number appears more than once as a factor, we use an <strong>exponent</strong> to show how many times the <strong>base</strong> is used:</p>
+
+        $$s^2 = s \cdot s \qquad\quad x^3 = x \cdot x \cdot x \qquad\quad x^4 = x \cdot x \cdot x \cdot x$$
+
+        <!-- SVG: Anatomy of a power expression -->
+        <svg viewBox="0 0 400 180" width="380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Anatomy of a power: base and exponent">
+            <text x="160" y="100" font-family="Georgia, serif" font-size="52" fill="#2d2d2d">s</text>
+            <text x="196" y="75" font-family="Georgia, serif" font-size="30" fill="#8b1a1a">2</text>
+
+            <!-- Brace for base -->
+            <line x1="158" y1="110" x2="192" y2="110" stroke="#276749" stroke-width="2"/>
+            <line x1="175" y1="110" x2="175" y2="125" stroke="#276749" stroke-width="2"/>
+            <text x="175" y="148" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#276749" font-weight="700">Base</text>
+            <text x="175" y="165" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#555">(the repeated factor)</text>
+
+            <!-- Arrow to exponent -->
+            <line x1="218" y1="68" x2="250" y2="55" stroke="#8b1a1a" stroke-width="2" marker-end="url(#arrow1)"/>
+            <text x="310" y="45" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#8b1a1a" font-weight="700">Exponent</text>
+            <text x="310" y="62" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#555">(how many times)</text>
+        </svg>
+
+        <div class="box box-insight">
+            <div class="box-label">Key Insight &mdash; Exponent vs. Coefficient</div>
+            <div class="two-col">
+                <div>
+                    <p><strong>Exponent</strong> tells how many times the base is used as a factor:</p>
+                    $$s^2 = s \cdot s$$
+                    <p>When \(s = 15\): \(s^2 = 15 \cdot 15 = 225\)</p>
+                </div>
+                <div>
+                    <p><strong>Coefficient</strong> is itself a factor:</p>
+                    $$2s = 2 \cdot s$$
+                    <p>When \(s = 15\): \(2s = 2 \cdot 15 = 30\)</p>
+                </div>
+            </div>
+        </div>
+
+        <h3>Grouping Symbols Matter</h3>
+        <p>The placement of parentheses determines the base of the exponent:</p>
+        <ul>
+            <li>\(3a^2 = 3 \cdot a \cdot a\) &mdash; only \(a\) is squared</li>
+            <li>\((3a)^2 = 3a \cdot 3a = 9a^2\) &mdash; the entire product \(3a\) is squared</li>
+        </ul>
+        <p>Compare with numbers: \(4 \cdot 5^3 = 4 \cdot 125 = 500\), but \((4 \cdot 5)^3 = 20^3 = 8000\).</p>
+
+        <div class="box box-formula">
+            <div class="box-label">Reading Powers</div>
+            <table>
+                <tr><th>Expression</th><th>Read as</th><th>Meaning</th></tr>
+                <tr><td>\(x^1\)</td><td>\(x\) to the first power</td><td>\(x\)</td></tr>
+                <tr><td>\(x^2\)</td><td>\(x\) squared</td><td>\(x \cdot x\)</td></tr>
+                <tr><td>\(x^3\)</td><td>\(x\) cubed</td><td>\(x \cdot x \cdot x\)</td></tr>
+                <tr><td>\(x^4\)</td><td>\(x\) to the fourth</td><td>\(x \cdot x \cdot x \cdot x\)</td></tr>
+                <tr><td>\(x^n\)</td><td>\(x\) to the \(n\)th power</td><td>\(x\) used \(n\) times as a factor</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- =========================================================
+         SECTION 2-3: SOLVING OPEN SENTENCES
+         ========================================================= -->
+    <div class="card">
+        <h2>2-3 &middot; Solving Open Sentences</h2>
+
+        <p>Consider the sentence: "\(w\) is a city in Texas." As written, it is neither true nor false. Replace \(w\) with "Dallas" and it becomes true; replace with "New York" and it becomes false. A sentence containing a variable is called an <strong>open sentence</strong>.</p>
+
+        <div class="box box-definition">
+            <div class="box-label">Definition &mdash; Open Sentence</div>
+            <p>An <strong>algebraic sentence</strong> is a statement composed of algebraic expressions related by one of the symbols \(=\), \(\neq\), \(>\), \(<\), \(\le\), or \(\ge\).</p>
+            <ul>
+                <li>A sentence using \(=\) is called an <strong>equation</strong>.</li>
+                <li>A sentence using \(\neq\), \(>\), \(<\), \(\le\), or \(\ge\) is called an <strong>inequality</strong>.</li>
+            </ul>
+        </div>
+
+        <h3>Equations: Left Member and Right Member</h3>
+
+        <!-- SVG: Equation anatomy -->
+        <svg viewBox="0 0 520 140" width="520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Anatomy of the equation 3x + 1 = 16">
+            <text x="120" y="55" font-family="Georgia, serif" font-size="32" fill="#2d2d2d">3x + 1</text>
+            <text x="268" y="55" font-family="Georgia, serif" font-size="32" fill="#8b1a1a">=</text>
+            <text x="320" y="55" font-family="Georgia, serif" font-size="32" fill="#2d2d2d">16</text>
+
+            <!-- Left bracket -->
+            <line x1="95" y1="68" x2="235" y2="68" stroke="#d4582a" stroke-width="2"/>
+            <line x1="165" y1="68" x2="165" y2="82" stroke="#d4582a" stroke-width="2"/>
+            <text x="165" y="102" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#d4582a" font-weight="700">Left Member (L.M.)</text>
+
+            <!-- Right bracket -->
+            <line x1="310" y1="68" x2="360" y2="68" stroke="#276749" stroke-width="2"/>
+            <line x1="335" y1="68" x2="335" y2="82" stroke="#276749" stroke-width="2"/>
+            <text x="335" y="102" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#276749" font-weight="700">Right Member (R.M.)</text>
+
+            <!-- Equals label -->
+            <text x="268" y="122" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#8b1a1a">"designate the same number"</text>
+        </svg>
+
+        <h3>Solution Set and Roots</h3>
+
+        <div class="box box-definition">
+            <div class="box-label">Definition &mdash; Solution Set</div>
+            <p>The <strong>solution set</strong> of an open sentence is the subset of the domain consisting of all values that make the sentence true. Each member of the solution set is called a <strong>root</strong>. Determining the solution set is called <strong>solving</strong> the open sentence.</p>
+        </div>
+
+        <p><strong>Example:</strong> Solve \(3x + 1 = 16\), where \(x \in \{5, 6\}\).</p>
+        <div class="two-col">
+            <div class="box box-example" style="margin:0;">
+                <div class="box-label">Try x = 5</div>
+                <p>\(3(5) + 1 = 16\)<br>\(15 + 1 = 16\)<br>\(16 = 16\) &check; <strong>True</strong></p>
+            </div>
+            <div class="box box-practice" style="margin:0;">
+                <div class="box-label">Try x = 6</div>
+                <p>\(3(6) + 1 = 16\)<br>\(18 + 1 = 16\)<br>\(19 = 16\) &cross; <strong>False</strong></p>
+            </div>
+        </div>
+        <p style="margin-top:1rem;">Therefore the solution set is \(\{5\}\), and 5 is a root of the equation.</p>
+
+        <h3>Inequalities</h3>
+        <p>Now consider the inequality \(3x + 1 > 16\) with \(x \in \{5, 6\}\):</p>
+        <ul>
+            <li>\(x = 5\): \(16 > 16\) is <strong>False</strong></li>
+            <li>\(x = 6\): \(19 > 16\) is <strong>True</strong></li>
+        </ul>
+        <p>The solution set is \(\{6\}\).</p>
+
+        <!-- SVG: Number line graph -->
+        <h3>Graphing Solution Sets</h3>
+        <p>The solution set of an open sentence can be shown on a <strong>number line</strong>:</p>
+        <svg viewBox="0 0 500 80" width="480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Number line showing solution set {4,5} for 2 less than or equal to x less than or equal to 5">
+            <!-- Number line -->
+            <line x1="30" y1="40" x2="470" y2="40" stroke="#999" stroke-width="2"/>
+            <!-- Ticks and labels -->
+            <line x1="70" y1="33" x2="70" y2="47" stroke="#999" stroke-width="2"/>
+            <text x="70" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#555">1</text>
+            <line x1="150" y1="33" x2="150" y2="47" stroke="#999" stroke-width="2"/>
+            <text x="150" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#555">2</text>
+            <line x1="230" y1="33" x2="230" y2="47" stroke="#999" stroke-width="2"/>
+            <text x="230" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#555">3</text>
+            <line x1="310" y1="33" x2="310" y2="47" stroke="#999" stroke-width="2"/>
+            <text x="310" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#555">4</text>
+            <line x1="390" y1="33" x2="390" y2="47" stroke="#999" stroke-width="2"/>
+            <text x="390" y="65" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" fill="#555">5</text>
+            <!-- Filled circles for solution set {4, 5} -->
+            <circle cx="310" cy="40" r="8" fill="#8b1a1a"/>
+            <circle cx="390" cy="40" r="8" fill="#8b1a1a"/>
+            <!-- Label -->
+            <text x="250" y="18" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#8b1a1a" font-weight="600">Graph of {4, 5} for 2 &lt; x &le; 5, x &isin; {4, 5, 8}</text>
+        </svg>
+    </div>
+
+    <!-- =========================================================
+         SECTION 2-4: FROM SYMBOLS TO WORDS
+         ========================================================= -->
+    <div class="card">
+        <h2>2-4 &middot; From Symbols to Words</h2>
+
+        <p>A central skill in algebra is <strong>interpreting</strong> algebraic expressions in English. The expression \(x + 1\) might mean:</p>
+        <ul>
+            <li>"A number increased by 1" or "one more than \(x\)"</li>
+            <li>"Ron is a year older than his sister Sue. If \(x\) is Sue's age, then \(x + 1\) is Ron's age."</li>
+        </ul>
+
+        <p>The expression \(2w - 3\) means "the difference between twice a number \(w\) and 3." In context: "The length of a room is 3 feet less than twice its width."</p>
+
+        <div class="box box-insight">
+            <div class="box-label">Key Insight &mdash; Multiple Interpretations</div>
+            <p>Every algebraic expression has many possible English interpretations. Part of mathematical thinking is choosing the interpretation that fits the context of a problem. Note how the <strong>domain</strong> may change with context: if \(x\) represents Sue's age, then \(x \neq 0\) (since age is positive), but if \(x\) is simply "a number," the domain may include 0.</p>
+        </div>
+
+        <!-- SVG: Translation diagram -->
+        <svg viewBox="0 0 550 150" width="530" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bidirectional translation between algebra and English">
+            <defs>
+                <marker id="arrow2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#d4582a"/>
+                </marker>
+            </defs>
+            <rect x="20" y="30" width="200" height="90" rx="12" fill="#fce8e8" stroke="#8b1a1a" stroke-width="2"/>
+            <text x="120" y="62" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" fill="#8b1a1a" font-weight="700">Algebra</text>
+            <text x="120" y="90" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#2d2d2d" font-style="italic">2w &minus; 3</text>
+
+            <rect x="330" y="30" width="200" height="90" rx="12" fill="#fef3ec" stroke="#d4582a" stroke-width="2"/>
+            <text x="430" y="62" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" fill="#d4582a" font-weight="700">English</text>
+            <text x="430" y="86" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#2d2d2d">"3 less than twice</text>
+            <text x="430" y="105" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#2d2d2d">a number w"</text>
+
+            <!-- Double arrows -->
+            <line x1="225" y1="62" x2="325" y2="62" stroke="#d4582a" stroke-width="2" marker-end="url(#arrow2)"/>
+            <line x1="325" y1="88" x2="225" y2="88" stroke="#d4582a" stroke-width="2" marker-end="url(#arrow2)"/>
+            <text x="275" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#555">Section 2-4</text>
+            <text x="275" y="103" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#555">Section 2-5</text>
+        </svg>
+    </div>
+
+    <!-- =========================================================
+         SECTION 2-5: FROM WORDS TO SYMBOLS
+         ========================================================= -->
+    <div class="card">
+        <h2>2-5 &middot; From Words to Symbols</h2>
+
+        <p>In solving problems, your first task is to translate English phrases into algebraic language. Here is a reference for common translations:</p>
+
+        <div class="box box-formula">
+            <div class="box-label">Translation Guide</div>
+            <table>
+                <tr><th>English Phrase</th><th>Algebraic Expression</th></tr>
+                <tr><td>a number increased by 5</td><td>\(n + 5\)</td></tr>
+                <tr><td>5 less than a number</td><td>\(n - 5\)</td></tr>
+                <tr><td>twice a number</td><td>\(2n\)</td></tr>
+                <tr><td>one-third of a number</td><td>\(\dfrac{n}{3}\)</td></tr>
+                <tr><td>4 fewer than one-third of \(s\)</td><td>\(\dfrac{s}{3} - 4\)</td></tr>
+                <tr><td>3 more than twice a number</td><td>\(2n + 3\)</td></tr>
+                <tr><td>the square of a number</td><td>\(n^2\)</td></tr>
+            </table>
+        </div>
+
+        <div class="box box-insight">
+            <div class="box-label">Key Insight &mdash; "Less Than" Reverses Order</div>
+            <p>"5 less than \(n\)" is \(n - 5\), <strong>not</strong> \(5 - n\). The phrase "less than" tells you to subtract from the number that follows it. Similarly, "3 fewer than twice \(w\)" is \(2w - 3\).</p>
+        </div>
+    </div>
+
+    <!-- =========================================================
+         SECTION 2-6: SOLVING PROBLEMS WITH OPEN SENTENCES
+         ========================================================= -->
+    <div class="card">
+        <h2>2-6 &middot; Solving Problems with Open Sentences</h2>
+
+        <p>In a "word problem," you are told how certain numbers are related. To find the unknown numbers, you translate the problem into algebra and solve. Dolciani outlines a <strong>four-step method</strong>:</p>
+
+        <div class="box box-formula">
+            <div class="box-label">The Four-Step Method</div>
+            <div class="step-grid">
+                <span class="step-num">Step 1.</span>
+                <span><strong>Choose a variable</strong> with an appropriate replacement set, and use it to represent each described number.</span>
+                <span class="step-num">Step 2.</span>
+                <span><strong>Form an open sentence</strong> by using the facts given in the problem.</span>
+                <span class="step-num">Step 3.</span>
+                <span><strong>Find the solution set</strong> of the open sentence.</span>
+                <span class="step-num">Step 4.</span>
+                <span><strong>Check your answer</strong> with the words of the problem.</span>
+            </div>
+        </div>
+
+        <!-- SVG: Four-step process flow -->
+        <svg viewBox="0 0 580 100" width="560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Four-step problem solving flow">
+            <defs>
+                <marker id="arrow3" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                    <polygon points="0 0, 8 3, 0 6" fill="#8b1a1a"/>
+                </marker>
+            </defs>
+            <!-- Step boxes -->
+            <rect x="5" y="20" width="115" height="55" rx="8" fill="#fce8e8" stroke="#8b1a1a" stroke-width="2"/>
+            <text x="62" y="44" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#8b1a1a" font-weight="700">STEP 1</text>
+            <text x="62" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#555">Choose variable</text>
+
+            <rect x="155" y="20" width="115" height="55" rx="8" fill="#fef3ec" stroke="#d4582a" stroke-width="2"/>
+            <text x="212" y="44" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#d4582a" font-weight="700">STEP 2</text>
+            <text x="212" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#555">Write equation</text>
+
+            <rect x="305" y="20" width="115" height="55" rx="8" fill="#ebf0ff" stroke="#2b4c7e" stroke-width="2"/>
+            <text x="362" y="44" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#2b4c7e" font-weight="700">STEP 3</text>
+            <text x="362" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#555">Solve</text>
+
+            <rect x="455" y="20" width="115" height="55" rx="8" fill="#f0f7f0" stroke="#276749" stroke-width="2"/>
+            <text x="512" y="44" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#276749" font-weight="700">STEP 4</text>
+            <text x="512" y="60" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#555">Check answer</text>
+
+            <!-- Arrows -->
+            <line x1="122" y1="48" x2="151" y2="48" stroke="#8b1a1a" stroke-width="2" marker-end="url(#arrow3)"/>
+            <line x1="272" y1="48" x2="301" y2="48" stroke="#8b1a1a" stroke-width="2" marker-end="url(#arrow3)"/>
+            <line x1="422" y1="48" x2="451" y2="48" stroke="#8b1a1a" stroke-width="2" marker-end="url(#arrow3)"/>
+        </svg>
+    </div>
+
+    <!-- =========================================================
+         WORKED PROBLEMS
+         ========================================================= -->
+    <div class="card">
+        <h2>Worked Problems</h2>
+
+        <!-- Problem 1 -->
+        <div class="box box-practice">
+            <div class="box-label">Problem 1 &mdash; Evaluating Expressions (Section 2-1)</div>
+            <p>Evaluate \(2x^2 + 4x + 5\) when \(x = 3\).</p>
+        </div>
+        <div class="box box-example">
+            <div class="box-label">Solution</div>
+            <p>Substitute \(x = 3\) into each term:</p>
+            $$2x^2 + 4x + 5 = 2(3)^2 + 4(3) + 5$$
+            $$= 2(9) + 12 + 5$$
+            $$= 18 + 12 + 5 = 35$$
+        </div>
+
+        <!-- Problem 2 -->
+        <div class="box box-practice">
+            <div class="box-label">Problem 2 &mdash; Exponents vs. Coefficients (Section 2-2)</div>
+            <p>Find the value of \(3a^2\) and \((3a)^2\) when \(a = 4\).</p>
+        </div>
+        <div class="box box-example">
+            <div class="box-label">Solution</div>
+            <p>In \(3a^2\), only \(a\) is squared; in \((3a)^2\), the entire product \(3a\) is squared.</p>
+            $$3a^2 = 3 \cdot (4)^2 = 3 \cdot 16 = 48$$
+            $$(3a)^2 = (3 \cdot 4)^2 = (12)^2 = 144$$
+            <p>Notice: \((3a)^2 = 144\) is three times as large as \(3a^2 = 48\). The parentheses make a critical difference!</p>
+        </div>
+
+        <!-- Problem 3 -->
+        <div class="box box-practice">
+            <div class="box-label">Problem 3 &mdash; Solving an Equation (Section 2-3)</div>
+            <p>Solve \(3r + 2 = 14\), where \(r \in \{3, 4\}\).</p>
+        </div>
+        <div class="box box-example">
+            <div class="box-label">Solution</div>
+            <p>Test each value of \(r\) from the replacement set:</p>
+            <div class="two-col">
+                <div>
+                    <p><strong>Try \(r = 3\):</strong></p>
+                    <p>\(3(3) + 2 = 9 + 2 = 11\)<br>\(11 = 14\) &cross; <strong>False</strong></p>
+                </div>
+                <div>
+                    <p><strong>Try \(r = 4\):</strong></p>
+                    <p>\(3(4) + 2 = 12 + 2 = 14\)<br>\(14 = 14\) &check; <strong>True</strong></p>
+                </div>
+            </div>
+            <p>The solution set is \(\{4\}\).</p>
+        </div>
+
+        <!-- Problem 4 -->
+        <div class="box box-practice">
+            <div class="box-label">Problem 4 &mdash; Words to Symbols (Section 2-5)</div>
+            <p>Ken has 4 fewer than one-third as many stamps as Len has. Write an algebraic expression for the number of Ken's stamps.</p>
+        </div>
+        <div class="box box-example">
+            <div class="box-label">Solution</div>
+            <p>Let \(s\) = the number of Len's stamps.</p>
+            <p>One-third the number of Len's stamps is \(\dfrac{s}{3}\).</p>
+            <p>"4 fewer than" means subtract 4:</p>
+            $$\text{Ken's stamps} = \frac{s}{3} - 4$$
+            <p>Note: \(s\) must be a multiple of 3 greater than or equal to 12 (so that Ken's count is a whole number greater than or equal to 0).</p>
+        </div>
+
+        <!-- Problem 5 -->
+        <div class="box box-practice">
+            <div class="box-label">Problem 5 &mdash; The Titan Missile (Section 2-6, Four-Step Method)</div>
+            <p>The main body of the Air Force Titan missile in 1960 was eight times as long as the nose cone. The entire missile was 90 feet in length. How long was the nose cone?</p>
+        </div>
+        <div class="box box-example">
+            <div class="box-label">Solution</div>
+            <div class="step-grid">
+                <span class="step-num">Step 1.</span>
+                <span>Let \(n\) = the number of feet in the nose cone. Then \(8n\) = the number of feet in the main body. The domain is the numbers of arithmetic (positive numbers).</span>
+                <span class="step-num">Step 2.</span>
+                <span>
+                    Form the equation:
+                    $$n + 8n = 90 \quad\Longrightarrow\quad 9n = 90$$
+                </span>
+                <span class="step-num">Step 3.</span>
+                <span>
+                    Solve: the value \(n = 10\) satisfies \(9(10) = 90\). The solution set is \(\{10\}\).
+                </span>
+                <span class="step-num">Step 4.</span>
+                <span>
+                    <strong>Check:</strong> Nose cone = 10 ft; Main body = \(8 \times 10 = 80\) ft; Total = \(10 + 80 = 90\) ft. &check;
+                </span>
+            </div>
+            <p>The nose cone was <strong>10 feet</strong> long.</p>
+        </div>
+
+        <!-- Problem 6 -->
+        <div class="box box-practice">
+            <div class="box-label">Problem 6 &mdash; Inequality Word Problem (Section 2-6)</div>
+            <p>The number of boys on a committee is supposed to be more than three times the number of girls. If 12 boys are put on the committee, what are the possible values for the number of girls?</p>
+        </div>
+        <div class="box box-example">
+            <div class="box-label">Solution</div>
+            <div class="step-grid">
+                <span class="step-num">Step 1.</span>
+                <span>Let \(x\) = the number of girls, where \(x \in \{\text{whole numbers}\}\).</span>
+                <span class="step-num">Step 2.</span>
+                <span>
+                    "The number of boys is more than three times the number of girls":
+                    $$12 > 3x$$
+                </span>
+                <span class="step-num">Step 3.</span>
+                <span>
+                    Divide both sides by 3: \(4 > x\), so \(x < 4\).
+                    Since \(x\) must be a whole number: \(x \in \{0, 1, 2, 3\}\).
+                </span>
+                <span class="step-num">Step 4.</span>
+                <span>
+                    <strong>Check:</strong> \(3 \times 3 = 9\) and \(12 > 9\) &check;. But \(3 \times 4 = 12\) and \(12 > 12\) is false, so 4 is not in the solution set.
+                </span>
+            </div>
+            <p>The possible number of girls is <strong>0, 1, 2, or 3</strong>.</p>
+
+            <svg viewBox="0 0 400 60" width="380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Number line showing solution set {0, 1, 2, 3}">
+                <line x1="30" y1="30" x2="370" y2="30" stroke="#999" stroke-width="2"/>
+                <line x1="50" y1="23" x2="50" y2="37" stroke="#999" stroke-width="2"/>
+                <text x="50" y="54" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#555">0</text>
+                <line x1="120" y1="23" x2="120" y2="37" stroke="#999" stroke-width="2"/>
+                <text x="120" y="54" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#555">1</text>
+                <line x1="190" y1="23" x2="190" y2="37" stroke="#999" stroke-width="2"/>
+                <text x="190" y="54" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#555">2</text>
+                <line x1="260" y1="23" x2="260" y2="37" stroke="#999" stroke-width="2"/>
+                <text x="260" y="54" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#555">3</text>
+                <line x1="330" y1="23" x2="330" y2="37" stroke="#999" stroke-width="2"/>
+                <text x="330" y="54" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#555">4</text>
+                <!-- Filled dots -->
+                <circle cx="50" cy="30" r="7" fill="#8b1a1a"/>
+                <circle cx="120" cy="30" r="7" fill="#8b1a1a"/>
+                <circle cx="190" cy="30" r="7" fill="#8b1a1a"/>
+                <circle cx="260" cy="30" r="7" fill="#8b1a1a"/>
+                <!-- Open dot at 4 -->
+                <circle cx="330" cy="30" r="7" fill="#fff" stroke="#8b1a1a" stroke-width="2"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- =========================================================
+         QUICK REFERENCE / CHAPTER SUMMARY
+         ========================================================= -->
+    <div class="card">
+        <h2>Quick Reference</h2>
+
+        <div class="box box-formula">
+            <div class="box-label">Vocabulary</div>
+            <div class="vocab-grid">
+                <span><strong>Variable</strong> &mdash; a symbol representing any element of a specified set</span>
+                <span><strong>Replacement set (domain)</strong> &mdash; the set of permissible values</span>
+                <span><strong>Constant</strong> &mdash; a variable with exactly one value</span>
+                <span><strong>Term</strong> &mdash; a product or quotient of numerals/variables</span>
+                <span><strong>Factor</strong> &mdash; a number being multiplied</span>
+                <span><strong>Coefficient</strong> &mdash; a factor of a product relative to the remaining factors</span>
+                <span><strong>Base</strong> &mdash; the expression used as a repeated factor</span>
+                <span><strong>Exponent</strong> &mdash; tells how many times the base is used as a factor</span>
+                <span><strong>Power</strong> &mdash; a number expressed using a base and exponent</span>
+                <span><strong>Open sentence</strong> &mdash; a sentence containing a variable (neither true nor false as written)</span>
+                <span><strong>Equation</strong> &mdash; a sentence using \(=\)</span>
+                <span><strong>Inequality</strong> &mdash; a sentence using \(\neq, >, <, \ge, \le\)</span>
+                <span><strong>Solution set</strong> &mdash; values from the domain making the sentence true</span>
+                <span><strong>Root</strong> &mdash; a member of the solution set</span>
+            </div>
+        </div>
+
+        <div class="box box-formula">
+            <div class="box-label">Summary of Key Ideas</div>
+            <ol>
+                <li>Multiplication with variables is written without a sign: \(3 \times n = 3n\). Parentheses or a raised dot are used between two numerals: \(8 \cdot 7\) or \(8(7)\).</li>
+                <li>The numerical coefficient of \(ab\) is 1 (since \(ab = 1 \cdot ab\)).</li>
+                <li>An exponent tells how many times the base is a factor; a coefficient <em>is</em> a factor.</li>
+                <li>Parentheses determine the base: \(3a^2 \neq (3a)^2\).</li>
+                <li>To solve an open sentence, find all values from the replacement set that make the sentence true.</li>
+                <li>The four-step method for word problems: (1) choose a variable, (2) form an equation, (3) solve, (4) check.</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- =========================================================
+         HISTORICAL NOTE
+         ========================================================= -->
+    <div class="card">
+        <h2>The Human Equation: Vieta, Father of Algebra</h2>
+        <p>In the sixteenth century, France and Spain were at war. When the French captured Spanish messengers, they read the encoded messages as easily as any Spaniard could. The Spaniards were so baffled that they complained to the Pope, convinced the French must be using black magic.</p>
+        <p>In truth, it was a French lawyer named <strong>Fran&ccedil;ois Vi&egrave;te</strong> (Vieta) whose hobby was algebra. He treated code-breaking as nothing more than solving equations. Vi&egrave;te also revolutionized algebra itself: before his time, everything was done in words. He introduced the use of <strong>letters as variables</strong>&mdash;vowels for unknowns, consonants for known numbers&mdash;and standardized the use of operation symbols. For these contributions, Vi&egrave;te is known as "the father of algebra."</p>
+    </div>
+
+    <!-- =========================================================
+         NAVIGATION
+         ========================================================= -->
+    <div class="nav-footer">
+        <a href="../01-symbols-and-sets/" class="nav-btn">&larr; Ch 1: Symbols and Sets</a>
+        <span class="nav-center">Chapter 2 of 15</span>
+        <a href="../03-axioms-equations-and-problem-solving/" class="nav-btn">Ch 3: Axioms, Equations &rarr;</a>
+    </div>
+
+</div><!-- /container -->
+
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+        ],
+        throwOnError: false
+    });
+});
+</script>
+</body>
+</html>

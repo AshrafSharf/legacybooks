@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 12: Functions and Variation &mdash; Modern Algebra: Structure and Method</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Georgia', 'Cambria', 'Times New Roman', serif;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #2d2d2d;
+  background: #fdf6f0;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.3;
+}
+a { color: #8b1a1a; text-decoration: none; }
+a:hover { text-decoration: underline; color: #d4582a; }
+
+/* ===== KaTeX overrides ===== */
+.katex { font-size: 1.3em; }
+.katex-display { font-size: 1.35em; margin: 1.5rem 0; overflow-x: auto; }
+
+/* ===== HERO HEADER ===== */
+.hero {
+  background: linear-gradient(135deg, #8b1a1a 0%, #5c1010 40%, #1a1a2e 100%);
+  color: #fff;
+  padding: 3.5rem 2rem 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '12';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18rem;
+  font-weight: 900;
+  opacity: 0.06;
+  font-family: 'Segoe UI', sans-serif;
+  pointer-events: none;
+}
+.hero .book-title {
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-bottom: 0.3rem;
+}
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin: 0.3rem 0 0.5rem;
+}
+.hero .subtitle {
+  font-size: 1.15rem;
+  opacity: 0.9;
+  font-style: italic;
+}
+.hero .authors {
+  font-size: 0.85rem;
+  opacity: 0.65;
+  margin-top: 0.7rem;
+  letter-spacing: 0.08em;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+/* ===== TABLE OF CONTENTS ===== */
+.toc {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.8rem 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 2px 12px rgba(139,26,26,0.08);
+  border-left: 5px solid #8b1a1a;
+}
+.toc h2 {
+  font-size: 1.3rem;
+  color: #8b1a1a;
+  margin-bottom: 1rem;
+}
+.toc ol {
+  padding-left: 1.4rem;
+}
+.toc li {
+  margin-bottom: 0.35rem;
+}
+.toc a {
+  color: #2d2d2d;
+  border-bottom: 1px dashed #d4582a;
+}
+.toc a:hover { color: #8b1a1a; border-bottom-style: solid; }
+
+/* ===== OVERVIEW CARD ===== */
+.overview {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.8rem 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.overview h2 { font-size: 1.5rem; color: #8b1a1a; margin-bottom: 0.8rem; }
+.overview ul {
+  list-style: none; padding: 0;
+}
+.overview li {
+  padding: 0.35rem 0 0.35rem 1.6rem;
+  position: relative;
+}
+.overview li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  color: #d4582a;
+  font-weight: bold;
+}
+
+/* ===== SECTION CARDS ===== */
+.section-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 2rem 2rem 1.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+}
+.section-card h2 {
+  font-size: 2rem;
+  color: #8b1a1a;
+  margin-bottom: 0.3rem;
+}
+.section-num {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #d4582a;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 700;
+}
+.section-card h3 {
+  font-size: 1.35rem;
+  color: #4a3728;
+  margin: 1.5rem 0 0.5rem;
+}
+.section-card p { margin-bottom: 1rem; }
+
+/* ===== HIGHLIGHT BOXES ===== */
+.box {
+  border-radius: 8px;
+  padding: 1.2rem 1.4rem;
+  margin: 1.3rem 0;
+  border-left: 5px solid;
+}
+.box-definition { border-color: #8b1a1a; background: #fce8e8; }
+.box-insight   { border-color: #d4582a; background: #fef3ec; }
+.box-caution   { border-color: #7f1d1d; background: #fef2f2; }
+.box-example   { border-color: #276749; background: #f0f7f0; }
+.box-practice  { border-color: #4a5568; background: #f7fafc; }
+.box-formula   { border-color: #2b4c7e; background: #ebf0ff; }
+
+.box .box-label {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.5rem;
+}
+.box-definition .box-label { color: #8b1a1a; }
+.box-insight .box-label    { color: #d4582a; }
+.box-caution .box-label    { color: #7f1d1d; }
+.box-example .box-label    { color: #276749; }
+.box-practice .box-label   { color: #4a5568; }
+.box-formula .box-label    { color: #2b4c7e; }
+
+/* ===== SVG DIAGRAMS ===== */
+.diagram-wrap {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  text-align: center;
+}
+.diagram-wrap svg {
+  max-width: 100%;
+  height: auto;
+}
+.diagram-caption {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #8b1a1a;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+/* ===== WORKED PROBLEMS ===== */
+.worked-problems {
+  background: #fff;
+  border-radius: 10px;
+  padding: 2rem 2rem 1.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+}
+.worked-problems > h2 {
+  font-size: 2rem;
+  color: #8b1a1a;
+  margin-bottom: 1rem;
+}
+.problem {
+  margin-bottom: 1.8rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #ece2d8;
+}
+.problem:last-child { border-bottom: none; padding-bottom: 0; }
+.problem-header {
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 700;
+  color: #4a5568;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+/* ===== QUICK REFERENCE ===== */
+.quick-ref {
+  background: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+  border-top: 4px solid #2b4c7e;
+}
+.quick-ref h2 { font-size: 1.6rem; color: #2b4c7e; margin-bottom: 1rem; }
+.quick-ref table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.05rem;
+}
+.quick-ref th, .quick-ref td {
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid #e8e0d8;
+}
+.quick-ref th {
+  font-family: 'Segoe UI', sans-serif;
+  color: #2b4c7e;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ===== NAV FOOTER ===== */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-top: 2px solid #ece2d8;
+  margin-top: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.95rem;
+}
+.chapter-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  background: #8b1a1a;
+  color: #fff;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.chapter-nav a:hover { background: #d4582a; text-decoration: none; }
+.chapter-nav .disabled {
+  opacity: 0.35;
+  pointer-events: none;
+  background: #999;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .hero h1 { font-size: 2rem; }
+  .hero::before { font-size: 10rem; }
+  .container { padding: 1.2rem 1rem 2rem; }
+  .section-card, .overview, .toc, .worked-problems, .quick-ref { padding: 1.3rem; }
+  .box { padding: 1rem 1.1rem; }
+  .chapter-nav { flex-direction: column; gap: 0.8rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== HERO ==================== -->
+<header class="hero">
+  <div class="book-title">Modern Algebra: Structure and Method</div>
+  <h1>Chapter 12: Functions and Variation</h1>
+  <div class="subtitle">Relations, Linear Functions, Direct and Inverse Variation, and Combined Variation</div>
+  <div class="authors">Mary P. Dolciani &middot; Simon L. Berman &middot; Julius Freilich</div>
+</header>
+
+<main class="container">
+
+<!-- ==================== TABLE OF CONTENTS ==================== -->
+<nav class="toc">
+  <h2>In This Chapter</h2>
+  <ol>
+    <li><a href="#sec-12-1">Relations and Functions</a></li>
+    <li><a href="#sec-12-2">The Linear Function</a></li>
+    <li><a href="#sec-12-3">Direct Variation</a></li>
+    <li><a href="#sec-12-4">Direct Variation with Powers</a></li>
+    <li><a href="#sec-12-5">Inverse Variation</a></li>
+    <li><a href="#sec-12-6">Joint and Combined Variation</a></li>
+    <li><a href="#sec-12-7">Applying Variation in Problems</a></li>
+  </ol>
+</nav>
+
+<!-- ==================== OVERVIEW ==================== -->
+<div class="overview">
+  <h2>What You'll Learn</h2>
+  <ul>
+    <li>How to define <strong>relations</strong> and <strong>functions</strong> using rosters, rules, and graphs</li>
+    <li>The meaning of <strong>domain</strong> and <strong>range</strong>, and how to identify them</li>
+    <li>The form and graph of a <strong>linear function</strong> \(f(x) = mx + b\)</li>
+    <li>How to recognize and use <strong>direct variation</strong> \(y = kx\) and its constant of variation</li>
+    <li>How to extend direct variation to <strong>powers</strong>: \(y = kx^2\), \(y = kx^3\)</li>
+    <li>The relationship described by <strong>inverse variation</strong> \(y = \dfrac{k}{x}\)</li>
+    <li>How to set up and solve <strong>joint</strong> and <strong>combined variation</strong> problems</li>
+    <li>Applying variation to real-world problems in science, engineering, and everyday life</li>
+  </ul>
+</div>
+
+<!-- ==================== SECTION 12-1 ==================== -->
+<section class="section-card" id="sec-12-1">
+  <div class="section-num">Section 12&ndash;1</div>
+  <h2>Relations and Functions</h2>
+
+  <p>In graphing equations you formed <strong>ordered pairs</strong> of numbers. Any pairing of the members of two sets of numbers is a <strong>relation</strong>. A relation may be described by a <em>graph</em>, a <em>roster</em> (list of ordered pairs), or a <em>rule</em>.</p>
+
+  <div class="box box-definition">
+    <div class="box-label">Definition &mdash; Relation</div>
+    <p>A <strong>relation</strong> is any set of ordered pairs \((x, y)\). The set of all first coordinates is the <strong>domain</strong> (domain of definition). The set of all second coordinates is the <strong>range</strong> (range of values).</p>
+  </div>
+
+  <p>For example, consider the relation specified by the roster \(\{(0, 0),\; (1, 1),\; (-1, 1),\; (2, 2),\; (-2, 2),\; (3, 3),\; (-3, 3),\; \ldots\}\), or by the rule: "With each integer, associate its absolute value." The domain is the set of integers, and the range is the set of nonnegative integers. As a formula: \(y = |x|\), where \(x \in \{\text{integers}\}\).</p>
+
+  <h3>Functions</h3>
+
+  <p>Among all relations, the most important kind is one in which each element of the domain is paired with <em>exactly one</em> element of the range.</p>
+
+  <div class="box box-definition">
+    <div class="box-label">Definition &mdash; Function</div>
+    <p>A <strong>function</strong> is a relation that assigns to each element of the domain <strong>one and only one</strong> element of the range. The value assigned to a given domain element is called the <strong>value of the function</strong> for that element.</p>
+  </div>
+
+  <div class="box box-insight">
+    <div class="box-label">Key Insight &mdash; The Vertical-Line Test</div>
+    <p>A graph represents a function if and only if every <strong>vertical line</strong> crosses the graph in <em>at most one point</em>. If any vertical line meets the graph in two or more points, the relation is not a function.</p>
+  </div>
+
+  <!-- SVG: Function Mapping Diagram -->
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" style="max-width:520px;">
+      <text x="260" y="22" font-family="'Segoe UI', sans-serif" font-size="14" fill="#8b1a1a" text-anchor="middle" font-style="italic">Figure 12-1: Function Mapping Diagram</text>
+      <!-- Domain ellipse -->
+      <ellipse cx="120" cy="148" rx="85" ry="95" fill="#fce8e8" stroke="#8b1a1a" stroke-width="2"/>
+      <text x="120" y="58" font-family="'Segoe UI', sans-serif" font-size="14" fill="#8b1a1a" text-anchor="middle" font-weight="700">Domain</text>
+      <!-- Range ellipse -->
+      <ellipse cx="400" cy="148" rx="85" ry="95" fill="#ebf0ff" stroke="#2b4c7e" stroke-width="2"/>
+      <text x="400" y="58" font-family="'Segoe UI', sans-serif" font-size="14" fill="#2b4c7e" text-anchor="middle" font-weight="700">Range</text>
+      <!-- Domain elements -->
+      <circle cx="120" cy="100" r="6" fill="#8b1a1a"/>
+      <text x="108" y="105" font-family="Georgia, serif" font-size="15" fill="#2d2d2d" text-anchor="end">&minus;2</text>
+      <circle cx="120" cy="135" r="6" fill="#8b1a1a"/>
+      <text x="108" y="140" font-family="Georgia, serif" font-size="15" fill="#2d2d2d" text-anchor="end">&minus;1</text>
+      <circle cx="120" cy="170" r="6" fill="#8b1a1a"/>
+      <text x="108" y="175" font-family="Georgia, serif" font-size="15" fill="#2d2d2d" text-anchor="end">0</text>
+      <circle cx="120" cy="205" r="6" fill="#8b1a1a"/>
+      <text x="108" y="210" font-family="Georgia, serif" font-size="15" fill="#2d2d2d" text-anchor="end">1</text>
+      <!-- Range elements -->
+      <circle cx="400" cy="110" r="6" fill="#2b4c7e"/>
+      <text x="416" y="115" font-family="Georgia, serif" font-size="15" fill="#2d2d2d">4</text>
+      <circle cx="400" cy="150" r="6" fill="#2b4c7e"/>
+      <text x="416" y="155" font-family="Georgia, serif" font-size="15" fill="#2d2d2d">1</text>
+      <circle cx="400" cy="190" r="6" fill="#2b4c7e"/>
+      <text x="416" y="195" font-family="Georgia, serif" font-size="15" fill="#2d2d2d">0</text>
+      <!-- Arrows (function: x -> x^2) -->
+      <defs>
+        <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#d4582a"/></marker>
+      </defs>
+      <line x1="126" y1="100" x2="394" y2="110" stroke="#d4582a" stroke-width="1.8" marker-end="url(#arrowhead)"/>
+      <line x1="126" y1="135" x2="394" y2="150" stroke="#d4582a" stroke-width="1.8" marker-end="url(#arrowhead)"/>
+      <line x1="126" y1="170" x2="394" y2="190" stroke="#d4582a" stroke-width="1.8" marker-end="url(#arrowhead)"/>
+      <line x1="126" y1="205" x2="394" y2="150" stroke="#d4582a" stroke-width="1.8" marker-end="url(#arrowhead)"/>
+      <!-- Rule label -->
+      <text x="260" y="248" font-family="Georgia, serif" font-size="13" fill="#d4582a" text-anchor="middle" font-style="italic">Rule: f(x) = x&sup2;</text>
+    </svg>
+  </div>
+  <div class="diagram-caption">Each element in the domain maps to exactly one element in the range, so this relation is a function.</div>
+
+  <p>When a formula is used for a relation and the domain and range are not specified, you agree to include in the domain and range those <strong>real numbers</strong> for which the formula is meaningful. For example, the domain of \(y = \dfrac{1}{x}\) is \(\{x \in \mathbb{R} \mid x \neq 0\}\).</p>
+
+  <h3>Function Notation</h3>
+  <p>To indicate that \(y\) is a function of \(x\), we write \(y = f(x)\), read "y equals f of x." The symbol \(f(x)\) does <em>not</em> mean "f times x" &mdash; it names the value the function \(f\) assigns to the number \(x\). For example, if \(f(x) = 3x - 2\), then:</p>
+  $$f(4) = 3(4) - 2 = 10, \qquad f(-1) = 3(-1) - 2 = -5$$
+</section>
+
+<!-- ==================== SECTION 12-2 ==================== -->
+<section class="section-card" id="sec-12-2">
+  <div class="section-num">Section 12&ndash;2</div>
+  <h2>The Linear Function</h2>
+
+  <p>The simplest and most fundamental function is the <strong>linear function</strong>. Its graph is a straight line, and its equation takes a familiar form.</p>
+
+  <div class="box box-formula">
+    <div class="box-label">Formula &mdash; Linear Function</div>
+    <p>A function defined by</p>
+    $$f(x) = mx + b$$
+    <p>where \(m\) and \(b\) are real-number constants, is called a <strong>linear function</strong>. Its graph is a straight line with <strong>slope</strong> \(m\) and <strong>y-intercept</strong> \(b\).</p>
+  </div>
+
+  <p>Recall from Chapter 9 that the <strong>slope</strong> \(m\) measures the steepness of the line: it is the ratio of the vertical change (rise) to the horizontal change (run) between any two points on the line:</p>
+  $$m = \frac{y_2 - y_1}{x_2 - x_1}$$
+
+  <div class="box box-insight">
+    <div class="box-label">Key Insight &mdash; Interpreting Slope and Intercept</div>
+    <ul style="margin:0; padding-left:1.2rem;">
+      <li>If \(m > 0\), the line <strong>rises</strong> from left to right.</li>
+      <li>If \(m < 0\), the line <strong>falls</strong> from left to right.</li>
+      <li>If \(m = 0\), the line is <strong>horizontal</strong>: \(f(x) = b\) (a constant function).</li>
+      <li>The value \(b = f(0)\) is where the line crosses the \(y\)-axis.</li>
+    </ul>
+  </div>
+
+  <p>Every linear function is also a <em>polynomial function of degree one</em> (or zero when \(m = 0\)). Its domain is all real numbers, and &mdash; unless \(m = 0\) &mdash; its range is also all real numbers.</p>
+</section>
+
+<!-- ==================== SECTION 12-3 ==================== -->
+<section class="section-card" id="sec-12-3">
+  <div class="section-num">Section 12&ndash;3</div>
+  <h2>Direct Variation</h2>
+
+  <p>When you study the relationship between two quantities, you often find that one increases (or decreases) steadily as the other increases. The simplest such relationship is <strong>direct variation</strong>.</p>
+
+  <div class="box box-definition">
+    <div class="box-label">Definition &mdash; Direct Variation</div>
+    <p>A linear function of the form</p>
+    $$y = kx \qquad (k \neq 0)$$
+    <p>defines a <strong>direct variation</strong>. You say "\(y\) <strong>varies directly as</strong> \(x\)" or "\(y\) <strong>is directly proportional to</strong> \(x\)." The nonzero constant \(k\) is called the <strong>constant of variation</strong> (or <strong>constant of proportionality</strong>).</p>
+  </div>
+
+  <p>The graph of a direct variation is a <strong>straight line through the origin</strong>. The slope of the line equals the constant of variation \(k\). If \(k > 0\), both variables increase together; if \(k < 0\), one increases while the other decreases.</p>
+
+  <!-- SVG: Direct Variation Graph -->
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 460 380" xmlns="http://www.w3.org/2000/svg" style="max-width:460px;">
+      <text x="230" y="20" font-family="'Segoe UI', sans-serif" font-size="14" fill="#8b1a1a" text-anchor="middle" font-style="italic">Figure 12-2: Direct Variation &mdash; y = kx</text>
+      <!-- Grid -->
+      <defs>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ece2d8" stroke-width="0.8"/>
+        </pattern>
+      </defs>
+      <rect x="30" y="30" width="400" height="320" fill="url(#grid)"/>
+      <!-- Axes -->
+      <line x1="230" y1="30" x2="230" y2="350" stroke="#2d2d2d" stroke-width="2"/>
+      <line x1="30" y1="190" x2="430" y2="190" stroke="#2d2d2d" stroke-width="2"/>
+      <!-- Axis arrows -->
+      <polygon points="230,30 225,40 235,40" fill="#2d2d2d"/>
+      <polygon points="430,190 420,185 420,195" fill="#2d2d2d"/>
+      <!-- Axis labels -->
+      <text x="438" y="195" font-family="Georgia, serif" font-size="15" fill="#2d2d2d" font-style="italic">x</text>
+      <text x="236" y="28" font-family="Georgia, serif" font-size="15" fill="#2d2d2d" font-style="italic">y</text>
+      <text x="222" y="205" font-family="Georgia, serif" font-size="13" fill="#2d2d2d" text-anchor="end">0</text>
+      <!-- Tick marks on x-axis -->
+      <g font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="middle">
+        <line x1="270" y1="187" x2="270" y2="193" stroke="#2d2d2d" stroke-width="1"/>
+        <text x="270" y="207">1</text>
+        <line x1="310" y1="187" x2="310" y2="193" stroke="#2d2d2d" stroke-width="1"/>
+        <text x="310" y="207">2</text>
+        <line x1="350" y1="187" x2="350" y2="193" stroke="#2d2d2d" stroke-width="1"/>
+        <text x="350" y="207">3</text>
+        <line x1="390" y1="187" x2="390" y2="193" stroke="#2d2d2d" stroke-width="1"/>
+        <text x="390" y="207">4</text>
+        <line x1="190" y1="187" x2="190" y2="193" stroke="#2d2d2d" stroke-width="1"/>
+        <text x="190" y="207">&minus;1</text>
+        <line x1="150" y1="187" x2="150" y2="193" stroke="#2d2d2d" stroke-width="1"/>
+        <text x="150" y="207">&minus;2</text>
+        <line x1="110" y1="187" x2="110" y2="193" stroke="#2d2d2d" stroke-width="1"/>
+        <text x="110" y="207">&minus;3</text>
+      </g>
+      <!-- Tick marks on y-axis -->
+      <g font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="end">
+        <line x1="227" y1="150" x2="233" y2="150" stroke="#2d2d2d" stroke-width="1"/>
+        <text x="222" y="154">1</text>
+        <line x1="227" y1="110" x2="233" y2="110" stroke="#2d2d2d" stroke-width="1"/>
+        <text x="222" y="114">2</text>
+        <line x1="227" y1="70" x2="233" y2="70" stroke="#2d2d2d" stroke-width="1"/>
+        <text x="222" y="74">3</text>
+        <line x1="227" y1="230" x2="233" y2="230" stroke="#2d2d2d" stroke-width="1"/>
+        <text x="222" y="234">&minus;1</text>
+        <line x1="227" y1="270" x2="233" y2="270" stroke="#2d2d2d" stroke-width="1"/>
+        <text x="222" y="274">&minus;2</text>
+        <line x1="227" y1="310" x2="233" y2="310" stroke="#2d2d2d" stroke-width="1"/>
+        <text x="222" y="314">&minus;3</text>
+      </g>
+      <!-- Line: y = 2x (k=2, steep) -->
+      <line x1="110" y1="350" x2="350" y2="30" stroke="#8b1a1a" stroke-width="2.5"/>
+      <text x="355" y="48" font-family="Georgia, serif" font-size="13" fill="#8b1a1a" font-style="italic">y = 2x</text>
+      <!-- Line: y = x (k=1) -->
+      <line x1="70" y1="350" x2="390" y2="30" stroke="#d4582a" stroke-width="2.5"/>
+      <text x="395" y="48" font-family="Georgia, serif" font-size="13" fill="#d4582a" font-style="italic">y = x</text>
+      <!-- Line: y = 0.5x (k=1/2, gentle) -->
+      <line x1="30" y1="290" x2="430" y2="90" stroke="#2b4c7e" stroke-width="2.5"/>
+      <text x="418" y="82" font-family="Georgia, serif" font-size="13" fill="#2b4c7e" font-style="italic">y = &frac12;x</text>
+      <!-- Origin dot -->
+      <circle cx="230" cy="190" r="5" fill="#2d2d2d"/>
+      <!-- Caption inside -->
+      <text x="230" y="370" font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="middle">All direct-variation lines pass through the origin</text>
+    </svg>
+  </div>
+  <div class="diagram-caption">Direct variation: The larger the constant \(k\), the steeper the line.</div>
+
+  <div class="box box-insight">
+    <div class="box-label">Key Insight &mdash; Finding the Constant of Variation</div>
+    <p>If \(y\) varies directly as \(x\), then for any known pair \((x_1, y_1)\) with \(x_1 \neq 0\):</p>
+    $$k = \frac{y_1}{x_1}$$
+    <p>Once you know \(k\), you can find \(y\) for any value of \(x\).</p>
+  </div>
+
+  <div class="box box-formula">
+    <div class="box-label">Formula &mdash; Proportion Method</div>
+    <p>Since \(\dfrac{y_1}{x_1} = k = \dfrac{y_2}{x_2}\), you can solve direct-variation problems using the <strong>proportion</strong>:</p>
+    $$\frac{y_1}{x_1} = \frac{y_2}{x_2}$$
+  </div>
+</section>
+
+<!-- ==================== SECTION 12-4 ==================== -->
+<section class="section-card" id="sec-12-4">
+  <div class="section-num">Section 12&ndash;4</div>
+  <h2>Direct Variation with Powers</h2>
+
+  <p>Direct variation can also involve powers of the independent variable. Instead of \(y = kx\), you may encounter relationships where \(y\) depends on the <em>square</em> or <em>cube</em> of \(x\).</p>
+
+  <div class="box box-definition">
+    <div class="box-label">Definition &mdash; Direct Variation with Powers</div>
+    <p>If there is a nonzero constant \(k\) such that</p>
+    $$y = kx^n \qquad (k \neq 0,\; n > 0)$$
+    <p>then \(y\) <strong>varies directly as the \(n\)th power of \(x\)</strong>.</p>
+    <ul style="margin-top:0.5rem;padding-left:1.2rem;">
+      <li>When \(n = 2\): "\(y\) varies directly as the <strong>square</strong> of \(x\)" &mdash; \(y = kx^2\)</li>
+      <li>When \(n = 3\): "\(y\) varies directly as the <strong>cube</strong> of \(x\)" &mdash; \(y = kx^3\)</li>
+    </ul>
+  </div>
+
+  <p>A familiar example is the area of a circle: \(A = \pi r^2\). The area varies directly as the square of the radius, with constant of variation \(k = \pi\).</p>
+
+  <div class="box box-caution">
+    <div class="box-label">Caution &mdash; Doubling the Variable</div>
+    <p>If \(y = kx^2\), then <strong>doubling</strong> \(x\) multiplies \(y\) by \(2^2 = 4\), not by \(2\). In general, if \(y = kx^n\) and \(x\) is multiplied by \(c\), then \(y\) is multiplied by \(c^n\). This is why power variation can produce dramatic changes.</p>
+  </div>
+
+  <p>The proportion method extends naturally. Since \(k = \dfrac{y_1}{x_1^n} = \dfrac{y_2}{x_2^n}\), you can write:</p>
+  $$\frac{y_1}{x_1^n} = \frac{y_2}{x_2^n}$$
+</section>
+
+<!-- ==================== SECTION 12-5 ==================== -->
+<section class="section-card" id="sec-12-5">
+  <div class="section-num">Section 12&ndash;5</div>
+  <h2>Inverse Variation</h2>
+
+  <p>Not all relationships between quantities are "direct." Sometimes as one quantity increases, the other <em>decreases</em> in a specific way. This is the nature of <strong>inverse variation</strong>.</p>
+
+  <div class="box box-definition">
+    <div class="box-label">Definition &mdash; Inverse Variation</div>
+    <p>If there is a nonzero constant \(k\) such that</p>
+    $$y = \frac{k}{x} \qquad \text{or equivalently} \qquad xy = k \qquad (k \neq 0)$$
+    <p>then \(y\) <strong>varies inversely as</strong> \(x\), or \(y\) <strong>is inversely proportional to</strong> \(x\). The constant \(k\) is again the <strong>constant of variation</strong>.</p>
+  </div>
+
+  <p>The graph of \(y = \dfrac{k}{x}\) is a <strong>hyperbola</strong> &mdash; a curve with two separate branches that approach the axes but never touch them. The axes are <em>asymptotes</em> of the curve.</p>
+
+  <!-- SVG: Inverse Variation Graph (Hyperbola) -->
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 460 400" xmlns="http://www.w3.org/2000/svg" style="max-width:460px;">
+      <text x="230" y="20" font-family="'Segoe UI', sans-serif" font-size="14" fill="#8b1a1a" text-anchor="middle" font-style="italic">Figure 12-3: Inverse Variation &mdash; y = k/x</text>
+      <!-- Grid -->
+      <rect x="30" y="30" width="400" height="340" fill="url(#grid)"/>
+      <!-- Axes -->
+      <line x1="230" y1="30" x2="230" y2="370" stroke="#2d2d2d" stroke-width="2"/>
+      <line x1="30" y1="200" x2="430" y2="200" stroke="#2d2d2d" stroke-width="2"/>
+      <!-- Axis arrows -->
+      <polygon points="230,30 225,40 235,40" fill="#2d2d2d"/>
+      <polygon points="430,200 420,195 420,205" fill="#2d2d2d"/>
+      <!-- Axis labels -->
+      <text x="438" y="205" font-family="Georgia, serif" font-size="15" fill="#2d2d2d" font-style="italic">x</text>
+      <text x="236" y="28" font-family="Georgia, serif" font-size="15" fill="#2d2d2d" font-style="italic">y</text>
+      <text x="222" y="215" font-family="Georgia, serif" font-size="13" fill="#2d2d2d" text-anchor="end">0</text>
+      <!-- Tick marks -->
+      <g font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="middle">
+        <line x1="270" y1="197" x2="270" y2="203" stroke="#2d2d2d" stroke-width="1"/>
+        <text x="270" y="217">1</text>
+        <line x1="310" y1="197" x2="310" y2="203" stroke="#2d2d2d" stroke-width="1"/>
+        <text x="310" y="217">2</text>
+        <line x1="350" y1="197" x2="350" y2="203" stroke="#2d2d2d" stroke-width="1"/>
+        <text x="350" y="217">3</text>
+        <line x1="390" y1="197" x2="390" y2="203" stroke="#2d2d2d" stroke-width="1"/>
+        <text x="390" y="217">4</text>
+        <line x1="190" y1="197" x2="190" y2="203" stroke="#2d2d2d" stroke-width="1"/>
+        <text x="190" y="217">&minus;1</text>
+        <line x1="150" y1="197" x2="150" y2="203" stroke="#2d2d2d" stroke-width="1"/>
+        <text x="150" y="217">&minus;2</text>
+        <line x1="110" y1="197" x2="110" y2="203" stroke="#2d2d2d" stroke-width="1"/>
+        <text x="110" y="217">&minus;3</text>
+        <line x1="70" y1="197" x2="70" y2="203" stroke="#2d2d2d" stroke-width="1"/>
+        <text x="70" y="217">&minus;4</text>
+      </g>
+      <g font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="end">
+        <line x1="227" y1="160" x2="233" y2="160" stroke="#2d2d2d" stroke-width="1"/>
+        <text x="222" y="164">1</text>
+        <line x1="227" y1="120" x2="233" y2="120" stroke="#2d2d2d" stroke-width="1"/>
+        <text x="222" y="124">2</text>
+        <line x1="227" y1="80" x2="233" y2="80" stroke="#2d2d2d" stroke-width="1"/>
+        <text x="222" y="84">3</text>
+        <line x1="227" y1="240" x2="233" y2="240" stroke="#2d2d2d" stroke-width="1"/>
+        <text x="222" y="244">&minus;1</text>
+        <line x1="227" y1="280" x2="233" y2="280" stroke="#2d2d2d" stroke-width="1"/>
+        <text x="222" y="284">&minus;2</text>
+        <line x1="227" y1="320" x2="233" y2="320" stroke="#2d2d2d" stroke-width="1"/>
+        <text x="222" y="324">&minus;3</text>
+      </g>
+      <!-- Hyperbola y = 2/x, branch 1 (x>0): smooth curve -->
+      <path d="M 250,120 Q 260,135 270,120 Q 275,110 280,105 Q 290,90 310,80 Q 340,67 390,58 Q 420,53 430,50" fill="none" stroke="none"/>
+      <!-- Using polyline for smooth hyperbola y=2/x (k=2), scale: 40px per unit -->
+      <!-- x=0.5 -> y=4: (250,40), x=0.67 -> y=3: (256.8,80), x=1 -> y=2: (270,120), x=1.33 -> y=1.5: (283.2,140), x=2 -> y=1: (310,160), x=3 -> y=0.67: (350,173.2), x=4 -> y=0.5: (390,180), x=5 -> y=0.4: (430,184) -->
+      <polyline points="250,40 256,80 262,100 270,120 278,136 290,150 310,160 330,168 350,173 370,177 390,180 410,183 430,184" fill="none" stroke="#8b1a1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Branch 2 (x<0): same but reflected -->
+      <!-- x=-0.5 -> y=-4: (210,360), x=-0.67 -> y=-3: (203.2,320), x=-1 -> y=-2: (190,280), x=-2 -> y=-1: (150,240), x=-3 -> y=-0.67: (110,226.8), x=-4 -> y=-0.5: (70,220) -->
+      <polyline points="210,360 204,320 198,300 190,280 182,264 170,250 150,240 130,232 110,227 90,223 70,220 50,217 30,216" fill="none" stroke="#8b1a1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Label -->
+      <text x="398" y="172" font-family="Georgia, serif" font-size="14" fill="#8b1a1a" font-style="italic">y = 2/x</text>
+      <!-- Dashed asymptote note -->
+      <text x="230" y="388" font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="middle">The axes are asymptotes: the curve approaches but never touches them</text>
+    </svg>
+  </div>
+  <div class="diagram-caption">Inverse variation: As \(x\) increases, \(y\) decreases &mdash; and vice versa. The product \(xy\) remains constant.</div>
+
+  <div class="box box-insight">
+    <div class="box-label">Key Insight &mdash; The Product Test</div>
+    <p>In an inverse variation, the <strong>product</strong> of corresponding values is constant: \(x_1 y_1 = x_2 y_2 = k\). You can use this to solve problems without first finding \(k\) explicitly.</p>
+  </div>
+
+  <p>Inverse variation also extends to powers: if \(y = \dfrac{k}{x^n}\), then "\(y\) varies inversely as the \(n\)th power of \(x\)." For instance, the intensity of light varies inversely as the <em>square</em> of the distance from the source: \(I = \dfrac{k}{d^2}\).</p>
+</section>
+
+<!-- ==================== SECTION 12-6 ==================== -->
+<section class="section-card" id="sec-12-6">
+  <div class="section-num">Section 12&ndash;6</div>
+  <h2>Joint and Combined Variation</h2>
+
+  <p>Many real-world quantities depend on <em>more than one</em> variable. When a quantity varies directly as the product of two (or more) other quantities, we call it <strong>joint variation</strong>.</p>
+
+  <div class="box box-definition">
+    <div class="box-label">Definition &mdash; Joint Variation</div>
+    <p>If there is a nonzero constant \(k\) such that</p>
+    $$z = kxy$$
+    <p>then \(z\) <strong>varies jointly as</strong> \(x\) and \(y\). The constant \(k\) is the constant of variation.</p>
+  </div>
+
+  <p>For example, the area of a triangle is \(A = \dfrac{1}{2}bh\). The area varies jointly as the base \(b\) and the height \(h\), with \(k = \dfrac{1}{2}\).</p>
+
+  <h3>Combined Variation</h3>
+  <p>When a single equation involves both direct and inverse variation, the result is <strong>combined variation</strong>.</p>
+
+  <div class="box box-formula">
+    <div class="box-label">Formula &mdash; Combined Variation Forms</div>
+    <div style="overflow-x:auto;">
+    <table style="width:100%;border-collapse:collapse;font-size:1.05rem;">
+      <tr>
+        <th style="padding:0.5rem 0.8rem;border-bottom:2px solid #c5d3e8;text-align:left;font-family:'Segoe UI',sans-serif;color:#2b4c7e;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em;">Statement</th>
+        <th style="padding:0.5rem 0.8rem;border-bottom:2px solid #c5d3e8;text-align:left;font-family:'Segoe UI',sans-serif;color:#2b4c7e;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em;">Equation</th>
+      </tr>
+      <tr><td style="padding:0.5rem 0.8rem;border-bottom:1px solid #e8e0d8;">\(z\) varies jointly as \(x\) and \(y\)</td><td style="padding:0.5rem 0.8rem;border-bottom:1px solid #e8e0d8;">\(z = kxy\)</td></tr>
+      <tr><td style="padding:0.5rem 0.8rem;border-bottom:1px solid #e8e0d8;">\(z\) varies directly as \(x\) and inversely as \(y\)</td><td style="padding:0.5rem 0.8rem;border-bottom:1px solid #e8e0d8;">\(z = \dfrac{kx}{y}\)</td></tr>
+      <tr><td style="padding:0.5rem 0.8rem;border-bottom:1px solid #e8e0d8;">\(z\) varies jointly as \(x\) and \(y^2\)</td><td style="padding:0.5rem 0.8rem;border-bottom:1px solid #e8e0d8;">\(z = kxy^2\)</td></tr>
+      <tr><td style="padding:0.5rem 0.8rem;">\(z\) varies directly as \(x^2\) and inversely as \(y\)</td><td style="padding:0.5rem 0.8rem;">\(z = \dfrac{kx^2}{y}\)</td></tr>
+    </table>
+    </div>
+  </div>
+
+  <div class="box box-caution">
+    <div class="box-label">Caution &mdash; Reading Variation Statements Carefully</div>
+    <p>The phrase "varies directly" always means the variable goes in the <strong>numerator</strong>; "varies inversely" means it goes in the <strong>denominator</strong>. Read each part of the statement one phrase at a time and build the equation piece by piece.</p>
+  </div>
+</section>
+
+<!-- ==================== SECTION 12-7 ==================== -->
+<section class="section-card" id="sec-12-7">
+  <div class="section-num">Section 12&ndash;7</div>
+  <h2>Applying Variation in Problems</h2>
+
+  <p>Variation relationships appear throughout science, engineering, and daily life. To solve applied variation problems, follow a systematic approach.</p>
+
+  <div class="box box-formula">
+    <div class="box-label">Strategy &mdash; Solving Variation Problems</div>
+    <ol style="margin:0; padding-left:1.4rem;">
+      <li><strong>Identify the type</strong> of variation (direct, inverse, joint, or combined).</li>
+      <li><strong>Write the equation</strong> with the constant \(k\).</li>
+      <li><strong>Find \(k\)</strong> by substituting the known values.</li>
+      <li><strong>Rewrite</strong> the equation with the specific value of \(k\).</li>
+      <li><strong>Solve</strong> for the unknown quantity.</li>
+    </ol>
+  </div>
+
+  <h3>Common Applications</h3>
+  <ul style="margin:0.5rem 0 1rem 1.5rem;">
+    <li><strong>Hooke's Law:</strong> The force \(F\) to stretch a spring varies directly as the extension \(x\): \(F = kx\).</li>
+    <li><strong>Gravitational attraction:</strong> The force varies directly as the product of two masses and inversely as the square of the distance: \(F = \dfrac{km_1 m_2}{d^2}\).</li>
+    <li><strong>Electrical resistance:</strong> Resistance of a wire varies directly as its length and inversely as the square of its diameter.</li>
+    <li><strong>Gas laws:</strong> For a fixed quantity of gas, pressure varies directly as temperature and inversely as volume: \(P = \dfrac{kT}{V}\).</li>
+  </ul>
+</section>
+
+<!-- ==================== WORKED PROBLEMS ==================== -->
+<div class="worked-problems">
+  <h2>Worked Problems</h2>
+
+  <!-- Problem 1 -->
+  <div class="problem">
+    <div class="problem-header">Problem 1 &mdash; Evaluating a Function</div>
+    <div class="box box-practice">
+      <div class="box-label">Problem</div>
+      <p>If \(f(x) = 2x^2 - 3x + 1\), find \(f(4)\) and \(f(-2)\).</p>
+    </div>
+    <div class="box box-example">
+      <div class="box-label">Solution</div>
+      <p>Substitute the given value into the formula and simplify:</p>
+      $$f(4) = 2(4)^2 - 3(4) + 1 = 2(16) - 12 + 1 = 32 - 12 + 1 = 21$$
+      $$f(-2) = 2(-2)^2 - 3(-2) + 1 = 2(4) + 6 + 1 = 8 + 6 + 1 = 15$$
+      <p>Answer: \(f(4) = 21\) and \(f(-2) = 15\).</p>
+    </div>
+  </div>
+
+  <!-- Problem 2 -->
+  <div class="problem">
+    <div class="problem-header">Problem 2 &mdash; Direct Variation</div>
+    <div class="box box-practice">
+      <div class="box-label">Problem</div>
+      <p>If \(y\) varies directly as \(x\), and \(y = 15\) when \(x = 3\), find \(y\) when \(x = 7\).</p>
+    </div>
+    <div class="box box-example">
+      <div class="box-label">Solution</div>
+      <p><strong>Step 1:</strong> Write the direct variation equation: \(y = kx\).</p>
+      <p><strong>Step 2:</strong> Find \(k\) using the known values:</p>
+      $$15 = k(3) \implies k = \frac{15}{3} = 5$$
+      <p><strong>Step 3:</strong> Write the specific equation: \(y = 5x\).</p>
+      <p><strong>Step 4:</strong> Substitute \(x = 7\):</p>
+      $$y = 5(7) = 35$$
+      <p>Answer: \(y = 35\).</p>
+    </div>
+  </div>
+
+  <!-- Problem 3 -->
+  <div class="problem">
+    <div class="problem-header">Problem 3 &mdash; Direct Variation with Squares</div>
+    <div class="box box-practice">
+      <div class="box-label">Problem</div>
+      <p>The distance \(d\) that an object falls from rest varies directly as the square of the time \(t\). If an object falls 64 feet in 2 seconds, how far does it fall in 5 seconds?</p>
+    </div>
+    <div class="box box-example">
+      <div class="box-label">Solution</div>
+      <p><strong>Step 1:</strong> Write the equation: \(d = kt^2\).</p>
+      <p><strong>Step 2:</strong> Find \(k\):</p>
+      $$64 = k(2)^2 = 4k \implies k = 16$$
+      <p><strong>Step 3:</strong> The equation is \(d = 16t^2\). Substitute \(t = 5\):</p>
+      $$d = 16(5)^2 = 16(25) = 400$$
+      <p>Answer: The object falls <strong>400 feet</strong> in 5 seconds.</p>
+    </div>
+  </div>
+
+  <!-- Problem 4 -->
+  <div class="problem">
+    <div class="problem-header">Problem 4 &mdash; Inverse Variation</div>
+    <div class="box box-practice">
+      <div class="box-label">Problem</div>
+      <p>The time \(t\) needed to travel a fixed distance varies inversely as the speed \(r\). If the trip takes 4 hours at 50 miles per hour, how long does it take at 80 miles per hour?</p>
+    </div>
+    <div class="box box-example">
+      <div class="box-label">Solution</div>
+      <p><strong>Step 1:</strong> Write the equation: \(t = \dfrac{k}{r}\), or equivalently \(tr = k\).</p>
+      <p><strong>Step 2:</strong> Find \(k\):</p>
+      $$k = t \cdot r = 4 \cdot 50 = 200$$
+      <p><strong>Step 3:</strong> Substitute \(r = 80\):</p>
+      $$t = \frac{200}{80} = 2.5$$
+      <p>Answer: The trip takes <strong>2.5 hours</strong> (2 hours 30 minutes) at 80 mph.</p>
+    </div>
+  </div>
+
+  <!-- Problem 5 -->
+  <div class="problem">
+    <div class="problem-header">Problem 5 &mdash; Joint Variation</div>
+    <div class="box box-practice">
+      <div class="box-label">Problem</div>
+      <p>The volume \(V\) of a cylinder varies jointly as the height \(h\) and the square of the radius \(r\). A cylinder with radius 3 cm and height 7 cm has a volume of \(63\pi\) cm&sup3;. Find the volume when \(r = 5\) cm and \(h = 10\) cm.</p>
+    </div>
+    <div class="box box-example">
+      <div class="box-label">Solution</div>
+      <p><strong>Step 1:</strong> Write the equation: \(V = kr^2h\).</p>
+      <p><strong>Step 2:</strong> Find \(k\):</p>
+      $$63\pi = k(3)^2(7) = k(9)(7) = 63k \implies k = \pi$$
+      <p><strong>Step 3:</strong> The equation is \(V = \pi r^2 h\). Substitute \(r = 5\), \(h = 10\):</p>
+      $$V = \pi(5)^2(10) = \pi(25)(10) = 250\pi \approx 785.4$$
+      <p>Answer: \(V = 250\pi \approx 785.4\) cm&sup3;.</p>
+    </div>
+  </div>
+
+  <!-- Problem 6 -->
+  <div class="problem">
+    <div class="problem-header">Problem 6 &mdash; Combined Variation</div>
+    <div class="box box-practice">
+      <div class="box-label">Problem</div>
+      <p>The electrical resistance \(R\) of a wire varies directly as its length \(L\) and inversely as the square of its diameter \(d\). A wire 100 feet long with diameter 0.01 inches has a resistance of 20 ohms. Find the resistance of a wire 150 feet long with diameter 0.02 inches.</p>
+    </div>
+    <div class="box box-example">
+      <div class="box-label">Solution</div>
+      <p><strong>Step 1:</strong> Write the equation: \(R = \dfrac{kL}{d^2}\).</p>
+      <p><strong>Step 2:</strong> Find \(k\):</p>
+      $$20 = \frac{k(100)}{(0.01)^2} = \frac{100k}{0.0001} = 1{,}000{,}000k$$
+      $$k = \frac{20}{1{,}000{,}000} = 0.00002$$
+      <p><strong>Step 3:</strong> Substitute \(L = 150\), \(d = 0.02\):</p>
+      $$R = \frac{0.00002 \times 150}{(0.02)^2} = \frac{0.003}{0.0004} = 7.5$$
+      <p>Answer: The resistance is <strong>7.5 ohms</strong>.</p>
+      <p><em>Note: Doubling the diameter (from 0.01 to 0.02) reduced the resistance by a factor of 4, while increasing the length by a factor of 1.5 increased it by 1.5. The net effect: \(20 \times 1.5 \div 4 = 7.5\).</em></p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== QUICK REFERENCE ==================== -->
+<div class="quick-ref">
+  <h2>Quick Reference &mdash; Types of Variation</h2>
+  <div style="overflow-x:auto;">
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Equation</th>
+        <th>Key Feature</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Direct</strong></td>
+        <td>\(y = kx\)</td>
+        <td>Ratio \(\dfrac{y}{x} = k\) is constant; line through origin</td>
+      </tr>
+      <tr>
+        <td><strong>Direct (power)</strong></td>
+        <td>\(y = kx^n\)</td>
+        <td>Ratio \(\dfrac{y}{x^n} = k\) is constant</td>
+      </tr>
+      <tr>
+        <td><strong>Inverse</strong></td>
+        <td>\(y = \dfrac{k}{x}\)</td>
+        <td>Product \(xy = k\) is constant; hyperbola</td>
+      </tr>
+      <tr>
+        <td><strong>Inverse (power)</strong></td>
+        <td>\(y = \dfrac{k}{x^n}\)</td>
+        <td>Product \(x^n y = k\) is constant</td>
+      </tr>
+      <tr>
+        <td><strong>Joint</strong></td>
+        <td>\(z = kxy\)</td>
+        <td>\(z\) depends on the product of two variables</td>
+      </tr>
+      <tr>
+        <td><strong>Combined</strong></td>
+        <td>\(z = \dfrac{kx}{y}\)</td>
+        <td>Mix of direct and inverse in one equation</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<!-- ==================== CHAPTER SUMMARY ==================== -->
+<div class="section-card">
+  <h2>Chapter Summary</h2>
+
+  <div class="box box-formula">
+    <div class="box-label">Inventory of Structure and Method</div>
+    <ol style="margin:0; padding-left:1.4rem;">
+      <li>A <strong>relation</strong> is any set of ordered pairs. A <strong>function</strong> is a relation that assigns to each domain element exactly one range element. Functions may be described by a formula, a roster, or a graph.</li>
+      <li>The <strong>linear function</strong> \(f(x) = mx + b\) has a straight-line graph with slope \(m\) and \(y\)-intercept \(b\). Every direct variation \(y = kx\) is a linear function whose graph passes through the origin.</li>
+      <li>In a <strong>direct variation</strong> \(y = kx\), the ratio \(\dfrac{y}{x}\) is always equal to \(k\). In a direct variation with powers \(y = kx^n\), the ratio \(\dfrac{y}{x^n}\) is constant.</li>
+      <li>In an <strong>inverse variation</strong> \(y = \dfrac{k}{x}\), the product \(xy\) is always equal to \(k\). The graph is a hyperbola with the coordinate axes as asymptotes.</li>
+      <li>In <strong>joint variation</strong> \(z = kxy\), one quantity varies directly as the product of two others. <strong>Combined variation</strong> combines direct and inverse variation in one formula.</li>
+      <li>To solve variation problems: (1) identify the type, (2) write the equation, (3) find \(k\) from known values, (4) use the equation to find the unknown.</li>
+    </ol>
+  </div>
+
+  <h3>Vocabulary and Spelling</h3>
+  <div style="columns:2;column-gap:2rem;margin-top:0.5rem;">
+    <p style="margin-bottom:0.3rem;">relation (p. 435)</p>
+    <p style="margin-bottom:0.3rem;">domain of definition (p. 435)</p>
+    <p style="margin-bottom:0.3rem;">range of values (p. 435)</p>
+    <p style="margin-bottom:0.3rem;">formula (p. 436)</p>
+    <p style="margin-bottom:0.3rem;">function (p. 439)</p>
+    <p style="margin-bottom:0.3rem;">value of a function (p. 439)</p>
+    <p style="margin-bottom:0.3rem;">function notation (p. 440)</p>
+    <p style="margin-bottom:0.3rem;">linear function (p. 443)</p>
+    <p style="margin-bottom:0.3rem;">slope (p. 443)</p>
+    <p style="margin-bottom:0.3rem;">y-intercept (p. 443)</p>
+    <p style="margin-bottom:0.3rem;">direct variation (p. 447)</p>
+    <p style="margin-bottom:0.3rem;">constant of variation (p. 447)</p>
+    <p style="margin-bottom:0.3rem;">constant of proportionality (p. 447)</p>
+    <p style="margin-bottom:0.3rem;">inverse variation (p. 455)</p>
+    <p style="margin-bottom:0.3rem;">hyperbola (p. 455)</p>
+    <p style="margin-bottom:0.3rem;">asymptote (p. 455)</p>
+    <p style="margin-bottom:0.3rem;">joint variation (p. 461)</p>
+    <p style="margin-bottom:0.3rem;">combined variation (p. 461)</p>
+  </div>
+</div>
+
+<!-- ==================== NAVIGATION ==================== -->
+<nav class="chapter-nav">
+  <a href="../11-the-real-numbers/">&#8592; Ch 11: The Real Numbers</a>
+  <a href="../13-quadratic-equations-and-inequalities/">Ch 13: Quadratic Equations &#8594;</a>
+</nav>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+        ],
+        throwOnError: false
+    });
+});
+</script>
+</body>
+</html>

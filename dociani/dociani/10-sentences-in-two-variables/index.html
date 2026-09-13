@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 10 — Sentences in Two Variables | Modern Algebra: Structure and Method</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', 'Cambria', 'Times New Roman', serif;
+            background: #fdf6f0;
+            color: #2d2d2d;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+
+        /* Hero Header */
+        .hero {
+            background: linear-gradient(135deg, #8b1a1a 0%, #1a1a2e 100%);
+            color: white;
+            padding: 3rem 2rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero .chapter-num {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 8rem;
+            font-weight: 800;
+            opacity: 0.10;
+            position: absolute;
+            top: -0.5rem;
+            right: 2rem;
+            line-height: 1;
+        }
+        .hero h1 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .hero .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.85;
+            font-style: italic;
+        }
+        .hero .book-title {
+            font-size: 0.95rem;
+            opacity: 0.6;
+            margin-top: 0.5rem;
+        }
+
+        /* Container */
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+        /* Cards */
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Headings */
+        h2 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #8b1a1a;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #d4582a;
+        }
+        h3 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #8b1a1a;
+            font-size: 1.5rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+        h4 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #5a3e3e;
+            font-size: 1.2rem;
+            margin: 1.2rem 0 0.5rem;
+        }
+        p { margin-bottom: 1rem; }
+        ul, ol { margin: 0.75rem 0 1.25rem 1.5rem; }
+        li { margin-bottom: 0.4rem; }
+
+        /* Highlight Boxes */
+        .box { padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 5px solid; }
+        .box-definition { border-color: #8b1a1a; background: #fce8e8; }
+        .box-insight { border-color: #d4582a; background: #fef3ec; }
+        .box-caution { border-color: #7f1d1d; background: #fef2f2; }
+        .box-example { border-color: #276749; background: #f0f7f0; }
+        .box-practice { border-color: #4a5568; background: #f7fafc; }
+        .box-formula { border-color: #2b4c7e; background: #ebf0ff; }
+
+        .box-label {
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .box-definition .box-label { color: #8b1a1a; }
+        .box-insight .box-label { color: #d4582a; }
+        .box-caution .box-label { color: #7f1d1d; }
+        .box-example .box-label { color: #276749; }
+        .box-practice .box-label { color: #4a5568; }
+        .box-formula .box-label { color: #2b4c7e; }
+
+        /* SVG diagrams */
+        .svg-container {
+            text-align: center;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+        .svg-container svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Steps in solutions */
+        .step { margin: 0.75rem 0; }
+        .step-num {
+            display: inline-block;
+            background: #8b1a1a;
+            color: #fff;
+            width: 1.6rem;
+            height: 1.6rem;
+            line-height: 1.6rem;
+            text-align: center;
+            border-radius: 50%;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-right: 0.5rem;
+            font-family: 'Segoe UI', sans-serif;
+            vertical-align: middle;
+        }
+
+        /* KaTeX overrides */
+        .katex { font-size: 1.3em; }
+        .katex-display { font-size: 1.35em; margin: 1.5rem 0; overflow-x: auto; }
+
+        /* Navigation Footer */
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e2d9ce;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .nav-footer a {
+            color: #8b1a1a;
+            text-decoration: none;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border: 2px solid #8b1a1a;
+            border-radius: 8px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .nav-footer a:hover {
+            background: #8b1a1a;
+            color: #fff;
+        }
+        .nav-footer .chapter-list {
+            color: #5a3e3e;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        /* Overview list */
+        .overview-list { list-style: none; margin-left: 0; }
+        .overview-list li {
+            padding: 0.5rem 0 0.5rem 2rem;
+            position: relative;
+        }
+        .overview-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            background: #d4582a;
+            border-radius: 50%;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        th, td {
+            padding: 0.5rem 1rem;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background: #8b1a1a;
+            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+        }
+        td { background: #fff; }
+
+        /* Section divider */
+        .section-divider {
+            width: 60px;
+            height: 4px;
+            background: #d4582a;
+            border: none;
+            margin: 2rem auto;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 2rem; }
+            .hero .chapter-num { font-size: 5rem; }
+            .container { padding: 1rem; }
+            .card { padding: 1.25rem; }
+            .nav-footer { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ====== HERO HEADER ====== -->
+<header class="hero">
+    <div class="chapter-num">10</div>
+    <h1>Sentences in Two Variables</h1>
+    <div class="subtitle">Systems of equations, methods of solving, and linear inequalities in two dimensions</div>
+    <div class="book-title">Modern Algebra: Structure and Method &mdash; Dolciani et al.</div>
+</header>
+
+<div class="container">
+
+    <!-- ====== OVERVIEW ====== -->
+    <div class="card">
+        <h2>What You'll Learn</h2>
+        <ul class="overview-list">
+            <li>How to solve systems of linear equations by graphing intersecting lines</li>
+            <li>The addition and subtraction method (elimination) for solving systems</li>
+            <li>Multiplying equations to create matching coefficients before eliminating</li>
+            <li>The substitution method as an alternative algebraic technique</li>
+            <li>Solving word problems (including digit, cost, and investment problems) with two variables</li>
+            <li>Graphing pairs of linear inequalities to find feasible regions</li>
+        </ul>
+    </div>
+
+    <!-- ====== SVG: Two Intersecting Lines ====== -->
+    <div class="card">
+        <h2>10-1 &middot; The Graphic Method</h2>
+        <p>
+            When the graphs of two linear equations in the same two variables are drawn on the same set of axes, three outcomes are possible:
+        </p>
+        <ul>
+            <li><strong>No point in common</strong> &mdash; the lines are parallel (inconsistent system).</li>
+            <li><strong>All points in common</strong> &mdash; the lines coincide (dependent system).</li>
+            <li><strong>Exactly one point in common</strong> &mdash; the lines intersect (independent, consistent system).</li>
+        </ul>
+
+        <div class="box box-definition">
+            <div class="box-label">Definition &mdash; System of Simultaneous Equations</div>
+            <p>
+                Two equations that impose two conditions on the same variables at the same time form a <strong>system of simultaneous equations</strong>.
+                To <em>solve</em> such a system means to find all ordered pairs \((x, y)\) that satisfy <em>both</em> equations.
+            </p>
+        </div>
+
+        <div class="svg-container">
+            <svg viewBox="-20 -20 440 340" width="440" height="340" xmlns="http://www.w3.org/2000/svg" aria-label="Two intersecting lines on a coordinate plane showing the solution at (2, 6)">
+                <!-- Grid background -->
+                <defs>
+                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8ddd5" stroke-width="0.8"/>
+                    </pattern>
+                </defs>
+                <rect x="0" y="0" width="400" height="300" fill="#fdf6f0" rx="8"/>
+                <rect x="0" y="0" width="400" height="300" fill="url(#grid)" rx="8"/>
+
+                <!-- Axes -->
+                <line x1="40" y1="260" x2="380" y2="260" stroke="#2d2d2d" stroke-width="2"/>
+                <line x1="200" y1="20" x2="200" y2="280" stroke="#2d2d2d" stroke-width="2"/>
+
+                <!-- Axis arrows -->
+                <polygon points="380,260 372,255 372,265" fill="#2d2d2d"/>
+                <polygon points="200,20 195,28 205,28" fill="#2d2d2d"/>
+
+                <!-- Axis labels -->
+                <text x="385" y="265" font-size="14" fill="#2d2d2d" font-family="Georgia">x</text>
+                <text x="205" y="18" font-size="14" fill="#2d2d2d" font-family="Georgia">y</text>
+                <text x="195" y="275" font-size="12" fill="#666" font-family="Georgia">O</text>
+
+                <!-- Tick marks and labels on x-axis -->
+                <line x1="120" y1="256" x2="120" y2="264" stroke="#2d2d2d" stroke-width="1.5"/>
+                <text x="115" y="278" font-size="11" fill="#666" font-family="Georgia">&minus;2</text>
+                <line x1="160" y1="256" x2="160" y2="264" stroke="#2d2d2d" stroke-width="1.5"/>
+                <text x="155" y="278" font-size="11" fill="#666" font-family="Georgia">&minus;1</text>
+                <line x1="240" y1="256" x2="240" y2="264" stroke="#2d2d2d" stroke-width="1.5"/>
+                <text x="237" y="278" font-size="11" fill="#666" font-family="Georgia">1</text>
+                <line x1="280" y1="256" x2="280" y2="264" stroke="#2d2d2d" stroke-width="1.5"/>
+                <text x="277" y="278" font-size="11" fill="#666" font-family="Georgia">2</text>
+                <line x1="320" y1="256" x2="320" y2="264" stroke="#2d2d2d" stroke-width="1.5"/>
+                <text x="317" y="278" font-size="11" fill="#666" font-family="Georgia">3</text>
+                <line x1="360" y1="256" x2="360" y2="264" stroke="#2d2d2d" stroke-width="1.5"/>
+                <text x="357" y="278" font-size="11" fill="#666" font-family="Georgia">4</text>
+
+                <!-- Tick marks and labels on y-axis -->
+                <line x1="196" y1="220" x2="204" y2="220" stroke="#2d2d2d" stroke-width="1.5"/>
+                <text x="180" y="224" font-size="11" fill="#666" font-family="Georgia">1</text>
+                <line x1="196" y1="180" x2="204" y2="180" stroke="#2d2d2d" stroke-width="1.5"/>
+                <text x="180" y="184" font-size="11" fill="#666" font-family="Georgia">2</text>
+                <line x1="196" y1="140" x2="204" y2="140" stroke="#2d2d2d" stroke-width="1.5"/>
+                <text x="180" y="144" font-size="11" fill="#666" font-family="Georgia">3</text>
+                <line x1="196" y1="100" x2="204" y2="100" stroke="#2d2d2d" stroke-width="1.5"/>
+                <text x="180" y="104" font-size="11" fill="#666" font-family="Georgia">4</text>
+                <line x1="196" y1="60" x2="204" y2="60" stroke="#2d2d2d" stroke-width="1.5"/>
+                <text x="180" y="64" font-size="11" fill="#666" font-family="Georgia">5</text>
+
+                <!-- Line 1: y = x + 4 (blue) -->
+                <!-- At x=-4(40): y=0(260). At x=3(320): y=7(260-280=--> use: x=-3(80):y=1(220), x=2(280):y=6(20)  -->
+                <!-- Actually: scale: each unit = 40px. Origin at (200,260). x: +40px per unit. y: -40px per unit. -->
+                <!-- y = x+4: at x=-4 => y=0 => (40,260); at x=1 => y=5 => (240,60) -->
+                <line x1="40" y1="260" x2="260" y2="40" stroke="#2b4c7e" stroke-width="2.5" stroke-linecap="round"/>
+                <text x="250" y="38" font-size="13" fill="#2b4c7e" font-weight="bold" font-family="Georgia">y = x + 4</text>
+
+                <!-- Line 2: y = 3x (red/crimson) -->
+                <!-- At x=0 => y=0 => (200,260); at x=2 => y=6 => (280,20); at x=-1 => y=-3 => (160,380->clipped) -->
+                <!-- at x=-0.5 => y=-1.5 => (180, 320->clipped). at x=0.5=>y=1.5=>(220,200) -->
+                <line x1="155" y1="295" x2="295" y2="35" stroke="#8b1a1a" stroke-width="2.5" stroke-linecap="round"/>
+                <text x="295" y="55" font-size="13" fill="#8b1a1a" font-weight="bold" font-family="Georgia">y = 3x</text>
+
+                <!-- Intersection point at (2, 6): pixel coords (280, 260 - 6*40) = (280, 20) -->
+                <!-- Adjusting: at (2,6): x_px = 200+2*40=280, y_px = 260-6*40=260-240=20 -->
+                <circle cx="280" cy="20" r="6" fill="#d4582a" stroke="#fff" stroke-width="2"/>
+                <text x="286" y="15" font-size="13" fill="#d4582a" font-weight="bold" font-family="Georgia">(2, 6)</text>
+
+                <!-- Legend -->
+                <rect x="20" y="10" width="140" height="45" fill="#fdf6f0" rx="4" stroke="#ddd" stroke-width="1"/>
+                <text x="30" y="30" font-size="12" fill="#2d2d2d" font-family="Georgia" font-weight="bold">Solution: (2, 6)</text>
+                <text x="30" y="47" font-size="11" fill="#666" font-family="Georgia">Consistent &amp; Independent</text>
+            </svg>
+        </div>
+        <p style="text-align:center; font-size:0.95rem; color:#666; margin-top:-0.5rem;">
+            <em>Figure 10-1.</em> The system \(y = x + 4\) and \(y = 3x\) has exactly one solution at \((2, 6)\).
+        </p>
+
+        <div class="box box-insight">
+            <div class="box-label">Key Insight &mdash; Types of Systems</div>
+            <ul>
+                <li><strong>Inconsistent</strong>: No common root (parallel lines). Example: \(y = x + 4\) and \(y = x - 1\).</li>
+                <li><strong>Consistent &amp; Dependent</strong>: Infinitely many solutions (lines coincide). Example: \(y = x + 4\) and \(2y = 2x + 8\).</li>
+                <li><strong>Consistent &amp; Independent</strong>: Exactly one solution (lines intersect). Example: \(y = x + 4\) and \(y = 3x\).</li>
+            </ul>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ====== 10-2: ADDITION & SUBTRACTION METHOD ====== -->
+    <div class="card">
+        <h2>10-2 &middot; The Addition and Subtraction Method</h2>
+        <p>
+            Graphing can be imprecise. An <strong>algebraic</strong> method avoids inaccuracies.
+            If a variable has the same (or opposite) coefficient in both equations, you can <em>add</em> or <em>subtract</em>
+            the equations to eliminate it.
+        </p>
+
+        <div class="box box-formula">
+            <div class="box-label">Method &mdash; Addition / Subtraction (Elimination)</div>
+            <ol>
+                <li>Write both equations with like terms aligned.</li>
+                <li>Add or subtract the equations to eliminate one variable.</li>
+                <li>Solve the resulting equation for the remaining variable.</li>
+                <li>Substitute back into either original equation to find the other variable.</li>
+                <li>Check the solution in <em>both</em> original equations.</li>
+            </ol>
+        </div>
+
+        <div class="box box-example">
+            <div class="box-label">Worked Example 1 &mdash; Simple Elimination</div>
+            <p><strong>Solve:</strong> \(x + 4y = 27\) and \(x + 2y = 21\)</p>
+            <div class="step"><span class="step-num">1</span> Subtract the second equation from the first:</div>
+            $$(x + 4y) - (x + 2y) = 27 - 21$$
+            $$2y = 6$$
+            <div class="step"><span class="step-num">2</span> Solve for \(y\):</div>
+            $$y = 3$$
+            <div class="step"><span class="step-num">3</span> Substitute \(y = 3\) into \(x + 2y = 21\):</div>
+            $$x + 2(3) = 21 \implies x + 6 = 21 \implies x = 15$$
+            <div class="step"><span class="step-num">4</span> Check in both equations:</div>
+            $$15 + 4(3) = 15 + 12 = 27 \;\checkmark \qquad 15 + 2(3) = 15 + 6 = 21 \;\checkmark$$
+            <p><strong>Solution set: \(\{(15, 3)\}\)</strong></p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ====== 10-3: PROBLEMS WITH TWO VARIABLES ====== -->
+    <div class="card">
+        <h2>10-3 &middot; Solving Problems with Two Variables</h2>
+        <p>
+            Many word problems become simpler when you introduce <em>two</em> variables instead of one.
+            The strategy is:
+        </p>
+        <ol>
+            <li>Choose two variables to represent the unknown quantities.</li>
+            <li>Translate the given conditions into two equations.</li>
+            <li>Solve the system.</li>
+            <li>Check the answer against the original wording of the problem.</li>
+        </ol>
+
+        <div class="box box-example">
+            <div class="box-label">Worked Example 2 &mdash; Library Charges</div>
+            <p><strong>Problem:</strong> A lending library has a fixed charge for the first three days and an additional charge for each day thereafter. Tom paid 27 cents for a book he kept 7 days, while Sue paid 21 cents for one she kept 5 days. Find the fixed charge and the daily extra charge.</p>
+
+            <div class="step"><span class="step-num">1</span> Let \(x\) = fixed charge (cents), \(y\) = extra daily charge (cents).</div>
+            <div class="step"><span class="step-num">2</span> Tom kept his book 7 days = 3 fixed + 4 extra days:</div>
+            $$x + 4y = 27$$
+            <div class="step"><span class="step-num">3</span> Sue kept hers 5 days = 3 fixed + 2 extra days:</div>
+            $$x + 2y = 21$$
+            <div class="step"><span class="step-num">4</span> Subtract: \(2y = 6\), so \(y = 3\). Then \(x = 21 - 6 = 15\).</div>
+            <p><strong>The fixed charge is 15 cents and each extra day costs 3 cents.</strong></p>
+        </div>
+
+        <div class="box box-example">
+            <div class="box-label">Worked Example 3 &mdash; Digit Problem</div>
+            <p><strong>Problem:</strong> The sum of the digits of a two-digit numeral is 10. When the digits are interchanged, the resulting number is 18 more than the original. Find the original number.</p>
+
+            <div class="step"><span class="step-num">1</span> Let \(t\) = tens digit and \(u\) = units digit. The original number is \(10t + u\).</div>
+            <div class="step"><span class="step-num">2</span> The sum of the digits is 10:</div>
+            $$t + u = 10$$
+            <div class="step"><span class="step-num">3</span> The reversed number exceeds the original by 18:</div>
+            $$(10u + t) - (10t + u) = 18 \implies 9u - 9t = 18 \implies u - t = 2$$
+            <div class="step"><span class="step-num">4</span> Solve the system \(t + u = 10\) and \(u - t = 2\). Adding: \(2u = 12\), so \(u = 6\) and \(t = 4\).</div>
+            <div class="step"><span class="step-num">5</span> Check: \(4 + 6 = 10 \;\checkmark\). And \(64 - 46 = 18 \;\checkmark\).</div>
+            <p><strong>The original number is 46.</strong></p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ====== 10-4: MULTIPLICATION WITH ELIMINATION ====== -->
+    <div class="card">
+        <h2>10-4 &middot; Multiplication in the Addition/Subtraction Method</h2>
+        <p>
+            When no variable has the same absolute-value coefficient in both equations, you must first
+            <strong>multiply</strong> one or both equations by suitable constants so that corresponding coefficients match.
+        </p>
+
+        <div class="box box-formula">
+            <div class="box-label">Strategy</div>
+            <p>
+                Given \(ax + by = c\) and \(dx + ey = f\), multiply the first equation by \(d\) and the second by \(a\)
+                (or find the LCM of the coefficients of one variable) so that when you add or subtract, that variable is eliminated.
+            </p>
+        </div>
+
+        <div class="box box-example">
+            <div class="box-label">Worked Example 4 &mdash; Multiply One Equation</div>
+            <p><strong>Solve:</strong> \(3x + 4y = 45\) and \(6x - 2y = 30\)</p>
+
+            <div class="step"><span class="step-num">1</span> Multiply the first equation by 2 so the \(x\)-coefficients match:</div>
+            $$2(3x + 4y) = 2(45) \implies 6x + 8y = 90$$
+            <div class="step"><span class="step-num">2</span> Subtract the second equation from the new equation:</div>
+            $$(6x + 8y) - (6x - 2y) = 90 - 30$$
+            $$10y = 60 \implies y = 6$$
+            <div class="step"><span class="step-num">3</span> Substitute \(y = 6\) into \(3x + 4(6) = 45\):</div>
+            $$3x + 24 = 45 \implies 3x = 21 \implies x = 7$$
+            <div class="step"><span class="step-num">4</span> Check: \(3(7) + 4(6) = 21 + 24 = 45 \;\checkmark\) and \(6(7) - 2(6) = 42 - 12 = 30 \;\checkmark\).</div>
+            <p><strong>Solution set: \(\{(7, 6)\}\)</strong></p>
+        </div>
+
+        <div class="box box-example">
+            <div class="box-label">Worked Example 5 &mdash; Multiply Both Equations</div>
+            <p><strong>Solve:</strong> \(2x + 5y = 28\) and \(3x + 2y = 31\)</p>
+
+            <div class="step"><span class="step-num">1</span> To eliminate \(y\), multiply the first equation by 2 and the second by \(-5\):</div>
+            $$\begin{aligned}
+                -2(2x + 5y) &= -2(28) &\implies& \quad -4x - 10y = -56 \\
+                5(3x + 2y) &= 5(31) &\implies& \quad 15x + 10y = 155
+            \end{aligned}$$
+            <div class="step"><span class="step-num">2</span> Add the equations:</div>
+            $$11x = 99 \implies x = 9$$
+            <div class="step"><span class="step-num">3</span> Substitute into \(3x + 2y = 31\): \(27 + 2y = 31\), so \(2y = 4\) and \(y = 2\).</div>
+            <div class="step"><span class="step-num">4</span> Check: \(2(9) + 5(2) = 28 \;\checkmark\) and \(3(9) + 2(2) = 31 \;\checkmark\).</div>
+            <p><strong>Solution set: \(\{(9, 2)\}\)</strong></p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ====== 10-5: SUBSTITUTION METHOD ====== -->
+    <div class="card">
+        <h2>10-5 &middot; The Substitution Method</h2>
+        <p>
+            You can solve either equation for one variable in terms of the other, then <em>substitute</em>
+            that expression into the remaining equation. This is especially convenient when one equation
+            is already solved for a variable or has a coefficient of 1.
+        </p>
+
+        <div class="box box-formula">
+            <div class="box-label">Method &mdash; Substitution</div>
+            <ol>
+                <li>Solve one equation for one variable (pick the easiest one).</li>
+                <li>Substitute the expression into the other equation.</li>
+                <li>Solve the resulting single-variable equation.</li>
+                <li>Back-substitute to find the other variable.</li>
+                <li>Check in both original equations.</li>
+            </ol>
+        </div>
+
+        <div class="box box-example">
+            <div class="box-label">Worked Example 6 &mdash; Substitution</div>
+            <p><strong>Solve:</strong> \(x + 4y = 3\) and \(2x - 3y = 17\)</p>
+
+            <div class="step"><span class="step-num">1</span> Solve the first equation for \(x\):</div>
+            $$x = 3 - 4y$$
+            <div class="step"><span class="step-num">2</span> Substitute into the second equation:</div>
+            $$2(3 - 4y) - 3y = 17$$
+            $$6 - 8y - 3y = 17$$
+            $$-11y = 11 \implies y = -1$$
+            <div class="step"><span class="step-num">3</span> Back-substitute: \(x = 3 - 4(-1) = 3 + 4 = 7\).</div>
+            <div class="step"><span class="step-num">4</span> Check: \(7 + 4(-1) = 3 \;\checkmark\) and \(2(7) - 3(-1) = 14 + 3 = 17 \;\checkmark\).</div>
+            <p><strong>Solution set: \(\{(7, -1)\}\)</strong></p>
+        </div>
+
+        <div class="box box-insight">
+            <div class="box-label">When to Use Each Method</div>
+            <ul>
+                <li><strong>Graphing</strong>: Good for understanding; less precise.</li>
+                <li><strong>Addition/Subtraction (Elimination)</strong>: Best when coefficients are easy to match.</li>
+                <li><strong>Substitution</strong>: Best when one variable already has a coefficient of 1 or is already isolated.</li>
+            </ul>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ====== 10-6: SYSTEMS OF INEQUALITIES ====== -->
+    <div class="card">
+        <h2>10-6 &middot; Graphs of Pairs of Linear Inequalities</h2>
+        <p>
+            Graphs can also determine the solution set of <strong>simultaneous inequalities</strong>.
+            Each inequality defines a half-plane; the <em>intersection</em> of those half-planes
+            is the solution set (the feasible region).
+        </p>
+
+        <div class="box box-definition">
+            <div class="box-label">Definition &mdash; Feasible Region</div>
+            <p>
+                The <strong>feasible region</strong> (or solution set) of a system of inequalities is the set of all points
+                \((x, y)\) that satisfy <em>every</em> inequality in the system simultaneously.
+            </p>
+        </div>
+
+        <div class="svg-container">
+            <svg viewBox="-20 -20 440 380" width="440" height="380" xmlns="http://www.w3.org/2000/svg" aria-label="System of inequalities showing shaded feasible region">
+                <defs>
+                    <pattern id="grid2" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8ddd5" stroke-width="0.8"/>
+                    </pattern>
+                    <clipPath id="plotArea">
+                        <rect x="0" y="0" width="400" height="340"/>
+                    </clipPath>
+                </defs>
+                <rect x="0" y="0" width="400" height="340" fill="#fdf6f0" rx="8"/>
+                <rect x="0" y="0" width="400" height="340" fill="url(#grid2)" rx="8"/>
+
+                <!-- Axes: origin at (200, 240), 40px per unit -->
+                <line x1="40" y1="240" x2="380" y2="240" stroke="#2d2d2d" stroke-width="2"/>
+                <line x1="200" y1="20" x2="200" y2="320" stroke="#2d2d2d" stroke-width="2"/>
+                <polygon points="380,240 372,235 372,245" fill="#2d2d2d"/>
+                <polygon points="200,20 195,28 205,28" fill="#2d2d2d"/>
+                <text x="385" y="245" font-size="14" fill="#2d2d2d" font-family="Georgia">x</text>
+                <text x="205" y="18" font-size="14" fill="#2d2d2d" font-family="Georgia">y</text>
+
+                <!-- Tick labels on x-axis -->
+                <line x1="120" y1="236" x2="120" y2="244" stroke="#2d2d2d" stroke-width="1.5"/>
+                <text x="115" y="258" font-size="11" fill="#666" font-family="Georgia">&minus;2</text>
+                <line x1="160" y1="236" x2="160" y2="244" stroke="#2d2d2d" stroke-width="1.5"/>
+                <text x="155" y="258" font-size="11" fill="#666" font-family="Georgia">&minus;1</text>
+                <line x1="240" y1="236" x2="240" y2="244" stroke="#2d2d2d" stroke-width="1.5"/>
+                <text x="237" y="258" font-size="11" fill="#666" font-family="Georgia">1</text>
+                <line x1="280" y1="236" x2="280" y2="244" stroke="#2d2d2d" stroke-width="1.5"/>
+                <text x="277" y="258" font-size="11" fill="#666" font-family="Georgia">2</text>
+                <line x1="320" y1="236" x2="320" y2="244" stroke="#2d2d2d" stroke-width="1.5"/>
+                <text x="317" y="258" font-size="11" fill="#666" font-family="Georgia">3</text>
+                <line x1="360" y1="236" x2="360" y2="244" stroke="#2d2d2d" stroke-width="1.5"/>
+                <text x="357" y="258" font-size="11" fill="#666" font-family="Georgia">4</text>
+
+                <!-- Tick labels on y-axis -->
+                <line x1="196" y1="200" x2="204" y2="200" stroke="#2d2d2d" stroke-width="1.5"/>
+                <text x="180" y="204" font-size="11" fill="#666" font-family="Georgia">1</text>
+                <line x1="196" y1="160" x2="204" y2="160" stroke="#2d2d2d" stroke-width="1.5"/>
+                <text x="180" y="164" font-size="11" fill="#666" font-family="Georgia">2</text>
+                <line x1="196" y1="120" x2="204" y2="120" stroke="#2d2d2d" stroke-width="1.5"/>
+                <text x="180" y="124" font-size="11" fill="#666" font-family="Georgia">3</text>
+                <line x1="196" y1="80" x2="204" y2="80" stroke="#2d2d2d" stroke-width="1.5"/>
+                <text x="180" y="84" font-size="11" fill="#666" font-family="Georgia">4</text>
+                <line x1="196" y1="40" x2="204" y2="40" stroke="#2d2d2d" stroke-width="1.5"/>
+                <text x="180" y="44" font-size="11" fill="#666" font-family="Georgia">5</text>
+                <line x1="196" y1="280" x2="204" y2="280" stroke="#2d2d2d" stroke-width="1.5"/>
+                <text x="172" y="284" font-size="11" fill="#666" font-family="Georgia">&minus;1</text>
+
+                <!--
+                    System: y > 3x - 2 and x + y < 6
+                    Line 1: y = 3x - 2  (above this)
+                    Line 2: x + y = 6, i.e. y = -x + 6  (below this)
+
+                    Intersection: 3x - 2 = -x + 6 => 4x = 8 => x=2, y=4. Point (2,4).
+
+                    Feasible region vertices approximately:
+                    The two lines cross at (2,4).
+                    Region is above y=3x-2 and below y=-x+6.
+
+                    Pixel mapping: origin (200,240), scale 40px/unit
+                    (2,4) => (280, 80)
+                    y=3x-2: at x=-0.5 => y=-3.5 => (180, 380); at x=2.5 => y=5.5 => (300,20)
+                    y=-x+6: at x=-1 => y=7 => (160, -40->0); at x=4.5 => y=1.5 => (380,180)
+                    at x=6 => y=0 => (440,240)
+                -->
+
+                <!-- Shaded feasible region (above y=3x-2, below y=-x+6) -->
+                <!-- Approximate polygon clipped to view area -->
+                <polygon points="280,80 200,0 0,0 0,340 120,340 176,240 200,240 200,168"
+                         fill="#d4582a" fill-opacity="0.15" clip-path="url(#plotArea)"/>
+
+                <!-- More accurate feasible region -->
+                <!-- Let me compute carefully:
+                     y=3x-2 boundary: x=0,y=-2(200,320); x=1,y=1(240,200); x=2,y=4(280,80)
+                     y=-x+6 boundary: x=0,y=6(200,0); x=2,y=4(280,80); x=4,y=2(360,160); x=6,y=0(440,240)
+                     The feasible region in view: above y=3x-2 and below y=-x+6.
+                     Intersection at (2,4) = (280,80)
+                     Going left: both lines extend, region widens.
+                     At x=-1: y=3(-1)-2=-5 (below view), y=-(-1)+6=7 (above view). So entire visible column is feasible.
+                     At top-left corner of view: nearly all is feasible.
+                     At x=4: y=3(4)-2=10 (way above), y=-(4)+6=2(360,160). Region gone.
+
+                     So feasible region bounded by:
+                     - Upper bound: y=-x+6 line (to the right of intersection and top of plot)
+                     - Lower bound: y=3x-2 line
+                     - They meet at (2,4) = pixel (280,80)
+
+                     Polygon (clipped to visible area 0..400, 0..340):
+                     Start at intersection (280,80), go along y=-x+6 leftward:
+                     At x=-1 (pixel 160), y=7 (pixel -40, clip to 0). So (160,0).
+                     Top-left corner (0,0).
+                     Go down left edge: at x=-5 (pixel 0), y=3(-5)-2=-17 (way below, clip to 340): (0,340).
+                     Along y=3x-2 rightward: at y=240 level (y-coord=0), 0=3x-2, x=2/3, pixel=(227,240).
+                     But we need to go from bottom-left up along the 3x-2 line to (280,80).
+
+                     Let me simplify with a good-looking polygon:
+                -->
+                <!-- Clear the above and draw a clean polygon -->
+                <polygon points="280,80 160,0 0,0 0,340 227,240 280,80"
+                         fill="#d4582a" fill-opacity="0.12" stroke="none" clip-path="url(#plotArea)"/>
+
+                <!-- Line 1: y = 3x - 2 (crimson, dashed boundary since strict inequality) -->
+                <!-- x=-0.67 => y=-4 => pixel(173,400->340), x=2.67 => y=6 => pixel(307,0) -->
+                <line x1="173" y1="340" x2="307" y2="0" stroke="#8b1a1a" stroke-width="2.5" stroke-dasharray="8,4"/>
+                <text x="290" y="50" font-size="12" fill="#8b1a1a" font-weight="bold" font-family="Georgia">y = 3x &minus; 2</text>
+
+                <!-- Line 2: x + y = 6, i.e. y = -x + 6 (blue, dashed) -->
+                <!-- x=-1 => y=7 => (160,-40->clip), x=6 => y=0 => (440,240->clip) -->
+                <line x1="160" y1="0" x2="400" y2="200" stroke="#2b4c7e" stroke-width="2.5" stroke-dasharray="8,4"/>
+                <text x="310" y="152" font-size="12" fill="#2b4c7e" font-weight="bold" font-family="Georgia">x + y = 6</text>
+
+                <!-- Intersection point -->
+                <circle cx="280" cy="80" r="5" fill="#d4582a" stroke="#fff" stroke-width="2"/>
+                <text x="287" y="75" font-size="12" fill="#d4582a" font-weight="bold" font-family="Georgia">(2, 4)</text>
+
+                <!-- Sample points in feasible region -->
+                <circle cx="240" cy="200" r="3.5" fill="#276749"/>
+                <text x="247" y="198" font-size="10" fill="#276749" font-family="Georgia">(1, 1)</text>
+
+                <circle cx="160" cy="160" r="3.5" fill="#276749"/>
+                <text x="125" y="158" font-size="10" fill="#276749" font-family="Georgia">(&minus;1, 2)</text>
+
+                <!-- Legend -->
+                <rect x="10" y="270" width="180" height="60" fill="#fdf6f0" rx="4" stroke="#ddd" stroke-width="1"/>
+                <rect x="20" y="282" width="12" height="12" fill="#d4582a" fill-opacity="0.2" stroke="#d4582a" stroke-width="1"/>
+                <text x="38" y="293" font-size="11" fill="#2d2d2d" font-family="Georgia">Feasible region</text>
+                <line x1="20" y1="310" x2="32" y2="310" stroke="#8b1a1a" stroke-width="2" stroke-dasharray="4,2"/>
+                <text x="38" y="314" font-size="11" fill="#2d2d2d" font-family="Georgia">Dashed = strict inequality</text>
+            </svg>
+        </div>
+        <p style="text-align:center; font-size:0.95rem; color:#666; margin-top:-0.5rem;">
+            <em>Figure 10-2.</em> The solution set of \(y > 3x - 2\) and \(x + y < 6\) is the shaded region.
+            The boundary lines are dashed because the inequalities are strict.
+        </p>
+
+        <div class="box box-insight">
+            <div class="box-label">Convex Regions and Linear Programming</div>
+            <p>
+                When a finite number of straight lines separate a plane into regions, the resulting bounded regions are called <strong>convex regions</strong>.
+                A remarkable property: over any closed convex polygon, a linear expression \(mx + ny\) achieves its maximum
+                and minimum values <em>at the vertices</em> of the polygon. This fact is the foundation of <strong>linear programming</strong>.
+            </p>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ====== PRACTICE PROBLEMS ====== -->
+    <div class="card">
+        <h2>Practice Problems</h2>
+
+        <div class="box box-practice">
+            <div class="box-label">Practice 1 &mdash; Graphing</div>
+            <p>Solve graphically: \(y = 3 - x\) and \(y = 1 + x\).</p>
+            <details>
+                <summary style="cursor:pointer; color:#4a5568; font-weight:600;">Show Solution</summary>
+                <div style="margin-top:0.75rem;">
+                    <p>Setting equal: \(3 - x = 1 + x \implies 2 = 2x \implies x = 1\), so \(y = 2\).</p>
+                    <p><strong>Solution: \((1, 2)\)</strong></p>
+                </div>
+            </details>
+        </div>
+
+        <div class="box box-practice">
+            <div class="box-label">Practice 2 &mdash; Addition/Subtraction</div>
+            <p>Solve: \(x + y = 74\) and \(x - y = 16\).</p>
+            <details>
+                <summary style="cursor:pointer; color:#4a5568; font-weight:600;">Show Solution</summary>
+                <div style="margin-top:0.75rem;">
+                    <p>Add the equations: \(2x = 90\), so \(x = 45\). Then \(y = 74 - 45 = 29\).</p>
+                    <p>Check: \(45 + 29 = 74 \;\checkmark\) and \(45 - 29 = 16 \;\checkmark\).</p>
+                    <p><strong>Solution: \(\{(45, 29)\}\)</strong></p>
+                </div>
+            </details>
+        </div>
+
+        <div class="box box-practice">
+            <div class="box-label">Practice 3 &mdash; Word Problem</div>
+            <p>Half the perimeter of a house, which is 12 feet longer than it is wide, is 72 feet. What are the dimensions?</p>
+            <details>
+                <summary style="cursor:pointer; color:#4a5568; font-weight:600;">Show Solution</summary>
+                <div style="margin-top:0.75rem;">
+                    <p>Let \(l\) = length and \(w\) = width.</p>
+                    $$l = w + 12 \quad \text{and} \quad l + w = 72$$
+                    <p>Substituting: \((w + 12) + w = 72 \implies 2w = 60 \implies w = 30\), so \(l = 42\).</p>
+                    <p><strong>The house is 42 ft long and 30 ft wide.</strong></p>
+                </div>
+            </details>
+        </div>
+
+        <div class="box box-practice">
+            <div class="box-label">Practice 4 &mdash; Multiplication with Elimination</div>
+            <p>Solve: \(3p - q = 10\) and \(2p - q = 1\).</p>
+            <details>
+                <summary style="cursor:pointer; color:#4a5568; font-weight:600;">Show Solution</summary>
+                <div style="margin-top:0.75rem;">
+                    <p>Subtract the second from the first: \((3p - q) - (2p - q) = 10 - 1\), giving \(p = 9\).</p>
+                    <p>Then \(q = 3(9) - 10 = 17\).</p>
+                    <p>Check: \(3(9) - 17 = 10 \;\checkmark\) and \(2(9) - 17 = 1 \;\checkmark\).</p>
+                    <p><strong>Solution: \(\{(9, 17)\}\)</strong></p>
+                </div>
+            </details>
+        </div>
+
+        <div class="box box-practice">
+            <div class="box-label">Practice 5 &mdash; Investment Problem</div>
+            <p>A man wishes to earn $33 per year. He invests $600, part at 4% and the rest at 6%. How much does he invest at each rate?</p>
+            <details>
+                <summary style="cursor:pointer; color:#4a5568; font-weight:600;">Show Solution</summary>
+                <div style="margin-top:0.75rem;">
+                    <p>Let \(x\) = amount at 4% and \(y\) = amount at 6%.</p>
+                    $$x + y = 600$$
+                    $$0.04x + 0.06y = 33$$
+                    <p>From the first equation: \(x = 600 - y\). Substituting:</p>
+                    $$0.04(600 - y) + 0.06y = 33$$
+                    $$24 - 0.04y + 0.06y = 33$$
+                    $$0.02y = 9 \implies y = 450$$
+                    <p>So \(x = 600 - 450 = 150\).</p>
+                    <p>Check: \(0.04(150) + 0.06(450) = 6 + 27 = 33 \;\checkmark\).</p>
+                    <p><strong>\$150 at 4% and \$450 at 6%.</strong></p>
+                </div>
+            </details>
+        </div>
+
+        <div class="box box-practice">
+            <div class="box-label">Practice 6 &mdash; Inequalities</div>
+            <p>Graph the solution set of: \(y < 2x\) and \(x + y \leq 6\).</p>
+            <details>
+                <summary style="cursor:pointer; color:#4a5568; font-weight:600;">Show Solution</summary>
+                <div style="margin-top:0.75rem;">
+                    <p>Draw the line \(y = 2x\) as a dashed line (strict inequality). The solution set of \(y < 2x\) is the half-plane <em>below</em> this line.</p>
+                    <p>Draw the line \(x + y = 6\) as a solid line (\(\leq\)). The solution set of \(x + y \leq 6\) is the half-plane <em>below and on</em> this line.</p>
+                    <p>The intersection of the two boundary lines: \(2x = -x + 6 \implies 3x = 6 \implies x = 2, y = 4\). The vertex is \((2, 4)\).</p>
+                    <p><strong>The feasible region is the overlap below both lines, with the intersection point at \((2, 4)\).</strong></p>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ====== QUICK REFERENCE ====== -->
+    <div class="card">
+        <h2>Quick Reference</h2>
+
+        <div class="box box-formula">
+            <div class="box-label">Three Methods for Solving Systems</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Procedure</th>
+                        <th>Best When</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Graphing</strong></td>
+                        <td>Graph both lines; read intersection</td>
+                        <td>Visualizing; estimating solutions</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Elimination</strong></td>
+                        <td>Add/subtract equations to eliminate a variable</td>
+                        <td>Coefficients easily matched</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Substitution</strong></td>
+                        <td>Solve one eq. for a variable; substitute into the other</td>
+                        <td>One variable has coefficient 1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="box box-formula">
+            <div class="box-label">System Classification</div>
+            <ul>
+                <li><strong>Consistent &amp; Independent</strong>: Exactly one solution (lines intersect).</li>
+                <li><strong>Consistent &amp; Dependent</strong>: Infinitely many solutions (lines coincide).</li>
+                <li><strong>Inconsistent</strong>: No solution (lines are parallel).</li>
+            </ul>
+        </div>
+
+        <div class="box box-formula">
+            <div class="box-label">Systems of Inequalities</div>
+            <p>
+                To graph a system of linear inequalities:
+            </p>
+            <ol>
+                <li>Graph each boundary line (solid for \(\leq\) or \(\geq\); dashed for \(<\) or \(>\)).</li>
+                <li>Shade the half-plane satisfying each inequality.</li>
+                <li>The <strong>feasible region</strong> is the overlap of all shaded half-planes.</li>
+            </ol>
+        </div>
+
+        <div class="box box-formula">
+            <div class="box-label">Linear Programming Principle</div>
+            <p>
+                Over a closed convex polygon, any linear expression \(mx + ny\) assumes its
+                <strong>maximum</strong> and <strong>minimum</strong> values at <em>vertices</em> of the polygon.
+                Therefore, to optimize a linear objective over a system of linear inequalities,
+                evaluate the expression at each vertex of the feasible region.
+            </p>
+        </div>
+
+        <div class="box box-caution">
+            <div class="box-label">Common Mistakes</div>
+            <ul>
+                <li>Forgetting to multiply <em>both</em> sides of an equation when preparing for elimination.</li>
+                <li>Subtracting only one term instead of the entire equation.</li>
+                <li>Substituting back into the <em>derived</em> equation rather than an <em>original</em> one (which can mask errors).</li>
+                <li>Confusing strict (\(<, >\)) and non-strict (\(\leq, \geq\)) inequalities when drawing boundary lines.</li>
+                <li>Forgetting to check the answer in <em>both</em> original equations.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ====== NAVIGATION FOOTER ====== -->
+    <nav class="nav-footer">
+        <a href="../09-graphs/">&larr; Ch 9: Graphs</a>
+        <span class="chapter-list">Chapter 10 of 15</span>
+        <a href="../11-the-real-numbers/">Ch 11: The Real Numbers &rarr;</a>
+    </nav>
+
+</div>
+
+<!-- KaTeX rendering -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false}
+        ],
+        throwOnError: false
+    });
+});
+</script>
+</body>
+</html>

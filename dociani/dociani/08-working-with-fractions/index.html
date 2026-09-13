@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 8: Working with Fractions — Modern Algebra: Structure and Method</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<style>
+  /* ===== RESET & BASE ===== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Georgia', 'Cambria', 'Times New Roman', serif;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #2d2d2d;
+    background: #fdf6f0;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    color: #8b1a1a;
+    line-height: 1.3;
+  }
+
+  a { color: #8b1a1a; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ===== KATEX BIGGER ===== */
+  .katex { font-size: 1.3em; }
+  .katex-display { font-size: 1.35em; margin: 1.5rem 0; overflow-x: auto; }
+
+  /* ===== HERO HEADER ===== */
+  .hero {
+    background: linear-gradient(135deg, #8b1a1a 0%, #5c1212 40%, #1a1a2e 100%);
+    color: #fff;
+    padding: 3.5rem 2rem 3rem;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  .hero::before {
+    content: '8';
+    position: absolute;
+    top: -0.15em;
+    right: 5%;
+    font-size: 16rem;
+    font-weight: 900;
+    color: rgba(255,255,255,0.06);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .hero .book-title {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+  }
+  .hero h1 {
+    font-size: 2.8rem;
+    color: #fff;
+    margin-bottom: 0.3rem;
+    font-weight: 800;
+  }
+  .hero .chapter-label {
+    font-size: 1.15rem;
+    opacity: 0.85;
+    font-style: italic;
+  }
+  .hero .page-range {
+    font-size: 0.9rem;
+    opacity: 0.6;
+    margin-top: 0.5rem;
+  }
+
+  /* ===== CONTAINER ===== */
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+  }
+
+  /* ===== OVERVIEW CARD ===== */
+  .overview-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem 2.2rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 2px 16px rgba(139,26,26,0.08);
+    border-left: 5px solid #8b1a1a;
+  }
+  .overview-card h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+  .overview-card ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 2rem;
+  }
+  .overview-card li {
+    padding-left: 1.6rem;
+    position: relative;
+    font-size: 1.05rem;
+  }
+  .overview-card li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #d4582a;
+    font-weight: bold;
+  }
+
+  @media (max-width: 640px) {
+    .overview-card ul { grid-template-columns: 1fr; }
+  }
+
+  /* ===== SECTION CARDS ===== */
+  .section-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem 2.2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+  .section-card h2 {
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid #f0dcd0;
+  }
+  .section-card h2 .section-num {
+    color: #d4582a;
+    font-size: 0.85em;
+  }
+  .section-card h3 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .section-card p { margin-bottom: 1rem; }
+
+  /* ===== HIGHLIGHT BOXES ===== */
+  .box {
+    border-radius: 8px;
+    padding: 1.2rem 1.4rem;
+    margin: 1.2rem 0;
+    border-left: 4px solid;
+  }
+  .box-definition {
+    border-color: #8b1a1a;
+    background: #fce8e8;
+  }
+  .box-insight {
+    border-color: #d4582a;
+    background: #fef3ec;
+  }
+  .box-caution {
+    border-color: #7f1d1d;
+    background: #fef2f2;
+  }
+  .box-example {
+    border-color: #276749;
+    background: #f0f7f0;
+  }
+  .box-practice {
+    border-color: #4a5568;
+    background: #f7fafc;
+  }
+  .box-formula {
+    border-color: #2b4c7e;
+    background: #ebf0ff;
+  }
+  .box .box-title {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+  }
+  .box-definition .box-title { color: #8b1a1a; }
+  .box-insight .box-title { color: #d4582a; }
+  .box-caution .box-title { color: #7f1d1d; }
+  .box-example .box-title { color: #276749; }
+  .box-practice .box-title { color: #4a5568; }
+  .box-formula .box-title { color: #2b4c7e; }
+
+  /* ===== WORKED PROBLEM ===== */
+  .worked-problem {
+    border: 2px solid #e2d6cf;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+    overflow: hidden;
+  }
+  .worked-problem .problem-header {
+    background: linear-gradient(135deg, #4a5568, #2d3748);
+    color: #fff;
+    padding: 0.8rem 1.4rem;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+  }
+  .worked-problem .problem-body {
+    padding: 1.2rem 1.4rem;
+    background: #f7fafc;
+  }
+  .worked-problem .solution {
+    padding: 1.2rem 1.4rem;
+    background: #f0f7f0;
+    border-top: 2px dashed #b7d8c4;
+  }
+  .worked-problem .solution-label {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    color: #276749;
+    margin-bottom: 0.5rem;
+  }
+  .step-list {
+    counter-reset: step;
+    list-style: none;
+    padding: 0;
+  }
+  .step-list li {
+    counter-increment: step;
+    padding-left: 2.2rem;
+    position: relative;
+    margin-bottom: 0.8rem;
+  }
+  .step-list li::before {
+    content: 'Step ' counter(step) ':';
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    color: #276749;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.9rem;
+  }
+
+  /* ===== SVG FIGURES ===== */
+  .figure-container {
+    text-align: center;
+    margin: 1.5rem 0;
+  }
+  .figure-container svg {
+    max-width: 100%;
+    height: auto;
+  }
+  .figure-caption {
+    font-size: 0.95rem;
+    color: #666;
+    font-style: italic;
+    margin-top: 0.5rem;
+  }
+
+  /* ===== QUICK REFERENCE ===== */
+  .quick-ref {
+    background: #fff;
+    border: 2px solid #2b4c7e;
+    border-radius: 12px;
+    padding: 2rem 2.2rem;
+    margin: 2.5rem 0;
+  }
+  .quick-ref h2 {
+    color: #2b4c7e;
+    border-bottom: 2px solid #d4e0f7;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.2rem;
+  }
+  .formula-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .formula-item {
+    background: #ebf0ff;
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    border-left: 3px solid #2b4c7e;
+  }
+  .formula-item .formula-label {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    color: #2b4c7e;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+  @media (max-width: 640px) {
+    .formula-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ===== NAV FOOTER ===== */
+  .chapter-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    padding: 1.5rem 0;
+    border-top: 2px solid #e2d6cf;
+  }
+  .chapter-nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #8b1a1a;
+    color: #fff;
+    padding: 0.7rem 1.4rem;
+    border-radius: 8px;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+  }
+  .chapter-nav a:hover { background: #6b1414; text-decoration: none; }
+  .chapter-nav .nav-center {
+    font-size: 0.9rem;
+    color: #888;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 2rem; }
+    .hero::before { font-size: 9rem; }
+    .container { padding: 1.2rem 1rem 2rem; }
+    .section-card { padding: 1.4rem 1.2rem; }
+    .overview-card { padding: 1.4rem 1.2rem; }
+  }
+
+  /* ===== TABLE ===== */
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 1.05rem;
+  }
+  .comparison-table th, .comparison-table td {
+    padding: 0.6rem 1rem;
+    border: 1px solid #e2d6cf;
+    text-align: center;
+  }
+  .comparison-table th {
+    background: #8b1a1a;
+    color: #fff;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  }
+  .comparison-table td {
+    background: #fff;
+  }
+  .overflow-x { overflow-x: auto; }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO HEADER ===== -->
+<header class="hero">
+  <div class="book-title">Modern Algebra: Structure and Method &mdash; Dolciani</div>
+  <h1>Working with Fractions</h1>
+  <div class="chapter-label">Chapter 8</div>
+  <div class="page-range">Pages 287&ndash;338</div>
+</header>
+
+<div class="container">
+
+<!-- ===== OVERVIEW ===== -->
+<div class="overview-card">
+  <h2>What You&rsquo;ll Learn</h2>
+  <ul>
+    <li>Defining rational algebraic expressions</li>
+    <li>Reducing fractions to lowest terms</li>
+    <li>Multiplying and dividing fractions</li>
+    <li>Finding the least common denominator</li>
+    <li>Adding and subtracting fractions</li>
+    <li>Working with mixed expressions</li>
+    <li>Solving equations with fractional coefficients</li>
+    <li>Ratios and per cent problems</li>
+    <li>Work rate problems</li>
+    <li>Motion problems in two parts</li>
+  </ul>
+</div>
+
+
+<!-- ================================================================== -->
+<!-- SECTION 8-1: Defining Algebraic Fractions                          -->
+<!-- ================================================================== -->
+<div class="section-card">
+  <h2><span class="section-num">8-1</span> Defining Algebraic Fractions</h2>
+
+  <p>Any indicated quotient of two algebraic expressions is called an <strong>algebraic fraction</strong>. Examples include:</p>
+
+  $$\frac{2}{3}, \quad \frac{5}{y}, \quad \frac{x^2 + 3x + 2}{5x - 10}$$
+
+  <div class="box box-definition">
+    <div class="box-title">Definition &mdash; Algebraic Fraction</div>
+    An expression of the form \(\dfrac{P}{Q}\), where \(P\) and \(Q\) are algebraic expressions and \(Q \neq 0\), is an <strong>algebraic fraction</strong>. The fraction is defined only when its denominator is not zero.
+  </div>
+
+  <p>To find the values that must be excluded from the replacement set of the variable, set the denominator equal to zero and solve.</p>
+
+  <div class="box box-insight">
+    <div class="box-title">Key Insight</div>
+    Before performing any operation with algebraic fractions, always determine the values that make the denominator zero. These values are <strong>excluded</strong> from the domain.
+  </div>
+
+  <div class="overflow-x">
+    <table class="comparison-table">
+      <thead>
+        <tr><th>Fraction</th><th>Excluded Value(s)</th><th>Reason</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>\(\dfrac{x}{x-2}\)</td><td>\(x = 2\)</td><td>\(x - 2 = 0\)</td></tr>
+        <tr><td>\(\dfrac{3}{x^2 - 9}\)</td><td>\(x = 3, \; x = -3\)</td><td>\((x-3)(x+3) = 0\)</td></tr>
+        <tr><td>\(\dfrac{5}{2x+1}\)</td><td>\(x = -\tfrac{1}{2}\)</td><td>\(2x + 1 = 0\)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- ================================================================== -->
+<!-- SECTION 8-2: Reducing Fractions                                    -->
+<!-- ================================================================== -->
+<div class="section-card">
+  <h2><span class="section-num">8-2</span> Reducing Fractions</h2>
+
+  <div class="box box-formula">
+    <div class="box-title">Multiplication Property of Fractions</div>
+    Dividing or multiplying the numerator and denominator of a fraction by the same nonzero number produces a fraction equal to the given one:
+    $$\frac{ac}{bc} = \frac{a}{b}, \quad \text{provided } c \neq 0$$
+  </div>
+
+  <p>A fraction is in <strong>lowest terms</strong> when its numerator and denominator have no common factor other than \(1\) and \(-1\). Reducing to lowest terms means dividing the numerator and denominator by their greatest common factor.</p>
+
+  <!-- SVG: Fraction Model Visual -->
+  <div class="figure-container">
+    <svg viewBox="0 0 600 220" width="600" xmlns="http://www.w3.org/2000/svg">
+      <!-- Left bar: 15/20 -->
+      <text x="100" y="22" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#8b1a1a">Before Reducing</text>
+      <rect x="10" y="30" width="180" height="36" rx="6" fill="#fce8e8" stroke="#8b1a1a" stroke-width="2"/>
+      <!-- 15 of 20 shaded -->
+      <rect x="12" y="32" width="132" height="32" rx="4" fill="#d4582a" opacity="0.7"/>
+      <text x="100" y="54" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#fff" font-weight="700">15 of 20</text>
+      <text x="100" y="90" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#2d2d2d">
+        <tspan font-size="28" font-weight="700">15</tspan>/<tspan font-size="28" font-weight="700">20</tspan>
+      </text>
+
+      <!-- Arrow -->
+      <line x1="220" y1="58" x2="290" y2="58" stroke="#d4582a" stroke-width="3" marker-end="url(#arrowhead)"/>
+      <text x="255" y="48" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#d4582a" font-weight="700">&divide; 5</text>
+
+      <!-- Right bar: 3/4 -->
+      <text x="390" y="22" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#276749">After Reducing</text>
+      <rect x="300" y="30" width="180" height="36" rx="6" fill="#f0f7f0" stroke="#276749" stroke-width="2"/>
+      <rect x="302" y="32" width="132" height="32" rx="4" fill="#276749" opacity="0.6"/>
+      <text x="390" y="54" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#fff" font-weight="700">3 of 4</text>
+      <text x="390" y="90" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#2d2d2d">
+        <tspan font-size="28" font-weight="700">3</tspan>/<tspan font-size="28" font-weight="700">4</tspan>
+      </text>
+
+      <!-- Algebraic example below -->
+      <text x="100" y="130" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#8b1a1a">Algebraic Example</text>
+      <rect x="10" y="140" width="180" height="60" rx="8" fill="#fce8e8" stroke="#8b1a1a" stroke-width="1.5"/>
+      <text x="100" y="165" text-anchor="middle" font-family="Georgia, serif" font-size="17" fill="#2d2d2d">15b + 5</text>
+      <line x1="40" y1="172" x2="160" y2="172" stroke="#2d2d2d" stroke-width="1.5"/>
+      <text x="100" y="192" text-anchor="middle" font-family="Georgia, serif" font-size="17" fill="#2d2d2d">6b&sup2; &minus; b &minus; 1</text>
+
+      <line x1="220" y1="170" x2="290" y2="170" stroke="#d4582a" stroke-width="3" marker-end="url(#arrowhead)"/>
+      <text x="255" y="160" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#d4582a" font-weight="700">Factor &amp; cancel</text>
+
+      <rect x="300" y="140" width="180" height="60" rx="8" fill="#f0f7f0" stroke="#276749" stroke-width="1.5"/>
+      <text x="390" y="165" text-anchor="middle" font-family="Georgia, serif" font-size="17" fill="#2d2d2d">5</text>
+      <line x1="340" y1="172" x2="440" y2="172" stroke="#2d2d2d" stroke-width="1.5"/>
+      <text x="390" y="192" text-anchor="middle" font-family="Georgia, serif" font-size="17" fill="#2d2d2d">2b &minus; 1</text>
+
+      <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#d4582a"/>
+        </marker>
+      </defs>
+    </svg>
+    <div class="figure-caption">Figure 8.1 &mdash; Reducing a fraction: divide numerator and denominator by their GCF</div>
+  </div>
+
+  <div class="box box-caution">
+    <div class="box-title">Caution</div>
+    You can reduce a fraction only when the numerator and denominator share a common <strong>factor</strong>. You cannot cancel <em>terms</em> that are merely added or subtracted:
+    $$\frac{x + 3}{3} \neq x \qquad \text{(Wrong! The 3 is a term, not a factor.)}$$
+  </div>
+</div>
+
+
+<!-- ================================================================== -->
+<!-- SECTION 8-3: Multiplying Fractions                                 -->
+<!-- ================================================================== -->
+<div class="section-card">
+  <h2><span class="section-num">8-3</span> Multiplying Fractions</h2>
+
+  <div class="box box-formula">
+    <div class="box-title">Rule for Multiplying Fractions</div>
+    The product of two fractions is a fraction whose numerator is the product of the numerators and whose denominator is the product of the denominators:
+    $$\frac{x}{c} \cdot \frac{y}{d} = \frac{xy}{cd} \qquad (c \neq 0,\; d \neq 0)$$
+  </div>
+
+  <p>You can simplify the multiplication by <strong>first factoring</strong> numerators and denominators, then cancelling common factors before multiplying.</p>
+
+  <div class="box box-example">
+    <div class="box-title">Example</div>
+    $$\frac{3x-3}{5x+2} \cdot \frac{25x^2 - 4}{x^2 - 2x + 1}$$
+    Factor each part:
+    $$= \frac{3(x-1)}{5x+2} \cdot \frac{(5x-2)(5x+2)}{(x-1)(x-1)}$$
+    Cancel common factors \((5x+2)\) and \((x-1)\):
+    $$= \frac{3(5x-2)}{x-1} = \frac{15x - 6}{x - 1}$$
+  </div>
+</div>
+
+
+<!-- ================================================================== -->
+<!-- SECTION 8-4: Dividing Fractions                                    -->
+<!-- ================================================================== -->
+<div class="section-card">
+  <h2><span class="section-num">8-4</span> Dividing Fractions</h2>
+
+  <div class="box box-formula">
+    <div class="box-title">Rule for Dividing Fractions</div>
+    To divide fractions, multiply the dividend by the <strong>reciprocal</strong> of the divisor:
+    $$\frac{a}{b} \div \frac{c}{d} = \frac{a}{b} \cdot \frac{d}{c} = \frac{ad}{bc} \qquad (b,c,d \neq 0)$$
+  </div>
+
+  <p>Remember that the reciprocal of \(\dfrac{c}{d}\) is \(\dfrac{d}{c}\), provided \(c \neq 0\) and \(d \neq 0\).</p>
+</div>
+
+
+<!-- ================================================================== -->
+<!-- SECTION 8-5/8-6: LCD and Adding/Subtracting Fractions              -->
+<!-- ================================================================== -->
+<div class="section-card">
+  <h2><span class="section-num">8-5 / 8-6</span> Least Common Denominator &amp; Adding Fractions</h2>
+
+  <h3>Finding the L.C.D.</h3>
+  <p>To find the <strong>lowest common denominator</strong> of several fractions:</p>
+  <ol style="padding-left:1.5rem; margin-bottom:1rem;">
+    <li>Factor each denominator completely.</li>
+    <li>Form the product of each different factor, taken the greatest number of times it appears in any single denominator.</li>
+  </ol>
+
+  <div class="box box-insight">
+    <div class="box-title">Key Insight &mdash; Prime Factorization Method</div>
+    <p>To find the L.C.D. of \(12\) and \(90\):</p>
+    $$12 = 2^2 \cdot 3, \qquad 90 = 2 \cdot 3^2 \cdot 5$$
+    $$\text{L.C.D.} = 2^2 \cdot 3^2 \cdot 5 = 180$$
+  </div>
+
+  <h3>Adding and Subtracting Fractions</h3>
+
+  <div class="box box-formula">
+    <div class="box-title">Adding Fractions with Equal Denominators</div>
+    $$\frac{a}{d} + \frac{c}{d} = \frac{a + c}{d} \qquad (d \neq 0)$$
+  </div>
+
+  <p>For fractions with <strong>unequal denominators</strong>, first rewrite each fraction with the L.C.D. as the denominator, then add the numerators.</p>
+</div>
+
+
+<!-- ================================================================== -->
+<!-- SECTION 8-7: Mixed Expressions                                     -->
+<!-- ================================================================== -->
+<div class="section-card">
+  <h2><span class="section-num">8-7</span> Mixed Expressions</h2>
+
+  <p>A <strong>mixed expression</strong> is the sum or difference of a polynomial and a fraction. Like a mixed numeral (e.g., \(2\tfrac{3}{8}\)), it can be written as a single fraction:</p>
+
+  $$x + \frac{3}{x} = \frac{x^2}{x} + \frac{3}{x} = \frac{x^2 + 3}{x}$$
+
+  <p>Conversely, if the numerator is a polynomial, you can change a fraction to a mixed expression by performing the division:</p>
+
+  $$\frac{2c^2 + 5c - 6}{c - 1} = 2c + 7 + \frac{1}{c - 1}$$
+</div>
+
+
+<!-- ================================================================== -->
+<!-- SECTION 8-8: Equations with Fractional Coefficients                -->
+<!-- ================================================================== -->
+<div class="section-card">
+  <h2><span class="section-num">8-8</span> Solving Equations with Fractional Coefficients</h2>
+
+  <p>When an equation has fractions, the standard strategy is to <strong>multiply both sides by the L.C.D.</strong> to clear all fractions.</p>
+
+  <div class="box box-formula">
+    <div class="box-title">Strategy: Clearing Fractions</div>
+    <ol style="padding-left:1.5rem;">
+      <li>Find the L.C.D. of all fractional terms.</li>
+      <li>Multiply every term of the equation by the L.C.D.</li>
+      <li>Solve the resulting equation (no fractions!).</li>
+      <li>Check: substitute back into the original equation.</li>
+    </ol>
+  </div>
+
+  <div class="box box-caution">
+    <div class="box-title">Caution &mdash; Extraneous Roots</div>
+    When the variable appears in a denominator (a <strong>fractional equation</strong>), multiplying by an expression that can equal zero may introduce extraneous roots. Always check your answers in the original equation. Only values producing true statements belong to the solution set.
+  </div>
+</div>
+
+
+<!-- ================================================================== -->
+<!-- SECTION 8-9: Ratios                                                -->
+<!-- ================================================================== -->
+<div class="section-card">
+  <h2><span class="section-num">8-9</span> Ratios</h2>
+
+  <div class="box box-definition">
+    <div class="box-title">Definition &mdash; Ratio</div>
+    A <strong>ratio</strong> of one number to another is the quotient of the first number divided by the second. The ratio of \(a\) to \(b\) can be written as \(a \div b\), \(a:b\), or \(\dfrac{a}{b}\).
+  </div>
+
+  <p>When comparing measurements of the same kind, first express both in the same unit, then compute the quotient. For example, to compare a 2-foot line to a 4-inch line, convert 2 feet to 24 inches, giving the ratio \(\dfrac{24}{4} = 6:1\).</p>
+
+  <p>By the multiplication property of fractions, the ratio \(5:4\) compares not only \(5\) and \(4\), but also \(10\) and \(8\), \(15\) and \(12\), and in general \(5n\) and \(4n\) for any nonzero \(n\).</p>
+</div>
+
+
+<!-- ================================================================== -->
+<!-- SECTION 8-10: Per Cent Problems                                    -->
+<!-- ================================================================== -->
+<div class="section-card">
+  <h2><span class="section-num">8-10</span> Per Cent Problems</h2>
+
+  <p>The ratio of one number to another is often expressed as a <strong>per cent</strong>. The words "per cent" (\(\%\)) mean <em>divided by 100</em> or <em>hundredths</em>:</p>
+
+  $$4\% = \frac{4}{100} = 0.04, \qquad 125\% = \frac{125}{100} = 1.25, \qquad 100\% = 1$$
+
+  <div class="box box-formula">
+    <div class="box-title">The Percentage Relationship</div>
+    $$\frac{\text{percentage}}{\text{base}} = \text{rate} \qquad \Longleftrightarrow \qquad p = r \cdot b \quad (b \neq 0)$$
+    where <strong>percentage</strong> (\(p\)) is a number equal to a per cent (<strong>rate</strong>, \(r\)) of another number called the <strong>base</strong> (\(b\)).
+  </div>
+</div>
+
+
+<!-- ================================================================== -->
+<!-- SECTION 8-11: Problems about Work                                  -->
+<!-- ================================================================== -->
+<div class="section-card">
+  <h2><span class="section-num">8-11</span> Problems about Work</h2>
+
+  <div class="box box-definition">
+    <div class="box-title">Work Rate Principle</div>
+    If a job takes \(n\) units of time to complete, then the <strong>rate of work</strong> is \(\dfrac{1}{n}\) of the job per unit of time. When two workers (or machines) work together, their combined rate is the sum of their individual rates:
+    $$\frac{1}{a} + \frac{1}{b} = \frac{1}{t}$$
+    where \(a\) and \(b\) are the individual times and \(t\) is the time working together.
+  </div>
+
+  <!-- SVG: Work Rate Diagram -->
+  <div class="figure-container">
+    <svg viewBox="0 0 580 300" width="580" xmlns="http://www.w3.org/2000/svg">
+      <!-- Title -->
+      <text x="290" y="24" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#8b1a1a">Work Rate Model: Two Workers Filling a Tank</text>
+
+      <!-- Tank outline -->
+      <rect x="200" y="55" width="180" height="200" rx="10" fill="#e8f4f8" stroke="#2b4c7e" stroke-width="2.5"/>
+      <text x="290" y="82" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#2b4c7e" font-weight="700">THE JOB = 1 TANK</text>
+
+      <!-- Water level animation area -->
+      <rect x="204" y="120" width="172" height="131" rx="6" fill="#7fb8d8" opacity="0.4"/>
+      <text x="290" y="195" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#2b4c7e" font-weight="700">t hours together</text>
+
+      <!-- Pipe A (left) -->
+      <rect x="60" y="100" width="140" height="20" rx="4" fill="#d4582a" opacity="0.8"/>
+      <polygon points="200,95 200,125 215,110" fill="#d4582a" opacity="0.8"/>
+      <text x="130" y="95" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#d4582a" font-weight="700">Pipe A</text>
+      <text x="130" y="140" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#2d2d2d">Rate = 1/a per hr</text>
+      <text x="130" y="160" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#666">(fills alone in a hrs)</text>
+
+      <!-- Pipe B (right) -->
+      <rect x="380" y="100" width="140" height="20" rx="4" fill="#276749" opacity="0.8"/>
+      <polygon points="380,95 380,125 365,110" fill="#276749" opacity="0.8"/>
+      <text x="450" y="95" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#276749" font-weight="700">Pipe B</text>
+      <text x="450" y="140" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#2d2d2d">Rate = 1/b per hr</text>
+      <text x="450" y="160" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#666">(fills alone in b hrs)</text>
+
+      <!-- Equation at bottom -->
+      <rect x="120" y="265" width="340" height="30" rx="6" fill="#ebf0ff" stroke="#2b4c7e" stroke-width="1.5"/>
+      <text x="290" y="286" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#2b4c7e" font-weight="700">1/a + 1/b = 1/t  &rarr;  t = ab / (a + b)</text>
+    </svg>
+    <div class="figure-caption">Figure 8.2 &mdash; Work rate model: combined rates of two workers equal the reciprocal of their joint time</div>
+  </div>
+</div>
+
+
+<!-- ================================================================== -->
+<!-- SECTION 8-12: Motion Problems                                      -->
+<!-- ================================================================== -->
+<div class="section-card">
+  <h2><span class="section-num">8-12</span> Motion Problems in Two Parts</h2>
+
+  <p>Many motion problems involve travel <em>with</em> and <em>against</em> a current or wind. The key relationships are:</p>
+
+  <div class="box box-formula">
+    <div class="box-title">Distance&ndash;Rate&ndash;Time with Current/Wind</div>
+    $$\text{distance} = \text{rate} \times \text{time} \qquad (d = rt)$$
+    <ul style="padding-left:1.5rem; margin-top:0.5rem;">
+      <li><strong>With the current/wind:</strong> effective rate \(= r + c\)</li>
+      <li><strong>Against the current/wind:</strong> effective rate \(= r - c\)</li>
+    </ul>
+    where \(r\) is the speed in still conditions and \(c\) is the speed of the current or wind.
+  </div>
+
+  <p>When the time is the same for both legs of a trip, you set the time expressions equal to each other:</p>
+
+  $$\frac{d_1}{r + c} = \frac{d_2}{r - c}$$
+</div>
+
+
+<!-- ================================================================== -->
+<!-- WORKED PROBLEMS                                                    -->
+<!-- ================================================================== -->
+<h2 style="margin-top:2.5rem; margin-bottom:1.2rem; font-size:2rem; border-bottom:3px solid #d4582a; padding-bottom:0.5rem;">Worked Problems</h2>
+
+<!-- WORKED PROBLEM 1 -->
+<div class="worked-problem">
+  <div class="problem-header">Worked Problem 1 &mdash; Reducing an Algebraic Fraction</div>
+  <div class="problem-body">
+    Reduce to lowest terms: \(\;\dfrac{15b + 5}{6b^2 - b - 1}\)
+  </div>
+  <div class="solution">
+    <div class="solution-label">Solution</div>
+    <ol class="step-list">
+      <li>Factor the numerator: \(15b + 5 = 5(3b + 1)\).</li>
+      <li>Factor the denominator: \(6b^2 - b - 1 = (2b - 1)(3b + 1)\).</li>
+      <li>Divide numerator and denominator by the common factor \((3b + 1)\):
+        $$\frac{5(3b+1)}{(2b-1)(3b+1)} = \frac{5}{2b - 1}$$
+      </li>
+    </ol>
+    <p><strong>Answer:</strong> \(\;\dfrac{5}{2b - 1}\), provided \(b \neq \tfrac{1}{2}\) and \(b \neq -\tfrac{1}{3}\).</p>
+  </div>
+</div>
+
+<!-- WORKED PROBLEM 2 -->
+<div class="worked-problem">
+  <div class="problem-header">Worked Problem 2 &mdash; Multiplying Rational Expressions</div>
+  <div class="problem-body">
+    Simplify: \(\;\dfrac{3x - 3}{5x + 2} \cdot \dfrac{25x^2 - 4}{x^2 - 2x + 1}\)
+  </div>
+  <div class="solution">
+    <div class="solution-label">Solution</div>
+    <ol class="step-list">
+      <li>Factor each expression:
+        $$\frac{3(x-1)}{5x+2} \cdot \frac{(5x-2)(5x+2)}{(x-1)(x-1)}$$
+      </li>
+      <li>Cancel common factors \((5x+2)\) and one \((x-1)\):
+        $$= \frac{3(5x-2)}{x - 1}$$
+      </li>
+    </ol>
+    <p><strong>Answer:</strong> \(\;\dfrac{15x - 6}{x - 1}\), for \(x \neq 1, \; x \neq -\tfrac{2}{5}\).</p>
+  </div>
+</div>
+
+<!-- WORKED PROBLEM 3 -->
+<div class="worked-problem">
+  <div class="problem-header">Worked Problem 3 &mdash; Adding Fractions with Unequal Denominators</div>
+  <div class="problem-body">
+    Simplify: \(\;\dfrac{a+1}{a^2 - 2a - 3} - \dfrac{1}{a^2 + a} - \dfrac{3}{a^2 - 3a}\)
+  </div>
+  <div class="solution">
+    <div class="solution-label">Solution</div>
+    <ol class="step-list">
+      <li>Factor each denominator:
+        <ul style="padding-left:1.5rem; margin:0.5rem 0;">
+          <li>\(a^2 - 2a - 3 = (a - 3)(a + 1)\)</li>
+          <li>\(a^2 + a = a(a + 1)\)</li>
+          <li>\(a^2 - 3a = a(a - 3)\)</li>
+        </ul>
+      </li>
+      <li>The L.C.D. is \(a(a + 1)(a - 3)\).</li>
+      <li>Rewrite each fraction with the L.C.D.:
+        $$\frac{(a+1) \cdot a}{a(a-3)(a+1)} - \frac{1 \cdot (a-3)}{a(a+1)(a-3)} - \frac{3(a+1)}{a(a-3)(a+1)}$$
+      </li>
+      <li>Combine and simplify the numerator:
+        $$\frac{a^2 + a - a + 3 - 3a - 3}{a(a+1)(a-3)} = \frac{a^2 - 3a}{a(a+1)(a-3)}$$
+      </li>
+      <li>Factor: \(a^2 - 3a = a(a-3)\), then cancel:
+        $$= \frac{a(a-3)}{a(a+1)(a-3)} = \frac{1}{a+1}$$
+      </li>
+    </ol>
+    <p><strong>Answer:</strong> \(\;\dfrac{1}{a+1}\), for \(a \neq 0, \; a \neq 3, \; a \neq -1\).</p>
+  </div>
+</div>
+
+<!-- WORKED PROBLEM 4 -->
+<div class="worked-problem">
+  <div class="problem-header">Worked Problem 4 &mdash; Solving a Fractional Equation</div>
+  <div class="problem-body">
+    Solve: \(\;\dfrac{60}{z^2 - 36} + 1 = \dfrac{5}{z - 6}\)
+  </div>
+  <div class="solution">
+    <div class="solution-label">Solution</div>
+    <ol class="step-list">
+      <li>Note \(z^2 - 36 = (z-6)(z+6)\). The L.C.D. is \((z-6)(z+6)\).</li>
+      <li>Multiply every term by \((z^2 - 36)\):
+        $$60 + z^2 - 36 = 5(z + 6)$$
+      </li>
+      <li>Simplify: \(z^2 + 24 = 5z + 30\), so \(z^2 - 5z - 6 = 0\).</li>
+      <li>Factor: \((z - 6)(z + 1) = 0\), giving \(z = 6\) or \(z = -1\).</li>
+      <li><strong>Check:</strong> When \(z = 6\), the denominators \(z^2 - 36\) and \(z - 6\) equal zero &mdash; so \(z = 6\) is <em>extraneous</em>.
+        <br>When \(z = -1\): \(\dfrac{60}{1 - 36} + 1 = \dfrac{60}{-35} + 1 = -\dfrac{12}{7} + 1 = -\dfrac{5}{7}\). Also \(\dfrac{5}{-1-6} = -\dfrac{5}{7}\). True!
+      </li>
+    </ol>
+    <p><strong>Answer:</strong> \(\;z = -1\). The value \(z = 6\) is extraneous.</p>
+  </div>
+</div>
+
+<!-- WORKED PROBLEM 5 -->
+<div class="worked-problem">
+  <div class="problem-header">Worked Problem 5 &mdash; A Work Problem</div>
+  <div class="problem-body">
+    One pipe can fill a tank in 5 hours. A second pipe can fill it in 3 hours. How long will it take both pipes working together?
+  </div>
+  <div class="solution">
+    <div class="solution-label">Solution</div>
+    <ol class="step-list">
+      <li>The first pipe fills \(\dfrac{1}{5}\) of the tank per hour. The second fills \(\dfrac{1}{3}\) per hour.</li>
+      <li>Let \(t\) = hours for both pipes together. Together they fill \(\dfrac{1}{5} + \dfrac{1}{3}\) per hour.</li>
+      <li>Set up the equation:
+        $$\frac{t}{5} + \frac{t}{3} = 1$$
+      </li>
+      <li>Multiply by the L.C.D. (\(15\)):
+        $$3t + 5t = 15 \quad \Longrightarrow \quad 8t = 15 \quad \Longrightarrow \quad t = \frac{15}{8}$$
+      </li>
+    </ol>
+    <p><strong>Answer:</strong> Both pipes fill the tank in \(\dfrac{15}{8} = 1\tfrac{7}{8}\) hours (1 hour 52.5 minutes).</p>
+    <p><em>Check:</em> In \(\frac{15}{8}\) hours, pipe 1 fills \(\frac{15}{8} \cdot \frac{1}{5} = \frac{3}{8}\) and pipe 2 fills \(\frac{15}{8} \cdot \frac{1}{3} = \frac{5}{8}\). Together: \(\frac{3}{8} + \frac{5}{8} = 1\). &#10003;</p>
+  </div>
+</div>
+
+<!-- WORKED PROBLEM 6 -->
+<div class="worked-problem">
+  <div class="problem-header">Worked Problem 6 &mdash; A Motion Problem</div>
+  <div class="problem-body">
+    An airplane flying at 600 mph in calm air covers 2520 miles with the wind in the same time it covers 2280 miles against the wind. Find the speed of the wind.
+  </div>
+  <div class="solution">
+    <div class="solution-label">Solution</div>
+    <ol class="step-list">
+      <li>Let \(s\) = speed of the wind (mph).
+        <ul style="padding-left:1.5rem; margin:0.3rem 0;">
+          <li>With wind: rate \(= 600 + s\), distance \(= 2520\)</li>
+          <li>Against wind: rate \(= 600 - s\), distance \(= 2280\)</li>
+        </ul>
+      </li>
+      <li>Since the times are equal: \(\;\dfrac{2520}{600 + s} = \dfrac{2280}{600 - s}\).</li>
+      <li>Cross-multiply:
+        $$2520(600 - s) = 2280(600 + s)$$
+        $$1{,}512{,}000 - 2520s = 1{,}368{,}000 + 2280s$$
+      </li>
+      <li>Solve:
+        $$144{,}000 = 4800s \quad \Longrightarrow \quad s = 30$$
+      </li>
+    </ol>
+    <p><strong>Answer:</strong> The wind speed is 30 mph.</p>
+    <p><em>Check:</em> Time with wind: \(\frac{2520}{630} = 4\) hours. Time against wind: \(\frac{2280}{570} = 4\) hours. Equal! &#10003;</p>
+  </div>
+</div>
+
+
+<!-- ================================================================== -->
+<!-- QUICK REFERENCE                                                    -->
+<!-- ================================================================== -->
+<div class="quick-ref">
+  <h2>Quick Reference &mdash; Chapter 8 Formulas</h2>
+  <div class="formula-grid">
+    <div class="formula-item">
+      <div class="formula-label">Multiplication Property</div>
+      $$\frac{ac}{bc} = \frac{a}{b} \;\; (c \neq 0)$$
+    </div>
+    <div class="formula-item">
+      <div class="formula-label">Multiplying Fractions</div>
+      $$\frac{x}{c} \cdot \frac{y}{d} = \frac{xy}{cd}$$
+    </div>
+    <div class="formula-item">
+      <div class="formula-label">Dividing Fractions</div>
+      $$\frac{a}{b} \div \frac{c}{d} = \frac{a}{b} \cdot \frac{d}{c} = \frac{ad}{bc}$$
+    </div>
+    <div class="formula-item">
+      <div class="formula-label">Adding Fractions</div>
+      $$\frac{a}{d} + \frac{c}{d} = \frac{a+c}{d}$$
+    </div>
+    <div class="formula-item">
+      <div class="formula-label">Percentage Formula</div>
+      $$p = r \cdot b \quad \left(\frac{p}{b} = r\right)$$
+    </div>
+    <div class="formula-item">
+      <div class="formula-label">Work Rate</div>
+      $$\frac{1}{a} + \frac{1}{b} = \frac{1}{t}$$
+    </div>
+    <div class="formula-item">
+      <div class="formula-label">Distance = Rate &times; Time</div>
+      $$d = r \cdot t$$
+    </div>
+    <div class="formula-item">
+      <div class="formula-label">Simple Interest</div>
+      $$I = p \cdot r \cdot t$$
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== CHAPTER NAV ===== -->
+<nav class="chapter-nav">
+  <a href="../07-special-products-and-factoring/">&larr; Ch 7: Special Products &amp; Factoring</a>
+  <span class="nav-center">Chapter 8 of 15</span>
+  <a href="../09-graphs/">Ch 9: Graphs &rarr;</a>
+</nav>
+
+</div><!-- /.container -->
+
+<!-- KaTeX rendering -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left: "$$", right: "$$", display: true},
+      {left: "\\[", right: "\\]", display: true},
+      {left: "\\(", right: "\\)", display: false}
+    ],
+    throwOnError: false
+  });
+});
+</script>
+</body>
+</html>

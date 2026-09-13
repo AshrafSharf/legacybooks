@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table of Contents | Practical Algebra</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', 'Cambria', 'Times New Roman', serif;
+            background: #fdf8f3;
+            color: #2d2d2d;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+        .hero {
+            background: linear-gradient(135deg, #0d4f4f 0%, #1a2332 100%);
+            color: white;
+            padding: 3rem 2rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero .bg-icon {
+            font-size: 8rem;
+            opacity: 0.08;
+            position: absolute;
+            top: -0.5rem;
+            right: 2rem;
+            line-height: 1;
+        }
+        .hero h1 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .hero .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.85;
+            font-style: italic;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .toc-item {
+            margin-bottom: 0.75rem;
+        }
+        .toc-link {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            padding: 1.25rem 1.5rem;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            text-decoration: none;
+            color: #2d2d2d;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            border-left: 5px solid #0d4f4f;
+        }
+        .toc-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+        }
+        .toc-link:active {
+            transform: translateY(0);
+        }
+        .chapter-number {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #0d4f4f;
+            min-width: 3rem;
+            text-align: center;
+            line-height: 1;
+        }
+        .chapter-info {
+            flex: 1;
+        }
+        .chapter-title {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #0d4f4f;
+            display: block;
+        }
+        .chapter-arrow {
+            font-size: 1.5rem;
+            color: #c0602b;
+            transition: transform 0.15s ease;
+        }
+        .toc-link:hover .chapter-arrow {
+            transform: translateX(4px);
+        }
+        .footer-note {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e2d9ce;
+            color: #777;
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <span class="bg-icon">📖</span>
+    <h1>Practical Algebra</h1>
+    <p class="subtitle">A Self-Teaching Guide — Table of Contents</p>
+</div>
+
+<div class="container">
+    <ol class="toc-list">
+        <li class="toc-item">
+            <a class="toc-link" href="01-some-basic-concepts/index.html">
+                <span class="chapter-number">1</span>
+                <span class="chapter-info">
+                    <span class="chapter-title">Some Basic Concepts</span>
+                </span>
+                <span class="chapter-arrow">→</span>
+            </a>
+        </li>
+        <li class="toc-item">
+            <a class="toc-link" href="02-the-number-system/index.html">
+                <span class="chapter-number">2</span>
+                <span class="chapter-info">
+                    <span class="chapter-title">The Number System</span>
+                </span>
+                <span class="chapter-arrow">→</span>
+            </a>
+        </li>
+        <li class="toc-item">
+            <a class="toc-link" href="03-monomials-and-polynomials/index.html">
+                <span class="chapter-number">3</span>
+                <span class="chapter-info">
+                    <span class="chapter-title">Monomials and Polynomials</span>
+                </span>
+                <span class="chapter-arrow">→</span>
+            </a>
+        </li>
+        <li class="toc-item">
+            <a class="toc-link" href="04-special-products-and-factoring/index.html">
+                <span class="chapter-number">4</span>
+                <span class="chapter-info">
+                    <span class="chapter-title">Special Products and Factoring</span>
+                </span>
+                <span class="chapter-arrow">→</span>
+            </a>
+        </li>
+        <li class="toc-item">
+            <a class="toc-link" href="05-fractions/index.html">
+                <span class="chapter-number">5</span>
+                <span class="chapter-info">
+                    <span class="chapter-title">Fractions</span>
+                </span>
+                <span class="chapter-arrow">→</span>
+            </a>
+        </li>
+        <li class="toc-item">
+            <a class="toc-link" href="06-exponents-roots-and-radicals/index.html">
+                <span class="chapter-number">6</span>
+                <span class="chapter-info">
+                    <span class="chapter-title">Exponents, Roots, and Radicals</span>
+                </span>
+                <span class="chapter-arrow">→</span>
+            </a>
+        </li>
+        <li class="toc-item">
+            <a class="toc-link" href="07-linear-and-fractional-equations-and-formulas/index.html">
+                <span class="chapter-number">7</span>
+                <span class="chapter-info">
+                    <span class="chapter-title">Linear and Fractional Equations and Formulas</span>
+                </span>
+                <span class="chapter-arrow">→</span>
+            </a>
+        </li>
+        <li class="toc-item">
+            <a class="toc-link" href="08-functions-and-graphs/index.html">
+                <span class="chapter-number">8</span>
+                <span class="chapter-info">
+                    <span class="chapter-title">Functions and Graphs</span>
+                </span>
+                <span class="chapter-arrow">→</span>
+            </a>
+        </li>
+        <li class="toc-item">
+            <a class="toc-link" href="09-quadratic-equations/index.html">
+                <span class="chapter-number">9</span>
+                <span class="chapter-info">
+                    <span class="chapter-title">Quadratic Equations</span>
+                </span>
+                <span class="chapter-arrow">→</span>
+            </a>
+        </li>
+        <li class="toc-item">
+            <a class="toc-link" href="10-inequalities/index.html">
+                <span class="chapter-number">10</span>
+                <span class="chapter-info">
+                    <span class="chapter-title">Inequalities</span>
+                </span>
+                <span class="chapter-arrow">→</span>
+            </a>
+        </li>
+        <li class="toc-item">
+            <a class="toc-link" href="11-ratio-proportion-and-variation/index.html">
+                <span class="chapter-number">11</span>
+                <span class="chapter-info">
+                    <span class="chapter-title">Ratio, Proportion, and Variation</span>
+                </span>
+                <span class="chapter-arrow">→</span>
+            </a>
+        </li>
+        <li class="toc-item">
+            <a class="toc-link" href="12-solving-everyday-problems/index.html">
+                <span class="chapter-number">12</span>
+                <span class="chapter-info">
+                    <span class="chapter-title">Solving Everyday Problems</span>
+                </span>
+                <span class="chapter-arrow">→</span>
+            </a>
+        </li>
+    </ol>
+
+    <p class="footer-note">Practical Algebra: A Self-Teaching Guide — 12 Chapters</p>
+</div>
+
+</body>
+</html>

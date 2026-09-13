@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 5 — Equations, Inequalities, and Problem Solving | Modern Algebra: Structure and Method</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<style>
+  /* ===== RESET & BASE ===== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Georgia', 'Cambria', 'Times New Roman', serif;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #2d2d2d;
+    background: #fdf6f0;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.3;
+  }
+  a { color: #8b1a1a; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ===== KaTeX overrides ===== */
+  .katex { font-size: 1.3em; }
+  .katex-display { font-size: 1.35em; margin: 1.5rem 0; overflow-x: auto; }
+
+  /* ===== HERO HEADER ===== */
+  .hero {
+    background: linear-gradient(135deg, #8b1a1a 0%, #5c1212 40%, #1a1a2e 100%);
+    color: #fff;
+    padding: 3.5rem 2rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '5';
+    position: absolute;
+    right: -0.05em;
+    top: -0.18em;
+    font-size: 18rem;
+    font-weight: 900;
+    opacity: 0.07;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-book {
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 0.25rem;
+  }
+  .hero-chapter {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #f5a87a;
+    margin-bottom: 0.3rem;
+  }
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+  }
+  .hero-sub {
+    font-size: 1.1rem;
+    opacity: 0.88;
+    max-width: 640px;
+  }
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 1.85rem; }
+    .hero { padding: 2.5rem 1.2rem 2rem; }
+    .hero::before { font-size: 10rem; }
+  }
+
+  /* ===== MAIN CONTAINER ===== */
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+  }
+
+  /* ===== OVERVIEW CARD ===== */
+  .overview-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem 2rem 1.6rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 2px 16px rgba(139,26,26,0.08);
+    border-top: 4px solid #8b1a1a;
+  }
+  .overview-card h2 {
+    font-size: 1.5rem;
+    color: #8b1a1a;
+    margin-bottom: 1rem;
+  }
+  .overview-card ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.45rem 1.5rem;
+  }
+  .overview-card li {
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 1.02rem;
+    line-height: 1.55;
+  }
+  .overview-card li::before {
+    content: '\25B8';
+    position: absolute;
+    left: 0;
+    color: #d4582a;
+    font-size: 1.1rem;
+  }
+  @media (max-width: 640px) {
+    .overview-card ul { grid-template-columns: 1fr; }
+  }
+
+  /* ===== SECTIONS ===== */
+  .section {
+    margin-bottom: 2.5rem;
+  }
+  .section h2 {
+    font-size: 2rem;
+    color: #8b1a1a;
+    margin-bottom: 0.25rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid #e8c9b8;
+  }
+  .section h2 .sec-num {
+    color: #d4582a;
+    font-weight: 700;
+    margin-right: 0.3rem;
+  }
+  .section h3 {
+    font-size: 1.35rem;
+    color: #5c1212;
+    margin: 1.5rem 0 0.6rem;
+  }
+
+  /* ===== HIGHLIGHT BOXES ===== */
+  .box {
+    border-left: 5px solid;
+    border-radius: 6px;
+    padding: 1.2rem 1.5rem;
+    margin: 1.25rem 0;
+  }
+  .box p:last-child { margin-bottom: 0; }
+
+  .box-def   { border-color: #8b1a1a; background: #fce8e8; }
+  .box-insight { border-color: #d4582a; background: #fef3ec; }
+  .box-caution { border-color: #7f1d1d; background: #fef2f2; }
+  .box-example { border-color: #276749; background: #f0f7f0; }
+  .box-practice { border-color: #4a5568; background: #f7fafc; }
+  .box-formula  { border-color: #2b4c7e; background: #ebf0ff; }
+
+  .box-label {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 0.92rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.5rem;
+  }
+  .box-def .box-label   { color: #8b1a1a; }
+  .box-insight .box-label { color: #d4582a; }
+  .box-caution .box-label { color: #7f1d1d; }
+  .box-example .box-label { color: #276749; }
+  .box-practice .box-label { color: #4a5568; }
+  .box-formula .box-label  { color: #2b4c7e; }
+
+  /* ===== SOLUTION STEPS ===== */
+  .steps { margin: 0.6rem 0 0.3rem; }
+  .steps .step {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+    align-items: baseline;
+  }
+  .step-num {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 0.82rem;
+    color: #fff;
+    background: #276749;
+    width: 1.55rem;
+    height: 1.55rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+  }
+  .step-body { flex: 1; }
+
+  /* ===== SVG diagrams ===== */
+  .diagram-wrap {
+    text-align: center;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+  }
+  .diagram-wrap svg {
+    max-width: 100%;
+    height: auto;
+  }
+  .diagram-caption {
+    font-size: 0.92rem;
+    color: #666;
+    margin-top: 0.4rem;
+    font-style: italic;
+  }
+
+  /* ===== QUICK REFERENCE TABLE ===== */
+  .ref-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  @media (max-width: 640px) {
+    .ref-grid { grid-template-columns: 1fr; }
+  }
+  .ref-card {
+    background: #fff;
+    border: 1px solid #d4d4d4;
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+  }
+  .ref-card h4 {
+    font-size: 0.95rem;
+    color: #2b4c7e;
+    margin-bottom: 0.4rem;
+  }
+
+  /* ===== NAV FOOTER ===== */
+  .chapter-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #e8c9b8;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .chapter-nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #8b1a1a;
+    padding: 0.5rem 1.1rem;
+    border: 2px solid #8b1a1a;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .chapter-nav a:hover {
+    background: #8b1a1a;
+    color: #fff;
+    text-decoration: none;
+  }
+  .chapter-nav .nav-label {
+    font-size: 0.82rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+  }
+
+  /* ===== UTILITY ===== */
+  p { margin-bottom: 0.85rem; }
+  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+  li { margin-bottom: 0.3rem; }
+  strong { color: #3d1212; }
+  .text-center { text-align: center; }
+  .mt-1 { margin-top: 1rem; }
+  .mt-2 { margin-top: 2rem; }
+  .mb-1 { margin-bottom: 1rem; }
+  .indent { margin-left: 1.5rem; }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-book">Modern Algebra: Structure and Method &mdash; Dolciani</div>
+    <div class="hero-chapter">Chapter 5</div>
+    <h1>Equations, Inequalities, and Problem Solving</h1>
+    <p class="hero-sub">From transforming equations to solving real-world problems with inequalities, uniform motion, and mixtures &mdash; a complete toolkit for open sentences in directed numbers.</p>
+  </div>
+</header>
+
+<main class="container">
+
+<!-- ============ OVERVIEW ============ -->
+<div class="overview-card">
+  <h2>What You'll Learn</h2>
+  <ul>
+    <li>Transform equations using properties of equality in directed numbers</li>
+    <li>Solve inequalities and understand when to reverse the inequality sign</li>
+    <li>Work with compound (paired) inequalities using <em>and</em> / <em>or</em></li>
+    <li>Apply a systematic four-step plan for solving word problems</li>
+    <li>Model problems about consecutive integers</li>
+    <li>Solve angle problems: complementary, supplementary, and triangle angles</li>
+    <li>Use \(d = rt\) for uniform motion in opposite and same directions</li>
+    <li>Set up and solve mixture and value problems</li>
+  </ul>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 5-1 -->
+<!-- ============================================================ -->
+<section class="section" id="s5-1">
+  <h2><span class="sec-num">5-1</span> Transforming Equations</h2>
+
+  <p>The transformations you learned for arithmetic numbers work equally well with <strong>directed (signed) numbers</strong>. You may add, subtract, multiply, or divide each member of an equation by the same nonzero directed number to produce an <strong>equivalent equation</strong>&mdash;one with the same solution set.</p>
+
+  <div class="box box-formula">
+    <div class="box-label">Properties of Equality (Directed Numbers)</div>
+    <p>If \(a = b\), then for any directed number \(c\):</p>
+    <ul style="list-style:none; padding-left:0;">
+      <li>\(a + c = b + c\) &nbsp;&nbsp;(addition / subtraction)</li>
+      <li>\(a \cdot c = b \cdot c\) &nbsp;&nbsp;(multiplication, \(c \neq 0\))</li>
+      <li>\(\displaystyle \frac{a}{c} = \frac{b}{c}\) &nbsp;&nbsp;(division, \(c \neq 0\))</li>
+    </ul>
+  </div>
+
+  <!-- WORKED EXAMPLE 1 -->
+  <div class="box box-example">
+    <div class="box-label">Worked Example 1 &mdash; Solving a Linear Equation</div>
+    <p><strong>Solve:</strong> &nbsp;\(x + 36 = 1 - 4(x - 5)\)</p>
+    <div class="steps">
+      <div class="step"><span class="step-num">1</span><div class="step-body">Distribute and combine on the right: \(x + 36 = 1 - 4x + 20 = 21 - 4x\)</div></div>
+      <div class="step"><span class="step-num">2</span><div class="step-body">Subtract 36 from each member: \(x = -15 - 4x\)</div></div>
+      <div class="step"><span class="step-num">3</span><div class="step-body">Add \(4x\) to each member: \(5x = -15\)</div></div>
+      <div class="step"><span class="step-num">4</span><div class="step-body">Divide each member by 5: \(x = -3\)</div></div>
+    </div>
+    <p><strong>Check:</strong> &nbsp;Left: \(-3 + 36 = 33\). &nbsp;Right: \(1 - 4(-3 - 5) = 1 - 4(-8) = 1 + 32 = 33\). &nbsp;\(\checkmark\)</p>
+  </div>
+
+  <!-- WORKED EXAMPLE 2 -->
+  <div class="box box-example">
+    <div class="box-label">Worked Example 2 &mdash; Solving for a Specified Variable</div>
+    <p><strong>Solve for \(t\):</strong> &nbsp;\(I = prt\)</p>
+    <div class="steps">
+      <div class="step"><span class="step-num">1</span><div class="step-body">Divide each member by \(pr\) (where \(p \neq 0\), \(r \neq 0\)):</div></div>
+    </div>
+    $$t = \frac{I}{pr}$$
+  </div>
+
+  <div class="box box-example">
+    <div class="box-label">Worked Example 3 &mdash; Solving for \(g\)</div>
+    <p><strong>Solve for \(g\):</strong> &nbsp;\(d = \tfrac{1}{2}gt^{2}\)</p>
+    <div class="steps">
+      <div class="step"><span class="step-num">1</span><div class="step-body">Multiply both sides by 2: \(2d = gt^{2}\)</div></div>
+      <div class="step"><span class="step-num">2</span><div class="step-body">Divide both sides by \(t^{2}\): \(\displaystyle g = \frac{2d}{t^{2}}\)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 5-2 -->
+<!-- ============================================================ -->
+<section class="section" id="s5-2">
+  <h2><span class="sec-num">5-2</span> The Properties of Inequality</h2>
+
+  <p>For every pair of directed numbers \(a\) and \(b\), exactly one of the following is true:</p>
+  $$a < b, \qquad a = b, \qquad a > b$$
+  <p>This is the <strong>order property (trichotomy)</strong>. On the number line, \(a < b\) means \(a\) lies to the <em>left</em> of \(b\).</p>
+
+  <!-- SVG: Number line showing a < b -->
+  <div class="diagram-wrap">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 70" width="500" height="70" role="img" aria-label="Number line showing a less than b">
+      <!-- axis -->
+      <line x1="30" y1="35" x2="470" y2="35" stroke="#2d2d2d" stroke-width="2"/>
+      <polygon points="468,30 480,35 468,40" fill="#2d2d2d"/>
+      <!-- ticks -->
+      <line x1="140" y1="27" x2="140" y2="43" stroke="#8b1a1a" stroke-width="2.5"/>
+      <line x1="340" y1="27" x2="340" y2="43" stroke="#8b1a1a" stroke-width="2.5"/>
+      <!-- dots -->
+      <circle cx="140" cy="35" r="5" fill="#8b1a1a"/>
+      <circle cx="340" cy="35" r="5" fill="#d4582a"/>
+      <!-- labels -->
+      <text x="140" y="58" text-anchor="middle" font-family="Georgia,serif" font-size="15" fill="#8b1a1a" font-weight="700">a</text>
+      <text x="340" y="58" text-anchor="middle" font-family="Georgia,serif" font-size="15" fill="#d4582a" font-weight="700">b</text>
+      <!-- arrow -->
+      <path d="M160,20 Q240,5 320,20" fill="none" stroke="#276749" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <text x="240" y="14" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="12" fill="#276749" font-weight="600">a &lt; b</text>
+    </svg>
+    <div class="diagram-caption">If \(a\) lies to the left of \(b\), then \(a < b\).</div>
+  </div>
+
+  <div class="box box-formula">
+    <div class="box-label">Three Key Properties of Inequality</div>
+
+    <p><strong>1. Transitive Property:</strong><br>
+    If \(a < b\) and \(b < c\), then \(a < c\).</p>
+
+    <p><strong>2. Additive Property:</strong><br>
+    If \(a < b\), then \(a + c < b + c\) and \(a - c < b - c\) for any \(c\).</p>
+
+    <p><strong>3. Multiplicative Property</strong> (the crucial one!):<br>
+    If \(a < b\) and \(c > 0\), then \(ac < bc\). &nbsp;<em>(order preserved)</em><br>
+    If \(a < b\) and \(c < 0\), then \(ac > bc\). &nbsp;<em>(order reversed!)</em></p>
+  </div>
+
+  <div class="box box-caution">
+    <div class="box-label">Caution &mdash; Multiplying or Dividing by a Negative</div>
+    <p>When you multiply or divide both sides of an inequality by a <strong>negative</strong> number, you must <strong>reverse the direction</strong> of the inequality sign. For example, from \(-4 < 3\), multiplying by \(-2\) gives \(8 > -6\).</p>
+  </div>
+
+  <!-- WORKED EXAMPLE 4 -->
+  <div class="box box-example">
+    <div class="box-label">Worked Example 4 &mdash; Solving an Inequality</div>
+    <p><strong>Solve:</strong> &nbsp;\(3 - 2x \le 11\)</p>
+    <div class="steps">
+      <div class="step"><span class="step-num">1</span><div class="step-body">Subtract 3 from each member: \(-2x \le 8\)</div></div>
+      <div class="step"><span class="step-num">2</span><div class="step-body">Divide by \(-2\) and <strong>reverse</strong> the sign: \(x \ge -4\)</div></div>
+    </div>
+    <p>The solution set is all directed numbers greater than or equal to \(-4\).</p>
+  </div>
+
+  <!-- SVG: Number line for x >= -4 -->
+  <div class="diagram-wrap">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 60" width="500" height="60" role="img" aria-label="Number line showing x greater than or equal to negative 4">
+      <line x1="30" y1="30" x2="470" y2="30" stroke="#2d2d2d" stroke-width="2"/>
+      <polygon points="468,25 480,30 468,35" fill="#2d2d2d"/>
+      <!-- ticks -->
+      <line x1="80" y1="22" x2="80" y2="38" stroke="#999" stroke-width="1"/>
+      <text x="80" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#666">-6</text>
+      <line x1="140" y1="22" x2="140" y2="38" stroke="#999" stroke-width="1"/>
+      <text x="140" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#666">-4</text>
+      <line x1="200" y1="22" x2="200" y2="38" stroke="#999" stroke-width="1"/>
+      <text x="200" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#666">-2</text>
+      <line x1="260" y1="22" x2="260" y2="38" stroke="#999" stroke-width="1"/>
+      <text x="260" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#666">0</text>
+      <line x1="320" y1="22" x2="320" y2="38" stroke="#999" stroke-width="1"/>
+      <text x="320" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#666">2</text>
+      <line x1="380" y1="22" x2="380" y2="38" stroke="#999" stroke-width="1"/>
+      <text x="380" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#666">4</text>
+      <!-- shaded ray from -4 rightward -->
+      <line x1="140" y1="30" x2="468" y2="30" stroke="#8b1a1a" stroke-width="5" opacity="0.35"/>
+      <!-- filled circle (closed) at -4 -->
+      <circle cx="140" cy="30" r="6" fill="#8b1a1a"/>
+    </svg>
+    <div class="diagram-caption">Solution set of \(x \ge -4\): closed dot at \(-4\), shading to the right.</div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 5-3 -->
+<!-- ============================================================ -->
+<section class="section" id="s5-3">
+  <h2><span class="sec-num">5-3</span> Pairs of Inequalities</h2>
+
+  <p>Sometimes a variable must satisfy <strong>two inequalities at the same time</strong> (an "and" condition), or <strong>at least one</strong> of two inequalities (an "or" condition).</p>
+
+  <h3>Compound "And" Inequalities</h3>
+  <p>The sentence \(-2 < x + 4 < 5\) means both \(-2 < x + 4\) <em>and</em> \(x + 4 < 5\) must hold simultaneously. Subtract 4 from every member:</p>
+  $$-6 < x < 1$$
+
+  <!-- SVG: compound and -->
+  <div class="diagram-wrap">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 60" width="500" height="60" role="img" aria-label="Number line for negative 6 less than x less than 1">
+      <line x1="30" y1="30" x2="470" y2="30" stroke="#2d2d2d" stroke-width="2"/>
+      <polygon points="468,25 480,30 468,35" fill="#2d2d2d"/>
+      <!-- ticks -->
+      <line x1="100" y1="22" x2="100" y2="38" stroke="#999" stroke-width="1"/>
+      <text x="100" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#666">-6</text>
+      <line x1="170" y1="22" x2="170" y2="38" stroke="#999" stroke-width="1"/>
+      <text x="170" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#666">-4</text>
+      <line x1="240" y1="22" x2="240" y2="38" stroke="#999" stroke-width="1"/>
+      <text x="240" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#666">-2</text>
+      <line x1="310" y1="22" x2="310" y2="38" stroke="#999" stroke-width="1"/>
+      <text x="310" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#666">0</text>
+      <line x1="345" y1="22" x2="345" y2="38" stroke="#999" stroke-width="1"/>
+      <text x="345" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#666">1</text>
+      <!-- shaded segment -->
+      <line x1="100" y1="30" x2="345" y2="30" stroke="#d4582a" stroke-width="5" opacity="0.35"/>
+      <!-- open circles at -6 and 1 -->
+      <circle cx="100" cy="30" r="6" fill="#fdf6f0" stroke="#d4582a" stroke-width="2.5"/>
+      <circle cx="345" cy="30" r="6" fill="#fdf6f0" stroke="#d4582a" stroke-width="2.5"/>
+    </svg>
+    <div class="diagram-caption">\(-6 < x < 1\): open dots at both endpoints, segment shaded between.</div>
+  </div>
+
+  <h3>Compound "Or" Inequalities</h3>
+  <p>The inequality \(|2y - 1| > 5\) is satisfied when <em>either</em> \(2y - 1 > 5\) or \(2y - 1 < -5\). Solving each:</p>
+  $$y > 3 \quad\text{or}\quad y < -2$$
+
+  <!-- SVG: compound or -->
+  <div class="diagram-wrap">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 60" width="500" height="60" role="img" aria-label="Number line for y less than negative 2 or y greater than 3">
+      <line x1="30" y1="30" x2="470" y2="30" stroke="#2d2d2d" stroke-width="2"/>
+      <polygon points="468,25 480,30 468,35" fill="#2d2d2d"/>
+      <polygon points="32,25 20,30 32,35" fill="#2d2d2d"/>
+      <!-- ticks -->
+      <line x1="130" y1="22" x2="130" y2="38" stroke="#999" stroke-width="1"/>
+      <text x="130" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#666">-4</text>
+      <line x1="190" y1="22" x2="190" y2="38" stroke="#999" stroke-width="1"/>
+      <text x="190" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#666">-2</text>
+      <line x1="250" y1="22" x2="250" y2="38" stroke="#999" stroke-width="1"/>
+      <text x="250" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#666">0</text>
+      <line x1="340" y1="22" x2="340" y2="38" stroke="#999" stroke-width="1"/>
+      <text x="340" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#666">3</text>
+      <line x1="400" y1="22" x2="400" y2="38" stroke="#999" stroke-width="1"/>
+      <text x="400" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#666">5</text>
+      <!-- left ray -->
+      <line x1="30" y1="30" x2="190" y2="30" stroke="#8b1a1a" stroke-width="5" opacity="0.35"/>
+      <!-- right ray -->
+      <line x1="340" y1="30" x2="468" y2="30" stroke="#8b1a1a" stroke-width="5" opacity="0.35"/>
+      <!-- open circles -->
+      <circle cx="190" cy="30" r="6" fill="#fdf6f0" stroke="#8b1a1a" stroke-width="2.5"/>
+      <circle cx="340" cy="30" r="6" fill="#fdf6f0" stroke="#8b1a1a" stroke-width="2.5"/>
+    </svg>
+    <div class="diagram-caption">\(y < -2\) or \(y > 3\): two disjoint rays, open dots at the boundary points.</div>
+  </div>
+
+  <div class="box box-insight">
+    <div class="box-label">Key Insight &mdash; And vs. Or</div>
+    <p><strong>"And"</strong> gives the <em>intersection</em> of two solution sets (values satisfying <em>both</em>). <strong>"Or"</strong> gives the <em>union</em> (values satisfying <em>at least one</em>). For example, the set satisfying both \(x < 3\) <strong>and</strong> \(x > 3\) is the empty set, while the set satisfying \(x < 3\) <strong>or</strong> \(x > 3\) is all directed numbers except 3.</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 5-4 -->
+<!-- ============================================================ -->
+<section class="section" id="s5-4">
+  <h2><span class="sec-num">5-4</span> A Plan for Solving Problems</h2>
+
+  <p>Every word problem in this chapter&mdash;and beyond&mdash;follows the same four-step strategy:</p>
+
+  <div class="box box-formula">
+    <div class="box-label">The Four-Step Plan</div>
+    <ol>
+      <li><strong>Read</strong> &mdash; What does the problem ask? Identify the unknown and let a variable represent it.</li>
+      <li><strong>Plan</strong> &mdash; What facts does the problem give? If helpful, draw a sketch or make a chart. Express other quantities in terms of your variable.</li>
+      <li><strong>Solve</strong> &mdash; Write an equation (or inequality) from the given facts and solve it.</li>
+      <li><strong>Check</strong> &mdash; Verify your answer in the <em>original problem</em> (not just the equation).</li>
+    </ol>
+  </div>
+
+  <!-- WORKED EXAMPLE 5 -->
+  <div class="box box-example">
+    <div class="box-label">Worked Example 5 &mdash; Problem-Solving Plan</div>
+    <p><strong>Problem:</strong> A roll has 10 fewer calories than twice the number in a slice of white bread. Together they contain at least 185 calories. Find the smallest possible number of calories in the bread.</p>
+    <div class="steps">
+      <div class="step"><span class="step-num">1</span><div class="step-body">Let \(x =\) calories in the bread. Then \(2x - 10 =\) calories in the roll.</div></div>
+      <div class="step"><span class="step-num">2</span><div class="step-body">Write the inequality: \((2x - 10) + x \ge 185\)</div></div>
+      <div class="step"><span class="step-num">3</span><div class="step-body">Simplify: \(3x - 10 \ge 185\), so \(3x \ge 195\), giving \(x \ge 65\).</div></div>
+      <div class="step"><span class="step-num">4</span><div class="step-body"><strong>Check:</strong> If \(x = 65\), roll = \(2(65) - 10 = 120\). Total = \(65 + 120 = 185 \ge 185\). \(\checkmark\)</div></div>
+    </div>
+    <p>The smallest possible number of calories in the bread is <strong>65</strong>.</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 5-5 -->
+<!-- ============================================================ -->
+<section class="section" id="s5-5">
+  <h2><span class="sec-num">5-5</span> Problems about Consecutive Integers</h2>
+
+  <div class="box box-def">
+    <div class="box-label">Definitions</div>
+    <p>An <strong>integer</strong> is any whole number (positive, negative, or zero). An integer is <strong>even</strong> if it equals twice some integer; otherwise it is <strong>odd</strong>.</p>
+    <ul>
+      <li><strong>Consecutive integers:</strong> \(n,\; n+1,\; n+2,\; \ldots\)</li>
+      <li><strong>Consecutive even integers:</strong> \(n,\; n+2,\; n+4,\; \ldots\) &nbsp;(\(n\) even)</li>
+      <li><strong>Consecutive odd integers:</strong> \(n,\; n+2,\; n+4,\; \ldots\) &nbsp;(\(n\) odd)</li>
+    </ul>
+    <p>Note: consecutive evens <em>and</em> consecutive odds each differ by 2.</p>
+  </div>
+
+  <!-- WORKED EXAMPLE 6 -->
+  <div class="box box-example">
+    <div class="box-label">Worked Example 6 &mdash; Consecutive Integers</div>
+    <p><strong>Find three consecutive integers whose sum is 48.</strong></p>
+    <div class="steps">
+      <div class="step"><span class="step-num">1</span><div class="step-body">Let \(n =\) the first integer. Then \(n+1\) and \(n+2\) are the next two.</div></div>
+      <div class="step"><span class="step-num">2</span><div class="step-body">Write the equation: \(n + (n+1) + (n+2) = 48\).</div></div>
+      <div class="step"><span class="step-num">3</span><div class="step-body">Simplify: \(3n + 3 = 48\), so \(3n = 45\), giving \(n = 15\).</div></div>
+      <div class="step"><span class="step-num">4</span><div class="step-body">The integers are \(15, 16, 17\). &nbsp;Check: \(15 + 16 + 17 = 48\). \(\checkmark\)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 5-6 -->
+<!-- ============================================================ -->
+<section class="section" id="s5-6">
+  <h2><span class="sec-num">5-6</span> Problems about Angles</h2>
+
+  <div class="box box-def">
+    <div class="box-label">Definitions</div>
+    <p>A <strong>directed angle</strong> consists of two rays from a common vertex, plus the rotation from one ray to the other. Counterclockwise rotation is positive; clockwise is negative. A <strong>degree</strong> (\(1°\)) is \(\frac{1}{360}\) of a complete rotation.</p>
+    <ul>
+      <li><strong>Complementary angles:</strong> two angles whose measures sum to \(90°\). If an angle measures \(n°\), its complement is \((90 - n)°\).</li>
+      <li><strong>Supplementary angles:</strong> two angles whose measures sum to \(180°\). If an angle measures \(n°\), its supplement is \((180 - n)°\).</li>
+      <li><strong>Triangle angle sum:</strong> the measures of the three angles of any triangle sum to \(180°\).</li>
+    </ul>
+  </div>
+
+  <!-- SVG: Complementary and Supplementary angles -->
+  <div class="diagram-wrap">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 200" width="520" height="200" role="img" aria-label="Complementary and supplementary angle diagrams">
+      <!-- Complementary angles (left) -->
+      <text x="125" y="18" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="14" fill="#8b1a1a" font-weight="700">Complementary Angles</text>
+      <!-- right-angle box -->
+      <line x1="50" y1="170" x2="200" y2="170" stroke="#2d2d2d" stroke-width="2"/>
+      <line x1="50" y1="170" x2="50" y2="40" stroke="#2d2d2d" stroke-width="2"/>
+      <!-- angle bisector -->
+      <line x1="50" y1="170" x2="185" y2="72" stroke="#d4582a" stroke-width="2"/>
+      <!-- right angle marker -->
+      <rect x="50" y="150" width="20" height="20" fill="none" stroke="#999" stroke-width="1"/>
+      <!-- arc for angle a -->
+      <path d="M 90,170 A 40,40 0 0,1 83,142" fill="none" stroke="#8b1a1a" stroke-width="2"/>
+      <text x="97" y="155" font-family="Georgia,serif" font-size="14" fill="#8b1a1a" font-style="italic">a</text>
+      <!-- arc for angle b -->
+      <path d="M 83,142 A 40,40 0 0,1 50,130" fill="none" stroke="#d4582a" stroke-width="2"/>
+      <text x="63" y="132" font-family="Georgia,serif" font-size="14" fill="#d4582a" font-style="italic">b</text>
+      <!-- label -->
+      <text x="125" y="195" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#666" font-style="italic">a + b = 90&deg;</text>
+
+      <!-- Supplementary angles (right) -->
+      <text x="395" y="18" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="14" fill="#8b1a1a" font-weight="700">Supplementary Angles</text>
+      <!-- straight line -->
+      <line x1="280" y1="140" x2="510" y2="140" stroke="#2d2d2d" stroke-width="2"/>
+      <!-- angle ray -->
+      <line x1="395" y1="140" x2="330" y2="50" stroke="#d4582a" stroke-width="2"/>
+      <!-- vertex dot -->
+      <circle cx="395" cy="140" r="3" fill="#2d2d2d"/>
+      <!-- arc for angle a -->
+      <path d="M 435,140 A 40,40 0 0,1 368,104" fill="none" stroke="#8b1a1a" stroke-width="2"/>
+      <text x="415" y="118" font-family="Georgia,serif" font-size="14" fill="#8b1a1a" font-style="italic">a</text>
+      <!-- arc for angle b -->
+      <path d="M 368,104 A 40,40 0 0,1 355,140" fill="none" stroke="#d4582a" stroke-width="2"/>
+      <text x="360" y="123" font-family="Georgia,serif" font-size="14" fill="#d4582a" font-style="italic">b</text>
+      <!-- label -->
+      <text x="395" y="175" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#666" font-style="italic">a + b = 180&deg;</text>
+    </svg>
+  </div>
+
+  <!-- WORKED EXAMPLE 7 (from textbook) -->
+  <div class="box box-example">
+    <div class="box-label">Worked Example 7 &mdash; Supplement and Complement</div>
+    <p><strong>How large is an angle whose supplement is 21&deg; less than four times its complement?</strong></p>
+    <div class="steps">
+      <div class="step"><span class="step-num">1</span><div class="step-body">Let \(n =\) the number of degrees in the angle. Its complement is \(90 - n\); its supplement is \(180 - n\).</div></div>
+      <div class="step"><span class="step-num">2</span><div class="step-body">Translate: \(180 - n = 4(90 - n) - 21\).</div></div>
+      <div class="step"><span class="step-num">3</span><div class="step-body">Expand: \(180 - n = 360 - 4n - 21 = 339 - 4n\).</div></div>
+      <div class="step"><span class="step-num">4</span><div class="step-body">Add \(4n\): \(180 + 3n = 339\), so \(3n = 159\), giving \(n = 53\).</div></div>
+    </div>
+    <p><strong>Check:</strong> Complement = \(37°\); supplement = \(127°\). Is \(127 = 4(37) - 21 = 148 - 21 = 127\)? &nbsp;\(\checkmark\)</p>
+    <p>The angle is <strong>53&deg;</strong>.</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 5-7 -->
+<!-- ============================================================ -->
+<section class="section" id="s5-7">
+  <h2><span class="sec-num">5-7</span> Uniform Motion Problems</h2>
+
+  <div class="box box-formula">
+    <div class="box-label">Fundamental Relationship</div>
+    $$\text{distance} = \text{rate} \times \text{time} \qquad d = r \cdot t$$
+  </div>
+
+  <p>Uniform-motion problems come in three main types:</p>
+  <ul>
+    <li><strong>Opposite directions:</strong> Two objects leave a point (or two points) traveling away from each other. Their combined distances equal the total separation.</li>
+    <li><strong>Same direction:</strong> A faster object starts later and overtakes a slower one. Both cover the <em>same</em> distance at the moment they meet.</li>
+    <li><strong>Round trip:</strong> The outbound distance equals the return distance.</li>
+  </ul>
+
+  <!-- WORKED EXAMPLE 8 -->
+  <div class="box box-example">
+    <div class="box-label">Worked Example 8 &mdash; Opposite Directions</div>
+    <p><strong>Problem:</strong> Mr. Rush's jet travels at 600 mph; Mr. Slow's plane travels at 320 mph. They leave airports 1380 miles apart at the same time, heading toward each other. In how many hours will they meet?</p>
+    <div class="steps">
+      <div class="step"><span class="step-num">1</span><div class="step-body">Let \(n\) = hours until they meet.</div></div>
+      <div class="step"><span class="step-num">2</span><div class="step-body">
+        <table style="border-collapse:collapse; margin:0.4rem 0;">
+          <tr style="background:#f0f7f0;"><th style="padding:0.3rem 0.8rem; border:1px solid #ccc;"></th><th style="padding:0.3rem 0.8rem; border:1px solid #ccc;">Rate</th><th style="padding:0.3rem 0.8rem; border:1px solid #ccc;">Time</th><th style="padding:0.3rem 0.8rem; border:1px solid #ccc;">Distance</th></tr>
+          <tr><td style="padding:0.3rem 0.8rem; border:1px solid #ccc;">Mr. Rush</td><td style="padding:0.3rem 0.8rem; border:1px solid #ccc;">600</td><td style="padding:0.3rem 0.8rem; border:1px solid #ccc;">\(n\)</td><td style="padding:0.3rem 0.8rem; border:1px solid #ccc;">\(600n\)</td></tr>
+          <tr><td style="padding:0.3rem 0.8rem; border:1px solid #ccc;">Mr. Slow</td><td style="padding:0.3rem 0.8rem; border:1px solid #ccc;">320</td><td style="padding:0.3rem 0.8rem; border:1px solid #ccc;">\(n\)</td><td style="padding:0.3rem 0.8rem; border:1px solid #ccc;">\(320n\)</td></tr>
+        </table>
+      </div></div>
+      <div class="step"><span class="step-num">3</span><div class="step-body">Their distances sum to 1380: \(600n + 320n = 1380\), so \(920n = 1380\), giving \(n = \frac{3}{2} = 1\tfrac{1}{2}\) hours.</div></div>
+      <div class="step"><span class="step-num">4</span><div class="step-body"><strong>Check:</strong> \(600 \times 1.5 = 900\); \(320 \times 1.5 = 480\). Total: \(900 + 480 = 1380\). \(\checkmark\)</div></div>
+    </div>
+    <p>They meet in <strong>\(1\frac{1}{2}\) hours</strong>.</p>
+  </div>
+
+  <!-- WORKED EXAMPLE 9 -->
+  <div class="box box-example">
+    <div class="box-label">Worked Example 9 &mdash; Same Direction (Overtaking)</div>
+    <p><strong>Problem:</strong> An airplane at 350 mph passes an airport at 8 AM. A jet following the same course passes the airport at 10 AM and overtakes the airplane at noon. What is the jet's speed?</p>
+    <div class="steps">
+      <div class="step"><span class="step-num">1</span><div class="step-body">Let \(x =\) the jet's rate in mph.</div></div>
+      <div class="step"><span class="step-num">2</span><div class="step-body">Airplane flew 4 hours (8 AM to noon); jet flew 2 hours (10 AM to noon). At the overtaking point, both have covered the <em>same</em> distance.</div></div>
+      <div class="step"><span class="step-num">3</span><div class="step-body">Set distances equal: \(350 \times 4 = x \times 2\), so \(1400 = 2x\), giving \(x = 700\) mph.</div></div>
+      <div class="step"><span class="step-num">4</span><div class="step-body"><strong>Check:</strong> Airplane distance = \(350 \times 4 = 1400\) mi; jet distance = \(700 \times 2 = 1400\) mi. \(\checkmark\)</div></div>
+    </div>
+    <p>The jet was flying at <strong>700 mph</strong>.</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SECTION 5-8 -->
+<!-- ============================================================ -->
+<section class="section" id="s5-8">
+  <h2><span class="sec-num">5-8</span> Mixture Problems</h2>
+
+  <p>In mixture and value problems, the <strong>sum of the values (or quantities) of the individual ingredients must equal the value (or quantity) of the final mixture</strong>.</p>
+
+  <div class="box box-formula">
+    <div class="box-label">Mixture Principle</div>
+    $$\underbrace{\text{amount}_1 \times \text{value}_1}_{\text{Ingredient 1}} + \underbrace{\text{amount}_2 \times \text{value}_2}_{\text{Ingredient 2}} = \underbrace{\text{total amount} \times \text{blend value}}_{\text{Mixture}}$$
+  </div>
+
+  <!-- WORKED EXAMPLE 10 -->
+  <div class="box box-example">
+    <div class="box-label">Worked Example 10 &mdash; Book Fair Mixture</div>
+    <p><strong>Problem:</strong> At a Book Fair, 600 books were sold: pocket editions at 35&cent; each and hard-covers at 50&cent; each. Total receipts matched last year's when 600 books sold at an average of 40&cent; each. How many of each kind were sold?</p>
+    <div class="steps">
+      <div class="step"><span class="step-num">1</span><div class="step-body">Let \(n =\) number of pocket editions. Then \(600 - n =\) hard-covers.</div></div>
+      <div class="step"><span class="step-num">2</span><div class="step-body">
+        <table style="border-collapse:collapse; margin:0.4rem 0;">
+          <tr style="background:#f0f7f0;"><th style="padding:0.3rem 0.8rem; border:1px solid #ccc;">Kind</th><th style="padding:0.3rem 0.8rem; border:1px solid #ccc;">Number</th><th style="padding:0.3rem 0.8rem; border:1px solid #ccc;">Price</th><th style="padding:0.3rem 0.8rem; border:1px solid #ccc;">Revenue</th></tr>
+          <tr><td style="padding:0.3rem 0.8rem; border:1px solid #ccc;">Pocket</td><td style="padding:0.3rem 0.8rem; border:1px solid #ccc;">\(n\)</td><td style="padding:0.3rem 0.8rem; border:1px solid #ccc;">35&cent;</td><td style="padding:0.3rem 0.8rem; border:1px solid #ccc;">\(35n\)</td></tr>
+          <tr><td style="padding:0.3rem 0.8rem; border:1px solid #ccc;">Hard-cover</td><td style="padding:0.3rem 0.8rem; border:1px solid #ccc;">\(600 - n\)</td><td style="padding:0.3rem 0.8rem; border:1px solid #ccc;">50&cent;</td><td style="padding:0.3rem 0.8rem; border:1px solid #ccc;">\(50(600 - n)\)</td></tr>
+          <tr style="background:#ebf0ff;"><td style="padding:0.3rem 0.8rem; border:1px solid #ccc;">Total</td><td style="padding:0.3rem 0.8rem; border:1px solid #ccc;">600</td><td style="padding:0.3rem 0.8rem; border:1px solid #ccc;">40&cent; avg</td><td style="padding:0.3rem 0.8rem; border:1px solid #ccc;">\(600 \times 40 = 24000\)</td></tr>
+        </table>
+      </div></div>
+      <div class="step"><span class="step-num">3</span><div class="step-body">Equation: \(35n + 50(600 - n) = 24000\).<br>
+        \(35n + 30000 - 50n = 24000\)<br>
+        \(-15n = -6000\)<br>
+        \(n = 400\)
+      </div></div>
+      <div class="step"><span class="step-num">4</span><div class="step-body"><strong>Check:</strong> 400 pocket at 35&cent; = \$140; 200 hard-cover at 50&cent; = \$100. Total = \$240 = \(600 \times 0.40\). \(\checkmark\)</div></div>
+    </div>
+    <p><strong>400 pocket editions</strong> and <strong>200 hard-covered books</strong> were sold.</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- PRACTICE PROBLEMS -->
+<!-- ============================================================ -->
+<section class="section" id="practice">
+  <h2>Practice Problems</h2>
+
+  <div class="box box-practice">
+    <div class="box-label">Practice 1 &mdash; Transforming Equations</div>
+    <p>Solve for \(x\): &nbsp;\(5(x + 1) = 4(x + 2)\)</p>
+    <details style="margin-top:0.5rem;">
+      <summary style="cursor:pointer; color:#4a5568; font-weight:600;">Show Solution</summary>
+      <div style="margin-top:0.5rem;">
+        <p>\(5x + 5 = 4x + 8\)</p>
+        <p>Subtract \(4x\): &nbsp;\(x + 5 = 8\)</p>
+        <p>Subtract 5: &nbsp;\(x = 3\)</p>
+        <p><strong>Check:</strong> LHS \(= 5(4) = 20\). RHS \(= 4(5) = 20\). \(\checkmark\)</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="box box-practice">
+    <div class="box-label">Practice 2 &mdash; Inequality</div>
+    <p>Solve and graph: &nbsp;\(8x + 2 > 5x - 4\)</p>
+    <details style="margin-top:0.5rem;">
+      <summary style="cursor:pointer; color:#4a5568; font-weight:600;">Show Solution</summary>
+      <div style="margin-top:0.5rem;">
+        <p>Subtract \(5x\): &nbsp;\(3x + 2 > -4\)</p>
+        <p>Subtract 2: &nbsp;\(3x > -6\)</p>
+        <p>Divide by 3: &nbsp;\(x > -2\)</p>
+        <p>Graph: open dot at \(-2\), shade to the right.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="box box-practice">
+    <div class="box-label">Practice 3 &mdash; Consecutive Odd Integers</div>
+    <p>Find three consecutive odd integers such that the sum of the first and third exceeds the second by 27.</p>
+    <details style="margin-top:0.5rem;">
+      <summary style="cursor:pointer; color:#4a5568; font-weight:600;">Show Solution</summary>
+      <div style="margin-top:0.5rem;">
+        <p>Let the integers be \(n\), \(n+2\), \(n+4\).</p>
+        <p>\(n + (n + 4) = (n + 2) + 27\)</p>
+        <p>\(2n + 4 = n + 29\)</p>
+        <p>\(n = 25\)</p>
+        <p>The integers are <strong>25, 27, 29</strong>.</p>
+        <p>Check: \(25 + 29 = 54 = 27 + 27\). \(\checkmark\)</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="box box-practice">
+    <div class="box-label">Practice 4 &mdash; Angles</div>
+    <p>An angle is 12&deg; more than its complement. Find the complement.</p>
+    <details style="margin-top:0.5rem;">
+      <summary style="cursor:pointer; color:#4a5568; font-weight:600;">Show Solution</summary>
+      <div style="margin-top:0.5rem;">
+        <p>Let \(n =\) the angle. Then \(90 - n =\) the complement.</p>
+        <p>\(n = (90 - n) + 12\)</p>
+        <p>\(n = 102 - n\), so \(2n = 102\), giving \(n = 51\).</p>
+        <p>Complement \(= 90 - 51 = \mathbf{39°}\).</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="box box-practice">
+    <div class="box-label">Practice 5 &mdash; Uniform Motion</div>
+    <p>A train leaves Omaha at 9 AM traveling at 50 mph. At 1 PM a plane leaves Omaha in the same direction at 300 mph. At what time does the plane overtake the train?</p>
+    <details style="margin-top:0.5rem;">
+      <summary style="cursor:pointer; color:#4a5568; font-weight:600;">Show Solution</summary>
+      <div style="margin-top:0.5rem;">
+        <p>When the plane catches the train, both have traveled the same distance from Omaha.</p>
+        <p>Let \(t =\) hours the plane has flown. The train has been traveling for \(t + 4\) hours.</p>
+        <p>\(300t = 50(t + 4)\)</p>
+        <p>\(300t = 50t + 200\)</p>
+        <p>\(250t = 200\), so \(t = 0.8\) hours = 48 minutes.</p>
+        <p>The plane overtakes the train at <strong>1:48 PM</strong>.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="box box-practice">
+    <div class="box-label">Practice 6 &mdash; Mixture</div>
+    <p>A confectioner makes 100 pounds of candy to sell at \$1.75/lb by mixing candy worth \$1.65/lb with some worth \$1.90/lb. How many pounds of each?</p>
+    <details style="margin-top:0.5rem;">
+      <summary style="cursor:pointer; color:#4a5568; font-weight:600;">Show Solution</summary>
+      <div style="margin-top:0.5rem;">
+        <p>Let \(x =\) pounds of \$1.65 candy. Then \(100 - x =\) pounds of \$1.90 candy.</p>
+        <p>\(1.65x + 1.90(100 - x) = 1.75(100)\)</p>
+        <p>\(1.65x + 190 - 1.90x = 175\)</p>
+        <p>\(-0.25x = -15\), so \(x = 60\).</p>
+        <p><strong>60 pounds</strong> of \$1.65 candy and <strong>40 pounds</strong> of \$1.90 candy.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- QUICK REFERENCE -->
+<!-- ============================================================ -->
+<section class="section" id="quick-ref">
+  <h2>Quick Reference</h2>
+
+  <div class="ref-grid">
+    <div class="ref-card">
+      <h4>Solving Equations</h4>
+      <p>Add, subtract, multiply, or divide <em>both</em> sides by the same nonzero number. The solution set is unchanged.</p>
+    </div>
+    <div class="ref-card">
+      <h4>Inequality Rules</h4>
+      <p>Add/subtract freely. Multiply/divide by a <strong>positive</strong> number: sign stays. Multiply/divide by a <strong>negative</strong>: <em>reverse</em> the sign.</p>
+    </div>
+    <div class="ref-card">
+      <h4>Compound Inequalities</h4>
+      <p><strong>And</strong> = intersection (both true).<br><strong>Or</strong> = union (at least one true).<br>\(|x| < a \iff -a < x < a\)<br>\(|x| > a \iff x < -a \;\text{or}\; x > a\)</p>
+    </div>
+    <div class="ref-card">
+      <h4>Consecutive Integers</h4>
+      <p>General: \(n, n{+}1, n{+}2, \ldots\)<br>Even/Odd: \(n, n{+}2, n{+}4, \ldots\)</p>
+    </div>
+    <div class="ref-card">
+      <h4>Angles</h4>
+      <p>Complement: \(90 - n\)<br>Supplement: \(180 - n\)<br>Triangle sum: \(180°\)</p>
+    </div>
+    <div class="ref-card">
+      <h4>Uniform Motion</h4>
+      <p>\(d = r \cdot t\)<br>Opposite dirs: \(d_1 + d_2 = \text{total}\)<br>Same dir: \(d_1 = d_2\) at meeting</p>
+    </div>
+    <div class="ref-card">
+      <h4>Mixtures</h4>
+      <p>\(\text{amt}_1 \cdot \text{val}_1 + \text{amt}_2 \cdot \text{val}_2 = \text{total amt} \cdot \text{blend val}\)</p>
+    </div>
+    <div class="ref-card">
+      <h4>Problem-Solving Plan</h4>
+      <p>1. Read (identify unknown)<br>2. Plan (sketch, chart, expressions)<br>3. Solve (equation or inequality)<br>4. Check (in original problem)</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- CHAPTER NAV -->
+<!-- ============================================================ -->
+<nav class="chapter-nav">
+  <a href="../04-the-negative-numbers/">
+    <span aria-hidden="true">&larr;</span>
+    <span>
+      <span class="nav-label">Previous</span>
+      Ch 4: The Negative Numbers
+    </span>
+  </a>
+  <a href="../06-working-with-polynomials/">
+    <span>
+      <span class="nav-label">Next</span>
+      Ch 6: Working with Polynomials
+    </span>
+    <span aria-hidden="true">&rarr;</span>
+  </a>
+</nav>
+
+</main>
+
+<!-- ============ KaTeX rendering ============ -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left: "$$", right: "$$", display: true},
+      {left: "\\[", right: "\\]", display: true},
+      {left: "\\(", right: "\\)", display: false}
+    ],
+    throwOnError: false
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 10 — Inequalities | Practical Algebra</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', 'Cambria', 'Times New Roman', serif;
+            background: #fdf8f3;
+            color: #2d2d2d;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+        .hero {
+            background: linear-gradient(135deg, #0d4f4f 0%, #1a2332 100%);
+            color: white;
+            padding: 3rem 2rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero .chapter-num {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 6rem;
+            font-weight: 800;
+            opacity: 0.12;
+            position: absolute;
+            top: -0.5rem;
+            right: 2rem;
+            line-height: 1;
+        }
+        .hero h1 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .hero .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.85;
+            font-style: italic;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        h2 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #0d4f4f;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #c0602b;
+        }
+        h3 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #0d4f4f;
+            font-size: 1.5rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+        h4 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #0d4f4f;
+            font-size: 1.2rem;
+            margin: 1rem 0 0.5rem;
+        }
+        p { margin-bottom: 1rem; }
+        ul, ol { margin: 0.75rem 0 1.25rem 2rem; }
+        li { margin-bottom: 0.4rem; }
+        /* Highlight boxes */
+        .box { padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 5px solid; }
+        .box-definition { border-color: #0d4f4f; background: #e8f4f4; }
+        .box-insight { border-color: #c0602b; background: #fef3ec; }
+        .box-caution { border-color: #9b2c2c; background: #fef2f2; }
+        .box-example { border-color: #276749; background: #f0f7f0; }
+        .box-practice { border-color: #6b46c1; background: #f5f0ff; }
+        .box-formula { border-color: #2b6cb0; background: #ebf4ff; }
+        .box-label {
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .box-definition .box-label { color: #0d4f4f; }
+        .box-insight .box-label { color: #c0602b; }
+        .box-caution .box-label { color: #9b2c2c; }
+        .box-example .box-label { color: #276749; }
+        .box-practice .box-label { color: #6b46c1; }
+        .box-formula .box-label { color: #2b6cb0; }
+        /* Navigation */
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e2d9ce;
+        }
+        .nav-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #0d4f4f;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .nav-btn:hover { background: #0a3d3d; }
+        svg { max-width: 100%; height: auto; display: block; margin: 1.5rem auto; }
+        .katex { font-size: 1.3em; }
+
+        .katex-display { margin: 1.5rem 0; overflow-x: auto; font-size: 1.35em; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.25rem 0;
+        }
+        table th, table td {
+            padding: 0.75rem 1rem;
+            border: 1px solid #d4cfc8;
+            text-align: center;
+        }
+        table th {
+            background: #0d4f4f;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+        }
+        table tr:nth-child(even) { background: #f7f3ee; }
+        .step-num {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+            text-align: center;
+            background: #0d4f4f;
+            color: white;
+            border-radius: 50%;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-right: 0.5rem;
+            flex-shrink: 0;
+        }
+        .step-row {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 0.75rem;
+        }
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .overview-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+        }
+        .overview-item .icon {
+            font-size: 1.3rem;
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+        }
+        .solution-toggle {
+            background: #276749;
+            color: white;
+            border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-top: 0.75rem;
+            transition: background 0.2s;
+        }
+        .solution-toggle:hover { background: #1e5438; }
+        .solution-content {
+            display: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px dashed #276749;
+        }
+        .solution-content.show { display: block; }
+        .symbol-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+        .symbol-card {
+            background: #fff;
+            border: 2px solid #0d4f4f;
+            border-radius: 10px;
+            padding: 1rem 1.5rem;
+            text-align: center;
+            min-width: 130px;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .symbol-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(13,79,79,0.15);
+        }
+        .symbol-card .sym {
+            font-size: 2rem;
+            color: #c0602b;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        .symbol-card .meaning {
+            font-size: 0.9rem;
+            color: #555;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .divider {
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #c0602b, transparent);
+            border: none;
+            margin: 2.5rem 0;
+        }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .hero .chapter-num { font-size: 4rem; }
+            h2 { font-size: 1.6rem; }
+            .card { padding: 1.25rem; }
+            .box { padding: 1rem; }
+            .nav-footer { flex-direction: column; gap: 1rem; }
+            .nav-btn { text-align: center; }
+            .symbol-showcase { gap: 0.5rem; }
+            .symbol-card { min-width: 100px; padding: 0.75rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<div class="hero">
+    <div class="chapter-num">10</div>
+    <div style="position:relative">
+        <p style="font-family: 'Segoe UI',sans-serif; text-transform:uppercase; letter-spacing:0.2em; font-size:0.9rem; opacity:0.7; margin-bottom:0.5rem;">Chapter 10</p>
+        <h1>Inequalities</h1>
+        <p class="subtitle">When expressions aren't equal &mdash; comparing, solving, and graphing relationships of order</p>
+    </div>
+</div>
+
+<div class="container">
+
+<!-- ═══════════════════ OVERVIEW ═══════════════════ -->
+<div class="card">
+    <h2>What You'll Learn</h2>
+    <p>Equations tell us when two expressions are equal. But mathematics often demands we describe when one quantity is <em>greater than</em> or <em>less than</em> another. Inequalities give us the language and tools to do exactly that.</p>
+    <div class="overview-grid">
+        <div class="overview-item">
+            <span class="icon">&#9670;</span>
+            <span>Read, write, and evaluate inequality symbols</span>
+        </div>
+        <div class="overview-item">
+            <span class="icon">&#9670;</span>
+            <span>Apply the three key properties of inequalities</span>
+        </div>
+        <div class="overview-item">
+            <span class="icon">&#9670;</span>
+            <span>Solve linear inequalities algebraically</span>
+        </div>
+        <div class="overview-item">
+            <span class="icon">&#9670;</span>
+            <span>Graph solutions on a number line</span>
+        </div>
+        <div class="overview-item">
+            <span class="icon">&#9670;</span>
+            <span>Handle compound and absolute value inequalities</span>
+        </div>
+        <div class="overview-item">
+            <span class="icon">&#9670;</span>
+            <span>Solve quadratic inequalities with sign analysis</span>
+        </div>
+        <div class="overview-item">
+            <span class="icon">&#9670;</span>
+            <span>Graph two-variable inequalities on the coordinate plane</span>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════ SECTION 1: INEQUALITY SYMBOLS ═══════════════════ -->
+<div class="card">
+    <h2>1. Inequality Symbols</h2>
+    <p>An <strong>inequality</strong> is a statement that one expression is greater than or less than another. We use five fundamental symbols to express these relationships:</p>
+
+    <div class="symbol-showcase">
+        <div class="symbol-card">
+            <span class="sym">&lt;</span>
+            <span class="meaning">Less than</span>
+        </div>
+        <div class="symbol-card">
+            <span class="sym">&gt;</span>
+            <span class="meaning">Greater than</span>
+        </div>
+        <div class="symbol-card">
+            <span class="sym">&le;</span>
+            <span class="meaning">Less than or equal</span>
+        </div>
+        <div class="symbol-card">
+            <span class="sym">&ge;</span>
+            <span class="meaning">Greater than or equal</span>
+        </div>
+        <div class="symbol-card">
+            <span class="sym">&ne;</span>
+            <span class="meaning">Not equal to</span>
+        </div>
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight</div>
+        <p style="margin-bottom:0">The <strong>vertex</strong> (point) of the inequality symbol always points toward the <em>smaller</em> quantity. Think of the symbol as a hungry alligator that always wants to eat the bigger number! For example, \(3 < 7\) and \(7 > 3\) say exactly the same thing.</p>
+    </div>
+
+    <h3>Reading Inequalities on the Number Line</h3>
+    <p>On a horizontal number line, any number to the <strong>right</strong> of another is the <em>greater</em> of the two. So \(+4 > +1\), and \(+2 > -6\), and \(-1 > -5\).</p>
+
+    <!-- SVG: Number line with inequality examples -->
+    <svg viewBox="0 0 700 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Number line showing inequality relationships">
+        <!-- axis -->
+        <line x1="30" y1="50" x2="670" y2="50" stroke="#2d2d2d" stroke-width="2"/>
+        <!-- ticks and labels -->
+        <g font-family="Georgia, serif" font-size="14" fill="#2d2d2d" text-anchor="middle">
+            <line x1="70" y1="44" x2="70" y2="56" stroke="#2d2d2d" stroke-width="1.5"/>
+            <text x="70" y="75">-6</text>
+            <line x1="150" y1="44" x2="150" y2="56" stroke="#2d2d2d" stroke-width="1.5"/>
+            <text x="150" y="75">-4</text>
+            <line x1="230" y1="44" x2="230" y2="56" stroke="#2d2d2d" stroke-width="1.5"/>
+            <text x="230" y="75">-2</text>
+            <line x1="310" y1="44" x2="310" y2="56" stroke="#2d2d2d" stroke-width="1.5"/>
+            <text x="310" y="75">0</text>
+            <line x1="390" y1="44" x2="390" y2="56" stroke="#2d2d2d" stroke-width="1.5"/>
+            <text x="390" y="75">2</text>
+            <line x1="470" y1="44" x2="470" y2="56" stroke="#2d2d2d" stroke-width="1.5"/>
+            <text x="470" y="75">4</text>
+            <line x1="550" y1="44" x2="550" y2="56" stroke="#2d2d2d" stroke-width="1.5"/>
+            <text x="550" y="75">6</text>
+            <line x1="630" y1="44" x2="630" y2="56" stroke="#2d2d2d" stroke-width="1.5"/>
+            <text x="630" y="75">8</text>
+        </g>
+        <!-- arrows -->
+        <polygon points="670,50 660,44 660,56" fill="#2d2d2d"/>
+        <polygon points="30,50 40,44 40,56" fill="#2d2d2d"/>
+        <!-- highlight: -6 < 2 -->
+        <circle cx="70" cy="50" r="6" fill="#c0602b"/>
+        <circle cx="390" cy="50" r="6" fill="#c0602b"/>
+        <path d="M 70 30 Q 230 5, 390 30" fill="none" stroke="#c0602b" stroke-width="2" stroke-dasharray="5,3"/>
+        <text x="230" y="20" font-family="'Segoe UI', sans-serif" font-size="14" fill="#c0602b" text-anchor="middle" font-weight="700">-6 &lt; 2</text>
+        <!-- highlight: 4 > -2 -->
+        <circle cx="230" cy="50" r="6" fill="#0d4f4f"/>
+        <circle cx="470" cy="50" r="6" fill="#0d4f4f"/>
+        <path d="M 230 95 Q 350 115, 470 95" fill="none" stroke="#0d4f4f" stroke-width="2" stroke-dasharray="5,3"/>
+        <text x="350" y="108" font-family="'Segoe UI', sans-serif" font-size="14" fill="#0d4f4f" text-anchor="middle" font-weight="700">4 &gt; -2</text>
+    </svg>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Greater Than and Less Than</div>
+        <p>For any two real numbers \(a\) and \(b\):</p>
+        <ul style="margin-bottom:0">
+            <li>\(a > b\) means \(a - b\) is <strong>positive</strong></li>
+            <li>\(a < b\) means \(a - b\) is <strong>negative</strong></li>
+            <li>\(a = b\) means \(a - b\) is <strong>zero</strong></li>
+        </ul>
+        <p style="margin-top:0.75rem; margin-bottom:0">This is the <strong>trichotomy principle</strong>: for any two real numbers, exactly one of \(a > b\), \(a = b\), or \(a < b\) is true.</p>
+    </div>
+</div>
+
+<!-- ═══════════════════ SECTION 2: PROPERTIES OF INEQUALITIES ═══════════════════ -->
+<div class="card">
+    <h2>2. Properties of Inequalities</h2>
+    <p>Inequalities follow rules similar to equations &mdash; with one crucial exception when you multiply or divide by a negative number.</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Property 1 &mdash; Addition / Subtraction</div>
+        <p>The sense of an inequality is <strong>unchanged</strong> if the same number is added to or subtracted from both sides.</p>
+        $$\text{If } a > b, \text{ then } a + c > b + c \text{ for any number } c$$
+        <p style="margin-bottom:0"><strong>Example:</strong> Since \(4 > 3\), we know \(4 + 2 > 3 + 2\), i.e., \(6 > 5\). &#10003;</p>
+    </div>
+
+    <div class="box box-formula">
+        <div class="box-label">Property 2 &mdash; Multiplication / Division by a Positive Number</div>
+        <p>The sense of an inequality is <strong>unchanged</strong> if both sides are multiplied or divided by the same <em>positive</em> number.</p>
+        $$\text{If } a > b \text{ and } c > 0, \text{ then } ac > bc$$
+        <p style="margin-bottom:0"><strong>Example:</strong> Since \(4 > 3\), we know \(4 \times 2 > 3 \times 2\), i.e., \(8 > 6\). &#10003;</p>
+    </div>
+
+    <div class="box box-caution">
+        <div class="box-label">Property 3 &mdash; Multiplication / Division by a Negative Number</div>
+        <p>The sense of an inequality is <strong>REVERSED</strong> if both sides are multiplied or divided by the same <em>negative</em> number.</p>
+        $$\text{If } a > b \text{ and } c < 0, \text{ then } ac \mathbin{\color{#9b2c2c}{<}} bc$$
+        <p><strong>Example:</strong> Since \(4 > 3\), multiplying both sides by \(-1\) gives \(-4 < -3\). The sign <strong>flips</strong>!</p>
+        <p style="margin-bottom:0"><strong>Why?</strong> Multiplying by a negative number reflects values across zero on the number line, reversing their order.</p>
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight &mdash; The #1 Mistake</div>
+        <p style="margin-bottom:0">Forgetting to flip the inequality sign when multiplying or dividing by a negative number is the most common error students make. Every time you multiply or divide both sides, ask yourself: <em>"Is this number negative?"</em> If yes, <strong>reverse the sign</strong>.</p>
+    </div>
+</div>
+
+<!-- ═══════════════════ SECTION 3: SOLVING LINEAR INEQUALITIES ═══════════════════ -->
+<div class="card">
+    <h2>3. Solving Linear Inequalities</h2>
+    <p>Solving an inequality works just like solving an equation &mdash; isolate the variable on one side. The only difference: <strong>flip the inequality sign</strong> whenever you multiply or divide by a negative.</p>
+
+    <div class="box box-example">
+        <div class="box-label">Example &mdash; Solving Step by Step</div>
+        <p><strong>Solve:</strong> \(6x - 4 > 3x + 2\)</p>
+        <div class="step-row"><span class="step-num">1</span><span>Subtract \(3x\) from both sides: &ensp; \(3x - 4 > 2\)</span></div>
+        <div class="step-row"><span class="step-num">2</span><span>Add \(4\) to both sides: &ensp; \(3x > 6\)</span></div>
+        <div class="step-row"><span class="step-num">3</span><span>Divide both sides by \(3\) (positive, no flip): &ensp; \(x > 2\)</span></div>
+        <p style="margin-top:0.5rem; margin-bottom:0"><strong>Check:</strong> Pick \(x = 3\): \(6(3) - 4 = 14\) and \(3(3) + 2 = 11\). Indeed, \(14 > 11\). &#10003;</p>
+    </div>
+
+    <h3>Graphing Solutions on a Number Line</h3>
+    <p>We represent solutions on a number line using circles and shading:</p>
+
+    <div class="box box-definition">
+        <div class="box-label">Number Line Notation</div>
+        <table>
+            <thead>
+                <tr><th>Symbol</th><th>Circle</th><th>Meaning</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>\( < \) or \( > \)</td><td>Open (hollow) circle</td><td>Endpoint <strong>not</strong> included</td></tr>
+                <tr><td>\( \le \) or \( \ge \)</td><td>Closed (filled) circle</td><td>Endpoint <strong>is</strong> included</td></tr>
+            </tbody>
+        </table>
+        <p style="margin-bottom:0">Shade to the <strong>right</strong> for \( > \) or \( \ge \). Shade to the <strong>left</strong> for \( < \) or \( \le \).</p>
+    </div>
+
+    <!-- SVG: Number line with different inequality notations -->
+    <svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Number line showing open and closed circle notation for inequalities">
+        <defs>
+            <marker id="arrowR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                <polygon points="0,0 8,3 0,6" fill="#c0602b"/>
+            </marker>
+            <marker id="arrowL" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto">
+                <polygon points="8,0 0,3 8,6" fill="#0d4f4f"/>
+            </marker>
+            <marker id="arrowR2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                <polygon points="0,0 8,3 0,6" fill="#276749"/>
+            </marker>
+            <marker id="arrowL2" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto">
+                <polygon points="8,0 0,3 8,6" fill="#6b46c1"/>
+            </marker>
+        </defs>
+        <!-- Row 1: x > 2 (open circle, shade right) -->
+        <text x="30" y="30" font-family="Georgia, serif" font-size="15" fill="#c0602b" font-weight="700">x &gt; 2</text>
+        <line x1="110" y1="28" x2="620" y2="28" stroke="#888" stroke-width="1.5"/>
+        <g font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="middle">
+            <line x1="190" y1="22" x2="190" y2="34" stroke="#888" stroke-width="1"/>
+            <text x="190" y="48">-2</text>
+            <line x1="270" y1="22" x2="270" y2="34" stroke="#888" stroke-width="1"/>
+            <text x="270" y="48">0</text>
+            <line x1="350" y1="22" x2="350" y2="34" stroke="#888" stroke-width="1"/>
+            <text x="350" y="48">2</text>
+            <line x1="430" y1="22" x2="430" y2="34" stroke="#888" stroke-width="1"/>
+            <text x="430" y="48">4</text>
+            <line x1="510" y1="22" x2="510" y2="34" stroke="#888" stroke-width="1"/>
+            <text x="510" y="48">6</text>
+        </g>
+        <!-- open circle at 2 -->
+        <circle cx="350" cy="28" r="6" fill="#fdf8f3" stroke="#c0602b" stroke-width="2.5"/>
+        <!-- shading right -->
+        <line x1="356" y1="28" x2="610" y2="28" stroke="#c0602b" stroke-width="4" marker-end="url(#arrowR)"/>
+
+        <!-- Row 2: x <= -1 (closed circle, shade left) -->
+        <text x="30" y="92" font-family="Georgia, serif" font-size="15" fill="#0d4f4f" font-weight="700">x &le; -1</text>
+        <line x1="110" y1="90" x2="620" y2="90" stroke="#888" stroke-width="1.5"/>
+        <g font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="middle">
+            <line x1="190" y1="84" x2="190" y2="96" stroke="#888" stroke-width="1"/>
+            <text x="190" y="110">-4</text>
+            <line x1="250" y1="84" x2="250" y2="96" stroke="#888" stroke-width="1"/>
+            <text x="250" y="110">-2</text>
+            <line x1="310" y1="84" x2="310" y2="96" stroke="#888" stroke-width="1"/>
+            <text x="310" y="110">-1</text>
+            <line x1="370" y1="84" x2="370" y2="96" stroke="#888" stroke-width="1"/>
+            <text x="370" y="110">0</text>
+            <line x1="430" y1="84" x2="430" y2="96" stroke="#888" stroke-width="1"/>
+            <text x="430" y="110">2</text>
+            <line x1="510" y1="84" x2="510" y2="96" stroke="#888" stroke-width="1"/>
+            <text x="510" y="110">4</text>
+        </g>
+        <!-- closed circle at -1 -->
+        <circle cx="310" cy="90" r="6" fill="#0d4f4f" stroke="#0d4f4f" stroke-width="2.5"/>
+        <!-- shading left -->
+        <line x1="304" y1="90" x2="120" y2="90" stroke="#0d4f4f" stroke-width="4" marker-end="url(#arrowL)"/>
+
+        <!-- Row 3: x >= 3 (closed circle, shade right) -->
+        <text x="30" y="155" font-family="Georgia, serif" font-size="15" fill="#276749" font-weight="700">x &ge; 3</text>
+        <line x1="110" y1="153" x2="620" y2="153" stroke="#888" stroke-width="1.5"/>
+        <g font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="middle">
+            <line x1="190" y1="147" x2="190" y2="159" stroke="#888" stroke-width="1"/>
+            <text x="190" y="173">-1</text>
+            <line x1="270" y1="147" x2="270" y2="159" stroke="#888" stroke-width="1"/>
+            <text x="270" y="173">1</text>
+            <line x1="350" y1="147" x2="350" y2="159" stroke="#888" stroke-width="1"/>
+            <text x="350" y="173">3</text>
+            <line x1="430" y1="147" x2="430" y2="159" stroke="#888" stroke-width="1"/>
+            <text x="430" y="173">5</text>
+            <line x1="510" y1="147" x2="510" y2="159" stroke="#888" stroke-width="1"/>
+            <text x="510" y="173">7</text>
+        </g>
+        <!-- closed circle at 3 -->
+        <circle cx="350" cy="153" r="6" fill="#276749" stroke="#276749" stroke-width="2.5"/>
+        <!-- shading right -->
+        <line x1="356" y1="153" x2="610" y2="153" stroke="#276749" stroke-width="4" marker-end="url(#arrowR2)"/>
+
+        <!-- Row 4: x < 4 (open circle, shade left) -->
+        <text x="30" y="218" font-family="Georgia, serif" font-size="15" fill="#6b46c1" font-weight="700">x &lt; 4</text>
+        <line x1="110" y1="216" x2="620" y2="216" stroke="#888" stroke-width="1.5"/>
+        <g font-family="Georgia, serif" font-size="12" fill="#666" text-anchor="middle">
+            <line x1="190" y1="210" x2="190" y2="222" stroke="#888" stroke-width="1"/>
+            <text x="190" y="236">-2</text>
+            <line x1="270" y1="210" x2="270" y2="222" stroke="#888" stroke-width="1"/>
+            <text x="270" y="236">0</text>
+            <line x1="350" y1="210" x2="350" y2="222" stroke="#888" stroke-width="1"/>
+            <text x="350" y="236">2</text>
+            <line x1="430" y1="210" x2="430" y2="222" stroke="#888" stroke-width="1"/>
+            <text x="430" y="236">4</text>
+            <line x1="510" y1="210" x2="510" y2="222" stroke="#888" stroke-width="1"/>
+            <text x="510" y="236">6</text>
+        </g>
+        <!-- open circle at 4 -->
+        <circle cx="430" cy="216" r="6" fill="#fdf8f3" stroke="#6b46c1" stroke-width="2.5"/>
+        <!-- shading left -->
+        <line x1="424" y1="216" x2="120" y2="216" stroke="#6b46c1" stroke-width="4" marker-end="url(#arrowL2)"/>
+    </svg>
+</div>
+
+<!-- ═══════════════════ SECTION 4: COMPOUND INEQUALITIES ═══════════════════ -->
+<div class="card">
+    <h2>4. Compound Inequalities</h2>
+    <p>A <strong>compound inequality</strong> combines two inequalities into a single statement. There are two types:</p>
+
+    <div class="box box-definition">
+        <div class="box-label">AND Inequalities (Intersection)</div>
+        <p>Both conditions must be true simultaneously. Written as:</p>
+        $$a < x < b \quad \text{means} \quad x > a \;\textbf{ and }\; x < b$$
+        <p style="margin-bottom:0">The solution is the <strong>overlap</strong> (intersection) of the two individual solutions.</p>
+    </div>
+
+    <div class="box box-definition">
+        <div class="box-label">OR Inequalities (Union)</div>
+        <p>At least one condition must be true. Written as:</p>
+        $$x < a \;\textbf{ or }\; x > b$$
+        <p style="margin-bottom:0">The solution is the <strong>combined set</strong> (union) of the two individual solutions.</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example &mdash; Solving a Compound AND Inequality</div>
+        <p><strong>Solve:</strong> \(-3 < 2x + 1 < 7\)</p>
+        <div class="step-row"><span class="step-num">1</span><span>Subtract \(1\) from all three parts: \(-3 - 1 < 2x < 7 - 1\) &ensp; gives &ensp; \(-4 < 2x < 6\)</span></div>
+        <div class="step-row"><span class="step-num">2</span><span>Divide all three parts by \(2\) (positive, no flip): \(-2 < x < 3\)</span></div>
+        <p style="margin-bottom:0"><strong>Solution:</strong> All values of \(x\) strictly between \(-2\) and \(3\).</p>
+    </div>
+
+    <!-- SVG: Compound inequality number line -->
+    <svg viewBox="0 0 700 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Number line showing compound inequality solution -2 less than x less than 3">
+        <line x1="50" y1="35" x2="650" y2="35" stroke="#888" stroke-width="1.5"/>
+        <g font-family="Georgia, serif" font-size="13" fill="#666" text-anchor="middle">
+            <line x1="110" y1="29" x2="110" y2="41" stroke="#888" stroke-width="1"/>
+            <text x="110" y="58">-4</text>
+            <line x1="190" y1="29" x2="190" y2="41" stroke="#888" stroke-width="1"/>
+            <text x="190" y="58">-2</text>
+            <line x1="270" y1="29" x2="270" y2="41" stroke="#888" stroke-width="1"/>
+            <text x="270" y="58">0</text>
+            <line x1="350" y1="29" x2="350" y2="41" stroke="#888" stroke-width="1"/>
+            <text x="350" y="58">2</text>
+            <line x1="430" y1="29" x2="430" y2="41" stroke="#888" stroke-width="1"/>
+            <text x="430" y="58">3</text>
+            <line x1="510" y1="29" x2="510" y2="41" stroke="#888" stroke-width="1"/>
+            <text x="510" y="58">4</text>
+            <line x1="590" y1="29" x2="590" y2="41" stroke="#888" stroke-width="1"/>
+            <text x="590" y="58">6</text>
+        </g>
+        <!-- shading between -2 and 3 -->
+        <line x1="196" y1="35" x2="424" y2="35" stroke="#c0602b" stroke-width="5"/>
+        <!-- open circle at -2 -->
+        <circle cx="190" cy="35" r="6" fill="#fdf8f3" stroke="#c0602b" stroke-width="2.5"/>
+        <!-- open circle at 3 -->
+        <circle cx="430" cy="35" r="6" fill="#fdf8f3" stroke="#c0602b" stroke-width="2.5"/>
+        <!-- label -->
+        <text x="310" y="18" font-family="'Segoe UI', sans-serif" font-size="14" fill="#c0602b" text-anchor="middle" font-weight="700">-2 &lt; x &lt; 3</text>
+    </svg>
+</div>
+
+<!-- ═══════════════════ SECTION 5: ABSOLUTE VALUE INEQUALITIES ═══════════════════ -->
+<div class="card">
+    <h2>5. Absolute Value Inequalities</h2>
+    <p>The absolute value \(|x|\) measures the <em>distance</em> of \(x\) from zero. This distance interpretation gives us two fundamental patterns:</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Pattern 1 &mdash; Less Than (distance is small)</div>
+        $$|x| < a \quad \Longleftrightarrow \quad -a < x < a \qquad (a > 0)$$
+        <p style="margin-bottom:0">The values of \(x\) lie <strong>between</strong> \(-a\) and \(a\). This is a compound AND inequality.</p>
+    </div>
+
+    <div class="box box-formula">
+        <div class="box-label">Pattern 2 &mdash; Greater Than (distance is large)</div>
+        $$|x| > a \quad \Longleftrightarrow \quad x < -a \;\textbf{ or }\; x > a \qquad (a > 0)$$
+        <p style="margin-bottom:0">The values of \(x\) lie <strong>outside</strong> the interval \([-a, a]\). This is a compound OR inequality.</p>
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight &mdash; "Less thAND, GreatOR"</div>
+        <p style="margin-bottom:0">A handy mnemonic: <strong>Less th<em>an</em></strong> gives an <strong>AND</strong> compound inequality (values <em>between</em>). <strong>Great<em>or</em></strong> gives an <strong>OR</strong> compound inequality (values <em>outside</em>). The same pattern applies to \(\le\) and \(\ge\).</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example &mdash; Absolute Value (Less Than)</div>
+        <p><strong>Solve:</strong> \(|x - 3| < 5\)</p>
+        <div class="step-row"><span class="step-num">1</span><span>Apply the "less than" pattern: \(-5 < x - 3 < 5\)</span></div>
+        <div class="step-row"><span class="step-num">2</span><span>Add \(3\) to all parts: \(-2 < x < 8\)</span></div>
+        <p style="margin-bottom:0"><strong>Solution:</strong> \(x\) lies strictly between \(-2\) and \(8\).</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example &mdash; Absolute Value (Greater Than or Equal)</div>
+        <p><strong>Solve:</strong> \(|2x + 1| \ge 7\)</p>
+        <div class="step-row"><span class="step-num">1</span><span>Apply the "greater than" pattern: \(2x + 1 \le -7\) &ensp; or &ensp; \(2x + 1 \ge 7\)</span></div>
+        <div class="step-row"><span class="step-num">2</span><span>Solve each: &ensp; \(2x \le -8 \;\Rightarrow\; x \le -4\) &ensp; or &ensp; \(2x \ge 6 \;\Rightarrow\; x \ge 3\)</span></div>
+        <p style="margin-bottom:0"><strong>Solution:</strong> \(x \le -4\) or \(x \ge 3\).</p>
+    </div>
+</div>
+
+<!-- ═══════════════════ SECTION 6: QUADRATIC INEQUALITIES ═══════════════════ -->
+<div class="card">
+    <h2>6. Quadratic Inequalities</h2>
+    <p>A <strong>quadratic inequality</strong> involves a second-degree term. We solve it by finding the roots and then analyzing the <strong>sign</strong> of the expression in each interval.</p>
+
+    <h3>The Sign Analysis Method</h3>
+    <ol>
+        <li>Move everything to one side so you have \(f(x) > 0\) (or \(< 0\), \(\ge 0\), \(\le 0\)).</li>
+        <li><strong>Factor</strong> the quadratic (or find its roots).</li>
+        <li>Plot the roots on a number line, dividing it into intervals.</li>
+        <li><strong>Test a point</strong> in each interval to determine the sign of \(f(x)\).</li>
+        <li>Select the intervals that satisfy your inequality.</li>
+    </ol>
+
+    <div class="box box-example">
+        <div class="box-label">Example &mdash; Quadratic Inequality</div>
+        <p><strong>Solve:</strong> \(x^2 - 4 > 0\)</p>
+        <div class="step-row"><span class="step-num">1</span><span>Factor: \((x - 2)(x + 2) > 0\)</span></div>
+        <div class="step-row"><span class="step-num">2</span><span>Roots: \(x = -2\) and \(x = 2\). These divide the number line into three intervals.</span></div>
+        <div class="step-row"><span class="step-num">3</span><span>Test each interval using the sign chart below.</span></div>
+    </div>
+
+    <!-- SVG: Sign chart for x^2 - 4 > 0 -->
+    <svg viewBox="0 0 700 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sign chart for the quadratic inequality x squared minus 4 greater than 0">
+        <defs>
+            <marker id="arrowRed" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                <polygon points="0,0 8,3 0,6" fill="#276749"/>
+            </marker>
+        </defs>
+        <!-- Title -->
+        <text x="350" y="22" font-family="'Segoe UI', sans-serif" font-size="16" fill="#0d4f4f" text-anchor="middle" font-weight="700">Sign Chart for (x - 2)(x + 2)</text>
+
+        <!-- Number line -->
+        <line x1="60" y1="55" x2="640" y2="55" stroke="#2d2d2d" stroke-width="2"/>
+        <!-- Root markers -->
+        <circle cx="210" cy="55" r="6" fill="#fdf8f3" stroke="#c0602b" stroke-width="2.5"/>
+        <text x="210" y="80" font-family="Georgia, serif" font-size="14" fill="#c0602b" text-anchor="middle" font-weight="700">-2</text>
+        <circle cx="490" cy="55" r="6" fill="#fdf8f3" stroke="#c0602b" stroke-width="2.5"/>
+        <text x="490" y="80" font-family="Georgia, serif" font-size="14" fill="#c0602b" text-anchor="middle" font-weight="700">2</text>
+
+        <!-- Interval labels -->
+        <text x="130" y="50" font-family="'Segoe UI', sans-serif" font-size="13" fill="#888" text-anchor="middle">x &lt; -2</text>
+        <text x="350" y="50" font-family="'Segoe UI', sans-serif" font-size="13" fill="#888" text-anchor="middle">-2 &lt; x &lt; 2</text>
+        <text x="570" y="50" font-family="'Segoe UI', sans-serif" font-size="13" fill="#888" text-anchor="middle">x &gt; 2</text>
+
+        <!-- Sign analysis rows -->
+        <!-- Row header: factor (x+2) -->
+        <text x="50" y="110" font-family="Georgia, serif" font-size="14" fill="#2d2d2d" text-anchor="end">x + 2</text>
+        <line x1="60" y1="100" x2="640" y2="100" stroke="#ddd" stroke-width="1"/>
+        <text x="130" y="112" font-family="'Segoe UI', sans-serif" font-size="16" fill="#9b2c2c" text-anchor="middle" font-weight="700">&minus;</text>
+        <text x="350" y="112" font-family="'Segoe UI', sans-serif" font-size="16" fill="#276749" text-anchor="middle" font-weight="700">+</text>
+        <text x="570" y="112" font-family="'Segoe UI', sans-serif" font-size="16" fill="#276749" text-anchor="middle" font-weight="700">+</text>
+
+        <!-- Row header: factor (x-2) -->
+        <text x="50" y="142" font-family="Georgia, serif" font-size="14" fill="#2d2d2d" text-anchor="end">x - 2</text>
+        <line x1="60" y1="130" x2="640" y2="130" stroke="#ddd" stroke-width="1"/>
+        <text x="130" y="144" font-family="'Segoe UI', sans-serif" font-size="16" fill="#9b2c2c" text-anchor="middle" font-weight="700">&minus;</text>
+        <text x="350" y="144" font-family="'Segoe UI', sans-serif" font-size="16" fill="#9b2c2c" text-anchor="middle" font-weight="700">&minus;</text>
+        <text x="570" y="144" font-family="'Segoe UI', sans-serif" font-size="16" fill="#276749" text-anchor="middle" font-weight="700">+</text>
+
+        <!-- Row header: product -->
+        <text x="50" y="177" font-family="Georgia, serif" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="700">Product</text>
+        <line x1="60" y1="162" x2="640" y2="162" stroke="#0d4f4f" stroke-width="2"/>
+        <text x="130" y="179" font-family="'Segoe UI', sans-serif" font-size="18" fill="#276749" text-anchor="middle" font-weight="700">+</text>
+        <text x="350" y="179" font-family="'Segoe UI', sans-serif" font-size="18" fill="#9b2c2c" text-anchor="middle" font-weight="700">&minus;</text>
+        <text x="570" y="179" font-family="'Segoe UI', sans-serif" font-size="18" fill="#276749" text-anchor="middle" font-weight="700">+</text>
+
+        <!-- Result label -->
+        <rect x="60" y="190" width="580" height="20" rx="4" fill="#f0f7f0" stroke="#276749" stroke-width="1"/>
+        <text x="350" y="205" font-family="'Segoe UI', sans-serif" font-size="13" fill="#276749" text-anchor="middle" font-weight="700">Solution: x &lt; -2 &ensp; or &ensp; x &gt; 2 &emsp; (where product is positive)</text>
+    </svg>
+
+    <p>The product \((x-2)(x+2)\) is <strong>positive</strong> when both factors have the <em>same</em> sign. From the chart, this happens when \(x < -2\) (both negative) or \(x > 2\) (both positive).</p>
+</div>
+
+<!-- ═══════════════════ SECTION 7: TYPES OF INEQUALITIES ═══════════════════ -->
+<div class="card">
+    <h2>7. Types of Inequalities</h2>
+    <p>Inequalities can be classified into three types based on their solution sets:</p>
+
+    <div class="box box-definition">
+        <div class="box-label">Absolute Inequality</div>
+        <p style="margin-bottom:0">True for <strong>all</strong> values of the variable. For example, \((a - b)^2 \ge 0\) is always true for any real numbers \(a\) and \(b\), since a square is never negative.</p>
+    </div>
+
+    <div class="box box-definition">
+        <div class="box-label">Conditional Inequality</div>
+        <p style="margin-bottom:0">True only for <strong>certain</strong> values of the variable. For example, \(x - 3 > 0\) is only true when \(x > 3\). Most inequalities we solve are conditional.</p>
+    </div>
+
+    <div class="box box-definition">
+        <div class="box-label">Inconsistent Inequality</div>
+        <p style="margin-bottom:0">True for <strong>no</strong> real values. For example, \(x^2 < 0\) has no solution, since the square of any real number is never negative.</p>
+    </div>
+</div>
+
+<!-- ═══════════════════ SECTION 8: SYSTEMS OF INEQUALITIES (INTRO) ═══════════════════ -->
+<div class="card">
+    <h2>8. Graphing Two-Variable Inequalities</h2>
+    <p>When an inequality involves two variables, its solution is a <strong>region</strong> of the coordinate plane rather than a segment of a number line.</p>
+
+    <h3>Steps for Graphing</h3>
+    <ol>
+        <li>Replace the inequality with an equals sign to get the <strong>boundary line</strong>.</li>
+        <li>Graph the boundary line. Use a <strong>dashed line</strong> for \(<\) or \(>\), or a <strong>solid line</strong> for \(\le\) or \(\ge\).</li>
+        <li>Pick a <strong>test point</strong> not on the line (the origin \((0,0)\) is usually easiest).</li>
+        <li>Substitute the test point into the original inequality.</li>
+        <li>If the result is <strong>true</strong>, shade the side containing the test point. If <strong>false</strong>, shade the opposite side.</li>
+    </ol>
+
+    <div class="box box-example">
+        <div class="box-label">Example &mdash; Graphing 2x - y + 4 &gt; 0</div>
+        <div class="step-row"><span class="step-num">1</span><span>Boundary line: \(2x - y + 4 = 0\), i.e., \(y = 2x + 4\)</span></div>
+        <div class="step-row"><span class="step-num">2</span><span>Test point \((0, 0)\): \(2(0) - 0 + 4 = 4 > 0\). True!</span></div>
+        <div class="step-row"><span class="step-num">3</span><span>Shade the side containing \((0,0)\) &mdash; the region <strong>below</strong> the line.</span></div>
+    </div>
+
+    <!-- SVG: Coordinate plane with shaded region -->
+    <svg viewBox="0 0 400 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Graph of the inequality 2x minus y plus 4 greater than 0 on the coordinate plane">
+        <defs>
+            <clipPath id="plotArea">
+                <rect x="60" y="10" width="320" height="310"/>
+            </clipPath>
+        </defs>
+        <!-- Grid -->
+        <g stroke="#e8e0d8" stroke-width="0.5">
+            <line x1="60" y1="55" x2="380" y2="55"/>
+            <line x1="60" y1="100" x2="380" y2="100"/>
+            <line x1="60" y1="145" x2="380" y2="145"/>
+            <line x1="60" y1="190" x2="380" y2="190"/>
+            <line x1="60" y1="235" x2="380" y2="235"/>
+            <line x1="60" y1="280" x2="380" y2="280"/>
+            <line x1="105" y1="10" x2="105" y2="320"/>
+            <line x1="150" y1="10" x2="150" y2="320"/>
+            <line x1="195" y1="10" x2="195" y2="320"/>
+            <line x1="240" y1="10" x2="240" y2="320"/>
+            <line x1="285" y1="10" x2="285" y2="320"/>
+            <line x1="330" y1="10" x2="330" y2="320"/>
+        </g>
+        <!-- Shaded region (below the line y=2x+4 -> region where 2x-y+4>0) -->
+        <polygon points="60,10 60,320 380,320 380,10" fill="#c0602b" opacity="0.08" clip-path="url(#plotArea)"/>
+        <!-- The line y=2x+4: at x=-4, y=-4; at x=2, y=8 -->
+        <!-- In our coord: origin at (195, 190), scale 45px per unit -->
+        <!-- x=-4 -> px=195-180=15, y=-4 -> py=190+180=370 -->
+        <!-- x=2 -> px=195+90=285, y=8 -> py=190-360=-170 -->
+        <!-- We clip to visible area -->
+        <!-- Shade region BELOW the line (2x - y + 4 > 0 means y < 2x+4) -->
+        <polygon points="60,370 285,-170 380,-170 380,320 60,320" fill="#c0602b" opacity="0.12" clip-path="url(#plotArea)"/>
+        <!-- Clear the region above the line -->
+        <polygon points="60,370 285,-170 60,-170" fill="#fdf8f3" opacity="1" clip-path="url(#plotArea)"/>
+
+        <!-- Axes -->
+        <line x1="60" y1="190" x2="380" y2="190" stroke="#2d2d2d" stroke-width="2"/>
+        <line x1="195" y1="10" x2="195" y2="320" stroke="#2d2d2d" stroke-width="2"/>
+        <!-- Axis labels -->
+        <g font-family="Georgia, serif" font-size="12" fill="#888" text-anchor="middle">
+            <text x="105" y="207">-2</text>
+            <text x="150" y="207">-1</text>
+            <text x="240" y="207">1</text>
+            <text x="285" y="207">2</text>
+            <text x="330" y="207">3</text>
+            <text x="208" y="148">1</text>
+            <text x="208" y="103">2</text>
+            <text x="208" y="58">3</text>
+            <text x="208" y="238">-1</text>
+            <text x="208" y="283">-2</text>
+        </g>
+        <text x="375" y="185" font-family="Georgia, serif" font-size="13" fill="#2d2d2d">x</text>
+        <text x="200" y="18" font-family="Georgia, serif" font-size="13" fill="#2d2d2d">y</text>
+
+        <!-- Boundary line (dashed for strict inequality) -->
+        <!-- y = 2x+4: two points: (-3,-2) and (1.5, 7) in plot coords -->
+        <!-- (-3,-2): (195-135, 190+90) = (60, 280) -->
+        <!-- (2, 8): (195+90, 190-360) = (285, -170) — clipped -->
+        <!-- better visible: (-2, 0): (105, 190) and (0, 4): (195, 10) -->
+        <line x1="60" y1="280" x2="285" y2="10" stroke="#c0602b" stroke-width="2.5" stroke-dasharray="8,4"/>
+
+        <!-- Label the line -->
+        <text x="295" y="30" font-family="'Segoe UI', sans-serif" font-size="13" fill="#c0602b" font-weight="700">y = 2x + 4</text>
+
+        <!-- Test point (0,0) -->
+        <circle cx="195" cy="190" r="4" fill="#276749"/>
+        <text x="170" y="185" font-family="'Segoe UI', sans-serif" font-size="11" fill="#276749" font-weight="700">(0, 0) &#10003;</text>
+
+        <!-- Region label -->
+        <text x="300" y="270" font-family="'Segoe UI', sans-serif" font-size="14" fill="#c0602b" font-weight="700">2x - y + 4 &gt; 0</text>
+    </svg>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════ WORKED PROBLEMS ═══════════════════ -->
+<div class="card">
+    <h2>Worked Problems</h2>
+
+    <!-- Problem 1 -->
+    <div class="box box-practice">
+        <div class="box-label">Problem 1</div>
+        <p style="margin-bottom:0.5rem"><strong>Solve:</strong> \(3x - 7 > 5\)</p>
+        <button class="solution-toggle" onclick="this.nextElementSibling.classList.toggle('show')">Show Solution</button>
+        <div class="solution-content">
+            <div class="step-row"><span class="step-num">1</span><span>Add \(7\) to both sides: &ensp; \(3x > 12\)</span></div>
+            <div class="step-row"><span class="step-num">2</span><span>Divide both sides by \(3\) (positive &mdash; no flip): &ensp; \(x > 4\)</span></div>
+            <p style="margin-bottom:0"><strong>Solution:</strong> \(\boxed{x > 4}\) &mdash; all values greater than \(4\).</p>
+        </div>
+    </div>
+
+    <!-- Problem 2 -->
+    <div class="box box-practice">
+        <div class="box-label">Problem 2 &mdash; Sign Flip!</div>
+        <p style="margin-bottom:0.5rem"><strong>Solve:</strong> \(-2x + 6 \le 10\)</p>
+        <button class="solution-toggle" onclick="this.nextElementSibling.classList.toggle('show')">Show Solution</button>
+        <div class="solution-content">
+            <div class="step-row"><span class="step-num">1</span><span>Subtract \(6\) from both sides: &ensp; \(-2x \le 4\)</span></div>
+            <div class="step-row"><span class="step-num">2</span><span>Divide both sides by \(-2\). <strong>Flip the sign!</strong> &ensp; \(x \ge -2\)</span></div>
+            <p><strong>Solution:</strong> \(\boxed{x \ge -2}\)</p>
+            <p style="margin-bottom:0"><strong>Check:</strong> Try \(x = 0\): \(-2(0) + 6 = 6\). Is \(6 \le 10\)? Yes. &#10003;</p>
+        </div>
+    </div>
+
+    <!-- Problem 3 -->
+    <div class="box box-practice">
+        <div class="box-label">Problem 3 &mdash; Compound Inequality</div>
+        <p style="margin-bottom:0.5rem"><strong>Solve:</strong> \(-3 < 2x + 1 < 7\)</p>
+        <button class="solution-toggle" onclick="this.nextElementSibling.classList.toggle('show')">Show Solution</button>
+        <div class="solution-content">
+            <div class="step-row"><span class="step-num">1</span><span>Subtract \(1\) from all three parts: &ensp; \(-4 < 2x < 6\)</span></div>
+            <div class="step-row"><span class="step-num">2</span><span>Divide all parts by \(2\): &ensp; \(-2 < x < 3\)</span></div>
+            <p style="margin-bottom:0"><strong>Solution:</strong> \(\boxed{-2 < x < 3}\) &mdash; all values strictly between \(-2\) and \(3\).</p>
+        </div>
+    </div>
+
+    <!-- Problem 4 -->
+    <div class="box box-practice">
+        <div class="box-label">Problem 4 &mdash; Absolute Value (Less Than)</div>
+        <p style="margin-bottom:0.5rem"><strong>Solve:</strong> \(|x - 3| < 5\)</p>
+        <button class="solution-toggle" onclick="this.nextElementSibling.classList.toggle('show')">Show Solution</button>
+        <div class="solution-content">
+            <div class="step-row"><span class="step-num">1</span><span>Apply the "less than" pattern: &ensp; \(-5 < x - 3 < 5\)</span></div>
+            <div class="step-row"><span class="step-num">2</span><span>Add \(3\) to all parts: &ensp; \(-2 < x < 8\)</span></div>
+            <p style="margin-bottom:0"><strong>Solution:</strong> \(\boxed{-2 < x < 8}\)</p>
+        </div>
+    </div>
+
+    <!-- Problem 5 -->
+    <div class="box box-practice">
+        <div class="box-label">Problem 5 &mdash; Absolute Value (Greater Than or Equal)</div>
+        <p style="margin-bottom:0.5rem"><strong>Solve:</strong> \(|2x + 1| \ge 7\)</p>
+        <button class="solution-toggle" onclick="this.nextElementSibling.classList.toggle('show')">Show Solution</button>
+        <div class="solution-content">
+            <div class="step-row"><span class="step-num">1</span><span>Apply the "greater than" pattern &mdash; split into two cases:</span></div>
+            <p style="margin-left:2.5rem; margin-bottom:0.5rem">Case A: \(2x + 1 \le -7\) &ensp; &rArr; &ensp; \(2x \le -8\) &ensp; &rArr; &ensp; \(x \le -4\)</p>
+            <p style="margin-left:2.5rem; margin-bottom:0.5rem">Case B: \(2x + 1 \ge 7\) &ensp; &rArr; &ensp; \(2x \ge 6\) &ensp; &rArr; &ensp; \(x \ge 3\)</p>
+            <p style="margin-bottom:0"><strong>Solution:</strong> \(\boxed{x \le -4 \text{ or } x \ge 3}\)</p>
+        </div>
+    </div>
+
+    <!-- Problem 6 -->
+    <div class="box box-practice">
+        <div class="box-label">Problem 6 &mdash; Quadratic Inequality</div>
+        <p style="margin-bottom:0.5rem"><strong>Solve:</strong> \(x^2 - 4 > 0\)</p>
+        <button class="solution-toggle" onclick="this.nextElementSibling.classList.toggle('show')">Show Solution</button>
+        <div class="solution-content">
+            <div class="step-row"><span class="step-num">1</span><span>Factor: \((x - 2)(x + 2) > 0\)</span></div>
+            <div class="step-row"><span class="step-num">2</span><span>Find roots: \(x = -2\) and \(x = 2\)</span></div>
+            <div class="step-row"><span class="step-num">3</span><span>Test intervals:</span></div>
+            <ul style="margin-left:2.5rem">
+                <li>\(x = -3\): \((-3-2)(-3+2) = (-5)(-1) = 5 > 0\) &#10003;</li>
+                <li>\(x = 0\): \((0-2)(0+2) = (-2)(2) = -4 < 0\) &#10007;</li>
+                <li>\(x = 3\): \((3-2)(3+2) = (1)(5) = 5 > 0\) &#10003;</li>
+            </ul>
+            <p style="margin-bottom:0"><strong>Solution:</strong> \(\boxed{x < -2 \text{ or } x > 2}\)</p>
+        </div>
+    </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════ QUICK REFERENCE ═══════════════════ -->
+<div class="card">
+    <h2>Quick Reference</h2>
+
+    <div class="box box-formula">
+        <div class="box-label">Inequality Properties</div>
+        <table>
+            <thead>
+                <tr><th>Operation</th><th>Effect on Inequality Sign</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Add/subtract same number</td><td>No change</td></tr>
+                <tr><td>Multiply/divide by positive</td><td>No change</td></tr>
+                <tr><td>Multiply/divide by <strong>negative</strong></td><td><strong>REVERSES</strong> the sign</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="box box-formula">
+        <div class="box-label">Absolute Value Rules</div>
+        <table>
+            <thead>
+                <tr><th>Form</th><th>Equivalent</th><th>Type</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>\(|X| < a\)</td><td>\(-a < X < a\)</td><td>AND (between)</td></tr>
+                <tr><td>\(|X| \le a\)</td><td>\(-a \le X \le a\)</td><td>AND (between, inclusive)</td></tr>
+                <tr><td>\(|X| > a\)</td><td>\(X < -a\) or \(X > a\)</td><td>OR (outside)</td></tr>
+                <tr><td>\(|X| \ge a\)</td><td>\(X \le -a\) or \(X \ge a\)</td><td>OR (outside, inclusive)</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="box box-formula">
+        <div class="box-label">Number Line Notation</div>
+        <table>
+            <thead>
+                <tr><th>Inequality</th><th>Endpoint</th><th>Direction</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>\(x > a\)</td><td>Open circle at \(a\)</td><td>Shade right</td></tr>
+                <tr><td>\(x \ge a\)</td><td>Closed circle at \(a\)</td><td>Shade right</td></tr>
+                <tr><td>\(x < a\)</td><td>Open circle at \(a\)</td><td>Shade left</td></tr>
+                <tr><td>\(x \le a\)</td><td>Closed circle at \(a\)</td><td>Shade left</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="box box-formula">
+        <div class="box-label">Quadratic Inequality — Sign Analysis Steps</div>
+        <ol style="margin-bottom:0">
+            <li>Set one side to zero: \(f(x) > 0\)</li>
+            <li>Factor or find roots of \(f(x) = 0\)</li>
+            <li>Mark roots on number line</li>
+            <li>Test a value in each interval</li>
+            <li>Select intervals matching the inequality</li>
+        </ol>
+    </div>
+</div>
+
+<!-- ═══════════════════ NAVIGATION ═══════════════════ -->
+<div class="nav-footer">
+    <a href="../09-quadratic-equations/index.html" class="nav-btn">&larr; Ch 9: Quadratic Equations</a>
+    <a href="../11-ratio-proportion-and-variation/index.html" class="nav-btn">Ch 11: Ratio, Proportion &amp; Variation &rarr;</a>
+</div>
+
+</div><!-- end container -->
+
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "\\[", right: "\\]", display: true},
+                {left: "\\(", right: "\\)", display: false}
+            ],
+            throwOnError: false
+        });
+    });
+</script>
+</body>
+</html>

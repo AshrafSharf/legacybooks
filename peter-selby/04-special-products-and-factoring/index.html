@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4 — Special Products and Factoring | Practical Algebra</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', 'Cambria', 'Times New Roman', serif;
+            background: #fdf8f3;
+            color: #2d2d2d;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+        .hero {
+            background: linear-gradient(135deg, #0d4f4f 0%, #1a2332 100%);
+            color: white;
+            padding: 3rem 2rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero .chapter-num {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 6rem;
+            font-weight: 800;
+            opacity: 0.12;
+            position: absolute;
+            top: -0.5rem;
+            right: 2rem;
+            line-height: 1;
+        }
+        .hero h1 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .hero .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.85;
+            font-style: italic;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        h2 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #0d4f4f;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #c0602b;
+        }
+        h3 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #0d4f4f;
+            font-size: 1.5rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+        p { margin-bottom: 1rem; }
+        ul, ol { margin: 0.75rem 0 1rem 1.5rem; }
+        li { margin-bottom: 0.4rem; }
+        /* Highlight boxes */
+        .box { padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 5px solid; }
+        .box-definition { border-color: #0d4f4f; background: #e8f4f4; }
+        .box-insight { border-color: #c0602b; background: #fef3ec; }
+        .box-caution { border-color: #9b2c2c; background: #fef2f2; }
+        .box-example { border-color: #276749; background: #f0f7f0; }
+        .box-practice { border-color: #6b46c1; background: #f5f0ff; }
+        .box-formula { border-color: #2b6cb0; background: #ebf4ff; }
+        .box-label {
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .box-definition .box-label { color: #0d4f4f; }
+        .box-insight .box-label { color: #c0602b; }
+        .box-caution .box-label { color: #9b2c2c; }
+        .box-example .box-label { color: #276749; }
+        .box-practice .box-label { color: #6b46c1; }
+        .box-formula .box-label { color: #2b6cb0; }
+        /* Overview list */
+        .overview-list { list-style: none; margin-left: 0; padding-left: 0; }
+        .overview-list li { padding: 0.4rem 0 0.4rem 2rem; position: relative; }
+        .overview-list li::before {
+            content: '✦';
+            position: absolute;
+            left: 0.3rem;
+            color: #c0602b;
+            font-size: 0.9rem;
+        }
+        /* Strategy steps */
+        .strategy-steps { counter-reset: strat; list-style: none; padding-left: 0; margin-left: 0; }
+        .strategy-steps li {
+            counter-increment: strat;
+            padding: 0.6rem 0 0.6rem 2.5rem;
+            position: relative;
+        }
+        .strategy-steps li::before {
+            content: counter(strat);
+            position: absolute;
+            left: 0;
+            top: 0.55rem;
+            width: 1.7rem;
+            height: 1.7rem;
+            border-radius: 50%;
+            background: #0d4f4f;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            text-align: center;
+        }
+        /* Navigation */
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e2d9ce;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .nav-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #0d4f4f;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .nav-btn:hover { background: #0a3d3d; }
+        svg { max-width: 100%; height: auto; display: block; margin: 1.5rem auto; }
+        .katex { font-size: 1.3em; }
+
+        .katex-display { margin: 1.5rem 0; overflow-x: auto; font-size: 1.35em; }
+        /* Solution toggle */
+        .solution-toggle {
+            display: inline-block;
+            margin-top: 0.75rem;
+            padding: 0.5rem 1.2rem;
+            background: #276749;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .solution-toggle:hover { background: #1e5438; }
+        .solution-content {
+            display: none;
+            margin-top: 1rem;
+            padding: 1.25rem;
+            background: #f0f7f0;
+            border-radius: 8px;
+            border-left: 4px solid #276749;
+        }
+        .solution-content.show { display: block; }
+        /* Divider */
+        .section-divider {
+            height: 3px;
+            background: linear-gradient(90deg, #c0602b, #0d4f4f, #c0602b);
+            border: none;
+            margin: 2.5rem 0;
+            border-radius: 2px;
+            opacity: 0.3;
+        }
+        /* Quick reference grid */
+        .formula-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        @media (min-width: 600px) {
+            .formula-grid { grid-template-columns: 1fr 1fr; }
+        }
+        .formula-grid .box { margin: 0; }
+        /* Responsive */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .hero .chapter-num { font-size: 4rem; }
+            h2 { font-size: 1.6rem; }
+            .card { padding: 1.25rem; }
+            .box { padding: 1rem; }
+            .nav-footer { flex-direction: column; align-items: stretch; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ==================== HERO HEADER ==================== -->
+<div class="hero">
+    <div class="chapter-num">4</div>
+    <div style="position:relative">
+        <p style="font-family: 'Segoe UI',sans-serif; text-transform:uppercase; letter-spacing:0.2em; font-size:0.9rem; opacity:0.7; margin-bottom:0.5rem;">Chapter 4</p>
+        <h1>Special Products and Factoring</h1>
+        <p class="subtitle">Reverse the multiplication process — break expressions into their building blocks</p>
+    </div>
+</div>
+
+<div class="container">
+
+<!-- ==================== OVERVIEW CARD ==================== -->
+<div class="card">
+    <h2>What You'll Learn</h2>
+    <p>Factoring is the reverse of multiplication: instead of combining factors into a product, you decompose a product back into its factors. Mastering these patterns is essential for simplifying expressions, solving equations, and working with fractions in algebra.</p>
+    <ul class="overview-list">
+        <li>Find common monomial factors of polynomial expressions</li>
+        <li>Recognize and factor the <strong>difference of two squares</strong></li>
+        <li>Identify and factor <strong>perfect square trinomials</strong></li>
+        <li>Factor general trinomials of the form \(x^2 + bx + c\)</li>
+        <li>Factor trinomials with leading coefficient \(a \neq 1\)</li>
+        <li>Understand the <strong>sum and difference of cubes</strong></li>
+        <li>Apply a <strong>complete factoring strategy</strong> to any polynomial</li>
+        <li>Square binomials and find products of binomials by inspection</li>
+    </ul>
+</div>
+
+<!-- ==================== SECTION 1: WHAT FACTORING INVOLVES ==================== -->
+<div class="card">
+    <h2>What Factoring Involves</h2>
+
+    <p>Factoring is expressing a number or algebraic expression as a product of its component factors. The process is the <em>reverse</em> of multiplication.</p>
+
+    <div class="box box-definition">
+        <div class="box-label">&#x1F511; Definition — Factoring</div>
+        <p style="margin-bottom:0.5rem;">Given a product, <strong>factoring</strong> means finding two or more expressions that multiply together to give that product.</p>
+        $$\text{Multiplication: } \underbrace{3 \times 7}_{\text{factors}} = \underbrace{21}_{\text{product}} \qquad \text{Factoring: } \underbrace{21}_{\text{product}} = \underbrace{3 \times 7}_{\text{factors}}$$
+    </div>
+
+    <p>The relationship between multiplication, division, and factoring:</p>
+    <div class="box box-formula" style="overflow-x:auto;">
+        <div class="box-label">&#x1F4CB; Three Related Operations</div>
+        $$\begin{aligned}
+        \textbf{Multiplication:} &\quad \text{factor} \times \text{factor} = \text{product} \\[6pt]
+        \textbf{Division:} &\quad \text{product} \div \text{factor} = \text{factor} \\[6pt]
+        \textbf{Factoring:} &\quad \text{product} = \text{factor} \times \text{factor}
+        \end{aligned}$$
+    </div>
+
+    <p>For example, since \(a(a + 4) = a^2 + 4a\), we can say that \(a\) and \((a + 4)\) are factors of \(a^2 + 4a\). In factoring, both the divisor and the quotient must be found — it is a special kind of division.</p>
+</div>
+
+<!-- ==================== SECTION 2: COMMON MONOMIAL FACTOR ==================== -->
+<div class="card">
+    <h2>Common Monomial Factor</h2>
+
+    <p>The first and most important step in any factoring problem is to look for factors common to every term of the expression. Always extract the <strong>greatest common factor (GCF)</strong> first.</p>
+
+    <div class="box box-formula">
+        <div class="box-label">&#x1F4CB; Common Factor Rule</div>
+        $$ab + ac = a(b + c)$$
+        <p style="margin-top:0.5rem; margin-bottom:0;">Pull out the largest factor shared by <em>every</em> term. This reverses the distributive law.</p>
+    </div>
+
+    <div class="box box-definition">
+        <div class="box-label">&#x1F511; Finding the Highest Common Factor</div>
+        <p style="margin-bottom:0;">To factor a polynomial, identify the <strong>highest common numerical factor</strong> and the <strong>smallest exponent</strong> of each common literal factor across all terms. Together, these form the greatest common monomial factor.</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">&#x2705; Example</div>
+        <p>Factor \(6x^5 + 12x^4 - 18x^3\).</p>
+        <p>All numerical coefficients are divisible by 6. The smallest power of \(x\) is \(x^3\). So the GCF is \(6x^3\).</p>
+        $$6x^5 + 12x^4 - 18x^3 = 6x^3(x^2 + 2x - 3)$$
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">&#x1F4A1; Key Insight</div>
+        <p style="margin-bottom:0;">Always factor out the GCF <strong>first</strong>, before attempting any other factoring technique. A polynomial that looks complicated may become a recognizable pattern once the common factor is removed.</p>
+    </div>
+
+    <h3>Prime Expressions</h3>
+    <p>A <strong>prime number</strong> is a whole number greater than 1 whose only whole number factors are 1 and itself (e.g., 2, 3, 5, 7, 11, 13, 17, 31). Similarly, a polynomial is <strong>prime</strong> (or irreducible) if it cannot be factored further over the integers. Monomials are already considered prime expressions.</p>
+    <p>When factoring, continue until all factors are prime expressions — this is called <em>complete factoring</em>.</p>
+</div>
+
+<!-- ==================== SECTION 3: SQUARING MONOMIALS & SQUARE ROOTS ==================== -->
+<div class="card">
+    <h2>Squaring Monomials and Finding Square Roots</h2>
+
+    <h3>Squaring a Monomial</h3>
+    <div class="box box-formula">
+        <div class="box-label">&#x1F4CB; Rule — Squaring a Monomial</div>
+        <p style="margin-bottom:0.5rem;"><strong>Square the numerical coefficient</strong>, keep each literal factor, and <strong>double every exponent</strong>.</p>
+        $$(-3x^2y^3)^2 = 9x^4y^6$$
+    </div>
+
+    <p>Remember: even powers of negative numbers are always positive, so \((-3)^2 = 9\).</p>
+
+    <h3>Finding the Principal Square Root</h3>
+    <div class="box box-formula">
+        <div class="box-label">&#x1F4CB; Rule — Square Root of a Monomial</div>
+        <p style="margin-bottom:0.5rem;">Take the <strong>principal (positive) square root</strong> of the numerical coefficient, keep each literal factor, and <strong>halve every exponent</strong>.</p>
+        $$\sqrt{36a^4b^6} = 6a^2b^3$$
+    </div>
+
+    <div class="box box-definition">
+        <div class="box-label">&#x1F511; Terminology</div>
+        <ul style="margin-bottom:0;">
+            <li>The symbol \(\sqrt{\phantom{x}}\) is the <strong>radical sign</strong></li>
+            <li>The number under the radical is the <strong>radicand</strong></li>
+            <li>The combination of radical sign and radicand is a <strong>radical</strong></li>
+            <li>The positive square root is the <strong>principal square root</strong></li>
+            <li>Every positive number has <strong>two</strong> square roots: \(+\) and \(-\)</li>
+        </ul>
+    </div>
+</div>
+
+<!-- ==================== SECTION 4: MULTIPLYING BINOMIALS BY INSPECTION ==================== -->
+<div class="card">
+    <h2>Multiplying Binomials by Inspection</h2>
+
+    <p>Binomials can be multiplied mentally using the <strong>FOIL</strong> method (First, Outer, Inner, Last), which is a horizontal shortcut for the vertical multiplication you already know.</p>
+
+    <div class="box box-formula">
+        <div class="box-label">&#x1F4CB; FOIL Method</div>
+        $$(ax + b)(cx + d) = \underbrace{ac}_{\text{First}} x^2 + \underbrace{(ad + bc)}_{\text{Outer + Inner}} x + \underbrace{bd}_{\text{Last}}$$
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">&#x2705; Example</div>
+        <p>Multiply \((2x + 3)(x + 2)\):</p>
+        $$\begin{aligned}
+        \text{First: } &\quad 2x \cdot x = 2x^2 \\
+        \text{Cross products: } &\quad 3 \cdot x + 2x \cdot 2 = 3x + 4x = 7x \\
+        \text{Last: } &\quad 3 \cdot 2 = 6 \\[6pt]
+        (2x + 3)(x + 2) &= 2x^2 + 7x + 6
+        \end{aligned}$$
+    </div>
+
+    <p>The sum of the outer and inner products (the <strong>cross products</strong>) gives the middle term. With practice, you will write the answer directly — this is called finding the product <em>by inspection</em>.</p>
+</div>
+
+<!-- ==================== SECTION 5: SPECIAL PRODUCT — SQUARE OF A BINOMIAL ==================== -->
+<div class="card">
+    <h2>Square of a Binomial</h2>
+
+    <p>Squaring a binomial is one of the most common operations in algebra, and its result follows a distinctive pattern.</p>
+
+    <div class="box box-formula">
+        <div class="box-label">&#x1F4CB; Perfect Square Formulas</div>
+        $$(a + b)^2 = a^2 + 2ab + b^2$$
+        $$(a - b)^2 = a^2 - 2ab + b^2$$
+    </div>
+
+    <p>The procedure: (1) square the first term, (2) double the product of both terms (keeping the sign), and (3) square the second term.</p>
+
+    <div class="box box-caution">
+        <div class="box-label">&#x26A0;&#xFE0F; Common Mistake</div>
+        <p style="margin-bottom:0;"><strong>Do NOT write</strong> \((a + b)^2 = a^2 + b^2\). The middle term \(2ab\) is essential and must not be forgotten!</p>
+        $$(a + b)^2 \neq a^2 + b^2$$
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">&#x2705; Example</div>
+        <p>Square \((2x - 3)\):</p>
+        $$\begin{aligned}
+        (2x - 3)^2 &= (2x)^2 + 2(2x)(-3) + (-3)^2 \\
+        &= 4x^2 - 12x + 9
+        \end{aligned}$$
+    </div>
+
+    <!-- SVG: Area Model for (a+b)^2 -->
+    <h3>Geometric Proof: Area Model</h3>
+    <p>The formula \((a+b)^2 = a^2 + 2ab + b^2\) has a beautiful geometric interpretation. A square with side length \((a+b)\) can be divided into four regions:</p>
+
+    <svg viewBox="0 0 460 400" width="460" style="max-width:100%; height:auto; display:block; margin:1.5rem auto;">
+        <!-- Background square outline -->
+        <rect x="40" y="30" width="330" height="330" fill="none" stroke="#1a2332" stroke-width="2.5" rx="3"/>
+
+        <!-- Top-left: a^2 -->
+        <rect x="40" y="30" width="210" height="210" fill="#0d4f4f" opacity="0.18" stroke="#0d4f4f" stroke-width="2" rx="2"/>
+        <text x="145" y="145" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#0d4f4f" font-weight="bold">a&sup2;</text>
+
+        <!-- Top-right: ab -->
+        <rect x="250" y="30" width="120" height="210" fill="#c0602b" opacity="0.18" stroke="#c0602b" stroke-width="2" rx="2"/>
+        <text x="310" y="145" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#c0602b" font-weight="bold">ab</text>
+
+        <!-- Bottom-left: ab -->
+        <rect x="40" y="240" width="210" height="120" fill="#c0602b" opacity="0.18" stroke="#c0602b" stroke-width="2" rx="2"/>
+        <text x="145" y="308" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#c0602b" font-weight="bold">ab</text>
+
+        <!-- Bottom-right: b^2 -->
+        <rect x="250" y="240" width="120" height="120" fill="#2b6cb0" opacity="0.18" stroke="#2b6cb0" stroke-width="2" rx="2"/>
+        <text x="310" y="308" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#2b6cb0" font-weight="bold">b&sup2;</text>
+
+        <!-- Dimension labels: top -->
+        <line x1="40" y1="15" x2="250" y2="15" stroke="#0d4f4f" stroke-width="1.5"/>
+        <line x1="40" y1="10" x2="40" y2="20" stroke="#0d4f4f" stroke-width="1.5"/>
+        <line x1="250" y1="10" x2="250" y2="20" stroke="#0d4f4f" stroke-width="1.5"/>
+        <text x="145" y="12" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="18" fill="#0d4f4f" font-weight="700">a</text>
+
+        <line x1="250" y1="15" x2="370" y2="15" stroke="#2b6cb0" stroke-width="1.5"/>
+        <line x1="370" y1="10" x2="370" y2="20" stroke="#2b6cb0" stroke-width="1.5"/>
+        <text x="310" y="12" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="18" fill="#2b6cb0" font-weight="700">b</text>
+
+        <!-- Dimension labels: left -->
+        <line x1="25" y1="30" x2="25" y2="240" stroke="#0d4f4f" stroke-width="1.5"/>
+        <line x1="20" y1="30" x2="30" y2="30" stroke="#0d4f4f" stroke-width="1.5"/>
+        <line x1="20" y1="240" x2="30" y2="240" stroke="#0d4f4f" stroke-width="1.5"/>
+        <text x="16" y="140" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="18" fill="#0d4f4f" font-weight="700" transform="rotate(-90,16,140)">a</text>
+
+        <line x1="25" y1="240" x2="25" y2="360" stroke="#2b6cb0" stroke-width="1.5"/>
+        <line x1="20" y1="360" x2="30" y2="360" stroke="#2b6cb0" stroke-width="1.5"/>
+        <text x="16" y="300" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="18" fill="#2b6cb0" font-weight="700" transform="rotate(-90,16,300)">b</text>
+
+        <!-- Equation below -->
+        <text x="205" y="392" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#1a2332" font-weight="bold">(a + b)&sup2; = a&sup2; + ab + ab + b&sup2; = a&sup2; + 2ab + b&sup2;</text>
+    </svg>
+
+    <p>The total area of the large square is \((a+b)^2\). It equals the sum of the four regions: one \(a^2\) square, two \(ab\) rectangles, and one \(b^2\) square.</p>
+</div>
+
+<!-- ==================== SECTION 6: PERFECT SQUARE TRINOMIAL ==================== -->
+<div class="card">
+    <h2>The Perfect Square Trinomial</h2>
+
+    <p>Reversing the square-of-a-binomial formulas gives us a powerful factoring pattern. A trinomial is a <strong>perfect square</strong> if it matches either of these forms:</p>
+
+    <div class="box box-formula">
+        <div class="box-label">&#x1F4CB; Perfect Square Trinomial Patterns</div>
+        $$a^2 + 2ab + b^2 = (a + b)^2$$
+        $$a^2 - 2ab + b^2 = (a - b)^2$$
+    </div>
+
+    <div class="box box-definition">
+        <div class="box-label">&#x1F511; How to Recognize a Perfect Square Trinomial</div>
+        <p style="margin-bottom:0;">A trinomial (arranged in descending or ascending power) is a perfect square if:</p>
+        <ol style="margin-bottom:0;">
+            <li>The first and third terms are <strong>positive perfect squares</strong></li>
+            <li>The middle term equals <strong>twice the product</strong> of the square roots of the first and third terms</li>
+        </ol>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">&#x2705; Example</div>
+        <p>Factor \(x^2 + 10x + 25\).</p>
+        <p>\(x^2\) is the square of \(x\). \(25\) is the square of \(5\). Is \(10x = 2 \cdot x \cdot 5\)? Yes!</p>
+        $$x^2 + 10x + 25 = (x + 5)^2$$
+        <p>The positive middle term tells us the binomial has a <strong>plus</strong> sign.</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">&#x2705; Example</div>
+        <p>Factor \(9x^2 - 6x + 1\).</p>
+        <p>\(9x^2 = (3x)^2\) and \(1 = 1^2\). Check: \(2 \cdot 3x \cdot 1 = 6x\). The middle term is \(-6x\), so:</p>
+        $$9x^2 - 6x + 1 = (3x - 1)^2$$
+    </div>
+
+    <div class="box box-caution">
+        <div class="box-label">&#x26A0;&#xFE0F; Watch Out</div>
+        <p style="margin-bottom:0;">\(x^2 + x + 1\) is <strong>not</strong> a perfect square because the middle term would need to be \(2x\), not \(x\). Similarly, \(z^2 + 12z - 36\) fails because the third term is negative — both the first and third terms must be <strong>positive</strong>.</p>
+    </div>
+</div>
+
+<!-- ==================== SECTION 7: PRODUCT OF SUM AND DIFFERENCE ==================== -->
+<div class="card">
+    <h2>Product of Sum and Difference</h2>
+
+    <p>When you multiply the <em>sum</em> and <em>difference</em> of the same two terms, the cross products cancel and the middle term vanishes:</p>
+
+    <div class="box box-formula">
+        <div class="box-label">&#x1F4CB; Sum and Difference Pattern</div>
+        $$(a + b)(a - b) = a^2 - b^2$$
+        <p style="margin-top:0.5rem; margin-bottom:0;">The product equals the <strong>square of the first term minus the square of the second term</strong>.</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">&#x2705; Example</div>
+        $$(x + 3)(x - 3) = x^2 - 9$$
+        $$(2ax + 3)(2ax - 3) = 4a^2x^2 - 9$$
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">&#x1F4A1; Arithmetic Shortcut</div>
+        <p style="margin-bottom:0;">This pattern can speed up mental arithmetic! For example:</p>
+        $$35 \times 25 = (30 + 5)(30 - 5) = 30^2 - 5^2 = 900 - 25 = 875$$
+    </div>
+</div>
+
+<!-- ==================== SECTION 8: DIFFERENCE OF TWO SQUARES ==================== -->
+<div class="card">
+    <h2>Factoring the Difference of Two Squares</h2>
+
+    <p>Reversing the sum-and-difference product gives us a factoring rule for any expression that is the <em>difference</em> of two perfect squares.</p>
+
+    <div class="box box-formula">
+        <div class="box-label">&#x1F4CB; Difference of Two Squares</div>
+        $$a^2 - b^2 = (a + b)(a - b)$$
+        <p style="margin-top:0.5rem; margin-bottom:0;"><strong>Step 1:</strong> Take the square root of each square.<br>
+        <strong>Step 2:</strong> Write the sum as one factor and the difference as the other.</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">&#x2705; Example</div>
+        <p>Factor \(c^2 - 9y^2\):</p>
+        $$\sqrt{c^2} = c, \quad \sqrt{9y^2} = 3y$$
+        $$c^2 - 9y^2 = (c + 3y)(c - 3y)$$
+    </div>
+
+    <div class="box box-caution">
+        <div class="box-label">&#x26A0;&#xFE0F; Cannot Factor the Sum of Two Squares</div>
+        <p style="margin-bottom:0;">\(a^2 + b^2\) <strong>cannot be factored</strong> over the real numbers. The difference-of-squares pattern requires a <strong>minus</strong> sign between the two squares.</p>
+        $$k^2 + 25 \quad \text{is prime (cannot be factored)}$$
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">&#x1F4A1; Look for Nested Differences</div>
+        <p style="margin-bottom:0;">Sometimes one of the factors is itself a difference of two squares and can be factored again:</p>
+        $$1 - 81r^4 = (1 + 9r^2)(1 - 9r^2) = (1 + 9r^2)(1 + 3r)(1 - 3r)$$
+    </div>
+</div>
+
+<!-- ==================== SECTION 9: FACTORING TRINOMIALS ==================== -->
+<div class="card">
+    <h2>Factoring Trinomials</h2>
+
+    <p>Since the product of two binomials is usually a trinomial, factoring a trinomial means finding the two binomials that were multiplied. This involves observation, logic, and sometimes trial and error.</p>
+
+    <h3>Case 1: Leading Coefficient = 1</h3>
+
+    <div class="box box-formula">
+        <div class="box-label">&#x1F4CB; Trinomial with \(x^2\) Leading Term</div>
+        $$x^2 + bx + c = (x + m)(x + n)$$
+        <p style="margin-top:0.5rem; margin-bottom:0;">where \(m \cdot n = c\) and \(m + n = b\). Find two numbers whose product is the constant term and whose sum is the coefficient of the middle term.</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">&#x2705; Example</div>
+        <p>Factor \(a^2 + 5a + 6\):</p>
+        <p>We need two numbers that multiply to 6 and add to 5. Those are 2 and 3.</p>
+        $$a^2 + 5a + 6 = (a + 2)(a + 3)$$
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">&#x2705; Example</div>
+        <p>Factor \(x^2 - 2x - 24\):</p>
+        <p>We need two numbers that multiply to \(-24\) and add to \(-2\). Try \(+4\) and \(-6\): their product is \(-24\) and their sum is \(-2\). &#x2713;</p>
+        $$x^2 - 2x - 24 = (x + 4)(x - 6)$$
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">&#x1F4A1; Sign Clues for the Binomial Factors</div>
+        <ul style="margin-bottom:0;">
+            <li><strong>Third term positive, middle positive:</strong> both binomial signs are \(+\)</li>
+            <li><strong>Third term positive, middle negative:</strong> both binomial signs are \(-\)</li>
+            <li><strong>Third term negative:</strong> signs are <em>opposite</em> (one \(+\), one \(-\))</li>
+        </ul>
+    </div>
+
+    <h3>Case 2: Leading Coefficient \(\neq\) 1</h3>
+
+    <div class="box box-formula">
+        <div class="box-label">&#x1F4CB; General Trinomial \(ax^2 + bx + c\)</div>
+        <p style="margin-bottom:0;">When \(a \neq 1\), use <strong>trial and error</strong>: combine the possible factors of \(a\) and \(c\) to produce the correct middle term. The sign of the third term tells you whether the binomial signs are alike or opposite.</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">&#x2705; Example</div>
+        <p>Factor \(4x^2 - 8x - 21\):</p>
+        <p>Factors of 4: \(1 \times 4\) or \(2 \times 2\). Factors of 21: \(1 \times 21\), \(3 \times 7\). The minus last term means opposite signs. Try \((2x + 3)(2x - 7)\):</p>
+        $$2x \cdot (-7) + 3 \cdot 2x = -14x + 6x = -8x \quad \checkmark$$
+        $$4x^2 - 8x - 21 = (2x + 3)(2x - 7)$$
+    </div>
+</div>
+
+<!-- ==================== SECTION 10: SUM AND DIFFERENCE OF CUBES ==================== -->
+<div class="card">
+    <h2>Sum and Difference of Cubes</h2>
+
+    <p>Beyond squares, algebra also provides patterns for factoring expressions involving <strong>cubes</strong>. These are worth memorizing.</p>
+
+    <div class="box box-formula">
+        <div class="box-label">&#x1F4CB; Sum of Cubes</div>
+        $$a^3 + b^3 = (a + b)(a^2 - ab + b^2)$$
+    </div>
+
+    <div class="box box-formula">
+        <div class="box-label">&#x1F4CB; Difference of Cubes</div>
+        $$a^3 - b^3 = (a - b)(a^2 + ab + b^2)$$
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">&#x1F4A1; Memory Aid: SOAP</div>
+        <p style="margin-bottom:0;">For \(a^3 \pm b^3 = (a \quad \square \quad b)(a^2 \quad \square \quad ab + b^2)\), the signs follow the pattern <strong>S</strong>ame, <strong>O</strong>pposite, <strong>A</strong>lways <strong>P</strong>ositive:</p>
+        <ul style="margin-bottom:0;">
+            <li>First factor: <strong>Same</strong> sign as the original</li>
+            <li>Second factor, first operation: <strong>Opposite</strong> sign</li>
+            <li>Second factor, last term: <strong>Always Positive</strong></li>
+        </ul>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">&#x2705; Example</div>
+        <p>Factor \(8x^3 - 27\):</p>
+        <p>Recognize \(8x^3 = (2x)^3\) and \(27 = 3^3\). Apply the difference-of-cubes formula:</p>
+        $$8x^3 - 27 = (2x - 3)\bigl((2x)^2 + (2x)(3) + 3^2\bigr) = (2x - 3)(4x^2 + 6x + 9)$$
+    </div>
+</div>
+
+<!-- ==================== SECTION 11: COMPLETE FACTORING STRATEGY ==================== -->
+<div class="card">
+    <h2>Complete Factoring Strategy</h2>
+
+    <p>When faced with any polynomial to factor, follow this systematic approach:</p>
+
+    <div class="box box-formula">
+        <div class="box-label">&#x1F4CB; Factoring Flowchart</div>
+        <ol class="strategy-steps">
+            <li><strong>Extract the GCF</strong> — Always look for a common monomial factor first and pull it out.</li>
+            <li><strong>Count the terms:</strong>
+                <ul style="margin-top:0.4rem;">
+                    <li><strong>2 terms (binomial):</strong> Check for difference of squares \((a^2 - b^2)\), sum of cubes \((a^3 + b^3)\), or difference of cubes \((a^3 - b^3)\).</li>
+                    <li><strong>3 terms (trinomial):</strong> Check for perfect square trinomial, then try standard trinomial factoring.</li>
+                    <li><strong>4+ terms:</strong> Try factoring by grouping.</li>
+                </ul>
+            </li>
+            <li><strong>Factor completely</strong> — Check each factor to see if it can be factored further. Continue until all factors are prime.</li>
+        </ol>
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">&#x1F4A1; Key Insight</div>
+        <p style="margin-bottom:0;">A polynomial can be factored if: (1) it contains a common monomial factor, (2) it is a binomial that is the difference of two squares, or (3) it is a trinomial that is either a perfect square or can be factored by trial and error. Always remove the GCF first — it simplifies everything that follows.</p>
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ==================== WORKED PROBLEMS ==================== -->
+<div class="card">
+    <h2>Worked Problems</h2>
+
+    <!-- Problem 1 -->
+    <div class="box box-practice">
+        <div class="box-label">&#x1F4DD; Problem 1</div>
+        <p style="margin-bottom:0;">Factor: \(\;6x^2y + 9xy^2\)</p>
+    </div>
+    <div class="box box-example">
+        <div class="box-label">&#x2705; Solution</div>
+        <p><strong>Step 1:</strong> Identify the GCF of the two terms.</p>
+        <ul>
+            <li>Numerical: GCF of 6 and 9 is 3</li>
+            <li>Literal: Both terms contain \(x\) (smallest power \(x^1\)) and \(y\) (smallest power \(y^1\))</li>
+            <li>GCF = \(3xy\)</li>
+        </ul>
+        <p><strong>Step 2:</strong> Divide each term by the GCF:</p>
+        $$\frac{6x^2y}{3xy} = 2x, \qquad \frac{9xy^2}{3xy} = 3y$$
+        <p><strong>Result:</strong></p>
+        $$6x^2y + 9xy^2 = 3xy(2x + 3y)$$
+    </div>
+
+    <!-- Problem 2 -->
+    <div class="box box-practice">
+        <div class="box-label">&#x1F4DD; Problem 2</div>
+        <p style="margin-bottom:0;">Factor: \(\;x^2 - 16\)</p>
+    </div>
+    <div class="box box-example">
+        <div class="box-label">&#x2705; Solution</div>
+        <p>Recognize this as a <strong>difference of two squares</strong>:</p>
+        $$x^2 - 16 = x^2 - 4^2$$
+        <p>Apply the formula \(a^2 - b^2 = (a+b)(a-b)\):</p>
+        $$x^2 - 16 = (x + 4)(x - 4)$$
+    </div>
+
+    <!-- Problem 3 -->
+    <div class="box box-practice">
+        <div class="box-label">&#x1F4DD; Problem 3</div>
+        <p style="margin-bottom:0;">Factor: \(\;x^2 + 6x + 9\)</p>
+    </div>
+    <div class="box box-example">
+        <div class="box-label">&#x2705; Solution</div>
+        <p>Check for a <strong>perfect square trinomial</strong>:</p>
+        <ul>
+            <li>\(x^2 = (x)^2\) &#x2713;</li>
+            <li>\(9 = (3)^2\) &#x2713;</li>
+            <li>Middle term: \(2 \cdot x \cdot 3 = 6x\) &#x2713;</li>
+        </ul>
+        <p>All three conditions are met, with a positive middle term:</p>
+        $$x^2 + 6x + 9 = (x + 3)^2$$
+    </div>
+
+    <!-- Problem 4 -->
+    <div class="box box-practice">
+        <div class="box-label">&#x1F4DD; Problem 4</div>
+        <p style="margin-bottom:0;">Factor: \(\;x^2 + 5x + 6\)</p>
+    </div>
+    <div class="box box-example">
+        <div class="box-label">&#x2705; Solution</div>
+        <p>Find two numbers that <strong>multiply to 6</strong> and <strong>add to 5</strong>:</p>
+        <ul>
+            <li>\(1 \times 6 = 6\), \(1 + 6 = 7\) &#x2717;</li>
+            <li>\(2 \times 3 = 6\), \(2 + 3 = 5\) &#x2713;</li>
+        </ul>
+        $$x^2 + 5x + 6 = (x + 2)(x + 3)$$
+    </div>
+
+    <!-- Problem 5 -->
+    <div class="box box-practice">
+        <div class="box-label">&#x1F4DD; Problem 5</div>
+        <p style="margin-bottom:0;">Factor: \(\;2x^2 + 7x + 3\)</p>
+    </div>
+    <div class="box box-example">
+        <div class="box-label">&#x2705; Solution</div>
+        <p>The leading coefficient is 2, so we use trial and error.</p>
+        <p>Factors of 2: \(2 \times 1\). Factors of 3: \(3 \times 1\). Both signs are positive (all terms positive).</p>
+        <p>Try \((2x + 1)(x + 3)\):</p>
+        $$\text{Cross products: } 2x \cdot 3 + 1 \cdot x = 6x + x = 7x \quad \checkmark$$
+        $$2x^2 + 7x + 3 = (2x + 1)(x + 3)$$
+    </div>
+
+    <!-- Problem 6 -->
+    <div class="box box-practice">
+        <div class="box-label">&#x1F4DD; Problem 6</div>
+        <p style="margin-bottom:0;">Factor completely: \(\;3x^3 - 12x\)</p>
+    </div>
+    <div class="box box-example">
+        <div class="box-label">&#x2705; Solution</div>
+        <p><strong>Step 1:</strong> Extract the GCF. Both terms share \(3x\):</p>
+        $$3x^3 - 12x = 3x(x^2 - 4)$$
+        <p><strong>Step 2:</strong> Recognize \(x^2 - 4\) as a difference of two squares:</p>
+        $$x^2 - 4 = (x + 2)(x - 2)$$
+        <p><strong>Step 3:</strong> Combine for the complete factorization:</p>
+        $$3x^3 - 12x = 3x(x + 2)(x - 2)$$
+        <p>All factors are now prime — we are done.</p>
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ==================== QUICK REFERENCE CARD ==================== -->
+<div class="card">
+    <h2>Quick Reference</h2>
+    <p>All the key factoring formulas and special products from this chapter, collected in one place.</p>
+
+    <div class="formula-grid">
+        <div class="box box-formula">
+            <div class="box-label">Common Factor</div>
+            $$ab + ac = a(b + c)$$
+        </div>
+        <div class="box box-formula">
+            <div class="box-label">Difference of Squares</div>
+            $$a^2 - b^2 = (a+b)(a-b)$$
+        </div>
+        <div class="box box-formula">
+            <div class="box-label">Perfect Square (+)</div>
+            $$a^2 + 2ab + b^2 = (a+b)^2$$
+        </div>
+        <div class="box box-formula">
+            <div class="box-label">Perfect Square (-)</div>
+            $$a^2 - 2ab + b^2 = (a-b)^2$$
+        </div>
+        <div class="box box-formula">
+            <div class="box-label">Sum of Cubes</div>
+            $$a^3 + b^3 = (a+b)(a^2-ab+b^2)$$
+        </div>
+        <div class="box box-formula">
+            <div class="box-label">Difference of Cubes</div>
+            $$a^3 - b^3 = (a-b)(a^2+ab+b^2)$$
+        </div>
+        <div class="box box-formula">
+            <div class="box-label">Trinomial (a=1)</div>
+            $$x^2+bx+c = (x+m)(x+n)$$
+            <p style="margin:0.3rem 0 0; font-size:0.95rem;">where \(mn=c,\; m+n=b\)</p>
+        </div>
+        <div class="box box-formula">
+            <div class="box-label">Square of a Binomial</div>
+            $$(a+b)^2 = a^2+2ab+b^2$$
+            <p style="margin:0.3rem 0 0; font-size:0.95rem;"><strong>Not</strong> \(a^2+b^2\)!</p>
+        </div>
+    </div>
+
+    <div class="box box-insight" style="margin-top:1.5rem;">
+        <div class="box-label">&#x1F4A1; The Golden Rule of Factoring</div>
+        <p style="margin-bottom:0;"><strong>Always extract the GCF first.</strong> Then check for special patterns (difference of squares, perfect square trinomial). Then try trinomial factoring by trial and error. Finally, verify that every factor is prime.</p>
+    </div>
+</div>
+
+<!-- ==================== NAVIGATION ==================== -->
+<div class="nav-footer">
+    <a href="../03-monomials-and-polynomials/index.html" class="nav-btn">&larr; Previous: Monomials and Polynomials</a>
+    <a href="../05-fractions/index.html" class="nav-btn">Next: Fractions &rarr;</a>
+</div>
+
+</div><!-- end container -->
+
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "\\[", right: "\\]", display: true},
+                {left: "\\(", right: "\\)", display: false}
+            ],
+            throwOnError: false
+        });
+
+        // Solution toggle functionality
+        document.querySelectorAll('.solution-toggle').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var content = this.nextElementSibling;
+                content.classList.toggle('show');
+                this.textContent = content.classList.contains('show') ? 'Hide Solution' : 'Show Solution';
+            });
+        });
+    });
+</script>
+</body>
+</html>

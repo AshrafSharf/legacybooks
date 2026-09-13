@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 9 — Quadratic Equations | Practical Algebra</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', 'Cambria', 'Times New Roman', serif;
+            background: #fdf8f3;
+            color: #2d2d2d;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+        .hero {
+            background: linear-gradient(135deg, #0d4f4f 0%, #1a2332 100%);
+            color: white;
+            padding: 3rem 2rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero .chapter-num {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 6rem;
+            font-weight: 800;
+            opacity: 0.12;
+            position: absolute;
+            top: -0.5rem;
+            right: 2rem;
+            line-height: 1;
+        }
+        .hero h1 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .hero .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.85;
+            font-style: italic;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        h2 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #0d4f4f;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #c0602b;
+        }
+        h3 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #0d4f4f;
+            font-size: 1.5rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+        h4 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #0d4f4f;
+            font-size: 1.2rem;
+            margin: 1rem 0 0.5rem;
+        }
+        /* Highlight boxes */
+        .box { padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 5px solid; }
+        .box-definition { border-color: #0d4f4f; background: #e8f4f4; }
+        .box-insight { border-color: #c0602b; background: #fef3ec; }
+        .box-caution { border-color: #9b2c2c; background: #fef2f2; }
+        .box-example { border-color: #276749; background: #f0f7f0; }
+        .box-practice { border-color: #6b46c1; background: #f5f0ff; }
+        .box-formula { border-color: #2b6cb0; background: #ebf4ff; }
+        .box-label {
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .box-definition .box-label { color: #0d4f4f; }
+        .box-insight .box-label { color: #c0602b; }
+        .box-caution .box-label { color: #9b2c2c; }
+        .box-example .box-label { color: #276749; }
+        .box-practice .box-label { color: #6b46c1; }
+        .box-formula .box-label { color: #2b6cb0; }
+        /* Lists */
+        .overview-list { list-style: none; padding: 0; }
+        .overview-list li {
+            padding: 0.5rem 0 0.5rem 2rem;
+            position: relative;
+        }
+        .overview-list li::before {
+            content: '▸';
+            color: #c0602b;
+            font-weight: bold;
+            position: absolute;
+            left: 0.5rem;
+        }
+        ul, ol { margin: 0.75rem 0 0.75rem 1.5rem; }
+        li { margin-bottom: 0.3rem; }
+        /* Steps */
+        .steps { counter-reset: step-counter; list-style: none; padding-left: 0; }
+        .steps li {
+            counter-increment: step-counter;
+            padding: 0.5rem 0 0.5rem 3rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+        .steps li::before {
+            content: 'Step ' counter(step-counter);
+            position: absolute;
+            left: 0;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: #c0602b;
+        }
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        th, td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e2d9ce;
+        }
+        th {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0d4f4f;
+            color: white;
+            font-weight: 600;
+        }
+        tr:nth-child(even) { background: #faf6f1; }
+        /* Section divider */
+        .section-divider {
+            height: 3px;
+            background: linear-gradient(90deg, #c0602b, #0d4f4f, #c0602b);
+            border: none;
+            margin: 2.5rem 0;
+            border-radius: 2px;
+            opacity: 0.3;
+        }
+        /* Navigation */
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e2d9ce;
+        }
+        .nav-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #0d4f4f;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .nav-btn:hover { background: #0a3d3d; }
+        svg { max-width: 100%; height: auto; display: block; margin: 1.5rem auto; }
+        .katex { font-size: 1.3em; }
+
+        .katex-display { margin: 1.5rem 0; overflow-x: auto; font-size: 1.35em; }
+        p { margin-bottom: 0.75rem; }
+        strong { color: #0d4f4f; }
+        .solution-toggle {
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            background: #6b46c1;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            transition: background 0.2s;
+        }
+        .solution-toggle:hover { background: #553c9a; }
+        .solution-content {
+            display: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px dashed #6b46c1;
+        }
+        .solution-content.show { display: block; }
+        /* Discriminant visual */
+        .disc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .disc-card {
+            padding: 1.25rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .disc-card h4 {
+            margin-top: 0.5rem;
+            color: inherit;
+        }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .hero .chapter-num { font-size: 4rem; }
+            h2 { font-size: 1.6rem; }
+            h3 { font-size: 1.3rem; }
+            .card { padding: 1.25rem; }
+            .box { padding: 1rem; }
+            .nav-footer { flex-direction: column; gap: 1rem; }
+            .nav-btn { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- ==================== HERO ==================== -->
+    <div class="hero">
+        <div class="chapter-num">9</div>
+        <div style="position:relative">
+            <p style="font-family: 'Segoe UI',sans-serif; text-transform:uppercase; letter-spacing:0.2em; font-size:0.9rem; opacity:0.7; margin-bottom:0.5rem;">Chapter 9</p>
+            <h1>Quadratic Equations</h1>
+            <p class="subtitle">Mastering second-degree equations through factoring, completing the square, and the quadratic formula</p>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- ==================== OVERVIEW ==================== -->
+        <div class="card">
+            <h2>What You'll Learn</h2>
+            <p>Quadratic equations are a natural progression from the linear equations you already know. In this chapter, you'll learn multiple methods to solve equations where the variable is raised to the second power, understand how their solutions behave, and see how they connect to parabolic curves.</p>
+            <ul class="overview-list">
+                <li>Write quadratic equations in standard form \(ax^2 + bx + c = 0\)</li>
+                <li>Solve quadratic equations by factoring and the zero product property</li>
+                <li>Solve by completing the square and understand perfect square trinomials</li>
+                <li>Derive and apply the quadratic formula</li>
+                <li>Use the discriminant to determine the nature of roots</li>
+                <li>Graph parabolas and find vertex, axis of symmetry, and intercepts</li>
+                <li>Apply the sum and product of roots relationships</li>
+                <li>Solve real-world word problems involving quadratic equations</li>
+            </ul>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ==================== SECTION 1: WHAT IS A QUADRATIC EQUATION ==================== -->
+        <div class="card">
+            <h2>1. What Is a Quadratic Equation?</h2>
+
+            <div class="box box-definition">
+                <div class="box-label">Definition &mdash; Quadratic Equation</div>
+                <p>A <strong>quadratic equation</strong> in one variable is an equation in which the highest power of the unknown is the <em>second</em> power. Its <strong>standard form</strong> is:</p>
+                $$ax^2 + bx + c = 0 \qquad (a \neq 0)$$
+                <p>where \(a\) is the coefficient of \(x^2\) (the <em>quadratic</em> term), \(b\) is the coefficient of \(x\) (the <em>linear</em> term), and \(c\) is the <em>constant</em> term. All three are real numbers.</p>
+            </div>
+
+            <p>For example, in the equation \(x^2 - 3x + 2 = 0\), we identify:</p>
+            $$a = 1, \quad b = -3, \quad c = 2$$
+
+            <p>Quadratic equations are divided into two classes:</p>
+            <ul>
+                <li><strong>Complete</strong> quadratic equations: all three terms are present, e.g., \(x^2 - 3x + 2 = 0\)</li>
+                <li><strong>Incomplete</strong> quadratic equations: either \(b = 0\) (missing the linear term, e.g., \(x^2 - 49 = 0\)) or \(c = 0\) (missing the constant, e.g., \(x^2 - 6x = 0\))</li>
+            </ul>
+
+            <div class="box box-insight">
+                <div class="box-label">Key Insight</div>
+                <p>Unlike linear equations which have exactly <strong>one</strong> solution, a quadratic equation can have <strong>two distinct real solutions</strong>, <strong>one repeated real solution</strong>, or <strong>no real solutions</strong> (complex roots). This is one of the most important differences between first- and second-degree equations.</p>
+            </div>
+
+            <h3>Identifying a, b, and c</h3>
+            <p>Before applying any solution method, always rewrite the equation in standard form \(ax^2 + bx + c = 0\) and identify the coefficients. Here are several examples:</p>
+
+            <table>
+                <thead>
+                    <tr><th>Equation (standard form)</th><th>\(a\)</th><th>\(b\)</th><th>\(c\)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>\(x^2 - 3x + 2 = 0\)</td><td>1</td><td>\(-3\)</td><td>2</td></tr>
+                    <tr><td>\(x^2 - 49 = 0\)</td><td>1</td><td>0</td><td>\(-49\)</td></tr>
+                    <tr><td>\(3x^2 + 4x - 7 = 0\)</td><td>3</td><td>4</td><td>\(-7\)</td></tr>
+                    <tr><td>\(2x^2 + 5x = 0\)</td><td>2</td><td>5</td><td>0</td></tr>
+                </tbody>
+            </table>
+
+            <div class="box box-caution">
+                <div class="box-label">Common Mistake</div>
+                <p>An equation may not <em>look</em> quadratic at first glance. For example, \(x = 4 - \tfrac{3}{x}\) does not appear quadratic, but multiplying through by \(x\) gives \(x^2 - 4x + 3 = 0\). Always clear fractions, remove parentheses, and collect like terms before identifying the equation type.</p>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ==================== SECTION 2: SOLVING BY FACTORING ==================== -->
+        <div class="card">
+            <h2>2. Solving by Factoring</h2>
+
+            <p>The first and often simplest method for solving a quadratic equation is <strong>factoring</strong>. This method relies on a fundamental property of real numbers.</p>
+
+            <div class="box box-formula">
+                <div class="box-label">Zero Product Property</div>
+                <p>If \(A \cdot B = 0\), then \(A = 0\) or \(B = 0\) (or both).</p>
+                <p>In words: if a product of factors equals zero, at least one factor must be zero.</p>
+            </div>
+
+            <h3>The Factoring Method &mdash; Step by Step</h3>
+            <ol class="steps">
+                <li>Write the quadratic equation in <strong>standard form</strong>: \(ax^2 + bx + c = 0\).</li>
+                <li><strong>Factor</strong> the left side into two first-degree (linear) factors.</li>
+                <li><strong>Set each factor</strong> containing the variable equal to zero.</li>
+                <li><strong>Solve</strong> each resulting linear equation.</li>
+                <li><strong>Check</strong> each root by substituting back into the original equation.</li>
+            </ol>
+
+            <div class="box box-example">
+                <div class="box-label">Worked Example &mdash; Solving by Factoring</div>
+                <p><strong>Solve:</strong> \(x^2 + 4x = 21\)</p>
+                <p><strong>Step 1:</strong> Rewrite in standard form: \(x^2 + 4x - 21 = 0\)</p>
+                <p><strong>Step 2:</strong> Factor: \((x + 7)(x - 3) = 0\)</p>
+                <p><strong>Step 3:</strong> Set each factor to zero:</p>
+                $$x + 7 = 0 \qquad \text{or} \qquad x - 3 = 0$$
+                <p><strong>Step 4:</strong> Solve:</p>
+                $$x = -7 \qquad \text{or} \qquad x = 3$$
+                <p><strong>Step 5:</strong> Check:</p>
+                $$(-7)^2 + 4(-7) = 49 - 28 = 21 \;\checkmark$$
+                $$(3)^2 + 4(3) = 9 + 12 = 21 \;\checkmark$$
+            </div>
+
+            <h3>Solving Incomplete Quadratics by Factoring</h3>
+            <p>When \(c = 0\), the equation has the form \(ax^2 + bx = 0\). Factor out \(x\):</p>
+            $$x(ax + b) = 0 \implies x = 0 \quad \text{or} \quad x = -\frac{b}{a}$$
+
+            <div class="box box-insight">
+                <div class="box-label">Key Insight</div>
+                <p>One root of any equation of the form \(ax^2 + bx = 0\) is always \(x = 0\). Don't forget it! The other root is \(x = -b/a\).</p>
+            </div>
+
+            <h3>Extraction of Roots</h3>
+            <p>When \(b = 0\), the equation has the form \(ax^2 = c\). Solve by isolating \(x^2\) and taking square roots:</p>
+            $$x^2 = \frac{c}{a} \implies x = \pm\sqrt{\frac{c}{a}}$$
+            <p>If \(c/a\) is negative, there are <strong>no real roots</strong>.</p>
+
+            <div class="box box-caution">
+                <div class="box-label">Common Mistake</div>
+                <p>When taking square roots, always include <em>both</em> the positive and negative roots. Writing \(x = \sqrt{9} = 3\) and forgetting \(x = -3\) means losing half the solution!</p>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ==================== SECTION 3: COMPLETING THE SQUARE ==================== -->
+        <div class="card">
+            <h2>3. Solving by Completing the Square</h2>
+
+            <p>Not all quadratic trinomials can be factored neatly. <strong>Completing the square</strong> is a powerful technique that works for <em>every</em> quadratic equation, whether factorable or not.</p>
+
+            <div class="box box-definition">
+                <div class="box-label">Definition &mdash; Perfect Square Trinomial</div>
+                <p>A trinomial of the form \(x^2 + 2ax + a^2\) is a <strong>perfect square trinomial</strong> because it factors as \((x + a)^2\). Both the first and third terms must be perfect squares, and the middle term must equal twice the product of their square roots.</p>
+                $$(x + a)^2 = x^2 + 2ax + a^2$$
+            </div>
+
+            <h3>The Method &mdash; Step by Step</h3>
+            <ol class="steps">
+                <li>Move the constant \(c\) to the right side of the equation.</li>
+                <li>If the coefficient of \(x^2\) is not 1, divide every term by that coefficient.</li>
+                <li>Take half the coefficient of \(x\), square it, and add this value to <em>both</em> sides.</li>
+                <li>Write the left side as a perfect square: \(\bigl(x + \tfrac{b}{2}\bigr)^2\).</li>
+                <li>Take the square root of both sides (remembering the \(\pm\)).</li>
+                <li>Solve the two resulting linear equations.</li>
+                <li>Check both roots in the original equation.</li>
+            </ol>
+
+            <div class="box box-formula">
+                <div class="box-label">The Core Identity</div>
+                $$x^2 + bx + \left(\frac{b}{2}\right)^2 = \left(x + \frac{b}{2}\right)^2$$
+                <p>Add \(\left(\frac{b}{2}\right)^2\) to both sides to "complete" the left side into a perfect square.</p>
+            </div>
+
+            <div class="box box-example">
+                <div class="box-label">Worked Example &mdash; Completing the Square</div>
+                <p><strong>Solve:</strong> \(x^2 + 6x - 7 = 0\)</p>
+                <p><strong>Step 1:</strong> Move constant: \(x^2 + 6x = 7\)</p>
+                <p><strong>Step 2:</strong> Coefficient of \(x^2\) is already 1.</p>
+                <p><strong>Step 3:</strong> Half of 6 is 3; \(3^2 = 9\). Add 9 to both sides:</p>
+                $$x^2 + 6x + 9 = 7 + 9 = 16$$
+                <p><strong>Step 4:</strong> Factor: \((x + 3)^2 = 16\)</p>
+                <p><strong>Step 5:</strong> Take square roots: \(x + 3 = \pm 4\)</p>
+                <p><strong>Step 6:</strong> Solve:</p>
+                $$x + 3 = 4 \implies x = 1 \qquad\qquad x + 3 = -4 \implies x = -7$$
+                <p><strong>Step 7:</strong> Check: \(1^2 + 6(1) - 7 = 0\;\checkmark\) and \((-7)^2 + 6(-7) - 7 = 0\;\checkmark\)</p>
+            </div>
+
+            <h3>When the Roots Are Irrational</h3>
+            <p>Completing the square shines when factoring fails. Consider \(x^2 + 2x - 5 = 0\):</p>
+            $$x^2 + 2x = 5$$
+            $$x^2 + 2x + 1 = 6$$
+            $$(x + 1)^2 = 6$$
+            $$x + 1 = \pm\sqrt{6}$$
+            $$x = -1 + \sqrt{6} \quad \text{or} \quad x = -1 - \sqrt{6}$$
+            <p>These irrational solutions are perfectly valid real numbers (approximately \(1.449\) and \(-3.449\)).</p>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ==================== SECTION 4: THE QUADRATIC FORMULA ==================== -->
+        <div class="card">
+            <h2>4. The Quadratic Formula</h2>
+
+            <p>By applying the method of completing the square to the <em>general</em> quadratic equation \(ax^2 + bx + c = 0\), we obtain the most powerful tool for solving any quadratic equation.</p>
+
+            <div class="box box-formula">
+                <div class="box-label">The Quadratic Formula</div>
+                $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+                <p>This formula gives both solutions of any quadratic equation \(ax^2 + bx + c = 0\) directly from the coefficients \(a\), \(b\), and \(c\).</p>
+            </div>
+
+            <h3>Derivation (Completing the Square on the General Form)</h3>
+            <p>Starting from \(ax^2 + bx + c = 0\):</p>
+            $$ax^2 + bx = -c$$
+            $$x^2 + \frac{b}{a}x = -\frac{c}{a} \qquad\text{(divide by }a\text{)}$$
+            $$x^2 + \frac{b}{a}x + \frac{b^2}{4a^2} = \frac{b^2}{4a^2} - \frac{c}{a} \qquad\text{(complete the square)}$$
+            $$\left(x + \frac{b}{2a}\right)^2 = \frac{b^2 - 4ac}{4a^2}$$
+            $$x + \frac{b}{2a} = \pm\frac{\sqrt{b^2 - 4ac}}{2a}$$
+            $$\boxed{x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}}$$
+
+            <div class="box box-example">
+                <div class="box-label">Worked Example &mdash; Quadratic Formula</div>
+                <p><strong>Solve:</strong> \(x^2 - 5x + 6 = 0\)</p>
+                <p>Identify: \(a = 1,\; b = -5,\; c = 6\)</p>
+                $$x = \frac{-(-5) \pm \sqrt{(-5)^2 - 4(1)(6)}}{2(1)} = \frac{5 \pm \sqrt{25 - 24}}{2} = \frac{5 \pm 1}{2}$$
+                $$x = \frac{5 + 1}{2} = 3 \qquad \text{or} \qquad x = \frac{5 - 1}{2} = 2$$
+            </div>
+
+            <div class="box box-insight">
+                <div class="box-label">Key Insight &mdash; Which Method to Use?</div>
+                <ul>
+                    <li><strong>Factoring:</strong> Fastest when the equation factors neatly with integer roots.</li>
+                    <li><strong>Completing the square:</strong> Good for understanding the structure; essential for deriving the quadratic formula and for converting to vertex form.</li>
+                    <li><strong>Quadratic formula:</strong> Works for <em>every</em> quadratic equation, no guessing required. When in doubt, use this.</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ==================== SECTION 5: THE DISCRIMINANT ==================== -->
+        <div class="card">
+            <h2>5. The Discriminant</h2>
+
+            <p>The expression under the square root in the quadratic formula tells us everything about the <em>nature</em> of the roots, even before we compute them.</p>
+
+            <div class="box box-definition">
+                <div class="box-label">Definition &mdash; The Discriminant</div>
+                <p>The <strong>discriminant</strong> of the quadratic equation \(ax^2 + bx + c = 0\) is the quantity:</p>
+                $$\Delta = b^2 - 4ac$$
+            </div>
+
+            <div class="disc-grid">
+                <div class="disc-card" style="background: #f0f7f0; border: 2px solid #276749;">
+                    <div style="font-size: 2rem;">&#x2714;&#x2714;</div>
+                    <h4 style="color: #276749;">\(\Delta > 0\)</h4>
+                    <p><strong>Two distinct real roots</strong></p>
+                    <p style="font-size: 0.95rem;">The parabola crosses the x-axis at two points.</p>
+                </div>
+                <div class="disc-card" style="background: #ebf4ff; border: 2px solid #2b6cb0;">
+                    <div style="font-size: 2rem;">&#x2714;</div>
+                    <h4 style="color: #2b6cb0;">\(\Delta = 0\)</h4>
+                    <p><strong>One repeated real root</strong></p>
+                    <p style="font-size: 0.95rem;">The parabola is tangent to the x-axis (touches at one point).</p>
+                </div>
+                <div class="disc-card" style="background: #fef2f2; border: 2px solid #9b2c2c;">
+                    <div style="font-size: 2rem;">&#x2718;</div>
+                    <h4 style="color: #9b2c2c;">\(\Delta < 0\)</h4>
+                    <p><strong>No real roots</strong></p>
+                    <p style="font-size: 0.95rem;">The parabola does not intersect the x-axis. (Roots are complex.)</p>
+                </div>
+            </div>
+
+            <!-- SVG: Three parabolas showing discriminant cases -->
+            <svg viewBox="0 0 780 300" width="780" style="max-width:100%;" aria-label="Three parabolas illustrating the three discriminant cases">
+                <!-- Case 1: Delta > 0 (two real roots) -->
+                <g transform="translate(10, 0)">
+                    <rect x="0" y="0" width="240" height="290" rx="10" fill="#f0f7f0" stroke="#276749" stroke-width="1.5"/>
+                    <text x="120" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-weight="700" font-size="14" fill="#276749">&#916; &gt; 0: Two real roots</text>
+                    <!-- Axes -->
+                    <line x1="30" y1="200" x2="220" y2="200" stroke="#888" stroke-width="1.5"/>
+                    <line x1="120" y1="50" x2="120" y2="260" stroke="#888" stroke-width="1.5"/>
+                    <!-- Parabola: y = 0.015(x-120)^2 - 80, scaled -->
+                    <path d="M 40,210 Q 80,120 120,105 Q 160,120 200,210" stroke="#276749" stroke-width="2.5" fill="none"/>
+                    <!-- Root markers -->
+                    <circle cx="62" cy="200" r="5" fill="#c0602b"/>
+                    <circle cx="178" cy="200" r="5" fill="#c0602b"/>
+                    <text x="62" y="220" text-anchor="middle" font-size="12" fill="#c0602b" font-family="Segoe UI, sans-serif" font-weight="600">r&#x2081;</text>
+                    <text x="178" y="220" text-anchor="middle" font-size="12" fill="#c0602b" font-family="Segoe UI, sans-serif" font-weight="600">r&#x2082;</text>
+                    <text x="120" y="280" text-anchor="middle" font-size="11" fill="#555" font-family="Georgia, serif" font-style="italic">Crosses x-axis twice</text>
+                </g>
+                <!-- Case 2: Delta = 0 (one repeated root) -->
+                <g transform="translate(270, 0)">
+                    <rect x="0" y="0" width="240" height="290" rx="10" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="1.5"/>
+                    <text x="120" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-weight="700" font-size="14" fill="#2b6cb0">&#916; = 0: One repeated root</text>
+                    <!-- Axes -->
+                    <line x1="30" y1="200" x2="220" y2="200" stroke="#888" stroke-width="1.5"/>
+                    <line x1="120" y1="50" x2="120" y2="260" stroke="#888" stroke-width="1.5"/>
+                    <!-- Parabola: vertex at (120, 200) -->
+                    <path d="M 50,260 Q 85,200 120,200 Q 155,200 190,260" stroke="#2b6cb0" stroke-width="2.5" fill="none"/>
+                    <!-- Tangent point -->
+                    <circle cx="120" cy="200" r="5" fill="#c0602b"/>
+                    <text x="120" y="220" text-anchor="middle" font-size="12" fill="#c0602b" font-family="Segoe UI, sans-serif" font-weight="600">r</text>
+                    <text x="120" y="280" text-anchor="middle" font-size="11" fill="#555" font-family="Georgia, serif" font-style="italic">Tangent to x-axis</text>
+                </g>
+                <!-- Case 3: Delta < 0 (no real roots) -->
+                <g transform="translate(530, 0)">
+                    <rect x="0" y="0" width="240" height="290" rx="10" fill="#fef2f2" stroke="#9b2c2c" stroke-width="1.5"/>
+                    <text x="120" y="25" text-anchor="middle" font-family="Segoe UI, sans-serif" font-weight="700" font-size="14" fill="#9b2c2c">&#916; &lt; 0: No real roots</text>
+                    <!-- Axes -->
+                    <line x1="30" y1="200" x2="220" y2="200" stroke="#888" stroke-width="1.5"/>
+                    <line x1="120" y1="50" x2="120" y2="260" stroke="#888" stroke-width="1.5"/>
+                    <!-- Parabola: vertex above x-axis -->
+                    <path d="M 50,190 Q 85,130 120,120 Q 155,130 190,190" stroke="#9b2c2c" stroke-width="2.5" fill="none"/>
+                    <text x="120" y="280" text-anchor="middle" font-size="11" fill="#555" font-family="Georgia, serif" font-style="italic">Never crosses x-axis</text>
+                </g>
+            </svg>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ==================== SECTION 6: GRAPHING PARABOLAS ==================== -->
+        <div class="card">
+            <h2>6. Graphing Parabolas</h2>
+
+            <p>Every quadratic equation \(y = ax^2 + bx + c\) produces a U-shaped curve called a <strong>parabola</strong>. The real roots of \(ax^2 + bx + c = 0\) are the x-values where this parabola crosses the x-axis.</p>
+
+            <div class="box box-formula">
+                <div class="box-label">Key Properties of \(y = ax^2 + bx + c\)</div>
+                <ul>
+                    <li><strong>Vertex</strong> (turning point): \(\displaystyle x = -\frac{b}{2a}\), then compute \(y\) at that \(x\).</li>
+                    <li><strong>Axis of symmetry</strong>: the vertical line \(\displaystyle x = -\frac{b}{2a}\).</li>
+                    <li><strong>Direction</strong>: opens <em>upward</em> if \(a > 0\); opens <em>downward</em> if \(a < 0\).</li>
+                    <li><strong>y-intercept</strong>: set \(x = 0\); the y-intercept is \(c\).</li>
+                    <li><strong>x-intercepts (roots)</strong>: set \(y = 0\) and solve \(ax^2 + bx + c = 0\).</li>
+                </ul>
+            </div>
+
+            <!-- SVG: Annotated parabola diagram -->
+            <svg viewBox="0 0 520 420" width="520" style="max-width:100%;" aria-label="Annotated parabola showing vertex, axis of symmetry, x-intercepts, and y-intercept">
+                <defs>
+                    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                        <polygon points="0 0, 8 3, 0 6" fill="#888"/>
+                    </marker>
+                </defs>
+                <!-- Background -->
+                <rect x="0" y="0" width="520" height="420" rx="12" fill="#fff" stroke="#e2d9ce" stroke-width="1"/>
+                <!-- Title -->
+                <text x="260" y="28" text-anchor="middle" font-family="Segoe UI, sans-serif" font-weight="700" font-size="15" fill="#0d4f4f">Anatomy of a Parabola: y = x&#xB2; &#x2212; 4x + 3</text>
+                <!-- Grid -->
+                <g stroke="#eee" stroke-width="0.5">
+                    <line x1="60" y1="50" x2="60" y2="380"/><line x1="110" y1="50" x2="110" y2="380"/>
+                    <line x1="160" y1="50" x2="160" y2="380"/><line x1="210" y1="50" x2="210" y2="380"/>
+                    <line x1="260" y1="50" x2="260" y2="380"/><line x1="310" y1="50" x2="310" y2="380"/>
+                    <line x1="360" y1="50" x2="360" y2="380"/><line x1="410" y1="50" x2="410" y2="380"/>
+                    <line x1="460" y1="50" x2="460" y2="380"/>
+                    <line x1="60" y1="80" x2="480" y2="80"/><line x1="60" y1="130" x2="480" y2="130"/>
+                    <line x1="60" y1="180" x2="480" y2="180"/><line x1="60" y1="230" x2="480" y2="230"/>
+                    <line x1="60" y1="280" x2="480" y2="280"/><line x1="60" y1="330" x2="480" y2="330"/>
+                    <line x1="60" y1="380" x2="480" y2="380"/>
+                </g>
+                <!-- Axes -->
+                <line x1="60" y1="280" x2="490" y2="280" stroke="#555" stroke-width="2" marker-end="url(#arrowhead)"/>
+                <line x1="160" y1="390" x2="160" y2="45" stroke="#555" stroke-width="2" marker-end="url(#arrowhead)"/>
+                <!-- Axis labels -->
+                <text x="495" y="284" font-family="Georgia, serif" font-size="14" fill="#555" font-style="italic">x</text>
+                <text x="165" y="42" font-family="Georgia, serif" font-size="14" fill="#555" font-style="italic">y</text>
+                <!-- Tick labels on x-axis: -1,0,1,2,3,4,5,6 -->
+                <text x="110" y="298" text-anchor="middle" font-size="11" fill="#888">&#x2212;1</text>
+                <text x="160" y="298" text-anchor="middle" font-size="11" fill="#888">0</text>
+                <text x="210" y="298" text-anchor="middle" font-size="11" fill="#888">1</text>
+                <text x="260" y="298" text-anchor="middle" font-size="11" fill="#888">2</text>
+                <text x="310" y="298" text-anchor="middle" font-size="11" fill="#888">3</text>
+                <text x="360" y="298" text-anchor="middle" font-size="11" fill="#888">4</text>
+                <text x="410" y="298" text-anchor="middle" font-size="11" fill="#888">5</text>
+                <!-- Tick labels on y-axis -->
+                <text x="148" y="234" text-anchor="end" font-size="11" fill="#888">1</text>
+                <text x="148" y="184" text-anchor="end" font-size="11" fill="#888">2</text>
+                <text x="148" y="134" text-anchor="end" font-size="11" fill="#888">3</text>
+                <text x="148" y="84" text-anchor="end" font-size="11" fill="#888">4</text>
+                <text x="148" y="334" text-anchor="end" font-size="11" fill="#888">&#x2212;1</text>
+
+                <!-- Axis of symmetry (dashed) x=2 => px=260 -->
+                <line x1="260" y1="55" x2="260" y2="370" stroke="#0d4f4f" stroke-width="1.5" stroke-dasharray="6,4"/>
+                <text x="268" y="68" font-family="Segoe UI, sans-serif" font-size="11" fill="#0d4f4f" font-weight="600">x = 2</text>
+                <text x="268" y="82" font-family="Segoe UI, sans-serif" font-size="10" fill="#0d4f4f">(axis of symmetry)</text>
+
+                <!-- Parabola: y = x^2 - 4x + 3, scale: 50px per unit on x, 50px per unit on y -->
+                <!-- Points: (-1,8) (0,3) (1,0) (2,-1) (3,0) (4,3) (5,8) -->
+                <!-- Pixel mapping: x_px = 160 + 50*x, y_px = 280 - 50*y -->
+                <!-- (-1,8):110,(-120) (0,3):160,130 (1,0):210,280 (2,-1):260,330 (3,0):310,280 (4,3):360,130 (5,8):410,(-120) -->
+                <path d="M 110,80 Q 135,108 160,130 Q 185,206 210,280 Q 235,318 260,330 Q 285,318 310,280 Q 335,206 360,130 Q 385,108 410,80" stroke="#c0602b" stroke-width="3" fill="none"/>
+
+                <!-- x-intercepts (roots) -->
+                <circle cx="210" cy="280" r="6" fill="#c0602b" stroke="#fff" stroke-width="2"/>
+                <text x="210" y="310" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#c0602b" font-weight="700">(1, 0)</text>
+                <text x="210" y="324" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#c0602b">root</text>
+
+                <circle cx="310" cy="280" r="6" fill="#c0602b" stroke="#fff" stroke-width="2"/>
+                <text x="310" y="310" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#c0602b" font-weight="700">(3, 0)</text>
+                <text x="310" y="324" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="10" fill="#c0602b">root</text>
+
+                <!-- Vertex -->
+                <circle cx="260" cy="330" r="6" fill="#0d4f4f" stroke="#fff" stroke-width="2"/>
+                <text x="275" y="350" font-family="Segoe UI, sans-serif" font-size="12" fill="#0d4f4f" font-weight="700">(2, &#x2212;1)</text>
+                <text x="275" y="364" font-family="Segoe UI, sans-serif" font-size="10" fill="#0d4f4f">vertex</text>
+
+                <!-- y-intercept -->
+                <circle cx="160" cy="130" r="6" fill="#2b6cb0" stroke="#fff" stroke-width="2"/>
+                <text x="105" y="126" font-family="Segoe UI, sans-serif" font-size="12" fill="#2b6cb0" font-weight="700">(0, 3)</text>
+                <text x="105" y="140" font-family="Segoe UI, sans-serif" font-size="10" fill="#2b6cb0">y-intercept</text>
+
+                <!-- Legend -->
+                <rect x="365" y="352" width="140" height="58" rx="6" fill="#fdf8f3" stroke="#e2d9ce"/>
+                <circle cx="378" cy="368" r="4" fill="#c0602b"/>
+                <text x="388" y="372" font-size="10" fill="#555" font-family="Segoe UI, sans-serif">x-intercepts (roots)</text>
+                <circle cx="378" cy="386" r="4" fill="#0d4f4f"/>
+                <text x="388" y="390" font-size="10" fill="#555" font-family="Segoe UI, sans-serif">vertex (min/max)</text>
+                <circle cx="378" cy="402" r="4" fill="#2b6cb0"/>
+                <text x="388" y="406" font-size="10" fill="#555" font-family="Segoe UI, sans-serif">y-intercept</text>
+            </svg>
+
+            <div class="box box-insight">
+                <div class="box-label">Key Insight &mdash; Reading Roots from a Graph</div>
+                <p>The roots of \(ax^2 + bx + c = 0\) are precisely the <strong>x-coordinates</strong> where the parabola \(y = ax^2 + bx + c\) intersects the x-axis (where \(y = 0\)). If the curve just touches the axis, there is one repeated root. If it never crosses, there are no real roots.</p>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ==================== SECTION 7: SUM AND PRODUCT OF ROOTS ==================== -->
+        <div class="card">
+            <h2>7. Sum and Product of Roots</h2>
+
+            <p>If \(r_1\) and \(r_2\) are the two roots of \(ax^2 + bx + c = 0\), then the quadratic can be written as \(a(x - r_1)(x - r_2) = 0\). Expanding and comparing coefficients reveals two elegant relationships.</p>
+
+            <div class="box box-formula">
+                <div class="box-label">Vieta's Formulas for Quadratics</div>
+                $$r_1 + r_2 = -\frac{b}{a} \qquad\qquad r_1 \cdot r_2 = \frac{c}{a}$$
+                <p>The <strong>sum</strong> of the roots equals \(-b/a\), and the <strong>product</strong> of the roots equals \(c/a\).</p>
+            </div>
+
+            <div class="box box-example">
+                <div class="box-label">Quick Verification</div>
+                <p>For \(x^2 - 5x + 6 = 0\), the roots are \(x = 2\) and \(x = 3\).</p>
+                <ul>
+                    <li>Sum: \(2 + 3 = 5 = -(-5)/1 = -b/a\) &#10003;</li>
+                    <li>Product: \(2 \times 3 = 6 = 6/1 = c/a\) &#10003;</li>
+                </ul>
+            </div>
+
+            <div class="box box-insight">
+                <div class="box-label">Key Insight</div>
+                <p>These relationships are useful as a <strong>quick check</strong>. After solving a quadratic, verify that your two roots add up to \(-b/a\) and multiply to \(c/a\). If they don't, you've made an arithmetic error somewhere!</p>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ==================== SECTION 8: WORD PROBLEMS ==================== -->
+        <div class="card">
+            <h2>8. Word Problems with Quadratics</h2>
+
+            <p>Many real-world situations lead naturally to quadratic equations: area and geometry problems, projectile motion, optimization, and more. The key is translating the words into an equation in standard form, then solving with any of the methods you've learned.</p>
+
+            <div class="box box-example">
+                <div class="box-label">Worked Example &mdash; Area Problem</div>
+                <p><strong>Problem:</strong> A rectangle has an area of 48 square units. Its length is 2 more than its width. Find the dimensions.</p>
+                <p><strong>Setup:</strong> Let \(w\) = width. Then length = \(w + 2\).</p>
+                $$w(w + 2) = 48$$
+                $$w^2 + 2w - 48 = 0$$
+                <p><strong>Solve by factoring:</strong></p>
+                $$(w + 8)(w - 6) = 0$$
+                $$w = -8 \quad \text{or} \quad w = 6$$
+                <p>Since width must be positive, \(w = 6\) and length = \(6 + 2 = 8\).</p>
+                <p><strong>Check:</strong> \(6 \times 8 = 48\;\checkmark\)</p>
+            </div>
+
+            <div class="box box-caution">
+                <div class="box-label">Common Mistake</div>
+                <p>In word problems, always check whether <em>both</em> mathematical solutions make physical sense. A negative width or a negative time in a projectile problem should be rejected, even though it is a valid algebraic root.</p>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ==================== WORKED PROBLEMS ==================== -->
+        <div class="card">
+            <h2>Worked Problems</h2>
+
+            <!-- Problem 1 -->
+            <div class="box box-practice">
+                <div class="box-label">Problem 1 &mdash; Solve by Factoring</div>
+                <p>Solve \(x^2 - 5x + 6 = 0\).</p>
+                <button class="solution-toggle" onclick="this.nextElementSibling.classList.toggle('show')">Show Solution</button>
+                <div class="solution-content">
+                    <div class="box box-example" style="margin-top:0">
+                        <div class="box-label">Solution</div>
+                        <p>We need two numbers that multiply to \(6\) and add to \(-5\). Those are \(-2\) and \(-3\).</p>
+                        $$x^2 - 5x + 6 = (x - 2)(x - 3) = 0$$
+                        <p>Setting each factor to zero:</p>
+                        $$x - 2 = 0 \implies x = 2 \qquad \text{or} \qquad x - 3 = 0 \implies x = 3$$
+                        <p><strong>Check:</strong></p>
+                        $$2^2 - 5(2) + 6 = 4 - 10 + 6 = 0 \;\checkmark$$
+                        $$3^2 - 5(3) + 6 = 9 - 15 + 6 = 0 \;\checkmark$$
+                        <p><strong>Roots: \(x = 2\) and \(x = 3\)</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problem 2 -->
+            <div class="box box-practice">
+                <div class="box-label">Problem 2 &mdash; Completing the Square</div>
+                <p>Solve \(x^2 + 6x + 2 = 0\) by completing the square.</p>
+                <button class="solution-toggle" onclick="this.nextElementSibling.classList.toggle('show')">Show Solution</button>
+                <div class="solution-content">
+                    <div class="box box-example" style="margin-top:0">
+                        <div class="box-label">Solution</div>
+                        <p><strong>Step 1:</strong> Move the constant: \(x^2 + 6x = -2\)</p>
+                        <p><strong>Step 2:</strong> Half of 6 is 3; \(3^2 = 9\). Add 9 to both sides:</p>
+                        $$x^2 + 6x + 9 = -2 + 9 = 7$$
+                        <p><strong>Step 3:</strong> Factor the left side:</p>
+                        $$(x + 3)^2 = 7$$
+                        <p><strong>Step 4:</strong> Take square roots:</p>
+                        $$x + 3 = \pm\sqrt{7}$$
+                        $$x = -3 \pm \sqrt{7}$$
+                        <p><strong>Check:</strong> Substituting \(x = -3 + \sqrt{7}\):</p>
+                        $$(-3+\sqrt{7})^2 + 6(-3+\sqrt{7}) + 2 = 9 - 6\sqrt{7} + 7 - 18 + 6\sqrt{7} + 2 = 0 \;\checkmark$$
+                        <p><strong>Roots: \(x = -3 + \sqrt{7} \approx -0.354\) and \(x = -3 - \sqrt{7} \approx -5.646\)</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problem 3 -->
+            <div class="box box-practice">
+                <div class="box-label">Problem 3 &mdash; Quadratic Formula</div>
+                <p>Solve \(2x^2 - 3x - 5 = 0\) using the quadratic formula.</p>
+                <button class="solution-toggle" onclick="this.nextElementSibling.classList.toggle('show')">Show Solution</button>
+                <div class="solution-content">
+                    <div class="box box-example" style="margin-top:0">
+                        <div class="box-label">Solution</div>
+                        <p>Identify: \(a = 2,\; b = -3,\; c = -5\)</p>
+                        $$x = \frac{-(-3) \pm \sqrt{(-3)^2 - 4(2)(-5)}}{2(2)}$$
+                        $$x = \frac{3 \pm \sqrt{9 + 40}}{4} = \frac{3 \pm \sqrt{49}}{4} = \frac{3 \pm 7}{4}$$
+                        $$x = \frac{3 + 7}{4} = \frac{10}{4} = \frac{5}{2} \qquad \text{or} \qquad x = \frac{3 - 7}{4} = \frac{-4}{4} = -1$$
+                        <p><strong>Check:</strong></p>
+                        $$2\!\left(\tfrac{5}{2}\right)^2 - 3\!\left(\tfrac{5}{2}\right) - 5 = 2\cdot\tfrac{25}{4} - \tfrac{15}{2} - 5 = \tfrac{25}{2} - \tfrac{15}{2} - 5 = 5 - 5 = 0 \;\checkmark$$
+                        $$2(-1)^2 - 3(-1) - 5 = 2 + 3 - 5 = 0 \;\checkmark$$
+                        <p><strong>Roots: \(x = \frac{5}{2}\) and \(x = -1\)</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problem 4 -->
+            <div class="box box-practice">
+                <div class="box-label">Problem 4 &mdash; Using the Discriminant</div>
+                <p>Without solving, determine the nature of the roots of \(3x^2 + 2x + 5 = 0\).</p>
+                <button class="solution-toggle" onclick="this.nextElementSibling.classList.toggle('show')">Show Solution</button>
+                <div class="solution-content">
+                    <div class="box box-example" style="margin-top:0">
+                        <div class="box-label">Solution</div>
+                        <p>Identify: \(a = 3,\; b = 2,\; c = 5\)</p>
+                        <p>Compute the discriminant:</p>
+                        $$\Delta = b^2 - 4ac = (2)^2 - 4(3)(5) = 4 - 60 = -56$$
+                        <p>Since \(\Delta = -56 < 0\), the equation has <strong>no real solutions</strong>. The parabola \(y = 3x^2 + 2x + 5\) lies entirely above the x-axis and never crosses it.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problem 5 -->
+            <div class="box box-practice">
+                <div class="box-label">Problem 5 &mdash; Finding the Vertex</div>
+                <p>Find the vertex of the parabola \(y = x^2 - 4x + 7\).</p>
+                <button class="solution-toggle" onclick="this.nextElementSibling.classList.toggle('show')">Show Solution</button>
+                <div class="solution-content">
+                    <div class="box box-example" style="margin-top:0">
+                        <div class="box-label">Solution</div>
+                        <p>The x-coordinate of the vertex is:</p>
+                        $$x = -\frac{b}{2a} = -\frac{-4}{2(1)} = \frac{4}{2} = 2$$
+                        <p>Substitute \(x = 2\) to find the y-coordinate:</p>
+                        $$y = (2)^2 - 4(2) + 7 = 4 - 8 + 7 = 3$$
+                        <p>The <strong>vertex</strong> is at \((2,\, 3)\).</p>
+                        <p>Since \(a = 1 > 0\), the parabola opens upward, so the vertex is a <strong>minimum point</strong>.</p>
+                        <p>Also, the discriminant is \(\Delta = 16 - 28 = -12 < 0\), confirming the parabola never crosses the x-axis. The minimum value of \(y\) is 3.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problem 6 -->
+            <div class="box box-practice">
+                <div class="box-label">Problem 6 &mdash; Word Problem</div>
+                <p>A rectangle has an area of 48 square units, and its length is 2 units more than its width. Find the dimensions of the rectangle.</p>
+                <button class="solution-toggle" onclick="this.nextElementSibling.classList.toggle('show')">Show Solution</button>
+                <div class="solution-content">
+                    <div class="box box-example" style="margin-top:0">
+                        <div class="box-label">Solution</div>
+                        <p>Let \(w\) represent the width. Then the length is \(w + 2\).</p>
+                        $$\text{Area} = w(w + 2) = 48$$
+                        $$w^2 + 2w - 48 = 0$$
+                        <p>Factor: We need two numbers that multiply to \(-48\) and add to \(2\). Those are \(8\) and \(-6\).</p>
+                        $$(w + 8)(w - 6) = 0$$
+                        $$w = -8 \quad \text{or} \quad w = 6$$
+                        <p>Since width must be positive, \(w = 6\).</p>
+                        <p>Therefore: width = \(6\) units, length = \(6 + 2 = 8\) units.</p>
+                        <p><strong>Check:</strong> \(6 \times 8 = 48\;\checkmark\)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ==================== QUICK REFERENCE ==================== -->
+        <div class="card">
+            <h2>Quick Reference</h2>
+
+            <div class="box box-formula">
+                <div class="box-label">Standard Form</div>
+                $$ax^2 + bx + c = 0 \qquad (a \neq 0)$$
+            </div>
+
+            <div class="box box-formula">
+                <div class="box-label">Zero Product Property</div>
+                <p>If \(A \cdot B = 0\), then \(A = 0\) or \(B = 0\).</p>
+            </div>
+
+            <div class="box box-formula">
+                <div class="box-label">Completing the Square</div>
+                $$x^2 + bx + \left(\frac{b}{2}\right)^2 = \left(x + \frac{b}{2}\right)^2$$
+            </div>
+
+            <div class="box box-formula">
+                <div class="box-label">Quadratic Formula</div>
+                $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+            </div>
+
+            <div class="box box-formula">
+                <div class="box-label">The Discriminant</div>
+                $$\Delta = b^2 - 4ac$$
+                <table>
+                    <thead><tr><th>Discriminant</th><th>Nature of Roots</th><th>Graph</th></tr></thead>
+                    <tbody>
+                        <tr><td>\(\Delta > 0\)</td><td>Two distinct real roots</td><td>Parabola crosses x-axis twice</td></tr>
+                        <tr><td>\(\Delta = 0\)</td><td>One repeated real root</td><td>Parabola is tangent to x-axis</td></tr>
+                        <tr><td>\(\Delta < 0\)</td><td>No real roots (complex)</td><td>Parabola does not cross x-axis</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="box box-formula">
+                <div class="box-label">Vertex of a Parabola</div>
+                $$\text{Vertex: } \left(-\frac{b}{2a},\; f\!\left(-\frac{b}{2a}\right)\right)$$
+                <p>Opens up if \(a > 0\); opens down if \(a < 0\).</p>
+            </div>
+
+            <div class="box box-formula">
+                <div class="box-label">Sum and Product of Roots (Vieta's Formulas)</div>
+                $$r_1 + r_2 = -\frac{b}{a} \qquad\qquad r_1 \cdot r_2 = \frac{c}{a}$$
+            </div>
+
+            <div class="box box-formula">
+                <div class="box-label">Solution Methods Summary</div>
+                <table>
+                    <thead><tr><th>Method</th><th>Best When</th></tr></thead>
+                    <tbody>
+                        <tr><td>Factoring</td><td>Equation factors neatly with integer/simple roots</td></tr>
+                        <tr><td>Extraction of roots</td><td>Incomplete quadratic: \(ax^2 = c\) (no linear term)</td></tr>
+                        <tr><td>Completing the square</td><td>Converting to vertex form; understanding structure</td></tr>
+                        <tr><td>Quadratic formula</td><td>Any quadratic equation; always works</td></tr>
+                        <tr><td>Graphing</td><td>Visual understanding; approximate solutions</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ==================== NAVIGATION ==================== -->
+        <div class="nav-footer">
+            <a href="../08-functions-and-graphs/index.html" class="nav-btn">&larr; Previous: Functions and Graphs</a>
+            <a href="../10-inequalities/index.html" class="nav-btn">Next: Inequalities &rarr;</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 5 — Fractions | Practical Algebra</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', 'Cambria', 'Times New Roman', serif;
+            background: #fdf8f3;
+            color: #2d2d2d;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+        .hero {
+            background: linear-gradient(135deg, #0d4f4f 0%, #1a2332 100%);
+            color: white;
+            padding: 3rem 2rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero .chapter-num {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 6rem;
+            font-weight: 800;
+            opacity: 0.12;
+            position: absolute;
+            top: -0.5rem;
+            right: 2rem;
+            line-height: 1;
+        }
+        .hero h1 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .hero .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.85;
+            font-style: italic;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        h2 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #0d4f4f;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #c0602b;
+        }
+        h3 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #0d4f4f;
+            font-size: 1.5rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+        p { margin-bottom: 1rem; }
+        ul, ol { margin: 0.75rem 0 1.25rem 1.5rem; }
+        li { margin-bottom: 0.4rem; }
+        /* Highlight boxes */
+        .box { padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 5px solid; }
+        .box-definition { border-color: #0d4f4f; background: #e8f4f4; }
+        .box-insight { border-color: #c0602b; background: #fef3ec; }
+        .box-caution { border-color: #9b2c2c; background: #fef2f2; }
+        .box-example { border-color: #276749; background: #f0f7f0; }
+        .box-practice { border-color: #6b46c1; background: #f5f0ff; }
+        .box-formula { border-color: #2b6cb0; background: #ebf4ff; }
+        .box-label {
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .box-definition .box-label { color: #0d4f4f; }
+        .box-insight .box-label { color: #c0602b; }
+        .box-caution .box-label { color: #9b2c2c; }
+        .box-example .box-label { color: #276749; }
+        .box-practice .box-label { color: #6b46c1; }
+        .box-formula .box-label { color: #2b6cb0; }
+        /* Navigation */
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e2d9ce;
+        }
+        .nav-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #0d4f4f;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .nav-btn:hover { background: #0a3d3d; }
+        svg { max-width: 100%; height: auto; display: block; margin: 1.5rem auto; }
+        .katex { font-size: 1.3em; }
+
+        .katex-display { margin: 1.5rem 0; overflow-x: auto; font-size: 1.35em; }
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .overview-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            padding: 0.75rem;
+            background: #f7f3ee;
+            border-radius: 8px;
+        }
+        .overview-icon {
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            margin-top: 0.15rem;
+        }
+        .overview-text {
+            font-size: 1.02rem;
+            line-height: 1.5;
+        }
+        .section-divider {
+            height: 3px;
+            background: linear-gradient(90deg, #0d4f4f, #c0602b, transparent);
+            border: none;
+            margin: 2.5rem 0;
+            border-radius: 2px;
+        }
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            background: #0d4f4f;
+            color: white;
+            border-radius: 50%;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-right: 0.5rem;
+            flex-shrink: 0;
+        }
+        .step-row {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        .step-content { flex: 1; }
+        table.rules-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        table.rules-table th {
+            background: #0d4f4f;
+            color: white;
+            padding: 0.75rem 1rem;
+            text-align: left;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.95rem;
+        }
+        table.rules-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #e2d9ce;
+            vertical-align: top;
+        }
+        table.rules-table tr:nth-child(even) { background: #f9f6f1; }
+        .cancel-line {
+            text-decoration: line-through;
+            text-decoration-color: #c0602b;
+            text-decoration-thickness: 2px;
+            opacity: 0.6;
+        }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .hero .chapter-num { font-size: 4rem; }
+            h2 { font-size: 1.6rem; }
+            .card { padding: 1.25rem; }
+            .box { padding: 1rem; }
+            .nav-footer { flex-direction: column; gap: 1rem; }
+            .nav-btn { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="chapter-num">5</div>
+        <div style="position:relative">
+            <p style="font-family: 'Segoe UI',sans-serif; text-transform:uppercase; letter-spacing:0.2em; font-size:0.9rem; opacity:0.7; margin-bottom:0.5rem;">Chapter 5</p>
+            <h1>Fractions</h1>
+            <p class="subtitle">Mastering algebraic fractions &mdash; the gateway to equations, formulas, and rational expressions</p>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- ===== OVERVIEW CARD ===== -->
+        <div class="card">
+            <h2>What You'll Learn</h2>
+            <p>Algebraic fractions follow the same rules as arithmetic fractions, but they introduce variables, factoring, and new challenges. This chapter covers every operation you need to handle them with confidence.</p>
+            <div class="overview-grid">
+                <div class="overview-item">
+                    <span class="overview-icon">&#x1F4D0;</span>
+                    <span class="overview-text"><strong>Algebraic fractions</strong> and when they are undefined</span>
+                </div>
+                <div class="overview-item">
+                    <span class="overview-icon">&#x2702;</span>
+                    <span class="overview-text"><strong>Reducing</strong> fractions to lowest terms</span>
+                </div>
+                <div class="overview-item">
+                    <span class="overview-icon">&#x00D7;</span>
+                    <span class="overview-text"><strong>Multiplying</strong> and <strong>dividing</strong> fractions</span>
+                </div>
+                <div class="overview-item">
+                    <span class="overview-icon">&#x002B;</span>
+                    <span class="overview-text"><strong>Adding</strong> and <strong>subtracting</strong> fractions using the LCD</span>
+                </div>
+                <div class="overview-item">
+                    <span class="overview-icon">&#x00B1;</span>
+                    <span class="overview-text">Handling the <strong>signs</strong> of fractions</span>
+                </div>
+                <div class="overview-item">
+                    <span class="overview-icon">&#x1F504;</span>
+                    <span class="overview-text"><strong>Complex fractions</strong> and <strong>mixed numbers</strong></span>
+                </div>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ===== SECTION 1: ALGEBRAIC FRACTIONS ===== -->
+        <div class="card">
+            <h2>1. Algebraic Fractions</h2>
+
+            <p>In algebra, a fraction is simply another way of writing a division. The general form is</p>
+
+            $$\frac{a}{b}, \quad b \neq 0$$
+
+            <p>where \(a\) is the <strong>numerator</strong> and \(b\) is the <strong>denominator</strong>. The fraction bar acts both as a division sign and as a grouping symbol: every term in the numerator is divided by the denominator.</p>
+
+            <div class="box box-definition">
+                <div class="box-label">&#x1F511; Definition &mdash; Rational Expression</div>
+                <p style="margin-bottom:0.5rem">A <strong>rational expression</strong> (algebraic fraction) is any expression that can be written as \(\dfrac{P}{Q}\), where \(P\) and \(Q\) are polynomials and \(Q \neq 0\).</p>
+                <p style="margin-bottom:0">A fraction is <strong>undefined</strong> whenever its denominator equals zero.</p>
+            </div>
+
+            <div class="box box-formula">
+                <div class="box-label">&#x1F4CB; Rules for Zero in Fractions</div>
+                <table class="rules-table" style="margin-bottom:0">
+                    <tr>
+                        <th>Rule</th>
+                        <th>Statement</th>
+                        <th>Example</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Rule 1</strong></td>
+                        <td>\(\dfrac{0}{b} = 0\) provided \(b \neq 0\)</td>
+                        <td>\(\dfrac{0}{7} = 0\)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Rule 2</strong></td>
+                        <td>\(\dfrac{0}{0}\) is <em>indeterminate</em></td>
+                        <td>No unique value exists</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Rule 3</strong></td>
+                        <td>\(\dfrac{a}{0}\) is <em>undefined</em> (meaningless)</td>
+                        <td>\(\dfrac{5}{0}\) is undefined</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="box box-example">
+                <div class="box-label">&#x2705; Example</div>
+                <p>For what value of \(x\) is \(\dfrac{x - 4}{2 + x}\) equal to zero? For what value is it undefined?</p>
+                <ul>
+                    <li>The fraction equals zero when the numerator is zero: \(x - 4 = 0 \Rightarrow x = 4\).</li>
+                    <li>The fraction is undefined when the denominator is zero: \(2 + x = 0 \Rightarrow x = -2\).</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ===== SECTION 2: REDUCING FRACTIONS ===== -->
+        <div class="card">
+            <h2>2. Reducing Fractions</h2>
+
+            <p>A fraction is in <strong>lowest terms</strong> when the numerator and denominator share no common factor other than 1. To reduce, we factor both parts and cancel what they share.</p>
+
+            <div class="box box-definition">
+                <div class="box-label">&#x1F511; Fundamental Principle of Fractions</div>
+                <p style="margin-bottom:0">If \(k \neq 0\), then</p>
+                $$\frac{a}{b} = \frac{a \cdot k}{b \cdot k} = \frac{a / k}{b / k}$$
+                <p style="margin-top:0.5rem;margin-bottom:0">Multiplying or dividing both numerator and denominator by the same non-zero quantity does not change the fraction's value.</p>
+            </div>
+
+            <h3>Reducing Monomials</h3>
+            <p>Divide both numerator and denominator by their <strong>greatest common factor (GCF)</strong>.</p>
+
+            <div class="box box-example">
+                <div class="box-label">&#x2705; Example &mdash; Monomial Reduction</div>
+                $$\frac{6x^2 y}{3xy} = \frac{6x^2 y \;\div\; 3xy}{3xy \;\div\; 3xy} = \frac{2x}{1} = 2x$$
+            </div>
+
+            <h3>Reducing with Polynomial Factors</h3>
+            <p>Factor the numerator and denominator completely, then cancel common binomial (or polynomial) factors.</p>
+
+            <div class="box box-example">
+                <div class="box-label">&#x2705; Example &mdash; Polynomial Reduction</div>
+                $$\frac{3(x + y)}{(x + y)(x - y)} = \frac{3\,\cancel{(x + y)}}{\cancel{(x + y)}\,(x - y)} = \frac{3}{x - y}$$
+            </div>
+
+            <!-- SVG: Fraction Simplification Process Diagram -->
+            <h3>Visualizing the Simplification Process</h3>
+            <svg viewBox="0 0 780 340" xmlns="http://www.w3.org/2000/svg" style="max-width:780px">
+                <!-- Background -->
+                <rect width="780" height="340" rx="12" fill="#fdf8f3"/>
+
+                <!-- Step 1: Original fraction -->
+                <rect x="20" y="30" width="160" height="100" rx="10" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="2"/>
+                <text x="100" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#2b6cb0">ORIGINAL</text>
+                <text x="100" y="85" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#2d2d2d">
+                    <tspan>x&#xB2; &#x2212; 4</tspan>
+                </text>
+                <line x1="55" y1="92" x2="145" y2="92" stroke="#2d2d2d" stroke-width="2"/>
+                <text x="100" y="115" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#2d2d2d">x + 2</text>
+
+                <!-- Arrow 1 -->
+                <line x1="190" y1="80" x2="230" y2="80" stroke="#c0602b" stroke-width="2.5" marker-end="url(#arrowOrange)"/>
+                <text x="210" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#c0602b" font-weight="600">Factor</text>
+
+                <!-- Step 2: Factored form -->
+                <rect x="240" y="30" width="210" height="100" rx="10" fill="#fef3ec" stroke="#c0602b" stroke-width="2"/>
+                <text x="345" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#c0602b">FACTOR</text>
+                <text x="345" y="85" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#2d2d2d">(x + 2)(x &#x2212; 2)</text>
+                <line x1="275" y1="92" x2="415" y2="92" stroke="#2d2d2d" stroke-width="2"/>
+                <text x="345" y="115" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#2d2d2d">(x + 2)</text>
+
+                <!-- Arrow 2 -->
+                <line x1="460" y1="80" x2="500" y2="80" stroke="#c0602b" stroke-width="2.5" marker-end="url(#arrowOrange)"/>
+                <text x="480" y="70" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#c0602b" font-weight="600">Cancel</text>
+
+                <!-- Step 3: Cancelled form -->
+                <rect x="510" y="30" width="240" height="100" rx="10" fill="#f0f7f0" stroke="#276749" stroke-width="2"/>
+                <text x="630" y="55" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#276749">CANCEL COMMON FACTORS</text>
+                <text x="630" y="90" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#999" text-decoration="line-through">(x+2)</text>
+                <text x="630" y="90" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#2d2d2d">
+                    <tspan dx="-40" fill="#999" text-decoration="line-through">(x+2)</tspan>
+                    <tspan dx="6" fill="#2d2d2d"> (x &#x2212; 2)</tspan>
+                </text>
+                <line x1="555" y1="97" x2="710" y2="97" stroke="#2d2d2d" stroke-width="2"/>
+                <text x="630" y="120" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#999" text-decoration="line-through">(x + 2)</text>
+
+                <!-- Arrow 3 down to result -->
+                <line x1="630" y1="140" x2="630" y2="180" stroke="#0d4f4f" stroke-width="2.5" marker-end="url(#arrowTeal)"/>
+
+                <!-- Result -->
+                <rect x="530" y="190" width="200" height="70" rx="10" fill="#e8f4f4" stroke="#0d4f4f" stroke-width="3"/>
+                <text x="630" y="215" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#0d4f4f">RESULT</text>
+                <text x="630" y="245" text-anchor="middle" font-family="Georgia, serif" font-size="26" font-weight="700" fill="#0d4f4f">x &#x2212; 2</text>
+
+                <!-- Summary note -->
+                <rect x="20" y="175" width="460" height="140" rx="10" fill="#fff" stroke="#e2d9ce" stroke-width="1.5"/>
+                <text x="40" y="205" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#0d4f4f">THE THREE-STEP PROCESS</text>
+                <text x="40" y="232" font-family="Georgia, serif" font-size="14.5" fill="#2d2d2d">1. Factor the numerator and denominator completely.</text>
+                <text x="40" y="258" font-family="Georgia, serif" font-size="14.5" fill="#2d2d2d">2. Identify common factors in both.</text>
+                <text x="40" y="284" font-family="Georgia, serif" font-size="14.5" fill="#2d2d2d">3. Divide (cancel) both by the common factor(s).</text>
+                <text x="40" y="308" font-family="Georgia, serif" font-size="13" fill="#c0602b" font-style="italic">Only factors can be cancelled &mdash; never individual terms!</text>
+
+                <!-- Arrowhead definitions -->
+                <defs>
+                    <marker id="arrowOrange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#c0602b"/>
+                    </marker>
+                    <marker id="arrowTeal" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#0d4f4f"/>
+                    </marker>
+                </defs>
+            </svg>
+
+            <div class="box box-caution">
+                <div class="box-label">&#x26A0;&#xFE0F; Caution &mdash; Common Mistakes When Reducing</div>
+                <ol>
+                    <li><strong>Do not subtract</strong> the same number from both numerator and denominator. \(\frac{3}{4} \neq \frac{3-1}{4-1} = \frac{2}{3}\).</li>
+                    <li><strong>Do not add</strong> the same number to both numerator and denominator. \(\frac{1}{3} \neq \frac{1+2}{3+2} = \frac{3}{5}\).</li>
+                    <li><strong>Do not cancel individual terms</strong> of a polynomial &mdash; only factors. For example, \(\dfrac{x^2 - 6x}{5x - 30}\) cannot be simplified by cancelling the \(x\) in the first term alone. Instead, factor first:
+                    $$\frac{x^2 - 6x}{5x - 30} = \frac{x(x - 6)}{5(x - 6)} = \frac{x}{5}$$</li>
+                </ol>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ===== SECTION 3: SIGNS OF FRACTIONS ===== -->
+        <div class="card">
+            <h2>3. Signs of Fractions</h2>
+
+            <p>Every fraction carries <strong>three signs</strong>: the sign of the numerator, the sign of the denominator, and the sign of the fraction itself. When any sign is omitted, it is understood to be positive.</p>
+
+            <div class="box box-formula">
+                <div class="box-label">&#x1F4CB; Rule &mdash; Changing Signs</div>
+                <p style="margin-bottom:0.5rem">Any <strong>two</strong> of the three signs of a fraction may be changed without changing its value:</p>
+                $$\frac{-a}{b} = \frac{a}{-b} = -\frac{a}{b}$$
+                <p style="margin-top:0.5rem;margin-bottom:0">All three forms are equal. Changing only <em>one</em> sign changes the value.</p>
+            </div>
+
+            <div class="box box-example">
+                <div class="box-label">&#x2705; Example &mdash; Verifying Sign Changes</div>
+                <p>All four fractions below have the value \(3\):</p>
+                $$+\frac{+6}{+2} = +\frac{-6}{-2} = -\frac{+6}{-2} = -\frac{-6}{+2} = 3$$
+            </div>
+
+            <h3>Signs with Binomial Denominators</h3>
+            <p>To change the order of terms in a binomial denominator, multiply the denominator by \(-1\) and compensate by changing one other sign.</p>
+
+            <div class="box box-example">
+                <div class="box-label">&#x2705; Example</div>
+                <p>Rewrite \(\dfrac{a - 3}{c - d}\) with denominator \(d - c\):</p>
+                $$\frac{a - 3}{c - d} = \frac{-(a - 3)}{-(c - d)} = \frac{3 - a}{d - c}$$
+                <p style="margin-bottom:0">We multiplied both numerator and denominator by \(-1\), which changes two signs and preserves the value.</p>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ===== SECTION 4: MULTIPLYING FRACTIONS ===== -->
+        <div class="card">
+            <h2>4. Multiplying Fractions</h2>
+
+            <p>The product of two fractions equals the product of the numerators over the product of the denominators.</p>
+
+            <div class="box box-formula">
+                <div class="box-label">&#x1F4CB; Multiplication Rule</div>
+                $$\frac{a}{b} \cdot \frac{c}{d} = \frac{ac}{bd}$$
+                <p style="margin-bottom:0"><strong>Best practice:</strong> Factor and cancel common factors <em>before</em> multiplying. This keeps numbers small and avoids reducing at the end.</p>
+            </div>
+
+            <div class="box box-example">
+                <div class="box-label">&#x2705; Example &mdash; Cancel First, Then Multiply</div>
+                $$\frac{3ab^2}{4} \cdot \frac{12}{18a^2} = \frac{3ab^2 \cdot 12}{4 \cdot 18a^2}$$
+                <p>Factor the numbers: \(12 = 3 \cdot 4\) and \(18 = 3 \cdot 6\). Cancel:</p>
+                $$= \frac{\cancel{3}\,a\,b^2 \cdot \cancel{4} \cdot \cancel{3}}{\cancel{4} \cdot \cancel{3} \cdot 6 \cdot a \cdot \cancel{a}} = \frac{b^2}{6a} \cdot \frac{1}{1} = \frac{b^2}{2a}$$
+            </div>
+
+            <h3>Multiplying with Polynomials</h3>
+            <p>Factor every numerator and denominator completely before cancelling.</p>
+
+            <div class="box box-example">
+                <div class="box-label">&#x2705; Example</div>
+                $$\frac{x + y}{8} \cdot \frac{10}{x^2 - y^2} = \frac{(x + y) \cdot 10}{8 \cdot (x + y)(x - y)} = \frac{10}{8(x - y)} = \frac{5}{4(x - y)}$$
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ===== SECTION 5: DIVIDING FRACTIONS ===== -->
+        <div class="card">
+            <h2>5. Dividing Fractions</h2>
+
+            <p>To divide by a fraction, multiply by its <strong>reciprocal</strong> (the fraction flipped).</p>
+
+            <div class="box box-formula">
+                <div class="box-label">&#x1F4CB; Division Rule (Invert and Multiply)</div>
+                $$\frac{a}{b} \div \frac{c}{d} = \frac{a}{b} \cdot \frac{d}{c} = \frac{ad}{bc}$$
+            </div>
+
+            <div class="box box-insight">
+                <div class="box-label">&#x1F4A1; Key Insight &mdash; Reciprocals</div>
+                <ul style="margin-bottom:0">
+                    <li>The <strong>reciprocal</strong> of \(\dfrac{a}{b}\) is \(\dfrac{b}{a}\).</li>
+                    <li>The product of a number and its reciprocal is always \(1\): \(\;\dfrac{a}{b} \cdot \dfrac{b}{a} = 1\).</li>
+                    <li>The reciprocal of a whole number \(n\) is \(\dfrac{1}{n}\).</li>
+                </ul>
+            </div>
+
+            <div class="box box-example">
+                <div class="box-label">&#x2705; Example</div>
+                $$\frac{4a^2}{3ab} \div \frac{7a}{6b^2} = \frac{4a^2}{3ab} \cdot \frac{6b^2}{7a} = \frac{4 \cdot 6 \cdot a^2 \cdot b^2}{3 \cdot 7 \cdot a \cdot b \cdot a} = \frac{24a^2 b^2}{21a^2 b} = \frac{8b}{7}$$
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ===== SECTION 6: LCD ===== -->
+        <div class="card">
+            <h2>6. Finding the LCD (Least Common Denominator)</h2>
+
+            <p>Before adding or subtracting fractions with different denominators, we need a <strong>common denominator</strong>. The most efficient choice is the <strong>lowest common denominator (LCD)</strong> &mdash; the smallest expression that every denominator divides into evenly.</p>
+
+            <div class="box box-formula">
+                <div class="box-label">&#x1F4CB; Rule &mdash; Finding the LCD</div>
+                <div class="step-row">
+                    <span class="step-number">1</span>
+                    <span class="step-content">Write each denominator in <strong>prime factored form</strong>, using exponents for repeated factors.</span>
+                </div>
+                <div class="step-row">
+                    <span class="step-number">2</span>
+                    <span class="step-content">List <strong>every distinct prime factor</strong> that appears.</span>
+                </div>
+                <div class="step-row" style="margin-bottom:0">
+                    <span class="step-number">3</span>
+                    <span class="step-content">Raise each factor to its <strong>highest exponent</strong> found in any denominator. Multiply the results.</span>
+                </div>
+            </div>
+
+            <div class="box box-example">
+                <div class="box-label">&#x2705; Example &mdash; Numerical LCD</div>
+                <p>Find the LCD for fractions with denominators 12, 15, 9, and 21.</p>
+                $$12 = 2^2 \cdot 3, \quad 15 = 3 \cdot 5, \quad 9 = 3^2, \quad 21 = 3 \cdot 7$$
+                <p>Distinct primes: \(2, 3, 5, 7\). Use highest powers: \(2^2,\; 3^2,\; 5^1,\; 7^1\).</p>
+                $$\text{LCD} = 2^2 \cdot 3^2 \cdot 5 \cdot 7 = 4 \cdot 9 \cdot 5 \cdot 7 = 1260$$
+            </div>
+
+            <div class="box box-example">
+                <div class="box-label">&#x2705; Example &mdash; Algebraic LCD</div>
+                <p>Find the LCD for \(\dfrac{1}{3(a-2)}\), \(\;\dfrac{1}{6a}\), and \(\;\dfrac{1}{2(a+2)}\).</p>
+                <p>Factored denominators: \(3(a-2)\), \(\;2 \cdot 3 \cdot a\), and \(\;2(a+2)\).</p>
+                $$\text{LCD} = 2 \cdot 3 \cdot a \cdot (a - 2)(a + 2) = 6a(a-2)(a+2)$$
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ===== SECTION 7: ADDING AND SUBTRACTING ===== -->
+        <div class="card">
+            <h2>7. Adding and Subtracting Fractions</h2>
+
+            <div class="box box-formula">
+                <div class="box-label">&#x1F4CB; Addition / Subtraction Rules</div>
+                <p><strong>Same denominator:</strong></p>
+                $$\frac{a}{b} + \frac{c}{b} = \frac{a + c}{b}$$
+                <p><strong>Different denominators:</strong></p>
+                $$\frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd}$$
+                <p style="margin-bottom:0">After combining, <strong>always reduce</strong> the result to lowest terms.</p>
+            </div>
+
+            <div class="step-row">
+                <span class="step-number">1</span>
+                <span class="step-content">Change each fraction to an equivalent fraction with the LCD.</span>
+            </div>
+            <div class="step-row">
+                <span class="step-number">2</span>
+                <span class="step-content">Add (or subtract) the numerators; place over the common denominator.</span>
+            </div>
+            <div class="step-row">
+                <span class="step-number">3</span>
+                <span class="step-content">Reduce the resulting fraction to lowest terms.</span>
+            </div>
+
+            <div class="box box-example">
+                <div class="box-label">&#x2705; Example</div>
+                <p>Combine \(\;\dfrac{x}{2y^2} + \dfrac{4}{y}\). The LCD is \(2y^2\).</p>
+                $$\frac{x}{2y^2} + \frac{4}{y} = \frac{x}{2y^2} + \frac{4 \cdot 2y}{2y^2} = \frac{x + 8y}{2y^2} \quad \text{or} \quad \frac{xy - 8}{2y^2}$$
+            </div>
+
+            <div class="box box-example">
+                <div class="box-label">&#x2705; Example &mdash; Polynomial Denominators</div>
+                <p>Combine \(\;\dfrac{a-3}{a^2 - 25} + \dfrac{6}{a+5} - \dfrac{3}{a-5}\).</p>
+                <p>Factor: \(a^2 - 25 = (a-5)(a+5)\). LCD \(= (a-5)(a+5)\).</p>
+                $$= \frac{(a-3) + 6(a-5) - 3(a+5)}{(a-5)(a+5)} = \frac{a - 3 + 6a - 30 - 3a - 15}{(a-5)(a+5)}$$
+                $$= \frac{4a - 48}{(a-5)(a+5)} = \frac{4(a - 12)}{(a-5)(a+5)}$$
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ===== SECTION 8: COMPLEX FRACTIONS ===== -->
+        <div class="card">
+            <h2>8. Complex Fractions</h2>
+
+            <p>A <strong>complex fraction</strong> has one or more fractions in its numerator, denominator, or both.</p>
+
+            <div class="box box-definition">
+                <div class="box-label">&#x1F511; Two Methods for Simplifying</div>
+                <p><strong>Method 1 (LCD method):</strong> Multiply both the overall numerator and overall denominator by the LCD of all the "little" fractions.</p>
+                <p style="margin-bottom:0"><strong>Method 2 (Combine-then-divide):</strong> Simplify the numerator into a single fraction, simplify the denominator into a single fraction, then divide numerator by denominator.</p>
+            </div>
+
+            <div class="box box-example">
+                <div class="box-label">&#x2705; Example &mdash; Method 1 (LCD Method)</div>
+                <p>Simplify \(\;\dfrac{\;\dfrac{x^2 - y^2}{4}\;}{\;\dfrac{x + y}{2}\;}\).</p>
+                <p>The LCD of the inner fractions is \(4\). Multiply top and bottom by \(4\):</p>
+                $$\frac{\frac{x^2 - y^2}{4} \cdot 4}{\frac{x+y}{2} \cdot 4} = \frac{x^2 - y^2}{2(x+y)} = \frac{(x+y)(x-y)}{2(x+y)} = \frac{x - y}{2}$$
+            </div>
+
+            <div class="box box-example">
+                <div class="box-label">&#x2705; Example &mdash; Method 2 (Combine Then Divide)</div>
+                <p>Simplify \(\;\dfrac{\;\dfrac{1}{2} + \dfrac{1}{3}\;}{\;\dfrac{1}{2} - \dfrac{1}{4}\;}\).</p>
+                <p>Combine top: \(\frac{1}{2} + \frac{1}{3} = \frac{5}{6}\). Combine bottom: \(\frac{1}{2} - \frac{1}{4} = \frac{1}{4}\).</p>
+                $$\frac{\;\frac{5}{6}\;}{\;\frac{1}{4}\;} = \frac{5}{6} \cdot \frac{4}{1} = \frac{20}{6} = \frac{10}{3}$$
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ===== SECTION 9: MIXED NUMBERS ===== -->
+        <div class="card">
+            <h2>9. Mixed Numbers and Expressions</h2>
+
+            <p>A <strong>mixed number</strong> (or mixed expression) combines a whole-number part with a fractional part, such as \(3\frac{2}{5}\) or \(a + \frac{k}{y}\).</p>
+
+            <div class="box box-formula">
+                <div class="box-label">&#x1F4CB; Converting Mixed to Improper Fraction</div>
+                <p>Add the whole-number part and the fraction using a common denominator:</p>
+                $$a + \frac{k}{y} = \frac{ay}{y} + \frac{k}{y} = \frac{ay + k}{y}$$
+            </div>
+
+            <div class="box box-formula">
+                <div class="box-label">&#x1F4CB; Converting Improper Fraction to Mixed Expression</div>
+                <p style="margin-bottom:0">Divide the numerator by the denominator:</p>
+                $$\frac{4x^2 + 8x - 3}{2x} = \frac{4x^2}{2x} + \frac{8x}{2x} - \frac{3}{2x} = 2x + 4 - \frac{3}{2x}$$
+            </div>
+
+            <div class="box box-example">
+                <div class="box-label">&#x2705; Example &mdash; Polynomial Long Division</div>
+                <p>Convert \(\;\dfrac{x^2 + 3x + 4}{x + 1}\) to a mixed expression.</p>
+                <p>Divide \(x + 1\) into \(x^2 + 3x + 4\):</p>
+                $$\frac{x^2 + 3x + 4}{x + 1} = x + 2 + \frac{2}{x + 1}$$
+                <p style="margin-bottom:0">The remainder \(2\) goes over the divisor \((x+1)\).</p>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ===== KEY INSIGHTS ===== -->
+        <div class="card">
+            <h2>Key Insights</h2>
+
+            <div class="box box-insight">
+                <div class="box-label">&#x1F4A1; Insight 1 &mdash; Factor First, Always</div>
+                <p style="margin-bottom:0">The single most important step in simplifying algebraic fractions is <strong>factoring</strong>. Before reducing, multiplying, dividing, or finding the LCD, factor every numerator and denominator completely. Factoring reveals the common factors that can be cancelled.</p>
+            </div>
+
+            <div class="box box-insight">
+                <div class="box-label">&#x1F4A1; Insight 2 &mdash; Only Factors Cancel, Never Terms</div>
+                <p style="margin-bottom:0">You can cancel \((x+2)\) from \(\dfrac{(x+2)(x-3)}{(x+2)}\) because \((x+2)\) is a factor of both. But you cannot cancel the \(x\) from \(\dfrac{x+2}{x+5}\) because \(x\) is a <em>term</em>, not a factor, of the numerator and denominator.</p>
+            </div>
+
+            <div class="box box-insight">
+                <div class="box-label">&#x1F4A1; Insight 3 &mdash; Changing Two Signs Preserves Value</div>
+                <p style="margin-bottom:0">When you need \((a - b)\) but have \((b - a)\), note that \(b - a = -(a - b)\). Introduce the factor of \(-1\) and compensate by changing one other sign. This trick is essential when finding the LCD for fractions with "reversed" binomial denominators.</p>
+            </div>
+
+            <div class="box box-insight">
+                <div class="box-label">&#x1F4A1; Insight 4 &mdash; Division Is Multiplication in Disguise</div>
+                <p style="margin-bottom:0">Every fraction division can be rewritten as multiplication by the reciprocal. This reduces every division problem to a multiplication problem &mdash; factor, cancel, multiply. Master multiplication and you've mastered division too.</p>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ===== WORKED PROBLEMS ===== -->
+        <div class="card">
+            <h2>Worked Problems</h2>
+
+            <!-- Problem 1 -->
+            <div class="box box-practice">
+                <div class="box-label">&#x1F4DD; Problem 1 &mdash; Reduce</div>
+                <p style="margin-bottom:0">Reduce to lowest terms: \(\;\dfrac{x^2 - 4}{x + 2}\)</p>
+            </div>
+            <div class="box box-example">
+                <div class="box-label">&#x2705; Solution</div>
+                <p>Factor the numerator using the difference of squares:</p>
+                $$\frac{x^2 - 4}{x + 2} = \frac{(x + 2)(x - 2)}{x + 2}$$
+                <p>Cancel the common factor \((x + 2)\):</p>
+                $$= \frac{\cancel{(x + 2)}\,(x - 2)}{\cancel{(x + 2)}} = \boxed{x - 2} \quad (x \neq -2)$$
+            </div>
+
+            <!-- Problem 2 -->
+            <div class="box box-practice">
+                <div class="box-label">&#x1F4DD; Problem 2 &mdash; Multiply</div>
+                <p style="margin-bottom:0">Multiply: \(\;\dfrac{3a}{4b} \cdot \dfrac{8b^2}{9a^2}\)</p>
+            </div>
+            <div class="box box-example">
+                <div class="box-label">&#x2705; Solution</div>
+                <p>Multiply numerators and denominators, then cancel common factors:</p>
+                $$\frac{3a}{4b} \cdot \frac{8b^2}{9a^2} = \frac{3a \cdot 8b^2}{4b \cdot 9a^2} = \frac{24ab^2}{36a^2 b}$$
+                <p>Divide numerator and denominator by \(12ab\):</p>
+                $$= \frac{24ab^2 \div 12ab}{36a^2 b \div 12ab} = \boxed{\frac{2b}{3a}}$$
+            </div>
+
+            <!-- Problem 3 -->
+            <div class="box box-practice">
+                <div class="box-label">&#x1F4DD; Problem 3 &mdash; Add</div>
+                <p style="margin-bottom:0">Add: \(\;\dfrac{2}{x} + \dfrac{3}{y}\)</p>
+            </div>
+            <div class="box box-example">
+                <div class="box-label">&#x2705; Solution</div>
+                <p>The LCD is \(xy\). Convert each fraction:</p>
+                $$\frac{2}{x} + \frac{3}{y} = \frac{2 \cdot y}{x \cdot y} + \frac{3 \cdot x}{y \cdot x} = \frac{2y}{xy} + \frac{3x}{xy}$$
+                <p>Combine over the common denominator:</p>
+                $$= \boxed{\frac{2y + 3x}{xy}}$$
+            </div>
+
+            <!-- Problem 4 -->
+            <div class="box box-practice">
+                <div class="box-label">&#x1F4DD; Problem 4 &mdash; Subtract</div>
+                <p style="margin-bottom:0">Subtract: \(\;\dfrac{5}{x - 1} - \dfrac{3}{x + 1}\)</p>
+            </div>
+            <div class="box box-example">
+                <div class="box-label">&#x2705; Solution</div>
+                <p>The LCD is \((x - 1)(x + 1)\). Convert each fraction:</p>
+                $$\frac{5}{x - 1} - \frac{3}{x + 1} = \frac{5(x + 1)}{(x - 1)(x + 1)} - \frac{3(x - 1)}{(x - 1)(x + 1)}$$
+                <p>Expand the numerators and combine:</p>
+                $$= \frac{5x + 5 - 3x + 3}{(x - 1)(x + 1)} = \boxed{\frac{2x + 8}{(x - 1)(x + 1)}}$$
+            </div>
+
+            <!-- Problem 5 -->
+            <div class="box box-practice">
+                <div class="box-label">&#x1F4DD; Problem 5 &mdash; Simplify a Complex Fraction</div>
+                <p style="margin-bottom:0">Simplify: \(\;\dfrac{\;\dfrac{1}{a} + \dfrac{1}{b}\;}{\;\dfrac{1}{a} - \dfrac{1}{b}\;}\)</p>
+            </div>
+            <div class="box box-example">
+                <div class="box-label">&#x2705; Solution</div>
+                <p><strong>Method 1 (LCD):</strong> The LCD of all inner fractions is \(ab\). Multiply top and bottom by \(ab\):</p>
+                $$\frac{\left(\frac{1}{a} + \frac{1}{b}\right) \cdot ab}{\left(\frac{1}{a} - \frac{1}{b}\right) \cdot ab} = \frac{\frac{ab}{a} + \frac{ab}{b}}{\frac{ab}{a} - \frac{ab}{b}} = \frac{b + a}{b - a}$$
+                $$= \boxed{\frac{a + b}{b - a}}$$
+                <p style="margin-bottom:0">Note: this can also be written as \(-\dfrac{a+b}{a-b}\).</p>
+            </div>
+
+            <!-- Problem 6 -->
+            <div class="box box-practice">
+                <div class="box-label">&#x1F4DD; Problem 6 &mdash; Divide</div>
+                <p style="margin-bottom:0">Divide: \(\;\dfrac{x^2 - 9}{x + 1} \div \dfrac{x - 3}{x^2 + x}\)</p>
+            </div>
+            <div class="box box-example">
+                <div class="box-label">&#x2705; Solution</div>
+                <p>Invert the divisor and multiply:</p>
+                $$\frac{x^2 - 9}{x + 1} \div \frac{x - 3}{x^2 + x} = \frac{x^2 - 9}{x + 1} \cdot \frac{x^2 + x}{x - 3}$$
+                <p>Factor everything:</p>
+                $$= \frac{(x + 3)(x - 3)}{(x + 1)} \cdot \frac{x(x + 1)}{(x - 3)}$$
+                <p>Cancel common factors \((x - 3)\) and \((x + 1)\):</p>
+                $$= \frac{(x + 3)\cancel{(x - 3)}}{\cancel{(x + 1)}} \cdot \frac{x\cancel{(x + 1)}}{\cancel{(x - 3)}} = \boxed{x(x + 3)}$$
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ===== QUICK REFERENCE ===== -->
+        <div class="card">
+            <h2>Quick Reference</h2>
+
+            <div class="box box-formula">
+                <div class="box-label">&#x1F4CB; Fraction Operations at a Glance</div>
+                <table class="rules-table" style="margin-bottom:0">
+                    <tr>
+                        <th style="width:30%">Operation</th>
+                        <th>Formula</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Equivalent Fractions</strong></td>
+                        <td>\(\dfrac{a}{b} = \dfrac{ak}{bk} = \dfrac{a/k}{b/k}\), \(\;k \neq 0\)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reduce</strong></td>
+                        <td>Factor numerator &amp; denominator, cancel GCF</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Signs</strong></td>
+                        <td>\(-\dfrac{a}{b} = \dfrac{-a}{b} = \dfrac{a}{-b}\)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Multiply</strong></td>
+                        <td>\(\dfrac{a}{b} \cdot \dfrac{c}{d} = \dfrac{ac}{bd}\)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Divide</strong></td>
+                        <td>\(\dfrac{a}{b} \div \dfrac{c}{d} = \dfrac{a}{b} \cdot \dfrac{d}{c} = \dfrac{ad}{bc}\)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Add (same denom)</strong></td>
+                        <td>\(\dfrac{a}{b} + \dfrac{c}{b} = \dfrac{a + c}{b}\)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Add (different denom)</strong></td>
+                        <td>\(\dfrac{a}{b} + \dfrac{c}{d} = \dfrac{ad + bc}{bd}\)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reciprocal</strong></td>
+                        <td>\(\text{Reciprocal of } \dfrac{a}{b} = \dfrac{b}{a}\); \(\;\dfrac{a}{b} \cdot \dfrac{b}{a} = 1\)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mixed to Fraction</strong></td>
+                        <td>\(a + \dfrac{k}{y} = \dfrac{ay + k}{y}\)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Complex Fraction</strong></td>
+                        <td>Multiply top &amp; bottom by LCD of all inner fractions</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="box box-formula">
+                <div class="box-label">&#x1F4CB; Finding the LCD &mdash; Quick Steps</div>
+                <ol style="margin-bottom:0">
+                    <li>Factor each denominator into primes (numerical and algebraic).</li>
+                    <li>List every distinct factor.</li>
+                    <li>Use the highest power of each factor. Multiply them all together.</li>
+                </ol>
+            </div>
+
+            <div class="box box-caution">
+                <div class="box-label">&#x26A0;&#xFE0F; Three Traps to Avoid</div>
+                <ol style="margin-bottom:0">
+                    <li><strong>Cancelling terms instead of factors.</strong> &mdash; \(\dfrac{x + 3}{x + 5} \neq \dfrac{3}{5}\)</li>
+                    <li><strong>Forgetting restrictions.</strong> &mdash; Always note values that make a denominator zero.</li>
+                    <li><strong>Distributing signs incorrectly.</strong> &mdash; When subtracting fractions, the minus sign applies to the <em>entire</em> numerator: \(\frac{5}{x} - \frac{a+b}{x} = \frac{5 - a - b}{x}\), not \(\frac{5 - a + b}{x}\).</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- ===== NAVIGATION ===== -->
+        <div class="nav-footer">
+            <a href="../04-special-products-and-factoring/index.html" class="nav-btn">&larr; Previous: Special Products and Factoring</a>
+            <a href="../06-exponents-roots-and-radicals/index.html" class="nav-btn">Next: Exponents, Roots, and Radicals &rarr;</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+</body>
+</html>

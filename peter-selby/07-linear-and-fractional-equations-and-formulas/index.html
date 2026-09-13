@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 7 — Linear and Fractional Equations and Formulas | Practical Algebra</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', 'Cambria', 'Times New Roman', serif;
+            background: #fdf8f3;
+            color: #2d2d2d;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+        .hero {
+            background: linear-gradient(135deg, #0d4f4f 0%, #1a2332 100%);
+            color: white;
+            padding: 3rem 2rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero .chapter-num {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 6rem;
+            font-weight: 800;
+            opacity: 0.12;
+            position: absolute;
+            top: -0.5rem;
+            right: 2rem;
+            line-height: 1;
+        }
+        .hero h1 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .hero .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.85;
+            font-style: italic;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        h2 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #0d4f4f;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #c0602b;
+        }
+        h3 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #0d4f4f;
+            font-size: 1.5rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+        h4 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            color: #c0602b;
+            font-size: 1.2rem;
+            margin: 1rem 0 0.5rem;
+        }
+        /* Highlight boxes */
+        .box { padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 5px solid; }
+        .box-definition { border-color: #0d4f4f; background: #e8f4f4; }
+        .box-insight { border-color: #c0602b; background: #fef3ec; }
+        .box-caution { border-color: #9b2c2c; background: #fef2f2; }
+        .box-example { border-color: #276749; background: #f0f7f0; }
+        .box-practice { border-color: #6b46c1; background: #f5f0ff; }
+        .box-formula { border-color: #2b6cb0; background: #ebf4ff; }
+        .box-label {
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .box-definition .box-label { color: #0d4f4f; }
+        .box-insight .box-label { color: #c0602b; }
+        .box-caution .box-label { color: #9b2c2c; }
+        .box-example .box-label { color: #276749; }
+        .box-practice .box-label { color: #6b46c1; }
+        .box-formula .box-label { color: #2b6cb0; }
+
+        /* Overview list */
+        .overview-list { list-style: none; padding: 0; }
+        .overview-list li {
+            padding: 0.5rem 0 0.5rem 2rem;
+            position: relative;
+        }
+        .overview-list li::before {
+            content: '✦';
+            position: absolute;
+            left: 0.3rem;
+            color: #c0602b;
+            font-size: 1rem;
+        }
+
+        /* Step list for worked problems */
+        .steps { margin: 0.75rem 0; padding-left: 0; list-style: none; counter-reset: step-counter; }
+        .steps li {
+            padding: 0.4rem 0 0.4rem 2.2rem;
+            position: relative;
+            counter-increment: step-counter;
+        }
+        .steps li::before {
+            content: 'Step ' counter(step-counter);
+            position: absolute;
+            left: 0;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            color: #276749;
+            text-transform: uppercase;
+        }
+
+        /* Axiom / rule cards */
+        .axiom {
+            background: linear-gradient(135deg, #ebf4ff 0%, #f0f7f0 100%);
+            border: 2px solid #2b6cb0;
+            border-radius: 10px;
+            padding: 1.25rem 1.5rem;
+            margin: 1.25rem 0;
+        }
+        .axiom-title {
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            color: #2b6cb0;
+            font-size: 1.05rem;
+            margin-bottom: 0.4rem;
+        }
+
+        /* Section divider */
+        .section-divider {
+            height: 3px;
+            background: linear-gradient(90deg, #0d4f4f, #c0602b, #0d4f4f);
+            border: none;
+            margin: 2.5rem 0;
+            border-radius: 2px;
+            opacity: 0.4;
+        }
+
+        /* Quick reference table */
+        .ref-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 1rem 0;
+            overflow-x: auto;
+            display: block;
+        }
+        .ref-table th {
+            background: #0d4f4f;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            padding: 0.75rem 1rem;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+        .ref-table th:first-child { border-radius: 8px 0 0 0; }
+        .ref-table th:last-child { border-radius: 0 8px 0 0; }
+        .ref-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #e2d9ce;
+            vertical-align: top;
+        }
+        .ref-table tr:last-child td:first-child { border-radius: 0 0 0 8px; }
+        .ref-table tr:last-child td:last-child { border-radius: 0 0 8px 0; }
+        .ref-table tr:nth-child(even) { background: #fdf8f3; }
+        .ref-table tr:nth-child(odd) { background: #fff; }
+
+        /* Navigation */
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e2d9ce;
+        }
+        .nav-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #0d4f4f;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            transition: background 0.2s;
+            font-size: 1rem;
+        }
+        .nav-btn:hover { background: #0a3d3d; }
+        svg { max-width: 100%; height: auto; display: block; margin: 1.5rem auto; }
+        .katex { font-size: 1.3em; }
+
+        .katex-display { margin: 1.5rem 0; overflow-x: auto; font-size: 1.35em; }
+
+        /* SVG balance scale styles */
+        .scale-label {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 14px;
+            fill: #2d2d2d;
+            text-anchor: middle;
+        }
+        .scale-math {
+            font-family: 'Georgia', serif;
+            font-size: 16px;
+            fill: #0d4f4f;
+            font-weight: 700;
+            text-anchor: middle;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 2rem; }
+            .hero .chapter-num { font-size: 4rem; }
+            h2 { font-size: 1.6rem; }
+            h3 { font-size: 1.3rem; }
+            .card { padding: 1.25rem; }
+            .box { padding: 1.15rem; }
+            .nav-footer { flex-direction: column; align-items: stretch; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ==================== HERO ==================== -->
+<div class="hero">
+    <div class="chapter-num">7</div>
+    <div style="position:relative">
+        <p style="font-family: 'Segoe UI',sans-serif; text-transform:uppercase; letter-spacing:0.2em; font-size:0.9rem; opacity:0.7; margin-bottom:0.5rem;">Chapter 7</p>
+        <h1>Linear and Fractional Equations<br>and Formulas</h1>
+        <p class="subtitle">Mastering the art of solving equations &mdash; from simple one-step problems to formulas with fractions</p>
+    </div>
+</div>
+
+<div class="container">
+
+<!-- ==================== OVERVIEW ==================== -->
+<div class="card">
+    <h2>What You'll Learn</h2>
+    <ul class="overview-list">
+        <li>The difference between equations and expressions, and the three types of equations</li>
+        <li>How to solve linear equations by applying inverse operations</li>
+        <li>Transposing terms across the equals sign and combining like terms</li>
+        <li>Clearing fractions by multiplying through by the LCD</li>
+        <li>Using cross multiplication to solve proportions</li>
+        <li>Rearranging literal equations and formulas to solve for any variable</li>
+        <li>Removing parentheses and handling equations with the unknown on both sides</li>
+        <li>Translating word problems into algebraic equations</li>
+    </ul>
+</div>
+
+<!-- ==================== SECTION 1: EQUATIONS VS EXPRESSIONS ==================== -->
+<div class="card">
+    <h2>1. Equations vs. Expressions</h2>
+
+    <p>One of the ways that algebra differs from arithmetic is that algebra uses <strong>equations</strong>. Equations help us solve problems that would be difficult, or even impossible, to solve using arithmetic alone.</p>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Equation</div>
+        <p>An <strong>equation</strong> is a statement that two algebraic expressions are equal &mdash; it contains an equals sign (\(=\)). For example, \(3n = 12\) says "three times a number equals 12."</p>
+    </div>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Expression</div>
+        <p>An <strong>expression</strong> is a mathematical phrase that combines numbers, variables, and operations but does <em>not</em> contain an equals sign. For example, \(3n + 5\) is an expression.</p>
+    </div>
+
+    <h3>Three Types of Equations</h3>
+    <p>Not all equations behave the same way. Every equation falls into one of three categories:</p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin: 1rem 0;">
+        <div class="box box-formula" style="margin: 0;">
+            <div class="box-label">Identity</div>
+            <p>True for <em>all</em> admissible values of the variable.</p>
+            <p style="margin-top:0.5rem;">Example: \(2(x+3)=2x+6\)</p>
+        </div>
+        <div class="box box-caution" style="margin: 0;">
+            <div class="box-label">False Statement</div>
+            <p>False for <em>every</em> value of the variable.</p>
+            <p style="margin-top:0.5rem;">Example: \(x = x + 3\)</p>
+        </div>
+        <div class="box box-insight" style="margin: 0;">
+            <div class="box-label">Conditional Equation</div>
+            <p>True only for <em>specific</em> values (the roots).</p>
+            <p style="margin-top:0.5rem;">Example: \(2a+1=7\) &nbsp;(true only when \(a=3\))</p>
+        </div>
+    </div>
+
+    <p>In this chapter, when we say "equation" we mean a <strong>conditional linear equation</strong> &mdash; one with the variable raised to the first power, which has exactly one root.</p>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Root of an Equation</div>
+        <p>The <strong>root</strong> (or <strong>solution</strong>) of an equation is the value that, when substituted for the unknown, makes both sides of the equation identical. Solving an equation means finding its root.</p>
+        <p style="margin-top:0.5rem;">In \(3c = 18\), the root is \(c = 6\) because \(3 \times 6 = 18\). We say that 6 <em>satisfies</em> the equation.</p>
+    </div>
+</div>
+
+<!-- ==================== SECTION 2: THE BALANCE PRINCIPLE ==================== -->
+<div class="card">
+    <h2>2. The Balance Principle</h2>
+
+    <p>An equation is like a balance scale &mdash; both sides must stay equal. Whatever operation you perform on one side, you <strong>must</strong> perform on the other. This idea is captured by two fundamental axioms:</p>
+
+    <div class="axiom">
+        <div class="axiom-title">Axiom 1 &mdash; Multiplication / Division</div>
+        <p>An equivalent equation is produced if both members are <strong>multiplied</strong> (or <strong>divided</strong>) by the same nonzero number.</p>
+    </div>
+
+    <div class="axiom">
+        <div class="axiom-title">Axiom 2 &mdash; Addition / Subtraction</div>
+        <p>An equivalent equation is produced if the same number is <strong>added to</strong> (or <strong>subtracted from</strong>) both members.</p>
+    </div>
+
+    <!-- SVG: Balance Scale Diagram -->
+    <svg viewBox="0 0 520 310" width="520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Balance scale showing equation balance: what you do to one side must be done to the other">
+        <!-- Base / pedestal -->
+        <rect x="220" y="260" width="80" height="12" rx="4" fill="#1a2332"/>
+        <polygon points="260,120 240,260 280,260" fill="#2d2d2d" opacity="0.85"/>
+        <!-- Fulcrum triangle -->
+        <polygon points="260,108 244,128 276,128" fill="#0d4f4f"/>
+        <!-- Beam -->
+        <rect x="50" y="102" width="420" height="8" rx="4" fill="#0d4f4f"/>
+        <!-- Left pan (chains) -->
+        <line x1="110" y1="110" x2="80" y2="155" stroke="#8B7355" stroke-width="2.5"/>
+        <line x1="110" y1="110" x2="140" y2="155" stroke="#8B7355" stroke-width="2.5"/>
+        <!-- Left pan -->
+        <ellipse cx="110" cy="162" rx="62" ry="10" fill="#c0602b" opacity="0.85"/>
+        <rect x="48" y="155" width="124" height="7" rx="3" fill="#c0602b" opacity="0.7"/>
+        <!-- Left pan content -->
+        <text x="110" y="195" class="scale-math" style="font-size:18px;">3x + 7</text>
+        <!-- Right pan (chains) -->
+        <line x1="410" y1="110" x2="380" y2="155" stroke="#8B7355" stroke-width="2.5"/>
+        <line x1="410" y1="110" x2="440" y2="155" stroke="#8B7355" stroke-width="2.5"/>
+        <!-- Right pan -->
+        <ellipse cx="410" cy="162" rx="62" ry="10" fill="#c0602b" opacity="0.85"/>
+        <rect x="348" y="155" width="124" height="7" rx="3" fill="#c0602b" opacity="0.7"/>
+        <!-- Right pan content -->
+        <text x="410" y="195" class="scale-math" style="font-size:18px;">22</text>
+        <!-- Equals sign on fulcrum -->
+        <text x="260" y="100" style="font-family:'Segoe UI',sans-serif; font-size:22px; fill:#c0602b; font-weight:800; text-anchor:middle;">=</text>
+        <!-- Annotation arrows and text -->
+        <!-- Subtract 7 from both sides -->
+        <text x="110" y="228" class="scale-label" style="font-size:12px; fill:#276749;">Subtract 7</text>
+        <line x1="110" y1="215" x2="110" y2="204" stroke="#276749" stroke-width="1.5" marker-end="url(#arrowG)"/>
+        <text x="410" y="228" class="scale-label" style="font-size:12px; fill:#276749;">Subtract 7</text>
+        <line x1="410" y1="215" x2="410" y2="204" stroke="#276749" stroke-width="1.5" marker-end="url(#arrowG)"/>
+        <!-- Bottom caption -->
+        <text x="260" y="293" style="font-family:'Segoe UI',sans-serif; font-size:13px; fill:#555; text-anchor:middle; font-style:italic;">Whatever you do to one side, you must do to the other</text>
+        <defs>
+            <marker id="arrowG" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#276749"/>
+            </marker>
+        </defs>
+    </svg>
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight</div>
+        <p>Think of the equals sign as the fulcrum of a balance. If you add weight to one pan (one side of the equation), you must add the same weight to the other pan to keep the scale level. This is the single most important idea behind solving any equation.</p>
+    </div>
+</div>
+
+<!-- ==================== SECTION 3: INVERSE OPERATIONS ==================== -->
+<div class="card">
+    <h2>3. Solving Equations with Inverse Operations</h2>
+
+    <p>To isolate a variable, we "undo" whatever has been done to it using the opposite &mdash; or <strong>inverse</strong> &mdash; operation:</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
+        <div class="box box-formula" style="margin: 0; text-align: center;">
+            <div class="box-label">Additive Inverses</div>
+            <p>Addition \(\longleftrightarrow\) Subtraction</p>
+            <p style="font-size:0.95rem; margin-top:0.5rem;">To undo \(+3\), subtract 3<br>To undo \(-5\), add 5</p>
+        </div>
+        <div class="box box-formula" style="margin: 0; text-align: center;">
+            <div class="box-label">Multiplicative Inverses</div>
+            <p>Multiplication \(\longleftrightarrow\) Division</p>
+            <p style="font-size:0.95rem; margin-top:0.5rem;">To undo \(\times 4\), divide by 4<br>To undo \(\div 3\), multiply by 3</p>
+        </div>
+    </div>
+
+    <h3>The Two-Step Strategy</h3>
+    <p>Most linear equations require two operations to solve. The general order is:</p>
+    <ol style="padding-left: 1.5rem; margin: 0.75rem 0;">
+        <li><strong>Add or subtract</strong> to move constant terms away from the variable (make them zero).</li>
+        <li><strong>Multiply or divide</strong> to make the coefficient of the variable equal to 1.</li>
+    </ol>
+
+    <div class="box box-example">
+        <div class="box-label">Example &mdash; Two-Step Solution</div>
+        <p>Solve \(2k + 3 = 7\).</p>
+        $$2k + 3 = 7$$
+        <p><strong>Step 1:</strong> Subtract 3 from both sides (undo the \(+3\)):</p>
+        $$2k = 4$$
+        <p><strong>Step 2:</strong> Divide both sides by 2 (undo the \(\times 2\)):</p>
+        $$k = 2$$
+        <p><strong>Check:</strong> \(2(2) + 3 = 4 + 3 = 7\) &checkmark;</p>
+    </div>
+
+    <h3>Transposing Terms</h3>
+    <p>Moving a term from one side of the equation to the other is called <strong>transposing</strong>. When a term is transposed, its sign changes. This is simply a shortcut for adding or subtracting from both sides.</p>
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight &mdash; Transposition Shortcut</div>
+        <p>Instead of writing "subtract 3 from both sides," experienced algebraists simply move the \(+3\) to the other side and write \(-3\). The sign always flips when a term crosses the equals sign: \(+\) becomes \(-\), and \(-\) becomes \(+\).</p>
+    </div>
+</div>
+
+<!-- ==================== SECTION 4: UNKNOWNS ON BOTH SIDES ==================== -->
+<div class="card">
+    <h2>4. Equations with the Unknown on Both Sides</h2>
+
+    <p>When the variable appears on both sides of the equation, use addition or subtraction to collect all variable terms on one side and all constant terms on the other.</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Strategy</div>
+        <ol style="padding-left: 1.5rem; margin: 0;">
+            <li>Move all terms with the variable to one side (usually the left).</li>
+            <li>Move all constant terms to the other side.</li>
+            <li>Combine like terms on each side.</li>
+            <li>Divide both sides by the coefficient of the variable.</li>
+        </ol>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example</div>
+        <p>Solve \(6x - 2 = 8 + 4x\).</p>
+        <p>Subtract \(4x\) from both sides and add 2 to both sides:</p>
+        $$6x - 4x = 8 + 2$$
+        $$2x = 10$$
+        $$x = 5$$
+        <p><strong>Check:</strong> \(6(5) - 2 = 28\) and \(8 + 4(5) = 28\) &checkmark;</p>
+    </div>
+
+    <h3>Removing Parentheses</h3>
+    <p>If the equation contains parentheses, remove them first by distributing, then proceed as above. Remember: a minus sign before parentheses changes the sign of every term inside.</p>
+
+    <div class="box box-example">
+        <div class="box-label">Example &mdash; Parentheses</div>
+        <p>Solve \(2(x - 5) - 3(2x + 1) = 7\).</p>
+        <p>Distribute:</p>
+        $$2x - 10 - 6x - 3 = 7$$
+        <p>Combine like terms:</p>
+        $$-4x - 13 = 7$$
+        <p>Add 13 to both sides:</p>
+        $$-4x = 20$$
+        <p>Divide by \(-4\):</p>
+        $$x = -5$$
+        <p><strong>Check:</strong> \(2(-5 - 5) - 3(2(-5)+1) = 2(-10) - 3(-9) = -20 + 27 = 7\) &checkmark;</p>
+    </div>
+</div>
+
+<!-- ==================== SECTION 5: FRACTIONAL EQUATIONS ==================== -->
+<div class="card">
+    <h2>5. Equations with Fractions</h2>
+
+    <p>Equations containing fractions are usually easier to solve once the fractions are removed. We do this by <strong>clearing fractions</strong> &mdash; multiplying every term by the <strong>Lowest Common Denominator (LCD)</strong>.</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Rule &mdash; Clearing Fractions</div>
+        <p>Multiply <em>every term</em> on <em>both sides</em> of the equation by the LCD of all fractions present. This produces an equivalent equation with no fractions.</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example &mdash; Same Denominator</div>
+        <p>Solve \(\dfrac{x}{3} + 2x = 7\).</p>
+        <p>The LCD is 3. Multiply every term by 3:</p>
+        $$3 \cdot \frac{x}{3} + 3 \cdot 2x = 3 \cdot 7$$
+        $$x + 6x = 21$$
+        $$7x = 21 \implies x = 3$$
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example &mdash; Different Denominators</div>
+        <p>Solve \(\dfrac{x}{2} + \dfrac{x}{3} = 5\).</p>
+        <p>The LCD of 2 and 3 is 6. Multiply every term by 6:</p>
+        $$6 \cdot \frac{x}{2} + 6 \cdot \frac{x}{3} = 6 \cdot 5$$
+        $$3x + 2x = 30$$
+        $$5x = 30 \implies x = 6$$
+    </div>
+
+    <h3>Cross Multiplication</h3>
+    <p>When an equation has the form of a proportion &mdash; one fraction equal to another &mdash; we can use <strong>cross multiplication</strong>:</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Cross Multiplication Rule</div>
+        $$\text{If } \frac{a}{b} = \frac{c}{d}, \text{ then } ad = bc \quad (b \neq 0, \; d \neq 0)$$
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example &mdash; Cross Multiplication</div>
+        <p>Solve \(\dfrac{3}{x} = \dfrac{7}{14}\).</p>
+        <p>Cross multiply:</p>
+        $$3 \cdot 14 = 7 \cdot x$$
+        $$42 = 7x$$
+        $$x = 6$$
+        <p><strong>Check:</strong> \(\dfrac{3}{6} = \dfrac{1}{2}\) and \(\dfrac{7}{14} = \dfrac{1}{2}\) &checkmark;</p>
+    </div>
+
+    <div class="box box-caution">
+        <div class="box-label">Caution &mdash; Multiplying by the Unknown</div>
+        <p>When you multiply both sides by an expression containing the variable, you may introduce <em>extraneous roots</em> &mdash; values that satisfy the new equation but not the original. Always <strong>check</strong> your answer in the original equation, and make sure you are not dividing by zero.</p>
+    </div>
+</div>
+
+<!-- ==================== SECTION 6: FORMULAS ==================== -->
+<div class="card">
+    <h2>6. Literal Equations and Formulas</h2>
+
+    <p>A <strong>formula</strong> is an equation that expresses a rule in concise form. Formulas appear everywhere: in geometry (areas, volumes), in physics (speed, force, energy), and in everyday life. When a formula contains several variables, we often need to <em>rearrange</em> it to solve for a different variable.</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Three Steps for Using a Formula</div>
+        <ol style="padding-left: 1.5rem; margin: 0;">
+            <li><strong>Write</strong> the formula in its standard form.</li>
+            <li><strong>Transform</strong> (rearrange) it to isolate the desired variable on one side.</li>
+            <li><strong>Substitute</strong> known values and simplify.</li>
+        </ol>
+    </div>
+
+    <p>The same inverse-operation rules that solve numeric equations work for literal equations. Treat the other letters as constants and isolate the target variable.</p>
+
+    <div class="box box-example">
+        <div class="box-label">Example &mdash; Rearranging D = TS</div>
+        <p>The distance formula is \(D = T \cdot S\). Solve for \(T\):</p>
+        $$D = T \cdot S$$
+        <p>Divide both sides by \(S\):</p>
+        $$T = \frac{D}{S} \quad (S \neq 0)$$
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example &mdash; Rearranging with a Square</div>
+        <p>Solve \(A = \pi r^2\) for \(r\):</p>
+        $$A = \pi r^2$$
+        <p>Divide both sides by \(\pi\):</p>
+        $$\frac{A}{\pi} = r^2$$
+        <p>Take the square root of both sides:</p>
+        $$r = \sqrt{\frac{A}{\pi}} \quad (r > 0)$$
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example &mdash; Multi-Term Formula</div>
+        <p>Solve \(A = p + prt\) for \(r\):</p>
+        <p>Subtract \(p\) from both sides:</p>
+        $$A - p = prt$$
+        <p>Divide both sides by \(pt\):</p>
+        $$r = \frac{A - p}{pt} \quad (p \neq 0, \; t \neq 0)$$
+    </div>
+</div>
+
+<!-- ==================== SECTION 7: WORD PROBLEMS ==================== -->
+<div class="card">
+    <h2>7. From Words to Equations</h2>
+
+    <p>Many real-world problems are stated in words. To solve them algebraically, follow these steps:</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Word-Problem Strategy</div>
+        <ol style="padding-left: 1.5rem; margin: 0;">
+            <li><strong>Read</strong> the problem carefully and identify the unknown.</li>
+            <li><strong>Let</strong> a variable represent the unknown quantity.</li>
+            <li><strong>Translate</strong> the English sentence into an equation.</li>
+            <li><strong>Solve</strong> the equation.</li>
+            <li><strong>Check</strong> your answer against the original words (not just the equation).</li>
+        </ol>
+    </div>
+
+    <h3>Common Translations</h3>
+    <div style="overflow-x: auto;">
+        <table class="ref-table">
+            <tr><th>English Phrase</th><th>Algebraic Translation</th></tr>
+            <tr><td>"a number"</td><td>\(n\) (or \(x\))</td></tr>
+            <tr><td>"five more than"</td><td>\(+ 5\)</td></tr>
+            <tr><td>"three less than"</td><td>\(- 3\)</td></tr>
+            <tr><td>"twice a number"</td><td>\(2n\)</td></tr>
+            <tr><td>"the quotient of a number and 4"</td><td>\(\dfrac{n}{4}\)</td></tr>
+            <tr><td>"is" / "equals" / "the result is"</td><td>\(=\)</td></tr>
+        </table>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example &mdash; Word Problem</div>
+        <p><em>"Five more than twice a number is 17. Find the number."</em></p>
+        <p>Let \(n\) = the number. Translate:</p>
+        $$2n + 5 = 17$$
+        <p>Subtract 5:</p>
+        $$2n = 12$$
+        <p>Divide by 2:</p>
+        $$n = 6$$
+        <p><strong>Check:</strong> Twice 6 is 12; five more than 12 is 17 &checkmark;</p>
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ==================== WORKED PROBLEMS ==================== -->
+<div class="card">
+    <h2>Worked Problems</h2>
+
+    <!-- Problem 1 -->
+    <h3>Problem 1</h3>
+    <div class="box box-practice">
+        <div class="box-label">Practice Problem</div>
+        <p>Solve: \(3x + 7 = 22\)</p>
+    </div>
+    <div class="box box-example">
+        <div class="box-label">Solution</div>
+        <ul class="steps">
+            <li>
+                Subtract 7 from both sides:
+                $$3x + 7 - 7 = 22 - 7$$
+                $$3x = 15$$
+            </li>
+            <li>
+                Divide both sides by 3:
+                $$\frac{3x}{3} = \frac{15}{3}$$
+                $$x = 5$$
+            </li>
+            <li>
+                <strong>Check:</strong> \(3(5) + 7 = 15 + 7 = 22\) &checkmark;
+            </li>
+        </ul>
+    </div>
+
+    <!-- Problem 2 -->
+    <h3>Problem 2</h3>
+    <div class="box box-practice">
+        <div class="box-label">Practice Problem</div>
+        <p>Solve: \(\dfrac{x}{3} + \dfrac{x}{4} = 7\)</p>
+    </div>
+    <div class="box box-example">
+        <div class="box-label">Solution</div>
+        <ul class="steps">
+            <li>
+                Find the LCD. The LCD of 3 and 4 is 12.
+            </li>
+            <li>
+                Multiply every term by 12:
+                $$12 \cdot \frac{x}{3} + 12 \cdot \frac{x}{4} = 12 \cdot 7$$
+                $$4x + 3x = 84$$
+            </li>
+            <li>
+                Combine like terms:
+                $$7x = 84$$
+            </li>
+            <li>
+                Divide by 7:
+                $$x = 12$$
+            </li>
+            <li>
+                <strong>Check:</strong> \(\dfrac{12}{3} + \dfrac{12}{4} = 4 + 3 = 7\) &checkmark;
+            </li>
+        </ul>
+    </div>
+
+    <!-- Problem 3 -->
+    <h3>Problem 3</h3>
+    <div class="box box-practice">
+        <div class="box-label">Practice Problem</div>
+        <p>Solve: \(2(x - 3) + 5 = 3x - 4\)</p>
+    </div>
+    <div class="box box-example">
+        <div class="box-label">Solution</div>
+        <ul class="steps">
+            <li>
+                Distribute the 2:
+                $$2x - 6 + 5 = 3x - 4$$
+            </li>
+            <li>
+                Combine like terms on the left:
+                $$2x - 1 = 3x - 4$$
+            </li>
+            <li>
+                Subtract \(2x\) from both sides:
+                $$-1 = x - 4$$
+            </li>
+            <li>
+                Add 4 to both sides:
+                $$3 = x$$
+                $$x = 3$$
+            </li>
+            <li>
+                <strong>Check:</strong> Left side: \(2(3-3)+5 = 2(0)+5 = 5\). Right side: \(3(3)-4 = 9-4 = 5\) &checkmark;
+            </li>
+        </ul>
+    </div>
+
+    <!-- Problem 4 -->
+    <h3>Problem 4</h3>
+    <div class="box box-practice">
+        <div class="box-label">Practice Problem</div>
+        <p>Solve \(A = \pi r^2\) for \(r\) (assuming \(r > 0\)).</p>
+    </div>
+    <div class="box box-example">
+        <div class="box-label">Solution</div>
+        <ul class="steps">
+            <li>
+                Divide both sides by \(\pi\):
+                $$\frac{A}{\pi} = r^2$$
+            </li>
+            <li>
+                Take the positive square root of both sides:
+                $$r = \sqrt{\frac{A}{\pi}}$$
+            </li>
+        </ul>
+        <p>For instance, if \(A = 50\), then \(r = \sqrt{\dfrac{50}{\pi}} = \sqrt{\dfrac{50}{3.14159\ldots}} \approx \sqrt{15.915} \approx 3.99\).</p>
+    </div>
+
+    <!-- Problem 5 -->
+    <h3>Problem 5</h3>
+    <div class="box box-practice">
+        <div class="box-label">Practice Problem</div>
+        <p>Solve by cross multiplication: \(\dfrac{3}{x} = \dfrac{7}{14}\)</p>
+    </div>
+    <div class="box box-example">
+        <div class="box-label">Solution</div>
+        <ul class="steps">
+            <li>
+                Cross multiply:
+                $$3 \times 14 = 7 \times x$$
+                $$42 = 7x$$
+            </li>
+            <li>
+                Divide both sides by 7:
+                $$x = 6$$
+            </li>
+            <li>
+                <strong>Check:</strong> \(\dfrac{3}{6} = \dfrac{1}{2}\) and \(\dfrac{7}{14} = \dfrac{1}{2}\) &checkmark;
+            </li>
+        </ul>
+    </div>
+
+    <!-- Problem 6 -->
+    <h3>Problem 6</h3>
+    <div class="box box-practice">
+        <div class="box-label">Practice Problem</div>
+        <p><em>"Five more than twice a number is 17. Find the number."</em></p>
+    </div>
+    <div class="box box-example">
+        <div class="box-label">Solution</div>
+        <ul class="steps">
+            <li>
+                <strong>Define the variable:</strong> Let \(n\) = the number.
+            </li>
+            <li>
+                <strong>Translate to an equation:</strong>
+                <br>"Twice a number" &rarr; \(2n\)
+                <br>"Five more than" &rarr; \(+5\)
+                <br>"is 17" &rarr; \(= 17\)
+                $$2n + 5 = 17$$
+            </li>
+            <li>
+                Subtract 5 from both sides:
+                $$2n = 12$$
+            </li>
+            <li>
+                Divide by 2:
+                $$n = 6$$
+            </li>
+            <li>
+                <strong>Check the original words:</strong> Twice 6 is 12. Five more than 12 is 17 &checkmark;
+            </li>
+        </ul>
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ==================== KEY INSIGHTS ==================== -->
+<div class="card">
+    <h2>Key Insights to Remember</h2>
+
+    <div class="box box-insight">
+        <div class="box-label">Insight 1 &mdash; Equations Are Balanced</div>
+        <p>Every equation is a statement of equality. If you change one side, you <em>must</em> make the exact same change to the other. Think of it as the Golden Rule of algebra.</p>
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Insight 2 &mdash; Undo Operations in Reverse Order</div>
+        <p>If a variable has been multiplied by 3 and then had 5 added (\(3x + 5\)), undo in reverse: subtract 5 first, then divide by 3. This mirrors the order of operations in reverse.</p>
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Insight 3 &mdash; Fractions Are Not Scary</div>
+        <p>Clearing fractions by multiplying through by the LCD converts any fractional equation into a simpler integer equation. The fractions vanish, and you solve as usual.</p>
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Insight 4 &mdash; Formulas Are Just Equations with Letters</div>
+        <p>Rearranging \(A = \pi r^2\) for \(r\) uses exactly the same principles as solving \(3x + 7 = 22\) for \(x\). Treat every letter except your target as if it were a number.</p>
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Insight 5 &mdash; Always Check Your Answer</div>
+        <p>Substituting your solution back into the <em>original</em> equation catches arithmetic mistakes and extraneous roots. This single habit will improve your accuracy dramatically.</p>
+    </div>
+</div>
+
+<!-- ==================== QUICK REFERENCE ==================== -->
+<div class="card">
+    <h2>Quick Reference</h2>
+
+    <div style="overflow-x: auto;">
+        <table class="ref-table">
+            <tr>
+                <th>Technique</th>
+                <th>When to Use</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td><strong>Add / Subtract</strong></td>
+                <td>A constant is added to or subtracted from the variable term</td>
+                <td>\(x + 5 = 12 \;\Rightarrow\; x = 7\)</td>
+            </tr>
+            <tr>
+                <td><strong>Multiply / Divide</strong></td>
+                <td>The variable has a coefficient or is divided by a number</td>
+                <td>\(4x = 20 \;\Rightarrow\; x = 5\)</td>
+            </tr>
+            <tr>
+                <td><strong>Distribute First</strong></td>
+                <td>Parentheses with a multiplier precede the variable terms</td>
+                <td>\(3(x+2) = 15 \;\Rightarrow\; 3x+6 = 15\)</td>
+            </tr>
+            <tr>
+                <td><strong>Collect Variable Terms</strong></td>
+                <td>The variable appears on both sides</td>
+                <td>\(5x = 2x + 9 \;\Rightarrow\; 3x = 9\)</td>
+            </tr>
+            <tr>
+                <td><strong>Clear Fractions (LCD)</strong></td>
+                <td>Fractional coefficients or fractional terms</td>
+                <td>\(\tfrac{x}{3}+\tfrac{x}{4}=7 \;\Rightarrow\; 4x+3x=84\)</td>
+            </tr>
+            <tr>
+                <td><strong>Cross Multiply</strong></td>
+                <td>A proportion: \(\frac{a}{b} = \frac{c}{d}\)</td>
+                <td>\(\frac{3}{x}=\frac{7}{14} \;\Rightarrow\; 42=7x\)</td>
+            </tr>
+            <tr>
+                <td><strong>Reciprocal Rule</strong></td>
+                <td>The variable has a fractional coefficient</td>
+                <td>\(\tfrac{2}{3}x = 8 \;\Rightarrow\; x = 8 \cdot \tfrac{3}{2} = 12\)</td>
+            </tr>
+            <tr>
+                <td><strong>Rearrange Formula</strong></td>
+                <td>Solving a literal equation for a specific variable</td>
+                <td>\(A=\pi r^2 \;\Rightarrow\; r=\sqrt{A/\pi}\)</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="box box-formula" style="margin-top: 1.5rem;">
+        <div class="box-label">Core Formulas from This Chapter</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 0.75rem;">
+            <div>
+                <h4 style="margin-top:0;">Balance Axioms</h4>
+                <p>If \(a = b\), then:</p>
+                <ul style="padding-left: 1.2rem; margin: 0.3rem 0;">
+                    <li>\(a + c = b + c\)</li>
+                    <li>\(a - c = b - c\)</li>
+                    <li>\(ac = bc\)</li>
+                    <li>\(\dfrac{a}{c} = \dfrac{b}{c}\) &ensp;(\(c \neq 0\))</li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="margin-top:0;">Cross Multiplication</h4>
+                $$\frac{a}{b} = \frac{c}{d} \;\Longleftrightarrow\; ad = bc$$
+                <h4>Reciprocal Rule</h4>
+                <p>If \(\dfrac{m}{n}\,x = k\), then \(x = k \cdot \dfrac{n}{m}\)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== NAVIGATION ==================== -->
+<div class="nav-footer">
+    <a href="../06-exponents-roots-and-radicals/index.html" class="nav-btn">&larr; Previous: Exponents, Roots, and Radicals</a>
+    <a href="../08-functions-and-graphs/index.html" class="nav-btn">Next: Functions and Graphs &rarr;</a>
+</div>
+
+</div><!-- end container -->
+
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "\\[", right: "\\]", display: true},
+                {left: "\\(", right: "\\)", display: false}
+            ],
+            throwOnError: false
+        });
+    });
+</script>
+</body>
+</html>
