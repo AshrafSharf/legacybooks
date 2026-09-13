@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legacy Books</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', 'Cambria', 'Times New Roman', serif;
+            background: #fdf8f3;
+            color: #2d2d2d;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+        .hero {
+            background: linear-gradient(135deg, #1a2332 0%, #2c3e50 100%);
+            color: white;
+            padding: 3.5rem 2rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '📚';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 12rem;
+            opacity: 0.06;
+            pointer-events: none;
+        }
+        .hero h1 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        .hero .subtitle {
+            font-size: 1.15rem;
+            opacity: 0.85;
+            font-style: italic;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 3rem;
+        }
+        .book-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .book-item {
+            margin-bottom: 1rem;
+        }
+        .book-link {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.75rem 2rem;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            text-decoration: none;
+            color: #2d2d2d;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .book-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+        }
+        .book-link:active {
+            transform: translateY(0);
+        }
+        .book-link.teal {
+            border-left: 5px solid #0d4f4f;
+        }
+        .book-link.crimson {
+            border-left: 5px solid #8b1a1a;
+        }
+        .book-icon {
+            font-size: 3rem;
+            line-height: 1;
+            min-width: 3.5rem;
+            text-align: center;
+        }
+        .book-info {
+            flex: 1;
+        }
+        .book-title {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            display: block;
+        }
+        .book-link.teal .book-title { color: #0d4f4f; }
+        .book-link.crimson .book-title { color: #8b1a1a; }
+        .book-author {
+            font-size: 0.95rem;
+            color: #777;
+            font-style: italic;
+            display: block;
+            margin-top: 0.15rem;
+        }
+        .book-chapters {
+            font-size: 0.85rem;
+            color: #999;
+            display: block;
+            margin-top: 0.25rem;
+        }
+        .book-arrow {
+            font-size: 1.5rem;
+            color: #c0602b;
+            transition: transform 0.15s ease;
+        }
+        .book-link:hover .book-arrow {
+            transform: translateX(4px);
+        }
+        .footer-note {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e2d9ce;
+            color: #777;
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <h1>Legacy Books</h1>
+    <p class="subtitle">Classic Algebra Textbooks — Interactive Web Editions</p>
+</div>
+
+<div class="container">
+    <ul class="book-list">
+        <li class="book-item">
+            <a class="book-link teal" href="peter-selby/index.html">
+                <span class="book-icon">📗</span>
+                <span class="book-info">
+                    <span class="book-title">Practical Algebra: A Self-Teaching Guide</span>
+                    <span class="book-author">Peter H. Selby &amp; Steve Slavin</span>
+                    <span class="book-chapters">12 Chapters</span>
+                </span>
+                <span class="book-arrow">→</span>
+            </a>
+        </li>
+        <li class="book-item">
+            <a class="book-link crimson" href="dociani/dociani/index.html">
+                <span class="book-icon">📕</span>
+                <span class="book-info">
+                    <span class="book-title">Modern Algebra: Structure and Method</span>
+                    <span class="book-author">Mary P. Dolciani · Simon L. Berman · Julius Freilich</span>
+                    <span class="book-chapters">15 Chapters</span>
+                </span>
+                <span class="book-arrow">→</span>
+            </a>
+        </li>
+    </ul>
+
+    <p class="footer-note">Legacy Books — 2 Volumes</p>
+</div>
+
+</body>
+</html>
