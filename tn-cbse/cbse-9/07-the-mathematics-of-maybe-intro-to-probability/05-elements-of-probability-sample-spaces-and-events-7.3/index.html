@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>7.3 Elements of Probability: Sample Spaces and Events — The Mathematics of Maybe Intro to Probability</title>
+<meta name="description" content="Class 9 Mathematics · The Mathematics of Maybe Intro to Probability · 7.3 Elements of Probability: Sample Spaces and Events">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="../../../assets/book.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 9 Mathematics</a></span>
+    <span class="c2">The Mathematics of Maybe Intro to Probability · 7.3 Elements of Probability: Sample Spaces and Events</span>
+  </div>
+  <a class="tb-btn" data-nav="prev" href="../../07-the-mathematics-of-maybe-intro-to-probability/04-exercise-7.2/index.html" title="Exercise 7.2">←</a>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary>
+<div class="drawer-panel"><div class="dh">The Mathematics of Maybe Intro to Probability</div><a href="../01-what-is-probability-7.1/index.html">7.1 What is Probability?</a><a href="../02-exercise-7.1/index.html">Exercise 7.1</a><a href="../03-measuring-probability-objectively-7.2/index.html">7.2 Measuring Probability Objectively</a><a href="../04-exercise-7.2/index.html">Exercise 7.2</a><a href="../05-elements-of-probability-sample-spaces-and-events-7.3/index.html" aria-current="page">7.3 Elements of Probability: Sample Spaces and Events</a><a href="../06-exercise-7.3/index.html">Exercise 7.3</a><a href="../07-tree-diagrams-7.4/index.html">7.4 Tree diagrams</a><a href="../08-exercise-7.4/index.html">Exercise 7.4</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../07-the-mathematics-of-maybe-intro-to-probability/06-exercise-7.3/index.html" title="Exercise 7.3">→</a>
+  <button class="tb-btn" data-theme-toggle title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<div class="progress"><span style="width:84.6%"></span></div>
+</header>
+<main class="wrap">
+<div class="sec-head">
+  <p class="eyebrow"><a href="../index.html">Chapter 7 · The Mathematics of Maybe Intro to Probability</a></p>
+  <h1>7.3 Elements of Probability: Sample Spaces and Events</h1>
+  <p class="sec-meta">Textbook pages 12–13 · 2 figures</p>
+</div>
+<article class="prose">
+<h3 id="s-7-3-1-sample-space">7.3.1 Sample Space</h3>
+<p>Recall that the sample space, denoted by S, is the list of all possible outcomes. Each possible outcome is called an element of the sample space.</p>
+<ul class="qlist">
+<li><span class="mk">•</span><span class="lt">The sample space S must include every possible outcome.</span></li>
+<li><span class="mk">•</span><span class="lt">No outcome should be listed more than once.</span></li>
+<li><span class="mk">•</span><span class="lt">The number of elements in the sample space is called the sample</span></li>
+</ul>
+<p>size and is denoted by n(S).</p>
+<p>Examples of Sample Space</p>
+<ul class="qlist">
+<li><span class="mk">1.</span><span class="lt">The sample space for whether it rains tomorrow could be \(S =\) {Rain,</span></li>
+</ul>
+<p>No Rain} and the sample size n(S) \(= 2\).</p>
+<ul class="qlist">
+<li><span class="mk">2.</span><span class="lt">The sample space for a match, i.e., the possible outcomes for a team</span></li>
+</ul>
+<p>playing - could be \(S =\) {Win, Lose, Draw} and sample size n(S) \(= 3\).</p>
+<ul class="qlist">
+<li><span class="mk">3.</span><span class="lt">Tossing a Coin:</span></li>
+<li><span class="mk">•</span><span class="lt">Experiment: Tossing a fair coin once.</span></li>
+<li><span class="mk">•</span><span class="lt">Sample Space: \(S =\) {Heads (H), Tails (T)}</span></li>
+<li><span class="mk">•</span><span class="lt">Sample Size \(= 2\)</span></li>
+<li><span class="mk">4.</span><span class="lt">Rolling a Die:</span></li>
+<li><span class="mk">•</span><span class="lt">1Experiment: Rolling a standard 6-sided die.</span></li>
+<li><span class="mk">•</span><span class="lt">1Sample Space: \(S = {1\), 2, 3, 4, 5, 6}</span></li>
+<li><span class="mk">•</span><span class="lt">Sample Size \(= 6\)</span></li>
+</ul>
+<figure class="fig side-fig"><img src="img/fig-p1-1.webp" alt="Figure from the textbook page" loading="lazy" width="341" height="222"></figure>
+<ul class="qlist">
+<li><span class="mk">5.</span><span class="lt">Tossing Two Coins:</span></li>
+<li><span class="mk">•</span><span class="lt">1Experiment: Tossing two coins</span></li>
+</ul>
+<p>simultaneously.</p>
+<ul class="qlist">
+<li><span class="mk">•</span><span class="lt">1Sample Space: \(S =\) {HH, HT, TH, TT}</span></li>
+<li><span class="mk">•</span><span class="lt">1Sample Size \(= 4\)</span></li>
+</ul>
+<h2 id="s-think-and-reflect">Think and Reflect</h2>
+<p>When we used the sample space {Rain, No Rain} in Example 1, we focused only on whether it will rain or not. However, if we want to include different amounts of rainfall like drizzle, light rain or heavy rain, we need to expand the sample space to {No Rain, Drizzle, Light Rain, Heavy Rain} so that it better matches the level of detail required for the question. It is important to ensure the sample space is detailed enough to suit the specific problem being studied.</p>
+<h3 id="s-7-3-2-events">7.3.2 Events</h3>
+<p>An event is any single possible result or combination of results that might happen when you perform a random action. It is like choosing particular outcomes from all the things that could possibly occur. An event is a subset of a sample space.</p>
+<p>Examples of Sample Spaces and Events</p>
+<ul class="qlist">
+<li><span class="mk">1.</span><span class="lt">Tossing Two Coins</span></li>
+<li><span class="mk">•</span><span class="lt">Sample space: All possible results like Head - Head, Head - Tail,</span></li>
+</ul>
+<p>Tail - Head, Tail - Tail. \(S =\) Sample Space = {HH, HT, TH, TT}</p>
+<ul class="qlist">
+<li><span class="mk">•</span><span class="lt">Event: ‘At least one coin shows Head.’ \(E =\) {HH, HT, TH}.</span></li>
+<li><span class="mk">2.</span><span class="lt">Rolling a 6-sided Die</span></li>
+<li><span class="mk">•</span><span class="lt">Sample space: All faces numbered 1 through 6. \(S = {1\), 2, 3, 4, 5, 6}</span></li>
+<li><span class="mk">•</span><span class="lt">Event: ‘The number rolled is greater than 4.’ \(E = {5\), 6}.</span></li>
+<li><span class="mk">3.</span><span class="lt">Picking Fruit from a Basket</span></li>
+<li><span class="mk">•</span><span class="lt">Sample space: Types of fruit you might pick, for example,</span></li>
+</ul>
+<p>Apple, Banana and Orange. \(S =\) {Apple, Banana, Orange}</p>
+<ul class="qlist">
+<li><span class="mk">•</span><span class="lt">Event: ‘Picking a fruit that is yellow.’ \(E =\) {Banana}.</span></li>
+</ul>
+<figure class="fig"><img src="img/fig-p2-1.webp" alt="Figure from the textbook page" loading="lazy" width="338" height="70"></figure>
+<ul class="qlist">
+<li><span class="mk">1.</span><span class="lt">When a single 6-sided die is rolled, what is the total number of</span></li>
+</ul>
+<p>possible outcomes in the sample space?</p>
+<ul class="qlist">
+<li><span class="mk">2.</span><span class="lt">For the following experiments write down the sample space S.</span></li>
+<li><span class="mk">(i)</span><span class="lt">Rolling a die and tossing a coin together.</span></li>
+</ul>
+</article>
+<nav class="pager"><a class="" data-nav="prev" href="../../07-the-mathematics-of-maybe-intro-to-probability/04-exercise-7.2/index.html"><span class="dir">← Previous</span><span class="t">Exercise 7.2</span><span class="ch">The Mathematics of Maybe Intro to Probability</span></a><a class="nx" data-nav="next" href="../../07-the-mathematics-of-maybe-intro-to-probability/06-exercise-7.3/index.html"><span class="dir">Next →</span><span class="t">Exercise 7.3</span><span class="ch">The Mathematics of Maybe Intro to Probability</span></a></nav>
+</main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'\\(',right:'\\)',display:false},
+    {left:'$$',right:'$$',display:true},
+    {left:'\\[',right:'\\]',display:true}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']})"></script>
+<script src="../../../assets/book.js"></script>
+</body>
+</html>

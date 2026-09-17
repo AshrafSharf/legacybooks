@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>8.5 Sum of the First n Natural Numbers — Predicting What Comes Next Sequences and Progressions</title>
+<meta name="description" content="Class 9 Mathematics · Predicting What Comes Next Sequences and Progressions · 8.5 Sum of the First n Natural Numbers">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="../../../assets/book.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 9 Mathematics</a></span>
+    <span class="c2">Predicting What Comes Next Sequences and Progressions · 8.5 Sum of the First n Natural Numbers</span>
+  </div>
+  <a class="tb-btn" data-nav="prev" href="../../08-predicting-what-comes-next-sequences-and-progressions/05-arithmetic-progressions-8.4/index.html" title="8.4 Arithmetic Progressions">←</a>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary>
+<div class="drawer-panel"><div class="dh">Predicting What Comes Next Sequences and Progressions</div><a href="../01-introduction-to-sequences-8.1/index.html">8.1 Introduction to Sequences</a><a href="../02-explicit-rule-for-a-sequence-8.2/index.html">8.2 Explicit Rule for a Sequence</a><a href="../03-recursive-rule-for-a-sequence-8.3/index.html">8.3 Recursive Rule for a Sequence</a><a href="../04-exercise-8.1/index.html">Exercise 8.1</a><a href="../05-arithmetic-progressions-8.4/index.html">8.4 Arithmetic Progressions</a><a href="../06-sum-of-the-first-n-natural-numbers-8.5/index.html" aria-current="page">8.5 Sum of the First n Natural Numbers</a><a href="../07-exercise-8.2/index.html">Exercise 8.2</a><a href="../08-geometric-progressions-8.6/index.html">8.6 Geometric Progressions</a><a href="../09-exercise-8.3/index.html">Exercise 8.3</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../08-predicting-what-comes-next-sequences-and-progressions/07-exercise-8.2/index.html" title="Exercise 8.2">→</a>
+  <button class="tb-btn" data-theme-toggle title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<div class="progress"><span style="width:94.5%"></span></div>
+</header>
+<main class="wrap">
+<div class="sec-head">
+  <p class="eyebrow"><a href="../index.html">Chapter 8 · Predicting What Comes Next Sequences and Progressions</a></p>
+  <h1>8.5 Sum of the First n Natural Numbers</h1>
+  <p class="sec-meta">Textbook pages 10–12 · 4 figures</p>
+</div>
+<article class="prose">
+<p>In this section, we derive a simple yet important rule for the sum of the first n natural numbers. To begin with, can you find the sum of the first ten natural numbers without actually adding all of them? Let us try a unique approach. Let S denote the sum of the first ten natural numbers. Thus \(S = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10\). We can also write it as \(S = 10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1\). If we place these two equations, one below the other, we notice something interesting.</p>
+<div class="mathblock"><p>\(S = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 S = 10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1\)</p></div>
+<p>Each pair of corresponding numbers, \(1 + 10\), \(2 + 9\), \(3 + 8\), … , \(10 + 1\), in the two equations add up to 11. Adding the two equations for S, we get \(2S = 11 + 11 + 11 +\) … \(+ 11\) (that is, 11 added 10 times). This leads to \(2S = 110\) or \(S = 55\). The sum of the first 10 natural numbers is indeed 55.</p>
+<figure class="fig wide"><img src="img/fig-p2-1.webp" alt="Figure from the textbook page" loading="lazy" width="884" height="119"></figure>
+<p>This method of writing the sum from 1 to any number, reversing the sum and then adding the two expressions can be used to arrive at the formula for the sum of the first n natural numbers for any value of n.</p>
+<div class="mathblock"><p>Let \(S = 1 + 2 +\) … \(+ n\). Then \(S = n +\) (n \(- 1) +\) … \(+ 1\). So, \(2S =\) n(n \(+ 1)\). We conclude \(S = \frac{n(n + 1)}{2}\) .</p></div>
+<p>We can also think of this argument pictorially.</p>
+<figure class="fig side-fig"><img src="img/fig-p2-2.webp" alt="Fig. 8.5" loading="lazy" width="310" height="321"><figcaption>Fig. 8.5</figcaption></figure>
+<p>The diagram in Fig. 8.5 represents the method to find the sum \(1 + 2 + 3 + 4 + 5 + 6\). Note that the figure comprises two sets of circles that represent the sum \(1 + 2 + 3 + 4 + 5 + 6\) above and below of the zigzag partition. The total number of circles forms \(a 7 \times 6\) rectangular array.</p>
+<div class="mathblock"><p>\(2 \times (1 + 2 + 3 + 4 + 5 + 6) = 7 \times 6\)</p></div>
+<p>Thus, Fig. 8.5 represents the fact \(2 \times (1 + 2 + 3 + 4 + 5 + 6) = 7 \times 6\). This can similarly be extended to find the sum</p>
+<div class="mathblock"><p>\(1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10\).</p><p>Namely, \(2 \times (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10) = 10 \times 11\). In general, \(2 \times (1 + 2 + 3 + 4 +\) … + n) \(= n \times\) (n \(+ 1)\). Therefore, \(1 + 2 + 3 + 4 +\) … \(+ n = \frac{n(n + 1)}{2}\) .</p></div>
+<p>If we use the notation S_{n} to represent the sum of the first n natural numbers, then \(S_{n} = \frac{n(n + 1)}{2}\) .</p>
+<p>The first known written mention of this result can be found in Āryabhaṭa’s Āryabhaṭīya, Chapter 2, Verse 19. The verse provides two ways to calculate the sum, with the second part describing that the sum can be calculated by taking the sum of the first and last terms, divided by two (the average), and multiplied by the number of terms.</p>
+<figure class="fig wide"><img src="img/fig-p3-1.webp" alt="Figure from the textbook page" loading="lazy" width="884" height="119"></figure>
+<p>Also, this formula can be used to find the sum of consecutive numbers</p>
+<div class="mathblock"><p>such as \(25 + 26 + 27 +\) … \(+ 58\).</p></div>
+<p>Note that \(25 + 26 + 27 +\) … \(+ 58 = (1 + 2 + 3 +\) … \(+ 58) - (1 + 2 + 3 +\) … +24)</p>
+<div class="mathblock"><p>\(= S_{58} - S_{24} = \frac{58 \times 5924 \times 25}{22} -\) = \(29 \times 59 - 12 \times 25 = 1711 - 300 = 1411\).</p></div>
+<h2 id="s-think-and-reflect">Think and Reflect</h2>
+<p>Let us revisit the sequence t_{n} of triangular numbers 1, 3, 6, 10, 15, … shown</p>
+<p>in Fig. 8.1. Note that the n term of this sequence is the sum of the first n 1 natural numbers. Thus \(t_{n} = \frac{n(n +)}{2}\) .</p>
+<p class="lead">th</p>
+<p>Can you use this to find the 10 , 17 and 80 triangular numbers?</p>
+<p>th th th</p>
+<figure class="fig"><img src="img/fig-p3-2.webp" alt="Figure from the textbook page" loading="lazy" width="338" height="70"></figure>
+<ul class="qlist">
+<li><span class="mk">1.</span><span class="lt">Find the 10 and 26 terms of the AP: 3, 8, 13, 18, ….</span></li>
+</ul>
+<p>th th</p>
+<ul class="qlist">
+<li><span class="mk">2.</span><span class="lt">Which term of the AP : 21, 18, 15, … is \(- 81\)? Also, is 0 a term of this</span></li>
+</ul>
+<p>AP? Give reasons for your answer.</p>
+<ul class="qlist">
+<li><span class="mk">3.</span><span class="lt">Find the n term of the AP: 11, 8, 5, 2 … Write the recursive rule for</span></li>
+</ul>
+<p class="lead">th</p>
+<p>this AP.</p>
+<ul class="qlist">
+<li><span class="mk">4.</span><span class="lt">An AP consists of 50 terms in which the 3 term is 12 and the</span></li>
+</ul>
+<aside class="sidenote"><p>rd</p></aside>
+<p>last term is 106. Find the 29 term. (Hint: If ‘a’ is the first term and ‘d’ the common difference, then we arrive at the equations \(a + 2d = 12\) and \(a + 49d = 106\). Solve this pair of linear equations for ‘a’ and ‘d’.)</p>
+<aside class="sidenote"><p>th</p></aside>
+</article>
+<nav class="pager"><a class="" data-nav="prev" href="../../08-predicting-what-comes-next-sequences-and-progressions/05-arithmetic-progressions-8.4/index.html"><span class="dir">← Previous</span><span class="t">8.4 Arithmetic Progressions</span><span class="ch">Predicting What Comes Next Sequences and Progressions</span></a><a class="nx" data-nav="next" href="../../08-predicting-what-comes-next-sequences-and-progressions/07-exercise-8.2/index.html"><span class="dir">Next →</span><span class="t">Exercise 8.2</span><span class="ch">Predicting What Comes Next Sequences and Progressions</span></a></nav>
+</main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'\\(',right:'\\)',display:false},
+    {left:'$$',right:'$$',display:true},
+    {left:'\\[',right:'\\]',display:true}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']})"></script>
+<script src="../../../assets/book.js"></script>
+</body>
+</html>

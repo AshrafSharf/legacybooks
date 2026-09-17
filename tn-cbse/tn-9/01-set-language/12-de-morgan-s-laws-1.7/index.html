@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>1.7 De Morgan’s Laws — Set Language</title>
+<meta name="description" content="Class 9 Mathematics · Set Language · 1.7 De Morgan’s Laws">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="../../../assets/book.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 9 Mathematics</a></span>
+    <span class="c2">Set Language · 1.7 De Morgan’s Laws</span>
+  </div>
+  <a class="tb-btn" data-nav="prev" href="../../01-set-language/11-distributive-property-1.6.3/index.html" title="1.6.3 Distributive Property">←</a>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary>
+<div class="drawer-panel"><div class="dh">Set Language</div><a href="../01-chapter-opener/index.html">Chapter opener; 1.1 Introduction</a><a href="../02-set-1.2/index.html">1.2 Set</a><a href="../03-representation-of-a-set-1.3/index.html">1.3 Representation of a Set</a><a href="../04-exercise-1.1/index.html">Exercise 1.1</a><a href="../05-types-of-sets-1.4/index.html">1.4 Types of Sets</a><a href="../06-exercise-1.2/index.html">Exercise 1.2</a><a href="../07-set-operations-1.5/index.html">1.5 Set Operations</a><a href="../08-exercise-1.3/index.html">Exercise 1.3</a><a href="../09-properties-of-set-operations-1.6/index.html">1.6 Properties of Set Operations</a><a href="../10-exercise-1.4/index.html">Exercise 1.4</a><a href="../11-distributive-property-1.6.3/index.html">1.6.3 Distributive Property</a><a href="../12-de-morgan-s-laws-1.7/index.html" aria-current="page">1.7 De Morgan’s Laws</a><a href="../13-exercise-1.5/index.html">Exercise 1.5</a><a href="../14-application-on-cardinality-of-sets-1.8/index.html">1.8 Application on Cardinality of Sets:</a><a href="../15-exercise-1.6/index.html">Exercise 1.6</a><a href="../16-exercise-1.7/index.html">Exercise 1.7</a><a href="../17-summary/index.html">Points to Remember</a><a href="../18-ict-corner/index.html">ICT Corner 1</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../01-set-language/13-exercise-1.5/index.html" title="Exercise 1.5">→</a>
+  <button class="tb-btn" data-theme-toggle title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<div class="progress"><span style="width:8.3%"></span></div>
+</header>
+<main class="wrap">
+<div class="sec-head">
+  <p class="eyebrow"><a href="../index.html">Chapter 1 · Set Language</a></p>
+  <h1>1.7 De Morgan’s Laws</h1>
+  <p class="sec-meta">Textbook pages 24–27 · 16 figures</p>
+</div>
+<article class="prose">
+<p>Augustus De Morgan \((1806 - 1871)\) was a British mathematician.</p>
+<figure class="fig side-fig"><img src="img/fig-p1-1.webp" alt="Figure from the textbook page" loading="lazy" width="199" height="190"></figure>
+<p>He was born on 27 June 1806 in Madurai, Tamilnadu, India. His father was posted in India by the East India Company. When he was seven months old, his family moved back to England. De Morgan was educated at Trinity College, Cambridge, London. He formulated laws for set difference and complementation. These are called De Morgan’s laws.</p>
+<p>th</p>
+<h3 id="s-1-7-1-de-morgan-s-laws-for-set-difference">1.7.1 De Morgan’s Laws for Set Difference</h3>
+<p>These laws relate the set operations union, intersection and set difference.</p>
+<p>Let us consider three sets A, B and C as \(A =\) { \(- - 5\), 2 1 3, , }, \(B =\) { \(- - 3\), 2,0,3,5} and</p>
+<div class="mathblock"><p>\(C =\) { \(- - 2\), 1 0, ,4,5}.</p><p>Now, B ÈC \(= {-3,-2,-1 0\), ,3,4,5}</p><p>\(A -\) (B \(\cup\) C) = { \(- 5 1\), } ... (1)</p></div>
+<p>Then, \(A - B = {-5 1\), }and \(A - C =\) { \(- 5 1 3\), , }</p>
+<div class="mathblock"><p>(A - B) \(\cup\) (A - C) = { \(- 5 1 3\), , } ... (2) (A - B) \(\cap\) (A - C) = { \(- 5 1\), } ... (3)</p></div>
+<p>From (1) and (2), we see that</p>
+<p>\(A -\) (B \(\cup\) C) \(\ne\) (A - B) \(\cup\) (A - C)</p>
+<figure class="fig side-fig"><img src="img/fig-p1-2.webp" alt="Figure from the textbook page" loading="lazy" width="496" height="179"></figure>
+<p>But note that from (1) and (3), we see that</p>
+<p>\(A -\) (B \(\cup\) C) = (A - B) \(\cap\) (A - C)</p>
+<div class="mathblock"><p>Now, B ÇC = { \(- 2,0,5}\)</p><p>\(A -\) (B \(\cap\) C) \(={ - 5 1 3\), , } ... (4)</p></div>
+<p>From (3) and (4) we see that</p>
+<p>\(A -\) (B \(\cap\) C) \(\ne\) (A - B) \(\cap\) (A - C)</p>
+<p>But note that from (2) and (4), we get \(A -\) (B \(\cap\) C) = (A - B) \(\cup\) (A - C)</p>
+<figure class="fig wide"><img src="img/fig-p1-3.webp" alt="Figure from the textbook page" loading="lazy" width="1012" height="114"></figure>
+<figure class="fig"><img src="img/fig-p2-1.webp" alt="Figure from the textbook page" loading="lazy" width="278" height="68"></figure>
+<p>Verify \(A -\) (B \(\cup\) C) = (A - B) \(\cap\) (A - C) using Venn diagrams.</p>
+<h4 class="callout-h" id="s-solution">Solution</h4>
+<figure class="fig wide"><img src="img/fig-p2-2.webp" alt="Fig.1.30" loading="lazy" width="940" height="691"><figcaption>Fig.1.30</figcaption></figure>
+<aside class="sidenote"><p>.... (1)</p><p>.... (2)</p></aside>
+<p>From (1) and (2), we get \(A -\) (B \(\cup\) C) = (A - B) \(\cap\) (A - C). Hence it is verified.</p>
+<figure class="fig"><img src="img/fig-p2-3.webp" alt="Figure from the textbook page" loading="lazy" width="278" height="86"></figure>
+<p>If \(P =\) {x : xÎ W and \(0 &lt; x &lt; 10}\), \(Q =\) {x : \(x = 2n+1\), nÎ W and n&lt;5}</p>
+<p>and = { , , ,7 11 13, , }, then verify \(P -\) (Q \(\cap\) R) = (P - Q) \(\cup\) (P - R)</p>
+<p>Solution The roster form of sets P, Q and R are</p>
+<div class="mathblock"><p>\(P = {1 2\), ,3,4,5,6,7,8,9}, \(Q = {1 3\), ,5,7,9}</p></div>
+<p>Finding the elements of set Q and \(R = {2,3,5,7 11 13\), , } Given, \(x = 2n + 1\)</p>
+<div class="mathblock"><p>\(n = 0 \to x = 2(0) +1 = 0 +1 = 1\)</p></div>
+<p>First, we find (Q Ç R) \(= {3,5,7} n = 1 \to x = 2 1(\) ) \(+1 = 2 +1 = 3\)</p>
+<div class="mathblock"><p>Then, \(P -\) (Q \(\cap\) R) \(= {1 2\), ,4,6,8,9} ... \((1) n = 2 \to x = 2 2(\) ) \(+1 = 4 +1 = 5 n = 3 \to x = 2(3) +1 = 6 +1 = 7\)</p></div>
+<p>Next, \(P - Q = {2,4,6,8}\) and \(n = 4 \to x = 2(4) +1 = 8 +1 = 9\)</p>
+<p>\(P - R = {1 4\), ,6,8,9} Therefore, x takes values such as and so, (P - Q) \(\cup\) (P - R) \(= {1 2\), ,4,6,8,9} ... (2) 1, 3, 5, 7 and 9. Hence from (1) and (2), it is verified that \(P -\) (Q \(\cap\) R) = (P - Q) \(\cup\) (P - R).</p>
+<h3 id="s-1-7-2-de-morgan-s-laws-for-complementation">1.7.2 De Morgan’s Laws for Complementation</h3>
+<p>These laws relate the set operations on union, intersection and complementation. Let us consider universal set U={0,1,2,3,4,5,6}, A={1,3,5} and B={0,3,4,5}.</p>
+<figure class="fig side-fig"><img src="img/fig-p3-1.webp" alt="Figure from the textbook page" loading="lazy" width="415" height="275"></figure>
+<div class="mathblock"><p>Now, A È \(B = {0 1 3\), , ,4,5}</p><p>Then, (A \(\cup\) B) ' \(= {2,6}\) .....( )</p></div>
+<p>Next, A¢ \(= {0 2\), ,4,6} and B¢ = { ,1 2,6}</p>
+<div class="mathblock"><p>Then, A ' \(\cap B\) ' \(= {2,6}\) .....( )</p></div>
+<p>From (1) and (2), we get (A \(\cup\) B) ' \(= A\) ' \(\cap B\) '</p>
+<figure class="fig side-fig"><img src="img/fig-p3-2.webp" alt="Figure from the textbook page" loading="lazy" width="415" height="270"></figure>
+<div class="mathblock"><p>Also, \(A \cap B = {3,5}\),</p><p>(A \(\cap\) B) ' \(= {0 1 2\), , ,4,6} .....( )</p><p>A ' \(= {0 2\), ,4,6} andB ' \(= {1 2\), ,6} A ' \(\cup B\) ' \(= {0 1 2\), , ,4,6} .....( )</p></div>
+<p>From (3) and (4), we get ( \(\cap\) ) ' = ' \(\cup\) '</p>
+<figure class="fig wide"><img src="img/fig-p3-3.webp" alt="Figure from the textbook page" loading="lazy" width="1012" height="150"></figure>
+<figure class="fig"><img src="img/fig-p3-4.webp" alt="Figure from the textbook page" loading="lazy" width="278" height="68"></figure>
+<p>Verify (A \(\cup\) B) ' \(= A\) ' \(\cap B\) ' using Venn diagrams.</p>
+<h4 class="callout-h" id="s-solution">Solution</h4>
+<figure class="fig"><img src="img/fig-p3-5.webp" alt="Figure from the textbook page" loading="lazy" width="330" height="192"></figure>
+<figure class="fig"><img src="img/fig-p3-6.webp" alt="Figure from the textbook page" loading="lazy" width="330" height="189"></figure>
+<aside class="sidenote"><p>.... (1)</p></aside>
+<p>A È B (A \(\cup\) B) '</p>
+<figure class="fig wide"><img src="img/fig-p4-1.webp" alt="Fig.1.31" loading="lazy" width="1021" height="198"><figcaption>Fig.1.31</figcaption></figure>
+<aside class="sidenote"><p>.... (2)</p></aside>
+<p>¢ ¢ ' \(\cap\) '</p>
+<p>From (1) and (2), it is verified that ( \(\cup\) ) ' = ' \(\cap\) '</p>
+<figure class="fig wide"><img src="img/fig-p4-2.webp" alt="Figure from the textbook page" loading="lazy" width="881" height="138"></figure>
+<p>If = { : \(\in\) , \(- \le \le\) },</p>
+<div class="mathblock"><p>= { : \(= +\) , \(\in\) , \(- \le \le\) }, = { : \(= +\) , \(\in\) , \(- 1 \le q &lt; 4}\),</p></div>
+<p>verify De Morgan’s laws for complementation.</p>
+<figure class="fig side-fig"><img src="img/fig-p4-3.webp" alt="Figure from the textbook page" loading="lazy" width="353" height="173"></figure>
+<h4 class="callout-h" id="s-solution">Solution</h4>
+<div class="mathblock"><p>Given \(U =\) { \(- - 2\), 1 0 1 2, , , ,3,4,5,6,7,8,9 10, },</p><p>\(A =\) { \(- 1 1 3\), , ,5,7,9} and \(B =\) { \(- 2 1 4\), , ,7 10, }</p></div>
+<p>Law (i) (A \(\cup\) B) ' =A ' \(\cap B\) '</p>
+<div class="mathblock"><p>Now, A È \(B = {-2,-1 1 3\), , ,4,5,7,9 10, }</p><p>(A \(\cup\) B) ' \(= {0 2\), ,6,8} ..... (1)</p></div>
+<p>Then, A¢ \(= {-2,0 2\), ,4,6,8 10, } and B¢ \(= {-1 0 2\), , ,3,5,6,8,9}</p>
+<div class="mathblock"><p>A ' \(\cap B\) ' \(= {0 2\), ,6,8} ..... ( )</p></div>
+<figure class="fig side-fig"><img src="img/fig-p4-4.webp" alt="Figure from the textbook page" loading="lazy" width="354" height="172"></figure>
+<p>From (1) and (2), it is verified that (A \(\cup\) B) ' \(= A\) ' \(\cap B\) '</p>
+<p>Law (ii) (A \(\cap\) B) ' \(= A\) ' \(\cup B\) '</p>
+<div class="mathblock"><p>Now, A Ç \(B =\) { ,1 7}</p><p>(A \(\cap\) B) ' \(= {-2,-1 0 2\), , ,3,4,5,6,8,9 10, } ..... (3)</p><p>Then, A ' \(\cup B\) ' \(= {-2,-1 0 2\), , ,3,4,5,6,8,9 10, } ..... (4)</p></div>
+<p>From (3) and (4), it is verified that (A \(\cap\) B) ' \(= A\) ' \(\cup B\) '</p>
+</article>
+<nav class="pager"><a class="" data-nav="prev" href="../../01-set-language/11-distributive-property-1.6.3/index.html"><span class="dir">← Previous</span><span class="t">1.6.3 Distributive Property</span><span class="ch">Set Language</span></a><a class="nx" data-nav="next" href="../../01-set-language/13-exercise-1.5/index.html"><span class="dir">Next →</span><span class="t">Exercise 1.5</span><span class="ch">Set Language</span></a></nav>
+</main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'\\(',right:'\\)',display:false},
+    {left:'$$',right:'$$',display:true},
+    {left:'\\[',right:'\\]',display:true}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']})"></script>
+<script src="../../../assets/book.js"></script>
+</body>
+</html>
