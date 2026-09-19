@@ -32,30 +32,57 @@
 </div>
 <article class="prose">
 <p>Let us explore the differences between consecutive squares. What do you notice?</p>
-<div class="mathblock"><p>\(4 - 1 = 3 9 - 4 = 5 16 - 9 = 7 25 - 16 = 9\)</p></div>
-<p>See if this pattern continues for the next few square numbers. From this we observe that adding consecutive odd numbers starting from 1 gives consecutive square numbers, as shown below.</p>
-<figure class="fig wide"><img src="img/fig-p1-4.webp" alt="Figure from the textbook page" loading="lazy" width="1391" height="453"></figure>
-<figure class="fig wide"><img src="img/fig-p2-1.webp" alt="Figure from the textbook page" loading="lazy" width="1365" height="115"></figure>
+<div class="mathblock"><p>\(4 - 1 =\) <strong>3</strong> &emsp; \(9 - 4 =\) <strong>5</strong> &emsp; \(16 - 9 =\) <strong>7</strong> &emsp; \(25 - 16 =\) <strong>9</strong></p></div>
+<p>See if this pattern continues for the next few square numbers.</p>
+<p>From this we observe that adding consecutive odd numbers starting from 1 gives consecutive square numbers, as shown below.</p>
+<div class="mathblock"><p>\(1 =\) <strong>1</strong></p></div>
+<div class="mathblock"><p>\(1 + 3 =\) <strong>4</strong></p></div>
+<div class="mathblock"><p>\(1 + 3 + 5 =\) <strong>9</strong></p></div>
+<div class="mathblock"><p>\(1 + 3 + 5 + 7 =\) <strong>16</strong></p></div>
+<div class="mathblock"><p>\(1 + 3 + 5 + 7 + 9 =\) <strong>25</strong></p></div>
+<div class="mathblock"><p>\(1 + 3 + 5 + 7 + 9 + 11 =\) <strong>36</strong>.</p></div>
+<figure class="fig wide"><img src="img/fig-p1-4.webp" alt="Dot arrays showing sums of odd numbers equal to perfect squares" loading="lazy" width="1391" height="453"></figure>
+<figure class="fig wide"><img src="img/fig-p2-1.webp" alt="Visual representation" loading="lazy" width="1365" height="115"></figure>
 <p>Do you remember this pattern from Grade 6? The picture below explains why each subsequent inverted L gives the next odd number:</p>
-<figure class="fig wide"><img src="img/fig-p2-2.webp" alt="Figure from the textbook page" loading="lazy" width="905" height="131"></figure>
-<div class="mathblock"><p>\(1 + 3 1 + 3 + (3 + 2) 1 + 3 + 5 1 + 3 + 5 + (5 + 2) 1 + 3 + 5 + 7\)</p></div>
-<p>We see that the sum of the first n odd numbers is n . Alternatively, every square is a sum of successive odd numbers starting from 1.</p>
-<figure class="fig wide"><img src="img/fig-p2-3.webp" alt="Figure from the textbook page" loading="lazy" width="1029" height="146"></figure>
-<p>Also, we can find out whether a number is a perfect square by successively subtracting odd numbers. Consider the number 25, successively subtract 1, 3, 5, ... until you get or cross over 0,</p>
-<figure class="fig wide"><img src="img/fig-p2-4.webp" alt="Figure from the textbook page" loading="lazy" width="949" height="86"></figure>
-<p>This means \(25 = 1 + 3 + 5 + 7 + 9\) and is thus a perfect square. Since we</p>
-<p>subtracted the first five odd numbers, \(25 = 5\) .</p>
-<p>Using the pattern above, find 36 , given that \(35 = 1225\). From the question we know that 1225 is the sum of the first 35 odd</p>
-<p>numbers. To find 36 , we need to add the 36th odd number to 1225. How do we find the 36th odd number? The 1st odd number is 1, 2nd odd number is 3, 3rd number is 5, …, 6th odd number is 11 and so on. What is the \(n^{th}\) odd number? The \(n^{th}\) odd number is \(2n - 1\). Therefore, the 36th odd number is 71.</p>
-<p>By adding 71 to 1225, we get 1296, which is 36 . Consider a number such as 38 that is not a square and subtract consecutive odd numbers starting from 1.</p>
-<figure class="fig wide"><img src="img/fig-p2-5.webp" alt="Figure from the textbook page" loading="lazy" width="956" height="113"></figure>
+<figure class="fig wide"><img src="img/fig-p2-2.webp" alt="Inverted-L pattern showing successive odd numbers" loading="lazy" width="905" height="131"></figure>
+<p>We see that the sum of the first <em>n</em> odd numbers is \(n^2\). Alternatively, every square is a sum of successive odd numbers starting from 1.</p>
+<figure class="fig wide"><img src="img/fig-p2-3.webp" alt="Note about visual proofs" loading="lazy" width="1029" height="146"></figure>
+<div class="callout"><p>In mathematics, sometimes arguments and reasoning can be presented without any words. Visual proofs can be complete by themselves.</p></div>
+<p>Also, we can find out whether a number is a perfect square by successively subtracting odd numbers. Consider the number 25, successively subtract 1, 3, 5, … until you get or cross over 0,</p>
+<div class="mathblock"><p>\(25 - 1 = 24\) &emsp; \(24 - 3 = 21\) &emsp; \(21 - 5 = 16\) &emsp; \(16 - 7 = 9\) &emsp; \(9 - 9 = 0\)</p></div>
+<figure class="fig wide"><img src="img/fig-p2-4.webp" alt="Successive subtraction of odd numbers from 25" loading="lazy" width="949" height="86"></figure>
+<p>This means \(25 = 1 + 3 + 5 + 7 + 9\) and is thus a perfect square. Since we subtracted the first five odd numbers, \(25 = 5^2\).</p>
+<p>Using the pattern above, find \(36^2\), given that \(35^2 = 1225\).</p>
+<p>From the question we know that 1225 is the sum of the first 35 odd numbers. To find \(36^2\), we need to add the 36th odd number to 1225.</p>
+<p>How do we find the 36th odd number?</p>
+<p>The 1st odd number is 1, 2nd odd number is 3, 3rd number is 5, …, 6th odd number is 11 and so on.</p>
+<p>What is the \(n^{th}\) odd number?</p>
+<p>The \(n^{th}\) odd number is \(2n - 1\).<br>
+Therefore, the 36th odd number is 71.<br>
+By adding 71 to 1225, we get 1296, which is \(36^2\).</p>
+<p>Consider a number such as 38 that is not a square and subtract consecutive odd numbers starting from 1.</p>
+<div class="mathblock"><p>\(38 - 1 = 37\) &emsp; \(37 - 3 = 34\) &emsp; \(34 - 5 = 29\) &emsp; \(29 - 7 = 22\) &emsp; \(22 - 9 = 13\)</p></div>
+<div class="mathblock"><p>\(13 - 11 = 2\) &emsp; \(2 - 13 = -11\)</p></div>
+<figure class="fig wide"><img src="img/fig-p2-5.webp" alt="Successive subtraction showing 38 is not a perfect square" loading="lazy" width="956" height="113"></figure>
 <p>This shows that 38 cannot be expressed as a sum of consecutive odd numbers starting with 1.</p>
-<figure class="fig wide"><img src="img/fig-p2-6.webp" alt="Figure from the textbook page" loading="lazy" width="1365" height="139"></figure>
-<figure class="fig wide"><img src="img/fig-p3-1.webp" alt="Figure from the textbook page" loading="lazy" width="1373" height="115"></figure>
+<figure class="fig wide"><img src="img/fig-p2-6.webp" alt="Number line of perfect squares" loading="lazy" width="1365" height="139"></figure>
+<figure class="fig wide"><img src="img/fig-p3-1.webp" alt="Visual representation" loading="lazy" width="1373" height="115"></figure>
 <p>Thus, we can say that a natural number is not a perfect square if it cannot be expressed as a sum of successive odd natural numbers starting from 1. We can use this result to find out whether a natural number is a perfect square.</p>
 <p>Find how many numbers lie between two consecutive perfect squares. Do you notice a pattern?</p>
 <p>How many square numbers are there between 1 and 100? How many are between 101 and 200? Using the table of squares you filled earlier, enter the values below, tabulating the number of squares in each block of 100. What is the largest square less than 1000?</p>
-<figure class="fig wide"><img src="img/fig-p3-2.webp" alt="Figure from the textbook page" loading="lazy" width="891" height="196"></figure>
+<table>
+<thead><tr><th>1–100</th><th>101–200</th><th>201–300</th><th>301–400</th><th>401–500</th></tr></thead>
+<tbody>
+<tr><td><span class="blank">____</span></td><td><span class="blank">____</span></td><td><span class="blank">____</span></td><td><span class="blank">____</span></td><td><span class="blank">____</span></td></tr>
+</tbody>
+</table>
+<table>
+<thead><tr><th>501–600</th><th>601–700</th><th>701–800</th><th>801–900</th><th>901–1000</th></tr></thead>
+<tbody>
+<tr><td><span class="blank">____</span></td><td><span class="blank">____</span></td><td><span class="blank">____</span></td><td><span class="blank">____</span></td><td><span class="blank">____</span></td></tr>
+</tbody>
+</table>
+<figure class="fig wide"><img src="img/fig-p3-2.webp" alt="Table for counting squares in each block of 100" loading="lazy" width="891" height="196"></figure>
 </article>
 <nav class="pager"><a class="" data-nav="prev" href="../../01-a-square-and-a-cube/03-patterns-and-properties-of-perfect-squares/index.html"><span class="dir">← Previous</span><span class="t">Patterns and Properties of Perfect Squares</span><span class="ch">A Square and a Cube</span></a><a class="nx" data-nav="next" href="../../01-a-square-and-a-cube/05-perfect-squares-and-triangular-numbers/index.html"><span class="dir">Next →</span><span class="t">Perfect Squares and Triangular Numbers</span><span class="ch">A Square and a Cube</span></a></nav>
 </main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>

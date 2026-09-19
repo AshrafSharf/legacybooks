@@ -36,24 +36,14 @@
 <p>Anshu is exploring sums of consecutive numbers. He has written the following -</p>
 <figure class="fig"><img src="img/fig-p1-2.webp" alt="Figure from the textbook page" loading="lazy" width="275" height="196"></figure>
 <p>Now, he is wondering -</p>
-<ul class="qlist">
-<li><span class="mk">•</span><span class="lt">“Can I write every natural number as a sum of consecutive</span></li>
-</ul>
-<p>numbers?”</p>
-<ul class="qlist">
-<li><span class="mk">•</span><span class="lt">“Which numbers can I write as the sum of consecutive numbers in</span></li>
-</ul>
-<p>more than one way?”</p>
-<ul class="qlist">
-<li><span class="mk">•</span><span class="lt">“Ohh, I know all odd numbers can be written as a sum of two</span></li>
-</ul>
-<p>consecutive numbers. Can we write all even numbers as a sum of consecutive numbers?”</p>
-<ul class="qlist">
-<li><span class="mk">•</span><span class="lt">“Can I write 0 as a sum of consecutive numbers? Maybe I should</span></li>
-</ul>
-<p>use negative numbers.”</p>
+<ul>
+<li>"Can I write every natural number as a sum of consecutive numbers?"</li>
+<li>"Which numbers can I write as the sum of consecutive numbers in more than one way?"</li>
+<li>"Ohh, I know all odd numbers can be written as a sum of two consecutive numbers. Can we write all even numbers as a sum of consecutive numbers?"</li>
+<li>"Can I write 0 as a sum of consecutive numbers? Maybe I should use negative numbers." Explore these questions and any others that may occur to you. Discuss them with the class. Take any 4 consecutive numbers. For example, 3, 4, 5, and 6. Place ‘+’ and ‘ - ’ signs in between the numbers. How many different possibilities exist? Write all of them.
 <figure class="fig side-fig"><img src="img/fig-p1-3.webp" alt="Figure from the textbook page" loading="lazy" width="125" height="95"></figure>
-<p>Explore these questions and any others that may occur to you. Discuss them with the class. Take any 4 consecutive numbers. For example, 3, 4, 5, and 6. Place ‘+’ and ‘ - ’ signs in between the numbers. How many different possibilities exist? Write all of them.</p>
+</li>
+</ul>
 <figure class="fig"><img src="img/fig-p1-4.webp" alt="Figure from the textbook page" loading="lazy" width="219" height="92"></figure>
 <figure class="fig wide"><img src="img/fig-p2-1.webp" alt="Figure from the textbook page" loading="lazy" width="1367" height="113"></figure>
 <p>Eight such expressions are possible. You can use the diagram below to systematically list all the possibilities.</p>
@@ -66,19 +56,23 @@
 <figure class="fig wide"><img src="img/fig-p3-1.webp" alt="Figure from the textbook page" loading="lazy" width="1365" height="113"></figure>
 <p>Now take any 4 numbers, place ‘+’ and ‘ - ’ signs in the eight different ways, and evaluate the resulting expression. What do you observe about their parities? Repeat this with other sets of 4 numbers.</p>
 <figure class="fig side-fig"><img src="img/fig-p3-2.webp" alt="Figure from the textbook page" loading="lazy" width="125" height="95"></figure>
-<p>Is there a way to explain why this happens? Hint: Think of the rules for parity of the sum or difference of two numbers.</p>
-<p>Explanation 1: Let us consider any of the 8 expressions formed by four numbers a, b, c, and d. When one of its signs is switched, its value always increases or decreases by an even number! Let us see why. Consider one of the expressions: \(a + b - c - d\). Replacing +b by \(- b\), we get</p>
+<p>Is there a way to explain why this happens? Hint: Think of the rules for parity of the sum or difference of two numbers.</p>
+<p><strong>Explanation 1:</strong> Let us consider any of the 8 expressions formed by four numbers a, b, c, and d. When one of its signs is switched, its value always increases or decreases by an even number! Let us see why. Consider one of the expressions: \(a + b - c - d\). Replacing +b by \(- b\), we get</p>
 <p>\(a - b - c - d\).</p>
 <p>By how much has the number changed? It has changed by</p>
-<p>(a \(+ b - c -\) d) - (a \(- b - c -\) d)</p>
+<p>\((a + b - c - d) - (a - b - c - d)\)</p>
 <p>\(= a + b - c - d - a + b + c + d\) (notice how the signs changed when we opened the second set of brackets) \(= 2b\) (this is an even number).</p>
 <p>If the difference between two numbers is even, can they have different parities? No! So either both are even or both are odd. Now, let us see what happens when a negative sign is switched to a positive sign.</p>
-<p>Replace any negative sign in the expression \(a + b - c - d\) with a positive sign and find the difference between the two numbers. What do you conclude from this observation? Starting from any expression, we can get 7 expressions by switching one or more ‘+’ and ‘ - ’ signs. Thus, all the expressions have the same parity! Explanation 2: We know that</p>
-<p>odd \(\pm\) odd = even even \(\pm\) even = even odd \(\pm\) even = odd.</p>
+<p>Replace any negative sign in the expression \(a + b - c - d\) with a positive sign and find the difference between the two numbers. What do you conclude from this observation? Starting from any expression, we can get 7 expressions by switching one or more ‘+’ and ‘ - ’ signs. Thus, all the expressions have the same parity!</p>
+<p><strong>Explanation 2:</strong> We know that</p>
+<div class="mathblock"><p>odd \(\pm\) odd = even</p></div>
+<div class="mathblock"><p>even \(\pm\) even = even</p></div>
+<div class="mathblock"><p>odd \(\pm\) even = odd.</p></div>
 <p>We have seen that the parity of \(a + b\) and \(a - b\) is the same, regardless of the parities of a and b. In short, \(a \pm b\) have the same parity. By the same argument, \(a \pm b + c\) and \(a \pm b - c\) have the same parity. Extending this further, we can say that all the expressions \(a \pm b \pm c \pm d\) have the same parity.</p>
 <figure class="fig wide"><img src="img/fig-p3-3.webp" alt="Figure from the textbook page" loading="lazy" width="1365" height="139"></figure>
 <figure class="fig wide"><img src="img/fig-p4-1.webp" alt="Figure from the textbook page" loading="lazy" width="1367" height="158"></figure>
-<p>Explanation 3: This can also be explained + using the positive and negative token \(+ -\) model you studied in the chapter on Integers. Try to think how. \(+ - +\) The number of ways to choose \(4 -\) numbers ‘+’ and ‘ - ’ signs is infinite. Mathematical reasoning allows us to prove that all the a, b, c, d and combine them using \(- + + -\) combinations \(a \pm b \pm c \pm d\) always have the same parity, without having to go through \(- +\) them one by one. -</p>
+<p><strong>Explanation 3:</strong> This can also be explained using the positive and negative token model you studied in the chapter on Integers. Try to think how.</p>
+<p>The number of ways to choose 4 numbers <em>a</em>, <em>b</em>, <em>c</em>, <em>d</em> and combine them using ‘+’ and ‘–’ signs is infinite. Mathematical reasoning allows us to prove that all the combinations \(a \pm b \pm c \pm d\) always have the same parity, without having to go through them one by one.</p>
 <p>Several problems in mathematics can be thought about and solved in different ways. While the method you came up with may be dear to you, it can be amusing and enriching to know how others thought about it. Two tidbits: ‘share’ and ‘listen’.</p>
 <p>Is the phenomenon of all the expressions having the same parity limited to taking 4 numbers? What do you think?</p>
 <figure class="fig wide"><img src="img/fig-p4-2.webp" alt="Figure from the textbook page" loading="lazy" width="1050" height="147"></figure>
