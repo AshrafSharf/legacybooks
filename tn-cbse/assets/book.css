@@ -28,7 +28,7 @@
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);
-  font-size:1.0625rem;line-height:1.72;text-rendering:optimizeLegibility}
+  font-size:1.25rem;line-height:1.72;text-rendering:optimizeLegibility}
 h1,h2,h3,h4,h5,.sans{font-family:var(--sans);line-height:1.25;letter-spacing:-.011em}
 a{color:var(--accent);text-decoration-color:color-mix(in srgb,var(--accent) 35%,transparent);
   text-underline-offset:.16em}

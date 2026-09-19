@@ -11,7 +11,7 @@
             font-family: 'Georgia', 'Cambria', 'Times New Roman', serif;
             background: #fdf8f3;
             color: #2d2d2d;
-            font-size: 1.15rem;
+            font-size: 1.35rem;
             line-height: 1.8;
         }
         .hero {
@@ -200,10 +200,86 @@
             .nav-footer { flex-direction: column; align-items: stretch; text-align: center; }
         }
         .svg-container { overflow-x: auto; }
+    
+        /* ---------- sticky topbar ---------- */
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            background: rgba(253, 248, 243, 0.92);
+            backdrop-filter: saturate(1.6) blur(12px);
+            -webkit-backdrop-filter: saturate(1.6) blur(12px);
+            border-bottom: 1px solid #e2d9ce;
+            padding: 0.5rem 1rem;
+        }
+        .topbar-in {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .topbar .crumb {
+            flex: 1;
+            min-width: 0;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.82rem;
+            color: #666;
+        }
+        .topbar .crumb a {
+            color: #666;
+            text-decoration: none;
+        }
+        .topbar .crumb a:hover {
+            color: #0d4f4f;
+        }
+        .topbar .crumb .c2 {
+            font-weight: 600;
+            color: #2d2d2d;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .tb-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 2.1rem;
+            height: 2.1rem;
+            padding: 0 0.55rem;
+            border-radius: 99px;
+            border: 1px solid #e2d9ce;
+            background: #fff;
+            color: #2d2d2d;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.85rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.12s ease, border-color 0.12s ease;
+        }
+        .tb-btn:hover {
+            border-color: #0d4f4f;
+            color: #0d4f4f;
+            transform: translateY(-1px);
+        }
+        .tb-btn[aria-disabled="true"] {
+            opacity: 0.32;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
-    <div class="hero">
+    <header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" href="../07-linear-and-fractional-equations-and-formulas/index.html" title="Linear and Fractional Equations and Formulas">←</a>
+  <div class="crumb">
+    <span><a href="../index.html">Practical Algebra</a></span>
+    <span class="c2">Ch 8 &mdash; Functions and Graphs</span>
+  </div>
+  <a class="tb-btn" href="../09-quadratic-equations/index.html" title="Quadratic Equations">→</a>
+</div>
+</header>
+<div class="hero">
         <div class="chapter-num">8</div>
         <div style="position:relative">
             <p style="font-family: 'Segoe UI',sans-serif; text-transform:uppercase; letter-spacing:0.2em; font-size:0.9rem; opacity:0.7; margin-bottom:0.5rem;">Chapter 8</p>
