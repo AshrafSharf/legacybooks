@@ -50,6 +50,9 @@
     fab.classList.add('capturing');
     toast('Capturing page…');
 
+    // Close any open drawers/dropdowns
+    document.querySelectorAll('details[open]').forEach(function (d) { d.removeAttribute('open'); });
+
     // Hide FABs and overlays during capture
     var fabs = document.querySelectorAll('.lb-search-fab,.lb-screenshot-fab,.lb-screenshot-toast,.lb-search-overlay');
     fabs.forEach(function (el) { el.style.visibility = 'hidden'; });
