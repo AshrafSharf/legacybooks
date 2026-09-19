@@ -50,8 +50,8 @@
     fab.classList.add('capturing');
     toast('Capturing page…');
 
-    // Hide FABs during capture
-    var fabs = document.querySelectorAll('.lb-search-fab,.lb-screenshot-fab,.lb-screenshot-toast');
+    // Hide FABs and overlays during capture
+    var fabs = document.querySelectorAll('.lb-search-fab,.lb-screenshot-fab,.lb-screenshot-toast,.lb-search-overlay');
     fabs.forEach(function (el) { el.style.visibility = 'hidden'; });
 
     loadHtml2Canvas(function () {
@@ -63,6 +63,14 @@
         useCORS: true,
         allowTaint: true,
         scale: 2,
+        ignoreElements: function (el) {
+          return el.classList && (
+            el.classList.contains('lb-search-fab') ||
+            el.classList.contains('lb-screenshot-fab') ||
+            el.classList.contains('lb-screenshot-toast') ||
+            el.classList.contains('lb-search-overlay')
+          );
+        },
       }).then(function (canvas) {
         var title = document.title.replace(/[^a-zA-Z0-9 _-]/g, '').trim().replace(/\s+/g, '-') || 'page';
         var link = document.createElement('a');
@@ -72,7 +80,7 @@
         toast('Screenshot saved!');
       }).catch(function (err) {
         console.error('Screenshot error:', err);
-        toast('Screenshot failed');
+        toast('Screenshot failed — try again');
       }).finally(function () {
         fabs.forEach(function (el) { el.style.visibility = ''; });
         fab.classList.remove('capturing');

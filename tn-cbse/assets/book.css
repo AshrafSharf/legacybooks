@@ -17,6 +17,9 @@
     --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
     --shadow-lg:0 2px 4px rgba(0,0,0,.35),0 18px 48px rgba(0,0,0,.5);
   }
+  :root:not([data-theme="light"]) .topbar{background:rgba(21,23,27,.88)}
+  :root:not([data-theme="light"]) a{text-decoration-color:rgba(228,121,90,.35)}
+  :root:not([data-theme="light"]) .hero{background:linear-gradient(180deg,rgba(44,33,29,.6),transparent)}
 }
 :root[data-theme="dark"]{
   --paper:#15171b; --paper-2:#1c1f25; --ink:#e8e3db; --ink-soft:#a49c91;
@@ -25,18 +28,21 @@
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
   --shadow-lg:0 2px 4px rgba(0,0,0,.35),0 18px 48px rgba(0,0,0,.5);
 }
+:root[data-theme="dark"] .topbar{background:rgba(21,23,27,.88)}
+:root[data-theme="dark"] a{text-decoration-color:rgba(228,121,90,.35)}
+:root[data-theme="dark"] .hero{background:linear-gradient(180deg,rgba(44,33,29,.6),transparent)}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);
   font-size:1.25rem;line-height:1.72;text-rendering:optimizeLegibility}
 h1,h2,h3,h4,h5,.sans{font-family:var(--sans);line-height:1.25;letter-spacing:-.011em}
-a{color:var(--accent);text-decoration-color:color-mix(in srgb,var(--accent) 35%,transparent);
+a{color:var(--accent);text-decoration-color:rgba(176,71,43,.35);
   text-underline-offset:.16em}
 a:hover{text-decoration-color:currentColor}
 img{max-width:100%;height:auto}
 
 /* ---------- top bar ---------- */
-.topbar{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--paper) 88%,transparent);
+.topbar{position:sticky;top:0;z-index:40;background:rgba(252,248,243,.88);
   backdrop-filter:saturate(1.6) blur(12px);-webkit-backdrop-filter:saturate(1.6) blur(12px);
   border-bottom:1px solid var(--rule)}
 .topbar-in{max-width:var(--maxw);margin:0 auto;padding:.55rem 1rem;display:flex;align-items:center;gap:.6rem}
@@ -134,7 +140,7 @@ aside.sidenote p:last-child{margin:0}
 
 /* ---------- index pages ---------- */
 .hero{padding:3rem 1rem 2.2rem;text-align:center;border-bottom:1px solid var(--rule);
-  background:linear-gradient(180deg,color-mix(in srgb,var(--accent-soft) 60%,transparent),transparent)}
+  background:linear-gradient(180deg,rgba(246,231,224,.6),transparent)}
 .hero .eyebrow{margin-bottom:.7rem}
 .hero h1{margin:0 auto;max-width:22ch;font-size:clamp(1.9rem,1.3rem + 2.6vw,2.9rem);font-weight:780}
 .hero p{margin:.8rem auto 0;max-width:48ch;color:var(--ink-soft);font-size:1rem}

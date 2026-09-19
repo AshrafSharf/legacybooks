@@ -294,7 +294,7 @@
       return;
     }
     var s = document.createElement('script');
-    s.src = 'https://cdn.jsdelivr.net/npm/minisearch@7/dist/minisearch.min.js';
+    s.src = 'https://cdn.jsdelivr.net/npm/minisearch@7.2.0/dist/umd/index.min.js';
     s.onload = createUI;
     s.onerror = function () { console.error('Failed to load MiniSearch'); };
     document.head.appendChild(s);
