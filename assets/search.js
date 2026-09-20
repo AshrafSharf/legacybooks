@@ -19,7 +19,7 @@
     base = '../'.repeat(Math.max(0, depth));
   }
 
-  var INDEX_URL = base + 'assets/search-index.json';
+  var INDEX_URL = base + 'assets/search-index.json?v=1789782769';
 
   /* ── state ── */
   var docs = null;
@@ -164,8 +164,11 @@
     loading = true;
     results.innerHTML = '<div class="lb-search-loading"><span class="spinner"></span><br>Loading search index…</div>';
 
-    fetch(INDEX_URL)
-      .then(function (r) { return r.json(); })
+    fetch(INDEX_URL, { cache: 'no-cache' })
+      .then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
       .then(function (data) {
         docs = data;
         buildMiniSearch();
