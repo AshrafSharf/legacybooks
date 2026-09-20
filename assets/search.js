@@ -8,7 +8,7 @@
   var scriptEl = document.currentScript;
   var base = '';
   if (scriptEl) {
-    var src = scriptEl.getAttribute('src') || '';
+    var src = scriptEl.src || '';
     base = src.replace(/assets\/search\.js.*$/, '');
   }
   if (!base && document.querySelector('link[href*="assets/search.css"]')) {
