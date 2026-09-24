@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12.2.1 Mathematical formulation of the problem — Linear Programming</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Linear Programming · 12.2.1 Mathematical formulation of the problem">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../12-linear-programming/02-linear-programming-problem-and-its-mathematical-formulatio-12.2/index.html" title="12.2 Linear Programming Problem and its Mathematical Formulation">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Linear Programming</a></span>
+    <span class="c2">12.2.1 Mathematical formulation of the problem</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 12 · Linear Programming</div><a href="../01-introduction-12.1/index.html">12.1 Introduction</a><a href="../02-linear-programming-problem-and-its-mathematical-formulatio-12.2/index.html">12.2 Linear Programming Problem and its Mathematical Formulation</a><a href="../03-mathematical-formulation-of-the-problem-12.2.1/index.html" aria-current="page">12.2.1 Mathematical formulation of the problem</a><a href="../04-graphical-method-of-solving-linear-programming-problems-12.2.2/index.html">12.2.2 Graphical method of solving linear programming problems</a><a href="../05-exercise-12.1/index.html">Exercise 12.1</a><a href="../06-summary/index.html">Summary</a><a href="../07-historical-note/index.html">Historical Note</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../12-linear-programming/04-graphical-method-of-solving-linear-programming-problems-12.2.2/index.html" title="12.2.2 Graphical method of solving linear programming problems">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">12</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 12 · Linear Programming</a></p>
+        <h1>12.2.1 Mathematical formulation of the problem</h1>
+        <p class="subtitle">Decision variables, constraints and an objective function — the language of linear programming</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>Introducing <strong>decision variables</strong> \(x\) (tables) and \(y\) (chairs)</li>
+        <li>Writing the <span class="teal">non-negative</span>, <span class="teal">investment</span> and <span class="teal">storage</span> constraints as inequalities</li>
+        <li>The <strong>objective function</strong> \(Z = 250x + 75y\)</li>
+        <li>Formal definitions: linear programming problem, objective function, constraints, optimisation problem</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Translating the Dealer&rsquo;s Problem</h2>
+    <p>Let \(x\) be the number of tables and \(y\) be the number of chairs that the dealer buys. Obviously, \(x\) and \(y\) must be non-negative, i.e.,</p>
+    \[ x \ge 0 \tag{1} \]
+    \[ y \ge 0 \tag{2} \]
+    <p style="text-align:center;">(Non-negative constraints)</p>
+
+    <p>The dealer is constrained by the maximum amount he can invest (Here it is Rs 50,000) and by the maximum number of items he can store (Here it is 60). Stated mathematically,</p>
+    \[ 2500x + 500y \le 50000 \quad \text{(investment constraint)} \]
+    \[ \text{or} \qquad 5x + y \le 100 \tag{3} \]
+    \[ \text{and} \qquad x + y \le 60 \quad \text{(storage constraint)} \tag{4} \]
+
+    <p>The dealer wants to invest in such a way so as to maximise his profit, say, Z which stated as a function of \(x\) and \(y\) is given by</p>
+    \[ Z = 250x + 75y \quad \text{(called objective function)} \tag{5} \]
+
+    <div class="box box-formula">
+        <div class="box-label">The Problem in Mathematical Form</div>
+        <p>Mathematically, the given problem now reduces to:</p>
+        \[ \text{Maximise } Z = 250x + 75y \]
+        <p>subject to the constraints:</p>
+        \[ \begin{aligned} 5x + y &amp;\le 100 \\ x + y &amp;\le 60 \\ x \ge 0,\ y &amp;\ge 0 \end{aligned} \]
+    </div>
+</div>
+
+<div class="card">
+    <h2>Linear Programming Problems</h2>
+    <p>So, we have to maximise the linear function Z subject to certain conditions determined by a set of linear inequalities with variables as non-negative. There are also some other problems where we have to minimise a linear function subject to certain conditions determined by a set of linear inequalities with variables as non-negative. Such problems are called <strong>Linear Programming Problems</strong>.</p>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Linear Programming Problem</div>
+        <p>A <strong>Linear Programming Problem</strong> is one that is concerned with finding the <em>optimal value</em> (maximum or minimum value) of a linear function (called <strong>objective function</strong>) of several variables (say \(x\) and \(y\)), subject to the conditions that the variables are <strong>non-negative</strong> and satisfy a set of linear inequalities (called <strong>linear constraints</strong>).</p>
+    </div>
+
+    <p>The term <em>linear</em> implies that all the mathematical relations used in the problem are linear relations while the term <em>programming</em> refers to the method of determining a particular programme or plan of action.</p>
+</div>
+
+<div class="card">
+    <h2>Important Terms</h2>
+    <p>Before we proceed further, we now formally define some terms (which have been used above) which we shall be using in the linear programming problems:</p>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Objective Function</div>
+        <p>Linear function \(Z = ax + by\), where \(a, b\) are constants, which has to be maximised or minimized is called a <strong>linear objective function</strong>.</p>
+        <p>In the above example, \(Z = 250x + 75y\) is a linear objective function. Variables \(x\) and \(y\) are called <strong>decision variables</strong>.</p>
+    </div>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Constraints</div>
+        <p>The linear inequalities or equations or restrictions on the variables of a linear programming problem are called <strong>constraints</strong>. The conditions \(x \ge 0,\ y \ge 0\) are called <strong>non-negative restrictions</strong>. In the above example, the set of inequalities (1) to (4) are constraints.</p>
+    </div>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Optimisation Problem</div>
+        <p>A problem which seeks to maximise or minimise a linear function (say of two variables \(x\) and \(y\)) subject to certain constraints as determined by a set of linear inequalities is called an <strong>optimisation problem</strong>. Linear programming problems are special type of optimisation problems.</p>
+    </div>
+
+    <p>The above problem of investing a given sum by the dealer in purchasing chairs and tables is an example of an optimisation problem as well as of a linear programming problem.</p>
+
+    <p>We will now discuss how to find solutions to a linear programming problem. In this chapter, we will be concerned only with the <strong>graphical method</strong>.</p>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../12-linear-programming/02-linear-programming-problem-and-its-mathematical-formulatio-12.2/index.html" class="nav-btn">&larr; 12.2 Linear Programming Problem and its Mathematical Formulation</a>
+    <a href="../../12-linear-programming/04-graphical-method-of-solving-linear-programming-problems-12.2.2/index.html" class="nav-btn">12.2.2 Graphical method of solving linear programming problems &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

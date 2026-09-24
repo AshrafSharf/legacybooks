@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 11.2 — Three Dimensional Geometry</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Three Dimensional Geometry · Exercise 11.2">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../11-three-dimensional-geometry/10-distance-between-parallel-lines-11.5.2/index.html" title="11.5.2 Distance between parallel lines">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Three Dimensional Geometry</a></span>
+    <span class="c2">Exercise 11.2</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 11 · Three Dimensional Geometry</div><a href="../01-introduction-11.1/index.html">11.1 Introduction</a><a href="../02-direction-cosines-and-direction-ratios-of-a-line-11.2/index.html">11.2 Direction Cosines and Direction Ratios of a Line</a><a href="../03-direction-cosines-of-a-line-passing-through-two-points-11.2.1/index.html">11.2.1 Direction cosines of a line passing through two points</a><a href="../04-exercise-11.1/index.html">Exercise 11.1</a><a href="../05-equation-of-a-line-in-space-11.3/index.html">11.3 Equation of a Line in Space</a><a href="../06-equation-of-a-line-through-a-given-point-and-parallel-to-g-11.3.1/index.html">11.3.1 Equation of a line through a given point and parallel to a given vector b⃗</a><a href="../07-angle-between-two-lines-11.4/index.html">11.4 Angle between Two Lines</a><a href="../08-shortest-distance-between-two-lines-11.5/index.html">11.5 Shortest Distance between Two Lines</a><a href="../09-distance-between-two-skew-lines-11.5.1/index.html">11.5.1 Distance between two skew lines</a><a href="../10-distance-between-parallel-lines-11.5.2/index.html">11.5.2 Distance between parallel lines</a><a href="../11-exercise-11.2/index.html" aria-current="page">Exercise 11.2</a><a href="../12-miscellaneous-exercise-on-chapter-11/index.html">Miscellaneous Exercise on Chapter 11</a><a href="../13-summary/index.html">Summary</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../11-three-dimensional-geometry/12-miscellaneous-exercise-on-chapter-11/index.html" title="Miscellaneous Exercise on Chapter 11">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">11</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 11 · Three Dimensional Geometry</a></p>
+        <h1>Exercise 11.2</h1>
+        <p class="subtitle">Perpendicular and parallel lines, equations of lines, angles between them and shortest distances</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>Exercise 11.2</h2>
+    <div class="box box-insight">
+        <div class="box-label">Tools you need</div>
+        <p>Line: \(\vec{r} = \vec{a} + \lambda\vec{b}\) or \(\dfrac{x - x_1}{a} = \dfrac{y - y_1}{b} = \dfrac{z - z_1}{c}\). Angle: \(\cos\theta = \left|\dfrac{\vec{b}_1\cdot\vec{b}_2}{|\vec{b}_1||\vec{b}_2|}\right|\). Skew lines: \(d = \left|\dfrac{(\vec{b}_1 \times \vec{b}_2)\cdot(\vec{a}_2 - \vec{a}_1)}{|\vec{b}_1 \times \vec{b}_2|}\right|\). Parallel lines: \(d = \left|\dfrac{\vec{b} \times (\vec{a}_2 - \vec{a}_1)}{|\vec{b}|}\right|\).</p>
+    </div>
+
+    <div class="question">
+        <span class="q-num">1</span>
+        <div class="q-body">
+            <p>Show that the three lines with direction cosines</p>
+            \[ \frac{12}{13}, \frac{-3}{13}, \frac{-4}{13};\quad \frac{4}{13}, \frac{12}{13}, \frac{3}{13};\quad \frac{3}{13}, \frac{-4}{13}, \frac{12}{13} \]
+            <p>are mutually perpendicular.</p>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">2</span>
+        <div class="q-body">
+            <p>Show that the line through the points \((1, -1, 2)\), \((3, 4, -2)\) is perpendicular to the line through the points \((0, 3, 2)\) and \((3, 5, 6)\).</p>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">3</span>
+        <div class="q-body">
+            <p>Show that the line through the points \((4, 7, 8)\), \((2, 3, 4)\) is parallel to the line through the points \((-1, -2, 1)\), \((1, 2, 5)\).</p>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">4</span>
+        <div class="q-body">
+            <p>Find the equation of the line which passes through the point \((1, 2, 3)\) and is parallel to the vector \(3\hat{i} + 2\hat{j} - 2\hat{k}\).</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( \vec{r} = \hat{i} + 2\hat{j} + 3\hat{k} + \lambda\left(3\hat{i} + 2\hat{j} - 2\hat{k}\right) \), where \(\lambda\) is a real number</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">5</span>
+        <div class="q-body">
+            <p>Find the equation of the line in vector and in cartesian form that passes through the point with position vector \(2\hat{i} - \hat{j} + 4\hat{k}\) and is in the direction \(\hat{i} + 2\hat{j} - \hat{k}\).</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( \vec{r} = 2\hat{i} - \hat{j} + 4\hat{k} + \lambda\left(\hat{i} + 2\hat{j} - \hat{k}\right) \) and cartesian form is \( \dfrac{x - 2}{1} = \dfrac{y + 1}{2} = \dfrac{z - 4}{-1} \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">6</span>
+        <div class="q-body">
+            <p>Find the cartesian equation of the line which passes through the point \((-2, 4, -5)\) and parallel to the line given by \(\dfrac{x + 3}{3} = \dfrac{y - 4}{5} = \dfrac{z + 8}{6}\).</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( \dfrac{x + 2}{3} = \dfrac{y - 4}{5} = \dfrac{z + 5}{6} \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">7</span>
+        <div class="q-body">
+            <p>The cartesian equation of a line is \(\dfrac{x - 5}{3} = \dfrac{y + 4}{7} = \dfrac{z - 6}{2}\). Write its vector form.</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( \vec{r} = \left(5\hat{i} - 4\hat{j} + 6\hat{k}\right) + \lambda\left(3\hat{i} + 7\hat{j} + 2\hat{k}\right) \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">8</span>
+        <div class="q-body">
+            <p>Find the angle between the following pairs of lines:</p>
+            <ul class="sub-list">
+                <li>(i) \(\vec{r} = 2\hat{i} - 5\hat{j} + \hat{k} + \lambda\left(3\hat{i} + 2\hat{j} + 6\hat{k}\right)\) and \(\vec{r} = 7\hat{i} - 6\hat{k} + \mu\left(\hat{i} + 2\hat{j} + 2\hat{k}\right)\)</li>
+                <li>(ii) \(\vec{r} = 3\hat{i} + \hat{j} - 2\hat{k} + \lambda\left(\hat{i} - \hat{j} - 2\hat{k}\right)\) and \(\vec{r} = 2\hat{i} - \hat{j} - 56\hat{k} + \mu\left(3\hat{i} - 5\hat{j} - 4\hat{k}\right)\)</li>
+            </ul>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">(i) \( \theta = \cos^{-1}\left(\dfrac{19}{21}\right) \) &nbsp;&nbsp; (ii) \( \theta = \cos^{-1}\left(\dfrac{8}{5\sqrt{3}}\right) \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">9</span>
+        <div class="q-body">
+            <p>Find the angle between the following pair of lines:</p>
+            <ul class="sub-list">
+                <li>(i) \(\dfrac{x - 2}{2} = \dfrac{y - 1}{5} = \dfrac{z + 3}{-3}\) and \(\dfrac{x + 2}{-1} = \dfrac{y - 4}{8} = \dfrac{z - 5}{4}\)</li>
+                <li>(ii) \(\dfrac{x}{2} = \dfrac{y}{2} = \dfrac{z}{1}\) and \(\dfrac{x - 5}{4} = \dfrac{y - 2}{1} = \dfrac{z - 3}{8}\)</li>
+            </ul>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">(i) \( \theta = \cos^{-1}\left(\dfrac{26}{9\sqrt{38}}\right) \) &nbsp;&nbsp; (ii) \( \theta = \cos^{-1}\left(\dfrac{2}{3}\right) \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">10</span>
+        <div class="q-body">
+            <p>Find the values of \(p\) so that the lines \(\dfrac{1 - x}{3} = \dfrac{7y - 14}{2p} = \dfrac{z - 3}{2}\) and \(\dfrac{7 - 7x}{3p} = \dfrac{y - 5}{1} = \dfrac{6 - z}{5}\) are at right angles.</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( p = \dfrac{70}{11} \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">11</span>
+        <div class="q-body">
+            <p>Show that the lines \(\dfrac{x - 5}{7} = \dfrac{y + 2}{-5} = \dfrac{z}{1}\) and \(\dfrac{x}{1} = \dfrac{y}{2} = \dfrac{z}{3}\) are perpendicular to each other.</p>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">12</span>
+        <div class="q-body">
+            <p>Find the shortest distance between the lines</p>
+            \[ \vec{r} = \left(\hat{i} + 2\hat{j} + \hat{k}\right) + \lambda\left(\hat{i} - \hat{j} + \hat{k}\right) \quad\text{and}\quad \vec{r} = 2\hat{i} - \hat{j} - \hat{k} + \mu\left(2\hat{i} + \hat{j} + 2\hat{k}\right) \]
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( \dfrac{3\sqrt{2}}{2} \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">13</span>
+        <div class="q-body">
+            <p>Find the shortest distance between the lines</p>
+            \[ \frac{x + 1}{7} = \frac{y + 1}{-6} = \frac{z + 1}{1} \quad\text{and}\quad \frac{x - 3}{1} = \frac{y - 5}{-2} = \frac{z - 7}{1} \]
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( 2\sqrt{29} \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">14</span>
+        <div class="q-body">
+            <p>Find the shortest distance between the lines whose vector equations are</p>
+            \[ \vec{r} = \left(\hat{i} + 2\hat{j} + 3\hat{k}\right) + \lambda\left(\hat{i} - 3\hat{j} + 2\hat{k}\right) \quad\text{and}\quad \vec{r} = 4\hat{i} + 5\hat{j} + 6\hat{k} + \mu\left(2\hat{i} + 3\hat{j} + \hat{k}\right) \]
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( \dfrac{3}{\sqrt{19}} \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">15</span>
+        <div class="q-body">
+            <p>Find the shortest distance between the lines whose vector equations are</p>
+            \[ \vec{r} = (1 - t)\hat{i} + (t - 2)\hat{j} + (3 - 2t)\hat{k} \quad\text{and}\quad \vec{r} = (s + 1)\hat{i} + (2s - 1)\hat{j} - (2s + 1)\hat{k} \]
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( \dfrac{8}{\sqrt{29}} \)</p></div>
+        </div>
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../11-three-dimensional-geometry/10-distance-between-parallel-lines-11.5.2/index.html" class="nav-btn">&larr; 11.5.2 Distance between parallel lines</a>
+    <a href="../../11-three-dimensional-geometry/12-miscellaneous-exercise-on-chapter-11/index.html" class="nav-btn">Miscellaneous Exercise on Chapter 11 &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

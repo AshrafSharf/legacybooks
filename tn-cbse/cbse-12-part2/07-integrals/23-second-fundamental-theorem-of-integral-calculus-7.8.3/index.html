@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.8.3 Second fundamental theorem of integral calculus — Integrals</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Integrals · 7.8.3 Second fundamental theorem of integral calculus">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../07-integrals/22-first-fundamental-theorem-of-integral-calculus-7.8.2/index.html" title="7.8.2 First fundamental theorem of integral calculus">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Integrals</a></span>
+    <span class="c2">7.8.3 Second fundamental theorem of integral calculus</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 7 · Integrals</div><a href="../01-introduction-7.1/index.html">7.1 Introduction</a><a href="../02-integration-as-an-inverse-process-of-differentiation-7.2/index.html">7.2 Integration as an Inverse Process of Differentiation</a><a href="../03-some-properties-of-indefinite-integral-7.2.1/index.html">7.2.1 Some properties of indefinite integral</a><a href="../04-exercise-7.1/index.html">Exercise 7.1</a><a href="../05-methods-of-integration-7.3/index.html">7.3 Methods of Integration</a><a href="../06-integration-by-substitution-7.3.1/index.html">7.3.1 Integration by substitution</a><a href="../07-exercise-7.2/index.html">Exercise 7.2</a><a href="../08-integration-using-trigonometric-identities-7.3.2/index.html">7.3.2 Integration using trigonometric identities</a><a href="../09-exercise-7.3/index.html">Exercise 7.3</a><a href="../10-integrals-of-some-particular-functions-7.4/index.html">7.4 Integrals of Some Particular Functions</a><a href="../11-exercise-7.4/index.html">Exercise 7.4</a><a href="../12-integration-by-partial-fractions-7.5/index.html">7.5 Integration by Partial Fractions</a><a href="../13-exercise-7.5/index.html">Exercise 7.5</a><a href="../14-integration-by-parts-7.6/index.html">7.6 Integration by Parts</a><a href="../15-integral-of-the-type-7.6.1/index.html">7.6.1 Integral of the type ∫eˣ[f(x) + f′(x)] dx</a><a href="../16-exercise-7.6/index.html">Exercise 7.6</a><a href="../17-integrals-of-some-more-types-7.6.2/index.html">7.6.2 Integrals of some more types</a><a href="../18-exercise-7.7/index.html">Exercise 7.7</a><a href="../19-definite-integral-7.7/index.html">7.7 Definite Integral</a><a href="../20-fundamental-theorem-of-calculus-7.8/index.html">7.8 Fundamental Theorem of Calculus</a><a href="../21-area-function-7.8.1/index.html">7.8.1 Area function</a><a href="../22-first-fundamental-theorem-of-integral-calculus-7.8.2/index.html">7.8.2 First fundamental theorem of integral calculus</a><a href="../23-second-fundamental-theorem-of-integral-calculus-7.8.3/index.html" aria-current="page">7.8.3 Second fundamental theorem of integral calculus</a><a href="../24-exercise-7.8/index.html">Exercise 7.8</a><a href="../25-evaluation-of-definite-integrals-by-substitution-7.9/index.html">7.9 Evaluation of Definite Integrals by Substitution</a><a href="../26-exercise-7.9/index.html">Exercise 7.9</a><a href="../27-some-properties-of-definite-integrals-7.10/index.html">7.10 Some Properties of Definite Integrals</a><a href="../28-exercise-7.10/index.html">Exercise 7.10</a><a href="../29-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../30-miscellaneous-exercise-on-chapter-7/index.html">Miscellaneous Exercise on Chapter 7</a><a href="../31-summary/index.html">Summary</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../07-integrals/24-exercise-7.8/index.html" title="Exercise 7.8">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">7</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 7 · Integrals</a></p>
+        <h1>7.8.3 Second fundamental theorem of integral calculus</h1>
+        <p class="subtitle">Evaluate a definite integral with any anti derivative — just F(b) − F(a)</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>The <strong>second fundamental theorem</strong>: \( \int_a^b f(x)\,dx = \mathrm{F}(b) - \mathrm{F}(a) \)</li>
+        <li>Why the integrand must be defined and continuous on the whole of \([a, b]\)</li>
+        <li>Why the constant of integration C can be dropped</li>
+        <li>A two-step method for calculating definite integrals, with four worked examples</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>The Second Fundamental Theorem</h2>
+    <p>We state below an important theorem which enables us to evaluate definite integrals by making use of anti derivative.</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Theorem 2</div>
+        <p>Let \(f\) be continuous function defined on the closed interval \([a, b]\) and F be an anti derivative of \(f\). Then</p>
+        \[ \int_a^b f(x)\,dx = \Big[\mathrm{F}(x)\Big]_a^b = \mathrm{F}(b) - \mathrm{F}(a). \]
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Remarks</div>
+        <ol type="i">
+            <li>In words, the Theorem 2 tells us that \( \int_a^b f(x)\,dx \) = (value of the anti derivative F of \(f\) at the upper limit \(b\) &minus; value of the same anti derivative at the lower limit \(a\)).</li>
+            <li>This theorem is very useful, because it gives us a method of calculating the definite integral more easily, without calculating the limit of a sum.</li>
+            <li>The crucial operation in evaluating a definite integral is that of finding a function whose derivative is equal to the integrand. This strengthens the relationship between differentiation and integration.</li>
+            <li>In \( \int_a^b f(x)\,dx \), the function \(f\) needs to be well defined and continuous in \([a, b]\). For instance, the consideration of definite integral \( \displaystyle\int_{-2}^{3} x(x^2 - 1)^{\frac{1}{2}}\,dx \) is erroneous since the function \(f\) expressed by \( f(x) = x(x^2 - 1)^{\frac{1}{2}} \) is not defined in a portion \( -1 \lt x \lt 1 \) of the closed interval \([-2, 3]\).</li>
+        </ol>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Steps for Calculating \( \int_a^b f(x)\,dx \)</h2>
+
+    <div class="step-row"><span class="step-num">1</span><div class="step-content">
+        <p>Find the indefinite integral \( \int f(x)\,dx \). Let this be \( \mathrm{F}(x) \). There is no need to keep integration constant C because if we consider \( \mathrm{F}(x) + \mathrm{C} \) instead of \( \mathrm{F}(x) \), we get</p>
+        \[ \int_a^b f(x)\,dx = \Big[\mathrm{F}(x) + \mathrm{C}\Big]_a^b = [\mathrm{F}(b) + \mathrm{C}] - [\mathrm{F}(a) + \mathrm{C}] = \mathrm{F}(b) - \mathrm{F}(a). \]
+        <p>Thus, the arbitrary constant disappears in evaluating the value of the definite integral.</p>
+    </div></div>
+
+    <div class="step-row"><span class="step-num">2</span><div class="step-content">
+        <p>Evaluate \( \mathrm{F}(b) - \mathrm{F}(a) = \Big[\mathrm{F}(x)\Big]_a^b \), which is the value of \( \int_a^b f(x)\,dx \).</p>
+    </div></div>
+</div>
+
+<div class="card">
+    <h2>Worked Example</h2>
+    <p>We now consider some examples.</p>
+
+    <div class="box box-example">
+        <div class="box-label">Example 25</div>
+        <p>Evaluate the following integrals:</p>
+        <table>
+            <tr>
+                <td>(i) \( \displaystyle\int_2^3 x^2\,dx \)</td>
+                <td>(ii) \( \displaystyle\int_4^9 \frac{\sqrt{x}}{\left(30 - x^{\frac{3}{2}}\right)^2}\,dx \)</td>
+            </tr>
+            <tr>
+                <td>(iii) \( \displaystyle\int_1^2 \frac{x\,dx}{(x+1)(x+2)} \)</td>
+                <td>(iv) \( \displaystyle\int_0^{\frac{\pi}{4}} \sin^3 2t\cos 2t\,dt \)</td>
+            </tr>
+        </table>
+
+        <p><strong>Solution</strong></p>
+
+        <h3>(i)</h3>
+        <p>Let \( \mathrm{I} = \displaystyle\int_2^3 x^2\,dx \). Since \( \displaystyle\int x^2\,dx = \frac{x^3}{3} = \mathrm{F}(x) \),</p>
+        <p>Therefore, by the second fundamental theorem, we get</p>
+        \[ \mathrm{I} = \mathrm{F}(3) - \mathrm{F}(2) = \frac{27}{3} - \frac{8}{3} = \frac{19}{3} \]
+
+        <h3>(ii)</h3>
+        <p>Let \( \mathrm{I} = \displaystyle\int_4^9 \frac{\sqrt{x}}{\left(30 - x^{\frac{3}{2}}\right)^2}\,dx \). We first find the anti derivative of the integrand.</p>
+        <p>Put \( 30 - x^{\frac{3}{2}} = t \). Then \( -\dfrac{3}{2}\sqrt{x}\,dx = dt \) or \( \sqrt{x}\,dx = -\dfrac{2}{3}\,dt \).</p>
+        <p>Thus,</p>
+        \[ \int \frac{\sqrt{x}}{\left(30 - x^{\frac{3}{2}}\right)^2}\,dx = -\frac{2}{3}\int \frac{dt}{t^2} = \frac{2}{3}\left[\frac{1}{t}\right] = \frac{2}{3}\left[\frac{1}{\left(30 - x^{\frac{3}{2}}\right)}\right] = \mathrm{F}(x) \]
+        <p>Therefore, by the second fundamental theorem of calculus, we have</p>
+        \[
+        \begin{aligned}
+        \mathrm{I} = \mathrm{F}(9) - \mathrm{F}(4) &= \frac{2}{3}\left[\frac{1}{\left(30 - x^{\frac{3}{2}}\right)}\right]_4^9 \\
+        &= \frac{2}{3}\left[\frac{1}{(30 - 27)} - \frac{1}{30 - 8}\right] = \frac{2}{3}\left[\frac{1}{3} - \frac{1}{22}\right] = \frac{19}{99}
+        \end{aligned}
+        \]
+
+        <h3>(iii)</h3>
+        <p>Let \( \mathrm{I} = \displaystyle\int_1^2 \frac{x\,dx}{(x+1)(x+2)} \).</p>
+        <p>Using partial fraction, we get \( \dfrac{x}{(x+1)(x+2)} = \dfrac{-1}{x+1} + \dfrac{2}{x+2} \)</p>
+        <p>So</p>
+        \[ \int \frac{x\,dx}{(x+1)(x+2)} = -\log|x+1| + 2\log|x+2| = \mathrm{F}(x) \]
+        <p>Therefore, by the second fundamental theorem of calculus, we have</p>
+        \[
+        \begin{aligned}
+        \mathrm{I} = \mathrm{F}(2) - \mathrm{F}(1) &= [-\log 3 + 2\log 4] - [-\log 2 + 2\log 3] \\
+        &= -3\log 3 + \log 2 + 2\log 4 = \log\left(\frac{32}{27}\right)
+        \end{aligned}
+        \]
+
+        <h3>(iv)</h3>
+        <p>Let \( \mathrm{I} = \displaystyle\int_0^{\frac{\pi}{4}} \sin^3 2t\cos 2t\,dt \). Consider \( \displaystyle\int \sin^3 2t\cos 2t\,dt \).</p>
+        <p>Put \( \sin 2t = u \) so that \( 2\cos 2t\,dt = du \) or \( \cos 2t\,dt = \dfrac{1}{2}\,du \)</p>
+        <p>So</p>
+        \[
+        \begin{aligned}
+        \int \sin^3 2t\cos 2t\,dt &= \frac{1}{2}\int u^3\,du \\
+        &= \frac{1}{8}[u^4] = \frac{1}{8}\sin^4 2t = \mathrm{F}(t) \text{ say}
+        \end{aligned}
+        \]
+        <p>Therefore, by the second fundamental theorem of integral calculus</p>
+        \[ \mathrm{I} = \mathrm{F}\left(\frac{\pi}{4}\right) - \mathrm{F}(0) = \frac{1}{8}\left[\sin^4\frac{\pi}{2} - \sin^4 0\right] = \frac{1}{8} \]
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../07-integrals/22-first-fundamental-theorem-of-integral-calculus-7.8.2/index.html" class="nav-btn">&larr; 7.8.2 First fundamental theorem of integral calculus</a>
+    <a href="../../07-integrals/24-exercise-7.8/index.html" class="nav-btn">Exercise 7.8 &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

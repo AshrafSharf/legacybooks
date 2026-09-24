@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13.5.2 Theorem of total probability — Probability</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Probability · 13.5.2 Theorem of total probability">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../13-probability/09-partition-of-a-sample-space-13.5.1/index.html" title="13.5.1 Partition of a sample space">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Probability</a></span>
+    <span class="c2">13.5.2 Theorem of total probability</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 13 · Probability</div><a href="../01-introduction-13.1/index.html">13.1 Introduction</a><a href="../02-conditional-probability-13.2/index.html">13.2 Conditional Probability</a><a href="../03-properties-of-conditional-probability-13.2.1/index.html">13.2.1 Properties of conditional probability</a><a href="../04-exercise-13.1/index.html">Exercise 13.1</a><a href="../05-multiplication-theorem-on-probability-13.3/index.html">13.3 Multiplication Theorem on Probability</a><a href="../06-independent-events-13.4/index.html">13.4 Independent Events</a><a href="../07-exercise-13.2/index.html">Exercise 13.2</a><a href="../08-bayes-theorem-13.5/index.html">13.5 Bayes&#x27; Theorem</a><a href="../09-partition-of-a-sample-space-13.5.1/index.html">13.5.1 Partition of a sample space</a><a href="../10-theorem-of-total-probability-13.5.2/index.html" aria-current="page">13.5.2 Theorem of total probability</a><a href="../11-exercise-13.3/index.html">Exercise 13.3</a><a href="../12-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../13-miscellaneous-exercise-on-chapter-13/index.html">Miscellaneous Exercise on Chapter 13</a><a href="../14-summary/index.html">Summary</a><a href="../15-historical-note/index.html">Historical Note</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../13-probability/11-exercise-13.3/index.html" title="Exercise 13.3">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">13</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 13 · Probability</a></p>
+        <h1>13.5.2 Theorem of total probability</h1>
+        <p class="subtitle">Adding up the chances along every route, then reversing them with Bayes&#x27; theorem</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>The <strong>theorem of total probability</strong>: finding P(A) by splitting S into a partition</li>
+        <li>Statement and proof of <strong>Bayes&rsquo; theorem</strong> &mdash; the formula for the probability of &ldquo;causes&rdquo;</li>
+        <li>Hypotheses, <span class="teal">priori</span> and <span class="teal">a posteriori</span> probabilities</li>
+        <li>Worked applications: bags of balls, boxes of coins, medical tests, factories, a late doctor and a truthful man</li>
+        <li>A first look at <strong>random variables</strong></li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Theorem of Total Probability</h2>
+    <div class="box box-formula">
+        <div class="box-label">Theorem of Total Probability</div>
+        <p>Let \(\{E_1, E_2, \ldots, E_n\}\) be a partition of the sample space S, and suppose that each of the events \(E_1, E_2, \ldots, E_n\) has nonzero probability of occurrence. Let A be any event associated with S, then</p>
+        \[ \begin{aligned} P(A) &amp;= P(E_1)\,P(A|E_1) + P(E_2)\,P(A|E_2) + \ldots + P(E_n)\,P(A|E_n) \\ &amp;= \sum_{j=1}^{n} P(E_j)\,P(A|E_j) \end{aligned} \]
+    </div>
+
+    <figure class="diagram">
+        <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" style="max-width:520px;" role="img" aria-label="Rectangle S divided by curves into regions E1, E2, E3, …, En, with an ellipse A crossing all of them.">
+            <rect x="40" y="40" width="520" height="220" fill="#fff" stroke="#555" stroke-width="2"/>
+            <ellipse cx="300" cy="150" rx="210" ry="68" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="2.5"/>
+            <path d="M200 40 Q150 140 40 150" fill="none" stroke="#0d4f4f" stroke-width="2.2"/>
+            <path d="M100.6 135.9 Q170 190 170 260" fill="none" stroke="#0d4f4f" stroke-width="2.2"/>
+            <path d="M400 40 Q450 140 560 150" fill="none" stroke="#0d4f4f" stroke-width="2.2"/>
+            <path d="M499.4 135.9 Q430 190 430 260" fill="none" stroke="#0d4f4f" stroke-width="2.2"/>
+            <text x="300" y="30" font-size="18" font-weight="bold" fill="#2d2d2d" text-anchor="middle">S</text>
+            <text x="62" y="72" font-size="18" fill="#0d4f4f" font-style="italic">E&#8321;</text>
+            <text x="62" y="245" font-size="18" fill="#0d4f4f" font-style="italic">E&#8322;</text>
+            <text x="300" y="247" font-size="18" fill="#0d4f4f" font-style="italic" text-anchor="middle">E&#8323;</text>
+            <text x="538" y="72" font-size="18" fill="#0d4f4f" font-style="italic" text-anchor="end">E&#8345;</text>
+            <text x="495" y="245" font-size="18" fill="#0d4f4f" text-anchor="middle">&#8230;</text>
+            <text x="300" y="158" font-size="22" font-weight="bold" fill="#2b6cb0" text-anchor="middle">A</text>
+        </svg>
+        <figcaption>Fig 13.4 &mdash; The partition \(E_1, E_2, \ldots, E_n\) cuts the event A into disjoint pieces \(A \cap E_1, A \cap E_2, \ldots, A \cap E_n\).</figcaption>
+    </figure>
+
+    <h3>Proof</h3>
+    <p>Given that \(E_1, E_2, \ldots, E_n\) is a partition of the sample space S (Fig 13.4). Therefore,</p>
+    \[ S = E_1 \cup E_2 \cup \ldots \cup E_n \tag{1} \]
+    \[ \text{and} \quad E_i \cap E_j = \phi, \; i \neq j, \; i, j = 1, 2, \ldots, n \]
+    <p>Now, we know that for any event A,</p>
+    \[ \begin{aligned} A &amp;= A \cap S \\ &amp;= A \cap (E_1 \cup E_2 \cup \ldots \cup E_n) \\ &amp;= (A \cap E_1) \cup (A \cap E_2) \cup \ldots \cup (A \cap E_n) \end{aligned} \]
+    <p>Also \(A \cap E_i\) and \(A \cap E_j\) are respectively the subsets of \(E_i\) and \(E_j\). We know that \(E_i\) and \(E_j\) are disjoint, for \(i \neq j\), therefore, \(A \cap E_i\) and \(A \cap E_j\) are also disjoint for all \(i \neq j,\; i, j = 1, 2, \ldots, n\).</p>
+    <p>Thus,</p>
+    \[ \begin{aligned} P(A) &amp;= P[(A \cap E_1) \cup (A \cap E_2) \cup \ldots \cup (A \cap E_n)] \\ &amp;= P(A \cap E_1) + P(A \cap E_2) + \ldots + P(A \cap E_n) \end{aligned} \]
+    <p>Now, by multiplication rule of probability, we have</p>
+    \[ P(A \cap E_i) = P(E_i)\,P(A|E_i) \quad \text{as } P(E_i) \neq 0 \;\; \forall\, i = 1, 2, \ldots, n \]
+    <p>Therefore,</p>
+    \[ P(A) = P(E_1)\,P(A|E_1) + P(E_2)\,P(A|E_2) + \ldots + P(E_n)\,P(A|E_n) \]
+    <p>or</p>
+    \[ P(A) = \sum_{j=1}^{n} P(E_j)\,P(A|E_j) \]
+
+    <div class="box box-example">
+        <div class="box-label">Example 15</div>
+        <p>A person has undertaken a construction job. The probabilities are 0.65 that there will be strike, 0.80 that the construction job will be completed on time if there is no strike, and 0.32 that the construction job will be completed on time if there is a strike. Determine the probability that the construction job will be completed on time.</p>
+        <p><strong>Solution</strong> Let A be the event that the construction job will be completed on time, and B be the event that there will be a strike. We have to find P(A).</p>
+        <p>We have</p>
+        \[ \begin{aligned} &amp;P(B) = 0.65, \quad P(\text{no strike}) = P(B') = 1 - P(B) = 1 - 0.65 = 0.35 \\ &amp;P(A|B) = 0.32, \quad P(A|B') = 0.80 \end{aligned} \]
+        <p>Since events B and B&prime; form a partition of the sample space S, therefore, by theorem on total probability, we have</p>
+        \[ \begin{aligned} P(A) &amp;= P(B)\,P(A|B) + P(B')\,P(A|B') \\ &amp;= 0.65 \times 0.32 + 0.35 \times 0.8 \\ &amp;= 0.208 + 0.28 = 0.488 \end{aligned} \]
+        <p>Thus, the probability that the construction job will be completed in time is 0.488.</p>
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Bayes&rsquo; Theorem</h2>
+    <p>We shall now state and prove the Bayes&rsquo; theorem.</p>
+    <div class="box box-formula">
+        <div class="box-label">Bayes&rsquo; Theorem</div>
+        <p>If \(E_1, E_2, \ldots, E_n\) are \(n\) non empty events which constitute a partition of sample space S, i.e. \(E_1, E_2, \ldots, E_n\) are pairwise disjoint and \(E_1 \cup E_2 \cup \ldots \cup E_n = S\) and A is any event of nonzero probability, then</p>
+        \[ P(E_i|A) = \frac{P(E_i)\,P(A|E_i)}{\displaystyle\sum_{j=1}^{n} P(E_j)\,P(A|E_j)} \quad \text{for any } i = 1, 2, 3, \ldots, n \]
+    </div>
+
+    <h3>Proof</h3>
+    <p>By formula of conditional probability, we know that</p>
+    \[ \begin{aligned} P(E_i|A) &amp;= \frac{P(A \cap E_i)}{P(A)} \\ &amp;= \frac{P(E_i)\,P(A|E_i)}{P(A)} &amp;&amp; (\text{by multiplication rule of probability}) \\ &amp;= \frac{P(E_i)\,P(A|E_i)}{\displaystyle\sum_{j=1}^{n} P(E_j)\,P(A|E_j)} &amp;&amp; (\text{by the result of theorem of total probability}) \end{aligned} \]
+
+    <div class="box box-insight">
+        <div class="box-label">Remark &mdash; Terminology</div>
+        <p>The following terminology is generally used when Bayes&rsquo; theorem is applied.</p>
+        <ul>
+            <li>The events \(E_1, E_2, \ldots, E_n\) are called <em>hypotheses</em>.</li>
+            <li>The probability \(P(E_i)\) is called the <em>priori probability</em> of the hypothesis \(E_i\).</li>
+            <li>The conditional probability \(P(E_i|A)\) is called <em>a posteriori probability</em> of the hypothesis \(E_i\).</li>
+        </ul>
+        <p>Bayes&rsquo; theorem is also called the formula for the probability of &ldquo;causes&rdquo;. Since the \(E_i\)&rsquo;s are a partition of the sample space S, one and only one of the events \(E_i\) occurs (i.e. one of the events \(E_i\) must occur and only one can occur). Hence, the above formula gives us the probability of a particular \(E_i\) (i.e. a &ldquo;Cause&rdquo;), given that the event A has occurred.</p>
+    </div>
+
+    <p>The Bayes&rsquo; theorem has its applications in variety of situations, few of which are illustrated in following examples.</p>
+</div>
+
+<div class="card">
+    <h2>Applications of Bayes&rsquo; Theorem</h2>
+
+    <div class="box box-example">
+        <div class="box-label">Example 16</div>
+        <p>Bag I contains 3 red and 4 black balls while another Bag II contains 5 red and 6 black balls. One ball is drawn at random from one of the bags and it is found to be red. Find the probability that it was drawn from Bag II.</p>
+        <p><strong>Solution</strong> Let \(E_1\) be the event of choosing the bag I, \(E_2\) the event of choosing the bag II and A be the event of drawing a red ball.</p>
+        <p>Then</p>
+        \[ P(E_1) = P(E_2) = \frac{1}{2} \]
+        <p>Also</p>
+        \[ \begin{aligned} P(A|E_1) &amp;= P(\text{drawing a red ball from Bag I}) = \frac{3}{7} \\ \text{and} \quad P(A|E_2) &amp;= P(\text{drawing a red ball from Bag II}) = \frac{5}{11} \end{aligned} \]
+        <p>Now, the probability of drawing a ball from Bag II, being given that it is red, is \(P(E_2|A)\).</p>
+        <p>By using Bayes&rsquo; theorem, we have</p>
+        \[ P(E_2|A) = \frac{P(E_2)\,P(A|E_2)}{P(E_1)\,P(A|E_1) + P(E_2)\,P(A|E_2)} = \frac{\frac{1}{2} \times \frac{5}{11}}{\frac{1}{2} \times \frac{3}{7} + \frac{1}{2} \times \frac{5}{11}} = \frac{35}{68} \]
+
+        <figure class="diagram">
+            <svg viewBox="0 0 560 230" xmlns="http://www.w3.org/2000/svg" style="max-width:500px;" role="img" aria-label="Tree diagram: choose Bag I or Bag II with probability one half each, then red with probability 3/7 from Bag I and 5/11 from Bag II.">
+                <circle cx="40" cy="115" r="6" fill="#0d4f4f"/>
+                <line x1="40" y1="115" x2="200" y2="55" stroke="#0d4f4f" stroke-width="2"/>
+                <line x1="40" y1="115" x2="200" y2="175" stroke="#0d4f4f" stroke-width="2"/>
+                <text x="110" y="68" font-size="14" fill="#555" text-anchor="middle">1/2</text>
+                <text x="110" y="172" font-size="14" fill="#555" text-anchor="middle">1/2</text>
+                <text x="215" y="60" font-size="15" font-weight="bold" fill="#0d4f4f">E&#8321; (Bag I)</text>
+                <text x="215" y="180" font-size="15" font-weight="bold" fill="#0d4f4f">E&#8322; (Bag II)</text>
+                <line x1="300" y1="55" x2="420" y2="25" stroke="#c0602b" stroke-width="2"/>
+                <line x1="300" y1="55" x2="420" y2="85" stroke="#555" stroke-width="2"/>
+                <line x1="310" y1="175" x2="420" y2="145" stroke="#c0602b" stroke-width="2"/>
+                <line x1="310" y1="175" x2="420" y2="205" stroke="#555" stroke-width="2"/>
+                <text x="355" y="30" font-size="13" fill="#c0602b" text-anchor="middle">3/7</text>
+                <text x="355" y="90" font-size="13" fill="#555" text-anchor="middle">4/7</text>
+                <text x="362" y="150" font-size="13" fill="#c0602b" text-anchor="middle">5/11</text>
+                <text x="362" y="210" font-size="13" fill="#555" text-anchor="middle">6/11</text>
+                <text x="430" y="30" font-size="14" fill="#c0602b">Red (A)</text>
+                <text x="430" y="90" font-size="14" fill="#555">Black</text>
+                <text x="430" y="150" font-size="14" fill="#c0602b">Red (A)</text>
+                <text x="430" y="210" font-size="14" fill="#555">Black</text>
+            </svg>
+            <figcaption>Tree for Example 16: the two routes that end in &ldquo;Red&rdquo; make up P(A); the Bag II route&rsquo;s share of it is \(P(E_2|A)\).</figcaption>
+        </figure>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 17</div>
+        <p>Given three identical boxes I, II and III, each containing two coins. In box I, both coins are gold coins, in box II, both are silver coins and in the box III, there is one gold and one silver coin. A person chooses a box at random and takes out a coin. If the coin is of gold, what is the probability that the other coin in the box is also of gold?</p>
+        <p><strong>Solution</strong> Let \(E_1, E_2\) and \(E_3\) be the events that boxes I, II and III are chosen, respectively.</p>
+        <p>Then</p>
+        \[ P(E_1) = P(E_2) = P(E_3) = \frac{1}{3} \]
+        <p>Also, let A be the event that &lsquo;the coin drawn is of gold&rsquo;. Then</p>
+        \[ \begin{aligned} P(A|E_1) &amp;= P(\text{a gold coin from bag I}) = \frac{2}{2} = 1 \\ P(A|E_2) &amp;= P(\text{a gold coin from bag II}) = 0 \\ P(A|E_3) &amp;= P(\text{a gold coin from bag III}) = \frac{1}{2} \end{aligned} \]
+        <p>Now, the probability that the other coin in the box is of gold</p>
+        \[ \begin{aligned} &amp;= \text{the probability that gold coin is drawn from the box I.} \\ &amp;= P(E_1|A) \end{aligned} \]
+        <p>By Bayes&rsquo; theorem, we know that</p>
+        \[ \begin{aligned} P(E_1|A) &amp;= \frac{P(E_1)\,P(A|E_1)}{P(E_1)\,P(A|E_1) + P(E_2)\,P(A|E_2) + P(E_3)\,P(A|E_3)} \\ &amp;= \frac{\frac{1}{3} \times 1}{\frac{1}{3} \times 1 + \frac{1}{3} \times 0 + \frac{1}{3} \times \frac{1}{2}} = \frac{2}{3} \end{aligned} \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 18</div>
+        <p>Suppose that the reliability of a HIV test is specified as follows:</p>
+        <p>Of people having HIV, 90% of the test detect the disease but 10% go undetected. Of people free of HIV, 99% of the test are judged HIV&ndash;ive but 1% are diagnosed as showing HIV+ive. From a large population of which only 0.1% have HIV, one person is selected at random, given the HIV test, and the pathologist reports him/her as HIV+ive. What is the probability that the person actually has HIV?</p>
+        <p><strong>Solution</strong> Let E denote the event that the person selected is actually having HIV and A the event that the person&rsquo;s HIV test is diagnosed as +ive. We need to find \(P(E|A)\).</p>
+        <p>Also E&prime; denotes the event that the person selected is actually not having HIV.</p>
+        <p>Clearly, \(\{E, E'\}\) is a partition of the sample space of all people in the population. We are given that</p>
+        \[ \begin{aligned} P(E) &amp;= 0.1\% = \frac{0.1}{100} = 0.001 \\ P(E') &amp;= 1 - P(E) = 0.999 \\ P(A|E) &amp;= P(\text{Person tested as HIV+ive given that he/she is actually having HIV}) \\ &amp;= 90\% = \frac{90}{100} = 0.9 \\ \text{and} \quad P(A|E') &amp;= P(\text{Person tested as HIV+ive given that he/she is actually not having HIV}) \\ &amp;= 1\% = \frac{1}{100} = 0.01 \end{aligned} \]
+        <p>Now, by Bayes&rsquo; theorem</p>
+        \[ \begin{aligned} P(E|A) &amp;= \frac{P(E)\,P(A|E)}{P(E)\,P(A|E) + P(E')\,P(A|E')} \\ &amp;= \frac{0.001 \times 0.9}{0.001 \times 0.9 + 0.999 \times 0.01} = \frac{90}{1089} \\ &amp;= 0.083 \text{ approx.} \end{aligned} \]
+        <p>Thus, the probability that a person selected at random is actually having HIV given that he/she is tested HIV+ive is 0.083.</p>
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight</div>
+        <p>Even with a fairly reliable test, a positive result means only about an 8% chance of having the disease, because the disease is so rare (the <em>priori</em> probability 0.001 is tiny). Most positive reports come from the huge group of healthy people who are wrongly flagged.</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 19</div>
+        <p>In a factory which manufactures bolts, machines A, B and C manufacture respectively 25%, 35% and 40% of the bolts. Of their outputs, 5, 4 and 2 percent are respectively defective bolts. A bolt is drawn at random from the product and is found to be defective. What is the probability that it is manufactured by the machine B?</p>
+        <p><strong>Solution</strong> Let events \(B_1, B_2, B_3\) be the following:</p>
+        <ul class="sub-list">
+            <li>\(B_1\) : the bolt is manufactured by machine A</li>
+            <li>\(B_2\) : the bolt is manufactured by machine B</li>
+            <li>\(B_3\) : the bolt is manufactured by machine C</li>
+        </ul>
+        <p>Clearly, \(B_1, B_2, B_3\) are mutually exclusive and exhaustive events and hence, they represent a partition of the sample space.</p>
+        <p>Let the event E be &lsquo;the bolt is defective&rsquo;.</p>
+        <p>The event E occurs with \(B_1\) or with \(B_2\) or with \(B_3\). Given that,</p>
+        \[ P(B_1) = 25\% = 0.25, \quad P(B_2) = 0.35 \quad \text{and} \quad P(B_3) = 0.40 \]
+        <p>Again \(P(E|B_1)\) = Probability that the bolt drawn is defective given that it is manufactured by machine A = 5% = 0.05</p>
+        <p>Similarly, \(P(E|B_2) = 0.04\), \(P(E|B_3) = 0.02\).</p>
+        <p>Hence, by Bayes&rsquo; Theorem, we have</p>
+        \[ \begin{aligned} P(B_2|E) &amp;= \frac{P(B_2)\,P(E|B_2)}{P(B_1)\,P(E|B_1) + P(B_2)\,P(E|B_2) + P(B_3)\,P(E|B_3)} \\ &amp;= \frac{0.35 \times 0.04}{0.25 \times 0.05 + 0.35 \times 0.04 + 0.40 \times 0.02} \\ &amp;= \frac{0.0140}{0.0345} = \frac{28}{69} \end{aligned} \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 20</div>
+        <p>A doctor is to visit a patient. From the past experience, it is known that the probabilities that he will come by train, bus, scooter or by other means of transport are respectively \(\dfrac{3}{10}, \dfrac{1}{5}, \dfrac{1}{10}\) and \(\dfrac{2}{5}\). The probabilities that he will be late are \(\dfrac{1}{4}, \dfrac{1}{3}\), and \(\dfrac{1}{12}\), if he comes by train, bus and scooter respectively, but if he comes by other means of transport, then he will not be late. When he arrives, he is late. What is the probability that he comes by train?</p>
+        <p><strong>Solution</strong> Let E be the event that the doctor visits the patient late and let \(T_1, T_2, T_3, T_4\) be the events that the doctor comes by train, bus, scooter, and other means of transport respectively.</p>
+        <p>Then</p>
+        \[ P(T_1) = \frac{3}{10}, \; P(T_2) = \frac{1}{5}, \; P(T_3) = \frac{1}{10} \; \text{and} \; P(T_4) = \frac{2}{5} \quad (\text{given}) \]
+        \[ P(E|T_1) = \text{Probability that the doctor arriving late comes by train} = \frac{1}{4} \]
+        <p>Similarly, \(P(E|T_2) = \dfrac{1}{3}\), \(P(E|T_3) = \dfrac{1}{12}\) and \(P(E|T_4) = 0\), since he is not late if he comes by other means of transport.</p>
+        <p>Therefore, by Bayes&rsquo; Theorem, we have</p>
+        \[ \begin{aligned} P(T_1|E) &amp;= \text{Probability that the doctor arriving late comes by train} \\ &amp;= \frac{P(T_1)\,P(E|T_1)}{P(T_1)\,P(E|T_1) + P(T_2)\,P(E|T_2) + P(T_3)\,P(E|T_3) + P(T_4)\,P(E|T_4)} \\ &amp;= \frac{\frac{3}{10} \times \frac{1}{4}}{\frac{3}{10} \times \frac{1}{4} + \frac{1}{5} \times \frac{1}{3} + \frac{1}{10} \times \frac{1}{12} + \frac{2}{5} \times 0} = \frac{3}{40} \times \frac{120}{18} = \frac{1}{2} \end{aligned} \]
+        <p>Hence, the required probability is \(\dfrac{1}{2}\).</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 21</div>
+        <p>A man is known to speak truth 3 out of 4 times. He throws a die and reports that it is a six. Find the probability that it is actually a six.</p>
+        <p><strong>Solution</strong> Let E be the event that the man reports that six occurs in the throwing of the die and let \(S_1\) be the event that six occurs and \(S_2\) be the event that six does not occur.</p>
+        <p>Then</p>
+        \[ \begin{aligned} P(S_1) &amp;= \text{Probability that } six \text{ occurs} = \frac{1}{6} \\ P(S_2) &amp;= \text{Probability that } six \text{ does not occur} = \frac{5}{6} \end{aligned} \]
+        <p>\(P(E|S_1)\) = Probability that the man reports that <em>six</em> occurs when <em>six</em> has actually occurred on the die</p>
+        \[ = \text{Probability that the man speaks the truth} = \frac{3}{4} \]
+        <p>\(P(E|S_2)\) = Probability that the man reports that <em>six</em> occurs when <em>six</em> has not actually occurred on the die</p>
+        \[ = \text{Probability that the man does not speak the truth} = 1 - \frac{3}{4} = \frac{1}{4} \]
+        <p>Thus, by Bayes&rsquo; theorem, we get</p>
+        <p>\(P(S_1|E)\) = Probability that the report of the man that <em>six</em> has occurred is actually a <em>six</em></p>
+        \[ \begin{aligned} &amp;= \frac{P(S_1)\,P(E|S_1)}{P(S_1)\,P(E|S_1) + P(S_2)\,P(E|S_2)} \\ &amp;= \frac{\frac{1}{6} \times \frac{3}{4}}{\frac{1}{6} \times \frac{3}{4} + \frac{5}{6} \times \frac{1}{4}} = \frac{1}{8} \times \frac{24}{8} = \frac{3}{8} \end{aligned} \]
+        <p>Hence, the required probability is \(\dfrac{3}{8}\).</p>
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Random Variables</h2>
+    <div class="box box-definition">
+        <div class="box-label">Remark &mdash; Random Variable</div>
+        <p>A <strong>random variable</strong> is a real valued function whose domain is the sample space of a random experiment.</p>
+    </div>
+    <p>For example, let us consider the experiment of tossing a coin two times in succession. The sample space of the experiment is \(S = \{HH, HT, TH, TT\}\).</p>
+    <p>If X denotes the number of heads obtained, then X is a random variable and for each outcome, its value is as given below:</p>
+    \[ X(HH) = 2, \; X(HT) = 1, \; X(TH) = 1, \; X(TT) = 0. \]
+    <p>More than one random variables can be defined on the same sample space. For example, let Y denote the number of heads minus the number of tails for each outcome of the above sample space S.</p>
+    <p>Then</p>
+    \[ Y(HH) = 2, \; Y(HT) = 0, \; Y(TH) = 0, \; Y(TT) = -2. \]
+    <table>
+        <thead><tr><th>Outcome</th><th>HH</th><th>HT</th><th>TH</th><th>TT</th></tr></thead>
+        <tbody>
+            <tr><td>X (number of heads)</td><td>2</td><td>1</td><td>1</td><td>0</td></tr>
+            <tr><td>Y (heads &minus; tails)</td><td>2</td><td>0</td><td>0</td><td>&minus;2</td></tr>
+        </tbody>
+    </table>
+    <p>Thus, X and Y are two different random variables defined on the same sample space S.</p>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../13-probability/09-partition-of-a-sample-space-13.5.1/index.html" class="nav-btn">&larr; 13.5.1 Partition of a sample space</a>
+    <a href="../../13-probability/11-exercise-13.3/index.html" class="nav-btn">Exercise 13.3 &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.2 Integration as an Inverse Process of Differentiation — Integrals</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Integrals · 7.2 Integration as an Inverse Process of Differentiation">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../07-integrals/01-introduction-7.1/index.html" title="7.1 Introduction">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Integrals</a></span>
+    <span class="c2">7.2 Integration as an Inverse Process of Differentiation</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 7 · Integrals</div><a href="../01-introduction-7.1/index.html">7.1 Introduction</a><a href="../02-integration-as-an-inverse-process-of-differentiation-7.2/index.html" aria-current="page">7.2 Integration as an Inverse Process of Differentiation</a><a href="../03-some-properties-of-indefinite-integral-7.2.1/index.html">7.2.1 Some properties of indefinite integral</a><a href="../04-exercise-7.1/index.html">Exercise 7.1</a><a href="../05-methods-of-integration-7.3/index.html">7.3 Methods of Integration</a><a href="../06-integration-by-substitution-7.3.1/index.html">7.3.1 Integration by substitution</a><a href="../07-exercise-7.2/index.html">Exercise 7.2</a><a href="../08-integration-using-trigonometric-identities-7.3.2/index.html">7.3.2 Integration using trigonometric identities</a><a href="../09-exercise-7.3/index.html">Exercise 7.3</a><a href="../10-integrals-of-some-particular-functions-7.4/index.html">7.4 Integrals of Some Particular Functions</a><a href="../11-exercise-7.4/index.html">Exercise 7.4</a><a href="../12-integration-by-partial-fractions-7.5/index.html">7.5 Integration by Partial Fractions</a><a href="../13-exercise-7.5/index.html">Exercise 7.5</a><a href="../14-integration-by-parts-7.6/index.html">7.6 Integration by Parts</a><a href="../15-integral-of-the-type-7.6.1/index.html">7.6.1 Integral of the type ∫eˣ[f(x) + f′(x)] dx</a><a href="../16-exercise-7.6/index.html">Exercise 7.6</a><a href="../17-integrals-of-some-more-types-7.6.2/index.html">7.6.2 Integrals of some more types</a><a href="../18-exercise-7.7/index.html">Exercise 7.7</a><a href="../19-definite-integral-7.7/index.html">7.7 Definite Integral</a><a href="../20-fundamental-theorem-of-calculus-7.8/index.html">7.8 Fundamental Theorem of Calculus</a><a href="../21-area-function-7.8.1/index.html">7.8.1 Area function</a><a href="../22-first-fundamental-theorem-of-integral-calculus-7.8.2/index.html">7.8.2 First fundamental theorem of integral calculus</a><a href="../23-second-fundamental-theorem-of-integral-calculus-7.8.3/index.html">7.8.3 Second fundamental theorem of integral calculus</a><a href="../24-exercise-7.8/index.html">Exercise 7.8</a><a href="../25-evaluation-of-definite-integrals-by-substitution-7.9/index.html">7.9 Evaluation of Definite Integrals by Substitution</a><a href="../26-exercise-7.9/index.html">Exercise 7.9</a><a href="../27-some-properties-of-definite-integrals-7.10/index.html">7.10 Some Properties of Definite Integrals</a><a href="../28-exercise-7.10/index.html">Exercise 7.10</a><a href="../29-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../30-miscellaneous-exercise-on-chapter-7/index.html">Miscellaneous Exercise on Chapter 7</a><a href="../31-summary/index.html">Summary</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../07-integrals/03-some-properties-of-indefinite-integral-7.2.1/index.html" title="7.2.1 Some properties of indefinite integral">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">7</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 7 · Integrals</a></p>
+        <h1>7.2 Integration as an Inverse Process of Differentiation</h1>
+        <p class="subtitle">Run differentiation backwards — and meet the arbitrary constant C that comes along for the ride</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>Integration (anti differentiation) as the <span class="teal">reverse</span> of differentiation</li>
+        <li>Why anti derivatives are not unique: the <strong>arbitrary constant</strong> C</li>
+        <li>Why functions with the same derivative differ only by a constant</li>
+        <li>The symbol \( \int f(x)\,dx \) and the vocabulary of integration (Table 7.1)</li>
+        <li>The list of <strong>standard integrals</strong> read off from known derivatives</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Undoing a Derivative</h2>
+    <p>Integration is the inverse process of differentiation. Instead of differentiating a function, we are given the derivative of a function and asked to find its primitive, i.e., the original function. Such a process is called <em>integration</em> or <em>anti differentiation</em>.</p>
+    <p>Let us consider the following examples. We know that</p>
+    \[ \frac{d}{dx}(\sin x) = \cos x \tag{1} \]
+    \[ \frac{d}{dx}\left(\frac{x^3}{3}\right) = x^2 \tag{2} \]
+    \[ \text{and}\qquad \frac{d}{dx}\left(e^x\right) = e^x \tag{3} \]
+    <p>We observe that in (1), the function \( \cos x \) is the derived function of \( \sin x \). We say that \( \sin x \) is an <strong>anti derivative</strong> (or an <strong>integral</strong>) of \( \cos x \). Similarly, in (2) and (3), \( \dfrac{x^3}{3} \) and \( e^x \) are the anti derivatives (or integrals) of \( x^2 \) and \( e^x \), respectively.</p>
+    <p>Again, we note that for any real number C, treated as constant function, its derivative is zero and hence, we can write (1), (2) and (3) as follows:</p>
+    \[ \frac{d}{dx}(\sin x + \text{C}) = \cos x,\qquad \frac{d}{dx}\left(\frac{x^3}{3} + \text{C}\right) = x^2 \qquad\text{and}\qquad \frac{d}{dx}\left(e^x + \text{C}\right) = e^x \]
+    <p>Thus, anti derivatives (or integrals) of the above cited functions are not unique. Actually, there exist infinitely many anti derivatives of each of these functions which can be obtained by choosing C arbitrarily from the set of real numbers. For this reason C is customarily referred to as <strong><em>arbitrary constant</em></strong>. In fact, C is the <strong><em>parameter</em></strong> by varying which one gets different anti derivatives (or integrals) of the given function.</p>
+
+    <div class="box box-definition">
+        <div class="box-label">Family of Anti derivatives</div>
+        <p>More generally, if there is a function F such that \( \dfrac{d}{dx}\text{F}(x) = f(x),\ \forall\, x \in \text{I} \) (interval), then for any arbitrary real number C, (also called <em>constant of integration</em>)</p>
+        \[ \frac{d}{dx}\big[\text{F}(x) + \text{C}\big] = f(x),\quad x \in \text{I} \]
+        <p>Thus, \( \{\text{F} + \text{C},\ \text{C} \in \mathbf{R}\} \) denotes a family of anti derivatives of \( f \).</p>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Same Derivative, Differ by a Constant</h2>
+    <div class="box box-insight">
+        <div class="box-label">Remark</div>
+        <p>Functions with same derivatives differ by a constant. To show this, let \( g \) and \( h \) be two functions having the same derivatives on an interval I.</p>
+        <p>Consider the function \( f = g - h \) defined by \( f(x) = g(x) - h(x),\ \forall\, x \in \text{I} \). Then</p>
+        \[ \frac{df}{dx} = f' = g' - h' \quad\text{giving}\quad f'(x) = g'(x) - h'(x)\ \ \forall\, x \in \text{I} \]
+        \[ \text{or}\qquad f'(x) = 0,\ \forall\, x \in \text{I} \ \text{ by hypothesis,} \]
+        <p>i.e., the rate of change of \( f \) with respect to \( x \) is zero on I and hence \( f \) is constant.</p>
+    </div>
+    <p>In view of the above remark, it is justified to infer that the family \( \{\text{F} + \text{C},\ \text{C} \in \mathbf{R}\} \) provides <em>all possible</em> anti derivatives of \( f \).</p>
+</div>
+
+<div class="card">
+    <h2>The Integral Sign</h2>
+    <p>We introduce a new symbol, namely, \( \int f(x)\,dx \) which will represent the entire class of anti derivatives read as the <strong>indefinite integral of \( f \) with respect to \( x \)</strong>.</p>
+    <div class="box box-formula">
+        <div class="box-label">Symbolically</div>
+        \[ \int f(x)\,dx = \text{F}(x) + \text{C} \]
+        <p><strong>Notation</strong> Given that \( \dfrac{dy}{dx} = f(x) \), we write \( y = \int f(x)\,dx \).</p>
+    </div>
+    <p>For the sake of convenience, we mention below the following symbols/terms/phrases with their meanings as given in the Table (7.1).</p>
+
+    <h3>Table 7.1</h3>
+    <table>
+        <thead>
+            <tr><th>Symbols/Terms/Phrases</th><th>Meaning</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>\( \int f(x)\,dx \)</td><td>Integral of \( f \) with respect to \( x \)</td></tr>
+            <tr><td>\( f(x) \) in \( \int f(x)\,dx \)</td><td>Integrand</td></tr>
+            <tr><td>\( x \) in \( \int f(x)\,dx \)</td><td>Variable of integration</td></tr>
+            <tr><td>Integrate</td><td>Find the integral</td></tr>
+            <tr><td>An integral of \( f \)</td><td>A function F such that \( \text{F}'(x) = f(x) \)</td></tr>
+            <tr><td>Integration</td><td>The process of finding the integral</td></tr>
+            <tr><td>Constant of Integration</td><td>Any real number C, considered as constant function</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Standard Formulae</h2>
+    <p>We already know the formulae for the derivatives of many important functions. From these formulae, we can write down immediately the corresponding formulae (referred to as <strong>standard formulae</strong>) for the integrals of these functions, as listed below which will be used to find integrals of other functions.</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Standard Integrals</div>
+        <div class="math-scroll">
+        <table>
+            <thead>
+                <tr><th></th><th>Derivatives</th><th>Integrals (Anti derivatives)</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>(i)</td><td>\( \dfrac{d}{dx}\left(\dfrac{x^{n+1}}{n+1}\right) = x^n \)</td><td>\( \displaystyle\int x^n\,dx = \frac{x^{n+1}}{n+1} + \text{C},\ n \ne -1 \)</td></tr>
+                <tr><td></td><td colspan="2">Particularly, we note that</td></tr>
+                <tr><td></td><td>\( \dfrac{d}{dx}(x) = 1 \)</td><td>\( \displaystyle\int dx = x + \text{C} \)</td></tr>
+                <tr><td>(ii)</td><td>\( \dfrac{d}{dx}(\sin x) = \cos x \)</td><td>\( \displaystyle\int \cos x\,dx = \sin x + \text{C} \)</td></tr>
+                <tr><td>(iii)</td><td>\( \dfrac{d}{dx}(-\cos x) = \sin x \)</td><td>\( \displaystyle\int \sin x\,dx = -\cos x + \text{C} \)</td></tr>
+                <tr><td>(iv)</td><td>\( \dfrac{d}{dx}(\tan x) = \sec^2 x \)</td><td>\( \displaystyle\int \sec^2 x\,dx = \tan x + \text{C} \)</td></tr>
+                <tr><td>(v)</td><td>\( \dfrac{d}{dx}(-\cot x) = \operatorname{cosec}^2 x \)</td><td>\( \displaystyle\int \operatorname{cosec}^2 x\,dx = -\cot x + \text{C} \)</td></tr>
+                <tr><td>(vi)</td><td>\( \dfrac{d}{dx}(\sec x) = \sec x \tan x \)</td><td>\( \displaystyle\int \sec x \tan x\,dx = \sec x + \text{C} \)</td></tr>
+                <tr><td>(vii)</td><td>\( \dfrac{d}{dx}(-\operatorname{cosec} x) = \operatorname{cosec} x \cot x \)</td><td>\( \displaystyle\int \operatorname{cosec} x \cot x\,dx = -\operatorname{cosec} x + \text{C} \)</td></tr>
+                <tr><td>(viii)</td><td>\( \dfrac{d}{dx}\left(\sin^{-1} x\right) = \dfrac{1}{\sqrt{1 - x^2}} \)</td><td>\( \displaystyle\int \frac{dx}{\sqrt{1 - x^2}} = \sin^{-1} x + \text{C} \)</td></tr>
+                <tr><td>(ix)</td><td>\( \dfrac{d}{dx}\left(-\cos^{-1} x\right) = \dfrac{1}{\sqrt{1 - x^2}} \)</td><td>\( \displaystyle\int \frac{dx}{\sqrt{1 - x^2}} = -\cos^{-1} x + \text{C} \)</td></tr>
+                <tr><td>(x)</td><td>\( \dfrac{d}{dx}\left(\tan^{-1} x\right) = \dfrac{1}{1 + x^2} \)</td><td>\( \displaystyle\int \frac{dx}{1 + x^2} = \tan^{-1} x + \text{C} \)</td></tr>
+                <tr><td>(xi)</td><td>\( \dfrac{d}{dx}\left(e^x\right) = e^x \)</td><td>\( \displaystyle\int e^x\,dx = e^x + \text{C} \)</td></tr>
+                <tr><td>(xii)</td><td>\( \dfrac{d}{dx}\left(\log |x|\right) = \dfrac{1}{x} \)</td><td>\( \displaystyle\int \frac{1}{x}\,dx = \log |x| + \text{C} \)</td></tr>
+                <tr><td>(xiii)</td><td>\( \dfrac{d}{dx}\left(\dfrac{a^x}{\log a}\right) = a^x \)</td><td>\( \displaystyle\int a^x\,dx = \frac{a^x}{\log a} + \text{C} \)</td></tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Note</div>
+        <p>In practice, we normally do not mention the interval over which the various functions are defined. However, in any specific problem one has to keep it in mind.</p>
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../07-integrals/01-introduction-7.1/index.html" class="nav-btn">&larr; 7.1 Introduction</a>
+    <a href="../../07-integrals/03-some-properties-of-indefinite-integral-7.2.1/index.html" class="nav-btn">7.2.1 Some properties of indefinite integral &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

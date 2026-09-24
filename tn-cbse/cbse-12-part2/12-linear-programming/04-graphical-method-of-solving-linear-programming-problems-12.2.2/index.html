@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12.2.2 Graphical method of solving linear programming problems — Linear Programming</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Linear Programming · 12.2.2 Graphical method of solving linear programming problems">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../12-linear-programming/03-mathematical-formulation-of-the-problem-12.2.1/index.html" title="12.2.1 Mathematical formulation of the problem">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Linear Programming</a></span>
+    <span class="c2">12.2.2 Graphical method of solving linear programming problems</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 12 · Linear Programming</div><a href="../01-introduction-12.1/index.html">12.1 Introduction</a><a href="../02-linear-programming-problem-and-its-mathematical-formulatio-12.2/index.html">12.2 Linear Programming Problem and its Mathematical Formulation</a><a href="../03-mathematical-formulation-of-the-problem-12.2.1/index.html">12.2.1 Mathematical formulation of the problem</a><a href="../04-graphical-method-of-solving-linear-programming-problems-12.2.2/index.html" aria-current="page">12.2.2 Graphical method of solving linear programming problems</a><a href="../05-exercise-12.1/index.html">Exercise 12.1</a><a href="../06-summary/index.html">Summary</a><a href="../07-historical-note/index.html">Historical Note</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../12-linear-programming/05-exercise-12.1/index.html" title="Exercise 12.1">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">12</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 12 · Linear Programming</a></p>
+        <h1>12.2.2 Graphical method of solving linear programming problems</h1>
+        <p class="subtitle">Shade the feasible region, test its corners, and let the best vertex reveal the optimum</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>Graphing the constraints to get the <span class="teal">feasible region</span>; feasible, infeasible and optimal solutions</li>
+        <li>Two fundamental theorems: optima occur at <strong>corner points</strong></li>
+        <li>The step-by-step <strong>Corner Point Method</strong> for bounded and unbounded regions</li>
+        <li>Five worked examples: bounded regions, multiple optimal solutions, an unbounded region with no minimum, and a problem with no feasible region</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Graphing the Dealer&rsquo;s Constraints</h2>
+    <p>In Class XI, we have learnt how to graph a system of linear inequalities involving two variables \(x\) and \(y\) and to find its solutions graphically. Let us refer to the problem of investment in tables and chairs discussed in Section 12.2. We will now solve this problem graphically. Let us graph the constraints stated as linear inequalities:</p>
+    \[ 5x + y \le 100 \tag{1} \]
+    \[ x + y \le 60 \tag{2} \]
+    \[ x \ge 0 \tag{3} \]
+    \[ y \ge 0 \tag{4} \]
+    <p>The graph of this system (shaded region) consists of the points common to all half planes determined by the inequalities (1) to (4) (Fig 12.1). Each point in this region represents a <strong>feasible choice</strong> open to the dealer for investing in tables and chairs. The region, therefore, is called the <strong>feasible region</strong> for the problem. Every point of this region is called a <strong>feasible solution</strong> to the problem. Thus, we have,</p>
+
+    <figure class="diagram">
+        <svg viewBox="0 0 520 440" xmlns="http://www.w3.org/2000/svg" style="max-width:520px;" role="img" aria-label="Feasible region OABC bounded by 5x + y = 100, x + y = 60 and the axes, with corners O(0,0), A(20,0), B(10,50), C(0,60)"><defs><marker id="ax12-1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs><g stroke="#e2e8f0" stroke-width="1"><line x1="52" y1="392" x2="52" y2="30"/><line x1="110.4" y1="392" x2="110.4" y2="30"/><line x1="168.8" y1="392" x2="168.8" y2="30"/><line x1="227.2" y1="392" x2="227.2" y2="30"/><line x1="285.6" y1="392" x2="285.6" y2="30"/><line x1="344" y1="392" x2="344" y2="30"/><line x1="402.4" y1="392" x2="402.4" y2="30"/><line x1="460.8" y1="392" x2="460.8" y2="30"/><line x1="52" y1="392" x2="490" y2="392"/><line x1="52" y1="357.5" x2="490" y2="357.5"/><line x1="52" y1="323" x2="490" y2="323"/><line x1="52" y1="288.6" x2="490" y2="288.6"/><line x1="52" y1="254.1" x2="490" y2="254.1"/><line x1="52" y1="219.6" x2="490" y2="219.6"/><line x1="52" y1="185.1" x2="490" y2="185.1"/><line x1="52" y1="150.7" x2="490" y2="150.7"/><line x1="52" y1="116.2" x2="490" y2="116.2"/><line x1="52" y1="81.7" x2="490" y2="81.7"/><line x1="52" y1="47.2" x2="490" y2="47.2"/></g><polygon points="52,392 168.8,392 110.4,219.6 52,185.1" fill="#2b6cb0" fill-opacity="0.3" stroke="none"/><g stroke="#555" stroke-width="1.6" fill="none"><line x1="52" y1="392" x2="504" y2="392" marker-end="url(#ax12-1)"/><line x1="52" y1="392" x2="52" y2="16" marker-end="url(#ax12-1)"/></g><g font-size="12" fill="#555" font-family="sans-serif"><line x1="110.4" y1="388" x2="110.4" y2="396" stroke="#555"/><text x="110.4" y="410" text-anchor="middle">10</text><line x1="168.8" y1="388" x2="168.8" y2="396" stroke="#555"/><text x="168.8" y="410" text-anchor="middle">20</text><line x1="227.2" y1="388" x2="227.2" y2="396" stroke="#555"/><text x="227.2" y="410" text-anchor="middle">30</text><line x1="285.6" y1="388" x2="285.6" y2="396" stroke="#555"/><text x="285.6" y="410" text-anchor="middle">40</text><line x1="344" y1="388" x2="344" y2="396" stroke="#555"/><text x="344" y="410" text-anchor="middle">50</text><line x1="402.4" y1="388" x2="402.4" y2="396" stroke="#555"/><text x="402.4" y="410" text-anchor="middle">60</text><line x1="460.8" y1="388" x2="460.8" y2="396" stroke="#555"/><text x="460.8" y="410" text-anchor="middle">70</text><line x1="48" y1="357.5" x2="56" y2="357.5" stroke="#555"/><text x="44" y="361.5" text-anchor="end">10</text><line x1="48" y1="323" x2="56" y2="323" stroke="#555"/><text x="44" y="327" text-anchor="end">20</text><line x1="48" y1="288.6" x2="56" y2="288.6" stroke="#555"/><text x="44" y="292.6" text-anchor="end">30</text><line x1="48" y1="254.1" x2="56" y2="254.1" stroke="#555"/><text x="44" y="258.1" text-anchor="end">40</text><line x1="48" y1="219.6" x2="56" y2="219.6" stroke="#555"/><text x="44" y="223.6" text-anchor="end">50</text><line x1="48" y1="185.1" x2="56" y2="185.1" stroke="#555"/><text x="44" y="189.1" text-anchor="end">60</text><line x1="48" y1="150.7" x2="56" y2="150.7" stroke="#555"/><text x="44" y="154.7" text-anchor="end">70</text><line x1="48" y1="116.2" x2="56" y2="116.2" stroke="#555"/><text x="44" y="120.2" text-anchor="end">80</text><line x1="48" y1="81.7" x2="56" y2="81.7" stroke="#555"/><text x="44" y="85.7" text-anchor="end">90</text><line x1="48" y1="47.2" x2="56" y2="47.2" stroke="#555"/><text x="44" y="51.2" text-anchor="end">100</text><text x="44" y="410" text-anchor="end" font-style="italic">O</text><text x="506" y="410" text-anchor="middle" font-style="italic" font-size="14">X</text><text x="64" y="22" font-style="italic" font-size="14">Y</text></g><line x1="52" y1="47.2" x2="168.8" y2="392" stroke="#0d4f4f" stroke-width="2.2"/><text x="177.6" y="423" fill="#0d4f4f" font-size="14" font-style="italic" font-family="serif" font-weight="bold" text-anchor="middle">5x + y = 100</text><line x1="52" y1="185.1" x2="402.4" y2="392" stroke="#c0602b" stroke-width="2.2"/><text x="425.8" y="357.5" fill="#c0602b" font-size="14" font-style="italic" font-family="serif" font-weight="bold" text-anchor="start">x + y = 60</text><circle cx="52" cy="392" r="4.5" fill="#c0602b" stroke="#fff" stroke-width="1"/><circle cx="168.8" cy="392" r="4.5" fill="#c0602b" stroke="#fff" stroke-width="1"/><text x="174.8" y="384" font-size="13" font-weight="bold" fill="#2d2d2d" font-family="sans-serif" text-anchor="start">A(20, 0)</text><circle cx="110.4" cy="219.6" r="4.5" fill="#c0602b" stroke="#fff" stroke-width="1"/><text x="119.4" y="217.6" font-size="13" font-weight="bold" fill="#2d2d2d" font-family="sans-serif" text-anchor="start">B(10, 50)</text><circle cx="52" cy="185.1" r="4.5" fill="#c0602b" stroke="#fff" stroke-width="1"/><text x="60" y="175.1" font-size="13" font-weight="bold" fill="#2d2d2d" font-family="sans-serif" text-anchor="start">C(0, 60)</text><text x="90" y="316.2" font-size="12" fill="#2b6cb0" font-family="sans-serif" text-anchor="middle">Feasible</text><text x="90" y="333.4" font-size="12" fill="#2b6cb0" font-family="sans-serif" text-anchor="middle">region</text><text x="90" y="350.6" font-size="12" fill="#2b6cb0" font-family="sans-serif" text-anchor="middle">OABC</text></svg>
+        <figcaption>Fig 12.1 &mdash; The feasible region OABC for the furniture dealer&rsquo;s problem</figcaption>
+    </figure>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Feasible Region</div>
+        <p>The common region determined by all the constraints including non-negative constraints \(x, y \ge 0\) of a linear programming problem is called the <strong>feasible region</strong> (or solution region) for the problem. In Fig 12.1, the region OABC (shaded) is the feasible region for the problem. The region other than feasible region is called an <strong>infeasible region</strong>.</p>
+    </div>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Feasible Solutions</div>
+        <p>Points within and on the boundary of the feasible region represent <strong>feasible solutions</strong> of the constraints. In Fig 12.1, every point within and on the boundary of the feasible region OABC represents feasible solution to the problem. For example, the point (10, 50) is a feasible solution of the problem and so are the points (0, 60), (20, 0) etc.</p>
+        <p>Any point outside the feasible region is called an <strong>infeasible solution</strong>. For example, the point (25, 40) is an infeasible solution of the problem.</p>
+    </div>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Optimal (Feasible) Solution</div>
+        <p>Any point in the feasible region that gives the optimal value (maximum or minimum) of the objective function is called an <strong>optimal solution</strong>.</p>
+    </div>
+</div>
+
+<div class="card">
+    <h2>The Fundamental Theorems</h2>
+    <p>Now, we see that every point in the feasible region OABC satisfies all the constraints as given in (1) to (4), and since there are <strong>infinitely many points</strong>, it is not evident how we should go about finding a point that gives a maximum value of the objective function \(Z = 250x + 75y\). To handle this situation, we use the following theorems which are fundamental in solving linear programming problems. The proofs of these theorems are beyond the scope of the book.</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Theorem 1</div>
+        <p>Let R be the feasible region (convex polygon) for a linear programming problem and let \(Z = ax + by\) be the objective function. When Z has an optimal value (maximum or minimum), where the variables \(x\) and \(y\) are subject to constraints described by linear inequalities, this optimal value must occur at a <strong>corner point</strong>* (vertex) of the feasible region.</p>
+    </div>
+
+    <div class="box box-formula">
+        <div class="box-label">Theorem 2</div>
+        <p>Let R be the feasible region for a linear programming problem, and let \(Z = ax + by\) be the objective function. If R is <strong>bounded</strong>**, then the objective function Z has both a <strong>maximum</strong> and a <strong>minimum</strong> value on R and each of these occurs at a corner point (vertex) of R.</p>
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Remark</div>
+        <p>If R is <strong>unbounded</strong>, then a maximum or a minimum value of the objective function may not exist. However, if it exists, it must occur at a corner point of R. (By Theorem 1).</p>
+    </div>
+
+    <p style="font-size:0.92rem; color:#555;">* A <strong>corner point</strong> of a feasible region is a point in the region which is the intersection of two boundary lines.<br>
+    ** A feasible region of a system of linear inequalities is said to be <strong>bounded</strong> if it can be enclosed within a circle. Otherwise, it is called <strong>unbounded</strong>. Unbounded means that the feasible region does extend indefinitely in any direction.</p>
+</div>
+
+<div class="card">
+    <h2>Solving the Dealer&rsquo;s Problem</h2>
+    <p>In the above example, the corner points (vertices) of the bounded (feasible) region are: O, A, B and C and it is easy to find their coordinates as (0, 0), (20, 0), (10, 50) and (0, 60) respectively. Let us now compute the values of Z at these points. We have</p>
+
+    <table>
+        <thead><tr><th>Vertex of the Feasible Region</th><th>Corresponding value of Z (in Rs)</th><th></th></tr></thead>
+        <tbody>
+            <tr><td>O (0, 0)</td><td>0</td><td></td></tr>
+            <tr><td>C (0, 60)</td><td>4500</td><td></td></tr>
+            <tr><td>B (10, 50)</td><td><strong>6250</strong></td><td>&larr; Maximum</td></tr>
+            <tr><td>A (20, 0)</td><td>5000</td><td></td></tr>
+        </tbody>
+    </table>
+
+    <p>We observe that the maximum profit to the dealer results from the investment strategy (10, 50), i.e. buying <strong>10 tables and 50 chairs</strong>.</p>
+</div>
+
+<div class="card">
+    <h2>The Corner Point Method</h2>
+    <p>This method of solving linear programming problem is referred as <strong>Corner Point Method</strong>. The method comprises of the following steps:</p>
+
+    <div class="step-row"><span class="step-num">1</span><div class="step-content">
+        <p>Find the feasible region of the linear programming problem and determine its corner points (vertices) either by inspection or by solving the two equations of the lines intersecting at that point.</p>
+    </div></div>
+    <div class="step-row"><span class="step-num">2</span><div class="step-content">
+        <p>Evaluate the objective function \(Z = ax + by\) at each corner point. Let M and \(m\), respectively denote the largest and smallest values of these points.</p>
+    </div></div>
+    <div class="step-row"><span class="step-num">3</span><div class="step-content">
+        <p>(i) When the feasible region is <strong>bounded</strong>, M and \(m\) are the maximum and minimum values of Z.</p>
+        <p>(ii) In case, the feasible region is <strong>unbounded</strong>, we have:</p>
+    </div></div>
+    <div class="step-row"><span class="step-num">4</span><div class="step-content">
+        <p>(a) M is the maximum value of Z, if the open half plane determined by \(ax + by \gt M\) has no point in common with the feasible region. Otherwise, Z has no maximum value.</p>
+        <p>(b) Similarly, \(m\) is the minimum value of Z, if the open half plane determined by \(ax + by \lt m\) has no point in common with the feasible region. Otherwise, Z has no minimum value.</p>
+    </div></div>
+
+    <p>We will now illustrate these steps of Corner Point Method by considering some examples:</p>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Worked Examples</h2>
+
+    <div class="box box-example">
+        <div class="box-label">Example 1</div>
+        <p>Solve the following linear programming problem graphically:</p>
+        \[ \text{Maximise } Z = 4x + y \tag{1} \]
+        <p>subject to the constraints:</p>
+        \[ x + y \le 50 \tag{2} \]
+        \[ 3x + y \le 90 \tag{3} \]
+        \[ x \ge 0,\ y \ge 0 \tag{4} \]
+        <p><strong>Solution</strong> The shaded region in Fig 12.2 is the feasible region determined by the system of constraints (2) to (4). We observe that the feasible region OABC is <strong>bounded</strong>. So, we now use Corner Point Method to determine the maximum value of Z.</p>
+        <p>The coordinates of the corner points O, A, B and C are (0, 0), (30, 0), (20, 30) and (0, 50) respectively. Now we evaluate Z at each corner point.</p>
+
+        <figure class="diagram">
+            <svg viewBox="0 0 520 430" xmlns="http://www.w3.org/2000/svg" style="max-width:520px;" role="img" aria-label="Feasible region OABC bounded by x + y = 50, 3x + y = 90 and the axes, with corners O(0,0), A(30,0), B(20,30), C(0,50)"><defs><marker id="ax12-2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs><g stroke="#e2e8f0" stroke-width="1"><line x1="52" y1="382" x2="52" y2="30"/><line x1="110.4" y1="382" x2="110.4" y2="30"/><line x1="168.8" y1="382" x2="168.8" y2="30"/><line x1="227.2" y1="382" x2="227.2" y2="30"/><line x1="285.6" y1="382" x2="285.6" y2="30"/><line x1="344" y1="382" x2="344" y2="30"/><line x1="402.4" y1="382" x2="402.4" y2="30"/><line x1="460.8" y1="382" x2="460.8" y2="30"/><line x1="52" y1="382" x2="490" y2="382"/><line x1="52" y1="346.8" x2="490" y2="346.8"/><line x1="52" y1="311.6" x2="490" y2="311.6"/><line x1="52" y1="276.4" x2="490" y2="276.4"/><line x1="52" y1="241.2" x2="490" y2="241.2"/><line x1="52" y1="206" x2="490" y2="206"/><line x1="52" y1="170.8" x2="490" y2="170.8"/><line x1="52" y1="135.6" x2="490" y2="135.6"/><line x1="52" y1="100.4" x2="490" y2="100.4"/><line x1="52" y1="65.2" x2="490" y2="65.2"/><line x1="52" y1="30" x2="490" y2="30"/></g><polygon points="52,382 227.2,382 168.8,276.4 52,206" fill="#2b6cb0" fill-opacity="0.3" stroke="none"/><g stroke="#555" stroke-width="1.6" fill="none"><line x1="52" y1="382" x2="504" y2="382" marker-end="url(#ax12-2)"/><line x1="52" y1="382" x2="52" y2="16" marker-end="url(#ax12-2)"/></g><g font-size="12" fill="#555" font-family="sans-serif"><line x1="110.4" y1="378" x2="110.4" y2="386" stroke="#555"/><text x="110.4" y="400" text-anchor="middle">10</text><line x1="168.8" y1="378" x2="168.8" y2="386" stroke="#555"/><text x="168.8" y="400" text-anchor="middle">20</text><line x1="227.2" y1="378" x2="227.2" y2="386" stroke="#555"/><text x="227.2" y="400" text-anchor="middle">30</text><line x1="285.6" y1="378" x2="285.6" y2="386" stroke="#555"/><text x="285.6" y="400" text-anchor="middle">40</text><line x1="344" y1="378" x2="344" y2="386" stroke="#555"/><text x="344" y="400" text-anchor="middle">50</text><line x1="402.4" y1="378" x2="402.4" y2="386" stroke="#555"/><text x="402.4" y="400" text-anchor="middle">60</text><line x1="460.8" y1="378" x2="460.8" y2="386" stroke="#555"/><text x="460.8" y="400" text-anchor="middle">70</text><line x1="48" y1="346.8" x2="56" y2="346.8" stroke="#555"/><text x="44" y="350.8" text-anchor="end">10</text><line x1="48" y1="311.6" x2="56" y2="311.6" stroke="#555"/><text x="44" y="315.6" text-anchor="end">20</text><line x1="48" y1="276.4" x2="56" y2="276.4" stroke="#555"/><text x="44" y="280.4" text-anchor="end">30</text><line x1="48" y1="241.2" x2="56" y2="241.2" stroke="#555"/><text x="44" y="245.2" text-anchor="end">40</text><line x1="48" y1="206" x2="56" y2="206" stroke="#555"/><text x="44" y="210" text-anchor="end">50</text><line x1="48" y1="170.8" x2="56" y2="170.8" stroke="#555"/><text x="44" y="174.8" text-anchor="end">60</text><line x1="48" y1="135.6" x2="56" y2="135.6" stroke="#555"/><text x="44" y="139.6" text-anchor="end">70</text><line x1="48" y1="100.4" x2="56" y2="100.4" stroke="#555"/><text x="44" y="104.4" text-anchor="end">80</text><line x1="48" y1="65.2" x2="56" y2="65.2" stroke="#555"/><text x="44" y="69.2" text-anchor="end">90</text><line x1="48" y1="30" x2="56" y2="30" stroke="#555"/><text x="44" y="34" text-anchor="end">100</text><text x="44" y="400" text-anchor="end" font-style="italic">O</text><text x="506" y="400" text-anchor="middle" font-style="italic" font-size="14">X</text><text x="64" y="22" font-style="italic" font-size="14">Y</text></g><line x1="52" y1="65.2" x2="227.2" y2="382" stroke="#0d4f4f" stroke-width="2.2"/><text x="104.6" y="100.4" fill="#0d4f4f" font-size="14" font-style="italic" font-family="serif" font-weight="bold" text-anchor="start">3x + y = 90</text><line x1="52" y1="206" x2="344" y2="382" stroke="#c0602b" stroke-width="2.2"/><text x="344" y="353.8" fill="#c0602b" font-size="14" font-style="italic" font-family="serif" font-weight="bold" text-anchor="start">x + y = 50</text><circle cx="52" cy="382" r="4.5" fill="#c0602b" stroke="#fff" stroke-width="1"/><circle cx="227.2" cy="382" r="4.5" fill="#c0602b" stroke="#fff" stroke-width="1"/><text x="231.2" y="412" font-size="13" font-weight="bold" fill="#2d2d2d" font-family="sans-serif" text-anchor="middle">A(30, 0)</text><circle cx="168.8" cy="276.4" r="4.5" fill="#c0602b" stroke="#fff" stroke-width="1"/><text x="177.8" y="272.4" font-size="13" font-weight="bold" fill="#2d2d2d" font-family="sans-serif" text-anchor="start">B(20, 30)</text><circle cx="52" cy="206" r="4.5" fill="#c0602b" stroke="#fff" stroke-width="1"/><text x="60" y="196" font-size="13" font-weight="bold" fill="#2d2d2d" font-family="sans-serif" text-anchor="start">C(0, 50)</text><circle cx="344" cy="382" r="4.5" fill="#555" stroke="#fff" stroke-width="1"/><text x="344" y="412" font-size="13" font-weight="bold" fill="#2d2d2d" font-family="sans-serif" text-anchor="middle">(50, 0)</text></svg>
+            <figcaption>Fig 12.2 &mdash; Feasible region OABC for Example 1</figcaption>
+        </figure>
+
+        <table>
+            <thead><tr><th>Corner Point</th><th>Corresponding value of Z</th><th></th></tr></thead>
+            <tbody>
+                <tr><td>(0, 0)</td><td>0</td><td></td></tr>
+                <tr><td>(30, 0)</td><td><strong>120</strong></td><td>&larr; Maximum</td></tr>
+                <tr><td>(20, 30)</td><td>110</td><td></td></tr>
+                <tr><td>(0, 50)</td><td>50</td><td></td></tr>
+            </tbody>
+        </table>
+        <p>Hence, maximum value of Z is <strong>120</strong> at the point (30, 0).</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 2</div>
+        <p>Solve the following linear programming problem graphically:</p>
+        \[ \text{Minimise } Z = 200x + 500y \tag{1} \]
+        <p>subject to the constraints:</p>
+        \[ x + 2y \ge 10 \tag{2} \]
+        \[ 3x + 4y \le 24 \tag{3} \]
+        \[ x \ge 0,\ y \ge 0 \tag{4} \]
+        <p><strong>Solution</strong> The shaded region in Fig 12.3 is the feasible region ABC determined by the system of constraints (2) to (4), which is <strong>bounded</strong>. The coordinates of corner points A, B and C are (0, 5), (4, 3) and (0, 6) respectively. Now we evaluate \(Z = 200x + 500y\) at these points.</p>
+
+        <figure class="diagram">
+            <svg viewBox="0 0 540 400" xmlns="http://www.w3.org/2000/svg" style="max-width:520px;" role="img" aria-label="Feasible triangle ABC between x + 2y = 10 and 3x + 4y = 24 with corners A(0,5), B(4,3), C(0,6)"><defs><marker id="ax12-3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs><g stroke="#e2e8f0" stroke-width="1"><line x1="52" y1="352" x2="52" y2="30"/><line x1="95.6" y1="352" x2="95.6" y2="30"/><line x1="139.2" y1="352" x2="139.2" y2="30"/><line x1="182.9" y1="352" x2="182.9" y2="30"/><line x1="226.5" y1="352" x2="226.5" y2="30"/><line x1="270.1" y1="352" x2="270.1" y2="30"/><line x1="313.7" y1="352" x2="313.7" y2="30"/><line x1="357.3" y1="352" x2="357.3" y2="30"/><line x1="401" y1="352" x2="401" y2="30"/><line x1="444.6" y1="352" x2="444.6" y2="30"/><line x1="488.2" y1="352" x2="488.2" y2="30"/><line x1="52" y1="352" x2="510" y2="352"/><line x1="52" y1="309.1" x2="510" y2="309.1"/><line x1="52" y1="266.1" x2="510" y2="266.1"/><line x1="52" y1="223.2" x2="510" y2="223.2"/><line x1="52" y1="180.3" x2="510" y2="180.3"/><line x1="52" y1="137.3" x2="510" y2="137.3"/><line x1="52" y1="94.4" x2="510" y2="94.4"/><line x1="52" y1="51.5" x2="510" y2="51.5"/></g><polygon points="52,137.3 226.5,223.2 52,94.4" fill="#2b6cb0" fill-opacity="0.35" stroke="none"/><g stroke="#555" stroke-width="1.6" fill="none"><line x1="52" y1="352" x2="524" y2="352" marker-end="url(#ax12-3)"/><line x1="52" y1="352" x2="52" y2="16" marker-end="url(#ax12-3)"/></g><g font-size="12" fill="#555" font-family="sans-serif"><line x1="95.6" y1="348" x2="95.6" y2="356" stroke="#555"/><text x="95.6" y="370" text-anchor="middle">1</text><line x1="139.2" y1="348" x2="139.2" y2="356" stroke="#555"/><text x="139.2" y="370" text-anchor="middle">2</text><line x1="182.9" y1="348" x2="182.9" y2="356" stroke="#555"/><text x="182.9" y="370" text-anchor="middle">3</text><line x1="226.5" y1="348" x2="226.5" y2="356" stroke="#555"/><text x="226.5" y="370" text-anchor="middle">4</text><line x1="270.1" y1="348" x2="270.1" y2="356" stroke="#555"/><text x="270.1" y="370" text-anchor="middle">5</text><line x1="313.7" y1="348" x2="313.7" y2="356" stroke="#555"/><text x="313.7" y="370" text-anchor="middle">6</text><line x1="357.3" y1="348" x2="357.3" y2="356" stroke="#555"/><text x="357.3" y="370" text-anchor="middle">7</text><line x1="401" y1="348" x2="401" y2="356" stroke="#555"/><text x="401" y="370" text-anchor="middle">8</text><line x1="444.6" y1="348" x2="444.6" y2="356" stroke="#555"/><text x="444.6" y="370" text-anchor="middle">9</text><line x1="488.2" y1="348" x2="488.2" y2="356" stroke="#555"/><text x="488.2" y="370" text-anchor="middle">10</text><line x1="48" y1="309.1" x2="56" y2="309.1" stroke="#555"/><text x="44" y="313.1" text-anchor="end">1</text><line x1="48" y1="266.1" x2="56" y2="266.1" stroke="#555"/><text x="44" y="270.1" text-anchor="end">2</text><line x1="48" y1="223.2" x2="56" y2="223.2" stroke="#555"/><text x="44" y="227.2" text-anchor="end">3</text><line x1="48" y1="180.3" x2="56" y2="180.3" stroke="#555"/><text x="44" y="184.3" text-anchor="end">4</text><line x1="48" y1="137.3" x2="56" y2="137.3" stroke="#555"/><text x="44" y="141.3" text-anchor="end">5</text><line x1="48" y1="94.4" x2="56" y2="94.4" stroke="#555"/><text x="44" y="98.4" text-anchor="end">6</text><line x1="48" y1="51.5" x2="56" y2="51.5" stroke="#555"/><text x="44" y="55.5" text-anchor="end">7</text><text x="44" y="370" text-anchor="end" font-style="italic">O</text><text x="526" y="370" text-anchor="middle" font-style="italic" font-size="14">X</text><text x="64" y="22" font-style="italic" font-size="14">Y</text></g><line x1="52" y1="137.3" x2="488.2" y2="352" stroke="#c0602b" stroke-width="2.2"/><text x="414" y="289.7" fill="#c0602b" font-size="14" font-style="italic" font-family="serif" font-weight="bold" text-anchor="start">x + 2y = 10</text><line x1="52" y1="94.4" x2="401" y2="352" stroke="#0d4f4f" stroke-width="2.2"/><text x="243.9" y="309.1" fill="#0d4f4f" font-size="14" font-style="italic" font-family="serif" font-weight="bold" text-anchor="start">3x + 4y = 24</text><line x1="55.5" y1="141.6" x2="71.6" y2="182.4" stroke="#555" stroke-width="1"/><circle cx="52" cy="137.3" r="4.5" fill="#c0602b" stroke="#fff" stroke-width="1"/><text x="69.4" y="193.1" font-size="13" fill="#2d2d2d" font-family="sans-serif" text-anchor="start">A(0, 5)</text><circle cx="226.5" cy="223.2" r="4.5" fill="#c0602b" stroke="#fff" stroke-width="1"/><text x="218.5" y="245.2" font-size="13" font-weight="bold" fill="#2d2d2d" font-family="sans-serif" text-anchor="end">B(4, 3)</text><circle cx="52" cy="94.4" r="4.5" fill="#c0602b" stroke="#fff" stroke-width="1"/><text x="60" y="86.4" font-size="13" font-weight="bold" fill="#2d2d2d" font-family="sans-serif" text-anchor="start">C(0, 6)</text><circle cx="401" cy="352" r="4.5" fill="#555" stroke="#fff" stroke-width="1"/><text x="401" y="342" font-size="13" font-weight="bold" fill="#2d2d2d" font-family="sans-serif" text-anchor="middle">(8, 0)</text><circle cx="488.2" cy="352" r="4.5" fill="#555" stroke="#fff" stroke-width="1"/><text x="488.2" y="342" font-size="13" font-weight="bold" fill="#2d2d2d" font-family="sans-serif" text-anchor="middle">(10, 0)</text></svg>
+            <figcaption>Fig 12.3 &mdash; Feasible region ABC for Example 2</figcaption>
+        </figure>
+
+        <table>
+            <thead><tr><th>Corner Point</th><th>Corresponding value of Z</th><th></th></tr></thead>
+            <tbody>
+                <tr><td>(0, 5)</td><td>2500</td><td></td></tr>
+                <tr><td>(4, 3)</td><td><strong>2300</strong></td><td>&larr; Minimum</td></tr>
+                <tr><td>(0, 6)</td><td>3000</td><td></td></tr>
+            </tbody>
+        </table>
+        <p>Hence, minimum value of Z is <strong>2300</strong> attained at the point (4, 3).</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 3</div>
+        <p>Solve the following problem graphically:</p>
+        \[ \text{Minimise and Maximise } Z = 3x + 9y \tag{1} \]
+        <p>subject to the constraints:</p>
+        \[ x + 3y \le 60 \tag{2} \]
+        \[ x + y \ge 10 \tag{3} \]
+        \[ x \le y \tag{4} \]
+        \[ x \ge 0,\ y \ge 0 \tag{5} \]
+        <p><strong>Solution</strong> First of all, let us graph the feasible region of the system of linear inequalities (2) to (5). The feasible region ABCD is shown in the Fig 12.4. Note that the region is bounded. The coordinates of the corner points A, B, C and D are (0, 10), (5, 5), (15, 15) and (0, 20) respectively.</p>
+
+        <figure class="diagram">
+            <svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg" style="max-width:520px;" role="img" aria-label="Feasible quadrilateral ABCD bounded by x + 3y = 60, x + y = 10, x = y and the y-axis, with corners A(0,10), B(5,5), C(15,15), D(0,20)"><defs><marker id="ax12-4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs><g stroke="#e2e8f0" stroke-width="1"><line x1="52" y1="332" x2="52" y2="30"/><line x1="88.8" y1="332" x2="88.8" y2="30"/><line x1="125.5" y1="332" x2="125.5" y2="30"/><line x1="162.3" y1="332" x2="162.3" y2="30"/><line x1="199.1" y1="332" x2="199.1" y2="30"/><line x1="235.8" y1="332" x2="235.8" y2="30"/><line x1="272.6" y1="332" x2="272.6" y2="30"/><line x1="309.4" y1="332" x2="309.4" y2="30"/><line x1="346.2" y1="332" x2="346.2" y2="30"/><line x1="382.9" y1="332" x2="382.9" y2="30"/><line x1="419.7" y1="332" x2="419.7" y2="30"/><line x1="456.5" y1="332" x2="456.5" y2="30"/><line x1="493.2" y1="332" x2="493.2" y2="30"/><line x1="530" y1="332" x2="530" y2="30"/><line x1="52" y1="332" x2="530" y2="332"/><line x1="52" y1="284.8" x2="530" y2="284.8"/><line x1="52" y1="237.6" x2="530" y2="237.6"/><line x1="52" y1="190.4" x2="530" y2="190.4"/><line x1="52" y1="143.2" x2="530" y2="143.2"/><line x1="52" y1="96.1" x2="530" y2="96.1"/><line x1="52" y1="48.9" x2="530" y2="48.9"/></g><polygon points="52,237.6 88.8,284.8 162.3,190.4 52,143.2" fill="#2b6cb0" fill-opacity="0.35" stroke="none"/><g stroke="#555" stroke-width="1.6" fill="none"><line x1="52" y1="332" x2="544" y2="332" marker-end="url(#ax12-4)"/><line x1="52" y1="332" x2="52" y2="16" marker-end="url(#ax12-4)"/></g><g font-size="12" fill="#555" font-family="sans-serif"><line x1="88.8" y1="328" x2="88.8" y2="336" stroke="#555"/><text x="88.8" y="350" text-anchor="middle">5</text><line x1="125.5" y1="328" x2="125.5" y2="336" stroke="#555"/><text x="125.5" y="350" text-anchor="middle">10</text><line x1="162.3" y1="328" x2="162.3" y2="336" stroke="#555"/><text x="162.3" y="350" text-anchor="middle">15</text><line x1="199.1" y1="328" x2="199.1" y2="336" stroke="#555"/><text x="199.1" y="350" text-anchor="middle">20</text><line x1="235.8" y1="328" x2="235.8" y2="336" stroke="#555"/><text x="235.8" y="350" text-anchor="middle">25</text><line x1="272.6" y1="328" x2="272.6" y2="336" stroke="#555"/><text x="272.6" y="350" text-anchor="middle">30</text><line x1="309.4" y1="328" x2="309.4" y2="336" stroke="#555"/><text x="309.4" y="350" text-anchor="middle">35</text><line x1="346.2" y1="328" x2="346.2" y2="336" stroke="#555"/><text x="346.2" y="350" text-anchor="middle">40</text><line x1="382.9" y1="328" x2="382.9" y2="336" stroke="#555"/><text x="382.9" y="350" text-anchor="middle">45</text><line x1="419.7" y1="328" x2="419.7" y2="336" stroke="#555"/><text x="419.7" y="350" text-anchor="middle">50</text><line x1="456.5" y1="328" x2="456.5" y2="336" stroke="#555"/><text x="456.5" y="350" text-anchor="middle">55</text><line x1="493.2" y1="328" x2="493.2" y2="336" stroke="#555"/><text x="493.2" y="350" text-anchor="middle">60</text><line x1="530" y1="328" x2="530" y2="336" stroke="#555"/><text x="530" y="350" text-anchor="middle">65</text><line x1="48" y1="284.8" x2="56" y2="284.8" stroke="#555"/><text x="44" y="288.8" text-anchor="end">5</text><line x1="48" y1="237.6" x2="56" y2="237.6" stroke="#555"/><text x="44" y="241.6" text-anchor="end">10</text><line x1="48" y1="190.4" x2="56" y2="190.4" stroke="#555"/><text x="44" y="194.4" text-anchor="end">15</text><line x1="48" y1="143.2" x2="56" y2="143.2" stroke="#555"/><text x="44" y="147.2" text-anchor="end">20</text><line x1="48" y1="96.1" x2="56" y2="96.1" stroke="#555"/><text x="44" y="100.1" text-anchor="end">25</text><line x1="48" y1="48.9" x2="56" y2="48.9" stroke="#555"/><text x="44" y="52.9" text-anchor="end">30</text><text x="44" y="350" text-anchor="end" font-style="italic">O</text><text x="546" y="350" text-anchor="middle" font-style="italic" font-size="14">X</text><text x="64" y="22" font-style="italic" font-size="14">Y</text></g><line x1="52" y1="332" x2="287.3" y2="30" stroke="#6b46c1" stroke-width="2.2"/><text x="243.2" y="48.9" fill="#6b46c1" font-size="14" font-style="italic" font-family="serif" font-weight="bold" text-anchor="start">x = y</text><line x1="52" y1="237.6" x2="125.5" y2="332" stroke="#c0602b" stroke-width="2.2"/><text x="125.5" y="368" fill="#c0602b" font-size="14" font-style="italic" font-family="serif" font-weight="bold" text-anchor="middle">x + y = 10</text><line x1="52" y1="143.2" x2="493.2" y2="332" stroke="#0d4f4f" stroke-width="2.2"/><text x="346.2" y="242.3" fill="#0d4f4f" font-size="14" font-style="italic" font-family="serif" font-weight="bold" text-anchor="start">x + 3y = 60</text><circle cx="52" cy="237.6" r="4.5" fill="#c0602b" stroke="#fff" stroke-width="1"/><text x="60" y="241.6" font-size="13" font-weight="bold" fill="#2d2d2d" font-family="sans-serif" text-anchor="start">A(0, 10)</text><circle cx="88.8" cy="284.8" r="4.5" fill="#c0602b" stroke="#fff" stroke-width="1"/><text x="98.8" y="296.8" font-size="13" font-weight="bold" fill="#2d2d2d" font-family="sans-serif" text-anchor="start">B(5, 5)</text><circle cx="162.3" cy="190.4" r="4.5" fill="#c0602b" stroke="#fff" stroke-width="1"/><text x="172.3" y="192.4" font-size="13" font-weight="bold" fill="#2d2d2d" font-family="sans-serif" text-anchor="start">C(15, 15)</text><circle cx="52" cy="143.2" r="4.5" fill="#c0602b" stroke="#fff" stroke-width="1"/><text x="60" y="133.2" font-size="13" font-weight="bold" fill="#2d2d2d" font-family="sans-serif" text-anchor="start">D(0, 20)</text><circle cx="125.5" cy="332" r="4.5" fill="#555" stroke="#fff" stroke-width="1"/><text x="131.5" y="326" font-size="13" font-weight="bold" fill="#2d2d2d" font-family="sans-serif" text-anchor="start">(10, 0)</text><circle cx="493.2" cy="332" r="4.5" fill="#555" stroke="#fff" stroke-width="1"/><text x="493.2" y="322" font-size="13" font-weight="bold" fill="#2d2d2d" font-family="sans-serif" text-anchor="middle">(60, 0)</text></svg>
+            <figcaption>Fig 12.4 &mdash; Feasible region ABCD for Example 3</figcaption>
+        </figure>
+
+        <table>
+            <thead><tr><th>Corner Point</th><th>Corresponding value of \(Z = 3x + 9y\)</th><th></th></tr></thead>
+            <tbody>
+                <tr><td>A (0, 10)</td><td>90</td><td></td></tr>
+                <tr><td>B (5, 5)</td><td><strong>60</strong></td><td>&larr; Minimum</td></tr>
+                <tr><td>C (15, 15)</td><td><strong>180</strong></td><td rowspan="2">&larr; Maximum (Multiple optimal solutions)</td></tr>
+                <tr><td>D (0, 20)</td><td><strong>180</strong></td></tr>
+            </tbody>
+        </table>
+
+        <p>We now find the minimum and maximum value of Z. From the table, we find that the minimum value of Z is <strong>60</strong> at the point B (5, 5) of the feasible region.</p>
+        <p>The maximum value of Z on the feasible region occurs at the two corner points C (15, 15) and D (0, 20) and it is <strong>180</strong> in each case.</p>
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Remark</div>
+        <p>Observe that in the above example, the problem has <strong>multiple optimal solutions</strong> at the corner points C and D, i.e. the both points produce same maximum value 180. In such cases, you can see that every point on the line segment CD joining the two corner points C and D also give the same maximum value. Same is also true in the case if the two points produce same minimum value.</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 4</div>
+        <p>Determine graphically the minimum value of the objective function</p>
+        \[ Z = -50x + 20y \tag{1} \]
+        <p>subject to the constraints:</p>
+        \[ 2x - y \ge -5 \tag{2} \]
+        \[ 3x + y \ge 3 \tag{3} \]
+        \[ 2x - 3y \le 12 \tag{4} \]
+        \[ x \ge 0,\ y \ge 0 \tag{5} \]
+        <p><strong>Solution</strong> First of all, let us graph the feasible region of the system of inequalities (2) to (5). The feasible region (shaded) is shown in the Fig 12.5. Observe that the feasible region is <strong>unbounded</strong>.</p>
+        <p>We now evaluate Z at the corner points.</p>
+
+        <figure class="diagram">
+            <svg viewBox="0 0 540 460" xmlns="http://www.w3.org/2000/svg" style="max-width:520px;" role="img" aria-label="Unbounded feasible region with corners (0,5), (0,3), (1,0), (6,0); the open half plane −5x + 2y &lt; −30 overlaps it"><defs><marker id="ax12-5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs><g stroke="#e2e8f0" stroke-width="1"><line x1="52" y1="412" x2="52" y2="30"/><line x1="90.2" y1="412" x2="90.2" y2="30"/><line x1="128.3" y1="412" x2="128.3" y2="30"/><line x1="166.5" y1="412" x2="166.5" y2="30"/><line x1="204.7" y1="412" x2="204.7" y2="30"/><line x1="242.8" y1="412" x2="242.8" y2="30"/><line x1="281" y1="412" x2="281" y2="30"/><line x1="319.2" y1="412" x2="319.2" y2="30"/><line x1="357.3" y1="412" x2="357.3" y2="30"/><line x1="395.5" y1="412" x2="395.5" y2="30"/><line x1="433.7" y1="412" x2="433.7" y2="30"/><line x1="471.8" y1="412" x2="471.8" y2="30"/><line x1="510" y1="412" x2="510" y2="30"/><line x1="52" y1="412" x2="510" y2="412"/><line x1="52" y1="377.3" x2="510" y2="377.3"/><line x1="52" y1="342.5" x2="510" y2="342.5"/><line x1="52" y1="307.8" x2="510" y2="307.8"/><line x1="52" y1="273.1" x2="510" y2="273.1"/><line x1="52" y1="238.4" x2="510" y2="238.4"/><line x1="52" y1="203.6" x2="510" y2="203.6"/><line x1="52" y1="168.9" x2="510" y2="168.9"/><line x1="52" y1="134.2" x2="510" y2="134.2"/><line x1="52" y1="99.5" x2="510" y2="99.5"/><line x1="52" y1="64.7" x2="510" y2="64.7"/><line x1="52" y1="30" x2="510" y2="30"/></g><polygon points="52,238.4 52,307.8 90.2,412 281,412 510,273.1 510,30 166.5,30" fill="#2b6cb0" fill-opacity="0.2" stroke="none"/><polygon points="281,412 510,273.1 510,30 448.9,30" fill="#2b6cb0" fill-opacity="0.35" stroke="none"/><g stroke="#555" stroke-width="1.6" fill="none"><line x1="52" y1="412" x2="524" y2="412" marker-end="url(#ax12-5)"/><line x1="52" y1="412" x2="52" y2="16" marker-end="url(#ax12-5)"/></g><g font-size="12" fill="#555" font-family="sans-serif"><line x1="90.2" y1="408" x2="90.2" y2="416" stroke="#555"/><text x="90.2" y="430" text-anchor="middle">1</text><line x1="128.3" y1="408" x2="128.3" y2="416" stroke="#555"/><text x="128.3" y="430" text-anchor="middle">2</text><line x1="166.5" y1="408" x2="166.5" y2="416" stroke="#555"/><text x="166.5" y="430" text-anchor="middle">3</text><line x1="204.7" y1="408" x2="204.7" y2="416" stroke="#555"/><text x="204.7" y="430" text-anchor="middle">4</text><line x1="242.8" y1="408" x2="242.8" y2="416" stroke="#555"/><text x="242.8" y="430" text-anchor="middle">5</text><line x1="281" y1="408" x2="281" y2="416" stroke="#555"/><text x="281" y="430" text-anchor="middle">6</text><line x1="319.2" y1="408" x2="319.2" y2="416" stroke="#555"/><text x="319.2" y="430" text-anchor="middle">7</text><line x1="357.3" y1="408" x2="357.3" y2="416" stroke="#555"/><text x="357.3" y="430" text-anchor="middle">8</text><line x1="395.5" y1="408" x2="395.5" y2="416" stroke="#555"/><text x="395.5" y="430" text-anchor="middle">9</text><line x1="433.7" y1="408" x2="433.7" y2="416" stroke="#555"/><text x="433.7" y="430" text-anchor="middle">10</text><line x1="471.8" y1="408" x2="471.8" y2="416" stroke="#555"/><text x="471.8" y="430" text-anchor="middle">11</text><line x1="510" y1="408" x2="510" y2="416" stroke="#555"/><text x="510" y="430" text-anchor="middle">12</text><line x1="48" y1="377.3" x2="56" y2="377.3" stroke="#555"/><text x="44" y="381.3" text-anchor="end">1</text><line x1="48" y1="342.5" x2="56" y2="342.5" stroke="#555"/><text x="44" y="346.5" text-anchor="end">2</text><line x1="48" y1="307.8" x2="56" y2="307.8" stroke="#555"/><text x="44" y="311.8" text-anchor="end">3</text><line x1="48" y1="273.1" x2="56" y2="273.1" stroke="#555"/><text x="44" y="277.1" text-anchor="end">4</text><line x1="48" y1="238.4" x2="56" y2="238.4" stroke="#555"/><text x="44" y="242.4" text-anchor="end">5</text><line x1="48" y1="203.6" x2="56" y2="203.6" stroke="#555"/><text x="44" y="207.6" text-anchor="end">6</text><line x1="48" y1="168.9" x2="56" y2="168.9" stroke="#555"/><text x="44" y="172.9" text-anchor="end">7</text><line x1="48" y1="134.2" x2="56" y2="134.2" stroke="#555"/><text x="44" y="138.2" text-anchor="end">8</text><line x1="48" y1="99.5" x2="56" y2="99.5" stroke="#555"/><text x="44" y="103.5" text-anchor="end">9</text><line x1="48" y1="64.7" x2="56" y2="64.7" stroke="#555"/><text x="44" y="68.7" text-anchor="end">10</text><line x1="48" y1="30" x2="56" y2="30" stroke="#555"/><text x="44" y="34" text-anchor="end">11</text><text x="44" y="430" text-anchor="end" font-style="italic">O</text><text x="526" y="430" text-anchor="middle" font-style="italic" font-size="14">X</text><text x="64" y="22" font-style="italic" font-size="14">Y</text></g><line x1="52" y1="238.4" x2="166.5" y2="30" stroke="#0d4f4f" stroke-width="2.2"/><text x="136" y="43.9" fill="#0d4f4f" font-size="14" font-style="italic" font-family="serif" font-weight="bold" text-anchor="end">2x − y = −5</text><line x1="52" y1="307.8" x2="90.2" y2="412" stroke="#c0602b" stroke-width="2.2"/><text x="65.4" y="446" fill="#c0602b" font-size="14" font-style="italic" font-family="serif" font-weight="bold" text-anchor="start">3x + y = 3</text><line x1="510" y1="273.1" x2="281" y2="412" stroke="#276749" stroke-width="2.2"/><text x="441.3" y="328.7" fill="#276749" font-size="14" font-style="italic" font-family="serif" font-weight="bold" text-anchor="start">2x − 3y = 12</text><line x1="281" y1="412" x2="448.9" y2="30" stroke="#6b46c1" stroke-width="2.2" stroke-dasharray="6 4"/><text x="426" y="57.8" fill="#6b46c1" font-size="14" font-style="italic" font-family="serif" font-weight="bold" text-anchor="end">−5x + 2y = −30</text><circle cx="52" cy="238.4" r="4.5" fill="#c0602b" stroke="#fff" stroke-width="1"/><text x="60" y="242.4" font-size="13" font-weight="bold" fill="#2d2d2d" font-family="sans-serif" text-anchor="start">(0, 5)</text><circle cx="52" cy="307.8" r="4.5" fill="#c0602b" stroke="#fff" stroke-width="1"/><text x="60" y="311.8" font-size="13" font-weight="bold" fill="#2d2d2d" font-family="sans-serif" text-anchor="start">B(0, 3)</text><circle cx="90.2" cy="412" r="4.5" fill="#c0602b" stroke="#fff" stroke-width="1"/><text x="96.2" y="404" font-size="13" font-weight="bold" fill="#2d2d2d" font-family="sans-serif" text-anchor="start">A(1, 0)</text><circle cx="281" cy="412" r="4.5" fill="#c0602b" stroke="#fff" stroke-width="1"/><text x="281" y="448" font-size="13" font-weight="bold" fill="#2d2d2d" font-family="sans-serif" text-anchor="middle">(6, 0)</text><circle cx="357.3" cy="238.4" r="4.5" fill="#555" stroke="#fff" stroke-width="1"/><text x="349.3" y="238.4" font-size="13" font-weight="bold" fill="#2d2d2d" font-family="sans-serif" text-anchor="end">(8, 5)</text><circle cx="395.5" cy="342.5" r="4.5" fill="#555" stroke="#fff" stroke-width="1"/><text x="391.5" y="332.5" font-size="13" font-weight="bold" fill="#2d2d2d" font-family="sans-serif" text-anchor="end">(9, 2)</text><circle cx="90.2" cy="168.9" r="4.5" fill="#555" stroke="#fff" stroke-width="1"/><text x="98.2" y="172.9" font-size="13" font-weight="bold" fill="#2d2d2d" font-family="sans-serif" text-anchor="start">(1, 7)</text><text x="204.7" y="186.3" font-size="13" fill="#2b6cb0" font-family="sans-serif" text-anchor="middle">Feasible region</text><text x="204.7" y="202.3" font-size="12" fill="#2b6cb0" font-family="sans-serif" text-anchor="middle">(unbounded)</text><text x="456.6" y="175.9" font-size="12" fill="#6b46c1" font-family="sans-serif" text-anchor="middle">−5x + 2y &lt; −30</text></svg>
+            <figcaption>Fig 12.5 &mdash; The unbounded feasible region of Example 4; the darker part is where it meets the open half plane \(-5x + 2y \lt -30\)</figcaption>
+        </figure>
+
+        <table>
+            <thead><tr><th>Corner Point</th><th>\(Z = -50x + 20y\)</th><th></th></tr></thead>
+            <tbody>
+                <tr><td>(0, 5)</td><td>100</td><td></td></tr>
+                <tr><td>(0, 3)</td><td>60</td><td></td></tr>
+                <tr><td>(1, 0)</td><td>\(-50\)</td><td></td></tr>
+                <tr><td>(6, 0)</td><td><strong>\(-300\)</strong></td><td>&larr; smallest</td></tr>
+            </tbody>
+        </table>
+
+        <p>From this table, we find that \(-300\) is the smallest value of Z at the corner point (6, 0). Can we say that minimum value of Z is \(-300\)? Note that if the region would have been bounded, this smallest value of Z is the minimum value of Z (Theorem 2). But here we see that the feasible region is unbounded. Therefore, \(-300\) may or may not be the minimum value of Z. To decide this issue, we graph the inequality</p>
+        \[ -50x + 20y \lt -300 \quad \text{(see Step 3(ii) of Corner Point Method.)} \]
+        \[ \text{i.e.,} \qquad -5x + 2y \lt -30 \]
+        <p>and check whether the resulting open half plane has points in common with feasible region or not. If it has common points, then \(-300\) will not be the minimum value of Z. Otherwise, \(-300\) will be the minimum value of Z.</p>
+        <p>As shown in the Fig 12.5, it has common points. Therefore, \(Z = -50x + 20y\) has <strong>no minimum value</strong> subject to the given constraints.</p>
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Think About It</div>
+        <p>In the above example, can you say whether \(Z = -50x + 20y\) has the maximum value 100 at (0, 5)? For this, check whether the graph of \(-50x + 20y \gt 100\) has points in common with the feasible region. (Why?)</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 5</div>
+        <p>Minimise \(Z = 3x + 2y\)</p>
+        <p>subject to the constraints:</p>
+        \[ x + y \ge 8 \tag{1} \]
+        \[ 3x + 5y \le 15 \tag{2} \]
+        \[ x \ge 0,\ y \ge 0 \tag{3} \]
+        <p><strong>Solution</strong> Let us graph the inequalities (1) to (3) (Fig 12.6). Is there any feasible region? Why is so?</p>
+
+        <figure class="diagram">
+            <svg viewBox="0 0 460 440" xmlns="http://www.w3.org/2000/svg" style="max-width:520px;" role="img" aria-label="The half plane x + y ≥ 8 and the triangle 3x + 5y ≤ 15 in the first quadrant do not overlap: no feasible region"><defs><marker id="ax12-6" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs><g stroke="#e2e8f0" stroke-width="1"><line x1="52" y1="392" x2="52" y2="30"/><line x1="91.8" y1="392" x2="91.8" y2="30"/><line x1="131.6" y1="392" x2="131.6" y2="30"/><line x1="171.4" y1="392" x2="171.4" y2="30"/><line x1="211.2" y1="392" x2="211.2" y2="30"/><line x1="250.9" y1="392" x2="250.9" y2="30"/><line x1="290.7" y1="392" x2="290.7" y2="30"/><line x1="330.5" y1="392" x2="330.5" y2="30"/><line x1="370.3" y1="392" x2="370.3" y2="30"/><line x1="410.1" y1="392" x2="410.1" y2="30"/><line x1="52" y1="392" x2="430" y2="392"/><line x1="52" y1="353.9" x2="430" y2="353.9"/><line x1="52" y1="315.8" x2="430" y2="315.8"/><line x1="52" y1="277.7" x2="430" y2="277.7"/><line x1="52" y1="239.6" x2="430" y2="239.6"/><line x1="52" y1="201.5" x2="430" y2="201.5"/><line x1="52" y1="163.4" x2="430" y2="163.4"/><line x1="52" y1="125.3" x2="430" y2="125.3"/><line x1="52" y1="87.2" x2="430" y2="87.2"/><line x1="52" y1="49.1" x2="430" y2="49.1"/></g><polygon points="370.3,392 430,392 430,30 52,30 52,87.2" fill="#2b6cb0" fill-opacity="0.2" stroke="none"/><polygon points="52,392 250.9,392 52,277.7" fill="#c0602b" fill-opacity="0.35" stroke="none"/><g stroke="#555" stroke-width="1.6" fill="none"><line x1="52" y1="392" x2="444" y2="392" marker-end="url(#ax12-6)"/><line x1="52" y1="392" x2="52" y2="16" marker-end="url(#ax12-6)"/></g><g font-size="12" fill="#555" font-family="sans-serif"><line x1="91.8" y1="388" x2="91.8" y2="396" stroke="#555"/><text x="91.8" y="410" text-anchor="middle">1</text><line x1="131.6" y1="388" x2="131.6" y2="396" stroke="#555"/><text x="131.6" y="410" text-anchor="middle">2</text><line x1="171.4" y1="388" x2="171.4" y2="396" stroke="#555"/><text x="171.4" y="410" text-anchor="middle">3</text><line x1="211.2" y1="388" x2="211.2" y2="396" stroke="#555"/><text x="211.2" y="410" text-anchor="middle">4</text><line x1="250.9" y1="388" x2="250.9" y2="396" stroke="#555"/><text x="250.9" y="410" text-anchor="middle">5</text><line x1="290.7" y1="388" x2="290.7" y2="396" stroke="#555"/><text x="290.7" y="410" text-anchor="middle">6</text><line x1="330.5" y1="388" x2="330.5" y2="396" stroke="#555"/><text x="330.5" y="410" text-anchor="middle">7</text><line x1="370.3" y1="388" x2="370.3" y2="396" stroke="#555"/><text x="370.3" y="410" text-anchor="middle">8</text><line x1="410.1" y1="388" x2="410.1" y2="396" stroke="#555"/><text x="410.1" y="410" text-anchor="middle">9</text><line x1="48" y1="353.9" x2="56" y2="353.9" stroke="#555"/><text x="44" y="357.9" text-anchor="end">1</text><line x1="48" y1="315.8" x2="56" y2="315.8" stroke="#555"/><text x="44" y="319.8" text-anchor="end">2</text><line x1="48" y1="277.7" x2="56" y2="277.7" stroke="#555"/><text x="44" y="281.7" text-anchor="end">3</text><line x1="48" y1="239.6" x2="56" y2="239.6" stroke="#555"/><text x="44" y="243.6" text-anchor="end">4</text><line x1="48" y1="201.5" x2="56" y2="201.5" stroke="#555"/><text x="44" y="205.5" text-anchor="end">5</text><line x1="48" y1="163.4" x2="56" y2="163.4" stroke="#555"/><text x="44" y="167.4" text-anchor="end">6</text><line x1="48" y1="125.3" x2="56" y2="125.3" stroke="#555"/><text x="44" y="129.3" text-anchor="end">7</text><line x1="48" y1="87.2" x2="56" y2="87.2" stroke="#555"/><text x="44" y="91.2" text-anchor="end">8</text><line x1="48" y1="49.1" x2="56" y2="49.1" stroke="#555"/><text x="44" y="53.1" text-anchor="end">9</text><text x="44" y="410" text-anchor="end" font-style="italic">O</text><text x="446" y="410" text-anchor="middle" font-style="italic" font-size="14">X</text><text x="64" y="22" font-style="italic" font-size="14">Y</text></g><line x1="52" y1="87.2" x2="370.3" y2="392" stroke="#0d4f4f" stroke-width="2.2"/><text x="179.3" y="186.2" fill="#0d4f4f" font-size="14" font-style="italic" font-family="serif" font-weight="bold" text-anchor="start">x + y = 8</text><line x1="52" y1="277.7" x2="250.9" y2="392" stroke="#c0602b" stroke-width="2.2"/><text x="139.5" y="315.8" fill="#c0602b" font-size="14" font-style="italic" font-family="serif" font-weight="bold" text-anchor="start">3x + 5y = 15</text><circle cx="52" cy="87.2" r="4.5" fill="#c0602b" stroke="#fff" stroke-width="1"/><text x="60" y="81.2" font-size="13" font-weight="bold" fill="#2d2d2d" font-family="sans-serif" text-anchor="start">(0, 8)</text><circle cx="370.3" cy="392" r="4.5" fill="#c0602b" stroke="#fff" stroke-width="1"/><text x="378.3" y="384" font-size="13" font-weight="bold" fill="#2d2d2d" font-family="sans-serif" text-anchor="start">(8, 0)</text><circle cx="52" cy="277.7" r="4.5" fill="#c0602b" stroke="#fff" stroke-width="1"/><text x="60" y="273.7" font-size="13" font-weight="bold" fill="#2d2d2d" font-family="sans-serif" text-anchor="start">(0, 3)</text><circle cx="250.9" cy="392" r="4.5" fill="#c0602b" stroke="#fff" stroke-width="1"/><text x="250.9" y="424" font-size="13" font-weight="bold" fill="#2d2d2d" font-family="sans-serif" text-anchor="middle">(5, 0)</text><text x="322.6" y="117.6" font-size="13" fill="#0d4f4f" font-family="sans-serif" text-anchor="middle">x + y ≥ 8</text><text x="115.7" y="361.5" font-size="11" fill="#c0602b" font-family="sans-serif" text-anchor="middle">3x + 5y ≤ 15</text></svg>
+            <figcaption>Fig 12.6 &mdash; The regions \(x + y \ge 8\) and \(3x + 5y \le 15\) (with \(x, y \ge 0\)) have no common point</figcaption>
+        </figure>
+
+        <p>From Fig 12.6, you can see that there is no point satisfying all the constraints simultaneously. Thus, the problem is having <strong>no feasible region</strong> and hence no feasible solution.</p>
+    </div>
+</div>
+
+<div class="card">
+    <h2>General Features of Linear Programming Problems</h2>
+    <div class="box box-insight">
+        <div class="box-label">Remarks</div>
+        <p>From the examples which we have discussed so far, we notice some general features of linear programming problems:</p>
+        <ol type="i">
+            <li>The feasible region is always a <strong>convex region</strong>.</li>
+            <li>The maximum (or minimum) solution of the objective function occurs at the vertex (corner) of the feasible region. If two corner points produce the same maximum (or minimum) value of the objective function, then every point on the line segment joining these points will also give the same maximum (or minimum) value.</li>
+        </ol>
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../12-linear-programming/03-mathematical-formulation-of-the-problem-12.2.1/index.html" class="nav-btn">&larr; 12.2.1 Mathematical formulation of the problem</a>
+    <a href="../../12-linear-programming/05-exercise-12.1/index.html" class="nav-btn">Exercise 12.1 &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

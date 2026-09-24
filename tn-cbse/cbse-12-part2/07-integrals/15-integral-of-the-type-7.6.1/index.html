@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.6.1 Integral of the type ∫eˣ[f(x) + f′(x)] dx — Integrals</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Integrals · 7.6.1 Integral of the type ∫eˣ[f(x) + f′(x)] dx">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../07-integrals/14-integration-by-parts-7.6/index.html" title="7.6 Integration by Parts">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Integrals</a></span>
+    <span class="c2">7.6.1 Integral of the type ∫eˣ[f(x) + f′(x)] dx</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 7 · Integrals</div><a href="../01-introduction-7.1/index.html">7.1 Introduction</a><a href="../02-integration-as-an-inverse-process-of-differentiation-7.2/index.html">7.2 Integration as an Inverse Process of Differentiation</a><a href="../03-some-properties-of-indefinite-integral-7.2.1/index.html">7.2.1 Some properties of indefinite integral</a><a href="../04-exercise-7.1/index.html">Exercise 7.1</a><a href="../05-methods-of-integration-7.3/index.html">7.3 Methods of Integration</a><a href="../06-integration-by-substitution-7.3.1/index.html">7.3.1 Integration by substitution</a><a href="../07-exercise-7.2/index.html">Exercise 7.2</a><a href="../08-integration-using-trigonometric-identities-7.3.2/index.html">7.3.2 Integration using trigonometric identities</a><a href="../09-exercise-7.3/index.html">Exercise 7.3</a><a href="../10-integrals-of-some-particular-functions-7.4/index.html">7.4 Integrals of Some Particular Functions</a><a href="../11-exercise-7.4/index.html">Exercise 7.4</a><a href="../12-integration-by-partial-fractions-7.5/index.html">7.5 Integration by Partial Fractions</a><a href="../13-exercise-7.5/index.html">Exercise 7.5</a><a href="../14-integration-by-parts-7.6/index.html">7.6 Integration by Parts</a><a href="../15-integral-of-the-type-7.6.1/index.html" aria-current="page">7.6.1 Integral of the type ∫eˣ[f(x) + f′(x)] dx</a><a href="../16-exercise-7.6/index.html">Exercise 7.6</a><a href="../17-integrals-of-some-more-types-7.6.2/index.html">7.6.2 Integrals of some more types</a><a href="../18-exercise-7.7/index.html">Exercise 7.7</a><a href="../19-definite-integral-7.7/index.html">7.7 Definite Integral</a><a href="../20-fundamental-theorem-of-calculus-7.8/index.html">7.8 Fundamental Theorem of Calculus</a><a href="../21-area-function-7.8.1/index.html">7.8.1 Area function</a><a href="../22-first-fundamental-theorem-of-integral-calculus-7.8.2/index.html">7.8.2 First fundamental theorem of integral calculus</a><a href="../23-second-fundamental-theorem-of-integral-calculus-7.8.3/index.html">7.8.3 Second fundamental theorem of integral calculus</a><a href="../24-exercise-7.8/index.html">Exercise 7.8</a><a href="../25-evaluation-of-definite-integrals-by-substitution-7.9/index.html">7.9 Evaluation of Definite Integrals by Substitution</a><a href="../26-exercise-7.9/index.html">Exercise 7.9</a><a href="../27-some-properties-of-definite-integrals-7.10/index.html">7.10 Some Properties of Definite Integrals</a><a href="../28-exercise-7.10/index.html">Exercise 7.10</a><a href="../29-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../30-miscellaneous-exercise-on-chapter-7/index.html">Miscellaneous Exercise on Chapter 7</a><a href="../31-summary/index.html">Summary</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../07-integrals/16-exercise-7.6/index.html" title="Exercise 7.6">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">7</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 7 · Integrals</a></p>
+        <h1>7.6.1 Integral of the type ∫eˣ[f(x) + f′(x)] dx</h1>
+        <p class="subtitle">Spot a function paired with its own derivative, and the answer is simply eˣ f(x) + C</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>A shortcut result obtained from <strong>integration by parts</strong></li>
+        <li>Recognising integrands of the form \( e^x[f(x) + f'(x)] \)</li>
+        <li>Rewriting an integrand to <span class="teal">expose</span> the pattern (Example 22)</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Deriving the Result</h2>
+    <p>We have</p>
+    \[ \begin{aligned} I = \int e^x [f(x) + f'(x)]\,dx &amp;= \int e^x f(x)\,dx + \int e^x f'(x)\,dx \\ &amp;= I_1 + \int e^x f'(x)\,dx, \quad \text{where } I_1 = \int e^x f(x)\,dx \end{aligned} \tag{1} \]
+    <p>Taking \(f(x)\) and \(e^x\) as the first function and second function, respectively, in \(I_1\) and integrating it by parts, we have</p>
+    \[ I_1 = f(x)\,e^x - \int f'(x)\,e^x\,dx + C \]
+    <p>Substituting \(I_1\) in (1), we get</p>
+    \[ I = e^x f(x) - \int f'(x)\,e^x\,dx + \int e^x f'(x)\,dx + C = e^x f(x) + C \]
+    <p>Thus,</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Result</div>
+        \[ \int e^x [f(x) + f'(x)]\,dx = e^x f(x) + C \]
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight</div>
+        <p>This is just the product rule read backwards: \( \dfrac{d}{dx}\left[ e^x f(x) \right] = e^x f(x) + e^x f'(x) \). Whenever the bracket beside \(e^x\) splits into &ldquo;a function plus its derivative&rdquo;, you can write the answer down at once.</p>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Worked Example</h2>
+
+    <div class="box box-example">
+        <div class="box-label">Example 22</div>
+        <p>Find (i) \( \displaystyle \int e^x \left( \tan^{-1} x + \frac{1}{1 + x^2} \right) dx \) &nbsp;&nbsp;&nbsp; (ii) \( \displaystyle \int \frac{(x^2 + 1)\,e^x}{(x + 1)^2}\,dx \)</p>
+        <p><strong>Solution</strong></p>
+
+        <p>(i) We have</p>
+        \[ I = \int e^x \left( \tan^{-1} x + \frac{1}{1 + x^2} \right) dx \]
+        <p>Consider \( f(x) = \tan^{-1} x \), then \( f'(x) = \dfrac{1}{1 + x^2} \)</p>
+        <p>Thus, the given integrand is of the form \( e^x[f(x) + f'(x)] \).</p>
+        <p>Therefore,</p>
+        \[ I = \int e^x \left( \tan^{-1} x + \frac{1}{1 + x^2} \right) dx = e^x \tan^{-1} x + C \]
+
+        <p>(ii) We have</p>
+        \[ \begin{aligned} I = \int \frac{(x^2 + 1)\,e^x}{(x + 1)^2}\,dx &amp;= \int e^x \left[ \frac{x^2 - 1 + 1 + 1}{(x + 1)^2} \right] dx \\ &amp;= \int e^x \left[ \frac{x^2 - 1}{(x + 1)^2} + \frac{2}{(x + 1)^2} \right] dx = \int e^x \left[ \frac{x - 1}{x + 1} + \frac{2}{(x + 1)^2} \right] dx \end{aligned} \]
+        <p>Consider \( f(x) = \dfrac{x - 1}{x + 1} \), then \( f'(x) = \dfrac{2}{(x + 1)^2} \)</p>
+        <p>Thus, the given integrand is of the form \( e^x[f(x) + f'(x)] \).</p>
+        <p>Therefore,</p>
+        \[ \int \frac{x^2 + 1}{(x + 1)^2}\,e^x\,dx = \frac{x - 1}{x + 1}\,e^x + C \]
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../07-integrals/14-integration-by-parts-7.6/index.html" class="nav-btn">&larr; 7.6 Integration by Parts</a>
+    <a href="../../07-integrals/16-exercise-7.6/index.html" class="nav-btn">Exercise 7.6 &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

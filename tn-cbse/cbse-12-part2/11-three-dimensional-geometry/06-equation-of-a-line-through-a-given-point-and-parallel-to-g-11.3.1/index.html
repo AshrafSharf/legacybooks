@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11.3.1 Equation of a line through a given point and parallel to a given vector b⃗ — Three Dimensional Geometry</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Three Dimensional Geometry · 11.3.1 Equation of a line through a given point and parallel to a given vector b⃗">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../11-three-dimensional-geometry/05-equation-of-a-line-in-space-11.3/index.html" title="11.3 Equation of a Line in Space">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Three Dimensional Geometry</a></span>
+    <span class="c2">11.3.1 Equation of a line through a given point and parallel to a given vector b⃗</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 11 · Three Dimensional Geometry</div><a href="../01-introduction-11.1/index.html">11.1 Introduction</a><a href="../02-direction-cosines-and-direction-ratios-of-a-line-11.2/index.html">11.2 Direction Cosines and Direction Ratios of a Line</a><a href="../03-direction-cosines-of-a-line-passing-through-two-points-11.2.1/index.html">11.2.1 Direction cosines of a line passing through two points</a><a href="../04-exercise-11.1/index.html">Exercise 11.1</a><a href="../05-equation-of-a-line-in-space-11.3/index.html">11.3 Equation of a Line in Space</a><a href="../06-equation-of-a-line-through-a-given-point-and-parallel-to-g-11.3.1/index.html" aria-current="page">11.3.1 Equation of a line through a given point and parallel to a given vector b⃗</a><a href="../07-angle-between-two-lines-11.4/index.html">11.4 Angle between Two Lines</a><a href="../08-shortest-distance-between-two-lines-11.5/index.html">11.5 Shortest Distance between Two Lines</a><a href="../09-distance-between-two-skew-lines-11.5.1/index.html">11.5.1 Distance between two skew lines</a><a href="../10-distance-between-parallel-lines-11.5.2/index.html">11.5.2 Distance between parallel lines</a><a href="../11-exercise-11.2/index.html">Exercise 11.2</a><a href="../12-miscellaneous-exercise-on-chapter-11/index.html">Miscellaneous Exercise on Chapter 11</a><a href="../13-summary/index.html">Summary</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../11-three-dimensional-geometry/07-angle-between-two-lines-11.4/index.html" title="11.4 Angle between Two Lines">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">11</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 11 · Three Dimensional Geometry</a></p>
+        <h1>11.3.1 Equation of a line through a given point and parallel to a given vector b⃗</h1>
+        <p class="subtitle">Start at a point, step along a direction — the vector and Cartesian equations of a line</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>The <strong>vector equation</strong> of a line: \(\vec{r} = \vec{a} + \lambda\vec{b}\)</li>
+        <li>How the components of \(\vec{b}\) give the <span class="teal">direction ratios</span> of the line</li>
+        <li><strong>Parametric</strong> equations and the <strong>Cartesian</strong> (symmetric) equation of a line</li>
+        <li>Worked example converting between the two forms</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Vector Equation of a Line</h2>
+    <p>Let \(\vec{a}\) be the position vector of the given point A with respect to the origin O of the rectangular coordinate system. Let \(l\) be the line which passes through the point A and is parallel to a given vector \(\vec{b}\). Let \(\vec{r}\) be the position vector of an arbitrary point P on the line (Fig 11.3).</p>
+
+    <figure class="diagram">
+        <svg viewBox="60 20 440 310" xmlns="http://www.w3.org/2000/svg" style="max-width:460px;" role="img" aria-label="Line l through A parallel to vector b; position vectors a of A and r of P drawn from origin O.">
+            <defs>
+                <marker id="ah114" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2d2d2d"/></marker>
+                <marker id="ah114b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2b6cb0"/></marker>
+                <marker id="ah114o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#c0602b"/></marker>
+            </defs>
+            <line x1="200" y1="230" x2="200" y2="40" stroke="#2d2d2d" stroke-width="2" marker-end="url(#ah114)"/>
+            <line x1="200" y1="230" x2="470" y2="230" stroke="#2d2d2d" stroke-width="2" marker-end="url(#ah114)"/>
+            <line x1="200" y1="230" x2="90" y2="312" stroke="#2d2d2d" stroke-width="2" marker-end="url(#ah114)"/>
+            <text x="194" y="34" font-size="16" font-weight="bold">Z</text>
+            <text x="476" y="236" font-size="16" font-weight="bold">Y</text>
+            <text x="74" y="322" font-size="16" font-weight="bold">X</text>
+            <text x="192" y="252" font-size="15" font-weight="bold">O</text>
+            <!-- line l with arrows at both ends -->
+            <line x1="130" y1="169.3" x2="440" y2="102.9" stroke="#2b6cb0" stroke-width="2.2" marker-start="url(#ah114b)" marker-end="url(#ah114b)"/>
+            <text x="446" y="104" font-size="17" font-style="italic" fill="#2b6cb0">l</text>
+            <!-- vector b parallel -->
+            <line x1="310" y1="70" x2="470" y2="35.7" stroke="#c0602b" stroke-width="2.2" marker-end="url(#ah114o)"/>
+            <text x="416" y="36" font-size="16" font-weight="bold" font-style="italic" fill="#c0602b">b&#8407;</text>
+            <!-- points -->
+            <circle cx="262" cy="141" r="4" fill="#0d4f4f"/>
+            <circle cx="374" cy="117" r="4" fill="#0d4f4f"/>
+            <text x="252" y="132" font-size="16" font-weight="bold" fill="#0d4f4f">A</text>
+            <text x="370" y="108" font-size="16" font-weight="bold" fill="#0d4f4f">P</text>
+            <!-- position vectors -->
+            <line x1="200" y1="230" x2="259.7" y2="144.3" stroke="#276749" stroke-width="2" marker-end="url(#ah114)"/>
+            <line x1="200" y1="230" x2="370.5" y2="118.9" stroke="#276749" stroke-width="2" marker-end="url(#ah114)"/>
+            <text x="212" y="182" font-size="16" font-weight="bold" font-style="italic" fill="#276749">a&#8407;</text>
+            <text x="300" y="186" font-size="16" font-weight="bold" font-style="italic" fill="#276749">r&#8407;</text>
+        </svg>
+        <figcaption>Fig 11.3 &mdash; The line \(l\) through A, parallel to \(\vec{b}\); P is any point on it.</figcaption>
+    </figure>
+
+    <p>Then \(\overrightarrow{\mathrm{AP}}\) is parallel to the vector \(\vec{b}\), i.e., \(\overrightarrow{\mathrm{AP}} = \lambda\vec{b}\), where \(\lambda\) is some real number.</p>
+    <p>But \(\overrightarrow{\mathrm{AP}} = \overrightarrow{\mathrm{OP}} - \overrightarrow{\mathrm{OA}}\), i.e.</p>
+    \[ \lambda\vec{b} = \vec{r} - \vec{a} \]
+    <p>Conversely, for each value of the parameter \(\lambda\), this equation gives the position vector of a point P on the line. Hence, the vector equation of the line is given by</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Vector equation of a line</div>
+        \[ \vec{r} = \vec{a} + \lambda\vec{b} \tag{1} \]
+        <p>The line passes through the point with position vector \(\vec{a}\) and is parallel to \(\vec{b}\); \(\lambda\) is a real parameter.</p>
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Remark</div>
+        <p>If \(\vec{b} = a\hat{i} + b\hat{j} + c\hat{k}\), then \(a, b, c\) are direction ratios of the line and conversely, if \(a, b, c\) are direction ratios of a line, then \(\vec{b} = a\hat{i} + b\hat{j} + c\hat{k}\) will be the parallel to the line. Here, \(b\) should not be confused with \(|\vec{b}|\).</p>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Derivation of Cartesian Form from Vector Form</h2>
+    <p>Let the coordinates of the given point A be \((x_1, y_1, z_1)\) and the direction ratios of the line be \(a, b, c\). Consider the coordinates of any point P be \((x, y, z)\). Then</p>
+    \[ \vec{r} = x\hat{i} + y\hat{j} + z\hat{k};\quad \vec{a} = x_1\hat{i} + y_1\hat{j} + z_1\hat{k} \]
+    <p>and</p>
+    \[ \vec{b} = a\hat{i} + b\hat{j} + c\hat{k} \]
+    <p>Substituting these values in (1) and equating the coefficients of \(\hat{i}\), \(\hat{j}\) and \(\hat{k}\), we get</p>
+    \[ x = x_1 + \lambda a;\quad y = y_1 + \lambda b;\quad z = z_1 + \lambda c \tag{2} \]
+    <p>These are <strong>parametric equations</strong> of the line. Eliminating the parameter \(\lambda\) from (2), we get</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Cartesian equation of a line</div>
+        \[ \frac{x - x_1}{a} = \frac{y - y_1}{b} = \frac{z - z_1}{c} \tag{3} \]
+        <p>This is the Cartesian equation of the line through \((x_1, y_1, z_1)\) with direction ratios \(a, b, c\).</p>
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Note</div>
+        <p>If \(l, m, n\) are the direction cosines of the line, the equation of the line is</p>
+        \[ \frac{x - x_1}{l} = \frac{y - y_1}{m} = \frac{z - z_1}{n} \]
+    </div>
+</div>
+
+<div class="card">
+    <h2>Worked Example</h2>
+    <div class="box box-example">
+        <div class="box-label">Example 6</div>
+        <p>Find the vector and the Cartesian equations of the line through the point \((5, 2, -4)\) and which is parallel to the vector \(3\hat{i} + 2\hat{j} - 8\hat{k}\).</p>
+        <p><strong>Solution</strong> We have</p>
+        \[ \vec{a} = 5\hat{i} + 2\hat{j} - 4\hat{k} \quad\text{and}\quad \vec{b} = 3\hat{i} + 2\hat{j} - 8\hat{k} \]
+        <p>Therefore, the vector equation of the line is</p>
+        \[ \vec{r} = 5\hat{i} + 2\hat{j} - 4\hat{k} + \lambda\left(3\hat{i} + 2\hat{j} - 8\hat{k}\right) \]
+        <p>Now, \(\vec{r}\) is the position vector of any point P\((x, y, z)\) on the line. Therefore,</p>
+        \[ \begin{aligned} x\hat{i} + y\hat{j} + z\hat{k} &amp;= 5\hat{i} + 2\hat{j} - 4\hat{k} + \lambda\left(3\hat{i} + 2\hat{j} - 8\hat{k}\right) \\ &amp;= (5 + 3\lambda)\hat{i} + (2 + 2\lambda)\hat{j} + (-4 - 8\lambda)\hat{k} \end{aligned} \]
+        <p>Eliminating \(\lambda\), we get</p>
+        \[ \frac{x - 5}{3} = \frac{y - 2}{2} = \frac{z + 4}{-8} \]
+        <p>which is the equation of the line in Cartesian form.</p>
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../11-three-dimensional-geometry/05-equation-of-a-line-in-space-11.3/index.html" class="nav-btn">&larr; 11.3 Equation of a Line in Space</a>
+    <a href="../../11-three-dimensional-geometry/07-angle-between-two-lines-11.4/index.html" class="nav-btn">11.4 Angle between Two Lines &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

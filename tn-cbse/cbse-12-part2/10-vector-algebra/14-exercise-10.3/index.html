@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 10.3 — Vector Algebra</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Vector Algebra · Exercise 10.3">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../10-vector-algebra/13-projection-of-a-vector-on-a-line-10.6.2/index.html" title="10.6.2 Projection of a vector on a line">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Vector Algebra</a></span>
+    <span class="c2">Exercise 10.3</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 10 · Vector Algebra</div><a href="../01-introduction-10.1/index.html">10.1 Introduction</a><a href="../02-some-basic-concepts-10.2/index.html">10.2 Some Basic Concepts</a><a href="../03-types-of-vectors-10.3/index.html">10.3 Types of Vectors</a><a href="../04-exercise-10.1/index.html">Exercise 10.1</a><a href="../05-addition-of-vectors-10.4/index.html">10.4 Addition of Vectors</a><a href="../06-multiplication-of-a-vector-by-a-scalar-10.5/index.html">10.5 Multiplication of a Vector by a Scalar</a><a href="../07-components-of-a-vector-10.5.1/index.html">10.5.1 Components of a vector</a><a href="../08-vector-joining-two-points-10.5.2/index.html">10.5.2 Vector joining two points</a><a href="../09-section-formula-10.5.3/index.html">10.5.3 Section formula</a><a href="../10-exercise-10.2/index.html">Exercise 10.2</a><a href="../11-product-of-two-vectors-10.6/index.html">10.6 Product of Two Vectors</a><a href="../12-scalar-or-dot-product-of-two-vectors-10.6.1/index.html">10.6.1 Scalar (or dot) product of two vectors</a><a href="../13-projection-of-a-vector-on-a-line-10.6.2/index.html">10.6.2 Projection of a vector on a line</a><a href="../14-exercise-10.3/index.html" aria-current="page">Exercise 10.3</a><a href="../15-vector-or-cross-product-of-two-vectors-10.6.3/index.html">10.6.3 Vector (or cross) product of two vectors</a><a href="../16-exercise-10.4/index.html">Exercise 10.4</a><a href="../17-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../18-miscellaneous-exercise-on-chapter-10/index.html">Miscellaneous Exercise on Chapter 10</a><a href="../19-summary/index.html">Summary</a><a href="../20-historical-note/index.html">Historical Note</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../10-vector-algebra/15-vector-or-cross-product-of-two-vectors-10.6.3/index.html" title="10.6.3 Vector (or cross) product of two vectors">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">10</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 10 · Vector Algebra</a></p>
+        <h1>Exercise 10.3</h1>
+        <p class="subtitle">Practise the dot product — angles, projections, perpendicularity and magnitudes</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>Exercise 10.3</h2>
+    <p>Questions 1&ndash;18 use the scalar (dot) product \( \vec{a}\cdot\vec{b} = |\vec{a}|\,|\vec{b}|\cos\theta = a_1b_1+a_2b_2+a_3b_3 \) and the projection \( \dfrac{1}{|\vec{b}|}(\vec{a}\cdot\vec{b}) \).</p>
+    <div class="question">
+        <span class="q-num">1</span>
+        <div class="q-body">
+            <p>Find the angle between two vectors \( \vec{a} \) and \( \vec{b} \) with magnitudes \( \sqrt{3} \) and \( 2 \), respectively having \( \vec{a}\cdot\vec{b} = \sqrt{6} \).</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( \dfrac{\pi}{4} \)</p></div>
+        </div>
+    </div>
+    <div class="question">
+        <span class="q-num">2</span>
+        <div class="q-body">
+            <p>Find the angle between the vectors \( \hat{i}-2\hat{j}+3\hat{k} \) and \( 3\hat{i}-2\hat{j}+\hat{k} \).</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( \cos^{-1}\left(\dfrac{5}{7}\right) \)</p></div>
+        </div>
+    </div>
+    <div class="question">
+        <span class="q-num">3</span>
+        <div class="q-body">
+            <p>Find the projection of the vector \( \hat{i}-\hat{j} \) on the vector \( \hat{i}+\hat{j} \).</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( 0 \)</p></div>
+        </div>
+    </div>
+    <div class="question">
+        <span class="q-num">4</span>
+        <div class="q-body">
+            <p>Find the projection of the vector \( \hat{i}+3\hat{j}+7\hat{k} \) on the vector \( 7\hat{i}-\hat{j}+8\hat{k} \).</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( \dfrac{60}{\sqrt{114}} \)</p></div>
+        </div>
+    </div>
+    <div class="question">
+        <span class="q-num">5</span>
+        <div class="q-body">
+            <p>Show that each of the given three vectors is a unit vector:</p>
+            \[ \frac{1}{7}(2\hat{i}+3\hat{j}+6\hat{k}),\quad \frac{1}{7}(3\hat{i}-6\hat{j}+2\hat{k}),\quad \frac{1}{7}(6\hat{i}+2\hat{j}-3\hat{k}) \]
+            <p>Also, show that they are mutually perpendicular to each other.</p>
+        </div>
+    </div>
+    <div class="question">
+        <span class="q-num">6</span>
+        <div class="q-body">
+            <p>Find \( |\vec{a}| \) and \( |\vec{b}| \), if \( (\vec{a}+\vec{b})\cdot(\vec{a}-\vec{b}) = 8 \) and \( |\vec{a}| = 8|\vec{b}| \).</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( |\vec{a}| = \dfrac{16\sqrt{2}}{3\sqrt{7}},\ |\vec{b}| = \dfrac{2\sqrt{2}}{3\sqrt{7}} \)</p></div>
+        </div>
+    </div>
+    <div class="question">
+        <span class="q-num">7</span>
+        <div class="q-body">
+            <p>Evaluate the product \( (3\vec{a}-5\vec{b})\cdot(2\vec{a}+7\vec{b}) \).</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( 6|\vec{a}|^2 + 11\,\vec{a}\cdot\vec{b} - 35|\vec{b}|^2 \)</p></div>
+        </div>
+    </div>
+    <div class="question">
+        <span class="q-num">8</span>
+        <div class="q-body">
+            <p>Find the magnitude of two vectors \( \vec{a} \) and \( \vec{b} \), having the same magnitude and such that the angle between them is \( 60^\circ \) and their scalar product is \( \dfrac{1}{2} \).</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( |\vec{a}| = 1,\ |\vec{b}| = 1 \)</p></div>
+        </div>
+    </div>
+    <div class="question">
+        <span class="q-num">9</span>
+        <div class="q-body">
+            <p>Find \( |\vec{x}| \), if for a unit vector \( \vec{a} \), \( (\vec{x}-\vec{a})\cdot(\vec{x}+\vec{a}) = 12 \).</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( \sqrt{13} \)</p></div>
+        </div>
+    </div>
+    <div class="question">
+        <span class="q-num">10</span>
+        <div class="q-body">
+            <p>If \( \vec{a} = 2\hat{i}+2\hat{j}+3\hat{k},\ \vec{b} = -\hat{i}+2\hat{j}+\hat{k} \) and \( \vec{c} = 3\hat{i}+\hat{j} \) are such that \( \vec{a}+\lambda\vec{b} \) is perpendicular to \( \vec{c} \), then find the value of \( \lambda \).</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( \lambda = 8 \)</p></div>
+        </div>
+    </div>
+    <div class="question">
+        <span class="q-num">11</span>
+        <div class="q-body">
+            <p>Show that \( |\vec{a}|\vec{b} + |\vec{b}|\vec{a} \) is perpendicular to \( |\vec{a}|\vec{b} - |\vec{b}|\vec{a} \), for any two nonzero vectors \( \vec{a} \) and \( \vec{b} \).</p>
+        </div>
+    </div>
+    <div class="question">
+        <span class="q-num">12</span>
+        <div class="q-body">
+            <p>If \( \vec{a}\cdot\vec{a} = 0 \) and \( \vec{a}\cdot\vec{b} = 0 \), then what can be concluded about the vector \( \vec{b} \)?</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">Vector \( \vec{b} \) can be any vector</p></div>
+        </div>
+    </div>
+    <div class="question">
+        <span class="q-num">13</span>
+        <div class="q-body">
+            <p>If \( \vec{a}, \vec{b}, \vec{c} \) are unit vectors such that \( \vec{a}+\vec{b}+\vec{c} = \vec{0} \), find the value of \( \vec{a}\cdot\vec{b} + \vec{b}\cdot\vec{c} + \vec{c}\cdot\vec{a} \).</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( \dfrac{-3}{2} \)</p></div>
+        </div>
+    </div>
+    <div class="question">
+        <span class="q-num">14</span>
+        <div class="q-body">
+            <p>If either vector \( \vec{a} = \vec{0} \) or \( \vec{b} = \vec{0} \), then \( \vec{a}\cdot\vec{b} = 0 \). But the converse need not be true. Justify your answer with an example.</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">Take any two non-zero perpendicular vectors \( \vec{a} \) and \( \vec{b} \)</p></div>
+        </div>
+    </div>
+    <div class="question">
+        <span class="q-num">15</span>
+        <div class="q-body">
+            <p>If the vertices A, B, C of a triangle ABC are \( (1, 2, 3),\ (-1, 0, 0),\ (0, 1, 2) \), respectively, then find \( \angle\mathrm{ABC} \). [\( \angle\mathrm{ABC} \) is the angle between the vectors \( \overrightarrow{\mathrm{BA}} \) and \( \overrightarrow{\mathrm{BC}} \)].</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( \cos^{-1}\left(\dfrac{10}{\sqrt{102}}\right) \)</p></div>
+        </div>
+    </div>
+    <div class="question">
+        <span class="q-num">16</span>
+        <div class="q-body">
+            <p>Show that the points \( \mathrm{A}(1, 2, 7),\ \mathrm{B}(2, 6, 3) \) and \( \mathrm{C}(3, 10, -1) \) are collinear.</p>
+        </div>
+    </div>
+    <div class="question">
+        <span class="q-num">17</span>
+        <div class="q-body">
+            <p>Show that the vectors \( 2\hat{i}-\hat{j}+\hat{k},\ \hat{i}-3\hat{j}-5\hat{k} \) and \( 3\hat{i}-4\hat{j}-4\hat{k} \) form the vertices of a right angled triangle.</p>
+        </div>
+    </div>
+    <div class="question">
+        <span class="q-num">18</span>
+        <div class="q-body">
+            <p>If \( \vec{a} \) is a nonzero vector of magnitude &lsquo;\( a \)&rsquo; and \( \lambda \) a nonzero scalar, then \( \lambda\vec{a} \) is unit vector if</p>
+            <ul class="choices">
+                <li>(A) \( \lambda = 1 \)</li>
+                <li>(B) \( \lambda = -1 \)</li>
+                <li>(C) \( a = |\lambda| \)</li>
+                <li>(D) \( a = 1/|\lambda| \)</li>
+            </ul>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">(D) \( a = \dfrac{1}{|\lambda|} \)</p></div>
+        </div>
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../10-vector-algebra/13-projection-of-a-vector-on-a-line-10.6.2/index.html" class="nav-btn">&larr; 10.6.2 Projection of a vector on a line</a>
+    <a href="../../10-vector-algebra/15-vector-or-cross-product-of-two-vectors-10.6.3/index.html" class="nav-btn">10.6.3 Vector (or cross) product of two vectors &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

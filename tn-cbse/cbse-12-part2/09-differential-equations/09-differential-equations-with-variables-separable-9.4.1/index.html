@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.4.1 Differential equations with variables separable — Differential Equations</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Differential Equations · 9.4.1 Differential equations with variables separable">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../09-differential-equations/08-methods-of-solving-first-order-first-degree-differential-e-9.4/index.html" title="9.4 Methods of Solving First Order, First Degree Differential Equations">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Differential Equations</a></span>
+    <span class="c2">9.4.1 Differential equations with variables separable</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 9 · Differential Equations</div><a href="../01-introduction-9.1/index.html">9.1 Introduction</a><a href="../02-basic-concepts-9.2/index.html">9.2 Basic Concepts</a><a href="../03-order-of-a-differential-equation-9.2.1/index.html">9.2.1 Order of a differential equation</a><a href="../04-degree-of-a-differential-equation-9.2.2/index.html">9.2.2 Degree of a differential equation</a><a href="../05-exercise-9.1/index.html">Exercise 9.1</a><a href="../06-general-and-particular-solutions-of-a-differential-equatio-9.3/index.html">9.3 General and Particular Solutions of a Differential Equation</a><a href="../07-exercise-9.2/index.html">Exercise 9.2</a><a href="../08-methods-of-solving-first-order-first-degree-differential-e-9.4/index.html">9.4 Methods of Solving First Order, First Degree Differential Equations</a><a href="../09-differential-equations-with-variables-separable-9.4.1/index.html" aria-current="page">9.4.1 Differential equations with variables separable</a><a href="../10-exercise-9.3/index.html">Exercise 9.3</a><a href="../11-homogeneous-differential-equations-9.4.2/index.html">9.4.2 Homogeneous Differential Equations</a><a href="../12-exercise-9.4/index.html">Exercise 9.4</a><a href="../13-linear-differential-equations-9.4.3/index.html">9.4.3 Linear Differential Equations</a><a href="../14-exercise-9.5/index.html">Exercise 9.5</a><a href="../15-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../16-miscellaneous-exercise-on-chapter-9/index.html">Miscellaneous Exercise on Chapter 9</a><a href="../17-summary/index.html">Summary</a><a href="../18-historical-note/index.html">Historical Note</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../09-differential-equations/10-exercise-9.3/index.html" title="Exercise 9.3">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">9</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 9 · Differential Equations</a></p>
+        <h1>9.4.1 Differential equations with variables separable</h1>
+        <p class="subtitle">Put all the y&#x27;s on one side, all the x&#x27;s on the other, and integrate</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>When a first order&ndash;first degree equation \(\frac{dy}{dx} = \mathrm{F}(x, y)\) is of <strong>variable separable</strong> type</li>
+        <li>The method: separate the variables, then integrate both sides</li>
+        <li>General solutions (Examples 4, 5) and particular solutions (Example 6)</li>
+        <li>Finding curves from slope conditions (Examples 7, 8)</li>
+        <li>An application to continuously compounded interest (Example 9)</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>The Method of Separating Variables</h2>
+    <p>A first order-first degree differential equation is of the form</p>
+    \[ \frac{dy}{dx} = \mathrm{F}(x, y) \tag{1} \]
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Variable Separable Type</div>
+        <p>If \(\mathrm{F}(x, y)\) can be expressed as a product \(g(x)\,h(y)\), where, \(g(x)\) is a function of \(x\) and \(h(y)\) is a function of \(y\), then the differential equation (1) is said to be of <strong>variable separable</strong> type. The differential equation (1) then has the form</p>
+        \[ \frac{dy}{dx} = h(y)\cdot g(x) \tag{2} \]
+    </div>
+
+    <div class="step-row"><span class="step-num">1</span><div class="step-content">
+        <p>If \(h(y) \neq 0\), separating the variables, (2) can be rewritten as</p>
+        \[ \frac{1}{h(y)}\,dy = g(x)\,dx \tag{3} \]
+    </div></div>
+    <div class="step-row"><span class="step-num">2</span><div class="step-content">
+        <p>Integrating both sides of (3), we get</p>
+        \[ \int \frac{1}{h(y)}\,dy = \int g(x)\,dx \tag{4} \]
+    </div></div>
+
+    <div class="box box-formula">
+        <div class="box-label">Result</div>
+        <p>Thus, (4) provides the solutions of given differential equation in the form</p>
+        \[ \mathrm{H}(y) = \mathrm{G}(x) + \mathrm{C} \]
+        <p>Here, \(\mathrm{H}(y)\) and \(\mathrm{G}(x)\) are the anti derivatives of \(\dfrac{1}{h(y)}\) and \(g(x)\) respectively and C is the arbitrary constant.</p>
+    </div>
+</div>
+
+<div class="card">
+    <h2>General Solutions</h2>
+
+    <div class="box box-example">
+        <div class="box-label">Example 4</div>
+        <p>Find the general solution of the differential equation \(\dfrac{dy}{dx} = \dfrac{x + 1}{2 - y}\), \((y \neq 2)\).</p>
+        <p><strong>Solution</strong> We have</p>
+        \[ \frac{dy}{dx} = \frac{x + 1}{2 - y} \tag{1} \]
+        <p>Separating the variables in equation (1), we get</p>
+        \[ (2 - y)\,dy = (x + 1)\,dx \tag{2} \]
+        <p>Integrating both sides of equation (2), we get</p>
+        \[ \begin{aligned} \int (2 - y)\,dy &amp;= \int (x + 1)\,dx \\ \text{or}\quad 2y - \frac{y^2}{2} &amp;= \frac{x^2}{2} + x + \mathrm{C}_1 \\ \text{or}\quad x^2 + y^2 + 2x - 4y + 2\,\mathrm{C}_1 &amp;= 0 \\ \text{or}\quad x^2 + y^2 + 2x - 4y + \mathrm{C} &amp;= 0, \quad \text{where } \mathrm{C} = 2\mathrm{C}_1 \end{aligned} \]
+        <p>which is the general solution of equation (1).</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 5</div>
+        <p>Find the general solution of the differential equation \(\dfrac{dy}{dx} = \dfrac{1 + y^2}{1 + x^2}\).</p>
+        <p><strong>Solution</strong> Since \(1 + y^2 \neq 0\), therefore separating the variables, the given differential equation can be written as</p>
+        \[ \frac{dy}{1 + y^2} = \frac{dx}{1 + x^2} \tag{1} \]
+        <p>Integrating both sides of equation (1), we get</p>
+        \[ \begin{aligned} \int \frac{dy}{1 + y^2} &amp;= \int \frac{dx}{1 + x^2} \\ \text{or}\quad \tan^{-1} y &amp;= \tan^{-1} x + \mathrm{C} \end{aligned} \]
+        <p>which is the general solution of equation (1).</p>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Particular Solutions</h2>
+
+    <div class="box box-example">
+        <div class="box-label">Example 6</div>
+        <p>Find the particular solution of the differential equation \(\dfrac{dy}{dx} = -4xy^2\) given that \(y = 1\), when \(x = 0\).</p>
+        <p><strong>Solution</strong> If \(y \neq 0\), the given differential equation can be written as</p>
+        \[ \frac{dy}{y^2} = -4x\,dx \tag{1} \]
+        <p>Integrating both sides of equation (1), we get</p>
+        \[ \begin{aligned} \int \frac{dy}{y^2} &amp;= -4\int x\,dx \\ \text{or}\quad -\frac{1}{y} &amp;= -2x^2 + \mathrm{C} \end{aligned} \]
+        \[ \text{or}\quad y = \frac{1}{2x^2 - \mathrm{C}} \tag{2} \]
+        <p>Substituting \(y = 1\) and \(x = 0\) in equation (2), we get, \(\mathrm{C} = -1\).</p>
+        <p>Now substituting the value of C in equation (2), we get the particular solution of the given differential equation as \(y = \dfrac{1}{2x^2 + 1}\).</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 7</div>
+        <p>Find the equation of the curve passing through the point \((1, 1)\) whose differential equation is \(x\,dy = (2x^2 + 1)\,dx\) \((x \neq 0)\).</p>
+        <p><strong>Solution</strong> The given differential equation can be expressed as</p>
+        \[ dy^{*} = \left(\frac{2x^2 + 1}{x}\right)dx^{*} \]
+        \[ \text{or}\quad dy = \left(2x + \frac{1}{x}\right)dx \tag{1} \]
+        <p>Integrating both sides of equation (1), we get</p>
+        \[ \int dy = \int \left(2x + \frac{1}{x}\right)dx \]
+        \[ \text{or}\quad y = x^2 + \log|x| + \mathrm{C} \tag{2} \]
+        <p>Equation (2) represents the family of solution curves of the given differential equation but we are interested in finding the equation of a particular member of the family which passes through the point \((1, 1)\). Therefore substituting \(x = 1, y = 1\) in equation (2), we get \(\mathrm{C} = 0\).</p>
+        <p>Now substituting the value of C in equation (2) we get the equation of the required curve as \(y = x^2 + \log|x|\).</p>
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Note (*)</div>
+        <p>The notation \(\dfrac{dy}{dx}\) due to Leibnitz is extremely flexible and useful in many calculation and formal transformations, where, we can deal with symbols \(dy\) and \(dx\) exactly as if they were ordinary numbers. By treating \(dx\) and \(dy\) like separate entities, we can give neater expressions to many calculations.</p>
+        <p style="font-size:0.9rem;">Refer: <em>Introduction to Calculus and Analysis</em>, volume-I page 172, By Richard Courant, Fritz John Spinger &ndash; Verlog New York.</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 8</div>
+        <p>Find the equation of a curve passing through the point \((-2, 3)\), given that the slope of the tangent to the curve at any point \((x, y)\) is \(\dfrac{2x}{y^2}\).</p>
+        <p><strong>Solution</strong> We know that the slope of the tangent to a curve is given by \(\dfrac{dy}{dx}\).</p>
+        \[ \text{so,}\quad \frac{dy}{dx} = \frac{2x}{y^2} \tag{1} \]
+        <p>Separating the variables, equation (1) can be written as</p>
+        \[ y^2\,dy = 2x\,dx \tag{2} \]
+        <p>Integrating both sides of equation (2), we get</p>
+        \[ \int y^2\,dy = \int 2x\,dx \]
+        \[ \text{or}\quad \frac{y^3}{3} = x^2 + \mathrm{C} \tag{3} \]
+        <p>Substituting \(x = -2, y = 3\) in equation (3), we get \(\mathrm{C} = 5\).</p>
+        <p>Substituting the value of C in equation (3), we get the equation of the required curve as</p>
+        \[ \frac{y^3}{3} = x^2 + 5 \quad \text{or} \quad y = (3x^2 + 15)^{\frac{1}{3}} \]
+    </div>
+</div>
+
+<div class="card">
+    <h2>An Application: Continuous Growth</h2>
+
+    <div class="box box-example">
+        <div class="box-label">Example 9</div>
+        <p>In a bank, principal increases continuously at the rate of 5% per year. In how many years Rs 1000 double itself?</p>
+        <p><strong>Solution</strong> Let P be the principal at any time \(t\). According to the given problem,</p>
+        \[ \frac{dp}{dt} = \left(\frac{5}{100}\right)\times \mathrm{P} \]
+        \[ \text{or}\quad \frac{dp}{dt} = \frac{\mathrm{P}}{20} \tag{1} \]
+        <p>separating the variables in equation (1), we get</p>
+        \[ \frac{dp}{\mathrm{P}} = \frac{dt}{20} \tag{2} \]
+        <p>Integrating both sides of equation (2), we get</p>
+        \[ \begin{aligned} \log \mathrm{P} &amp;= \frac{t}{20} + \mathrm{C}_1 \\ \text{or}\quad \mathrm{P} &amp;= e^{\frac{t}{20}}\cdot e^{\mathrm{C}_1} \end{aligned} \]
+        \[ \text{or}\quad \mathrm{P} = \mathrm{C}\,e^{\frac{t}{20}} \quad (\text{where } e^{\mathrm{C}_1} = \mathrm{C}) \tag{3} \]
+        <p>Now \(\mathrm{P} = 1000\), when \(t = 0\).</p>
+        <p>Substituting the values of P and \(t\) in (3), we get \(\mathrm{C} = 1000\). Therefore, equation (3), gives</p>
+        \[ \mathrm{P} = 1000\,e^{\frac{t}{20}} \]
+        <p>Let \(t\) years be the time required to double the principal. Then</p>
+        \[ 2000 = 1000\,e^{\frac{t}{20}} \ \Rightarrow\ t = 20\log_e 2 \]
+    </div>
+
+    <figure class="diagram">
+        <svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg" style="max-width:540px;" role="img" aria-label="Graph of P = 1000 e^(t/20) for t from 0 to 25 years, reaching 2000 at t = 20 log 2, about 13.86 years">
+            <line x1="70" y1="290" x2="575" y2="290" stroke="#555" stroke-width="1.5"/>
+            <line x1="70" y1="300" x2="70" y2="20" stroke="#555" stroke-width="1.5"/>
+            <polygon points="575,290 565,285 565,295" fill="#555"/>
+            <polygon points="70,20 65,30 75,30" fill="#555"/>
+            <text x="565" y="312" font-size="14" fill="#555" font-style="italic">t</text>
+            <text x="50" y="28" font-size="14" fill="#555">P</text>
+            <g font-size="12" fill="#555" text-anchor="middle">
+                <line x1="170" y1="286" x2="170" y2="294" stroke="#555"/><text x="170" y="308">5</text>
+                <line x1="270" y1="286" x2="270" y2="294" stroke="#555"/><text x="270" y="308">10</text>
+                <line x1="370" y1="286" x2="370" y2="294" stroke="#555"/><text x="370" y="308">15</text>
+                <line x1="470" y1="286" x2="470" y2="294" stroke="#555"/><text x="470" y="308">20</text>
+                <line x1="570" y1="286" x2="570" y2="294" stroke="#555"/><text x="570" y="308">25</text>
+            </g>
+            <g font-size="12" fill="#555" text-anchor="end">
+                <line x1="66" y1="210" x2="74" y2="210" stroke="#555"/><text x="62" y="214">1000</text>
+                <line x1="66" y1="130" x2="74" y2="130" stroke="#555"/><text x="62" y="134">2000</text>
+                <line x1="66" y1="50" x2="74" y2="50" stroke="#555"/><text x="62" y="54">3000</text>
+            </g>
+            <path id="growth" fill="none" stroke="#0d4f4f" stroke-width="3" d="M70.0,210.0 L80.0,208.0 L90.0,205.9 L100.0,203.8 L110.0,201.6 L120.0,199.3 L130.0,197.1 L140.0,194.7 L150.0,192.3 L160.0,189.8 L170.0,187.3 L180.0,184.7 L190.0,182.0 L200.0,179.3 L210.0,176.5 L220.0,173.6 L230.0,170.7 L240.0,167.6 L250.0,164.5 L260.0,161.4 L270.0,158.1 L280.0,154.8 L290.0,151.3 L300.0,147.8 L310.0,144.2 L320.0,140.5 L330.0,136.8 L340.0,132.9 L350.0,128.9 L360.0,124.8 L370.0,120.6 L380.0,116.4 L390.0,112.0 L400.0,107.4 L410.0,102.8 L420.0,98.1 L430.0,93.2 L440.0,88.3 L450.0,83.1 L460.0,77.9 L470.0,72.5 L480.0,67.0 L490.0,61.4 L500.0,55.6 L510.0,49.7 L520.0,43.6 L530.0,37.3 L540.0,30.9 L550.0,24.4"/>
+            <line x1="70" y1="130" x2="347.3" y2="130" stroke="#c0602b" stroke-width="1.5" stroke-dasharray="6 4"/>
+            <line x1="347.3" y1="130" x2="347.3" y2="290" stroke="#c0602b" stroke-width="1.5" stroke-dasharray="6 4"/>
+            <circle cx="347.3" cy="130" r="5" fill="#c0602b"/>
+            <text x="357" y="152" font-size="13" fill="#c0602b" font-weight="bold">doubled at t = 20 log 2 &#8776; 13.86</text>
+            <text x="420" y="215" font-size="14" fill="#0d4f4f" font-weight="bold">P = 1000 e^(t/20)</text>
+        </svg>
+        <figcaption>Principal growing continuously at 5% per year: it doubles after \(20\log_e 2 \approx 13.86\) years.</figcaption>
+    </figure>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../09-differential-equations/08-methods-of-solving-first-order-first-degree-differential-e-9.4/index.html" class="nav-btn">&larr; 9.4 Methods of Solving First Order, First Degree Differential Equations</a>
+    <a href="../../09-differential-equations/10-exercise-9.3/index.html" class="nav-btn">Exercise 9.3 &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

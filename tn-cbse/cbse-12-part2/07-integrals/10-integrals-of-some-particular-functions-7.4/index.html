@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.4 Integrals of Some Particular Functions — Integrals</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Integrals · 7.4 Integrals of Some Particular Functions">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../07-integrals/09-exercise-7.3/index.html" title="Exercise 7.3">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Integrals</a></span>
+    <span class="c2">7.4 Integrals of Some Particular Functions</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 7 · Integrals</div><a href="../01-introduction-7.1/index.html">7.1 Introduction</a><a href="../02-integration-as-an-inverse-process-of-differentiation-7.2/index.html">7.2 Integration as an Inverse Process of Differentiation</a><a href="../03-some-properties-of-indefinite-integral-7.2.1/index.html">7.2.1 Some properties of indefinite integral</a><a href="../04-exercise-7.1/index.html">Exercise 7.1</a><a href="../05-methods-of-integration-7.3/index.html">7.3 Methods of Integration</a><a href="../06-integration-by-substitution-7.3.1/index.html">7.3.1 Integration by substitution</a><a href="../07-exercise-7.2/index.html">Exercise 7.2</a><a href="../08-integration-using-trigonometric-identities-7.3.2/index.html">7.3.2 Integration using trigonometric identities</a><a href="../09-exercise-7.3/index.html">Exercise 7.3</a><a href="../10-integrals-of-some-particular-functions-7.4/index.html" aria-current="page">7.4 Integrals of Some Particular Functions</a><a href="../11-exercise-7.4/index.html">Exercise 7.4</a><a href="../12-integration-by-partial-fractions-7.5/index.html">7.5 Integration by Partial Fractions</a><a href="../13-exercise-7.5/index.html">Exercise 7.5</a><a href="../14-integration-by-parts-7.6/index.html">7.6 Integration by Parts</a><a href="../15-integral-of-the-type-7.6.1/index.html">7.6.1 Integral of the type ∫eˣ[f(x) + f′(x)] dx</a><a href="../16-exercise-7.6/index.html">Exercise 7.6</a><a href="../17-integrals-of-some-more-types-7.6.2/index.html">7.6.2 Integrals of some more types</a><a href="../18-exercise-7.7/index.html">Exercise 7.7</a><a href="../19-definite-integral-7.7/index.html">7.7 Definite Integral</a><a href="../20-fundamental-theorem-of-calculus-7.8/index.html">7.8 Fundamental Theorem of Calculus</a><a href="../21-area-function-7.8.1/index.html">7.8.1 Area function</a><a href="../22-first-fundamental-theorem-of-integral-calculus-7.8.2/index.html">7.8.2 First fundamental theorem of integral calculus</a><a href="../23-second-fundamental-theorem-of-integral-calculus-7.8.3/index.html">7.8.3 Second fundamental theorem of integral calculus</a><a href="../24-exercise-7.8/index.html">Exercise 7.8</a><a href="../25-evaluation-of-definite-integrals-by-substitution-7.9/index.html">7.9 Evaluation of Definite Integrals by Substitution</a><a href="../26-exercise-7.9/index.html">Exercise 7.9</a><a href="../27-some-properties-of-definite-integrals-7.10/index.html">7.10 Some Properties of Definite Integrals</a><a href="../28-exercise-7.10/index.html">Exercise 7.10</a><a href="../29-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../30-miscellaneous-exercise-on-chapter-7/index.html">Miscellaneous Exercise on Chapter 7</a><a href="../31-summary/index.html">Summary</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../07-integrals/11-exercise-7.4/index.html" title="Exercise 7.4">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">7</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 7 · Integrals</a></p>
+        <h1>7.4 Integrals of Some Particular Functions</h1>
+        <p class="subtitle">Six standard integrals &amp;mdash; and how completing the square turns any quadratic denominator into one of them</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>Six <strong>standard integrals</strong> involving \(x^2 \pm a^2\), \(a^2 - x^2\) and their square roots</li>
+        <li>Proofs of the six formulae using partial splitting and <span class="teal">trigonometric substitutions</span></li>
+        <li>Integrating \(\dfrac{1}{ax^2+bx+c}\) and \(\dfrac{1}{\sqrt{ax^2+bx+c}}\) by <strong>completing the square</strong></li>
+        <li>Integrating \(\dfrac{px+q}{ax^2+bx+c}\) and \(\dfrac{px+q}{\sqrt{ax^2+bx+c}}\) by writing the numerator as A(derivative) + B</li>
+        <li>Worked Examples 8, 9 and 10</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Six Important Formulae</h2>
+    <p>In this section, we mention below some important formulae of integrals and apply them for integrating many other related standard integrals:</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Standard Integrals</div>
+        <table>
+            <tr><td><strong>(1)</strong></td><td>\( \displaystyle \int \frac{dx}{x^2 - a^2} = \frac{1}{2a} \log \left| \frac{x-a}{x+a} \right| + C \)</td></tr>
+            <tr><td><strong>(2)</strong></td><td>\( \displaystyle \int \frac{dx}{a^2 - x^2} = \frac{1}{2a} \log \left| \frac{a+x}{a-x} \right| + C \)</td></tr>
+            <tr><td><strong>(3)</strong></td><td>\( \displaystyle \int \frac{dx}{x^2 + a^2} = \frac{1}{a} \tan^{-1} \frac{x}{a} + C \)</td></tr>
+            <tr><td><strong>(4)</strong></td><td>\( \displaystyle \int \frac{dx}{\sqrt{x^2 - a^2}} = \log \left| x + \sqrt{x^2 - a^2} \right| + C \)</td></tr>
+            <tr><td><strong>(5)</strong></td><td>\( \displaystyle \int \frac{dx}{\sqrt{a^2 - x^2}} = \sin^{-1} \frac{x}{a} + C \)</td></tr>
+            <tr><td><strong>(6)</strong></td><td>\( \displaystyle \int \frac{dx}{\sqrt{x^2 + a^2}} = \log \left| x + \sqrt{x^2 + a^2} \right| + C \)</td></tr>
+        </table>
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight</div>
+        <p>Formulae (1)&ndash;(3) have a <em>quadratic</em> denominator with no root; (4)&ndash;(6) have its <em>square root</em>. Notice the pattern: a difference of squares gives a logarithm, while \(a^2 - x^2\) under a root and \(x^2 + a^2\) without a root give inverse trigonometric functions.</p>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Proofs of the Formulae</h2>
+    <p>We now prove the above results:</p>
+
+    <h3>(1) \( \int \frac{dx}{x^2 - a^2} \)</h3>
+    <p>We have</p>
+    \[ \frac{1}{x^2 - a^2} = \frac{1}{(x-a)(x+a)} = \frac{1}{2a}\left[ \frac{(x+a) - (x-a)}{(x-a)(x+a)} \right] = \frac{1}{2a}\left[ \frac{1}{x-a} - \frac{1}{x+a} \right] \]
+    <p>Therefore,</p>
+    \[ \begin{aligned} \int \frac{dx}{x^2 - a^2} &amp;= \frac{1}{2a}\left[ \int \frac{dx}{x-a} - \int \frac{dx}{x+a} \right] \\ &amp;= \frac{1}{2a}\left[ \log|(x-a)| - \log|(x+a)| \right] + C \\ &amp;= \frac{1}{2a} \log \left| \frac{x-a}{x+a} \right| + C \end{aligned} \]
+
+    <h3>(2) \( \int \frac{dx}{a^2 - x^2} \)</h3>
+    <p>In view of (1) above, we have</p>
+    \[ \frac{1}{a^2 - x^2} = \frac{1}{2a}\left[ \frac{(a+x) + (a-x)}{(a+x)(a-x)} \right] = \frac{1}{2a}\left[ \frac{1}{a-x} + \frac{1}{a+x} \right] \]
+    <p>Therefore,</p>
+    \[ \begin{aligned} \int \frac{dx}{a^2 - x^2} &amp;= \frac{1}{2a}\left[ \int \frac{dx}{a-x} + \int \frac{dx}{a+x} \right] \\ &amp;= \frac{1}{2a}\left[ -\log|a-x| + \log|a+x| \right] + C \\ &amp;= \frac{1}{2a} \log \left| \frac{a+x}{a-x} \right| + C \end{aligned} \]
+
+    <div class="box box-insight">
+        <div class="box-label">Note</div>
+        <p>The technique used in (1) will be explained in Section 7.5.</p>
+    </div>
+
+    <h3>(3) \( \int \frac{dx}{x^2 + a^2} \)</h3>
+    <p>Put \(x = a \tan\theta\). Then \(dx = a \sec^2\theta \, d\theta\).</p>
+    <p>Therefore,</p>
+    \[ \begin{aligned} \int \frac{dx}{x^2 + a^2} &amp;= \int \frac{a \sec^2\theta \, d\theta}{a^2 \tan^2\theta + a^2} \\ &amp;= \frac{1}{a} \int d\theta = \frac{1}{a}\theta + C = \frac{1}{a} \tan^{-1} \frac{x}{a} + C \end{aligned} \]
+
+    <h3>(4) \( \int \frac{dx}{\sqrt{x^2 - a^2}} \)</h3>
+    <p>Let \(x = a \sec\theta\). Then \(dx = a \sec\theta \tan\theta \, d\theta\).</p>
+    <p>Therefore,</p>
+    \[ \begin{aligned} \int \frac{dx}{\sqrt{x^2 - a^2}} &amp;= \int \frac{a \sec\theta \tan\theta \, d\theta}{\sqrt{a^2 \sec^2\theta - a^2}} \\ &amp;= \int \sec\theta \, d\theta = \log|\sec\theta + \tan\theta| + C_1 \\ &amp;= \log \left| \frac{x}{a} + \sqrt{\frac{x^2}{a^2} - 1} \right| + C_1 \\ &amp;= \log \left| x + \sqrt{x^2 - a^2} \right| - \log|a| + C_1 \\ &amp;= \log \left| x + \sqrt{x^2 - a^2} \right| + C, \quad \text{where } C = C_1 - \log|a| \end{aligned} \]
+
+    <h3>(5) \( \int \frac{dx}{\sqrt{a^2 - x^2}} \)</h3>
+    <p>Let \(x = a \sin\theta\). Then \(dx = a \cos\theta \, d\theta\).</p>
+    <p>Therefore,</p>
+    \[ \begin{aligned} \int \frac{dx}{\sqrt{a^2 - x^2}} &amp;= \int \frac{a \cos\theta \, d\theta}{\sqrt{a^2 - a^2 \sin^2\theta}} \\ &amp;= \int d\theta = \theta + C = \sin^{-1} \frac{x}{a} + C \end{aligned} \]
+
+    <h3>(6) \( \int \frac{dx}{\sqrt{x^2 + a^2}} \)</h3>
+    <p>Let \(x = a \tan\theta\). Then \(dx = a \sec^2\theta \, d\theta\).</p>
+    <p>Therefore,</p>
+    \[ \begin{aligned} \int \frac{dx}{\sqrt{x^2 + a^2}} &amp;= \int \frac{a \sec^2\theta \, d\theta}{\sqrt{a^2 \tan^2\theta + a^2}} \\ &amp;= \int \sec\theta \, d\theta = \log|(\sec\theta + \tan\theta)| + C_1 \\ &amp;= \log \left| \frac{x}{a} + \sqrt{\frac{x^2}{a^2} + 1} \right| + C_1 \\ &amp;= \log \left| x + \sqrt{x^2 + a^2} \right| - \log|a| + C_1 \\ &amp;= \log \left| x + \sqrt{x^2 + a^2} \right| + C, \quad \text{where } C = C_1 - \log|a| \end{aligned} \]
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>More Formulae from the Standard Ones</h2>
+    <p>Applying these standard formulae, we now obtain some more formulae which are useful from applications point of view and can be applied directly to evaluate other integrals.</p>
+
+    <h3>(7) To find the integral \( \int \frac{dx}{ax^2 + bx + c} \)</h3>
+    <p>We write</p>
+    \[ ax^2 + bx + c = a\left[ x^2 + \frac{b}{a}x + \frac{c}{a} \right] = a\left[ \left( x + \frac{b}{2a} \right)^2 + \left( \frac{c}{a} - \frac{b^2}{4a^2} \right) \right] \]
+    <p>Now, put \( x + \dfrac{b}{2a} = t \) so that \(dx = dt\) and writing \( \dfrac{c}{a} - \dfrac{b^2}{4a^2} = \pm k^2 \). We find the integral reduced to the form \( \dfrac{1}{a} \displaystyle\int \frac{dt}{t^2 \pm k^2} \) depending upon the sign of \( \left( \dfrac{c}{a} - \dfrac{b^2}{4a^2} \right) \) and hence can be evaluated.</p>
+
+    <h3>(8) To find the integral of the type \( \int \frac{dx}{\sqrt{ax^2 + bx + c}} \)</h3>
+    <p>Proceeding as in (7), we obtain the integral using the standard formulae.</p>
+
+    <h3>(9) To find the integral of the type \( \int \frac{px + q}{ax^2 + bx + c}\,dx \)</h3>
+    <p>where \(p, q, a, b, c\) are constants, we are to find real numbers A, B such that</p>
+    \[ px + q = A \frac{d}{dx}(ax^2 + bx + c) + B = A(2ax + b) + B \]
+    <p>To determine A and B, we equate from both sides the coefficients of \(x\) and the constant terms. A and B are thus obtained and hence the integral is reduced to one of the known forms.</p>
+
+    <h3>(10) For the evaluation of the integral of the type \( \int \frac{(px + q)\,dx}{\sqrt{ax^2 + bx + c}} \)</h3>
+    <p>We proceed as in (9) and transform the integral into known standard forms.</p>
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight</div>
+        <p>In (9) and (10) the numerator is split into a multiple of the <em>derivative of the denominator</em> (handled by the substitution \(t = ax^2+bx+c\)) plus a constant (handled by completing the square, as in (7) or (8)).</p>
+    </div>
+
+    <p>Let us illustrate the above methods by some examples.</p>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Worked Examples</h2>
+
+    <div class="box box-example">
+        <div class="box-label">Example 8</div>
+        <p>Find the following integrals:</p>
+        <p>(i) \( \displaystyle \int \frac{dx}{x^2 - 16} \) &nbsp;&nbsp;&nbsp; (ii) \( \displaystyle \int \frac{dx}{\sqrt{2x - x^2}} \)</p>
+        <p><strong>Solution</strong></p>
+        <p>(i) We have</p>
+        \[ \int \frac{dx}{x^2 - 16} = \int \frac{dx}{x^2 - 4^2} = \frac{1}{8} \log \left| \frac{x-4}{x+4} \right| + C \qquad \text{[by 7.4 (1)]} \]
+        <p>(ii)</p>
+        \[ \int \frac{dx}{\sqrt{2x - x^2}} = \int \frac{dx}{\sqrt{1 - (x-1)^2}} \]
+        <p>Put \(x - 1 = t\). Then \(dx = dt\).</p>
+        <p>Therefore,</p>
+        \[ \begin{aligned} \int \frac{dx}{\sqrt{2x - x^2}} &amp;= \int \frac{dt}{\sqrt{1 - t^2}} = \sin^{-1}(t) + C &amp;&amp; \text{[by 7.4 (5)]} \\ &amp;= \sin^{-1}(x - 1) + C \end{aligned} \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 9</div>
+        <p>Find the following integrals:</p>
+        <p>(i) \( \displaystyle \int \frac{dx}{x^2 - 6x + 13} \) &nbsp;&nbsp;&nbsp; (ii) \( \displaystyle \int \frac{dx}{3x^2 + 13x - 10} \) &nbsp;&nbsp;&nbsp; (iii) \( \displaystyle \int \frac{dx}{\sqrt{5x^2 - 2x}} \)</p>
+        <p><strong>Solution</strong></p>
+
+        <p>(i) We have \( x^2 - 6x + 13 = x^2 - 6x + 3^2 - 3^2 + 13 = (x-3)^2 + 4 \)</p>
+        <p>So,</p>
+        \[ \int \frac{dx}{x^2 - 6x + 13} = \int \frac{1}{(x-3)^2 + 2^2}\,dx \]
+        <p>Let \(x - 3 = t\). Then \(dx = dt\).</p>
+        <p>Therefore,</p>
+        \[ \begin{aligned} \int \frac{dx}{x^2 - 6x + 13} &amp;= \int \frac{dt}{t^2 + 2^2} = \frac{1}{2} \tan^{-1} \frac{t}{2} + C &amp;&amp; \text{[by 7.4 (3)]} \\ &amp;= \frac{1}{2} \tan^{-1} \frac{x-3}{2} + C \end{aligned} \]
+
+        <p>(ii) The given integral is of the form 7.4 (7). We write the denominator of the integrand,</p>
+        \[ \begin{aligned} 3x^2 + 13x - 10 &amp;= 3\left( x^2 + \frac{13x}{3} - \frac{10}{3} \right) \\ &amp;= 3\left[ \left( x + \frac{13}{6} \right)^2 - \left( \frac{17}{6} \right)^2 \right] \quad \text{(completing the square)} \end{aligned} \]
+        <p>Thus</p>
+        \[ \int \frac{dx}{3x^2 + 13x - 10} = \frac{1}{3} \int \frac{dx}{\left( x + \frac{13}{6} \right)^2 - \left( \frac{17}{6} \right)^2} \]
+        <p>Put \( x + \dfrac{13}{6} = t \). Then \(dx = dt\).</p>
+        <p>Therefore,</p>
+        \[ \begin{aligned} \int \frac{dx}{3x^2 + 13x - 10} &amp;= \frac{1}{3} \int \frac{dt}{t^2 - \left( \frac{17}{6} \right)^2} \\ &amp;= \frac{1}{3 \times 2 \times \frac{17}{6}} \log \left| \frac{t - \frac{17}{6}}{t + \frac{17}{6}} \right| + C_1 \qquad \text{[by 7.4 (1)]} \\ &amp;= \frac{1}{17} \log \left| \frac{x + \frac{13}{6} - \frac{17}{6}}{x + \frac{13}{6} + \frac{17}{6}} \right| + C_1 \\ &amp;= \frac{1}{17} \log \left| \frac{6x - 4}{6x + 30} \right| + C_1 \\ &amp;= \frac{1}{17} \log \left| \frac{3x - 2}{x + 5} \right| + C_1 + \frac{1}{17} \log \frac{1}{3} \\ &amp;= \frac{1}{17} \log \left| \frac{3x - 2}{x + 5} \right| + C, \quad \text{where } C = C_1 + \frac{1}{17} \log \frac{1}{3} \end{aligned} \]
+
+        <p>(iii) We have</p>
+        \[ \begin{aligned} \int \frac{dx}{\sqrt{5x^2 - 2x}} &amp;= \int \frac{dx}{\sqrt{5\left( x^2 - \frac{2x}{5} \right)}} \\ &amp;= \frac{1}{\sqrt{5}} \int \frac{dx}{\sqrt{\left( x - \frac{1}{5} \right)^2 - \left( \frac{1}{5} \right)^2}} \quad \text{(completing the square)} \end{aligned} \]
+        <p>Put \( x - \dfrac{1}{5} = t \). Then \(dx = dt\).</p>
+        <p>Therefore,</p>
+        \[ \begin{aligned} \int \frac{dx}{\sqrt{5x^2 - 2x}} &amp;= \frac{1}{\sqrt{5}} \int \frac{dt}{\sqrt{t^2 - \left( \frac{1}{5} \right)^2}} \\ &amp;= \frac{1}{\sqrt{5}} \log \left| t + \sqrt{t^2 - \left( \frac{1}{5} \right)^2} \right| + C \qquad \text{[by 7.4 (4)]} \\ &amp;= \frac{1}{\sqrt{5}} \log \left| x - \frac{1}{5} + \sqrt{x^2 - \frac{2x}{5}} \right| + C \end{aligned} \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 10</div>
+        <p>Find the following integrals:</p>
+        <p>(i) \( \displaystyle \int \frac{x + 2}{2x^2 + 6x + 5}\,dx \) &nbsp;&nbsp;&nbsp; (ii) \( \displaystyle \int \frac{x + 3}{\sqrt{5 - 4x - x^2}}\,dx \)</p>
+        <p><strong>Solution</strong></p>
+
+        <p>(i) Using the formula 7.4 (9), we express</p>
+        \[ x + 2 = A \frac{d}{dx}\left( 2x^2 + 6x + 5 \right) + B = A(4x + 6) + B \]
+        <p>Equating the coefficients of \(x\) and the constant terms from both sides, we get</p>
+        \[ 4A = 1 \ \text{ and } \ 6A + B = 2 \quad \text{or} \quad A = \frac{1}{4} \ \text{ and } \ B = \frac{1}{2}. \]
+        <p>Therefore,</p>
+        \[ \begin{aligned} \int \frac{x + 2}{2x^2 + 6x + 5} &amp;= \frac{1}{4} \int \frac{4x + 6}{2x^2 + 6x + 5}\,dx + \frac{1}{2} \int \frac{dx}{2x^2 + 6x + 5} \\ &amp;= \frac{1}{4} I_1 + \frac{1}{2} I_2 \quad \text{(say)} \end{aligned} \tag{1} \]
+        <p>In \(I_1\), put \(2x^2 + 6x + 5 = t\), so that \((4x + 6)\,dx = dt\).</p>
+        <p>Therefore,</p>
+        \[ \begin{aligned} I_1 &amp;= \int \frac{dt}{t} = \log|t| + C_1 \\ &amp;= \log|2x^2 + 6x + 5| + C_1 \end{aligned} \tag{2} \]
+        <p>and</p>
+        \[ \begin{aligned} I_2 &amp;= \int \frac{dx}{2x^2 + 6x + 5} = \frac{1}{2} \int \frac{dx}{x^2 + 3x + \frac{5}{2}} \\ &amp;= \frac{1}{2} \int \frac{dx}{\left( x + \frac{3}{2} \right)^2 + \left( \frac{1}{2} \right)^2} \end{aligned} \]
+        <p>Put \( x + \dfrac{3}{2} = t \), so that \(dx = dt\), we get</p>
+        \[ \begin{aligned} I_2 &amp;= \frac{1}{2} \int \frac{dt}{t^2 + \left( \frac{1}{2} \right)^2} = \frac{1}{2 \times \frac{1}{2}} \tan^{-1} 2t + C_2 \qquad \text{[by 7.4 (3)]} \\ &amp;= \tan^{-1} 2\left( x + \frac{3}{2} \right) + C_2 = \tan^{-1}(2x + 3) + C_2 \end{aligned} \tag{3} \]
+        <p>Using (2) and (3) in (1), we get</p>
+        \[ \int \frac{x + 2}{2x^2 + 6x + 5}\,dx = \frac{1}{4} \log\left| 2x^2 + 6x + 5 \right| + \frac{1}{2} \tan^{-1}(2x + 3) + C \]
+        <p>where, \( C = \dfrac{C_1}{4} + \dfrac{C_2}{2} \)</p>
+
+        <p>(ii) This integral is of the form given in 7.4 (10). Let us express</p>
+        \[ x + 3 = A \frac{d}{dx}(5 - 4x - x^2) + B = A(-4 - 2x) + B \]
+        <p>Equating the coefficients of \(x\) and the constant terms from both sides, we get</p>
+        \[ -2A = 1 \ \text{ and } \ -4A + B = 3, \ \text{ i.e., } \ A = -\frac{1}{2} \ \text{ and } \ B = 1 \]
+        <p>Therefore,</p>
+        \[ \begin{aligned} \int \frac{x + 3}{\sqrt{5 - 4x - x^2}}\,dx &amp;= -\frac{1}{2} \int \frac{(-4 - 2x)\,dx}{\sqrt{5 - 4x - x^2}} + \int \frac{dx}{\sqrt{5 - 4x - x^2}} \\ &amp;= -\frac{1}{2} I_1 + I_2 \end{aligned} \tag{1} \]
+        <p>In \(I_1\), put \(5 - 4x - x^2 = t\), so that \((-4 - 2x)\,dx = dt\).</p>
+        <p>Therefore,</p>
+        \[ \begin{aligned} I_1 &amp;= \int \frac{(-4 - 2x)\,dx}{\sqrt{5 - 4x - x^2}} = \int \frac{dt}{\sqrt{t}} = 2\sqrt{t} + C_1 \\ &amp;= 2\sqrt{5 - 4x - x^2} + C_1 \end{aligned} \tag{2} \]
+        <p>Now consider</p>
+        \[ I_2 = \int \frac{dx}{\sqrt{5 - 4x - x^2}} = \int \frac{dx}{\sqrt{9 - (x + 2)^2}} \]
+        <p>Put \(x + 2 = t\), so that \(dx = dt\).</p>
+        <p>Therefore,</p>
+        \[ \begin{aligned} I_2 &amp;= \int \frac{dt}{\sqrt{3^2 - t^2}} = \sin^{-1} \frac{t}{3} + C_2 \qquad \text{[by 7.4 (5)]} \\ &amp;= \sin^{-1} \frac{x + 2}{3} + C_2 \end{aligned} \tag{3} \]
+        <p>Substituting (2) and (3) in (1), we obtain</p>
+        \[ \int \frac{x + 3}{\sqrt{5 - 4x - x^2}} = -\sqrt{5 - 4x - x^2} + \sin^{-1} \frac{x + 2}{3} + C, \quad \text{where } C = C_2 - \frac{C_1}{2} \]
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../07-integrals/09-exercise-7.3/index.html" class="nav-btn">&larr; Exercise 7.3</a>
+    <a href="../../07-integrals/11-exercise-7.4/index.html" class="nav-btn">Exercise 7.4 &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

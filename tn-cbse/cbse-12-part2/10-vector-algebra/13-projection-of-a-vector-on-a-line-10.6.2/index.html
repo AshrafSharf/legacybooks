@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10.6.2 Projection of a vector on a line — Vector Algebra</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Vector Algebra · 10.6.2 Projection of a vector on a line">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../10-vector-algebra/12-scalar-or-dot-product-of-two-vectors-10.6.1/index.html" title="10.6.1 Scalar (or dot) product of two vectors">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Vector Algebra</a></span>
+    <span class="c2">10.6.2 Projection of a vector on a line</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 10 · Vector Algebra</div><a href="../01-introduction-10.1/index.html">10.1 Introduction</a><a href="../02-some-basic-concepts-10.2/index.html">10.2 Some Basic Concepts</a><a href="../03-types-of-vectors-10.3/index.html">10.3 Types of Vectors</a><a href="../04-exercise-10.1/index.html">Exercise 10.1</a><a href="../05-addition-of-vectors-10.4/index.html">10.4 Addition of Vectors</a><a href="../06-multiplication-of-a-vector-by-a-scalar-10.5/index.html">10.5 Multiplication of a Vector by a Scalar</a><a href="../07-components-of-a-vector-10.5.1/index.html">10.5.1 Components of a vector</a><a href="../08-vector-joining-two-points-10.5.2/index.html">10.5.2 Vector joining two points</a><a href="../09-section-formula-10.5.3/index.html">10.5.3 Section formula</a><a href="../10-exercise-10.2/index.html">Exercise 10.2</a><a href="../11-product-of-two-vectors-10.6/index.html">10.6 Product of Two Vectors</a><a href="../12-scalar-or-dot-product-of-two-vectors-10.6.1/index.html">10.6.1 Scalar (or dot) product of two vectors</a><a href="../13-projection-of-a-vector-on-a-line-10.6.2/index.html" aria-current="page">10.6.2 Projection of a vector on a line</a><a href="../14-exercise-10.3/index.html">Exercise 10.3</a><a href="../15-vector-or-cross-product-of-two-vectors-10.6.3/index.html">10.6.3 Vector (or cross) product of two vectors</a><a href="../16-exercise-10.4/index.html">Exercise 10.4</a><a href="../17-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../18-miscellaneous-exercise-on-chapter-10/index.html">Miscellaneous Exercise on Chapter 10</a><a href="../19-summary/index.html">Summary</a><a href="../20-historical-note/index.html">Historical Note</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../10-vector-algebra/14-exercise-10.3/index.html" title="Exercise 10.3">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">10</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 10 · Vector Algebra</a></p>
+        <h1>10.6.2 Projection of a vector on a line</h1>
+        <p class="subtitle">The shadow a vector casts on a line — and a first harvest of dot-product results</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>The <span class="teal">projection vector</span> of \( \overrightarrow{\mathrm{AB}} \) on a directed line and the <span class="teal">projection</span> (its magnitude)</li>
+        <li>Projection of \( \vec{a} \) on \( \vec{b} \): \( \dfrac{1}{|\vec{b}|}(\vec{a}\cdot\vec{b}) \)</li>
+        <li>Direction cosines as projections on the coordinate axes</li>
+        <li>Worked examples: angles, perpendicularity, projections and magnitudes</li>
+        <li>The Cauchy&ndash;Schwartz and triangle inequalities, and a collinearity test</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Projection of a Vector on a Directed Line</h2>
+    <p>Suppose a vector \( \overrightarrow{\mathrm{AB}} \) makes an angle \( \theta \) with a given directed line \( l \) (say), in the <em>anticlockwise direction</em> (Fig 10.20). Then the projection of \( \overrightarrow{\mathrm{AB}} \) on \( l \) is a vector \( \vec{p} \) (say) with magnitude \( |\overrightarrow{\mathrm{AB}}|\,|\cos\theta| \), and the direction of \( \vec{p} \) being the same (or opposite) to that of the line \( l \), depending upon whether \( \cos\theta \) is positive or negative.</p>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Projection vector and projection</div>
+        <p>The vector \( \vec{p} \) is called the <strong><em>projection vector</em></strong>, and its magnitude \( |\vec{p}| \) is simply called as the <strong><em>projection</em></strong> of the vector \( \overrightarrow{\mathrm{AB}} \) on the directed line \( l \).</p>
+    </div>
+
+    <p>For example, in each of the following figures (Fig 10.20 (i) to (iv)), projection vector of \( \overrightarrow{\mathrm{AB}} \) along the line \( l \) is vector \( \overrightarrow{\mathrm{AC}} \).</p>
+
+    <figure class="diagram">
+        <svg viewBox="0 -12 640 422" xmlns="http://www.w3.org/2000/svg" style="max-width:620px;" role="img" aria-label="Four cases of projecting vector AB on a directed line l, for theta in each of the four quadrants; the projection vector is AC.">
+            <defs>
+                <marker id="ahG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#555"/></marker>
+                <marker id="ahO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#c0602b"/></marker>
+                <marker id="ahT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#0d4f4f"/></marker>
+            </defs>
+            <line x1="15" y1="90" x2="300" y2="90" stroke="#555" stroke-width="1.5" marker-end="url(#ahG)"/>
+            <text x="296" y="82" font-size="16" font-style="italic" fill="#555">l</text>
+            <line x1="160" y1="20" x2="160" y2="90" stroke="#555" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="60" y1="90" x2="160" y2="90" stroke="#c0602b" stroke-width="3" marker-end="url(#ahO)"/>
+            <line x1="60" y1="90" x2="160" y2="20" stroke="#0d4f4f" stroke-width="2.5" marker-end="url(#ahT)"/>
+            <path d="M 80 90 A 20 20 0 0 0 76.4 78.5" fill="none" stroke="#6b46c1" stroke-width="1.5"/>
+            <text x="92" y="85" font-size="15" fill="#6b46c1" text-anchor="middle">θ</text>
+            <text x="50" y="110" font-size="15" font-weight="bold" fill="#2d2d2d" text-anchor="middle">A</text>
+            <text x="160" y="12" font-size="15" font-weight="bold" fill="#2d2d2d" text-anchor="middle">B</text>
+            <text x="170" y="110" font-size="15" font-weight="bold" fill="#2d2d2d" text-anchor="middle">C</text>
+            <text x="96" y="51" font-size="16" font-style="italic" font-weight="bold" fill="#0d4f4f" text-anchor="middle">a&#8407;</text>
+            <text x="110" y="110" font-size="16" font-style="italic" font-weight="bold" fill="#c0602b" text-anchor="middle">p&#8407;</text>
+            <text x="160" y="172" font-size="14" fill="#2d2d2d" text-anchor="middle">(0° &lt; θ &lt; 90°)</text>
+            <text x="160" y="192" font-size="14" font-weight="bold" fill="#2d2d2d" text-anchor="middle">(i)</text>
+            <line x1="335" y1="90" x2="620" y2="90" stroke="#555" stroke-width="1.5" marker-end="url(#ahG)"/>
+            <text x="616" y="82" font-size="16" font-style="italic" fill="#555">l</text>
+            <line x1="450" y1="15" x2="450" y2="90" stroke="#555" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="550" y1="90" x2="450" y2="90" stroke="#c0602b" stroke-width="3" marker-end="url(#ahO)"/>
+            <line x1="550" y1="90" x2="450" y2="15" stroke="#0d4f4f" stroke-width="2.5" marker-end="url(#ahT)"/>
+            <path d="M 570 90 A 20 20 0 0 0 534.0 78.0" fill="none" stroke="#6b46c1" stroke-width="1.5"/>
+            <text x="561" y="63" font-size="15" fill="#6b46c1" text-anchor="middle">θ</text>
+            <text x="560" y="110" font-size="15" font-weight="bold" fill="#2d2d2d" text-anchor="middle">A</text>
+            <text x="450" y="7" font-size="15" font-weight="bold" fill="#2d2d2d" text-anchor="middle">B</text>
+            <text x="440" y="110" font-size="15" font-weight="bold" fill="#2d2d2d" text-anchor="middle">C</text>
+            <text x="514" y="48" font-size="16" font-style="italic" font-weight="bold" fill="#0d4f4f" text-anchor="middle">a&#8407;</text>
+            <text x="500" y="110" font-size="16" font-style="italic" font-weight="bold" fill="#c0602b" text-anchor="middle">p&#8407;</text>
+            <text x="480" y="172" font-size="14" fill="#2d2d2d" text-anchor="middle">(90° &lt; θ &lt; 180°)</text>
+            <text x="480" y="192" font-size="14" font-weight="bold" fill="#2d2d2d" text-anchor="middle">(ii)</text>
+            <line x1="15" y1="260" x2="300" y2="260" stroke="#555" stroke-width="1.5" marker-end="url(#ahG)"/>
+            <text x="296" y="252" font-size="16" font-style="italic" fill="#555">l</text>
+            <line x1="130" y1="335" x2="130" y2="260" stroke="#555" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="230" y1="260" x2="130" y2="260" stroke="#c0602b" stroke-width="3" marker-end="url(#ahO)"/>
+            <line x1="230" y1="260" x2="130" y2="335" stroke="#0d4f4f" stroke-width="2.5" marker-end="url(#ahT)"/>
+            <path d="M 250 260 A 20 20 0 1 0 214.0 272.0" fill="none" stroke="#6b46c1" stroke-width="1.5"/>
+            <text x="219" y="233" font-size="15" fill="#6b46c1" text-anchor="middle">θ</text>
+            <text x="258" y="284" font-size="15" font-weight="bold" fill="#2d2d2d" text-anchor="middle">A</text>
+            <text x="130" y="355" font-size="15" font-weight="bold" fill="#2d2d2d" text-anchor="middle">B</text>
+            <text x="120" y="250" font-size="15" font-weight="bold" fill="#2d2d2d" text-anchor="middle">C</text>
+            <text x="166" y="294" font-size="16" font-style="italic" font-weight="bold" fill="#0d4f4f" text-anchor="middle">a&#8407;</text>
+            <text x="180" y="250" font-size="16" font-style="italic" font-weight="bold" fill="#c0602b" text-anchor="middle">p&#8407;</text>
+            <text x="160" y="382" font-size="14" fill="#2d2d2d" text-anchor="middle">(180° &lt; θ &lt; 270°)</text>
+            <text x="160" y="402" font-size="14" font-weight="bold" fill="#2d2d2d" text-anchor="middle">(iii)</text>
+            <line x1="335" y1="260" x2="620" y2="260" stroke="#555" stroke-width="1.5" marker-end="url(#ahG)"/>
+            <text x="616" y="252" font-size="16" font-style="italic" fill="#555">l</text>
+            <line x1="480" y1="335" x2="480" y2="260" stroke="#555" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="380" y1="260" x2="480" y2="260" stroke="#c0602b" stroke-width="3" marker-end="url(#ahO)"/>
+            <line x1="380" y1="260" x2="480" y2="335" stroke="#0d4f4f" stroke-width="2.5" marker-end="url(#ahT)"/>
+            <path d="M 400 260 A 20 20 0 1 0 396.0 272.0" fill="none" stroke="#6b46c1" stroke-width="1.5"/>
+            <text x="348" y="254" font-size="15" fill="#6b46c1" text-anchor="middle">θ</text>
+            <text x="352" y="284" font-size="15" font-weight="bold" fill="#2d2d2d" text-anchor="middle">A</text>
+            <text x="480" y="355" font-size="15" font-weight="bold" fill="#2d2d2d" text-anchor="middle">B</text>
+            <text x="490" y="250" font-size="15" font-weight="bold" fill="#2d2d2d" text-anchor="middle">C</text>
+            <text x="444" y="294" font-size="16" font-style="italic" font-weight="bold" fill="#0d4f4f" text-anchor="middle">a&#8407;</text>
+            <text x="430" y="250" font-size="16" font-style="italic" font-weight="bold" fill="#c0602b" text-anchor="middle">p&#8407;</text>
+            <text x="480" y="382" font-size="14" fill="#2d2d2d" text-anchor="middle">(270° &lt; θ &lt; 360°)</text>
+            <text x="480" y="402" font-size="14" font-weight="bold" fill="#2d2d2d" text-anchor="middle">(iv)</text>
+        </svg>
+        <figcaption>Fig 10.20 &mdash; In every case the projection vector of \( \overrightarrow{\mathrm{AB}} = \vec{a} \) on \( l \) is \( \overrightarrow{\mathrm{AC}} = \vec{p} \)</figcaption>
+    </figure>
+</div>
+
+<div class="card">
+    <h2>Observations</h2>
+    <ol>
+        <li>If \( \hat{p} \) is the unit vector along a line \( l \), then the projection of a vector \( \vec{a} \) on the line \( l \) is given by \( \vec{a}\cdot\hat{p} \).</li>
+        <li>Projection of a vector \( \vec{a} \) on other vector \( \vec{b} \), is given by
+            \[ \vec{a}\cdot\hat{b}, \quad\text{or}\quad \vec{a}\cdot\left(\frac{\vec{b}}{|\vec{b}|}\right), \quad\text{or}\quad \frac{1}{|\vec{b}|}(\vec{a}\cdot\vec{b}) \]</li>
+        <li>If \( \theta = 0 \), then the projection vector of \( \overrightarrow{\mathrm{AB}} \) will be \( \overrightarrow{\mathrm{AB}} \) itself and if \( \theta = \pi \), then the projection vector of \( \overrightarrow{\mathrm{AB}} \) will be \( \overrightarrow{\mathrm{BA}} \).</li>
+        <li>If \( \theta = \dfrac{\pi}{2} \) or \( \theta = \dfrac{3\pi}{2} \), then the projection vector of \( \overrightarrow{\mathrm{AB}} \) will be zero vector.</li>
+    </ol>
+
+    <div class="box box-insight">
+        <div class="box-label">Remark &mdash; Direction cosines as projections</div>
+        <p>If \( \alpha,\ \beta \) and \( \gamma \) are the direction angles of vector \( \vec{a} = a_1\hat{i}+a_2\hat{j}+a_3\hat{k} \), then its direction cosines may be given as</p>
+        \[ \cos\alpha = \frac{\vec{a}\cdot\hat{i}}{|\vec{a}|\,|\hat{i}|} = \frac{a_1}{|\vec{a}|}, \quad \cos\beta = \frac{a_2}{|\vec{a}|}, \quad\text{and}\quad \cos\gamma = \frac{a_3}{|\vec{a}|} \]
+        <p>Also, note that \( |\vec{a}|\cos\alpha,\ |\vec{a}|\cos\beta \) and \( |\vec{a}|\cos\gamma \) are respectively the projections of \( \vec{a} \) along OX, OY and OZ. i.e., the scalar components \( a_1, a_2 \) and \( a_3 \) of the vector \( \vec{a} \), are precisely the projections of \( \vec{a} \) along \( x \)-axis, \( y \)-axis and \( z \)-axis, respectively. Further, if \( \vec{a} \) is a unit vector, then it may be expressed in terms of its direction cosines as</p>
+        \[ \vec{a} = \cos\alpha\,\hat{i} + \cos\beta\,\hat{j} + \cos\gamma\,\hat{k} \]
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Worked Examples: Angles, Perpendicularity and Projections</h2>
+
+    <div class="box box-example">
+        <div class="box-label">Example 13</div>
+        <p>Find the angle between two vectors \( \vec{a} \) and \( \vec{b} \) with magnitudes 1 and 2 respectively and when \( \vec{a}\cdot\vec{b} = 1 \).</p>
+        <p><strong>Solution</strong> Given \( \vec{a}\cdot\vec{b} = 1,\ |\vec{a}| = 1 \) and \( |\vec{b}| = 2 \). We have</p>
+        \[ \theta = \cos^{-1}\left(\frac{\vec{a}\cdot\vec{b}}{|\vec{a}|\,|\vec{b}|}\right) = \cos^{-1}\left(\frac{1}{2}\right) = \frac{\pi}{3} \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 14</div>
+        <p>Find angle &lsquo;\( \theta \)&rsquo; between the vectors \( \vec{a} = \hat{i}+\hat{j}-\hat{k} \) and \( \vec{b} = \hat{i}-\hat{j}+\hat{k} \).</p>
+        <p><strong>Solution</strong> The angle \( \theta \) between two vectors \( \vec{a} \) and \( \vec{b} \) is given by</p>
+        \[ \cos\theta = \frac{\vec{a}\cdot\vec{b}}{|\vec{a}|\,|\vec{b}|} \]
+        <p>Now</p>
+        \[ \vec{a}\cdot\vec{b} = (\hat{i}+\hat{j}-\hat{k})\cdot(\hat{i}-\hat{j}+\hat{k}) = 1-1-1 = -1. \]
+        <p>Therefore, we have (since \( |\vec{a}| = |\vec{b}| = \sqrt{3} \))</p>
+        \[ \cos\theta = \frac{-1}{3} \]
+        <p>hence the required angle is</p>
+        \[ \theta = \cos^{-1}\left(-\frac{1}{3}\right) \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 15</div>
+        <p>If \( \vec{a} = 5\hat{i}-\hat{j}-3\hat{k} \) and \( \vec{b} = \hat{i}+3\hat{j}-5\hat{k} \), then show that the vectors \( \vec{a}+\vec{b} \) and \( \vec{a}-\vec{b} \) are perpendicular.</p>
+        <p><strong>Solution</strong> We know that two nonzero vectors are perpendicular if their scalar product is zero.</p>
+        <p>Here</p>
+        \[ \vec{a}+\vec{b} = (5\hat{i}-\hat{j}-3\hat{k}) + (\hat{i}+3\hat{j}-5\hat{k}) = 6\hat{i}+2\hat{j}-8\hat{k} \]
+        <p>and</p>
+        \[ \vec{a}-\vec{b} = (5\hat{i}-\hat{j}-3\hat{k}) - (\hat{i}+3\hat{j}-5\hat{k}) = 4\hat{i}-4\hat{j}+2\hat{k} \]
+        <p>So</p>
+        \[ (\vec{a}+\vec{b})\cdot(\vec{a}-\vec{b}) = (6\hat{i}+2\hat{j}-8\hat{k})\cdot(4\hat{i}-4\hat{j}+2\hat{k}) = 24-8-16 = 0. \]
+        <p>Hence \( \vec{a}+\vec{b} \) and \( \vec{a}-\vec{b} \) are perpendicular vectors.</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 16</div>
+        <p>Find the projection of the vector \( \vec{a} = 2\hat{i}+3\hat{j}+2\hat{k} \) on the vector \( \vec{b} = \hat{i}+2\hat{j}+\hat{k} \).</p>
+        <p><strong>Solution</strong> The projection of vector \( \vec{a} \) on the vector \( \vec{b} \) is given by</p>
+        \[ \frac{1}{|\vec{b}|}(\vec{a}\cdot\vec{b}) = \frac{(2\times1+3\times2+2\times1)}{\sqrt{(1)^2+(2)^2+(1)^2}} = \frac{10}{\sqrt{6}} = \frac{5}{3}\sqrt{6} \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 17</div>
+        <p>Find \( |\vec{a}-\vec{b}| \), if two vectors \( \vec{a} \) and \( \vec{b} \) are such that \( |\vec{a}| = 2,\ |\vec{b}| = 3 \) and \( \vec{a}\cdot\vec{b} = 4 \).</p>
+        <p><strong>Solution</strong> We have</p>
+        \[ \begin{aligned}
+        |\vec{a}-\vec{b}|^2 &amp;= (\vec{a}-\vec{b})\cdot(\vec{a}-\vec{b})\\
+        &amp;= \vec{a}\cdot\vec{a} - \vec{a}\cdot\vec{b} - \vec{b}\cdot\vec{a} + \vec{b}\cdot\vec{b}\\
+        &amp;= |\vec{a}|^2 - 2(\vec{a}\cdot\vec{b}) + |\vec{b}|^2\\
+        &amp;= (2)^2 - 2(4) + (3)^2
+        \end{aligned} \]
+        <p>Therefore</p>
+        \[ |\vec{a}-\vec{b}| = \sqrt{5} \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 18</div>
+        <p>If \( \vec{a} \) is a unit vector and \( (\vec{x}-\vec{a})\cdot(\vec{x}+\vec{a}) = 8 \), then find \( |\vec{x}| \).</p>
+        <p><strong>Solution</strong> Since \( \vec{a} \) is a unit vector, \( |\vec{a}| = 1 \). Also,</p>
+        \[ \begin{aligned}
+        (\vec{x}-\vec{a})\cdot(\vec{x}+\vec{a}) &amp;= 8\\
+        \text{or}\quad \vec{x}\cdot\vec{x} + \vec{x}\cdot\vec{a} - \vec{a}\cdot\vec{x} - \vec{a}\cdot\vec{a} &amp;= 8\\
+        \text{or}\quad |\vec{x}|^2 - 1 &amp;= 8 \quad\text{i.e.}\quad |\vec{x}|^2 = 9
+        \end{aligned} \]
+        <p>Therefore \( |\vec{x}| = 3 \) (as magnitude of a vector is non negative).</p>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Two Famous Inequalities</h2>
+
+    <div class="box box-example">
+        <div class="box-label">Example 19 &mdash; Cauchy&ndash;Schwartz inequality</div>
+        <p>For any two vectors \( \vec{a} \) and \( \vec{b} \), we always have \( |\vec{a}\cdot\vec{b}| \le |\vec{a}|\,|\vec{b}| \) (Cauchy-Schwartz inequality).</p>
+        <p><strong>Solution</strong> The inequality holds trivially when either \( \vec{a} = \vec{0} \) or \( \vec{b} = \vec{0} \). Actually, in such a situation we have \( |\vec{a}\cdot\vec{b}| = 0 = |\vec{a}|\,|\vec{b}| \). So, let us assume that \( |\vec{a}| \ne 0 \ne |\vec{b}| \).</p>
+        <p>Then, we have</p>
+        \[ \frac{|\vec{a}\cdot\vec{b}|}{|\vec{a}|\,|\vec{b}|} = |\cos\theta| \le 1 \]
+        <p>Therefore</p>
+        \[ |\vec{a}\cdot\vec{b}| \le |\vec{a}|\,|\vec{b}| \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 20 &mdash; Triangle inequality</div>
+        <p>For any two vectors \( \vec{a} \) and \( \vec{b} \), we always have \( |\vec{a}+\vec{b}| \le |\vec{a}|+|\vec{b}| \) (triangle inequality).</p>
+
+        <figure class="diagram">
+            <svg viewBox="0 0 420 170" xmlns="http://www.w3.org/2000/svg" style="max-width:400px;" role="img" aria-label="Triangle ABC with AB equal to vector a, BC equal to vector b and AC equal to a plus b">
+                <defs>
+                    <marker id="ah21T" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#0d4f4f"/></marker>
+                    <marker id="ah21O" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#c0602b"/></marker>
+                    <marker id="ah21B" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2b6cb0"/></marker>
+                </defs>
+                <line x1="40" y1="130" x2="270" y2="130" stroke="#0d4f4f" stroke-width="2.5" marker-end="url(#ah21T)"/>
+                <line x1="270" y1="130" x2="380" y2="30" stroke="#2b6cb0" stroke-width="2.5" marker-end="url(#ah21B)"/>
+                <line x1="40" y1="130" x2="380" y2="30" stroke="#c0602b" stroke-width="2.5" marker-end="url(#ah21O)"/>
+                <text x="28" y="136" font-size="16" font-weight="bold" fill="#2d2d2d" text-anchor="middle">A</text>
+                <text x="276" y="152" font-size="16" font-weight="bold" fill="#2d2d2d" text-anchor="middle">B</text>
+                <text x="394" y="30" font-size="16" font-weight="bold" fill="#2d2d2d" text-anchor="middle">C</text>
+                <text x="155" y="155" font-size="17" font-style="italic" font-weight="bold" fill="#0d4f4f" text-anchor="middle">a&#8407;</text>
+                <text x="342" y="95" font-size="17" font-style="italic" font-weight="bold" fill="#2b6cb0" text-anchor="middle">b&#8407;</text>
+                <text x="195" y="68" font-size="17" font-style="italic" font-weight="bold" fill="#c0602b" text-anchor="middle">a&#8407; + b&#8407;</text>
+            </svg>
+            <figcaption>Fig 10.21</figcaption>
+        </figure>
+
+        <p><strong>Solution</strong> The inequality holds trivially in case either \( \vec{a} = \vec{0} \) or \( \vec{b} = \vec{0} \) (How?). So, let \( |\vec{a}| \ne \vec{0} \ne |\vec{b}| \). Then,</p>
+        \[ \begin{aligned}
+        |\vec{a}+\vec{b}|^2 &amp;= (\vec{a}+\vec{b})^2 = (\vec{a}+\vec{b})\cdot(\vec{a}+\vec{b})\\
+        &amp;= \vec{a}\cdot\vec{a} + \vec{a}\cdot\vec{b} + \vec{b}\cdot\vec{a} + \vec{b}\cdot\vec{b}\\
+        &amp;= |\vec{a}|^2 + 2\vec{a}\cdot\vec{b} + |\vec{b}|^2 &amp;&amp; \text{(scalar product is commutative)}\\
+        &amp;\le |\vec{a}|^2 + 2|\vec{a}\cdot\vec{b}| + |\vec{b}|^2 &amp;&amp; (\text{since } x \le |x|\ \forall\, x \in \mathbf{R})\\
+        &amp;\le |\vec{a}|^2 + 2|\vec{a}|\,|\vec{b}| + |\vec{b}|^2 &amp;&amp; \text{(from Example 19)}\\
+        &amp;= (|\vec{a}| + |\vec{b}|)^2
+        \end{aligned} \]
+        <p>Hence</p>
+        \[ |\vec{a}+\vec{b}| \le |\vec{a}| + |\vec{b}| \]
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Remark</div>
+        <p>If the equality holds in triangle inequality (in the above Example 20), i.e.</p>
+        \[ |\vec{a}+\vec{b}| = |\vec{a}| + |\vec{b}|, \]
+        <p>then</p>
+        \[ |\overrightarrow{\mathrm{AC}}| = |\overrightarrow{\mathrm{AB}}| + |\overrightarrow{\mathrm{BC}}| \]
+        <p>showing that the points A, B and C are collinear.</p>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Testing Collinearity</h2>
+
+    <div class="box box-example">
+        <div class="box-label">Example 21</div>
+        <p>Show that the points \( \mathrm{A}(-2\hat{i}+3\hat{j}+5\hat{k}),\ \mathrm{B}(\hat{i}+2\hat{j}+3\hat{k}) \) and \( \mathrm{C}(7\hat{i}-\hat{k}) \) are collinear.</p>
+        <p><strong>Solution</strong> We have</p>
+        \[ \begin{aligned}
+        \overrightarrow{\mathrm{AB}} &amp;= (1+2)\hat{i} + (2-3)\hat{j} + (3-5)\hat{k} = 3\hat{i}-\hat{j}-2\hat{k},\\
+        \overrightarrow{\mathrm{BC}} &amp;= (7-1)\hat{i} + (0-2)\hat{j} + (-1-3)\hat{k} = 6\hat{i}-2\hat{j}-4\hat{k},\\
+        \overrightarrow{\mathrm{AC}} &amp;= (7+2)\hat{i} + (0-3)\hat{j} + (-1-5)\hat{k} = 9\hat{i}-3\hat{j}-6\hat{k}
+        \end{aligned} \]
+        \[ |\overrightarrow{\mathrm{AB}}| = \sqrt{14},\quad |\overrightarrow{\mathrm{BC}}| = 2\sqrt{14} \quad\text{and}\quad |\overrightarrow{\mathrm{AC}}| = 3\sqrt{14} \]
+        <p>Therefore</p>
+        \[ |\overrightarrow{\mathrm{AC}}| = |\overrightarrow{\mathrm{AB}}| + |\overrightarrow{\mathrm{BC}}| \]
+        <p>Hence the points A, B and C are collinear.</p>
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Note</div>
+        <p>In Example 21, one may note that although \( \overrightarrow{\mathrm{AB}} + \overrightarrow{\mathrm{BC}} + \overrightarrow{\mathrm{CA}} = \vec{0} \) but the points A, B and C do not form the vertices of a triangle.</p>
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../10-vector-algebra/12-scalar-or-dot-product-of-two-vectors-10.6.1/index.html" class="nav-btn">&larr; 10.6.1 Scalar (or dot) product of two vectors</a>
+    <a href="../../10-vector-algebra/14-exercise-10.3/index.html" class="nav-btn">Exercise 10.3 &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 9.3 — Differential Equations</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Differential Equations · Exercise 9.3">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../09-differential-equations/09-differential-equations-with-variables-separable-9.4.1/index.html" title="9.4.1 Differential equations with variables separable">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Differential Equations</a></span>
+    <span class="c2">Exercise 9.3</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 9 · Differential Equations</div><a href="../01-introduction-9.1/index.html">9.1 Introduction</a><a href="../02-basic-concepts-9.2/index.html">9.2 Basic Concepts</a><a href="../03-order-of-a-differential-equation-9.2.1/index.html">9.2.1 Order of a differential equation</a><a href="../04-degree-of-a-differential-equation-9.2.2/index.html">9.2.2 Degree of a differential equation</a><a href="../05-exercise-9.1/index.html">Exercise 9.1</a><a href="../06-general-and-particular-solutions-of-a-differential-equatio-9.3/index.html">9.3 General and Particular Solutions of a Differential Equation</a><a href="../07-exercise-9.2/index.html">Exercise 9.2</a><a href="../08-methods-of-solving-first-order-first-degree-differential-e-9.4/index.html">9.4 Methods of Solving First Order, First Degree Differential Equations</a><a href="../09-differential-equations-with-variables-separable-9.4.1/index.html">9.4.1 Differential equations with variables separable</a><a href="../10-exercise-9.3/index.html" aria-current="page">Exercise 9.3</a><a href="../11-homogeneous-differential-equations-9.4.2/index.html">9.4.2 Homogeneous Differential Equations</a><a href="../12-exercise-9.4/index.html">Exercise 9.4</a><a href="../13-linear-differential-equations-9.4.3/index.html">9.4.3 Linear Differential Equations</a><a href="../14-exercise-9.5/index.html">Exercise 9.5</a><a href="../15-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../16-miscellaneous-exercise-on-chapter-9/index.html">Miscellaneous Exercise on Chapter 9</a><a href="../17-summary/index.html">Summary</a><a href="../18-historical-note/index.html">Historical Note</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../09-differential-equations/11-homogeneous-differential-equations-9.4.2/index.html" title="9.4.2 Homogeneous Differential Equations">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">9</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 9 · Differential Equations</a></p>
+        <h1>Exercise 9.3</h1>
+        <p class="subtitle">Separate the variables — general solutions, particular solutions and growth problems</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>Exercise 9.3 &mdash; General Solutions</h2>
+    <p>For each of the differential equations in Exercises 1 to 10, find the general solution:</p>
+
+    <div class="question">
+        <span class="q-num">1</span>
+        <div class="q-body">
+            <p>\( \dfrac{dy}{dx} = \dfrac{1 - \cos x}{1 + \cos x} \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( y = 2\tan\dfrac{x}{2} - x + \mathrm{C} \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">2</span>
+        <div class="q-body">
+            <p>\( \dfrac{dy}{dx} = \sqrt{4 - y^2} \quad (-2 \lt y \lt 2) \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( y = 2\sin(x + \mathrm{C}) \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">3</span>
+        <div class="q-body">
+            <p>\( \dfrac{dy}{dx} + y = 1 \quad (y \neq 1) \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( y = 1 + \mathrm{A}e^{-x} \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">4</span>
+        <div class="q-body">
+            <p>\( \sec^2 x\tan y\,dx + \sec^2 y\tan x\,dy = 0 \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( \tan x\tan y = \mathrm{C} \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">5</span>
+        <div class="q-body">
+            <p>\( (e^x + e^{-x})\,dy - (e^x - e^{-x})\,dx = 0 \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( y = \log(e^x + e^{-x}) + \mathrm{C} \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">6</span>
+        <div class="q-body">
+            <p>\( \dfrac{dy}{dx} = (1 + x^2)(1 + y^2) \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( \tan^{-1} y = x + \dfrac{x^3}{3} + \mathrm{C} \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">7</span>
+        <div class="q-body">
+            <p>\( y\log y\,dx - x\,dy = 0 \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( y = e^{cx} \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">8</span>
+        <div class="q-body">
+            <p>\( x^5\dfrac{dy}{dx} = -y^5 \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( x^{-4} + y^{-4} = \mathrm{C} \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">9</span>
+        <div class="q-body">
+            <p>\( \dfrac{dy}{dx} = \sin^{-1} x \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( y = x\sin^{-1} x + \sqrt{1 - x^2} + \mathrm{C} \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">10</span>
+        <div class="q-body">
+            <p>\( e^x\tan y\,dx + (1 - e^x)\sec^2 y\,dy = 0 \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( \tan y = \mathrm{C}(1 - e^x) \)</p></div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Particular Solutions</h2>
+    <p>For each of the differential equations in Exercises 11 to 14, find a particular solution satisfying the given condition:</p>
+
+    <div class="question">
+        <span class="q-num">11</span>
+        <div class="q-body">
+            <p>\( (x^3 + x^2 + x + 1)\dfrac{dy}{dx} = 2x^2 + x \); \( y = 1 \) when \( x = 0 \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( y = \dfrac{1}{4}\log\left[(x + 1)^2(x^2 + 1)^3\right] - \dfrac{1}{2}\tan^{-1} x + 1 \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">12</span>
+        <div class="q-body">
+            <p>\( x(x^2 - 1)\dfrac{dy}{dx} = 1 \); \( y = 0 \) when \( x = 2 \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( y = \dfrac{1}{2}\log\left(\dfrac{x^2 - 1}{x^2}\right) - \dfrac{1}{2}\log\dfrac{3}{4} \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">13</span>
+        <div class="q-body">
+            <p>\( \cos\left(\dfrac{dy}{dx}\right) = a \quad (a \in \mathbf{R}) \); \( y = 1 \) when \( x = 0 \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( \cos\left(\dfrac{y - 2}{x}\right) = a \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">14</span>
+        <div class="q-body">
+            <p>\( \dfrac{dy}{dx} = y\tan x \); \( y = 1 \) when \( x = 0 \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( y = \sec x \)</p></div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Curves and Applications</h2>
+
+    <div class="question">
+        <span class="q-num">15</span>
+        <div class="q-body">
+            <p>Find the equation of a curve passing through the point \( (0, 0) \) and whose differential equation is \( y' = e^x\sin x \).</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( 2y - 1 = e^x(\sin x - \cos x) \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">16</span>
+        <div class="q-body">
+            <p>For the differential equation \( xy\dfrac{dy}{dx} = (x + 2)(y + 2) \), find the solution curve passing through the point \( (1, -1) \).</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( y - x + 2 = \log\left(x^2(y + 2)^2\right) \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">17</span>
+        <div class="q-body">
+            <p>Find the equation of a curve passing through the point \( (0, -2) \) given that at any point \( (x, y) \) on the curve, the product of the slope of its tangent and \( y \) coordinate of the point is equal to the \( x \) coordinate of the point.</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( y^2 - x^2 = 4 \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">18</span>
+        <div class="q-body">
+            <p>At any point \( (x, y) \) of a curve, the slope of the tangent is twice the slope of the line segment joining the point of contact to the point \( (-4, -3) \). Find the equation of the curve given that it passes through \( (-2, 1) \).</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( (x + 4)^2 = y + 3 \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">19</span>
+        <div class="q-body">
+            <p>The volume of spherical balloon being inflated changes at a constant rate. If initially its radius is 3 units and after 3 seconds it is 6 units. Find the radius of balloon after \( t \) seconds.</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( (63t + 27)^{\frac{1}{3}} \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">20</span>
+        <div class="q-body">
+            <p>In a bank, principal increases continuously at the rate of \( r\% \) per year. Find the value of \( r \) if Rs 100 double itself in 10 years \( (\log_e 2 = 0.6931) \).</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( 6.93\% \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">21</span>
+        <div class="q-body">
+            <p>In a bank, principal increases continuously at the rate of 5% per year. An amount of Rs 1000 is deposited with this bank, how much will it worth after 10 years \( (e^{0.5} = 1.648) \).</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( \text{Rs } 1648 \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">22</span>
+        <div class="q-body">
+            <p>In a culture, the bacteria count is 1,00,000. The number is increased by 10% in 2 hours. In how many hours will the count reach 2,00,000, if the rate of growth of bacteria is proportional to the number present?</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( \dfrac{2\log 2}{\log\left(\dfrac{11}{10}\right)} \)</p></div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Multiple Choice</h2>
+
+    <div class="question">
+        <span class="q-num">23</span>
+        <div class="q-body">
+            <p>The general solution of the differential equation \( \dfrac{dy}{dx} = e^{x + y} \) is</p>
+            <ul class="choices">
+                <li>(A) \( e^x + e^{-y} = \mathrm{C} \)</li>
+                <li>(B) \( e^x + e^y = \mathrm{C} \)</li>
+                <li>(C) \( e^{-x} + e^y = \mathrm{C} \)</li>
+                <li>(D) \( e^{-x} + e^{-y} = \mathrm{C} \)</li>
+            </ul>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( \text{(A) } e^x + e^{-y} = \mathrm{C} \)</p></div>
+        </div>
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../09-differential-equations/09-differential-equations-with-variables-separable-9.4.1/index.html" class="nav-btn">&larr; 9.4.1 Differential equations with variables separable</a>
+    <a href="../../09-differential-equations/11-homogeneous-differential-equations-9.4.2/index.html" class="nav-btn">9.4.2 Homogeneous Differential Equations &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

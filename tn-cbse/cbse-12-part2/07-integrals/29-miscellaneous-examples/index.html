@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miscellaneous Examples — Integrals</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Integrals · Miscellaneous Examples">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../07-integrals/28-exercise-7.10/index.html" title="Exercise 7.10">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Integrals</a></span>
+    <span class="c2">Miscellaneous Examples</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 7 · Integrals</div><a href="../01-introduction-7.1/index.html">7.1 Introduction</a><a href="../02-integration-as-an-inverse-process-of-differentiation-7.2/index.html">7.2 Integration as an Inverse Process of Differentiation</a><a href="../03-some-properties-of-indefinite-integral-7.2.1/index.html">7.2.1 Some properties of indefinite integral</a><a href="../04-exercise-7.1/index.html">Exercise 7.1</a><a href="../05-methods-of-integration-7.3/index.html">7.3 Methods of Integration</a><a href="../06-integration-by-substitution-7.3.1/index.html">7.3.1 Integration by substitution</a><a href="../07-exercise-7.2/index.html">Exercise 7.2</a><a href="../08-integration-using-trigonometric-identities-7.3.2/index.html">7.3.2 Integration using trigonometric identities</a><a href="../09-exercise-7.3/index.html">Exercise 7.3</a><a href="../10-integrals-of-some-particular-functions-7.4/index.html">7.4 Integrals of Some Particular Functions</a><a href="../11-exercise-7.4/index.html">Exercise 7.4</a><a href="../12-integration-by-partial-fractions-7.5/index.html">7.5 Integration by Partial Fractions</a><a href="../13-exercise-7.5/index.html">Exercise 7.5</a><a href="../14-integration-by-parts-7.6/index.html">7.6 Integration by Parts</a><a href="../15-integral-of-the-type-7.6.1/index.html">7.6.1 Integral of the type ∫eˣ[f(x) + f′(x)] dx</a><a href="../16-exercise-7.6/index.html">Exercise 7.6</a><a href="../17-integrals-of-some-more-types-7.6.2/index.html">7.6.2 Integrals of some more types</a><a href="../18-exercise-7.7/index.html">Exercise 7.7</a><a href="../19-definite-integral-7.7/index.html">7.7 Definite Integral</a><a href="../20-fundamental-theorem-of-calculus-7.8/index.html">7.8 Fundamental Theorem of Calculus</a><a href="../21-area-function-7.8.1/index.html">7.8.1 Area function</a><a href="../22-first-fundamental-theorem-of-integral-calculus-7.8.2/index.html">7.8.2 First fundamental theorem of integral calculus</a><a href="../23-second-fundamental-theorem-of-integral-calculus-7.8.3/index.html">7.8.3 Second fundamental theorem of integral calculus</a><a href="../24-exercise-7.8/index.html">Exercise 7.8</a><a href="../25-evaluation-of-definite-integrals-by-substitution-7.9/index.html">7.9 Evaluation of Definite Integrals by Substitution</a><a href="../26-exercise-7.9/index.html">Exercise 7.9</a><a href="../27-some-properties-of-definite-integrals-7.10/index.html">7.10 Some Properties of Definite Integrals</a><a href="../28-exercise-7.10/index.html">Exercise 7.10</a><a href="../29-miscellaneous-examples/index.html" aria-current="page">Miscellaneous Examples</a><a href="../30-miscellaneous-exercise-on-chapter-7/index.html">Miscellaneous Exercise on Chapter 7</a><a href="../31-summary/index.html">Summary</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../07-integrals/30-miscellaneous-exercise-on-chapter-7/index.html" title="Miscellaneous Exercise on Chapter 7">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">7</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 7 · Integrals</a></p>
+        <h1>Miscellaneous Examples</h1>
+        <p class="subtitle">Substitution, partial fractions, parts and the properties of definite integrals working together</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>Indefinite Integrals</h2>
+
+    <div class="box box-example">
+        <div class="box-label">Example 35</div>
+        <p>Find \( \displaystyle\int \cos 6x\,\sqrt{1+\sin 6x}\,dx \).</p>
+        <p><strong>Solution</strong> Put \( t = 1 + \sin 6x \), so that \( dt = 6\cos 6x\,dx \).</p>
+        <p>Therefore</p>
+        \[ \begin{aligned} \int \cos 6x\sqrt{1+\sin 6x}\,dx &amp;= \frac{1}{6}\int t^{\frac{1}{2}}\,dt \\ &amp;= \frac{1}{6}\times\frac{2}{3}(t)^{\frac{3}{2}} + C = \frac{1}{9}(1+\sin 6x)^{\frac{3}{2}} + C \end{aligned} \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 36</div>
+        <p>Find \( \displaystyle\int \frac{(x^4 - x)^{\frac{1}{4}}}{x^5}\,dx \).</p>
+        <p><strong>Solution</strong> We have</p>
+        \[ \int \frac{(x^4 - x)^{\frac{1}{4}}}{x^5}\,dx = \int \frac{\left(1 - \dfrac{1}{x^3}\right)^{\frac{1}{4}}}{x^4}\,dx \]
+        <p>Put \( 1 - \dfrac{1}{x^3} = 1 - x^{-3} = t \), so that \( \dfrac{3}{x^4}\,dx = dt \).</p>
+        <p>Therefore</p>
+        \[ \int \frac{(x^4 - x)^{\frac{1}{4}}}{x^5}\,dx = \frac{1}{3}\int t^{\frac{1}{4}}\,dt = \frac{1}{3}\times\frac{4}{5}\,t^{\frac{5}{4}} + C = \frac{4}{15}\left(1 - \frac{1}{x^3}\right)^{\frac{5}{4}} + C \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 37</div>
+        <p>Find \( \displaystyle\int \frac{x^4\,dx}{(x-1)(x^2+1)} \).</p>
+        <p><strong>Solution</strong> We have</p>
+        \[ \begin{aligned} \frac{x^4}{(x-1)(x^2+1)} &amp;= (x+1) + \frac{1}{x^3 - x^2 + x - 1} \\ &amp;= (x+1) + \frac{1}{(x-1)(x^2+1)} \end{aligned} \tag{1} \]
+        <p>Now express</p>
+        \[ \frac{1}{(x-1)(x^2+1)} = \frac{A}{(x-1)} + \frac{Bx + C}{(x^2+1)} \tag{2} \]
+        <p>So</p>
+        \[ \begin{aligned} 1 &amp;= A(x^2+1) + (Bx + C)(x-1) \\ &amp;= (A + B)x^2 + (C - B)x + A - C \end{aligned} \]
+        <p>Equating coefficients on both sides, we get \( A + B = 0 \), \( C - B = 0 \) and \( A - C = 1 \), which give \( A = \dfrac{1}{2},\ B = C = -\dfrac{1}{2} \). Substituting values of A, B and C in (2), we get</p>
+        \[ \frac{1}{(x-1)(x^2+1)} = \frac{1}{2(x-1)} - \frac{1}{2}\frac{x}{(x^2+1)} - \frac{1}{2(x^2+1)} \tag{3} \]
+        <p>Again, substituting (3) in (1), we have</p>
+        \[ \frac{x^4}{(x-1)(x^2+1)} = (x+1) + \frac{1}{2(x-1)} - \frac{1}{2}\frac{x}{(x^2+1)} - \frac{1}{2(x^2+1)} \]
+        <p>Therefore</p>
+        \[ \int \frac{x^4}{(x-1)(x^2+1)}\,dx = \frac{x^2}{2} + x + \frac{1}{2}\log|x-1| - \frac{1}{4}\log(x^2+1) - \frac{1}{2}\tan^{-1}x + C \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 38</div>
+        <p>Find \( \displaystyle\int \left[\log(\log x) + \frac{1}{(\log x)^2}\right] dx \).</p>
+        <p><strong>Solution</strong> Let</p>
+        \[ \begin{aligned} I &amp;= \int \left[\log(\log x) + \frac{1}{(\log x)^2}\right] dx \\ &amp;= \int \log(\log x)\,dx + \int \frac{1}{(\log x)^2}\,dx \end{aligned} \]
+        <p>In the first integral, let us take 1 as the second function. Then integrating it by parts, we get</p>
+        \[ \begin{aligned} I &amp;= x\log(\log x) - \int \frac{1}{x\log x}\,x\,dx + \int \frac{dx}{(\log x)^2} \\ &amp;= x\log(\log x) - \int \frac{dx}{\log x} + \int \frac{dx}{(\log x)^2} \end{aligned} \tag{1} \]
+        <p>Again, consider \( \displaystyle\int \frac{dx}{\log x} \), take 1 as the second function and integrate it by parts, we have</p>
+        \[ \int \frac{dx}{\log x} = \left[\frac{x}{\log x} - \int x\left\{-\frac{1}{(\log x)^2}\left(\frac{1}{x}\right)\right\} dx\right] \tag{2} \]
+        <p>Putting (2) in (1), we get</p>
+        \[ I = x\log(\log x) - \frac{x}{\log x} - \int \frac{dx}{(\log x)^2} + \int \frac{dx}{(\log x)^2} = x\log(\log x) - \frac{x}{\log x} + C \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 39</div>
+        <p>Find \( \displaystyle\int \left[\sqrt{\cot x} + \sqrt{\tan x}\right] dx \).</p>
+        <p><strong>Solution</strong> We have</p>
+        \[ I = \int \left[\sqrt{\cot x} + \sqrt{\tan x}\right] dx = \int \sqrt{\tan x}\,(1 + \cot x)\,dx \]
+        <p>Put \( \tan x = t^2 \), so that \( \sec^2 x\,dx = 2t\,dt \)</p>
+        <p>or \( dx = \dfrac{2t\,dt}{1 + t^4} \).</p>
+        <p>Then</p>
+        \[ \begin{aligned} I &amp;= \int t\left(1 + \frac{1}{t^2}\right)\frac{2t}{(1+t^4)}\,dt \\ &amp;= 2\int \frac{(t^2+1)}{t^4+1}\,dt = 2\int \frac{\left(1 + \dfrac{1}{t^2}\right)dt}{\left(t^2 + \dfrac{1}{t^2}\right)} = 2\int \frac{\left(1 + \dfrac{1}{t^2}\right)dt}{\left(t - \dfrac{1}{t}\right)^2 + 2} \end{aligned} \]
+        <p>Put \( t - \dfrac{1}{t} = y \), so that \( \left(1 + \dfrac{1}{t^2}\right)dt = dy \). Then</p>
+        \[ \begin{aligned} I &amp;= 2\int \frac{dy}{y^2 + \left(\sqrt{2}\right)^2} = \sqrt{2}\tan^{-1}\frac{y}{\sqrt{2}} + C = \sqrt{2}\tan^{-1}\frac{\left(t - \dfrac{1}{t}\right)}{\sqrt{2}} + C \\ &amp;= \sqrt{2}\tan^{-1}\left(\frac{t^2 - 1}{\sqrt{2}\,t}\right) + C = \sqrt{2}\tan^{-1}\left(\frac{\tan x - 1}{\sqrt{2\tan x}}\right) + C \end{aligned} \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 40</div>
+        <p>Find \( \displaystyle\int \frac{\sin 2x\cos 2x\,dx}{\sqrt{9 - \cos^4(2x)}} \).</p>
+        <p><strong>Solution</strong> Let</p>
+        \[ I = \int \frac{\sin 2x\cos 2x}{\sqrt{9 - \cos^4 2x}}\,dx \]
+        <p>Put \( \cos^2(2x) = t \) so that \( 4\sin 2x\cos 2x\,dx = -dt \).</p>
+        <p>Therefore</p>
+        \[ I = -\frac{1}{4}\int \frac{dt}{\sqrt{9 - t^2}} = -\frac{1}{4}\sin^{-1}\left(\frac{t}{3}\right) + C = -\frac{1}{4}\sin^{-1}\left[\frac{1}{3}\cos^2 2x\right] + C \]
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Definite Integrals</h2>
+
+    <div class="box box-example">
+        <div class="box-label">Example 41</div>
+        <p>Evaluate \( \displaystyle\int_{-1}^{\frac{3}{2}} |x\sin(\pi x)|\,dx \).</p>
+        <p><strong>Solution</strong> Here</p>
+        \[ f(x) = |x\sin \pi x| = \begin{cases} x\sin \pi x &amp; \text{for } -1 \le x \le 1 \\[4pt] -x\sin \pi x &amp; \text{for } 1 \le x \le \dfrac{3}{2} \end{cases} \]
+        <p>Therefore</p>
+        \[ \begin{aligned} \int_{-1}^{\frac{3}{2}} |x\sin \pi x|\,dx &amp;= \int_{-1}^{1} x\sin \pi x\,dx + \int_{1}^{\frac{3}{2}} -x\sin \pi x\,dx \\ &amp;= \int_{-1}^{1} x\sin \pi x\,dx - \int_{1}^{\frac{3}{2}} x\sin \pi x\,dx \end{aligned} \]
+        <p>Integrating both integrals on righthand side, we get</p>
+        \[ \begin{aligned} \int_{-1}^{\frac{3}{2}} |x\sin \pi x|\,dx &amp;= \left[\frac{-x\cos \pi x}{\pi} + \frac{\sin \pi x}{\pi^2}\right]_{-1}^{1} - \left[\frac{-x\cos \pi x}{\pi} + \frac{\sin \pi x}{\pi^2}\right]_{1}^{\frac{3}{2}} \\ &amp;= \frac{2}{\pi} - \left[-\frac{1}{\pi^2} - \frac{1}{\pi}\right] = \frac{3}{\pi} + \frac{1}{\pi^2} \end{aligned} \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 42</div>
+        <p>Evaluate \( \displaystyle\int_0^{\pi} \frac{x\,dx}{a^2\cos^2 x + b^2\sin^2 x} \).</p>
+        <p><strong>Solution</strong> Let</p>
+        \[ \begin{aligned} I &amp;= \int_0^{\pi} \frac{x\,dx}{a^2\cos^2 x + b^2\sin^2 x} = \int_0^{\pi} \frac{(\pi - x)\,dx}{a^2\cos^2(\pi - x) + b^2\sin^2(\pi - x)} &amp;&amp; (\text{using } P_4) \\ &amp;= \pi\int_0^{\pi} \frac{dx}{a^2\cos^2 x + b^2\sin^2 x} - \int_0^{\pi} \frac{x\,dx}{a^2\cos^2 x + b^2\sin^2 x} \\ &amp;= \pi\int_0^{\pi} \frac{dx}{a^2\cos^2 x + b^2\sin^2 x} - I \end{aligned} \]
+        <p>Thus</p>
+        \[ 2I = \pi\int_0^{\pi} \frac{dx}{a^2\cos^2 x + b^2\sin^2 x} \]
+        <p>or</p>
+        \[ \begin{aligned} I &amp;= \frac{\pi}{2}\int_0^{\pi} \frac{dx}{a^2\cos^2 x + b^2\sin^2 x} = \frac{\pi}{2}\cdot 2\int_0^{\frac{\pi}{2}} \frac{dx}{a^2\cos^2 x + b^2\sin^2 x} &amp;&amp; (\text{using } P_6) \\ &amp;= \pi\left[\int_0^{\frac{\pi}{4}} \frac{dx}{a^2\cos^2 x + b^2\sin^2 x} + \int_{\frac{\pi}{4}}^{\frac{\pi}{2}} \frac{dx}{a^2\cos^2 x + b^2\sin^2 x}\right] \\ &amp;= \pi\left[\int_0^{\frac{\pi}{4}} \frac{\sec^2 x\,dx}{a^2 + b^2\tan^2 x} + \int_{\frac{\pi}{4}}^{\frac{\pi}{2}} \frac{\operatorname{cosec}^2 x\,dx}{a^2\cot^2 x + b^2}\right] \\ &amp;= \pi\left[\int_0^{1} \frac{dt}{a^2 + b^2t^2} - \int_1^{0} \frac{du}{a^2u^2 + b^2}\right] &amp;&amp; (\text{put } \tan x = t \text{ and } \cot x = u) \\ &amp;= \frac{\pi}{ab}\left[\tan^{-1}\frac{bt}{a}\right]_0^1 - \frac{\pi}{ab}\left[\tan^{-1}\frac{au}{b}\right]_1^0 = \frac{\pi}{ab}\left[\tan^{-1}\frac{b}{a} + \tan^{-1}\frac{a}{b}\right] = \frac{\pi^2}{2ab} \end{aligned} \]
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../07-integrals/28-exercise-7.10/index.html" class="nav-btn">&larr; Exercise 7.10</a>
+    <a href="../../07-integrals/30-miscellaneous-exercise-on-chapter-7/index.html" class="nav-btn">Miscellaneous Exercise on Chapter 7 &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

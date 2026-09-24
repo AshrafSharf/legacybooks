@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.4.2 Homogeneous Differential Equations — Differential Equations</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Differential Equations · 9.4.2 Homogeneous Differential Equations">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../09-differential-equations/10-exercise-9.3/index.html" title="Exercise 9.3">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Differential Equations</a></span>
+    <span class="c2">9.4.2 Homogeneous Differential Equations</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 9 · Differential Equations</div><a href="../01-introduction-9.1/index.html">9.1 Introduction</a><a href="../02-basic-concepts-9.2/index.html">9.2 Basic Concepts</a><a href="../03-order-of-a-differential-equation-9.2.1/index.html">9.2.1 Order of a differential equation</a><a href="../04-degree-of-a-differential-equation-9.2.2/index.html">9.2.2 Degree of a differential equation</a><a href="../05-exercise-9.1/index.html">Exercise 9.1</a><a href="../06-general-and-particular-solutions-of-a-differential-equatio-9.3/index.html">9.3 General and Particular Solutions of a Differential Equation</a><a href="../07-exercise-9.2/index.html">Exercise 9.2</a><a href="../08-methods-of-solving-first-order-first-degree-differential-e-9.4/index.html">9.4 Methods of Solving First Order, First Degree Differential Equations</a><a href="../09-differential-equations-with-variables-separable-9.4.1/index.html">9.4.1 Differential equations with variables separable</a><a href="../10-exercise-9.3/index.html">Exercise 9.3</a><a href="../11-homogeneous-differential-equations-9.4.2/index.html" aria-current="page">9.4.2 Homogeneous Differential Equations</a><a href="../12-exercise-9.4/index.html">Exercise 9.4</a><a href="../13-linear-differential-equations-9.4.3/index.html">9.4.3 Linear Differential Equations</a><a href="../14-exercise-9.5/index.html">Exercise 9.5</a><a href="../15-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../16-miscellaneous-exercise-on-chapter-9/index.html">Miscellaneous Exercise on Chapter 9</a><a href="../17-summary/index.html">Summary</a><a href="../18-historical-note/index.html">Historical Note</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../09-differential-equations/12-exercise-9.4/index.html" title="Exercise 9.4">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">9</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 9 · Differential Equations</a></p>
+        <h1>9.4.2 Homogeneous Differential Equations</h1>
+        <p class="subtitle">When dy/dx depends only on the ratio y/x, the substitution y = vx separates the variables</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>What it means for a function \(F(x, y)\) to be <strong>homogeneous of degree \(n\)</strong></li>
+        <li>The equivalent forms \(x^n g\!\left(\frac{y}{x}\right)\) and \(y^n h\!\left(\frac{x}{y}\right)\)</li>
+        <li>Which differential equations are called <strong>homogeneous</strong></li>
+        <li>The substitution \(y = vx\) (or \(x = vy\)) that reduces them to variables separable form</li>
+        <li>Four worked examples, including a family of curves defined by its tangent slope</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Homogeneous Functions</h2>
+    <p>Consider the following functions in \(x\) and \(y\):</p>
+    \[ F_1(x, y) = y^2 + 2xy, \qquad F_2(x, y) = 2x - 3y, \]
+    \[ F_3(x, y) = \cos\left(\frac{y}{x}\right), \qquad F_4(x, y) = \sin x + \cos y \]
+    <p>If we replace \(x\) and \(y\) by \(\lambda x\) and \(\lambda y\) respectively in the above functions, for any nonzero constant \(\lambda\), we get</p>
+    \[ \begin{aligned}
+    F_1(\lambda x, \lambda y) &amp;= \lambda^2 (y^2 + 2xy) = \lambda^2 F_1(x, y)\\
+    F_2(\lambda x, \lambda y) &amp;= \lambda (2x - 3y) = \lambda F_2(x, y)\\
+    F_3(\lambda x, \lambda y) &amp;= \cos\left(\frac{\lambda y}{\lambda x}\right) = \cos\left(\frac{y}{x}\right) = \lambda^0 F_3(x, y)\\
+    F_4(\lambda x, \lambda y) &amp;= \sin \lambda x + \cos \lambda y \neq \lambda^n F_4(x, y), \text{ for any } n \in \mathbf{N}
+    \end{aligned} \]
+    <p>Here, we observe that the functions \(F_1, F_2, F_3\) can be written in the form \(F(\lambda x, \lambda y) = \lambda^n F(x, y)\) but \(F_4\) can not be written in this form. This leads to the following definition:</p>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Homogeneous Function of Degree n</div>
+        <p>A function \(F(x, y)\) is said to be <em>homogeneous function of degree \(n\)</em> if</p>
+        \[ F(\lambda x, \lambda y) = \lambda^n F(x, y) \]
+        <p>for any nonzero constant \(\lambda\).</p>
+    </div>
+
+    <p>We note that in the above examples, \(F_1, F_2, F_3\) are homogeneous functions of degree 2, 1, 0 respectively but \(F_4\) is not a homogeneous function.</p>
+</div>
+
+<div class="card">
+    <h2>An Equivalent Form</h2>
+    <p>We also observe that</p>
+    \[ \begin{aligned}
+    F_1(x, y) &amp;= x^2\left(\frac{y^2}{x^2} + \frac{2y}{x}\right) = x^2 h_1\left(\frac{y}{x}\right)\\
+    \text{or}\quad F_1(x, y) &amp;= y^2\left(1 + \frac{2x}{y}\right) = y^2 h_2\left(\frac{x}{y}\right)\\[4pt]
+    F_2(x, y) &amp;= x^1\left(2 - \frac{3y}{x}\right) = x^1 h_3\left(\frac{y}{x}\right)\\
+    \text{or}\quad F_2(x, y) &amp;= y^1\left(2\frac{x}{y} - 3\right) = y^1 h_4\left(\frac{x}{y}\right)\\[4pt]
+    F_3(x, y) &amp;= x^0 \cos\left(\frac{y}{x}\right) = x^0 h_5\left(\frac{y}{x}\right)\\[4pt]
+    F_4(x, y) &amp;\neq x^n h_6\left(\frac{y}{x}\right), \text{ for any } n \in \mathbf{N}\\
+    \text{or}\quad F_4(x, y) &amp;\neq y^n h_7\left(\frac{x}{y}\right), \text{ for any } n \in \mathbf{N}
+    \end{aligned} \]
+
+    <div class="box box-formula">
+        <div class="box-label">Result</div>
+        <p>A function \(F(x, y)\) is a homogeneous function of degree \(n\) if</p>
+        \[ F(x, y) = x^n g\left(\frac{y}{x}\right) \quad \text{or} \quad y^n h\left(\frac{x}{y}\right) \]
+    </div>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Homogeneous Differential Equation</div>
+        <p>A differential equation of the form \(\dfrac{dy}{dx} = F(x, y)\) is said to be <em>homogenous</em> if \(F(x, y)\) is a homogenous function of degree zero.</p>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Method of Solution</h2>
+    <p>To solve a homogeneous differential equation of the type</p>
+    \[ \frac{dy}{dx} = F(x, y) = g\left(\frac{y}{x}\right) \tag{1} \]
+    <div class="step-row"><span class="step-num">1</span><div class="step-content">
+        <p>We make the substitution</p>
+        \[ y = v\cdot x \tag{2} \]
+    </div></div>
+    <div class="step-row"><span class="step-num">2</span><div class="step-content">
+        <p>Differentiating equation (2) with respect to \(x\), we get</p>
+        \[ \frac{dy}{dx} = v + x\frac{dv}{dx} \tag{3} \]
+    </div></div>
+    <div class="step-row"><span class="step-num">3</span><div class="step-content">
+        <p>Substituting the value of \(\dfrac{dy}{dx}\) from equation (3) in equation (1), we get</p>
+        \[ v + x\frac{dv}{dx} = g(v) \]
+        <p>or</p>
+        \[ x\frac{dv}{dx} = g(v) - v \tag{4} \]
+    </div></div>
+    <div class="step-row"><span class="step-num">4</span><div class="step-content">
+        <p>Separating the variables in equation (4), we get</p>
+        \[ \frac{dv}{g(v) - v} = \frac{dx}{x} \tag{5} \]
+    </div></div>
+    <div class="step-row"><span class="step-num">5</span><div class="step-content">
+        <p>Integrating both sides of equation (5), we get</p>
+        \[ \int \frac{dv}{g(v) - v} = \int \frac{1}{x}\,dx + C \tag{6} \]
+    </div></div>
+    <p>Equation (6) gives general solution (primitive) of the differential equation (1) when we replace \(v\) by \(\dfrac{y}{x}\).</p>
+
+    <div class="box box-insight">
+        <div class="box-label">Note</div>
+        <p>If the homogeneous differential equation is in the form \(\dfrac{dx}{dy} = F(x, y)\) where, \(F(x, y)\) is homogenous function of degree zero, then we make substitution \(\dfrac{x}{y} = v\) i.e., \(x = vy\) and we proceed further to find the general solution as discussed above by writing \(\dfrac{dx}{dy} = F(x, y) = h\left(\dfrac{x}{y}\right)\).</p>
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Worked Examples</h2>
+
+    <div class="box box-example">
+        <div class="box-label">Example 10</div>
+        <p>Show that the differential equation \((x - y)\dfrac{dy}{dx} = x + 2y\) is homogeneous and solve it.</p>
+        <p><strong>Solution</strong> The given differential equation can be expressed as</p>
+        \[ \frac{dy}{dx} = \frac{x + 2y}{x - y} \tag{1} \]
+        <p>Let</p>
+        \[ F(x, y) = \frac{x + 2y}{x - y} \]
+        <p>Now</p>
+        \[ F(\lambda x, \lambda y) = \frac{\lambda(x + 2y)}{\lambda(x - y)} = \lambda^0 \cdot f(x, y) \]
+        <p>Therefore, \(F(x, y)\) is a homogenous function of degree zero. So, the given differential equation is a homogenous differential equation.</p>
+        <p><strong>Alternatively,</strong></p>
+        \[ \frac{dy}{dx} = \left(\frac{1 + \dfrac{2y}{x}}{1 - \dfrac{y}{x}}\right) = g\left(\frac{y}{x}\right) \tag{2} \]
+        <p>R.H.S. of differential equation (2) is of the form \(g\left(\dfrac{y}{x}\right)\) and so it is a homogeneous function of degree zero. Therefore, equation (1) is a homogeneous differential equation.</p>
+        <p>To solve it we make the substitution</p>
+        \[ y = vx \tag{3} \]
+        <p>Differentiating equation (3) with respect to \(x\), we get</p>
+        \[ \frac{dy}{dx} = v + x\frac{dv}{dx} \tag{4} \]
+        <p>Substituting the value of \(y\) and \(\dfrac{dy}{dx}\) in equation (1) we get</p>
+        \[ \begin{aligned}
+        v + x\frac{dv}{dx} &amp;= \frac{1 + 2v}{1 - v}\\
+        \text{or}\quad x\frac{dv}{dx} &amp;= \frac{1 + 2v}{1 - v} - v\\
+        \text{or}\quad x\frac{dv}{dx} &amp;= \frac{v^2 + v + 1}{1 - v}\\
+        \text{or}\quad \frac{v - 1}{v^2 + v + 1}\,dv &amp;= \frac{-dx}{x} \qquad \text{... (5)}
+        \end{aligned} \]
+        <p>Integrating both sides of equation (5), we get</p>
+        \[ \begin{aligned}
+        \int \frac{v - 1}{v^2 + v + 1}\,dv &amp;= -\int \frac{dx}{x}\\
+        \text{or}\quad \frac{1}{2}\int \frac{2v + 1 - 3}{v^2 + v + 1}\,dv &amp;= -\log|x| + C_1\\
+        \text{or}\quad \frac{1}{2}\int \frac{2v + 1}{v^2 + v + 1}\,dv - \frac{3}{2}\int \frac{1}{v^2 + v + 1}\,dv &amp;= -\log|x| + C_1\\
+        \text{or}\quad \frac{1}{2}\log\left|v^2 + v + 1\right| - \frac{3}{2}\int \frac{1}{\left(v + \frac{1}{2}\right)^2 + \left(\frac{\sqrt{3}}{2}\right)^2}\,dv &amp;= -\log|x| + C_1\\
+        \text{or}\quad \frac{1}{2}\log\left|v^2 + v + 1\right| - \frac{3}{2}\cdot\frac{2}{\sqrt{3}}\tan^{-1}\left(\frac{2v + 1}{\sqrt{3}}\right) &amp;= -\log|x| + C_1\\
+        \text{or}\quad \frac{1}{2}\log\left|v^2 + v + 1\right| + \frac{1}{2}\log x^2 &amp;= \sqrt{3}\tan^{-1}\left(\frac{2v + 1}{\sqrt{3}}\right) + C_1 \quad \text{(Why?)}
+        \end{aligned} \]
+        <p>Replacing \(v\) by \(\dfrac{y}{x}\), we get</p>
+        \[ \begin{aligned}
+        \text{or}\quad \frac{1}{2}\log\left|\frac{y^2}{x^2} + \frac{y}{x} + 1\right| + \frac{1}{2}\log x^2 &amp;= \sqrt{3}\tan^{-1}\left(\frac{2y + x}{\sqrt{3}x}\right) + C_1\\
+        \text{or}\quad \frac{1}{2}\log\left|\left(\frac{y^2}{x^2} + \frac{y}{x} + 1\right)x^2\right| &amp;= \sqrt{3}\tan^{-1}\left(\frac{2y + x}{\sqrt{3}x}\right) + C_1\\
+        \text{or}\quad \log\left|(y^2 + xy + x^2)\right| &amp;= 2\sqrt{3}\tan^{-1}\left(\frac{2y + x}{\sqrt{3}x}\right) + 2C_1\\
+        \text{or}\quad \log\left|(x^2 + xy + y^2)\right| &amp;= 2\sqrt{3}\tan^{-1}\left(\frac{x + 2y}{\sqrt{3}x}\right) + C
+        \end{aligned} \]
+        <p>which is the general solution of the differential equation (1).</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 11</div>
+        <p>Show that the differential equation \(x\cos\left(\dfrac{y}{x}\right)\dfrac{dy}{dx} = y\cos\left(\dfrac{y}{x}\right) + x\) is homogeneous and solve it.</p>
+        <p><strong>Solution</strong> The given differential equation can be written as</p>
+        \[ \frac{dy}{dx} = \frac{y\cos\left(\frac{y}{x}\right) + x}{x\cos\left(\frac{y}{x}\right)} \tag{1} \]
+        <p>It is a differential equation of the form \(\dfrac{dy}{dx} = F(x, y)\).</p>
+        <p>Here</p>
+        \[ F(x, y) = \frac{y\cos\left(\frac{y}{x}\right) + x}{x\cos\left(\frac{y}{x}\right)} \]
+        <p>Replacing \(x\) by \(\lambda x\) and \(y\) by \(\lambda y\), we get</p>
+        \[ F(\lambda x, \lambda y) = \frac{\lambda\left[y\cos\left(\frac{y}{x}\right) + x\right]}{\lambda\left(x\cos\frac{y}{x}\right)} = \lambda^0\left[F(x, y)\right] \]
+        <p>Thus, \(F(x, y)\) is a homogeneous function of degree zero.</p>
+        <p>Therefore, the given differential equation is a homogeneous differential equation. To solve it we make the substitution</p>
+        \[ y = vx \tag{2} \]
+        <p>Differentiating equation (2) with respect to \(x\), we get</p>
+        \[ \frac{dy}{dx} = v + x\frac{dv}{dx} \tag{3} \]
+        <p>Substituting the value of \(y\) and \(\dfrac{dy}{dx}\) in equation (1), we get</p>
+        \[ \begin{aligned}
+        v + x\frac{dv}{dx} &amp;= \frac{v\cos v + 1}{\cos v}\\
+        \text{or}\quad x\frac{dv}{dx} &amp;= \frac{v\cos v + 1}{\cos v} - v\\
+        \text{or}\quad x\frac{dv}{dx} &amp;= \frac{1}{\cos v}\\
+        \text{or}\quad \cos v\,dv &amp;= \frac{dx}{x}
+        \end{aligned} \]
+        <p>Therefore</p>
+        \[ \begin{aligned}
+        \int \cos v\,dv &amp;= \int \frac{1}{x}\,dx\\
+        \text{or}\quad \sin v &amp;= \log|x| + \log|C|\\
+        \text{or}\quad \sin v &amp;= \log|Cx|
+        \end{aligned} \]
+        <p>Replacing \(v\) by \(\dfrac{y}{x}\), we get</p>
+        \[ \sin\left(\frac{y}{x}\right) = \log|Cx| \]
+        <p>which is the general solution of the differential equation (1).</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 12</div>
+        <p>Show that the differential equation \(2y\,e^{\frac{x}{y}}\,dx + \left(y - 2x\,e^{\frac{x}{y}}\right)dy = 0\) is homogeneous and find its particular solution, given that, \(x = 0\) when \(y = 1\).</p>
+        <p><strong>Solution</strong> The given differential equation can be written as</p>
+        \[ \frac{dx}{dy} = \frac{2x\,e^{\frac{x}{y}} - y}{2y\,e^{\frac{x}{y}}} \tag{1} \]
+        <p>Let</p>
+        \[ F(x, y) = \frac{2x e^{\frac{x}{y}} - y}{2y e^{\frac{x}{y}}} \]
+        <p>Then</p>
+        \[ F(\lambda x, \lambda y) = \frac{\lambda\left(2x e^{\frac{x}{y}} - y\right)}{\lambda\left(2y e^{\frac{x}{y}}\right)} = \lambda^0\left[F(x, y)\right] \]
+        <p>Thus, \(F(x, y)\) is a homogeneous function of degree zero. Therefore, the given differential equation is a homogeneous differential equation.</p>
+        <p>To solve it, we make the substitution</p>
+        \[ x = vy \tag{2} \]
+        <p>Differentiating equation (2) with respect to \(y\), we get</p>
+        \[ \frac{dx}{dy} = v + y\frac{dv}{dy} \]
+        <p>Substituting the value of \(x\) and \(\dfrac{dx}{dy}\) in equation (1), we get</p>
+        \[ \begin{aligned}
+        v + y\frac{dv}{dy} &amp;= \frac{2v\,e^{v} - 1}{2e^{v}}\\
+        \text{or}\quad y\frac{dv}{dy} &amp;= \frac{2v\,e^{v} - 1}{2e^{v}} - v\\
+        \text{or}\quad y\frac{dv}{dy} &amp;= -\frac{1}{2e^{v}}\\
+        \text{or}\quad 2e^{v}\,dv &amp;= \frac{-dy}{y}\\
+        \text{or}\quad \int 2e^{v}\cdot dv &amp;= -\int \frac{dy}{y}\\
+        \text{or}\quad 2\,e^{v} &amp;= -\log|y| + C
+        \end{aligned} \]
+        <p>and replacing \(v\) by \(\dfrac{x}{y}\), we get</p>
+        \[ 2\,e^{\frac{x}{y}} + \log|y| = C \tag{3} \]
+        <p>Substituting \(x = 0\) and \(y = 1\) in equation (3), we get</p>
+        \[ 2\,e^{0} + \log|1| = C \Rightarrow C = 2 \]
+        <p>Substituting the value of C in equation (3), we get</p>
+        \[ 2\,e^{\frac{x}{y}} + \log|y| = 2 \]
+        <p>which is the particular solution of the given differential equation.</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 13</div>
+        <p>Show that the family of curves for which the slope of the tangent at any point \((x, y)\) on it is \(\dfrac{x^2 + y^2}{2xy}\), is given by \(x^2 - y^2 = cx\).</p>
+        <p><strong>Solution</strong> We know that the slope of the tangent at any point on a curve is \(\dfrac{dy}{dx}\).</p>
+        <p>Therefore,</p>
+        \[ \frac{dy}{dx} = \frac{x^2 + y^2}{2xy} \]
+        <p>or</p>
+        \[ \frac{dy}{dx} = \frac{1 + \dfrac{y^2}{x^2}}{\dfrac{2y}{x}} \tag{1} \]
+        <p>Clearly, (1) is a homogenous differential equation. To solve it we make substitution</p>
+        \[ y = vx \]
+        <p>Differentiating \(y = vx\) with respect to \(x\), we get</p>
+        \[ \begin{aligned}
+        \frac{dy}{dx} &amp;= v + x\frac{dv}{dx}\\
+        \text{or}\quad v + x\frac{dv}{dx} &amp;= \frac{1 + v^2}{2v}\\
+        \text{or}\quad x\frac{dv}{dx} &amp;= \frac{1 - v^2}{2v}\\
+        \frac{2v}{1 - v^2}\,dv &amp;= \frac{dx}{x}\\
+        \text{or}\quad \frac{2v}{v^2 - 1}\,dv &amp;= -\frac{dx}{x}
+        \end{aligned} \]
+        <p>Therefore</p>
+        \[ \begin{aligned}
+        \int \frac{2v}{v^2 - 1}\,dv &amp;= -\int \frac{1}{x}\,dx\\
+        \text{or}\quad \log|v^2 - 1| &amp;= -\log|x| + \log|C_1|\\
+        \text{or}\quad \log|(v^2 - 1)(x)| &amp;= \log|C_1|\\
+        \text{or}\quad (v^2 - 1)\,x &amp;= \pm C_1
+        \end{aligned} \]
+        <p>Replacing \(v\) by \(\dfrac{y}{x}\), we get</p>
+        \[ \left(\frac{y^2}{x^2} - 1\right)x = \pm C_1 \]
+        <p>or</p>
+        \[ (y^2 - x^2) = \pm C_1\,x \quad \text{or} \quad x^2 - y^2 = Cx \]
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight</div>
+        <p>Every example follows the same pattern: check that \(F(\lambda x, \lambda y) = \lambda^0 F(x, y)\), substitute \(y = vx\) (or \(x = vy\) when the equation is given as \(\frac{dx}{dy}\)), separate \(v\) from \(x\), integrate, and finally put back \(v = \frac{y}{x}\).</p>
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../09-differential-equations/10-exercise-9.3/index.html" class="nav-btn">&larr; Exercise 9.3</a>
+    <a href="../../09-differential-equations/12-exercise-9.4/index.html" class="nav-btn">Exercise 9.4 &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

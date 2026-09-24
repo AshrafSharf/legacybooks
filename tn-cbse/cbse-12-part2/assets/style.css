@@ -1,0 +1,465 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Georgia', 'Cambria', 'Times New Roman', serif;
+    background: #fdf8f3;
+    color: #2d2d2d;
+    font-size: 1.35rem;
+    line-height: 1.8;
+}
+.hero {
+    background: linear-gradient(135deg, #0d4f4f 0%, #1a2332 100%);
+    color: white;
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero .chapter-num {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 8rem;
+    font-weight: 800;
+    opacity: 0.10;
+    position: absolute;
+    top: -0.5rem;
+    right: 2rem;
+    line-height: 1;
+}
+.hero h1 {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+.hero .subtitle {
+    font-size: 1.2rem;
+    opacity: 0.85;
+    font-style: italic;
+}
+.container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+.card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+h2 {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    color: #0d4f4f;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #c0602b;
+}
+h3 {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    color: #0d4f4f;
+    font-size: 1.5rem;
+    margin: 1.5rem 0 0.75rem;
+}
+p { margin-bottom: 1rem; }
+ul, ol { margin: 0.75rem 0 1.25rem 1.5rem; }
+li { margin-bottom: 0.4rem; }
+/* Highlight boxes */
+.box { padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 5px solid; }
+.box-definition { border-color: #0d4f4f; background: #e8f4f4; }
+.box-insight { border-color: #c0602b; background: #fef3ec; }
+.box-caution { border-color: #9b2c2c; background: #fef2f2; }
+.box-example { border-color: #276749; background: #f0f7f0; }
+.box-practice { border-color: #6b46c1; background: #f5f0ff; }
+.box-formula { border-color: #2b6cb0; background: #ebf4ff; }
+.box-label {
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+.box-definition .box-label { color: #0d4f4f; }
+.box-insight .box-label { color: #c0602b; }
+.box-caution .box-label { color: #9b2c2c; }
+.box-example .box-label { color: #276749; }
+.box-practice .box-label { color: #6b46c1; }
+.box-formula .box-label { color: #2b6cb0; }
+/* Navigation */
+.nav-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid #e2d9ce;
+}
+.nav-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #0d4f4f;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+.nav-btn:hover { background: #0a3d3d; }
+.nav-btn.disabled {
+    background: #b0b0b0;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+svg { max-width: 100%; height: auto; display: block; margin: 1.5rem auto; }
+.katex { font-size: 1.3em; }
+
+.katex-display { margin: 1.5rem 0; overflow-x: auto; font-size: 1.35em; }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+th, td {
+    padding: 0.6rem 1rem;
+    border: 1px solid #d4cdc4;
+    text-align: left;
+}
+th {
+    background: #0d4f4f;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+td { background: #fff; }
+tr:nth-child(even) td { background: #faf7f3; }
+.overview-list { list-style: none; margin-left: 0; }
+.overview-list li {
+    padding: 0.4rem 0 0.4rem 1.8rem;
+    position: relative;
+}
+.overview-list li::before {
+    content: '✦';
+    color: #c0602b;
+    position: absolute;
+    left: 0;
+    font-size: 1rem;
+}
+.section-divider {
+    height: 3px;
+    background: linear-gradient(90deg, #0d4f4f, #c0602b, transparent);
+    border: none;
+    margin: 2.5rem 0;
+    border-radius: 2px;
+}
+.solution-toggle {
+    background: #276749;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin-top: 0.75rem;
+    transition: background 0.2s;
+}
+.solution-toggle:hover { background: #1e5438; }
+.solution-content {
+    display: none;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px dashed #276749;
+}
+.solution-content.show { display: block; }
+.accent { color: #c0602b; font-weight: 600; }
+.teal { color: #0d4f4f; font-weight: 600; }
+code {
+    background: #f0ece6;
+    padding: 0.1em 0.4em;
+    border-radius: 4px;
+    font-size: 0.95em;
+}
+@media (max-width: 600px) {
+    .hero h1 { font-size: 2rem; }
+    .hero .chapter-num { font-size: 5rem; }
+    h2 { font-size: 1.6rem; }
+    h3 { font-size: 1.3rem; }
+    .card { padding: 1.25rem; }
+    .box { padding: 1rem; }
+    .nav-footer { flex-direction: column; gap: 1rem; }
+}
+    
+/* ---------- sticky topbar ---------- */
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(253, 248, 243, 0.92);
+    backdrop-filter: saturate(1.6) blur(12px);
+    -webkit-backdrop-filter: saturate(1.6) blur(12px);
+    border-bottom: 1px solid #e2d9ce;
+    padding: 0.5rem 1rem;
+}
+.topbar-in {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.topbar .crumb {
+    flex: 1;
+    min-width: 0;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.82rem;
+    color: #666;
+}
+.topbar .crumb a {
+    color: #666;
+    text-decoration: none;
+}
+.topbar .crumb a:hover {
+    color: #0d4f4f;
+}
+.topbar .crumb .c2 {
+    font-weight: 600;
+    color: #2d2d2d;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.tb-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.1rem;
+    height: 2.1rem;
+    padding: 0 0.55rem;
+    border-radius: 99px;
+    border: 1px solid #e2d9ce;
+    background: #fff;
+    color: #2d2d2d;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.85rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.12s ease, border-color 0.12s ease;
+}
+.tb-btn:hover {
+    border-color: #0d4f4f;
+    color: #0d4f4f;
+    transform: translateY(-1px);
+}
+.tb-btn[aria-disabled="true"] {
+    opacity: 0.32;
+    pointer-events: none;
+}
+.topbar .crumb .c1, .topbar .crumb .c2 { display: block; }
+
+/* ================================================================
+   Additions for the CBSE Class 12 Part II section pages
+   ================================================================ */
+
+/* ---------- hero eyebrow ---------- */
+.hero .eyebrow {
+    font-family: 'Segoe UI', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 0.5rem;
+}
+.hero .eyebrow a { color: inherit; text-decoration: none; }
+.hero .eyebrow a:hover { text-decoration: underline; }
+.hero .inner { position: relative; }
+
+/* ---------- section drawer (list of sibling sections) ---------- */
+.drawer { position: relative; }
+.drawer > summary { list-style: none; }
+.drawer > summary::-webkit-details-marker { display: none; }
+.drawer-panel {
+    position: absolute;
+    right: 0;
+    top: 2.6rem;
+    width: min(24rem, 86vw);
+    max-height: 70vh;
+    overflow-y: auto;
+    background: #fff;
+    border: 1px solid #e2d9ce;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.14);
+    padding: 0.5rem;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+.drawer-panel .dh {
+    font-weight: 700;
+    color: #0d4f4f;
+    padding: 0.4rem 0.6rem 0.6rem;
+    border-bottom: 1px solid #e2d9ce;
+    margin-bottom: 0.3rem;
+}
+.drawer-panel a {
+    display: block;
+    padding: 0.45rem 0.6rem;
+    border-radius: 8px;
+    color: #2d2d2d;
+    text-decoration: none;
+}
+.drawer-panel a:hover { background: #f4efe8; }
+.drawer-panel a[aria-current="page"] { background: #e8f4f4; color: #0d4f4f; font-weight: 600; }
+
+/* ---------- figures / diagrams ---------- */
+figure.diagram { margin: 1.5rem auto; text-align: center; }
+figure.diagram svg { margin: 0 auto 0.5rem; }
+figure.diagram img { max-width: 100%; height: auto; display: block; margin: 0 auto 0.5rem; }
+figure.diagram figcaption,
+.diagram-caption {
+    text-align: center;
+    font-style: italic;
+    color: #555;
+    font-size: 1rem;
+}
+.diagram-caption { margin-top: -0.5rem; margin-bottom: 1.5rem; }
+svg text { font-family: 'Georgia', 'Times New Roman', serif; }
+
+/* ---------- numbered steps ---------- */
+.step-row { display: flex; align-items: flex-start; margin-bottom: 1rem; }
+.step-num {
+    flex: none;
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    background: #0d4f4f;
+    color: white;
+    border-radius: 50%;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-right: 0.75rem;
+    margin-top: 0.2rem;
+}
+.step-content { flex: 1; min-width: 0; }
+.step { margin: 0.5rem 0 0.5rem 1rem; }
+.step-label {
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 600;
+    color: #276749;
+    font-size: 0.95rem;
+}
+
+/* ---------- exercise questions ---------- */
+.question {
+    display: flex;
+    gap: 0.9rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px dashed #e2d9ce;
+}
+.question:last-child { border-bottom: none; }
+.q-num {
+    flex: none;
+    min-width: 2.2rem;
+    height: 2.2rem;
+    padding: 0 0.4rem;
+    border-radius: 99px;
+    background: #6b46c1;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.25rem;
+}
+.q-body { flex: 1; min-width: 0; }
+.q-body > p:last-child { margin-bottom: 0.25rem; }
+.choices {
+    list-style: none;
+    margin: 0.5rem 0 0.5rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.3rem 1.2rem;
+}
+.choices li { margin: 0; }
+.sub-list { list-style: none; margin: 0.4rem 0 0.8rem 0.5rem; }
+.sub-list li { margin-bottom: 0.35rem; }
+.solution-content .answer-line { font-weight: 600; color: #276749; }
+
+/* ---------- math helpers ---------- */
+.katex-display > .katex { white-space: normal; }
+.eq-tag { float: right; color: #888; font-style: normal; font-size: 0.95rem; }
+.math-scroll { overflow-x: auto; }
+
+/* ---------- original PDF link ---------- */
+.source-link {
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+    color: #777;
+}
+.source-link a { color: #0d4f4f; }
+
+/* ---------- chapter / book index pages ---------- */
+.toc { list-style: none; margin: 0; }
+.toc li { margin: 0; }
+.toc a {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.85rem 0.5rem;
+    border-bottom: 1px solid #efe7dc;
+    color: #2d2d2d;
+    text-decoration: none;
+    transition: background 0.15s;
+}
+.toc a:hover { background: #faf5ee; }
+.toc .n {
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 700;
+    color: #c0602b;
+    min-width: 2.2rem;
+}
+.toc .t { flex: 1; }
+.toc .m { font-family: 'Segoe UI', sans-serif; font-size: 0.85rem; color: #888; }
+.chapter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.25rem;
+}
+.chapter-card {
+    display: block;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 1.5rem;
+    color: #2d2d2d;
+    text-decoration: none;
+    border-top: 4px solid #0d4f4f;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+.chapter-card:hover { transform: translateY(-3px); box-shadow: 0 8px 22px rgba(0,0,0,0.12); }
+.chapter-card .num {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #c0602b;
+    font-weight: 700;
+}
+.chapter-card h3 { margin: 0.3rem 0 0.4rem; }
+.chapter-card p { font-size: 1rem; color: #666; margin: 0; }
+
+@media (max-width: 600px) {
+    body { font-size: 1.15rem; }
+    .question { gap: 0.6rem; }
+    .container { padding: 1.25rem 1rem; }
+    .hero { padding: 2.25rem 1rem 2rem; }
+}
+
+/* keep the generic svg rule away from KaTeX's own radical / arrow SVGs */
+.katex svg { display: block; margin: 0; max-width: none; height: inherit; }

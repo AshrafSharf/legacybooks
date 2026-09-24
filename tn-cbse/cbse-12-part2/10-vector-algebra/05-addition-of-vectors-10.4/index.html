@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10.4 Addition of Vectors — Vector Algebra</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Vector Algebra · 10.4 Addition of Vectors">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../10-vector-algebra/04-exercise-10.1/index.html" title="Exercise 10.1">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Vector Algebra</a></span>
+    <span class="c2">10.4 Addition of Vectors</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 10 · Vector Algebra</div><a href="../01-introduction-10.1/index.html">10.1 Introduction</a><a href="../02-some-basic-concepts-10.2/index.html">10.2 Some Basic Concepts</a><a href="../03-types-of-vectors-10.3/index.html">10.3 Types of Vectors</a><a href="../04-exercise-10.1/index.html">Exercise 10.1</a><a href="../05-addition-of-vectors-10.4/index.html" aria-current="page">10.4 Addition of Vectors</a><a href="../06-multiplication-of-a-vector-by-a-scalar-10.5/index.html">10.5 Multiplication of a Vector by a Scalar</a><a href="../07-components-of-a-vector-10.5.1/index.html">10.5.1 Components of a vector</a><a href="../08-vector-joining-two-points-10.5.2/index.html">10.5.2 Vector joining two points</a><a href="../09-section-formula-10.5.3/index.html">10.5.3 Section formula</a><a href="../10-exercise-10.2/index.html">Exercise 10.2</a><a href="../11-product-of-two-vectors-10.6/index.html">10.6 Product of Two Vectors</a><a href="../12-scalar-or-dot-product-of-two-vectors-10.6.1/index.html">10.6.1 Scalar (or dot) product of two vectors</a><a href="../13-projection-of-a-vector-on-a-line-10.6.2/index.html">10.6.2 Projection of a vector on a line</a><a href="../14-exercise-10.3/index.html">Exercise 10.3</a><a href="../15-vector-or-cross-product-of-two-vectors-10.6.3/index.html">10.6.3 Vector (or cross) product of two vectors</a><a href="../16-exercise-10.4/index.html">Exercise 10.4</a><a href="../17-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../18-miscellaneous-exercise-on-chapter-10/index.html">Miscellaneous Exercise on Chapter 10</a><a href="../19-summary/index.html">Summary</a><a href="../20-historical-note/index.html">Historical Note</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../10-vector-algebra/06-multiplication-of-a-vector-by-a-scalar-10.5/index.html" title="10.5 Multiplication of a Vector by a Scalar">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">10</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 10 · Vector Algebra</a></p>
+        <h1>10.4 Addition of Vectors</h1>
+        <p class="subtitle">Head to tail: the triangle and parallelogram laws, and why vector addition is commutative and associative</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>The <strong>triangle law</strong> of vector addition, \( \overrightarrow{AC} = \overrightarrow{AB} + \overrightarrow{BC} \)</li>
+        <li>Sides of a triangle taken in order add up to \( \vec{0} \); the <strong>difference</strong> \( \vec{a} - \vec{b} \)</li>
+        <li>The <strong>parallelogram law</strong> and why it is equivalent to the triangle law</li>
+        <li>Properties: <strong>commutative</strong>, <strong>associative</strong>, and the <strong>additive identity</strong> \( \vec{0} \)</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>The Triangle Law</h2>
+    <p>A vector \( \overrightarrow{AB} \) simply means the displacement from a point A to the point B. Now consider a situation that a girl moves from A to B and then from B to C (Fig 10.7). The net displacement made by the girl from point A to the point C, is given by the vector \( \overrightarrow{AC} \) and expressed as</p>
+    \[ \overrightarrow{AC} = \overrightarrow{AB} + \overrightarrow{BC} \]
+
+    <figure class="diagram">
+        <svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" style="max-width:300px;" role="img" aria-label="Triangle law: a girl moves from A to B and then from B to C; the net displacement is AC" font-family="'Segoe UI', sans-serif">
+<defs><marker id="f107-t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#0d4f4f"/></marker><marker id="f107-o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#c0602b"/></marker></defs>
+<line x1="40.0" y1="160.0" x2="200.0" y2="160.0" stroke="#0d4f4f" stroke-width="2.4" marker-end="url(#f107-t)"/>
+<line x1="200.0" y1="160.0" x2="290.0" y2="30.0" stroke="#0d4f4f" stroke-width="2.4" marker-end="url(#f107-t)"/>
+<line x1="40.0" y1="160.0" x2="290.0" y2="30.0" stroke="#c0602b" stroke-width="2.6" marker-end="url(#f107-o)"/>
+<text x="30.0" y="166.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">A</text>
+<text x="208.0" y="178.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">B</text>
+<text x="300.0" y="30.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">C</text>
+</svg>
+        <figcaption>Fig 10.7 &mdash; From A to B, then B to C: the net displacement is \( \overrightarrow{AC} \)</figcaption>
+    </figure>
+
+    <div class="box box-formula">
+        <div class="box-label">Triangle Law of Vector Addition</div>
+        \[ \overrightarrow{AC} = \overrightarrow{AB} + \overrightarrow{BC} \]
+    </div>
+
+    <p>In general, if we have two vectors \( \vec{a} \) and \( \vec{b} \) (Fig 10.8 (i)), then to add them, they are positioned so that the initial point of one coincides with the terminal point of the other (Fig 10.8(ii)).</p>
+
+    <figure class="diagram">
+        <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" style="max-width:660px;" role="img" aria-label="(i) vectors a and b; (ii) b placed at the head of a so that a + b is AC; (iii) triangle ABC with sides in order giving zero resultant, and BC' = -b giving AC' = a - b" font-family="'Segoe UI', sans-serif">
+<defs><marker id="f108-t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#0d4f4f"/></marker><marker id="f108-o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#c0602b"/></marker></defs>
+<line x1="30.0" y1="150.0" x2="200.0" y2="150.0" stroke="#0d4f4f" stroke-width="2.4" marker-end="url(#f108-t)"/>
+<g><text x="115.0" y="176.0" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">a</text><path d="M110.8,161.2 H119.8 M116.6,158.4 L119.8,161.2 L116.6,164.0" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<line x1="70.0" y1="105.0" x2="43.0" y2="42.0" stroke="#0d4f4f" stroke-width="2.4" marker-end="url(#f108-t)"/>
+<g><text x="78.0" y="67.0" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">b</text><path d="M73.8,52.2 H82.8 M79.6,49.4 L82.8,52.2 L79.6,55.0" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<text x="110.0" y="305.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">(i)</text>
+<line x1="260.0" y1="150.0" x2="430.0" y2="150.0" stroke="#0d4f4f" stroke-width="2.4" marker-end="url(#f108-t)"/>
+<line x1="430.0" y1="150.0" x2="385.0" y2="45.0" stroke="#0d4f4f" stroke-width="2.2" stroke-dasharray="4 4" marker-end="url(#f108-t)"/>
+<line x1="260.0" y1="150.0" x2="385.0" y2="45.0" stroke="#c0602b" stroke-width="2.6" marker-end="url(#f108-o)"/>
+<text x="250.0" y="155.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">A</text>
+<text x="440.0" y="155.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">B</text>
+<text x="385.0" y="37.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">C</text>
+<g><text x="345.0" y="176.0" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">a</text><path d="M340.8,161.2 H349.8 M346.6,158.4 L349.8,161.2 L346.6,164.0" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<g><text x="425.5" y="101.5" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">b</text><path d="M421.3,86.7 H430.3 M427.1,83.9 L430.3,86.7 L427.1,89.5" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<g><text x="278.3" y="89.5" font-size="17" fill="#c0602b" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">a</text><path d="M274.4,75.6 H282.8 M279.6,72.8 L282.8,75.6 L279.6,78.4" fill="none" stroke="#c0602b" stroke-width="1.3"/><text x="292.5" y="89.5" font-size="17" fill="#c0602b" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">+</text><text x="306.7" y="89.5" font-size="17" fill="#c0602b" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">b</text><path d="M302.8,75.6 H311.2 M308.0,72.8 L311.2,75.6 L308.0,78.4" fill="none" stroke="#c0602b" stroke-width="1.3"/></g>
+<text x="345.0" y="305.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">(ii)</text>
+<line x1="480.0" y1="150.0" x2="650.0" y2="150.0" stroke="#0d4f4f" stroke-width="2.4" marker-end="url(#f108-t)"/>
+<line x1="650.0" y1="150.0" x2="605.0" y2="45.0" stroke="#0d4f4f" stroke-width="2.4" marker-end="url(#f108-t)"/>
+<line x1="605.0" y1="45.0" x2="480.0" y2="150.0" stroke="#0d4f4f" stroke-width="2.4" marker-end="url(#f108-t)"/>
+<line x1="650.0" y1="150.0" x2="695.0" y2="255.0" stroke="#0d4f4f" stroke-width="2.2" stroke-dasharray="4 4" marker-end="url(#f108-t)"/>
+<line x1="480.0" y1="150.0" x2="695.0" y2="255.0" stroke="#c0602b" stroke-width="2.6" marker-end="url(#f108-o)"/>
+<text x="470.0" y="155.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">A</text>
+<text x="660.0" y="155.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">B</text>
+<text x="605.0" y="37.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">C</text>
+<text x="701.0" y="271.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">C′</text>
+<g><text x="565.0" y="142.0" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">a</text><path d="M560.8,127.2 H569.8 M566.6,124.4 L569.8,127.2 L566.6,130.0" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<g><text x="645.5" y="101.5" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">b</text><path d="M641.3,86.7 H650.3 M647.1,83.9 L650.3,86.7 L647.1,89.5" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<g><text x="687.8" y="206.5" font-size="17" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">−</text><text x="697.8" y="206.5" font-size="17" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">b</text><path d="M693.8,192.6 H702.3 M699.1,189.8 L702.3,192.6 L699.1,195.4" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<g><text x="551.3" y="232.5" font-size="17" fill="#c0602b" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">a</text><path d="M547.4,218.6 H555.8 M552.6,215.8 L555.8,218.6 L552.6,221.4" fill="none" stroke="#c0602b" stroke-width="1.3"/><text x="565.5" y="232.5" font-size="17" fill="#c0602b" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">−</text><text x="579.7" y="232.5" font-size="17" fill="#c0602b" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">b</text><path d="M575.8,218.6 H584.2 M581.0,215.8 L584.2,218.6 L581.0,221.4" fill="none" stroke="#c0602b" stroke-width="1.3"/></g>
+<text x="570.0" y="305.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">(iii)</text>
+</svg>
+        <figcaption>Fig 10.8 &mdash; (i) two vectors; (ii) their sum \( \vec{a} + \vec{b} \); (iii) sides in order give \( \vec{0} \), and \( \overrightarrow{AC'} = \vec{a} - \vec{b} \)</figcaption>
+    </figure>
+
+    <p>For example, in Fig 10.8 (ii), we have shifted vector \( \vec{b} \) without changing its magnitude and direction, so that it&rsquo;s initial point coincides with the terminal point of \( \vec{a} \). Then, the vector \( \vec{a} + \vec{b} \), represented by the third side AC of the triangle ABC, gives us the sum (or resultant) of the vectors \( \vec{a} \) and \( \vec{b} \) i.e., in triangle ABC (Fig 10.8 (ii)), we have</p>
+    \[ \overrightarrow{AB} + \overrightarrow{BC} = \overrightarrow{AC} \]
+    <p>Now again, since \( \overrightarrow{AC} = -\overrightarrow{CA} \), from the above equation, we have</p>
+    \[ \overrightarrow{AB} + \overrightarrow{BC} + \overrightarrow{CA} = \overrightarrow{AA} = \vec{0} \]
+    <p>This means that when the sides of a triangle are taken in order, it leads to zero resultant as the initial and terminal points get coincided (Fig 10.8(iii)).</p>
+</div>
+
+<div class="card">
+    <h2>Difference of Two Vectors</h2>
+    <p>Now, construct a vector \( \overrightarrow{BC'} \) so that its magnitude is same as the vector \( \overrightarrow{BC} \), but the direction opposite to that of it (Fig 10.8 (iii)), i.e.,</p>
+    \[ \overrightarrow{BC'} = -\overrightarrow{BC} \]
+    <p>Then, on applying triangle law from the Fig 10.8 (iii), we have</p>
+    \[ \overrightarrow{AC'} = \overrightarrow{AB} + \overrightarrow{BC'} = \overrightarrow{AB} + (-\overrightarrow{BC}) = \vec{a} - \vec{b} \]
+    <p>The vector \( \overrightarrow{AC'} \) is said to represent the <strong><em>difference of \( \vec{a} \) and \( \vec{b} \)</em></strong>.</p>
+</div>
+
+<div class="card">
+    <h2>The Parallelogram Law</h2>
+    <p>Now, consider a boat in a river going from one bank of the river to the other in a direction perpendicular to the flow of the river. Then, it is acted upon by two velocity vectors&ndash;one is the velocity imparted to the boat by its engine and other one is the velocity of the flow of river water. Under the simultaneous influence of these two velocities, the boat in actual starts travelling with a different velocity. To have a precise idea about the effective speed and direction (i.e., the resultant velocity) of the boat, we have the following law of vector addition.</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Parallelogram Law of Vector Addition</div>
+        <p>If we have two vectors \( \vec{a} \) and \( \vec{b} \) represented by the two adjacent sides of a parallelogram in magnitude and direction (Fig 10.9), then their sum \( \vec{a} + \vec{b} \) is represented in magnitude and direction by the diagonal of the parallelogram through their common point. This is known as the <em>parallelogram law of vector addition</em>.</p>
+    </div>
+
+    <figure class="diagram">
+        <svg viewBox="0 0 380 260" xmlns="http://www.w3.org/2000/svg" style="max-width:340px;" role="img" aria-label="Parallelogram law: OA = a and OB = b are adjacent sides; the diagonal OC represents a + b" font-family="'Segoe UI', sans-serif">
+<defs><marker id="f109-t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#0d4f4f"/></marker><marker id="f109-o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#c0602b"/></marker></defs>
+<polygon points="40.0,220.0 250.0,220.0 320.0,40.0 110.0,40.0" fill="#e8f4f4" fill-opacity="1" stroke="none"/>
+<line x1="40.0" y1="220.0" x2="250.0" y2="220.0" stroke="#0d4f4f" stroke-width="2.4" marker-end="url(#f109-t)"/>
+<line x1="40.0" y1="220.0" x2="110.0" y2="40.0" stroke="#0d4f4f" stroke-width="2.4" marker-end="url(#f109-t)"/>
+<line x1="110.0" y1="40.0" x2="320.0" y2="40.0" stroke="#0d4f4f" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#f109-t)"/>
+<line x1="250.0" y1="220.0" x2="320.0" y2="40.0" stroke="#0d4f4f" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#f109-t)"/>
+<line x1="40.0" y1="220.0" x2="320.0" y2="40.0" stroke="#c0602b" stroke-width="2.6" marker-end="url(#f109-o)"/>
+<text x="28.0" y="225.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">O</text>
+<text x="260.0" y="225.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">A</text>
+<text x="100.0" y="38.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">B</text>
+<text x="332.0" y="42.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">C</text>
+<g><text x="145.0" y="248.0" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">a</text><path d="M140.8,233.2 H149.8 M146.6,230.4 L149.8,233.2 L146.6,236.0" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<g><text x="215.0" y="30.0" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">a</text><path d="M210.8,15.2 H219.8 M216.6,12.4 L219.8,15.2 L216.6,18.0" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<g><text x="51.0" y="134.0" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">b</text><path d="M46.8,119.2 H55.8 M52.6,116.4 L55.8,119.2 L52.6,122.0" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<g><text x="311.0" y="134.0" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">b</text><path d="M306.8,119.2 H315.8 M312.6,116.4 L315.8,119.2 L312.6,122.0" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<g><text x="147.8" y="116.0" font-size="17" fill="#c0602b" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">a</text><path d="M143.9,102.1 H152.3 M149.1,99.3 L152.3,102.1 L149.1,104.9" fill="none" stroke="#c0602b" stroke-width="1.3"/><text x="162.0" y="116.0" font-size="17" fill="#c0602b" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">+</text><text x="176.2" y="116.0" font-size="17" fill="#c0602b" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">b</text><path d="M172.3,102.1 H180.7 M177.5,99.3 L180.7,102.1 L177.5,104.9" fill="none" stroke="#c0602b" stroke-width="1.3"/></g>
+</svg>
+        <figcaption>Fig 10.9 &mdash; The diagonal OC through the common point O represents \( \vec{a} + \vec{b} \)</figcaption>
+    </figure>
+
+    <div class="box box-insight">
+        <div class="box-label">Note</div>
+        <p>From Fig 10.9, using the triangle law, one may note that</p>
+        \[ \begin{aligned} \overrightarrow{OA} + \overrightarrow{AC} &amp;= \overrightarrow{OC} \\ \text{or} \quad \overrightarrow{OA} + \overrightarrow{OB} &amp;= \overrightarrow{OC} \qquad (\text{since } \overrightarrow{AC} = \overrightarrow{OB}) \end{aligned} \]
+        <p>which is parallelogram law. Thus, we may say that the two laws of vector addition are equivalent to each other.</p>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Properties of Vector Addition</h2>
+
+    <div class="box box-formula">
+        <div class="box-label">Property 1 &mdash; Commutative Property</div>
+        <p>For any two vectors \( \vec{a} \) and \( \vec{b} \),</p>
+        \[ \vec{a} + \vec{b} = \vec{b} + \vec{a} \]
+    </div>
+
+    <p><strong>Proof</strong> Consider the parallelogram ABCD (Fig 10.10). Let \( \overrightarrow{AB} = \vec{a} \) and \( \overrightarrow{BC} = \vec{b} \), then using the triangle law, from triangle ABC, we have</p>
+    \[ \overrightarrow{AC} = \vec{a} + \vec{b} \]
+
+    <figure class="diagram">
+        <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" style="max-width:360px;" role="img" aria-label="Parallelogram ABCD with AB = DC = a and BC = AD = b; the diagonal AC equals a + b and also b + a" font-family="'Segoe UI', sans-serif">
+<defs><marker id="f1010-t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#0d4f4f"/></marker><marker id="f1010-o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#c0602b"/></marker></defs>
+<polygon points="40.0,200.0 250.0,200.0 320.0,30.0 110.0,30.0" fill="#e8f4f4" fill-opacity="1" stroke="none"/>
+<line x1="40.0" y1="200.0" x2="250.0" y2="200.0" stroke="#0d4f4f" stroke-width="2.4" marker-end="url(#f1010-t)"/>
+<line x1="250.0" y1="200.0" x2="320.0" y2="30.0" stroke="#0d4f4f" stroke-width="2.4" marker-end="url(#f1010-t)"/>
+<line x1="40.0" y1="200.0" x2="110.0" y2="30.0" stroke="#0d4f4f" stroke-width="2.4" marker-end="url(#f1010-t)"/>
+<line x1="110.0" y1="30.0" x2="320.0" y2="30.0" stroke="#0d4f4f" stroke-width="2.4" marker-end="url(#f1010-t)"/>
+<line x1="40.0" y1="200.0" x2="320.0" y2="30.0" stroke="#c0602b" stroke-width="2.2" stroke-dasharray="5 4" marker-end="url(#f1010-o)"/>
+<text x="28.0" y="205.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">A</text>
+<text x="260.0" y="208.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">B</text>
+<text x="332.0" y="32.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">C</text>
+<text x="100.0" y="28.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">D</text>
+<g><text x="145.0" y="228.0" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">a</text><path d="M140.8,213.2 H149.8 M146.6,210.4 L149.8,213.2 L146.6,216.0" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<g><text x="215.0" y="20.0" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">a</text><path d="M210.8,5.2 H219.8 M216.6,2.4 L219.8,5.2 L216.6,8.0" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<g><text x="51.0" y="119.0" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">b</text><path d="M46.8,104.2 H55.8 M52.6,101.4 L55.8,104.2 L52.6,107.0" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<g><text x="311.0" y="119.0" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">b</text><path d="M306.8,104.2 H315.8 M312.6,101.4 L315.8,104.2 L312.6,107.0" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<g><text x="144.6" y="101.0" font-size="16" fill="#c0602b" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">b</text><path d="M140.9,87.9 H148.9 M145.7,85.1 L148.9,87.9 L145.7,90.7" fill="none" stroke="#c0602b" stroke-width="1.3"/><text x="158.0" y="101.0" font-size="16" fill="#c0602b" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">+</text><text x="171.4" y="101.0" font-size="16" fill="#c0602b" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">a</text><path d="M167.7,87.9 H175.6 M172.4,85.1 L175.6,87.9 L172.4,90.7" fill="none" stroke="#c0602b" stroke-width="1.3"/></g>
+<g><text x="190.6" y="137.0" font-size="16" fill="#c0602b" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">a</text><path d="M186.9,123.9 H194.9 M191.7,121.1 L194.9,123.9 L191.7,126.7" fill="none" stroke="#c0602b" stroke-width="1.3"/><text x="204.0" y="137.0" font-size="16" fill="#c0602b" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">+</text><text x="217.4" y="137.0" font-size="16" fill="#c0602b" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">b</text><path d="M213.7,123.9 H221.6 M218.4,121.1 L221.6,123.9 L218.4,126.7" fill="none" stroke="#c0602b" stroke-width="1.3"/></g>
+</svg>
+        <figcaption>Fig 10.10 &mdash; Both routes A&rarr;B&rarr;C and A&rarr;D&rarr;C end at C</figcaption>
+    </figure>
+
+    <p>Now, since the opposite sides of a parallelogram are equal and parallel, from Fig 10.10, we have, \( \overrightarrow{AD} = \overrightarrow{BC} = \vec{b} \) and \( \overrightarrow{DC} = \overrightarrow{AB} = \vec{a} \). Again using triangle law, from triangle ADC, we have</p>
+    \[ \overrightarrow{AC} = \overrightarrow{AD} + \overrightarrow{DC} = \vec{b} + \vec{a} \]
+    <p>Hence \( \vec{a} + \vec{b} = \vec{b} + \vec{a} \).</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Property 2 &mdash; Associative Property</div>
+        <p>For any three vectors \( \vec{a}, \vec{b} \) and \( \vec{c} \),</p>
+        \[ (\vec{a} + \vec{b}) + \vec{c} = \vec{a} + (\vec{b} + \vec{c}) \]
+    </div>
+
+    <p><strong>Proof</strong> Let the vectors \( \vec{a}, \vec{b} \) and \( \vec{c} \) be represented by \( \overrightarrow{PQ}, \overrightarrow{QR} \) and \( \overrightarrow{RS} \), respectively, as shown in Fig 10.11(i) and (ii).</p>
+
+    <figure class="diagram">
+        <svg viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;" role="img" aria-label="Associative law: (i) PR = a + b and PS = (a + b) + c; (ii) QS = b + c and PS = a + (b + c)" font-family="'Segoe UI', sans-serif">
+<defs><marker id="f1011-t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#0d4f4f"/></marker><marker id="f1011-o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#c0602b"/></marker><marker id="f1011-i" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#2d2d2d"/></marker></defs>
+<polygon points="40.0,210.0 105.0,40.0 240.0,80.0" fill="#ebf4ff" fill-opacity="1" stroke="none"/>
+<line x1="40.0" y1="210.0" x2="240.0" y2="80.0" stroke="#c0602b" stroke-width="2.2" marker-end="url(#f1011-o)"/>
+<g><text x="134.6" y="171.0" font-size="16" fill="#c0602b" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">a</text><path d="M130.9,157.9 H138.9 M135.7,155.1 L138.9,157.9 L135.7,160.7" fill="none" stroke="#c0602b" stroke-width="1.3"/><text x="148.0" y="171.0" font-size="16" fill="#c0602b" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">+</text><text x="161.4" y="171.0" font-size="16" fill="#c0602b" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">b</text><path d="M157.7,157.9 H165.6 M162.4,155.1 L165.6,157.9 L162.4,160.7" fill="none" stroke="#c0602b" stroke-width="1.3"/></g>
+<g><text x="123.0" y="240.0" font-size="16" fill="#2d2d2d" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">(</text><text x="130.3" y="240.0" font-size="16" fill="#2d2d2d" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">a</text><path d="M126.6,226.9 H134.5 M131.3,224.1 L134.5,226.9 L131.3,229.7" fill="none" stroke="#2d2d2d" stroke-width="1.3"/><text x="143.6" y="240.0" font-size="16" fill="#2d2d2d" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">+</text><text x="157.0" y="240.0" font-size="16" fill="#2d2d2d" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">b</text><path d="M153.3,226.9 H161.2 M158.0,224.1 L161.2,226.9 L158.0,229.7" fill="none" stroke="#2d2d2d" stroke-width="1.3"/><text x="164.3" y="240.0" font-size="16" fill="#2d2d2d" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">)</text><text x="176.1" y="240.0" font-size="16" fill="#2d2d2d" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">+</text><text x="189.5" y="240.0" font-size="16" fill="#2d2d2d" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">c</text><path d="M185.8,226.9 H193.7 M190.5,224.1 L193.7,226.9 L190.5,229.7" fill="none" stroke="#2d2d2d" stroke-width="1.3"/></g>
+<line x1="40.0" y1="210.0" x2="105.0" y2="40.0" stroke="#0d4f4f" stroke-width="2.4" marker-end="url(#f1011-t)"/>
+<line x1="105.0" y1="40.0" x2="240.0" y2="80.0" stroke="#0d4f4f" stroke-width="2.4" marker-end="url(#f1011-t)"/>
+<line x1="240.0" y1="80.0" x2="275.0" y2="210.0" stroke="#0d4f4f" stroke-width="2.4" marker-end="url(#f1011-t)"/>
+<line x1="40.0" y1="210.0" x2="275.0" y2="210.0" stroke="#2d2d2d" stroke-width="2.4" marker-end="url(#f1011-i)"/>
+<text x="28.0" y="215.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">P</text>
+<text x="101.0" y="30.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">Q</text>
+<text x="252.0" y="82.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">R</text>
+<text x="287.0" y="215.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">S</text>
+<g><text x="52.5" y="129.0" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">a</text><path d="M48.3,114.2 H57.3 M54.1,111.4 L57.3,114.2 L54.1,117.0" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<g><text x="174.5" y="48.0" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">b</text><path d="M170.3,33.2 H179.3 M176.1,30.4 L179.3,33.2 L176.1,36.0" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<g><text x="277.5" y="149.0" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">c</text><path d="M273.3,134.2 H282.3 M279.1,131.4 L282.3,134.2 L279.1,137.0" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<text x="157.0" y="272.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">(i)</text>
+<polygon points="425.0,40.0 560.0,80.0 595.0,210.0" fill="#ebf4ff" fill-opacity="1" stroke="none"/>
+<line x1="425.0" y1="40.0" x2="595.0" y2="210.0" stroke="#c0602b" stroke-width="2.2" marker-end="url(#f1011-o)"/>
+<g><text x="462.6" y="131.0" font-size="16" fill="#c0602b" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">b</text><path d="M458.9,117.9 H466.9 M463.7,115.1 L466.9,117.9 L463.7,120.7" fill="none" stroke="#c0602b" stroke-width="1.3"/><text x="476.0" y="131.0" font-size="16" fill="#c0602b" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">+</text><text x="489.4" y="131.0" font-size="16" fill="#c0602b" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">c</text><path d="M485.7,117.9 H493.6 M490.4,115.1 L493.6,117.9 L490.4,120.7" fill="none" stroke="#c0602b" stroke-width="1.3"/></g>
+<g><text x="444.5" y="240.0" font-size="16" fill="#2d2d2d" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">a</text><path d="M440.8,226.9 H448.7 M445.5,224.1 L448.7,226.9 L445.5,229.7" fill="none" stroke="#2d2d2d" stroke-width="1.3"/><text x="457.9" y="240.0" font-size="16" fill="#2d2d2d" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">+</text><text x="469.7" y="240.0" font-size="16" fill="#2d2d2d" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">(</text><text x="477.0" y="240.0" font-size="16" fill="#2d2d2d" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">b</text><path d="M473.3,226.9 H481.2 M478.0,224.1 L481.2,226.9 L478.0,229.7" fill="none" stroke="#2d2d2d" stroke-width="1.3"/><text x="490.4" y="240.0" font-size="16" fill="#2d2d2d" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">+</text><text x="503.7" y="240.0" font-size="16" fill="#2d2d2d" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">c</text><path d="M500.0,226.9 H507.9 M504.7,224.1 L507.9,226.9 L504.7,229.7" fill="none" stroke="#2d2d2d" stroke-width="1.3"/><text x="511.0" y="240.0" font-size="16" fill="#2d2d2d" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif">)</text></g>
+<line x1="360.0" y1="210.0" x2="425.0" y2="40.0" stroke="#0d4f4f" stroke-width="2.4" marker-end="url(#f1011-t)"/>
+<line x1="425.0" y1="40.0" x2="560.0" y2="80.0" stroke="#0d4f4f" stroke-width="2.4" marker-end="url(#f1011-t)"/>
+<line x1="560.0" y1="80.0" x2="595.0" y2="210.0" stroke="#0d4f4f" stroke-width="2.4" marker-end="url(#f1011-t)"/>
+<line x1="360.0" y1="210.0" x2="595.0" y2="210.0" stroke="#2d2d2d" stroke-width="2.4" marker-end="url(#f1011-i)"/>
+<text x="348.0" y="215.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">P</text>
+<text x="421.0" y="30.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">Q</text>
+<text x="572.0" y="82.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">R</text>
+<text x="607.0" y="215.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">S</text>
+<g><text x="372.5" y="129.0" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">a</text><path d="M368.3,114.2 H377.3 M374.1,111.4 L377.3,114.2 L374.1,117.0" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<g><text x="494.5" y="48.0" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">b</text><path d="M490.3,33.2 H499.3 M496.1,30.4 L499.3,33.2 L496.1,36.0" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<g><text x="597.5" y="149.0" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">c</text><path d="M593.3,134.2 H602.3 M599.1,131.4 L602.3,134.2 L599.1,137.0" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<text x="477.0" y="272.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">(ii)</text>
+</svg>
+        <figcaption>Fig 10.11 &mdash; Grouping differently, (i) and (ii) both arrive at \( \overrightarrow{PS} \)</figcaption>
+    </figure>
+
+    <p>Then</p>
+    \[ \begin{aligned} \vec{a} + \vec{b} &amp;= \overrightarrow{PQ} + \overrightarrow{QR} = \overrightarrow{PR} \\ \vec{b} + \vec{c} &amp;= \overrightarrow{QR} + \overrightarrow{RS} = \overrightarrow{QS} \end{aligned} \]
+    <p>So</p>
+    \[ (\vec{a} + \vec{b}) + \vec{c} = \overrightarrow{PR} + \overrightarrow{RS} = \overrightarrow{PS} \]
+    <p>and</p>
+    \[ \vec{a} + (\vec{b} + \vec{c}) = \overrightarrow{PQ} + \overrightarrow{QS} = \overrightarrow{PS} \]
+    <p>Hence \( (\vec{a} + \vec{b}) + \vec{c} = \vec{a} + (\vec{b} + \vec{c}) \).</p>
+
+    <div class="box box-insight">
+        <div class="box-label">Remark</div>
+        <p>The associative property of vector addition enables us to write the sum of three vectors \( \vec{a}, \vec{b}, \vec{c} \) as \( \vec{a} + \vec{b} + \vec{c} \) without using brackets.</p>
+    </div>
+
+    <p>Note that for any vector \( \vec{a} \), we have</p>
+    \[ \vec{a} + \vec{0} = \vec{0} + \vec{a} = \vec{a} \]
+    <p>Here, the zero vector \( \vec{0} \) is called the <strong><em>additive identity</em></strong> for the vector addition.</p>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../10-vector-algebra/04-exercise-10.1/index.html" class="nav-btn">&larr; Exercise 10.1</a>
+    <a href="../../10-vector-algebra/06-multiplication-of-a-vector-by-a-scalar-10.5/index.html" class="nav-btn">10.5 Multiplication of a Vector by a Scalar &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

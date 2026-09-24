@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10.5.3 Section formula — Vector Algebra</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Vector Algebra · 10.5.3 Section formula">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../10-vector-algebra/08-vector-joining-two-points-10.5.2/index.html" title="10.5.2 Vector joining two points">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Vector Algebra</a></span>
+    <span class="c2">10.5.3 Section formula</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 10 · Vector Algebra</div><a href="../01-introduction-10.1/index.html">10.1 Introduction</a><a href="../02-some-basic-concepts-10.2/index.html">10.2 Some Basic Concepts</a><a href="../03-types-of-vectors-10.3/index.html">10.3 Types of Vectors</a><a href="../04-exercise-10.1/index.html">Exercise 10.1</a><a href="../05-addition-of-vectors-10.4/index.html">10.4 Addition of Vectors</a><a href="../06-multiplication-of-a-vector-by-a-scalar-10.5/index.html">10.5 Multiplication of a Vector by a Scalar</a><a href="../07-components-of-a-vector-10.5.1/index.html">10.5.1 Components of a vector</a><a href="../08-vector-joining-two-points-10.5.2/index.html">10.5.2 Vector joining two points</a><a href="../09-section-formula-10.5.3/index.html" aria-current="page">10.5.3 Section formula</a><a href="../10-exercise-10.2/index.html">Exercise 10.2</a><a href="../11-product-of-two-vectors-10.6/index.html">10.6 Product of Two Vectors</a><a href="../12-scalar-or-dot-product-of-two-vectors-10.6.1/index.html">10.6.1 Scalar (or dot) product of two vectors</a><a href="../13-projection-of-a-vector-on-a-line-10.6.2/index.html">10.6.2 Projection of a vector on a line</a><a href="../14-exercise-10.3/index.html">Exercise 10.3</a><a href="../15-vector-or-cross-product-of-two-vectors-10.6.3/index.html">10.6.3 Vector (or cross) product of two vectors</a><a href="../16-exercise-10.4/index.html">Exercise 10.4</a><a href="../17-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../18-miscellaneous-exercise-on-chapter-10/index.html">Miscellaneous Exercise on Chapter 10</a><a href="../19-summary/index.html">Summary</a><a href="../20-historical-note/index.html">Historical Note</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../10-vector-algebra/10-exercise-10.2/index.html" title="Exercise 10.2">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">10</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 10 · Vector Algebra</a></p>
+        <h1>10.5.3 Section formula</h1>
+        <p class="subtitle">Where exactly is the point that splits PQ in the ratio m : n? Internal and external division with vectors</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>Internal division: \( \overrightarrow{OR} = \dfrac{m\vec{b} + n\vec{a}}{m + n} \)</li>
+        <li>External division: \( \overrightarrow{OR} = \dfrac{m\vec{b} - n\vec{a}}{m - n} \)</li>
+        <li>The midpoint formula \( \dfrac{\vec{a} + \vec{b}}{2} \)</li>
+        <li>Examples: dividing a join in the ratio 2 : 1, and proving a triangle is right angled</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Dividing a Line Segment</h2>
+    <p>Let P and Q be two points represented by the position vectors \( \overrightarrow{OP} \) and \( \overrightarrow{OQ} \), respectively, with respect to the origin O. Then the line segment joining the points P and Q may be divided by a third point, say R, in two ways &ndash; internally (Fig 10.16) and externally (Fig 10.17). Here, we intend to find the position vector \( \overrightarrow{OR} \) for the point R with respect to the origin O. We take the two cases one by one.</p>
+
+    <h3>Case I &mdash; When R divides PQ internally (Fig 10.16)</h3>
+
+    <figure class="diagram">
+        <svg viewBox="0 0 400 230" xmlns="http://www.w3.org/2000/svg" style="max-width:360px;" role="img" aria-label="Internal division: R divides PQ in the ratio m : n; OP = a, OQ = b and OR = r" font-family="'Segoe UI', sans-serif">
+<defs><marker id="f1016-t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#0d4f4f"/></marker><marker id="f1016-o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#c0602b"/></marker><marker id="f1016-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#2b6cb0"/></marker></defs>
+<line x1="40.0" y1="110.0" x2="340.0" y2="190.0" stroke="#0d4f4f" stroke-width="2.4" marker-end="url(#f1016-t)"/>
+<line x1="40.0" y1="110.0" x2="150.0" y2="20.0" stroke="#0d4f4f" stroke-width="2.4" marker-end="url(#f1016-t)"/>
+<line x1="40.0" y1="110.0" x2="260.2" y2="118.6" stroke="#c0602b" stroke-width="2.4" marker-end="url(#f1016-o)"/>
+<line x1="340.0" y1="190.0" x2="150.0" y2="20.0" stroke="#2b6cb0" stroke-width="2" marker-end="url(#f1016-b)"/>
+<circle cx="260.2" cy="118.6" r="3" fill="#2d2d2d"/>
+<text x="28.0" y="115.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">O</text>
+<text x="352.0" y="195.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">P</text>
+<text x="150.0" y="12.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">Q</text>
+<text x="274.2" y="116.6" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">R</text>
+<g><text x="205.0" y="182.0" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">a</text><path d="M200.8,167.2 H209.8 M206.6,164.4 L209.8,167.2 L206.6,170.0" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<g><text x="75.0" y="63.0" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">b</text><path d="M70.8,48.2 H79.8 M76.6,45.4 L79.8,48.2 L76.6,51.0" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<g><text x="161.1" y="102.7" font-size="18" fill="#c0602b" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">r</text><path d="M157.0,88.0 H165.9 M162.7,85.2 L165.9,88.0 L162.7,90.8" fill="none" stroke="#c0602b" stroke-width="1.3"/></g>
+<text x="221.1" y="65.3" font-size="16" fill="#2d2d2d" text-anchor="middle" font-weight="bold" font-style="italic" font-family="Georgia, 'Times New Roman', serif">n</text>
+<text x="316.1" y="150.3" font-size="16" fill="#2d2d2d" text-anchor="middle" font-weight="bold" font-style="italic" font-family="Georgia, 'Times New Roman', serif">m</text>
+</svg>
+        <figcaption>Fig 10.16 &mdash; R divides PQ internally in the ratio <em>m</em> : <em>n</em></figcaption>
+    </figure>
+
+    <p>If R divides \( \overrightarrow{PQ} \) such that \( m\,\overrightarrow{RQ} = n\,\overrightarrow{PR} \), where <em>m</em> and <em>n</em> are positive scalars, we say that the point R divides \( \overrightarrow{PQ} \) internally in the ratio of <em>m</em> : <em>n</em>. Now from triangles ORQ and OPR, we have</p>
+    \[ \begin{aligned} \overrightarrow{RQ} &amp;= \overrightarrow{OQ} - \overrightarrow{OR} = \vec{b} - \vec{r} \\ \text{and} \quad \overrightarrow{PR} &amp;= \overrightarrow{OR} - \overrightarrow{OP} = \vec{r} - \vec{a}, \end{aligned} \]
+    <p>Therefore, we have</p>
+    \[ m(\vec{b} - \vec{r}) = n(\vec{r} - \vec{a}) \qquad (\text{Why?}) \]
+    <p>or</p>
+    \[ \vec{r} = \frac{m\vec{b} + n\vec{a}}{m + n} \qquad (\text{on simplification}) \]
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight &mdash; the &ldquo;Why?&rdquo; and the simplification</div>
+        <p>Substituting \( \overrightarrow{RQ} = \vec{b} - \vec{r} \) and \( \overrightarrow{PR} = \vec{r} - \vec{a} \) into \( m\,\overrightarrow{RQ} = n\,\overrightarrow{PR} \) gives the equation. Expanding, \( m\vec{b} - m\vec{r} = n\vec{r} - n\vec{a} \), so \( (m + n)\vec{r} = m\vec{b} + n\vec{a} \).</p>
+    </div>
+
+    <p>Hence, the position vector of the point R which divides P and Q internally in the ratio of <em>m</em> : <em>n</em> is given by</p>
+    <div class="box box-formula">
+        <div class="box-label">Section Formula &mdash; Internal Division</div>
+        \[ \overrightarrow{OR} = \frac{m\vec{b} + n\vec{a}}{m + n} \]
+    </div>
+
+    <h3>Case II &mdash; When R divides PQ externally (Fig 10.17)</h3>
+
+    <figure class="diagram">
+        <svg viewBox="0 0 420 270" xmlns="http://www.w3.org/2000/svg" style="max-width:380px;" role="img" aria-label="External division: R lies on PQ produced beyond Q with PR : QR = m : n; OP = a and OQ = b" font-family="'Segoe UI', sans-serif">
+<defs><marker id="f1017-t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#0d4f4f"/></marker><marker id="f1017-o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#c0602b"/></marker><marker id="f1017-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#2b6cb0"/></marker><marker id="f1017-k" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#555"/></marker><marker id="f1017-ks" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M10,0 L0,5 L10,10 L7.5,5 z" fill="#555"/></marker></defs>
+<line x1="40.0" y1="150.0" x2="340.0" y2="230.0" stroke="#0d4f4f" stroke-width="2.4" marker-end="url(#f1017-t)"/>
+<line x1="40.0" y1="150.0" x2="230.0" y2="150.0" stroke="#0d4f4f" stroke-width="2.4" marker-end="url(#f1017-t)"/>
+<line x1="40.0" y1="150.0" x2="120.0" y2="70.0" stroke="#c0602b" stroke-width="2.4" marker-end="url(#f1017-o)"/>
+<line x1="340.0" y1="230.0" x2="230.0" y2="150.0" stroke="#2b6cb0" stroke-width="2" marker-end="url(#f1017-b)"/>
+<line x1="230.0" y1="150.0" x2="120.0" y2="70.0" stroke="#2b6cb0" stroke-width="2" stroke-dasharray="3 4" marker-end="url(#f1017-b)"/>
+<line x1="354.1" y1="210.6" x2="134.1" y2="50.6" stroke="#555" stroke-width="1.4" marker-end="url(#f1017-k)" marker-start="url(#f1017-ks)"/>
+<text x="258.1" y="134.6" font-size="16" fill="#2d2d2d" text-anchor="middle" font-weight="bold" font-style="italic" font-family="Georgia, 'Times New Roman', serif">m</text>
+<text x="163.0" y="106.0" font-size="16" fill="#2d2d2d" text-anchor="middle" font-weight="bold" font-style="italic" font-family="Georgia, 'Times New Roman', serif">n</text>
+<text x="28.0" y="155.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">O</text>
+<text x="336.0" y="250.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">P</text>
+<text x="244.0" y="160.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">Q</text>
+<text x="120.0" y="60.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">R</text>
+<g><text x="201.0" y="222.0" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">a</text><path d="M196.8,207.2 H205.8 M202.6,204.4 L205.8,207.2 L202.6,210.0" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<g><text x="144.5" y="140.0" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">b</text><path d="M140.3,125.2 H149.3 M146.1,122.4 L149.3,125.2 L146.1,128.0" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+</svg>
+        <figcaption>Fig 10.17 &mdash; R divides PQ externally in the ratio <em>m</em> : <em>n</em></figcaption>
+    </figure>
+
+    <p>We leave it to the reader as an exercise to verify that the position vector of the point R which divides the line segment PQ externally in the ratio \( m : n \) i.e. \( \dfrac{PR}{QR} = \dfrac{m}{n} \) is given by</p>
+    <div class="box box-formula">
+        <div class="box-label">Section Formula &mdash; External Division</div>
+        \[ \overrightarrow{OR} = \frac{m\vec{b} - n\vec{a}}{m - n} \]
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Remark</div>
+        <p>If R is the midpoint of PQ, then \( m = n \). And therefore, from Case I, the midpoint R of \( \overrightarrow{PQ} \), will have its position vector as</p>
+        \[ \overrightarrow{OR} = \frac{\vec{a} + \vec{b}}{2} \]
+    </div>
+</div>
+
+<div class="card">
+    <h2>Worked Examples</h2>
+
+    <div class="box box-example">
+        <div class="box-label">Example 11</div>
+        <p>Consider two points P and Q with position vectors \( \overrightarrow{OP} = 3\vec{a} - 2\vec{b} \) and \( \overrightarrow{OQ} = \vec{a} + \vec{b} \). Find the position vector of a point R which divides the line joining P and Q in the ratio 2:1, (i) internally, and (ii) externally.</p>
+        <p><strong>Solution</strong></p>
+        <div class="step-row"><span class="step-num">i</span><div class="step-content">The position vector of the point R dividing the join of P and Q internally in the ratio 2:1 is
+            \[ \overrightarrow{OR} = \frac{2(\vec{a} + \vec{b}) + (3\vec{a} - 2\vec{b})}{2 + 1} = \frac{5\vec{a}}{3} \]</div></div>
+        <div class="step-row"><span class="step-num">ii</span><div class="step-content">The position vector of the point R dividing the join of P and Q externally in the ratio 2:1 is
+            \[ \overrightarrow{OR} = \frac{2(\vec{a} + \vec{b}) - (3\vec{a} - 2\vec{b})}{2 - 1} = 4\vec{b} - \vec{a} \]</div></div>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 12</div>
+        <p>Show that the points \( A(2\hat{i} - \hat{j} + \hat{k}),\ B(\hat{i} - 3\hat{j} - 5\hat{k}),\ C(3\hat{i} - 4\hat{j} - 4\hat{k}) \) are the vertices of a right angled triangle.</p>
+        <p><strong>Solution</strong> We have</p>
+        \[ \begin{aligned} \overrightarrow{AB} &amp;= (1 - 2)\hat{i} + (-3 + 1)\hat{j} + (-5 - 1)\hat{k} = -\hat{i} - 2\hat{j} - 6\hat{k} \\ \overrightarrow{BC} &amp;= (3 - 1)\hat{i} + (-4 + 3)\hat{j} + (-4 + 5)\hat{k} = 2\hat{i} - \hat{j} + \hat{k} \\ \text{and} \quad \overrightarrow{CA} &amp;= (2 - 3)\hat{i} + (-1 + 4)\hat{j} + (1 + 4)\hat{k} = -\hat{i} + 3\hat{j} + 5\hat{k} \end{aligned} \]
+        <p>Further, note that</p>
+        \[ |\overrightarrow{AB}|^2 = 41 = 6 + 35 = |\overrightarrow{BC}|^2 + |\overrightarrow{CA}|^2 \]
+        <p>Hence, the triangle is a right angled triangle.</p>
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../10-vector-algebra/08-vector-joining-two-points-10.5.2/index.html" class="nav-btn">&larr; 10.5.2 Vector joining two points</a>
+    <a href="../../10-vector-algebra/10-exercise-10.2/index.html" class="nav-btn">Exercise 10.2 &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

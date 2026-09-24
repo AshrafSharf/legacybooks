@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13.4 Independent Events — Probability</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Probability · 13.4 Independent Events">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../13-probability/05-multiplication-theorem-on-probability-13.3/index.html" title="13.3 Multiplication Theorem on Probability">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Probability</a></span>
+    <span class="c2">13.4 Independent Events</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 13 · Probability</div><a href="../01-introduction-13.1/index.html">13.1 Introduction</a><a href="../02-conditional-probability-13.2/index.html">13.2 Conditional Probability</a><a href="../03-properties-of-conditional-probability-13.2.1/index.html">13.2.1 Properties of conditional probability</a><a href="../04-exercise-13.1/index.html">Exercise 13.1</a><a href="../05-multiplication-theorem-on-probability-13.3/index.html">13.3 Multiplication Theorem on Probability</a><a href="../06-independent-events-13.4/index.html" aria-current="page">13.4 Independent Events</a><a href="../07-exercise-13.2/index.html">Exercise 13.2</a><a href="../08-bayes-theorem-13.5/index.html">13.5 Bayes&#x27; Theorem</a><a href="../09-partition-of-a-sample-space-13.5.1/index.html">13.5.1 Partition of a sample space</a><a href="../10-theorem-of-total-probability-13.5.2/index.html">13.5.2 Theorem of total probability</a><a href="../11-exercise-13.3/index.html">Exercise 13.3</a><a href="../12-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../13-miscellaneous-exercise-on-chapter-13/index.html">Miscellaneous Exercise on Chapter 13</a><a href="../14-summary/index.html">Summary</a><a href="../15-historical-note/index.html">Historical Note</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../13-probability/07-exercise-13.2/index.html" title="Exercise 13.2">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">13</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 13 · Probability</a></p>
+        <h1>13.4 Independent Events</h1>
+        <p class="subtitle">When knowing that one event happened tells you nothing new about the other</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>A card-drawing experiment where one event does <span class="teal">not affect</span> the probability of another</li>
+        <li>Two equivalent definitions of <strong>independent events</strong></li>
+        <li>Why &lsquo;independent&rsquo; and &lsquo;mutually exclusive&rsquo; are very different ideas</li>
+        <li>Independent experiments and mutual independence of three events</li>
+        <li>Complements of independent events and the probability of &lsquo;at least one&rsquo;</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>A Motivating Experiment</h2>
+    <p>Consider the experiment of drawing a card from a deck of 52 playing cards, in which the elementary events are assumed to be equally likely. If E and F denote the events &lsquo;the card drawn is a spade&rsquo; and &lsquo;the card drawn is an ace&rsquo; respectively, then</p>
+    \[ P(E) = \frac{13}{52} = \frac{1}{4} \quad \text{and} \quad P(F) = \frac{4}{52} = \frac{1}{13} \]
+    <p>Also E and F is the event &lsquo;the card drawn is the ace of spades&rsquo; so that</p>
+    \[ P(E \cap F) = \frac{1}{52} \]
+    <p>Hence</p>
+    \[ P(E|F) = \frac{P(E \cap F)}{P(F)} = \frac{\;\frac{1}{52}\;}{\;\frac{1}{13}\;} = \frac{1}{4} \]
+    <p>Since \(P(E) = \dfrac{1}{4} = P(E|F)\), we can say that the occurrence of event F has not affected the probability of occurrence of the event E.</p>
+    <p>We also have</p>
+    \[ P(F|E) = \frac{P(E \cap F)}{P(E)} = \frac{\;\frac{1}{52}\;}{\;\frac{1}{4}\;} = \frac{1}{13} = P(F) \]
+    <p>Again, \(P(F) = \dfrac{1}{13} = P(F|E)\) shows that occurrence of event E has not affected the probability of occurrence of the event F.</p>
+    <p>Thus, E and F are two events such that the probability of occurrence of one of them is not affected by occurrence of the other. Such events are called <em>independent events</em>.</p>
+</div>
+
+<div class="card">
+    <h2>Defining Independence</h2>
+    <div class="box box-definition">
+        <div class="box-label">Definition 2</div>
+        <p>Two events E and F are said to be independent, if</p>
+        \[ \begin{aligned} P(F|E) &amp;= P(F) \quad \text{provided } P(E) \neq 0 \\ \text{and} \quad P(E|F) &amp;= P(E) \quad \text{provided } P(F) \neq 0 \end{aligned} \]
+    </div>
+    <p>Thus, in this definition we need to have \(P(E) \neq 0\) and \(P(F) \neq 0\).</p>
+    <p>Now, by the multiplication rule of probability, we have</p>
+    \[ P(E \cap F) = P(E)\,.\,P(F|E) \tag{1} \]
+    <p>If E and F are independent, then (1) becomes</p>
+    \[ P(E \cap F) = P(E)\,.\,P(F) \tag{2} \]
+    <p>Thus, using (2), the independence of two events is also defined as follows:</p>
+    <div class="box box-definition">
+        <div class="box-label">Definition 3</div>
+        <p>Let E and F be two events associated with the same random experiment, then E and F are said to be independent if</p>
+        \[ P(E \cap F) = P(E)\,.\,P(F) \]
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Remarks</div>
+        <ol type="i">
+            <li>Two events E and F are said to be <strong>dependent</strong> if they are not independent, i.e. if
+                \[ P(E \cap F) \neq P(E)\,.\,P(F) \]</li>
+            <li>Sometimes there is a confusion between independent events and mutually exclusive events. Term &lsquo;independent&rsquo; is defined in terms of &lsquo;probability of events&rsquo; whereas mutually exclusive is defined in term of events (subset of sample space). Moreover, mutually exclusive events never have an outcome common, but independent events, may have common outcome. Clearly, &lsquo;independent&rsquo; and &lsquo;mutually exclusive&rsquo; do not have the same meaning.
+                <p>In other words, two independent events having nonzero probabilities of occurrence can not be mutually exclusive, and conversely, i.e. two mutually exclusive events having nonzero probabilities of occurrence can not be independent.</p></li>
+            <li>Two experiments are said to be <strong>independent</strong> if for every pair of events E and F, where E is associated with the first experiment and F with the second experiment, the probability of the simultaneous occurrence of the events E and F when the two experiments are performed is the product of P(E) and P(F) calculated separately on the basis of two experiments, i.e., \(P(E \cap F) = P(E)\,.\,P(F)\)</li>
+            <li>Three events A, B and C are said to be <strong>mutually independent</strong>, if
+                \[ \begin{aligned} P(A \cap B) &amp;= P(A)\,P(B) \\ P(A \cap C) &amp;= P(A)\,P(C) \\ P(B \cap C) &amp;= P(B)\,P(C) \\ \text{and} \quad P(A \cap B \cap C) &amp;= P(A)\,P(B)\,P(C) \end{aligned} \]
+                <p>If at least one of the above is not true for three given events, we say that the events are not independent.</p></li>
+        </ol>
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Testing for Independence</h2>
+
+    <div class="box box-example">
+        <div class="box-label">Example 10</div>
+        <p>A die is thrown. If E is the event &lsquo;the number appearing is a multiple of 3&rsquo; and F be the event &lsquo;the number appearing is even&rsquo; then find whether E and F are independent?</p>
+        <p><strong>Solution</strong> We know that the sample space is \(S = \{1, 2, 3, 4, 5, 6\}\).</p>
+        <p>Now \(E = \{3, 6\}\), \(F = \{2, 4, 6\}\) and \(E \cap F = \{6\}\).</p>
+        <p>Then</p>
+        \[ P(E) = \frac{2}{6} = \frac{1}{3}, \quad P(F) = \frac{3}{6} = \frac{1}{2} \quad \text{and} \quad P(E \cap F) = \frac{1}{6} \]
+        <p>Clearly \(P(E \cap F) = P(E)\,.\,P(F)\).</p>
+        <p>Hence E and F are independent events.</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 11</div>
+        <p>An unbiased die is thrown twice. Let the event A be &lsquo;odd number on the first throw&rsquo; and B the event &lsquo;odd number on the second throw&rsquo;. Check the independence of the events A and B.</p>
+        <p><strong>Solution</strong> If all the 36 elementary events of the experiment are considered to be equally likely, we have</p>
+        \[ P(A) = \frac{18}{36} = \frac{1}{2} \quad \text{and} \quad P(B) = \frac{18}{36} = \frac{1}{2} \]
+        <p>Also</p>
+        \[ \begin{aligned} P(A \cap B) &amp;= P(\text{odd number on both throws}) \\ &amp;= \frac{9}{36} = \frac{1}{4} \end{aligned} \]
+        <p>Now</p>
+        \[ P(A)\,P(B) = \frac{1}{2} \times \frac{1}{2} = \frac{1}{4} \]
+        <p>Clearly \(P(A \cap B) = P(A) \times P(B)\).</p>
+        <p>Thus, A and B are independent events.</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 12</div>
+        <p>Three coins are tossed simultaneously. Consider the event E &lsquo;three heads or three tails&rsquo;, F &lsquo;at least two heads&rsquo; and G &lsquo;at most two heads&rsquo;. Of the pairs (E,F), (E,G) and (F,G), which are independent? which are dependent?</p>
+        <p><strong>Solution</strong> The sample space of the experiment is given by</p>
+        \[ S = \{HHH, HHT, HTH, THH, HTT, THT, TTH, TTT\} \]
+        <div class="step-row"><span class="step-num">1</span><div class="step-content">
+            <p>Clearly</p>
+            \[ \begin{aligned} E &amp;= \{HHH, TTT\}, \quad F = \{HHH, HHT, HTH, THH\} \\ \text{and} \quad G &amp;= \{HHT, HTH, THH, HTT, THT, TTH, TTT\} \end{aligned} \]
+            <p>Also \(E \cap F = \{HHH\}\), \(E \cap G = \{TTT\}\), \(F \cap G = \{HHT, HTH, THH\}\).</p>
+        </div></div>
+        <div class="step-row"><span class="step-num">2</span><div class="step-content">
+            <p>Therefore</p>
+            \[ P(E) = \frac{2}{8} = \frac{1}{4}, \quad P(F) = \frac{4}{8} = \frac{1}{2}, \quad P(G) = \frac{7}{8} \]
+            \[ \text{and} \quad P(E \cap F) = \frac{1}{8}, \quad P(E \cap G) = \frac{1}{8}, \quad P(F \cap G) = \frac{3}{8} \]
+        </div></div>
+        <div class="step-row"><span class="step-num">3</span><div class="step-content">
+            <p>Also</p>
+            \[ P(E)\,.\,P(F) = \frac{1}{4} \times \frac{1}{2} = \frac{1}{8}, \quad P(E)\cdot P(G) = \frac{1}{4} \times \frac{7}{8} = \frac{7}{32} \]
+            \[ \text{and} \quad P(F)\,.\,P(G) = \frac{1}{2} \times \frac{7}{8} = \frac{7}{16} \]
+        </div></div>
+        <div class="step-row"><span class="step-num">4</span><div class="step-content">
+            <p>Thus</p>
+            \[ \begin{aligned} P(E \cap F) &amp;= P(E)\,.\,P(F) \\ P(E \cap G) &amp;\neq P(E)\,.\,P(G) \\ \text{and} \quad P(F \cap G) &amp;\neq P(F)\,.\,P(G) \end{aligned} \]
+            <p>Hence, the events (E and F) are independent, and the events (E and G) and (F and G) are dependent.</p>
+        </div></div>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Complements of Independent Events</h2>
+
+    <div class="box box-example">
+        <div class="box-label">Example 13</div>
+        <p>Prove that if E and F are independent events, then so are the events E and F&prime;.</p>
+        <p><strong>Solution</strong> Since E and F are independent, we have</p>
+        \[ P(E \cap F) = P(E)\,.\,P(F) \tag{1} \]
+        <p>From the venn diagram in Fig 13.3, it is clear that \(E \cap F\) and \(E \cap F'\) are mutually exclusive events and also \(E = (E \cap F) \cup (E \cap F')\).</p>
+
+        <figure class="diagram">
+            <svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" style="max-width:520px;" role="img" aria-label="Venn diagram of events E and F in sample space S, showing the four regions E∩F′, E∩F, E′∩F and E′∩F′.">
+                <rect x="20" y="20" width="520" height="260" fill="#fff" stroke="#555" stroke-width="2"/>
+                <circle cx="220" cy="150" r="95" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="2.5"/>
+                <circle cx="340" cy="150" r="95" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="2.5"/>
+                <path d="M280 76.4 A95 95 0 0 1 280 223.6 A95 95 0 0 1 280 76.4 Z" fill="#fef3ec" stroke="#c0602b" stroke-width="2.5"/>
+                <text x="515" y="48" font-size="20" font-weight="bold" fill="#2d2d2d">S</text>
+                <text x="120" y="70" font-size="20" font-weight="bold" fill="#2b6cb0">E</text>
+                <text x="430" y="70" font-size="20" font-weight="bold" fill="#2b6cb0">F</text>
+                <text x="175" y="155" font-size="15" fill="#0d4f4f" text-anchor="middle">E &#8745; F&#8242;</text>
+                <text x="280" y="155" font-size="15" fill="#c0602b" text-anchor="middle" font-weight="bold">E &#8745; F</text>
+                <text x="385" y="155" font-size="15" fill="#0d4f4f" text-anchor="middle">E&#8242; &#8745; F</text>
+                <text x="280" y="44" font-size="15" fill="#555" text-anchor="middle">E&#8242; &#8745; F&#8242; (outside both)</text>
+            </svg>
+            <figcaption>Fig 13.3 &mdash; E is the union of the disjoint regions \(E \cap F\) and \(E \cap F'\).</figcaption>
+        </figure>
+
+        <p>Therefore</p>
+        \[ \begin{aligned} P(E) &amp;= P(E \cap F) + P(E \cap F') \\ \text{or} \quad P(E \cap F') &amp;= P(E) - P(E \cap F) \\ &amp;= P(E) - P(E)\,.\,P(F) \qquad (\text{by } (1)) \\ &amp;= P(E)\,(1 - P(F)) \\ &amp;= P(E)\,.\,P(F') \end{aligned} \]
+        <p>Hence, E and F&prime; are independent.</p>
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Note</div>
+        <p>In a similar manner, it can be shown that if the events E and F are independent, then</p>
+        <ol type="a">
+            <li>E&prime; and F are independent,</li>
+            <li>E&prime; and F&prime; are independent.</li>
+        </ol>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 14</div>
+        <p>If A and B are two independent events, then the probability of occurrence of at least one of A and B is given by \(1 - P(A')\,P(B')\).</p>
+        <p><strong>Solution</strong> We have</p>
+        \[ \begin{aligned} P(\text{at least one of A and B}) &amp;= P(A \cup B) \\ &amp;= P(A) + P(B) - P(A \cap B) \\ &amp;= P(A) + P(B) - P(A)\,P(B) \\ &amp;= P(A) + P(B)\,[1 - P(A)] \\ &amp;= P(A) + P(B)\,.\,P(A') \\ &amp;= 1 - P(A') + P(B)\,P(A') \\ &amp;= 1 - P(A')\,[1 - P(B)] \\ &amp;= 1 - P(A')\,P(B') \end{aligned} \]
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../13-probability/05-multiplication-theorem-on-probability-13.3/index.html" class="nav-btn">&larr; 13.3 Multiplication Theorem on Probability</a>
+    <a href="../../13-probability/07-exercise-13.2/index.html" class="nav-btn">Exercise 13.2 &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

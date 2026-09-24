@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.4.3 Linear Differential Equations — Differential Equations</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Differential Equations · 9.4.3 Linear Differential Equations">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../09-differential-equations/12-exercise-9.4/index.html" title="Exercise 9.4">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Differential Equations</a></span>
+    <span class="c2">9.4.3 Linear Differential Equations</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 9 · Differential Equations</div><a href="../01-introduction-9.1/index.html">9.1 Introduction</a><a href="../02-basic-concepts-9.2/index.html">9.2 Basic Concepts</a><a href="../03-order-of-a-differential-equation-9.2.1/index.html">9.2.1 Order of a differential equation</a><a href="../04-degree-of-a-differential-equation-9.2.2/index.html">9.2.2 Degree of a differential equation</a><a href="../05-exercise-9.1/index.html">Exercise 9.1</a><a href="../06-general-and-particular-solutions-of-a-differential-equatio-9.3/index.html">9.3 General and Particular Solutions of a Differential Equation</a><a href="../07-exercise-9.2/index.html">Exercise 9.2</a><a href="../08-methods-of-solving-first-order-first-degree-differential-e-9.4/index.html">9.4 Methods of Solving First Order, First Degree Differential Equations</a><a href="../09-differential-equations-with-variables-separable-9.4.1/index.html">9.4.1 Differential equations with variables separable</a><a href="../10-exercise-9.3/index.html">Exercise 9.3</a><a href="../11-homogeneous-differential-equations-9.4.2/index.html">9.4.2 Homogeneous Differential Equations</a><a href="../12-exercise-9.4/index.html">Exercise 9.4</a><a href="../13-linear-differential-equations-9.4.3/index.html" aria-current="page">9.4.3 Linear Differential Equations</a><a href="../14-exercise-9.5/index.html">Exercise 9.5</a><a href="../15-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../16-miscellaneous-exercise-on-chapter-9/index.html">Miscellaneous Exercise on Chapter 9</a><a href="../17-summary/index.html">Summary</a><a href="../18-historical-note/index.html">Historical Note</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../09-differential-equations/14-exercise-9.5/index.html" title="Exercise 9.5">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">9</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 9 · Differential Equations</a></p>
+        <h1>9.4.3 Linear Differential Equations</h1>
+        <p class="subtitle">One clever multiplier, the integrating factor, turns the left side into a perfect derivative</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>The standard forms \(\frac{dy}{dx} + Py = Q\) and \(\frac{dx}{dy} + P_1 x = Q_1\) of a <strong>first order linear differential equation</strong></li>
+        <li>How the <strong>Integrating Factor</strong> \(e^{\int P\,dx}\) is found</li>
+        <li>The three-step recipe for writing the general solution</li>
+        <li>Five worked examples, including a particular solution and a curve through a given point</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>First Order Linear Differential Equations</h2>
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; First Order Linear Differential Equation</div>
+        <p>A differential equation of the from</p>
+        \[ \frac{dy}{dx} + Py = Q \]
+        <p>where, P and Q are constants or functions of \(x\) only, is known as a <strong>first order linear differential equation</strong>.</p>
+    </div>
+    <p>Some examples of the first order linear differential equation are</p>
+    \[ \frac{dy}{dx} + y = \sin x \]
+    \[ \frac{dy}{dx} + \left(\frac{1}{x}\right)y = e^x \]
+    \[ \frac{dy}{dx} + \left(\frac{y}{x\log x}\right) = \frac{1}{x} \]
+    <p>Another form of first order linear differential equation is</p>
+    \[ \frac{dx}{dy} + P_1 x = Q_1 \]
+    <p>where, \(P_1\) and \(Q_1\) are constants or functions of \(y\) only. Some examples of this type of differential equation are</p>
+    \[ \frac{dx}{dy} + x = \cos y \]
+    \[ \frac{dx}{dy} + \frac{-2x}{y} = y^2 e^{-y} \]
+</div>
+
+<div class="card">
+    <h2>Finding the Integrating Factor</h2>
+    <p>To solve the first order linear differential equation of the type</p>
+    \[ \frac{dy}{dx} + Py = Q \tag{1} \]
+    <p>Multiply both sides of the equation by a function of \(x\) say \(g(x)\) to get</p>
+    \[ g(x)\frac{dy}{dx} + P.\big(g(x)\big)\,y = Q\,.\,g(x) \tag{2} \]
+    <p>Choose \(g(x)\) in such a way that R.H.S. becomes a derivative of \(y\,.\,g(x)\).</p>
+    \[ \begin{aligned}
+    \text{i.e.}\quad g(x)\frac{dy}{dx} + P.\,g(x)\,y &amp;= \frac{d}{dx}\left[y\,.\,g(x)\right]\\
+    \text{or}\quad g(x)\frac{dy}{dx} + P.\,g(x)\,y &amp;= g(x)\frac{dy}{dx} + y\,g'(x)\\
+    \Rightarrow\quad P.\,g(x) &amp;= g'(x)\\
+    \text{or}\quad P &amp;= \frac{g'(x)}{g(x)}
+    \end{aligned} \]
+    <p>Integrating both sides with respect to \(x\), we get</p>
+    \[ \begin{aligned}
+    \int P\,dx &amp;= \int \frac{g'(x)}{g(x)}\,dx\\
+    \text{or}\quad \int P\cdot dx &amp;= \log\big(g(x)\big)\\
+    \text{or}\quad g(x) &amp;= e^{\int P\,dx}
+    \end{aligned} \]
+    <p>On multiplying the equation (1) by \(g(x) = e^{\int P\,dx}\), the L.H.S. becomes the derivative of some function of \(x\) and \(y\).</p>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Integrating Factor</div>
+        <p>The function \(g(x) = e^{\int P\,dx}\) is called <em>Integrating Factor</em> (I.F.) of the given differential equation.</p>
+    </div>
+
+    <p>Substituting the value of \(g(x)\) in equation (2), we get</p>
+    \[ \begin{aligned}
+    e^{\int P\,dx}\frac{dy}{dx} + P\,e^{\int P\,dx}\,y &amp;= Q\cdot e^{\int P\,dx}\\
+    \text{or}\quad \frac{d}{dx}\left(y\,e^{\int P\,dx}\right) &amp;= Q\,e^{\int P\,dx}
+    \end{aligned} \]
+    <p>Integrating both sides with respect to \(x\), we get</p>
+    \[ \begin{aligned}
+    y\cdot e^{\int P\,dx} &amp;= \int\left(Q\,e^{\int P\,dx}\right)dx\\
+    \text{or}\quad y &amp;= e^{-\int P\,dx}\cdot\int\left(Q\,e^{\int P\,dx}\right)dx + C
+    \end{aligned} \]
+    <p>which is the general solution of the differential equation.</p>
+</div>
+
+<div class="card">
+    <h2>Steps Involved to Solve First Order Linear Differential Equation</h2>
+    <div class="box box-formula">
+        <div class="box-label">Method</div>
+        <div class="step-row"><span class="step-num">i</span><div class="step-content">
+            <p>Write the given differential equation in the form \(\dfrac{dy}{dx} + Py = Q\) where P, Q are constants or functions of \(x\) only.</p>
+        </div></div>
+        <div class="step-row"><span class="step-num">ii</span><div class="step-content">
+            <p>Find the Integrating Factor \((\text{I.F}) = e^{\int P\,dx}\).</p>
+        </div></div>
+        <div class="step-row"><span class="step-num">iii</span><div class="step-content">
+            <p>Write the solution of the given differential equation as</p>
+            \[ y\,(\text{I.F}) = \int \left(Q \times \text{I.F}\right)dx + C \]
+        </div></div>
+    </div>
+    <p>In case, the first order linear differential equation is in the form \(\dfrac{dx}{dy} + P_1 x = Q_1\), where, \(P_1\) and \(Q_1\) are constants or functions of \(y\) only. Then \(\text{I.F} = e^{\int P_1\,dy}\) and the solution of the differential equation is given by</p>
+    \[ x\,.\,(\text{I.F}) = \int \left(Q_1 \times \text{I.F}\right)dy + C \]
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight</div>
+        <p>Multiplying by the I.F. makes the left side exactly \(\dfrac{d}{dx}\big(y \times \text{I.F}\big)\), so a single integration finishes the job. Remember to add the constant C at the moment you integrate, before dividing by the I.F.</p>
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Worked Examples</h2>
+
+    <div class="box box-example">
+        <div class="box-label">Example 14</div>
+        <p>Find the general solution of the differential equation \(\dfrac{dy}{dx} - y = \cos x\).</p>
+        <p><strong>Solution</strong> Given differential equation is of the form</p>
+        \[ \frac{dy}{dx} + Py = Q, \quad \text{where } P = -1 \text{ and } Q = \cos x \]
+        <p>Therefore</p>
+        \[ \text{I.F} = e^{\int -1\,dx} = e^{-x} \]
+        <p>Multiplying both sides of equation by I.F, we get</p>
+        \[ \begin{aligned}
+        e^{-x}\frac{dy}{dx} - e^{-x}y &amp;= e^{-x}\cos x\\
+        \text{or}\quad \frac{d}{dx}\left(y\,e^{-x}\right) &amp;= e^{-x}\cos x
+        \end{aligned} \]
+        <p>On integrating both sides with respect to \(x\), we get</p>
+        \[ y\,e^{-x} = \int e^{-x}\cos x\,dx + C \tag{1} \]
+        <p>Let</p>
+        \[ \begin{aligned}
+        I &amp;= \int e^{-x}\cos x\,dx\\
+        &amp;= \cos x\left(\frac{e^{-x}}{-1}\right) - \int (-\sin x)(-e^{-x})\,dx\\
+        &amp;= -\cos x\,e^{-x} - \int \sin x\,e^{-x}\,dx\\
+        &amp;= -\cos x\,e^{-x} - \left[\sin x(-e^{-x}) - \int \cos x\,(-e^{-x})\,dx\right]\\
+        &amp;= -\cos x\,e^{-x} + \sin x\,e^{-x} - \int \cos x\,e^{-x}\,dx\\
+        \text{or}\quad I &amp;= -e^{-x}\cos x + \sin x\,e^{-x} - I\\
+        \text{or}\quad 2I &amp;= (\sin x - \cos x)\,e^{-x}\\
+        \text{or}\quad I &amp;= \frac{(\sin x - \cos x)\,e^{-x}}{2}
+        \end{aligned} \]
+        <p>Substituting the value of I in equation (1), we get</p>
+        \[ \begin{aligned}
+        y\,e^{-x} &amp;= \left(\frac{\sin x - \cos x}{2}\right)e^{-x} + C\\
+        \text{or}\quad y &amp;= \left(\frac{\sin x - \cos x}{2}\right) + C\,e^{x}
+        \end{aligned} \]
+        <p>which is the general solution of the given differential equation.</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 15</div>
+        <p>Find the general solution of the differential equation \(x\dfrac{dy}{dx} + 2y = x^2\ (x \neq 0)\).</p>
+        <p><strong>Solution</strong> The given differential equation is</p>
+        \[ x\frac{dy}{dx} + 2y = x^2 \tag{1} \]
+        <p>Dividing both sides of equation (1) by \(x\), we get</p>
+        \[ \frac{dy}{dx} + \frac{2}{x}y = x \]
+        <p>which is a linear differential equation of the type \(\dfrac{dy}{dx} + Py = Q\), where \(P = \dfrac{2}{x}\) and \(Q = x\).</p>
+        <p>So</p>
+        \[ \text{I.F} = e^{\int \frac{2}{x}\,dx} = e^{2\log x} = e^{\log x^2} = x^2 \quad \left[\text{as } e^{\log f(x)} = f(x)\right] \]
+        <p>Therefore, solution of the given equation is given by</p>
+        \[ y\,.\,x^2 = \int (x)(x^2)\,dx + C = \int x^3\,dx + C \]
+        <p>or</p>
+        \[ y = \frac{x^2}{4} + C\,x^{-2} \]
+        <p>which is the general solution of the given differential equation.</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 16</div>
+        <p>Find the general solution of the differential equation \(y\,dx - (x + 2y^2)\,dy = 0\).</p>
+        <p><strong>Solution</strong> The given differential equation can be written as</p>
+        \[ \frac{dx}{dy} - \frac{x}{y} = 2y \]
+        <p>This is a linear differential equation of the type \(\dfrac{dx}{dy} + P_1 x = Q_1\), where \(P_1 = -\dfrac{1}{y}\) and \(Q_1 = 2y\). Therefore</p>
+        \[ \text{I.F} = e^{\int -\frac{1}{y}\,dy} = e^{-\log y} = e^{\log (y)^{-1}} = \frac{1}{y} \]
+        <p>Hence, the solution of the given differential equation is</p>
+        \[ \begin{aligned}
+        x\,\frac{1}{y} &amp;= \int (2y)\left(\frac{1}{y}\right)dy + C\\
+        \text{or}\quad \frac{x}{y} &amp;= \int (2\,dy) + C\\
+        \text{or}\quad \frac{x}{y} &amp;= 2y + C\\
+        \text{or}\quad x &amp;= 2y^2 + Cy
+        \end{aligned} \]
+        <p>which is a general solution of the given differential equation.</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 17</div>
+        <p>Find the particular solution of the differential equation</p>
+        \[ \frac{dy}{dx} + y\cot x = 2x + x^2\cot x \quad (x \neq 0) \]
+        <p>given that \(y = 0\) when \(x = \dfrac{\pi}{2}\).</p>
+        <p><strong>Solution</strong> The given equation is a linear differential equation of the type \(\dfrac{dy}{dx} + Py = Q\), where \(P = \cot x\) and \(Q = 2x + x^2\cot x\). Therefore</p>
+        \[ \text{I.F} = e^{\int \cot x\,dx} = e^{\log \sin x} = \sin x \]
+        <p>Hence, the solution of the differential equation is given by</p>
+        \[ \begin{aligned}
+        y\,.\,\sin x &amp;= \int (2x + x^2\cot x)\sin x\,dx + C\\
+        \text{or}\quad y\sin x &amp;= \int 2x\sin x\,dx + \int x^2\cos x\,dx + C\\
+        \text{or}\quad y\sin x &amp;= \sin x\left(\frac{2x^2}{2}\right) - \int \cos x\left(\frac{2x^2}{2}\right)dx + \int x^2\cos x\,dx + C\\
+        \text{or}\quad y\sin x &amp;= x^2\sin x - \int x^2\cos x\,dx + \int x^2\cos x\,dx + C\\
+        \text{or}\quad y\sin x &amp;= x^2\sin x + C \qquad \text{... (1)}
+        \end{aligned} \]
+        <p>Substituting \(y = 0\) and \(x = \dfrac{\pi}{2}\) in equation (1), we get</p>
+        \[ 0 = \left(\frac{\pi}{2}\right)^2 \sin\left(\frac{\pi}{2}\right) + C \]
+        <p>or</p>
+        \[ C = \frac{-\pi^2}{4} \]
+        <p>Substituting the value of C in equation (1), we get</p>
+        \[ y\sin x = x^2\sin x - \frac{\pi^2}{4} \]
+        <p>or</p>
+        \[ y = x^2 - \frac{\pi^2}{4\sin x} \quad (\sin x \neq 0) \]
+        <p>which is the particular solution of the given differential equation.</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 18</div>
+        <p>Find the equation of a curve passing through the point (0, 1). If the slope of the tangent to the curve at any point \((x, y)\) is equal to the sum of the \(x\) coordinate (abscissa) and the product of the \(x\) coordinate and \(y\) coordinate (ordinate) of that point.</p>
+        <p><strong>Solution</strong> We know that the slope of the tangent to the curve is \(\dfrac{dy}{dx}\).</p>
+        <p>Therefore,</p>
+        \[ \frac{dy}{dx} = x + xy \]
+        <p>or</p>
+        \[ \frac{dy}{dx} - xy = x \tag{1} \]
+        <p>This is a linear differential equation of the type \(\dfrac{dy}{dx} + Py = Q\), where \(P = -x\) and \(Q = x\).</p>
+        <p>Therefore,</p>
+        \[ \text{I.F} = e^{\int -x\,dx} = e^{\frac{-x^2}{2}} \]
+        <p>Hence, the solution of equation is given by</p>
+        \[ y\cdot e^{\frac{-x^2}{2}} = \int (x)\left(e^{\frac{-x^2}{2}}\right)dx + C \tag{2} \]
+        <p>Let</p>
+        \[ I = \int (x)\,e^{\frac{-x^2}{2}}\,dx \]
+        <p>Let \(\dfrac{-x^2}{2} = t\), then \(-x\,dx = dt\) or \(x\,dx = -dt\).</p>
+        <p>Therefore,</p>
+        \[ I = -\int e^{t}\,dt = -e^{t} = -e^{\frac{-x^2}{2}} \]
+        <p>Substituting the value of I in equation (2), we get</p>
+        \[ y\,e^{\frac{-x^2}{2}} = -e^{\frac{-x^2}{2}} + C \]
+        <p>or</p>
+        \[ y = -1 + C\,e^{\frac{x^2}{2}} \tag{3} \]
+        <p>Now (3) represents the equation of family of curves. But we are interested in finding a particular member of the family passing through (0, 1). Substituting \(x = 0\) and \(y = 1\) in equation (3) we get</p>
+        \[ 1 = -1 + C\,.\,e^{0} \quad \text{or} \quad C = 2 \]
+        <p>Substituting the value of C in equation (3), we get</p>
+        \[ y = -1 + 2\,e^{\frac{x^2}{2}} \]
+        <p>which is the equation of the required curve.</p>
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../09-differential-equations/12-exercise-9.4/index.html" class="nav-btn">&larr; Exercise 9.4</a>
+    <a href="../../09-differential-equations/14-exercise-9.5/index.html" class="nav-btn">Exercise 9.5 &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

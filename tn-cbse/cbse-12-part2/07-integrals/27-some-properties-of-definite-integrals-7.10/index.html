@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.10 Some Properties of Definite Integrals — Integrals</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Integrals · 7.10 Some Properties of Definite Integrals">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../07-integrals/26-exercise-7.9/index.html" title="Exercise 7.9">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Integrals</a></span>
+    <span class="c2">7.10 Some Properties of Definite Integrals</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 7 · Integrals</div><a href="../01-introduction-7.1/index.html">7.1 Introduction</a><a href="../02-integration-as-an-inverse-process-of-differentiation-7.2/index.html">7.2 Integration as an Inverse Process of Differentiation</a><a href="../03-some-properties-of-indefinite-integral-7.2.1/index.html">7.2.1 Some properties of indefinite integral</a><a href="../04-exercise-7.1/index.html">Exercise 7.1</a><a href="../05-methods-of-integration-7.3/index.html">7.3 Methods of Integration</a><a href="../06-integration-by-substitution-7.3.1/index.html">7.3.1 Integration by substitution</a><a href="../07-exercise-7.2/index.html">Exercise 7.2</a><a href="../08-integration-using-trigonometric-identities-7.3.2/index.html">7.3.2 Integration using trigonometric identities</a><a href="../09-exercise-7.3/index.html">Exercise 7.3</a><a href="../10-integrals-of-some-particular-functions-7.4/index.html">7.4 Integrals of Some Particular Functions</a><a href="../11-exercise-7.4/index.html">Exercise 7.4</a><a href="../12-integration-by-partial-fractions-7.5/index.html">7.5 Integration by Partial Fractions</a><a href="../13-exercise-7.5/index.html">Exercise 7.5</a><a href="../14-integration-by-parts-7.6/index.html">7.6 Integration by Parts</a><a href="../15-integral-of-the-type-7.6.1/index.html">7.6.1 Integral of the type ∫eˣ[f(x) + f′(x)] dx</a><a href="../16-exercise-7.6/index.html">Exercise 7.6</a><a href="../17-integrals-of-some-more-types-7.6.2/index.html">7.6.2 Integrals of some more types</a><a href="../18-exercise-7.7/index.html">Exercise 7.7</a><a href="../19-definite-integral-7.7/index.html">7.7 Definite Integral</a><a href="../20-fundamental-theorem-of-calculus-7.8/index.html">7.8 Fundamental Theorem of Calculus</a><a href="../21-area-function-7.8.1/index.html">7.8.1 Area function</a><a href="../22-first-fundamental-theorem-of-integral-calculus-7.8.2/index.html">7.8.2 First fundamental theorem of integral calculus</a><a href="../23-second-fundamental-theorem-of-integral-calculus-7.8.3/index.html">7.8.3 Second fundamental theorem of integral calculus</a><a href="../24-exercise-7.8/index.html">Exercise 7.8</a><a href="../25-evaluation-of-definite-integrals-by-substitution-7.9/index.html">7.9 Evaluation of Definite Integrals by Substitution</a><a href="../26-exercise-7.9/index.html">Exercise 7.9</a><a href="../27-some-properties-of-definite-integrals-7.10/index.html" aria-current="page">7.10 Some Properties of Definite Integrals</a><a href="../28-exercise-7.10/index.html">Exercise 7.10</a><a href="../29-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../30-miscellaneous-exercise-on-chapter-7/index.html">Miscellaneous Exercise on Chapter 7</a><a href="../31-summary/index.html">Summary</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../07-integrals/28-exercise-7.10/index.html" title="Exercise 7.10">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">7</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 7 · Integrals</a></p>
+        <h1>7.10 Some Properties of Definite Integrals</h1>
+        <p class="subtitle">Eight properties, P₀ to P₇, that turn hard definite integrals into easy ones</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>The eight properties \( \mathrm{P}_0 \) to \( \mathrm{P}_7 \) of definite integrals</li>
+        <li>Proofs of each property using the fundamental theorem and substitution</li>
+        <li>Splitting an interval (\( \mathrm{P}_2 \)) to handle modulus functions</li>
+        <li>The powerful &ldquo;replace \(x\) by \(a + b - x\)&rdquo; trick (\( \mathrm{P}_3,\ \mathrm{P}_4 \)) and adding the two forms of I</li>
+        <li>Even and odd functions on symmetric intervals (\( \mathrm{P}_7 \))</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>The Properties</h2>
+    <p>We list below some important properties of definite integrals. These will be useful in evaluating the definite integrals more easily.</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Properties of Definite Integrals</div>
+        <table>
+            <tr><td><strong>\( \mathrm{P}_0 \)</strong></td><td>\( \displaystyle\int_a^b f(x)\,dx = \int_a^b f(t)\,dt \)</td></tr>
+            <tr><td><strong>\( \mathrm{P}_1 \)</strong></td><td>\( \displaystyle\int_a^b f(x)\,dx = -\int_b^a f(x)\,dx \). In particular, \( \displaystyle\int_a^a f(x)\,dx = 0 \)</td></tr>
+            <tr><td><strong>\( \mathrm{P}_2 \)</strong></td><td>\( \displaystyle\int_a^b f(x)\,dx = \int_a^c f(x)\,dx + \int_c^b f(x)\,dx \)</td></tr>
+            <tr><td><strong>\( \mathrm{P}_3 \)</strong></td><td>\( \displaystyle\int_a^b f(x)\,dx = \int_a^b f(a + b - x)\,dx \)</td></tr>
+            <tr><td><strong>\( \mathrm{P}_4 \)</strong></td><td>\( \displaystyle\int_0^a f(x)\,dx = \int_0^a f(a - x)\,dx \)<br>(Note that \( \mathrm{P}_4 \) is a particular case of \( \mathrm{P}_3 \))</td></tr>
+            <tr><td><strong>\( \mathrm{P}_5 \)</strong></td><td>\( \displaystyle\int_0^{2a} f(x)\,dx = \int_0^a f(x)\,dx + \int_0^a f(2a - x)\,dx \)</td></tr>
+            <tr><td><strong>\( \mathrm{P}_6 \)</strong></td><td>\( \displaystyle\int_0^{2a} f(x)\,dx = 2\int_0^a f(x)\,dx \), if \( f(2a - x) = f(x) \) and<br>\( 0 \) if \( f(2a - x) = -f(x) \)</td></tr>
+            <tr><td><strong>\( \mathrm{P}_7 \)</strong></td><td>(i) \( \displaystyle\int_{-a}^{a} f(x)\,dx = 2\int_0^a f(x)\,dx \), if \(f\) is an even function, i.e., if \( f(-x) = f(x) \).<br>(ii) \( \displaystyle\int_{-a}^{a} f(x)\,dx = 0 \), if \(f\) is an odd function, i.e., if \( f(-x) = -f(x) \).</td></tr>
+        </table>
+    </div>
+
+    <figure class="diagram">
+        <svg viewBox="0 0 640 230" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;" role="img" aria-label="Left: an even function y = x squared on minus a to a; the two shaded halves are mirror images, so the total is twice the right half. Right: an odd function y = x cubed on minus a to a; the shaded parts are equal in size but opposite in sign, so they cancel.">
+            <rect x="5" y="5" width="305" height="220" rx="12" fill="#e8f4f4"/>
+            <rect x="330" y="5" width="305" height="220" rx="12" fill="#fef3ec"/>
+            <!-- even: y = x^2, a = 1, scale 100 px/unit, origin (157,180) -->
+            <path d="M57,180 L57.0,80.0 67.0,99.0 77.0,116.0 87.0,131.0 97.0,144.0 107.0,155.0 117.0,164.0 127.0,171.0 137.0,176.0 147.0,179.0 157.0,180.0 167.0,179.0 177.0,176.0 187.0,171.0 197.0,164.0 207.0,155.0 217.0,144.0 227.0,131.0 237.0,116.0 247.0,99.0 257.0,80.0 L257,180 Z" fill="#0d4f4f" fill-opacity="0.22"/>
+            <polyline points="42.0,48.0 47.0,58.0 52.0,69.0 57.0,80.0 67.0,99.0 77.0,116.0 87.0,131.0 97.0,144.0 107.0,155.0 117.0,164.0 127.0,171.0 137.0,176.0 147.0,179.0 157.0,180.0 167.0,179.0 177.0,176.0 187.0,171.0 197.0,164.0 207.0,155.0 217.0,144.0 227.0,131.0 237.0,116.0 247.0,99.0 257.0,80.0 262.0,69.0 267.0,58.0 272.0,48.0" fill="none" stroke="#0d4f4f" stroke-width="2.5"/>
+            <line x1="25" y1="180" x2="290" y2="180" stroke="#555" stroke-width="1.4"/>
+            <line x1="157" y1="200" x2="157" y2="30" stroke="#555" stroke-width="1.4"/>
+            <text x="57" y="198" font-size="14" fill="#2d2d2d" text-anchor="middle">&#8722;a</text>
+            <text x="257" y="198" font-size="14" fill="#2d2d2d" text-anchor="middle">a</text>
+            <text x="200" y="45" font-size="15" fill="#0d4f4f" font-style="italic">even: y = x&#178;</text>
+            <text x="157" y="218" font-size="13" fill="#555" text-anchor="middle">equal areas add: 2&#8747;&#8320;&#7491; f(x) dx</text>
+            <!-- odd: y = x^3, origin (482,115), scale 100 px/unit x, 90 px/unit y -->
+            <path d="M382,115 L382.0,205.0 392.0,180.6 402.0,161.1 412.0,145.9 422.0,134.4 432.0,126.2 442.0,120.8 452.0,117.4 462.0,115.7 472.0,115.1 482.0,115.0 Z" fill="#c0602b" fill-opacity="0.28"/>
+            <path d="M482,115 L482.0,115.0 492.0,114.9 502.0,114.3 512.0,112.6 522.0,109.2 532.0,103.8 542.0,95.6 552.0,84.1 562.0,68.9 572.0,49.4 582.0,25.0 L582,115 Z" fill="#c0602b" fill-opacity="0.28"/>
+            <polyline points="382.0,205.0 392.0,180.6 402.0,161.1 412.0,145.9 422.0,134.4 432.0,126.2 442.0,120.8 452.0,117.4 462.0,115.7 472.0,115.1 482.0,115.0 492.0,114.9 502.0,114.3 512.0,112.6 522.0,109.2 532.0,103.8 542.0,95.6 552.0,84.1 562.0,68.9 572.0,49.4 582.0,25.0" fill="none" stroke="#c0602b" stroke-width="2.5"/>
+            <line x1="350" y1="115" x2="615" y2="115" stroke="#555" stroke-width="1.4"/>
+            <line x1="482" y1="210" x2="482" y2="15" stroke="#555" stroke-width="1.4"/>
+            <text x="382" y="105" font-size="14" fill="#2d2d2d" text-anchor="middle">&#8722;a</text>
+            <text x="582" y="132" font-size="14" fill="#2d2d2d" text-anchor="middle">a</text>
+            <text x="500" y="200" font-size="15" fill="#c0602b" font-style="italic">odd: y = x&#179;</text>
+            <text x="400" y="40" font-size="13" fill="#555">+ and &#8722; cancel: 0</text>
+        </svg>
+        <figcaption>Illustration of \( \mathrm{P}_7 \): symmetric areas for an even function double up; for an odd function they cancel.</figcaption>
+    </figure>
+</div>
+
+<div class="card">
+    <h2>Proofs of the Properties</h2>
+    <p>We give the proofs of these properties one by one.</p>
+
+    <h3>Proof of \( \mathrm{P}_0 \)</h3>
+    <p>It follows directly by making the substitution \( x = t \).</p>
+
+    <h3>Proof of \( \mathrm{P}_1 \)</h3>
+    <p>Let F be anti derivative of \(f\). Then, by the second fundamental theorem of calculus, we have</p>
+    \[ \int_a^b f(x)\,dx = \mathrm{F}(b) - \mathrm{F}(a) = -[\mathrm{F}(a) - \mathrm{F}(b)] = -\int_b^a f(x)\,dx \]
+    <p>Here, we observe that, if \( a = b \), then \( \displaystyle\int_a^a f(x)\,dx = 0 \).</p>
+
+    <h3>Proof of \( \mathrm{P}_2 \)</h3>
+    <p>Let F be anti derivative of \(f\). Then</p>
+    \[ \int_a^b f(x)\,dx = \mathrm{F}(b) - \mathrm{F}(a) \tag{1} \]
+    \[ \int_a^c f(x)\,dx = \mathrm{F}(c) - \mathrm{F}(a) \tag{2} \]
+    <p>and</p>
+    \[ \int_c^b f(x)\,dx = \mathrm{F}(b) - \mathrm{F}(c) \tag{3} \]
+    <p>Adding (2) and (3), we get \( \displaystyle\int_a^c f(x)\,dx + \int_c^b f(x)\,dx = \mathrm{F}(b) - \mathrm{F}(a) = \int_a^b f(x)\,dx \)</p>
+    <p>This proves the property \( \mathrm{P}_2 \).</p>
+
+    <h3>Proof of \( \mathrm{P}_3 \)</h3>
+    <p>Let \( t = a + b - x \). Then \( dt = -dx \). When \( x = a,\ t = b \) and when \( x = b,\ t = a \). Therefore</p>
+    \[
+    \begin{aligned}
+    \int_a^b f(x)\,dx &= -\int_b^a f(a + b - t)\,dt \\
+    &= \int_a^b f(a + b - t)\,dt && (\text{by } \mathrm{P}_1) \\
+    &= \int_a^b f(a + b - x)\,dx && \text{by } \mathrm{P}_0
+    \end{aligned}
+    \]
+
+    <h3>Proof of \( \mathrm{P}_4 \)</h3>
+    <p>Put \( t = a - x \). Then \( dt = -dx \). When \( x = 0,\ t = a \) and when \( x = a,\ t = 0 \). Now proceed as in \( \mathrm{P}_3 \).</p>
+
+    <h3>Proof of \( \mathrm{P}_5 \)</h3>
+    <p>Using \( \mathrm{P}_2 \), we have \( \displaystyle\int_0^{2a} f(x)\,dx = \int_0^a f(x)\,dx + \int_a^{2a} f(x)\,dx \).</p>
+    <p>Let \( t = 2a - x \) in the second integral on the right hand side. Then \( dt = -dx \). When \( x = a,\ t = a \) and when \( x = 2a,\ t = 0 \). Also \( x = 2a - t \).</p>
+    <p>Therefore, the second integral becomes</p>
+    \[ \int_a^{2a} f(x)\,dx = -\int_a^0 f(2a - t)\,dt = \int_0^a f(2a - t)\,dt = \int_0^a f(2a - x)\,dx \]
+    <p>Hence</p>
+    \[ \int_0^{2a} f(x)\,dx = \int_0^a f(x)\,dx + \int_0^a f(2a - x)\,dx \]
+
+    <h3>Proof of \( \mathrm{P}_6 \)</h3>
+    <p>Using \( \mathrm{P}_5 \), we have</p>
+    \[ \int_0^{2a} f(x)\,dx = \int_0^a f(x)\,dx + \int_0^a f(2a - x)\,dx \tag{1} \]
+    <p>Now, if \( f(2a - x) = f(x) \), then (1) becomes</p>
+    \[ \int_0^{2a} f(x)\,dx = \int_0^a f(x)\,dx + \int_0^a f(x)\,dx = 2\int_0^a f(x)\,dx, \]
+    <p>and if \( f(2a - x) = -f(x) \), then (1) becomes</p>
+    \[ \int_0^{2a} f(x)\,dx = \int_0^a f(x)\,dx - \int_0^a f(x)\,dx = 0 \]
+
+    <h3>Proof of \( \mathrm{P}_7 \)</h3>
+    <p>Using \( \mathrm{P}_2 \), we have</p>
+    \[ \int_{-a}^{a} f(x)\,dx = \int_{-a}^{0} f(x)\,dx + \int_0^a f(x)\,dx. \]
+    <p>Then let \( t = -x \) in the first integral on the right hand side. \( dt = -dx \). When \( x = -a,\ t = a \) and when \( x = 0,\ t = 0 \). Also \( x = -t \).</p>
+    <p>Therefore</p>
+    \[
+    \begin{aligned}
+    \int_{-a}^{a} f(x)\,dx &= -\int_a^0 f(-t)\,dt + \int_0^a f(x)\,dx \\
+    &= \int_0^a f(-x)\,dx + \int_0^a f(x)\,dx && (\text{by } \mathrm{P}_0) \qquad \text{... (1)}
+    \end{aligned}
+    \]
+    <p>(i) Now, if \(f\) is an even function, then \( f(-x) = f(x) \) and so (1) becomes</p>
+    \[ \int_{-a}^{a} f(x)\,dx = \int_0^a f(x)\,dx + \int_0^a f(x)\,dx = 2\int_0^a f(x)\,dx \]
+    <p>(ii) If \(f\) is an odd function, then \( f(-x) = -f(x) \) and so (1) becomes</p>
+    \[ \int_{-a}^{a} f(x)\,dx = -\int_0^a f(x)\,dx + \int_0^a f(x)\,dx = 0 \]
+</div>
+
+<div class="card">
+    <h2>Worked Examples</h2>
+
+    <div class="box box-example">
+        <div class="box-label">Example 28</div>
+        <p>Evaluate \( \displaystyle\int_{-1}^{2} \left| x^3 - x \right| dx \).</p>
+        <p><strong>Solution</strong> We note that \( x^3 - x \geq 0 \) on \([-1, 0]\) and \( x^3 - x \leq 0 \) on \([0, 1]\) and that \( x^3 - x \geq 0 \) on \([1, 2]\). So by \( \mathrm{P}_2 \) we write</p>
+        \[
+        \begin{aligned}
+        \int_{-1}^{2} \left| x^3 - x \right| dx &= \int_{-1}^{0} (x^3 - x)\,dx + \int_0^1 -(x^3 - x)\,dx + \int_1^2 (x^3 - x)\,dx \\
+        &= \int_{-1}^{0} (x^3 - x)\,dx + \int_0^1 (x - x^3)\,dx + \int_1^2 (x^3 - x)\,dx \\
+        &= \left[\frac{x^4}{4} - \frac{x^2}{2}\right]_{-1}^{0} + \left[\frac{x^2}{2} - \frac{x^4}{4}\right]_0^1 + \left[\frac{x^4}{4} - \frac{x^2}{2}\right]_1^2 \\
+        &= -\left(\frac{1}{4} - \frac{1}{2}\right) + \left(\frac{1}{2} - \frac{1}{4}\right) + (4 - 2) - \left(\frac{1}{4} - \frac{1}{2}\right) \\
+        &= -\frac{1}{4} + \frac{1}{2} + \frac{1}{2} - \frac{1}{4} + 2 - \frac{1}{4} + \frac{1}{2} = \frac{3}{2} - \frac{3}{4} + 2 = \frac{11}{4}
+        \end{aligned}
+        \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 29</div>
+        <p>Evaluate \( \displaystyle\int_{-\frac{\pi}{4}}^{\frac{\pi}{4}} \sin^2 x\,dx \).</p>
+        <p><strong>Solution</strong> We observe that \( \sin^2 x \) is an even function. Therefore, by \( \mathrm{P}_7 \) (i), we get</p>
+        \[
+        \begin{aligned}
+        \int_{-\frac{\pi}{4}}^{\frac{\pi}{4}} \sin^2 x\,dx &= 2\int_0^{\frac{\pi}{4}} \sin^2 x\,dx \\
+        &= 2\int_0^{\frac{\pi}{4}} \frac{(1 - \cos 2x)}{2}\,dx = \int_0^{\frac{\pi}{4}} (1 - \cos 2x)\,dx \\
+        &= \left[x - \frac{1}{2}\sin 2x\right]_0^{\frac{\pi}{4}} = \left(\frac{\pi}{4} - \frac{1}{2}\sin\frac{\pi}{2}\right) - 0 = \frac{\pi}{4} - \frac{1}{2}
+        \end{aligned}
+        \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 30</div>
+        <p>Evaluate \( \displaystyle\int_0^{\pi} \frac{x\sin x}{1 + \cos^2 x}\,dx \).</p>
+        <p><strong>Solution</strong> Let \( \mathrm{I} = \displaystyle\int_0^{\pi} \frac{x\sin x}{1 + \cos^2 x}\,dx \). Then, by \( \mathrm{P}_4 \), we have</p>
+        \[
+        \begin{aligned}
+        \mathrm{I} &= \int_0^{\pi} \frac{(\pi - x)\sin(\pi - x)\,dx}{1 + \cos^2(\pi - x)} \\
+        &= \int_0^{\pi} \frac{(\pi - x)\sin x\,dx}{1 + \cos^2 x} = \pi\int_0^{\pi} \frac{\sin x\,dx}{1 + \cos^2 x} - \mathrm{I}
+        \end{aligned}
+        \]
+        <p>or</p>
+        \[ 2\mathrm{I} = \pi\int_0^{\pi} \frac{\sin x\,dx}{1 + \cos^2 x} \]
+        <p>or</p>
+        \[ \mathrm{I} = \frac{\pi}{2}\int_0^{\pi} \frac{\sin x\,dx}{1 + \cos^2 x} \]
+        <p>Put \( \cos x = t \) so that \( -\sin x\,dx = dt \). When \( x = 0,\ t = 1 \) and when \( x = \pi,\ t = -1 \). Therefore, (by \( \mathrm{P}_1 \)) we get</p>
+        \[
+        \begin{aligned}
+        \mathrm{I} &= \frac{-\pi}{2}\int_1^{-1} \frac{dt}{1 + t^2} = \frac{\pi}{2}\int_{-1}^{1} \frac{dt}{1 + t^2} \\
+        &= \pi\int_0^1 \frac{dt}{1 + t^2} && \left(\text{by } \mathrm{P}_7, \text{ since } \frac{1}{1 + t^2} \text{ is even function}\right) \\
+        &= \pi\left[\tan^{-1} t\right]_0^1 = \pi\left[\tan^{-1} 1 - \tan^{-1} 0\right] = \pi\left[\frac{\pi}{4} - 0\right] = \frac{\pi^2}{4}
+        \end{aligned}
+        \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 31</div>
+        <p>Evaluate \( \displaystyle\int_{-1}^{1} \sin^5 x\cos^4 x\,dx \).</p>
+        <p><strong>Solution</strong> Let \( \mathrm{I} = \displaystyle\int_{-1}^{1} \sin^5 x\cos^4 x\,dx \). Let \( f(x) = \sin^5 x\cos^4 x \). Then</p>
+        \[ f(-x) = \sin^5(-x)\cos^4(-x) = -\sin^5 x\cos^4 x = -f(x), \]
+        <p>i.e., \(f\) is an odd function. Therefore, by \( \mathrm{P}_7 \) (ii), \( \mathrm{I} = 0 \).</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 32</div>
+        <p>Evaluate \( \displaystyle\int_0^{\frac{\pi}{2}} \frac{\sin^4 x}{\sin^4 x + \cos^4 x}\,dx \).</p>
+        <p><strong>Solution</strong> Let</p>
+        \[ \mathrm{I} = \int_0^{\frac{\pi}{2}} \frac{\sin^4 x}{\sin^4 x + \cos^4 x}\,dx \tag{1} \]
+        <p>Then, by \( \mathrm{P}_4 \)</p>
+        \[ \mathrm{I} = \int_0^{\frac{\pi}{2}} \frac{\sin^4\left(\frac{\pi}{2} - x\right)}{\sin^4\left(\frac{\pi}{2} - x\right) + \cos^4\left(\frac{\pi}{2} - x\right)}\,dx = \int_0^{\frac{\pi}{2}} \frac{\cos^4 x}{\cos^4 x + \sin^4 x}\,dx \tag{2} \]
+        <p>Adding (1) and (2), we get</p>
+        \[ 2\mathrm{I} = \int_0^{\frac{\pi}{2}} \frac{\sin^4 x + \cos^4 x}{\sin^4 x + \cos^4 x}\,dx = \int_0^{\frac{\pi}{2}} dx = [x]_0^{\frac{\pi}{2}} = \frac{\pi}{2} \]
+        <p>Hence</p>
+        \[ \mathrm{I} = \frac{\pi}{4} \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 33</div>
+        <p>Evaluate \( \displaystyle\int_{\frac{\pi}{6}}^{\frac{\pi}{3}} \frac{dx}{1 + \sqrt{\tan x}} \).</p>
+        <p><strong>Solution</strong> Let</p>
+        \[ \mathrm{I} = \int_{\frac{\pi}{6}}^{\frac{\pi}{3}} \frac{dx}{1 + \sqrt{\tan x}} = \int_{\frac{\pi}{6}}^{\frac{\pi}{3}} \frac{\sqrt{\cos x}\,dx}{\sqrt{\cos x} + \sqrt{\sin x}} \tag{1} \]
+        <p>Then, by \( \mathrm{P}_3 \)</p>
+        \[
+        \begin{aligned}
+        \mathrm{I} &= \int_{\frac{\pi}{6}}^{\frac{\pi}{3}} \frac{\sqrt{\cos\left(\frac{\pi}{3} + \frac{\pi}{6} - x\right)}\,dx}{\sqrt{\cos\left(\frac{\pi}{3} + \frac{\pi}{6} - x\right)} + \sqrt{\sin\left(\frac{\pi}{3} + \frac{\pi}{6} - x\right)}} \\
+        &= \int_{\frac{\pi}{6}}^{\frac{\pi}{3}} \frac{\sqrt{\sin x}}{\sqrt{\sin x} + \sqrt{\cos x}}\,dx \qquad \text{... (2)}
+        \end{aligned}
+        \]
+        <p>Adding (1) and (2), we get</p>
+        \[ 2\mathrm{I} = \int_{\frac{\pi}{6}}^{\frac{\pi}{3}} dx = [x]_{\frac{\pi}{6}}^{\frac{\pi}{3}} = \frac{\pi}{3} - \frac{\pi}{6} = \frac{\pi}{6}. \quad \text{Hence } \mathrm{I} = \frac{\pi}{12} \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 34</div>
+        <p>Evaluate \( \displaystyle\int_0^{\frac{\pi}{2}} \log\sin x\,dx \).</p>
+        <p><strong>Solution</strong> Let \( \mathrm{I} = \displaystyle\int_0^{\frac{\pi}{2}} \log\sin x\,dx \).</p>
+        <p>Then, by \( \mathrm{P}_4 \)</p>
+        \[ \mathrm{I} = \int_0^{\frac{\pi}{2}} \log\sin\left(\frac{\pi}{2} - x\right)dx = \int_0^{\frac{\pi}{2}} \log\cos x\,dx \]
+        <p>Adding the two values of I, we get</p>
+        \[
+        \begin{aligned}
+        2\mathrm{I} &= \int_0^{\frac{\pi}{2}} \left(\log\sin x + \log\cos x\right)dx \\
+        &= \int_0^{\frac{\pi}{2}} \left(\log\sin x\cos x + \log 2 - \log 2\right)dx && \text{(by adding and subtracting } \log 2) \\
+        &= \int_0^{\frac{\pi}{2}} \log\sin 2x\,dx - \int_0^{\frac{\pi}{2}} \log 2\,dx && \text{(Why?)}
+        \end{aligned}
+        \]
+        <p>Put \( 2x = t \) in the first integral. Then \( 2\,dx = dt \), when \( x = 0,\ t = 0 \) and when \( x = \dfrac{\pi}{2},\ t = \pi \).</p>
+        <p>Therefore</p>
+        \[
+        \begin{aligned}
+        2\mathrm{I} &= \frac{1}{2}\int_0^{\pi} \log\sin t\,dt - \frac{\pi}{2}\log 2 \\
+        &= \frac{2}{2}\int_0^{\frac{\pi}{2}} \log\sin t\,dt - \frac{\pi}{2}\log 2 && [\text{by } \mathrm{P}_6 \text{ as } \sin(\pi - t) = \sin t] \\
+        &= \int_0^{\frac{\pi}{2}} \log\sin x\,dx - \frac{\pi}{2}\log 2 && (\text{by changing variable } t \text{ to } x) \\
+        &= \mathrm{I} - \frac{\pi}{2}\log 2
+        \end{aligned}
+        \]
+        <p>Hence</p>
+        \[ \int_0^{\frac{\pi}{2}} \log\sin x\,dx = \frac{-\pi}{2}\log 2. \]
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight</div>
+        <p>Examples 30, 32, 33 and 34 share one idea: write I a second time using \( \mathrm{P}_3 \) or \( \mathrm{P}_4 \), then <strong>add</strong> the two forms. The awkward parts combine into something simple (often just 1), leaving an easy integral for 2I.</p>
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../07-integrals/26-exercise-7.9/index.html" class="nav-btn">&larr; Exercise 7.9</a>
+    <a href="../../07-integrals/28-exercise-7.10/index.html" class="nav-btn">Exercise 7.10 &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

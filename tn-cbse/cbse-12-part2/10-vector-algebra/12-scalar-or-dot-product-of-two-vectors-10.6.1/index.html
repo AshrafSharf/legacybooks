@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10.6.1 Scalar (or dot) product of two vectors — Vector Algebra</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Vector Algebra · 10.6.1 Scalar (or dot) product of two vectors">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../10-vector-algebra/11-product-of-two-vectors-10.6/index.html" title="10.6 Product of Two Vectors">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Vector Algebra</a></span>
+    <span class="c2">10.6.1 Scalar (or dot) product of two vectors</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 10 · Vector Algebra</div><a href="../01-introduction-10.1/index.html">10.1 Introduction</a><a href="../02-some-basic-concepts-10.2/index.html">10.2 Some Basic Concepts</a><a href="../03-types-of-vectors-10.3/index.html">10.3 Types of Vectors</a><a href="../04-exercise-10.1/index.html">Exercise 10.1</a><a href="../05-addition-of-vectors-10.4/index.html">10.4 Addition of Vectors</a><a href="../06-multiplication-of-a-vector-by-a-scalar-10.5/index.html">10.5 Multiplication of a Vector by a Scalar</a><a href="../07-components-of-a-vector-10.5.1/index.html">10.5.1 Components of a vector</a><a href="../08-vector-joining-two-points-10.5.2/index.html">10.5.2 Vector joining two points</a><a href="../09-section-formula-10.5.3/index.html">10.5.3 Section formula</a><a href="../10-exercise-10.2/index.html">Exercise 10.2</a><a href="../11-product-of-two-vectors-10.6/index.html">10.6 Product of Two Vectors</a><a href="../12-scalar-or-dot-product-of-two-vectors-10.6.1/index.html" aria-current="page">10.6.1 Scalar (or dot) product of two vectors</a><a href="../13-projection-of-a-vector-on-a-line-10.6.2/index.html">10.6.2 Projection of a vector on a line</a><a href="../14-exercise-10.3/index.html">Exercise 10.3</a><a href="../15-vector-or-cross-product-of-two-vectors-10.6.3/index.html">10.6.3 Vector (or cross) product of two vectors</a><a href="../16-exercise-10.4/index.html">Exercise 10.4</a><a href="../17-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../18-miscellaneous-exercise-on-chapter-10/index.html">Miscellaneous Exercise on Chapter 10</a><a href="../19-summary/index.html">Summary</a><a href="../20-historical-note/index.html">Historical Note</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../10-vector-algebra/13-projection-of-a-vector-on-a-line-10.6.2/index.html" title="10.6.2 Projection of a vector on a line">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">10</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 10 · Vector Algebra</a></p>
+        <h1>10.6.1 Scalar (or dot) product of two vectors</h1>
+        <p class="subtitle">Multiply two vectors and get a number — lengths times the cosine of the angle between them</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>The definition \( \vec{a}\cdot\vec{b} = |\vec{a}|\,|\vec{b}|\cos\theta \)</li>
+        <li>Seven observations: perpendicularity, \( \vec{a}\cdot\vec{a}=|\vec{a}|^2 \), the dot products of \( \hat{i},\hat{j},\hat{k} \), the angle formula and commutativity</li>
+        <li>Two key properties: distributivity over addition and compatibility with scalars</li>
+        <li>The component formula \( \vec{a}\cdot\vec{b} = a_1b_1+a_2b_2+a_3b_3 \)</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Definition of the Scalar Product</h2>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition 2 &mdash; Scalar (dot) product</div>
+        <p>The scalar product of two nonzero vectors \( \vec{a} \) and \( \vec{b} \), denoted by \( \vec{a}\cdot\vec{b} \), is defined as</p>
+        \[ \vec{a}\cdot\vec{b} = |\vec{a}|\,|\vec{b}|\cos\theta, \]
+        <p>where, \( \theta \) is the angle between \( \vec{a} \) and \( \vec{b} \), \( 0 \le \theta \le \pi \) (Fig 10.19).</p>
+        <p>If either \( \vec{a} = \vec{0} \) or \( \vec{b} = \vec{0} \), then \( \theta \) is not defined, and in this case, we define \( \vec{a}\cdot\vec{b} = 0 \).</p>
+    </div>
+
+    <figure class="diagram">
+        <svg viewBox="0 0 360 170" xmlns="http://www.w3.org/2000/svg" style="max-width:360px;" role="img" aria-label="Two vectors a and b drawn from a common point with angle theta between them">
+            <defs>
+                <marker id="ah1219" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#0d4f4f"/></marker>
+                <marker id="ah1219o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#c0602b"/></marker>
+            </defs>
+            <line x1="40" y1="130" x2="320" y2="130" stroke="#0d4f4f" stroke-width="2.5" marker-end="url(#ah1219)"/>
+            <line x1="40" y1="130" x2="240" y2="25" stroke="#c0602b" stroke-width="2.5" marker-end="url(#ah1219o)"/>
+            <path d="M 100 130 A 60 60 0 0 0 93.1 102.1" fill="none" stroke="#555" stroke-width="1.5"/>
+            <text x="108" y="118" font-size="17" fill="#2d2d2d" font-style="italic">&#952;</text>
+            <text x="300" y="155" font-size="18" fill="#0d4f4f" font-style="italic" font-weight="bold">a&#8407;</text>
+            <text x="200" y="30" font-size="18" fill="#c0602b" font-style="italic" font-weight="bold">b&#8407;</text>
+        </svg>
+        <figcaption>Fig 10.19 &mdash; \( \theta \) is the angle between \( \vec{a} \) and \( \vec{b} \)</figcaption>
+    </figure>
+</div>
+
+<div class="card">
+    <h2>Observations</h2>
+    <ol>
+        <li>\( \vec{a}\cdot\vec{b} \) is a real number.</li>
+        <li>Let \( \vec{a} \) and \( \vec{b} \) be two nonzero vectors, then \( \vec{a}\cdot\vec{b} = 0 \) if and only if \( \vec{a} \) and \( \vec{b} \) are perpendicular to each other. i.e.
+            \[ \vec{a}\cdot\vec{b} = 0 \iff \vec{a}\perp\vec{b} \]</li>
+        <li>If \( \theta = 0 \), then \( \vec{a}\cdot\vec{b} = |\vec{a}|\,|\vec{b}| \).
+            <p>In particular, \( \vec{a}\cdot\vec{a} = |\vec{a}|^2 \), as \( \theta \) in this case is 0.</p></li>
+        <li>If \( \theta = \pi \), then \( \vec{a}\cdot\vec{b} = -|\vec{a}|\,|\vec{b}| \).
+            <p>In particular, \( \vec{a}\cdot\vec{b} = -|\vec{a}|\,|\vec{b}| \), as \( \theta \) in this case is \( \pi \).</p></li>
+        <li>In view of the Observations 2 and 3, for mutually perpendicular unit vectors \( \hat{i},\ \hat{j} \) and \( \hat{k} \), we have
+            \[ \begin{aligned} \hat{i}\cdot\hat{i} &amp;= \hat{j}\cdot\hat{j} = \hat{k}\cdot\hat{k} = 1,\\ \hat{i}\cdot\hat{j} &amp;= \hat{j}\cdot\hat{k} = \hat{k}\cdot\hat{i} = 0 \end{aligned} \]</li>
+        <li>The angle between two nonzero vectors \( \vec{a} \) and \( \vec{b} \) is given by
+            \[ \cos\theta = \frac{\vec{a}\cdot\vec{b}}{|\vec{a}|\,|\vec{b}|}, \quad\text{or}\quad \theta = \cos^{-1}\left(\frac{\vec{a}\cdot\vec{b}}{|\vec{a}|\,|\vec{b}|}\right) \]</li>
+        <li>The scalar product is commutative. i.e.
+            \[ \vec{a}\cdot\vec{b} = \vec{b}\cdot\vec{a} \qquad \text{(Why?)} \]</li>
+    </ol>
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight &mdash; the sign of the dot product</div>
+        <p>Since \( |\vec{a}| \) and \( |\vec{b}| \) are positive, the sign of \( \vec{a}\cdot\vec{b} \) is the sign of \( \cos\theta \): positive for an acute angle, zero for a right angle, negative for an obtuse angle.</p>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Two Important Properties of Scalar Product</h2>
+
+    <div class="box box-formula">
+        <div class="box-label">Property 1 &mdash; Distributivity of scalar product over addition</div>
+        <p>Let \( \vec{a},\ \vec{b} \) and \( \vec{c} \) be any three vectors, then</p>
+        \[ \vec{a}\cdot(\vec{b}+\vec{c}) = \vec{a}\cdot\vec{b} + \vec{a}\cdot\vec{c} \]
+    </div>
+
+    <div class="box box-formula">
+        <div class="box-label">Property 2</div>
+        <p>Let \( \vec{a} \) and \( \vec{b} \) be any two vectors, and \( \lambda \) be any scalar. Then</p>
+        \[ (\lambda\vec{a})\cdot\vec{b} = \lambda(\vec{a}\cdot\vec{b}) = \vec{a}\cdot(\lambda\vec{b}) \]
+    </div>
+</div>
+
+<div class="card">
+    <h2>Scalar Product in Component Form</h2>
+    <p>If two vectors \( \vec{a} \) and \( \vec{b} \) are given in component form as \( a_1\hat{i}+a_2\hat{j}+a_3\hat{k} \) and \( b_1\hat{i}+b_2\hat{j}+b_3\hat{k} \), then their scalar product is given as</p>
+    <div class="math-scroll">
+    \[ \begin{aligned}
+    \vec{a}\cdot\vec{b} &amp;= (a_1\hat{i}+a_2\hat{j}+a_3\hat{k})\cdot(b_1\hat{i}+b_2\hat{j}+b_3\hat{k})\\
+    &amp;= a_1\hat{i}\cdot(b_1\hat{i}+b_2\hat{j}+b_3\hat{k}) + a_2\hat{j}\cdot(b_1\hat{i}+b_2\hat{j}+b_3\hat{k}) + a_3\hat{k}\cdot(b_1\hat{i}+b_2\hat{j}+b_3\hat{k})\\
+    &amp;= a_1b_1(\hat{i}\cdot\hat{i}) + a_1b_2(\hat{i}\cdot\hat{j}) + a_1b_3(\hat{i}\cdot\hat{k}) + a_2b_1(\hat{j}\cdot\hat{i}) + a_2b_2(\hat{j}\cdot\hat{j}) + a_2b_3(\hat{j}\cdot\hat{k})\\
+    &amp;\quad + a_3b_1(\hat{k}\cdot\hat{i}) + a_3b_2(\hat{k}\cdot\hat{j}) + a_3b_3(\hat{k}\cdot\hat{k}) &amp;&amp; \text{(Using the above Properties 1 and 2)}\\
+    &amp;= a_1b_1 + a_2b_2 + a_3b_3 &amp;&amp; \text{(Using Observation 5)}
+    \end{aligned} \]
+    </div>
+
+    <div class="box box-formula">
+        <div class="box-label">Result &mdash; Dot product in components</div>
+        <p>Thus</p>
+        \[ \vec{a}\cdot\vec{b} = a_1b_1 + a_2b_2 + a_3b_3 \]
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../10-vector-algebra/11-product-of-two-vectors-10.6/index.html" class="nav-btn">&larr; 10.6 Product of Two Vectors</a>
+    <a href="../../10-vector-algebra/13-projection-of-a-vector-on-a-line-10.6.2/index.html" class="nav-btn">10.6.2 Projection of a vector on a line &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

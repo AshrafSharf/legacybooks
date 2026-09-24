@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13.5 Bayes&#x27; Theorem — Probability</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Probability · 13.5 Bayes&#x27; Theorem">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../13-probability/07-exercise-13.2/index.html" title="Exercise 13.2">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Probability</a></span>
+    <span class="c2">13.5 Bayes&#x27; Theorem</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 13 · Probability</div><a href="../01-introduction-13.1/index.html">13.1 Introduction</a><a href="../02-conditional-probability-13.2/index.html">13.2 Conditional Probability</a><a href="../03-properties-of-conditional-probability-13.2.1/index.html">13.2.1 Properties of conditional probability</a><a href="../04-exercise-13.1/index.html">Exercise 13.1</a><a href="../05-multiplication-theorem-on-probability-13.3/index.html">13.3 Multiplication Theorem on Probability</a><a href="../06-independent-events-13.4/index.html">13.4 Independent Events</a><a href="../07-exercise-13.2/index.html">Exercise 13.2</a><a href="../08-bayes-theorem-13.5/index.html" aria-current="page">13.5 Bayes&#x27; Theorem</a><a href="../09-partition-of-a-sample-space-13.5.1/index.html">13.5.1 Partition of a sample space</a><a href="../10-theorem-of-total-probability-13.5.2/index.html">13.5.2 Theorem of total probability</a><a href="../11-exercise-13.3/index.html">Exercise 13.3</a><a href="../12-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../13-miscellaneous-exercise-on-chapter-13/index.html">Miscellaneous Exercise on Chapter 13</a><a href="../14-summary/index.html">Summary</a><a href="../15-historical-note/index.html">Historical Note</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../13-probability/09-partition-of-a-sample-space-13.5.1/index.html" title="13.5.1 Partition of a sample space">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">13</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 13 · Probability</a></p>
+        <h1>13.5 Bayes&#x27; Theorem</h1>
+        <p class="subtitle">Running probability backwards: from an observed outcome to the cause that produced it</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>A two-bag experiment that raises the question of <span class="teal">reverse probability</span></li>
+        <li>The difference between &ldquo;colour given the bag&rdquo; and &ldquo;bag given the colour&rdquo;</li>
+        <li>Where Bayes&rsquo; theorem comes from, and what we need before we can prove it</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>The Problem of Reverse Probability</h2>
+    <p>Consider that there are two bags I and II. Bag I contains 2 white and 3 red balls and Bag II contains 4 white and 5 red balls. One ball is drawn at random from one of the bags. We can find the probability of selecting any of the bags (i.e. \(\dfrac{1}{2}\)) or probability of drawing a ball of a particular colour (say white) from a particular bag (say Bag I). In other words, we can find the probability that the ball drawn is of a particular colour, if we are given the bag from which the ball is drawn.</p>
+
+    <figure class="diagram">
+        <svg viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg" style="max-width:540px;" role="img" aria-label="Bag I with 2 white and 3 red balls, Bag II with 4 white and 5 red balls; forward arrow from bag to colour, reverse arrow from colour back to bag.">
+            <!-- Bag I -->
+            <path d="M60 80 Q60 60 80 60 L200 60 Q220 60 220 80 L230 190 Q230 210 210 210 L70 210 Q50 210 50 190 Z" fill="#e8f4f4" stroke="#0d4f4f" stroke-width="2.5"/>
+            <text x="140" y="45" font-size="17" font-weight="bold" fill="#0d4f4f" text-anchor="middle">Bag I</text>
+            <circle cx="100" cy="110" r="16" fill="#fff" stroke="#555" stroke-width="1.8"/>
+            <circle cx="145" cy="110" r="16" fill="#fff" stroke="#555" stroke-width="1.8"/>
+            <circle cx="190" cy="110" r="16" fill="#c0602b" stroke="#555" stroke-width="1.8"/>
+            <circle cx="120" cy="155" r="16" fill="#c0602b" stroke="#555" stroke-width="1.8"/>
+            <circle cx="165" cy="155" r="16" fill="#c0602b" stroke="#555" stroke-width="1.8"/>
+            <text x="140" y="235" font-size="14" fill="#555" text-anchor="middle">2 white, 3 red</text>
+            <!-- Bag II -->
+            <path d="M370 80 Q370 60 390 60 L530 60 Q550 60 550 80 L560 190 Q560 210 540 210 L380 210 Q360 210 360 190 Z" fill="#fef3ec" stroke="#c0602b" stroke-width="2.5"/>
+            <text x="460" y="45" font-size="17" font-weight="bold" fill="#c0602b" text-anchor="middle">Bag II</text>
+            <circle cx="400" cy="100" r="15" fill="#fff" stroke="#555" stroke-width="1.8"/>
+            <circle cx="440" cy="100" r="15" fill="#fff" stroke="#555" stroke-width="1.8"/>
+            <circle cx="480" cy="100" r="15" fill="#fff" stroke="#555" stroke-width="1.8"/>
+            <circle cx="520" cy="100" r="15" fill="#fff" stroke="#555" stroke-width="1.8"/>
+            <circle cx="400" cy="145" r="15" fill="#c0602b" stroke="#555" stroke-width="1.8"/>
+            <circle cx="440" cy="145" r="15" fill="#c0602b" stroke="#555" stroke-width="1.8"/>
+            <circle cx="480" cy="145" r="15" fill="#c0602b" stroke="#555" stroke-width="1.8"/>
+            <circle cx="520" cy="145" r="15" fill="#c0602b" stroke="#555" stroke-width="1.8"/>
+            <circle cx="460" cy="185" r="15" fill="#c0602b" stroke="#555" stroke-width="1.8"/>
+            <text x="460" y="235" font-size="14" fill="#555" text-anchor="middle">4 white, 5 red</text>
+            <!-- arrows -->
+            <line x1="250" y1="110" x2="335" y2="110" stroke="#2b6cb0" stroke-width="2.5" marker-end="url(#arrB)"/>
+            <text x="292" y="98" font-size="13" fill="#2b6cb0" text-anchor="middle">bag &#8594; colour</text>
+            <line x1="335" y1="160" x2="250" y2="160" stroke="#6b46c1" stroke-width="2.5" marker-end="url(#arrP)"/>
+            <text x="292" y="185" font-size="13" fill="#6b46c1" text-anchor="middle">colour &#8594; bag ?</text>
+            <defs>
+                <marker id="arrB" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#2b6cb0"/></marker>
+                <marker id="arrP" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#6b46c1"/></marker>
+            </defs>
+        </svg>
+        <figcaption>Forward probability (colour, given the bag) is easy; Bayes&rsquo; theorem answers the reverse question (bag, given the colour).</figcaption>
+    </figure>
+
+    <p>But, can we find the probability that the ball drawn is from a particular bag (say Bag II), if the colour of the ball drawn is given? Here, we have to find the <strong>reverse probability</strong> of Bag II to be selected when an event occurred after it is known.</p>
+
+    <div class="box box-insight">
+        <div class="box-label">A Little History</div>
+        <p>Famous mathematician, John Bayes&rsquo; solved the problem of finding reverse probability by using conditional probability. The formula developed by him is known as <em>&lsquo;Bayes theorem&rsquo;</em> which was published posthumously in 1763.</p>
+    </div>
+
+    <p>Before stating and proving the Bayes&rsquo; theorem, let us first take up a definition and some preliminary results.</p>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../13-probability/07-exercise-13.2/index.html" class="nav-btn">&larr; Exercise 13.2</a>
+    <a href="../../13-probability/09-partition-of-a-sample-space-13.5.1/index.html" class="nav-btn">13.5.1 Partition of a sample space &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

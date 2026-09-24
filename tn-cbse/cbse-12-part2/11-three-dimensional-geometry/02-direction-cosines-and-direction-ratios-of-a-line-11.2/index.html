@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11.2 Direction Cosines and Direction Ratios of a Line — Three Dimensional Geometry</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Three Dimensional Geometry · 11.2 Direction Cosines and Direction Ratios of a Line">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../11-three-dimensional-geometry/01-introduction-11.1/index.html" title="11.1 Introduction">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Three Dimensional Geometry</a></span>
+    <span class="c2">11.2 Direction Cosines and Direction Ratios of a Line</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 11 · Three Dimensional Geometry</div><a href="../01-introduction-11.1/index.html">11.1 Introduction</a><a href="../02-direction-cosines-and-direction-ratios-of-a-line-11.2/index.html" aria-current="page">11.2 Direction Cosines and Direction Ratios of a Line</a><a href="../03-direction-cosines-of-a-line-passing-through-two-points-11.2.1/index.html">11.2.1 Direction cosines of a line passing through two points</a><a href="../04-exercise-11.1/index.html">Exercise 11.1</a><a href="../05-equation-of-a-line-in-space-11.3/index.html">11.3 Equation of a Line in Space</a><a href="../06-equation-of-a-line-through-a-given-point-and-parallel-to-g-11.3.1/index.html">11.3.1 Equation of a line through a given point and parallel to a given vector b⃗</a><a href="../07-angle-between-two-lines-11.4/index.html">11.4 Angle between Two Lines</a><a href="../08-shortest-distance-between-two-lines-11.5/index.html">11.5 Shortest Distance between Two Lines</a><a href="../09-distance-between-two-skew-lines-11.5.1/index.html">11.5.1 Distance between two skew lines</a><a href="../10-distance-between-parallel-lines-11.5.2/index.html">11.5.2 Distance between parallel lines</a><a href="../11-exercise-11.2/index.html">Exercise 11.2</a><a href="../12-miscellaneous-exercise-on-chapter-11/index.html">Miscellaneous Exercise on Chapter 11</a><a href="../13-summary/index.html">Summary</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../11-three-dimensional-geometry/03-direction-cosines-of-a-line-passing-through-two-points-11.2.1/index.html" title="11.2.1 Direction cosines of a line passing through two points">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">11</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 11 · Three Dimensional Geometry</a></p>
+        <h1>11.2 Direction Cosines and Direction Ratios of a Line</h1>
+        <p class="subtitle">Three cosines that pin down the direction of any line in space — and the numbers proportional to them</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li><strong>Direction angles</strong> \(\alpha, \beta, \gamma\) and <strong>direction cosines</strong> \(\cos\alpha, \cos\beta, \cos\gamma\) of a directed line</li>
+        <li>Why a line has two sets of direction cosines, and how a <em>directed</em> line gives a unique set \(l, m, n\)</li>
+        <li><strong>Direction ratios</strong> \(a, b, c\): any three numbers proportional to \(l, m, n\)</li>
+        <li>Recovering direction cosines from direction ratios using \(l^2 + m^2 + n^2 = 1\)</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Direction Angles and Direction Cosines</h2>
+    <p>From Chapter 10, recall that if a directed line L passing through the origin makes angles \(\alpha\), \(\beta\) and \(\gamma\) with \(x\), \(y\) and \(z\)-axes, respectively, called <strong>direction angles</strong>, then cosine of these angles, namely, \(\cos\alpha\), \(\cos\beta\) and \(\cos\gamma\) are called <strong>direction cosines</strong> of the directed line L.</p>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Direction Cosines</div>
+        <p>If a directed line L through the origin makes angles \(\alpha, \beta, \gamma\) with the positive \(x\), \(y\) and \(z\)-axes, then
+        \[ \cos\alpha,\quad \cos\beta,\quad \cos\gamma \]
+        are the <strong>direction cosines</strong> of L.</p>
+    </div>
+
+    <p>If we reverse the direction of L, then the direction angles are replaced by their supplements, i.e., \(\pi - \alpha\), \(\pi - \beta\) and \(\pi - \gamma\). Thus, the signs of the direction cosines are reversed.</p>
+
+    <figure class="diagram">
+        <svg viewBox="80 50 400 380" xmlns="http://www.w3.org/2000/svg" style="max-width:420px;" role="img" aria-label="Directed line L through the origin O and point P, making angles alpha, beta, gamma with the x, y and z axes; P is a corner of a dotted box.">
+            <defs>
+                <marker id="ah111" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2d2d2d"/></marker>
+                <marker id="ah111o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#c0602b"/></marker>
+            </defs>
+            <!-- dotted box -->
+            <g stroke="#2b6cb0" stroke-width="1.6" stroke-dasharray="5 4" fill="none">
+                <line x1="170" y1="345" x2="290" y2="345"/>
+                <line x1="290" y1="345" x2="350" y2="300"/>
+                <line x1="170" y1="345" x2="170" y2="165"/>
+                <line x1="290" y1="345" x2="290" y2="165"/>
+                <line x1="350" y1="300" x2="350" y2="120"/>
+                <line x1="170" y1="165" x2="290" y2="165"/>
+                <line x1="170" y1="165" x2="230" y2="120"/>
+                <line x1="230" y1="120" x2="350" y2="120"/>
+                <line x1="290" y1="165" x2="350" y2="120"/>
+            </g>
+            <!-- axes -->
+            <line x1="230" y1="300" x2="230" y2="70" stroke="#2d2d2d" stroke-width="2" marker-end="url(#ah111)"/>
+            <line x1="230" y1="300" x2="450" y2="300" stroke="#2d2d2d" stroke-width="2" marker-end="url(#ah111)"/>
+            <line x1="230" y1="300" x2="110" y2="390" stroke="#2d2d2d" stroke-width="2" marker-end="url(#ah111)"/>
+            <text x="224" y="64" font-size="17" font-weight="bold" fill="#2d2d2d">Z</text>
+            <text x="456" y="306" font-size="17" font-weight="bold" fill="#2d2d2d">Y</text>
+            <text x="96" y="404" font-size="17" font-weight="bold" fill="#2d2d2d">X</text>
+            <!-- line L -->
+            <line x1="230" y1="300" x2="318" y2="102" stroke="#c0602b" stroke-width="2.6" marker-end="url(#ah111o)"/>
+            <circle cx="290" cy="165" r="4" fill="#c0602b"/>
+            <text x="296" y="160" font-size="16" font-weight="bold" fill="#c0602b">P</text>
+            <text x="324" y="104" font-size="16" font-weight="bold" fill="#c0602b">L</text>
+            <text x="212" y="318" font-size="15" font-weight="bold" fill="#2d2d2d">O</text>
+            <!-- angle arcs -->
+            <path d="M230 270 A30 30 0 0 1 242.2 272.6" fill="none" stroke="#0d4f4f" stroke-width="1.8"/>
+            <path d="M238.9 279.9 A22 22 0 0 1 252 300" fill="none" stroke="#0d4f4f" stroke-width="1.8"/>
+            <path d="M237.3 283.5 A18 18 0 0 0 215.6 310.8" fill="none" stroke="#0d4f4f" stroke-width="1.8"/>
+            <text x="233" y="262" font-size="15" fill="#0d4f4f" font-style="italic">&#947;</text>
+            <text x="256" y="292" font-size="15" fill="#0d4f4f" font-style="italic">&#946;</text>
+            <text x="198" y="296" font-size="15" fill="#0d4f4f" font-style="italic">&#945;</text>
+            <!-- labels of lengths -->
+            <text x="185" y="333" font-size="15" fill="#555" font-style="italic">x</text>
+            <text x="285" y="318" font-size="15" fill="#555" font-style="italic">y</text>
+            <text x="216" y="215" font-size="15" fill="#555" font-style="italic">z</text>
+            <text x="268" y="222" font-size="15" fill="#c0602b" font-style="italic">r</text>
+        </svg>
+        <figcaption>Fig 11.1 &mdash; The directed line L through O makes direction angles \(\alpha, \beta, \gamma\) with the axes.</figcaption>
+    </figure>
+
+    <p>Note that a given line in space can be extended in two opposite directions and so it has <strong>two sets</strong> of direction cosines. In order to have a unique set of direction cosines for a given line in space, we must take the given line as a <em>directed</em> line. These unique direction cosines are denoted by \(l\), \(m\) and \(n\).</p>
+
+    <div class="box box-insight">
+        <div class="box-label">Remark</div>
+        <p>If the given line in space does not pass through the origin, then, in order to find its direction cosines, we draw a line through the origin and parallel to the given line. Now take one of the directed lines from the origin and find its direction cosines as two parallel line have same set of direction cosines.</p>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Direction Ratios</h2>
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Direction Ratios</div>
+        <p>Any three numbers which are proportional to the direction cosines of a line are called the <strong><em>direction ratios</em></strong> of the line. If \(l, m, n\) are direction cosines and \(a, b, c\) are direction ratios of a line, then
+        \[ a = \lambda l,\quad b = \lambda m \quad\text{and}\quad c = \lambda n, \quad\text{for any nonzero } \lambda \in \mathbf{R}. \]</p>
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Note</div>
+        <p>Some authors also call direction ratios as <strong>direction numbers</strong>.</p>
+    </div>
+
+    <h3>From direction ratios to direction cosines</h3>
+    <p>Let \(a, b, c\) be direction ratios of a line and let \(l, m\) and \(n\) be the direction cosines (<em>d.c</em>&rsquo;s) of the line. Then</p>
+    \[ \frac{l}{a} = \frac{m}{b} = \frac{n}{c} = k \ \text{(say)}, \quad k \text{ being a constant.} \]
+    <div class="step-row"><span class="step-num">1</span><div class="step-content">
+        <p>Therefore</p>
+        \[ l = ak,\quad m = bk,\quad n = ck \tag{1} \]
+    </div></div>
+    <div class="step-row"><span class="step-num">2</span><div class="step-content">
+        <p>But \(l^2 + m^2 + n^2 = 1\). Therefore</p>
+        \[ k^2\left(a^2 + b^2 + c^2\right) = 1 \quad\text{or}\quad k = \pm\frac{1}{\sqrt{a^2 + b^2 + c^2}} \]
+    </div></div>
+    <div class="step-row"><span class="step-num">3</span><div class="step-content">
+        <p>Hence, from (1), the <em>d.c.</em>&rsquo;s of the line are</p>
+    </div></div>
+
+    <div class="box box-formula">
+        <div class="box-label">Result &mdash; Direction cosines from direction ratios</div>
+        \[ l = \pm\frac{a}{\sqrt{a^2 + b^2 + c^2}},\quad m = \pm\frac{b}{\sqrt{a^2 + b^2 + c^2}},\quad n = \pm\frac{c}{\sqrt{a^2 + b^2 + c^2}} \]
+        <p>where, depending on the desired sign of \(k\), either a positive or a negative sign is to be taken for \(l\), \(m\) and \(n\).</p>
+    </div>
+
+    <p>For any line, if \(a, b, c\) are direction ratios of a line, then \(ka, kb, kc\); \(k \ne 0\) is also a set of direction ratios. So, any two sets of direction ratios of a line are also proportional. Also, for any line there are <strong>infinitely many</strong> sets of direction ratios.</p>
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight</div>
+        <p>Direction cosines are unique (up to the choice of direction) because they satisfy \(l^2 + m^2 + n^2 = 1\); direction ratios carry the same &ldquo;direction&rdquo; information but have no fixed size.</p>
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../11-three-dimensional-geometry/01-introduction-11.1/index.html" class="nav-btn">&larr; 11.1 Introduction</a>
+    <a href="../../11-three-dimensional-geometry/03-direction-cosines-of-a-line-passing-through-two-points-11.2.1/index.html" class="nav-btn">11.2.1 Direction cosines of a line passing through two points &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

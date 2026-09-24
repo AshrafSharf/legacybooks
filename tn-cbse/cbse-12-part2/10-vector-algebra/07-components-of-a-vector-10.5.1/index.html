@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10.5.1 Components of a vector — Vector Algebra</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Vector Algebra · 10.5.1 Components of a vector">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../10-vector-algebra/06-multiplication-of-a-vector-by-a-scalar-10.5/index.html" title="10.5 Multiplication of a Vector by a Scalar">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Vector Algebra</a></span>
+    <span class="c2">10.5.1 Components of a vector</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 10 · Vector Algebra</div><a href="../01-introduction-10.1/index.html">10.1 Introduction</a><a href="../02-some-basic-concepts-10.2/index.html">10.2 Some Basic Concepts</a><a href="../03-types-of-vectors-10.3/index.html">10.3 Types of Vectors</a><a href="../04-exercise-10.1/index.html">Exercise 10.1</a><a href="../05-addition-of-vectors-10.4/index.html">10.4 Addition of Vectors</a><a href="../06-multiplication-of-a-vector-by-a-scalar-10.5/index.html">10.5 Multiplication of a Vector by a Scalar</a><a href="../07-components-of-a-vector-10.5.1/index.html" aria-current="page">10.5.1 Components of a vector</a><a href="../08-vector-joining-two-points-10.5.2/index.html">10.5.2 Vector joining two points</a><a href="../09-section-formula-10.5.3/index.html">10.5.3 Section formula</a><a href="../10-exercise-10.2/index.html">Exercise 10.2</a><a href="../11-product-of-two-vectors-10.6/index.html">10.6 Product of Two Vectors</a><a href="../12-scalar-or-dot-product-of-two-vectors-10.6.1/index.html">10.6.1 Scalar (or dot) product of two vectors</a><a href="../13-projection-of-a-vector-on-a-line-10.6.2/index.html">10.6.2 Projection of a vector on a line</a><a href="../14-exercise-10.3/index.html">Exercise 10.3</a><a href="../15-vector-or-cross-product-of-two-vectors-10.6.3/index.html">10.6.3 Vector (or cross) product of two vectors</a><a href="../16-exercise-10.4/index.html">Exercise 10.4</a><a href="../17-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../18-miscellaneous-exercise-on-chapter-10/index.html">Miscellaneous Exercise on Chapter 10</a><a href="../19-summary/index.html">Summary</a><a href="../20-historical-note/index.html">Historical Note</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../10-vector-algebra/08-vector-joining-two-points-10.5.2/index.html" title="10.5.2 Vector joining two points">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">10</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 10 · Vector Algebra</a></p>
+        <h1>10.5.1 Components of a vector</h1>
+        <p class="subtitle">Every vector splits into x î + y ĵ + z k̂, and all of vector algebra becomes arithmetic on three numbers</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>The unit vectors \( \hat{i}, \hat{j}, \hat{k} \) along the axes</li>
+        <li>The <strong>component form</strong> \( \vec{r} = x\hat{i} + y\hat{j} + z\hat{k} \) and its length \( \sqrt{x^2+y^2+z^2} \)</li>
+        <li>Sum, difference, equality and scalar multiples in component form; the distributive laws</li>
+        <li>Collinearity test, direction ratios and direction cosines in component form</li>
+        <li>Examples 4&ndash;9: equal vectors, unit vectors, a vector of given magnitude, direction cosines</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Unit Vectors along the Axes</h2>
+    <p>Let us take the points A(1, 0, 0), B(0, 1, 0) and C(0, 0, 1) on the <em>x</em>-axis, <em>y</em>-axis and <em>z</em>-axis, respectively. Then, clearly</p>
+    \[ |\overrightarrow{OA}| = 1, \quad |\overrightarrow{OB}| = 1 \quad \text{and} \quad |\overrightarrow{OC}| = 1 \]
+    <p>The vectors \( \overrightarrow{OA}, \overrightarrow{OB} \) and \( \overrightarrow{OC} \), each having magnitude 1, are called <strong><em>unit vectors along the axes</em></strong> OX, OY and OZ, respectively, and denoted by \( \hat{i}, \hat{j} \) and \( \hat{k} \), respectively (Fig 10.13).</p>
+
+    <figure class="diagram">
+        <svg viewBox="0 0 340 260" xmlns="http://www.w3.org/2000/svg" style="max-width:300px;" role="img" aria-label="Unit vectors i, j, k along the x, y and z axes from O to A(1,0,0), B(0,1,0) and C(0,0,1)" font-family="'Segoe UI', sans-serif">
+<defs><marker id="f1013-t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#0d4f4f"/></marker><marker id="f1013-k" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#555"/></marker></defs>
+<line x1="130.0" y1="150.0" x2="56.8" y2="209.8" stroke="#555" stroke-width="1.6" marker-end="url(#f1013-k)"/>
+<line x1="130.0" y1="150.0" x2="298.0" y2="150.0" stroke="#555" stroke-width="1.6" marker-end="url(#f1013-k)"/>
+<line x1="130.0" y1="150.0" x2="130.0" y2="24.0" stroke="#555" stroke-width="1.6" marker-end="url(#f1013-k)"/>
+<text x="48.8" y="225.8" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">X</text>
+<text x="312.0" y="155.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">Y</text>
+<text x="130.0" y="16.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">Z</text>
+<line x1="130.0" y1="150.0" x2="91.5" y2="181.5" stroke="#0d4f4f" stroke-width="3" marker-end="url(#f1013-t)"/>
+<line x1="130.0" y1="150.0" x2="200.0" y2="150.0" stroke="#0d4f4f" stroke-width="3" marker-end="url(#f1013-t)"/>
+<line x1="130.0" y1="150.0" x2="130.0" y2="80.0" stroke="#0d4f4f" stroke-width="3" marker-end="url(#f1013-t)"/>
+<text x="138.0" y="168.0" font-size="14" fill="#2d2d2d" text-anchor="middle" font-weight="bold">O</text>
+<text x="99.5" y="191.5" font-size="13" fill="#2d2d2d" text-anchor="start" font-weight="bold">A (1,0,0)</text>
+<text x="194.0" y="170.0" font-size="13" fill="#2d2d2d" text-anchor="start" font-weight="bold">B (0,1,0)</text>
+<text x="140.0" y="84.0" font-size="13" fill="#2d2d2d" text-anchor="start" font-weight="bold">C (0,0,1)</text>
+<g><text x="94.8" y="161.8" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">ı</text><path d="M91.5,151.0 L94.8,147.2 L98.0,151.0" fill="none" stroke="#0d4f4f" stroke-width="1.2"/></g>
+<g><text x="165.0" y="142.0" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">ȷ</text><path d="M161.8,131.2 L165.0,127.4 L168.2,131.2" fill="none" stroke="#0d4f4f" stroke-width="1.2"/></g>
+<g><text x="116.0" y="121.0" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">k</text><path d="M112.8,110.2 L116.0,106.4 L119.2,110.2" fill="none" stroke="#0d4f4f" stroke-width="1.2"/></g>
+</svg>
+        <figcaption>Fig 10.13 &mdash; The unit vectors \( \hat{i}, \hat{j}, \hat{k} \)</figcaption>
+    </figure>
+</div>
+
+<div class="card">
+    <h2>Component Form of a Vector</h2>
+    <p>Now, consider the position vector \( \overrightarrow{OP} \) of a point P(<em>x</em>, <em>y</em>, <em>z</em>) as in Fig 10.14. Let P<sub>1</sub> be the foot of the perpendicular from P on the plane XOY.</p>
+
+    <figure class="diagram">
+        <svg viewBox="0 0 520 410" xmlns="http://www.w3.org/2000/svg" style="max-width:480px;" role="img" aria-label="Components of a vector: P(x, y, z) with OQ = x i, QP1 = OS = y j and P1P = OR = z k, so that OP = x i + y j + z k" font-family="'Segoe UI', sans-serif">
+<defs><marker id="f1014-t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#0d4f4f"/></marker><marker id="f1014-o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#c0602b"/></marker><marker id="f1014-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#2b6cb0"/></marker><marker id="f1014-k" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#555"/></marker></defs>
+<line x1="170.0" y1="260.0" x2="38.0" y2="368.0" stroke="#555" stroke-width="1.6" marker-end="url(#f1014-k)"/>
+<line x1="170.0" y1="260.0" x2="490.0" y2="260.0" stroke="#555" stroke-width="1.6" marker-end="url(#f1014-k)"/>
+<line x1="170.0" y1="260.0" x2="170.0" y2="30.0" stroke="#555" stroke-width="1.6" marker-end="url(#f1014-k)"/>
+<text x="30.0" y="384.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">X</text>
+<text x="504.0" y="265.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">Y</text>
+<text x="170.0" y="22.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">Z</text>
+<line x1="87.5" y1="327.5" x2="87.5" y2="177.5" stroke="#2b6cb0" stroke-width="1.3"/>
+<line x1="170.0" y1="110.0" x2="87.5" y2="177.5" stroke="#2b6cb0" stroke-width="1.3"/>
+<line x1="170.0" y1="110.0" x2="380.0" y2="110.0" stroke="#2b6cb0" stroke-width="1.3"/>
+<line x1="380.0" y1="260.0" x2="380.0" y2="110.0" stroke="#2b6cb0" stroke-width="1.3"/>
+<line x1="87.5" y1="177.5" x2="297.5" y2="177.5" stroke="#2b6cb0" stroke-width="1.3"/>
+<line x1="380.0" y1="110.0" x2="297.5" y2="177.5" stroke="#2b6cb0" stroke-width="1.3"/>
+<line x1="380.0" y1="260.0" x2="297.5" y2="327.5" stroke="#2b6cb0" stroke-width="1.3"/>
+<line x1="170.0" y1="260.0" x2="297.5" y2="327.5" stroke="#2b6cb0" stroke-width="1.5" stroke-dasharray="5 4"/>
+<line x1="170.0" y1="260.0" x2="87.5" y2="327.5" stroke="#c0602b" stroke-width="2.6" marker-end="url(#f1014-o)"/>
+<line x1="170.0" y1="260.0" x2="380.0" y2="260.0" stroke="#c0602b" stroke-width="2.6" marker-end="url(#f1014-o)"/>
+<line x1="170.0" y1="260.0" x2="170.0" y2="110.0" stroke="#c0602b" stroke-width="2.6" marker-end="url(#f1014-o)"/>
+<line x1="87.5" y1="327.5" x2="297.5" y2="327.5" stroke="#2b6cb0" stroke-width="2" marker-end="url(#f1014-b)"/>
+<line x1="297.5" y1="327.5" x2="297.5" y2="177.5" stroke="#2b6cb0" stroke-width="2" marker-end="url(#f1014-b)"/>
+<line x1="170.0" y1="260.0" x2="297.5" y2="177.5" stroke="#0d4f4f" stroke-width="2.8" marker-end="url(#f1014-t)"/>
+<circle cx="297.5" cy="177.5" r="4" fill="#2d2d2d"/>
+<text x="305.5" y="191.5" font-size="13" fill="#2d2d2d" text-anchor="start" font-weight="bold">P (<tspan font-style="italic">x,y,z</tspan>)</text>
+<text x="174.0" y="280.0" font-size="14" fill="#2d2d2d" text-anchor="middle" font-weight="bold">O</text>
+<text x="75.5" y="329.5" font-size="14" fill="#2d2d2d" text-anchor="middle" font-weight="bold">Q</text>
+<text x="386.0" y="278.0" font-size="14" fill="#2d2d2d" text-anchor="middle" font-weight="bold">S</text>
+<text x="160.0" y="108.0" font-size="14" fill="#2d2d2d" text-anchor="middle" font-weight="bold">R</text>
+<text x="301.5" y="347.5" font-size="14" fill="#2d2d2d" font-weight="bold">P<tspan font-size="10" dy="4">1</tspan></text>
+<g><text x="104.9" y="289.8" font-size="17" fill="#c0602b" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">x</text><text x="113.0" y="289.8" font-size="17" fill="#c0602b" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">ı</text><path d="M109.8,279.7 L113.0,275.9 L116.2,279.7" fill="none" stroke="#c0602b" stroke-width="1.2"/></g>
+<g><text x="271.2" y="252.0" font-size="17" fill="#c0602b" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">y</text><text x="279.2" y="252.0" font-size="17" fill="#c0602b" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">ȷ</text><path d="M276.1,242.0 L279.2,238.2 L282.4,242.0" fill="none" stroke="#c0602b" stroke-width="1.2"/></g>
+<g><text x="142.2" y="191.0" font-size="17" fill="#c0602b" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">z</text><text x="150.2" y="191.0" font-size="17" fill="#c0602b" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">k</text><path d="M147.1,181.0 L150.2,177.2 L153.4,181.0" fill="none" stroke="#c0602b" stroke-width="1.2"/></g>
+<g><text x="229.8" y="206.8" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">r</text><path d="M225.6,192.0 H234.5 M231.3,189.2 L234.5,192.0 L231.3,194.8" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+</svg>
+        <figcaption>Fig 10.14 &mdash; \( \overrightarrow{OP} = \overrightarrow{OQ} + \overrightarrow{QP_1} + \overrightarrow{P_1P} = x\hat{i} + y\hat{j} + z\hat{k} \)</figcaption>
+    </figure>
+
+    <p>We, thus, see that \( P_1P \) is parallel to <em>z</em>-axis. As \( \hat{i}, \hat{j} \) and \( \hat{k} \) are the unit vectors along the <em>x</em>, <em>y</em> and <em>z</em>-axes, respectively, and by the definition of the coordinates of P, we have \( \overrightarrow{P_1P} = \overrightarrow{OR} = z\hat{k} \). Similarly, \( \overrightarrow{QP_1} = \overrightarrow{OS} = y\hat{j} \) and \( \overrightarrow{OQ} = x\hat{i} \).</p>
+
+    <p>Therefore, it follows that</p>
+    \[ \begin{aligned} \overrightarrow{OP_1} &amp;= \overrightarrow{OQ} + \overrightarrow{QP_1} = x\hat{i} + y\hat{j} \\ \text{and} \quad \overrightarrow{OP} &amp;= \overrightarrow{OP_1} + \overrightarrow{P_1P} = x\hat{i} + y\hat{j} + z\hat{k} \end{aligned} \]
+    <p>Hence, the position vector of P with reference to O is given by</p>
+
+    <div class="box box-definition">
+        <div class="box-label">Component Form</div>
+        \[ \overrightarrow{OP}\ (\text{or } \vec{r}) = x\hat{i} + y\hat{j} + z\hat{k} \]
+        <p>This form of any vector is called its <strong><em>component form</em></strong>. Here, <em>x</em>, <em>y</em> and <em>z</em> are called as the <strong><em>scalar components</em></strong> of \( \vec{r} \), and \( x\hat{i}, y\hat{j} \) and \( z\hat{k} \) are called the <strong><em>vector components</em></strong> of \( \vec{r} \) along the respective axes. Sometimes <em>x</em>, <em>y</em> and <em>z</em> are also termed as <strong><em>rectangular components</em></strong>.</p>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Length of a Vector</h2>
+    <p>The length of any vector \( \vec{r} = x\hat{i} + y\hat{j} + z\hat{k} \), is readily determined by applying the Pythagoras theorem twice. We note that in the right angle triangle OQP<sub>1</sub> (Fig 10.14)</p>
+    \[ |\overrightarrow{OP_1}| = \sqrt{|\overrightarrow{OQ}|^2 + |\overrightarrow{QP_1}|^2} = \sqrt{x^2 + y^2}, \]
+    <p>and in the right angle triangle OP<sub>1</sub>P, we have</p>
+    \[ |\overrightarrow{OP}| = \sqrt{|\overrightarrow{OP_1}|^2 + |\overrightarrow{P_1P}|^2} = \sqrt{(x^2 + y^2) + z^2} \]
+    <p>Hence, the length of any vector \( \vec{r} = x\hat{i} + y\hat{j} + z\hat{k} \) is given by</p>
+    <div class="box box-formula">
+        <div class="box-label">Magnitude in Component Form</div>
+        \[ |\vec{r}| = |x\hat{i} + y\hat{j} + z\hat{k}| = \sqrt{x^2 + y^2 + z^2} \]
+    </div>
+</div>
+
+<div class="card">
+    <h2>Operations in Component Form</h2>
+    <p>If \( \vec{a} \) and \( \vec{b} \) are any two vectors given in the component form \( a_1\hat{i} + a_2\hat{j} + a_3\hat{k} \) and \( b_1\hat{i} + b_2\hat{j} + b_3\hat{k} \), respectively, then</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Component Rules</div>
+        <table>
+            <tr><td>(i)</td><td>the sum (or resultant) of the vectors \( \vec{a} \) and \( \vec{b} \)</td><td>\( \vec{a} + \vec{b} = (a_1 + b_1)\hat{i} + (a_2 + b_2)\hat{j} + (a_3 + b_3)\hat{k} \)</td></tr>
+            <tr><td>(ii)</td><td>the difference of the vector \( \vec{a} \) and \( \vec{b} \)</td><td>\( \vec{a} - \vec{b} = (a_1 - b_1)\hat{i} + (a_2 - b_2)\hat{j} + (a_3 - b_3)\hat{k} \)</td></tr>
+            <tr><td>(iii)</td><td>the vectors \( \vec{a} \) and \( \vec{b} \) are equal if and only if</td><td>\( a_1 = b_1,\ a_2 = b_2 \) and \( a_3 = b_3 \)</td></tr>
+            <tr><td>(iv)</td><td>the multiplication of vector \( \vec{a} \) by any scalar \( \lambda \)</td><td>\( \lambda\vec{a} = (\lambda a_1)\hat{i} + (\lambda a_2)\hat{j} + (\lambda a_3)\hat{k} \)</td></tr>
+        </table>
+    </div>
+
+    <p>The addition of vectors and the multiplication of a vector by a scalar together give the following distributive laws:</p>
+    <p>Let \( \vec{a} \) and \( \vec{b} \) be any two vectors, and <em>k</em> and <em>m</em> be any scalars. Then</p>
+    <div class="box box-formula">
+        <div class="box-label">Distributive Laws</div>
+        <p>(i) \( k\vec{a} + m\vec{a} = (k + m)\vec{a} \)</p>
+        <p>(ii) \( k(m\vec{a}) = (km)\vec{a} \)</p>
+        <p>(iii) \( k(\vec{a} + \vec{b}) = k\vec{a} + k\vec{b} \)</p>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Remarks</h2>
+    <div class="box box-insight">
+        <div class="box-label">Remark (i) &mdash; Collinear Vectors</div>
+        <p>One may observe that whatever be the value of \( \lambda \), the vector \( \lambda\vec{a} \) is always collinear to the vector \( \vec{a} \). In fact, two vectors \( \vec{a} \) and \( \vec{b} \) are collinear if and only if there exists a nonzero scalar \( \lambda \) such that \( \vec{b} = \lambda\vec{a} \). If the vectors \( \vec{a} \) and \( \vec{b} \) are given in the component form, i.e. \( \vec{a} = a_1\hat{i} + a_2\hat{j} + a_3\hat{k} \) and \( \vec{b} = b_1\hat{i} + b_2\hat{j} + b_3\hat{k} \), then the two vectors are collinear if and only if</p>
+        \[ \begin{aligned} &amp; b_1\hat{i} + b_2\hat{j} + b_3\hat{k} = \lambda(a_1\hat{i} + a_2\hat{j} + a_3\hat{k}) \\ \Leftrightarrow\quad &amp; b_1\hat{i} + b_2\hat{j} + b_3\hat{k} = (\lambda a_1)\hat{i} + (\lambda a_2)\hat{j} + (\lambda a_3)\hat{k} \\ \Leftrightarrow\quad &amp; b_1 = \lambda a_1,\ b_2 = \lambda a_2,\ b_3 = \lambda a_3 \\ \Leftrightarrow\quad &amp; \frac{b_1}{a_1} = \frac{b_2}{a_2} = \frac{b_3}{a_3} = \lambda \end{aligned} \]
+    </div>
+    <div class="box box-insight">
+        <div class="box-label">Remark (ii) &mdash; Direction Ratios</div>
+        <p>If \( \vec{a} = a_1\hat{i} + a_2\hat{j} + a_3\hat{k} \), then \( a_1, a_2, a_3 \) are also called direction ratios of \( \vec{a} \).</p>
+    </div>
+    <div class="box box-insight">
+        <div class="box-label">Remark (iii) &mdash; Direction Cosines</div>
+        <p>In case if it is given that <em>l</em>, <em>m</em>, <em>n</em> are direction cosines of a vector, then</p>
+        \[ l\hat{i} + m\hat{j} + n\hat{k} = (\cos\alpha)\hat{i} + (\cos\beta)\hat{j} + (\cos\gamma)\hat{k} \]
+        <p>is the unit vector in the direction of that vector, where \( \alpha, \beta \) and \( \gamma \) are the angles which the vector makes with <em>x</em>, <em>y</em> and <em>z</em> axes respectively.</p>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Worked Examples</h2>
+
+    <div class="box box-example">
+        <div class="box-label">Example 4</div>
+        <p>Find the values of <em>x</em>, <em>y</em> and <em>z</em> so that the vectors \( \vec{a} = x\hat{i} + 2\hat{j} + z\hat{k} \) and \( \vec{b} = 2\hat{i} + y\hat{j} + \hat{k} \) are equal.</p>
+        <p><strong>Solution</strong> Note that two vectors are equal if and only if their corresponding components are equal. Thus, the given vectors \( \vec{a} \) and \( \vec{b} \) will be equal if and only if</p>
+        \[ x = 2, \quad y = 2, \quad z = 1 \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 5</div>
+        <p>Let \( \vec{a} = \hat{i} + 2\hat{j} \) and \( \vec{b} = 2\hat{i} + \hat{j} \). Is \( |\vec{a}| = |\vec{b}| \)? Are the vectors \( \vec{a} \) and \( \vec{b} \) equal?</p>
+        <p><strong>Solution</strong> We have</p>
+        \[ |\vec{a}| = \sqrt{1^2 + 2^2} = \sqrt{5} \quad \text{and} \quad |\vec{b}| = \sqrt{2^2 + 1^2} = \sqrt{5} \]
+        <p>So, \( |\vec{a}| = |\vec{b}| \). But, the two vectors are not equal since their corresponding components are distinct.</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 6</div>
+        <p>Find unit vector in the direction of vector \( \vec{a} = 2\hat{i} + 3\hat{j} + \hat{k} \).</p>
+        <p><strong>Solution</strong> The unit vector in the direction of a vector \( \vec{a} \) is given by \( \hat{a} = \dfrac{1}{|\vec{a}|}\vec{a} \).</p>
+        <div class="step-row"><span class="step-num">1</span><div class="step-content">Now \[ |\vec{a}| = \sqrt{2^2 + 3^2 + 1^2} = \sqrt{14} \]</div></div>
+        <div class="step-row"><span class="step-num">2</span><div class="step-content">Therefore \[ \hat{a} = \frac{1}{\sqrt{14}}(2\hat{i} + 3\hat{j} + \hat{k}) = \frac{2}{\sqrt{14}}\hat{i} + \frac{3}{\sqrt{14}}\hat{j} + \frac{1}{\sqrt{14}}\hat{k} \]</div></div>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 7</div>
+        <p>Find a vector in the direction of vector \( \vec{a} = \hat{i} - 2\hat{j} \) that has magnitude 7 units.</p>
+        <p><strong>Solution</strong> The unit vector in the direction of the given vector \( \vec{a} \) is</p>
+        \[ \hat{a} = \frac{1}{|\vec{a}|}\vec{a} = \frac{1}{\sqrt{5}}(\hat{i} - 2\hat{j}) = \frac{1}{\sqrt{5}}\hat{i} - \frac{2}{\sqrt{5}}\hat{j} \]
+        <p>Therefore, the vector having magnitude equal to 7 and in the direction of \( \vec{a} \) is</p>
+        \[ 7\hat{a} = 7\left(\frac{1}{\sqrt{5}}\hat{i} - \frac{2}{\sqrt{5}}\hat{j}\right) = \frac{7}{\sqrt{5}}\hat{i} - \frac{14}{\sqrt{5}}\hat{j} \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 8</div>
+        <p>Find the unit vector in the direction of the sum of the vectors, \( \vec{a} = 2\hat{i} + 2\hat{j} - 5\hat{k} \) and \( \vec{b} = 2\hat{i} + \hat{j} + 3\hat{k} \).</p>
+        <p><strong>Solution</strong> The sum of the given vectors is</p>
+        \[ \vec{a} + \vec{b}\ (= \vec{c}, \text{ say}) = 4\hat{i} + 3\hat{j} - 2\hat{k} \]
+        <p>and</p>
+        \[ |\vec{c}| = \sqrt{4^2 + 3^2 + (-2)^2} = \sqrt{29} \]
+        <p>Thus, the required unit vector is</p>
+        \[ \hat{c} = \frac{1}{|\vec{c}|}\vec{c} = \frac{1}{\sqrt{29}}(4\hat{i} + 3\hat{j} - 2\hat{k}) = \frac{4}{\sqrt{29}}\hat{i} + \frac{3}{\sqrt{29}}\hat{j} - \frac{2}{\sqrt{29}}\hat{k} \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 9</div>
+        <p>Write the direction ratio&rsquo;s of the vector \( \vec{a} = \hat{i} + \hat{j} - 2\hat{k} \) and hence calculate its direction cosines.</p>
+        <p><strong>Solution</strong> Note that the direction ratio&rsquo;s <em>a</em>, <em>b</em>, <em>c</em> of a vector \( \vec{r} = x\hat{i} + y\hat{j} + z\hat{k} \) are just the respective components <em>x</em>, <em>y</em> and <em>z</em> of the vector. So, for the given vector, we have \( a = 1,\ b = 1 \) and \( c = -2 \). Further, if <em>l</em>, <em>m</em> and <em>n</em> are the direction cosines of the given vector, then</p>
+        \[ l = \frac{a}{|\vec{r}|} = \frac{1}{\sqrt{6}}, \quad m = \frac{b}{|\vec{r}|} = \frac{1}{\sqrt{6}}, \quad n = \frac{c}{|\vec{r}|} = \frac{-2}{\sqrt{6}} \quad \text{as } |\vec{r}| = \sqrt{6} \]
+        <p>Thus, the direction cosines are \( \left(\dfrac{1}{\sqrt{6}}, \dfrac{1}{\sqrt{6}}, -\dfrac{2}{\sqrt{6}}\right) \).</p>
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../10-vector-algebra/06-multiplication-of-a-vector-by-a-scalar-10.5/index.html" class="nav-btn">&larr; 10.5 Multiplication of a Vector by a Scalar</a>
+    <a href="../../10-vector-algebra/08-vector-joining-two-points-10.5.2/index.html" class="nav-btn">10.5.2 Vector joining two points &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

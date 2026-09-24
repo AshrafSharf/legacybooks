@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11.3 Equation of a Line in Space — Three Dimensional Geometry</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Three Dimensional Geometry · 11.3 Equation of a Line in Space">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../11-three-dimensional-geometry/04-exercise-11.1/index.html" title="Exercise 11.1">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Three Dimensional Geometry</a></span>
+    <span class="c2">11.3 Equation of a Line in Space</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 11 · Three Dimensional Geometry</div><a href="../01-introduction-11.1/index.html">11.1 Introduction</a><a href="../02-direction-cosines-and-direction-ratios-of-a-line-11.2/index.html">11.2 Direction Cosines and Direction Ratios of a Line</a><a href="../03-direction-cosines-of-a-line-passing-through-two-points-11.2.1/index.html">11.2.1 Direction cosines of a line passing through two points</a><a href="../04-exercise-11.1/index.html">Exercise 11.1</a><a href="../05-equation-of-a-line-in-space-11.3/index.html" aria-current="page">11.3 Equation of a Line in Space</a><a href="../06-equation-of-a-line-through-a-given-point-and-parallel-to-g-11.3.1/index.html">11.3.1 Equation of a line through a given point and parallel to a given vector b⃗</a><a href="../07-angle-between-two-lines-11.4/index.html">11.4 Angle between Two Lines</a><a href="../08-shortest-distance-between-two-lines-11.5/index.html">11.5 Shortest Distance between Two Lines</a><a href="../09-distance-between-two-skew-lines-11.5.1/index.html">11.5.1 Distance between two skew lines</a><a href="../10-distance-between-parallel-lines-11.5.2/index.html">11.5.2 Distance between parallel lines</a><a href="../11-exercise-11.2/index.html">Exercise 11.2</a><a href="../12-miscellaneous-exercise-on-chapter-11/index.html">Miscellaneous Exercise on Chapter 11</a><a href="../13-summary/index.html">Summary</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../11-three-dimensional-geometry/06-equation-of-a-line-through-a-given-point-and-parallel-to-g-11.3.1/index.html" title="11.3.1 Equation of a line through a given point and parallel to a given vector b⃗">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">11</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 11 · Three Dimensional Geometry</a></p>
+        <h1>11.3 Equation of a Line in Space</h1>
+        <p class="subtitle">What it takes to pin down a line in three dimensions</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>Moving from lines in the plane (Class XI) to <span class="teal">lines in space</span></li>
+        <li>The two ways a line is uniquely determined</li>
+        <li>A roadmap for the <strong>vector</strong> and <strong>Cartesian</strong> equations that follow</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>When is a Line Fixed?</h2>
+    <p>We have studied equation of lines in two dimensions in Class XI, we shall now study the <strong>vector</strong> and <strong>cartesian</strong> equations of a line in space.</p>
+
+    <div class="box box-formula">
+        <div class="box-label">A line is uniquely determined if</div>
+        <ol type="i">
+            <li>it passes through a given point and has given direction, or</li>
+            <li>it passes through two given points.</li>
+        </ol>
+    </div>
+
+    <figure class="diagram">
+        <svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;" role="img" aria-label="Left: a line fixed by one point A and a direction vector b. Right: a line fixed by two points A and B.">
+            <defs>
+                <marker id="ah113" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#c0602b"/></marker>
+            </defs>
+            <rect x="10" y="10" width="300" height="150" rx="12" fill="#e8f4f4"/>
+            <line x1="30" y1="140" x2="290" y2="40" stroke="#0d4f4f" stroke-width="2.5"/>
+            <circle cx="120" cy="105.4" r="5" fill="#0d4f4f"/>
+            <text x="104" y="128" font-size="16" font-weight="bold" fill="#0d4f4f">A</text>
+            <line x1="150" y1="118" x2="230" y2="87" stroke="#c0602b" stroke-width="2.5" marker-end="url(#ah113)" transform="translate(0,-40)"/>
+            <text x="190" y="52" font-size="16" font-weight="bold" fill="#c0602b" font-style="italic">b&#8407;</text>
+            <rect x="330" y="10" width="300" height="150" rx="12" fill="#fef3ec"/>
+            <line x1="350" y1="140" x2="610" y2="40" stroke="#0d4f4f" stroke-width="2.5"/>
+            <circle cx="420" cy="113.1" r="5" fill="#c0602b"/>
+            <circle cx="540" cy="67" r="5" fill="#c0602b"/>
+            <text x="406" y="136" font-size="16" font-weight="bold" fill="#c0602b">A</text>
+            <text x="528" y="92" font-size="16" font-weight="bold" fill="#c0602b">B</text>
+            <text x="160" y="186" font-size="15" text-anchor="middle" fill="#2d2d2d">(i) a point and a direction</text>
+            <text x="480" y="186" font-size="15" text-anchor="middle" fill="#2d2d2d">(ii) two points</text>
+        </svg>
+        <figcaption>The two ways of fixing a line in space.</figcaption>
+    </figure>
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight</div>
+        <p>Case (ii) reduces to case (i): two points A and B give the direction \(\overrightarrow{\mathrm{AB}}\), so a point and a direction is really all we ever need.</p>
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../11-three-dimensional-geometry/04-exercise-11.1/index.html" class="nav-btn">&larr; Exercise 11.1</a>
+    <a href="../../11-three-dimensional-geometry/06-equation-of-a-line-through-a-given-point-and-parallel-to-g-11.3.1/index.html" class="nav-btn">11.3.1 Equation of a line through a given point and parallel to a given vector b⃗ &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

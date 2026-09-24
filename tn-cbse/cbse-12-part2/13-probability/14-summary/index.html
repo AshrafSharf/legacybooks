@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary — Probability</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Probability · Summary">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../13-probability/13-miscellaneous-exercise-on-chapter-13/index.html" title="Miscellaneous Exercise on Chapter 13">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Probability</a></span>
+    <span class="c2">Summary</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 13 · Probability</div><a href="../01-introduction-13.1/index.html">13.1 Introduction</a><a href="../02-conditional-probability-13.2/index.html">13.2 Conditional Probability</a><a href="../03-properties-of-conditional-probability-13.2.1/index.html">13.2.1 Properties of conditional probability</a><a href="../04-exercise-13.1/index.html">Exercise 13.1</a><a href="../05-multiplication-theorem-on-probability-13.3/index.html">13.3 Multiplication Theorem on Probability</a><a href="../06-independent-events-13.4/index.html">13.4 Independent Events</a><a href="../07-exercise-13.2/index.html">Exercise 13.2</a><a href="../08-bayes-theorem-13.5/index.html">13.5 Bayes&#x27; Theorem</a><a href="../09-partition-of-a-sample-space-13.5.1/index.html">13.5.1 Partition of a sample space</a><a href="../10-theorem-of-total-probability-13.5.2/index.html">13.5.2 Theorem of total probability</a><a href="../11-exercise-13.3/index.html">Exercise 13.3</a><a href="../12-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../13-miscellaneous-exercise-on-chapter-13/index.html">Miscellaneous Exercise on Chapter 13</a><a href="../14-summary/index.html" aria-current="page">Summary</a><a href="../15-historical-note/index.html">Historical Note</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../13-probability/15-historical-note/index.html" title="Historical Note">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">13</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 13 · Probability</a></p>
+        <h1>Summary</h1>
+        <p class="subtitle">Every key formula of the chapter on one page: conditional probability, independence, total probability and Bayes</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>Summary</h2>
+    <p>The salient features of the chapter are &ndash;</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Conditional Probability</div>
+        <p>The conditional probability of an event E, given the occurrence of the event F is given by</p>
+        \[ P(E|F) = \frac{P(E \cap F)}{P(F)}, \quad P(F) \neq 0 \]
+    </div>
+
+    <div class="box box-formula">
+        <div class="box-label">Properties of Conditional Probability</div>
+        \[ 0 \leq P(E|F) \leq 1, \qquad P(E'|F) = 1 - P(E|F) \]
+        \[ P((E \cup F)|G) = P(E|G) + P(F|G) - P((E \cap F)|G) \]
+    </div>
+
+    <div class="box box-formula">
+        <div class="box-label">Multiplication Rule</div>
+        \[ \begin{aligned} P(E \cap F) &amp;= P(E)\,P(F|E), \quad P(E) \neq 0 \\ P(E \cap F) &amp;= P(F)\,P(E|F), \quad P(F) \neq 0 \end{aligned} \]
+    </div>
+
+    <div class="box box-formula">
+        <div class="box-label">Independent Events</div>
+        <p>If E and F are independent, then</p>
+        \[ \begin{aligned} P(E \cap F) &amp;= P(E)\,P(F) \\ P(E|F) &amp;= P(E), \quad P(F) \neq 0 \\ P(F|E) &amp;= P(F), \quad P(E) \neq 0 \end{aligned} \]
+    </div>
+
+    <div class="box box-formula">
+        <div class="box-label">Theorem of Total Probability</div>
+        <p>Let \(\{E_1, E_2, \ldots, E_n\}\) be a partition of a sample space and suppose that each of \(E_1, E_2, \ldots, E_n\) has nonzero probability. Let A be any event associated with S, then</p>
+        \[ P(A) = P(E_1)\,P(A|E_1) + P(E_2)\,P(A|E_2) + \ldots + P(E_n)\,P(A|E_n) \]
+    </div>
+
+    <div class="box box-formula">
+        <div class="box-label">Bayes&rsquo; Theorem</div>
+        <p>If \(E_1, E_2, \ldots, E_n\) are events which constitute a partition of sample space S, i.e. \(E_1, E_2, \ldots, E_n\) are pairwise disjoint and \(E_1 \cup E_2 \cup \ldots \cup E_n = S\) and A be any event with nonzero probability, then</p>
+        \[ P(E_i|A) = \frac{P(E_i)\,P(A|E_i)}{\displaystyle\sum_{j=1}^{n} P(E_j)\,P(A|E_j)} \]
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../13-probability/13-miscellaneous-exercise-on-chapter-13/index.html" class="nav-btn">&larr; Miscellaneous Exercise on Chapter 13</a>
+    <a href="../../13-probability/15-historical-note/index.html" class="nav-btn">Historical Note &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

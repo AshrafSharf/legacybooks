@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10.5.2 Vector joining two points — Vector Algebra</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Vector Algebra · 10.5.2 Vector joining two points">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../10-vector-algebra/07-components-of-a-vector-10.5.1/index.html" title="10.5.1 Components of a vector">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Vector Algebra</a></span>
+    <span class="c2">10.5.2 Vector joining two points</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 10 · Vector Algebra</div><a href="../01-introduction-10.1/index.html">10.1 Introduction</a><a href="../02-some-basic-concepts-10.2/index.html">10.2 Some Basic Concepts</a><a href="../03-types-of-vectors-10.3/index.html">10.3 Types of Vectors</a><a href="../04-exercise-10.1/index.html">Exercise 10.1</a><a href="../05-addition-of-vectors-10.4/index.html">10.4 Addition of Vectors</a><a href="../06-multiplication-of-a-vector-by-a-scalar-10.5/index.html">10.5 Multiplication of a Vector by a Scalar</a><a href="../07-components-of-a-vector-10.5.1/index.html">10.5.1 Components of a vector</a><a href="../08-vector-joining-two-points-10.5.2/index.html" aria-current="page">10.5.2 Vector joining two points</a><a href="../09-section-formula-10.5.3/index.html">10.5.3 Section formula</a><a href="../10-exercise-10.2/index.html">Exercise 10.2</a><a href="../11-product-of-two-vectors-10.6/index.html">10.6 Product of Two Vectors</a><a href="../12-scalar-or-dot-product-of-two-vectors-10.6.1/index.html">10.6.1 Scalar (or dot) product of two vectors</a><a href="../13-projection-of-a-vector-on-a-line-10.6.2/index.html">10.6.2 Projection of a vector on a line</a><a href="../14-exercise-10.3/index.html">Exercise 10.3</a><a href="../15-vector-or-cross-product-of-two-vectors-10.6.3/index.html">10.6.3 Vector (or cross) product of two vectors</a><a href="../16-exercise-10.4/index.html">Exercise 10.4</a><a href="../17-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../18-miscellaneous-exercise-on-chapter-10/index.html">Miscellaneous Exercise on Chapter 10</a><a href="../19-summary/index.html">Summary</a><a href="../20-historical-note/index.html">Historical Note</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../10-vector-algebra/09-section-formula-10.5.3/index.html" title="10.5.3 Section formula">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">10</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 10 · Vector Algebra</a></p>
+        <h1>10.5.2 Vector joining two points</h1>
+        <p class="subtitle">Terminal minus initial: the vector from P₁ to P₂ and how long it is</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>The vector \( \overrightarrow{P_1P_2} \) joining two points, via the triangle law</li>
+        <li>Its component form: <strong>position vector of terminal point minus position vector of initial point</strong></li>
+        <li>Its magnitude: the distance formula in three dimensions</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>The Vector \( \overrightarrow{P_1P_2} \)</h2>
+    <p>If \( P_1(x_1, y_1, z_1) \) and \( P_2(x_2, y_2, z_2) \) are any two points, then the vector joining P<sub>1</sub> and P<sub>2</sub> is the vector \( \overrightarrow{P_1P_2} \) (Fig 10.15).</p>
+
+    <figure class="diagram">
+        <svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" style="max-width:420px;" role="img" aria-label="The vector P1P2 joining P1(x1, y1, z1) to P2(x2, y2, z2), with OP1 + P1P2 = OP2" font-family="'Segoe UI', sans-serif">
+<defs><marker id="f1015-t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#0d4f4f"/></marker><marker id="f1015-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#2b6cb0"/></marker><marker id="f1015-k" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#555"/></marker><marker id="f1015-i" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#2d2d2d"/></marker></defs>
+<line x1="120.0" y1="200.0" x2="47.4" y2="259.4" stroke="#555" stroke-width="1.6" marker-end="url(#f1015-k)"/>
+<line x1="120.0" y1="200.0" x2="362.0" y2="200.0" stroke="#555" stroke-width="1.6" marker-end="url(#f1015-k)"/>
+<line x1="120.0" y1="200.0" x2="120.0" y2="35.0" stroke="#555" stroke-width="1.6" marker-end="url(#f1015-k)"/>
+<text x="39.4" y="275.4" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">X</text>
+<text x="376.0" y="205.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">Y</text>
+<text x="120.0" y="27.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">Z</text>
+<line x1="120.0" y1="200.0" x2="97.3" y2="218.6" stroke="#2d2d2d" stroke-width="2" marker-end="url(#f1015-i)"/>
+<g><text x="83.3" y="212.6" font-size="17" fill="#2d2d2d" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">ı</text><path d="M80.1,202.5 L83.3,198.7 L86.5,202.5" fill="none" stroke="#2d2d2d" stroke-width="1.2"/></g>
+<line x1="120.0" y1="200.0" x2="161.2" y2="200.0" stroke="#2d2d2d" stroke-width="2" marker-end="url(#f1015-i)"/>
+<g><text x="163.2" y="224.0" font-size="17" fill="#2d2d2d" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">ȷ</text><path d="M160.1,214.0 L163.2,210.2 L166.4,214.0" fill="none" stroke="#2d2d2d" stroke-width="1.2"/></g>
+<line x1="120.0" y1="200.0" x2="120.0" y2="158.8" stroke="#2d2d2d" stroke-width="2" marker-end="url(#f1015-i)"/>
+<g><text x="106.0" y="162.8" font-size="17" fill="#2d2d2d" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">k</text><path d="M102.8,152.7 L106.0,148.9 L109.2,152.7" fill="none" stroke="#2d2d2d" stroke-width="1.2"/></g>
+<line x1="120.0" y1="200.0" x2="234.9" y2="160.9" stroke="#2b6cb0" stroke-width="2" stroke-dasharray="2 4" marker-end="url(#f1015-b)"/>
+<line x1="120.0" y1="200.0" x2="273.4" y2="51.0" stroke="#2b6cb0" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#f1015-b)"/>
+<line x1="234.9" y1="160.9" x2="273.4" y2="51.0" stroke="#0d4f4f" stroke-width="2.6" marker-end="url(#f1015-t)"/>
+<circle cx="234.9" cy="160.9" r="3.5" fill="#0d4f4f"/>
+<circle cx="273.4" cy="51.0" r="3.5" fill="#0d4f4f"/>
+<text x="130.0" y="220.0" font-size="14" fill="#2d2d2d" text-anchor="middle" font-weight="bold">O</text>
+<text x="244.9" y="176.9" font-size="14" fill="#2d2d2d" font-weight="bold">P<tspan font-size="10" dy="4">1</tspan><tspan dy="-4" font-style="italic">(x</tspan><tspan font-size="10" dy="4">1</tspan><tspan dy="-4" font-style="italic">, y</tspan><tspan font-size="10" dy="4">1</tspan><tspan dy="-4" font-style="italic">, z</tspan><tspan font-size="10" dy="4">1</tspan><tspan dy="-4">)</tspan></text>
+<text x="281.4" y="49.0" font-size="14" fill="#2d2d2d" font-weight="bold">P<tspan font-size="10" dy="4">2</tspan><tspan dy="-4" font-style="italic">(x</tspan><tspan font-size="10" dy="4">2</tspan><tspan dy="-4" font-style="italic">, y</tspan><tspan font-size="10" dy="4">2</tspan><tspan dy="-4" font-style="italic">, z</tspan><tspan font-size="10" dy="4">2</tspan><tspan dy="-4">)</tspan></text>
+</svg>
+        <figcaption>Fig 10.15 &mdash; \( \overrightarrow{OP_1} + \overrightarrow{P_1P_2} = \overrightarrow{OP_2} \)</figcaption>
+    </figure>
+
+    <p>Joining the points P<sub>1</sub> and P<sub>2</sub> with the origin O, and applying triangle law, from the triangle OP<sub>1</sub>P<sub>2</sub>, we have</p>
+    \[ \overrightarrow{OP_1} + \overrightarrow{P_1P_2} = \overrightarrow{OP_2} \]
+    <p>Using the properties of vector addition, the above equation becomes</p>
+    \[ \overrightarrow{P_1P_2} = \overrightarrow{OP_2} - \overrightarrow{OP_1} \]
+    <p>i.e.</p>
+    \[ \begin{aligned} \overrightarrow{P_1P_2} &amp;= (x_2\hat{i} + y_2\hat{j} + z_2\hat{k}) - (x_1\hat{i} + y_1\hat{j} + z_1\hat{k}) \\ &amp;= (x_2 - x_1)\hat{i} + (y_2 - y_1)\hat{j} + (z_2 - z_1)\hat{k} \end{aligned} \]
+    <p>The magnitude of vector \( \overrightarrow{P_1P_2} \) is given by</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Vector Joining Two Points</div>
+        \[ \overrightarrow{P_1P_2} = (x_2 - x_1)\hat{i} + (y_2 - y_1)\hat{j} + (z_2 - z_1)\hat{k} \]
+        \[ |\overrightarrow{P_1P_2}| = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2} \]
+    </div>
+</div>
+
+<div class="card">
+    <h2>Worked Example</h2>
+    <div class="box box-example">
+        <div class="box-label">Example 10</div>
+        <p>Find the vector joining the points P(2, 3, 0) and Q(&minus;1, &minus;2, &minus;4) directed from P to Q.</p>
+        <p><strong>Solution</strong> Since the vector is to be directed from P to Q, clearly P is the initial point and Q is the terminal point. So, the required vector joining P and Q is the vector \( \overrightarrow{PQ} \), given by</p>
+        \[ \overrightarrow{PQ} = (-1 - 2)\hat{i} + (-2 - 3)\hat{j} + (-4 - 0)\hat{k} \]
+        <p>i.e.</p>
+        \[ \overrightarrow{PQ} = -3\hat{i} - 5\hat{j} - 4\hat{k}. \]
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../10-vector-algebra/07-components-of-a-vector-10.5.1/index.html" class="nav-btn">&larr; 10.5.1 Components of a vector</a>
+    <a href="../../10-vector-algebra/09-section-formula-10.5.3/index.html" class="nav-btn">10.5.3 Section formula &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

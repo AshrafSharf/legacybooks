@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11.5.2 Distance between parallel lines — Three Dimensional Geometry</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Three Dimensional Geometry · 11.5.2 Distance between parallel lines">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../11-three-dimensional-geometry/09-distance-between-two-skew-lines-11.5.1/index.html" title="11.5.1 Distance between two skew lines">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Three Dimensional Geometry</a></span>
+    <span class="c2">11.5.2 Distance between parallel lines</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 11 · Three Dimensional Geometry</div><a href="../01-introduction-11.1/index.html">11.1 Introduction</a><a href="../02-direction-cosines-and-direction-ratios-of-a-line-11.2/index.html">11.2 Direction Cosines and Direction Ratios of a Line</a><a href="../03-direction-cosines-of-a-line-passing-through-two-points-11.2.1/index.html">11.2.1 Direction cosines of a line passing through two points</a><a href="../04-exercise-11.1/index.html">Exercise 11.1</a><a href="../05-equation-of-a-line-in-space-11.3/index.html">11.3 Equation of a Line in Space</a><a href="../06-equation-of-a-line-through-a-given-point-and-parallel-to-g-11.3.1/index.html">11.3.1 Equation of a line through a given point and parallel to a given vector b⃗</a><a href="../07-angle-between-two-lines-11.4/index.html">11.4 Angle between Two Lines</a><a href="../08-shortest-distance-between-two-lines-11.5/index.html">11.5 Shortest Distance between Two Lines</a><a href="../09-distance-between-two-skew-lines-11.5.1/index.html">11.5.1 Distance between two skew lines</a><a href="../10-distance-between-parallel-lines-11.5.2/index.html" aria-current="page">11.5.2 Distance between parallel lines</a><a href="../11-exercise-11.2/index.html">Exercise 11.2</a><a href="../12-miscellaneous-exercise-on-chapter-11/index.html">Miscellaneous Exercise on Chapter 11</a><a href="../13-summary/index.html">Summary</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../11-three-dimensional-geometry/11-exercise-11.2/index.html" title="Exercise 11.2">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">11</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 11 · Three Dimensional Geometry</a></p>
+        <h1>11.5.2 Distance between parallel lines</h1>
+        <p class="subtitle">When two lines share a direction, a cross product with b⃗ measures the gap between them</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>Parallel lines are <strong>coplanar</strong>; the distance between them is the perpendicular TP</li>
+        <li>Deriving \(d = \left|\dfrac{\vec{b} \times (\vec{a}_2 - \vec{a}_1)}{|\vec{b}|}\right|\) using the cross product</li>
+        <li>Example 9: shortest distance between two <span class="teal">skew</span> lines</li>
+        <li>Example 10: distance between two <span class="teal">parallel</span> lines</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Deriving the Formula</h2>
+    <p>If two lines \(l_1\) and \(l_2\) are parallel, then they are coplanar. Let the lines be given by</p>
+    \[ \vec{r} = \vec{a}_1 + \lambda\vec{b} \tag{1} \]
+    <p>and</p>
+    \[ \vec{r} = \vec{a}_2 + \mu\vec{b} \tag{2} \]
+    <p>where, \(\vec{a}_1\) is the position vector of a point S on \(l_1\) and \(\vec{a}_2\) is the position vector of a point T on \(l_2\) (Fig 11.7).</p>
+
+    <figure class="diagram">
+        <svg viewBox="0 10 400 200" xmlns="http://www.w3.org/2000/svg" style="max-width:400px;" role="img" aria-label="Parallel lines l1 and l2; S on l1, T on l2, P the foot of the perpendicular from T on l1; theta is the angle between ST and l1.">
+            <defs>
+                <marker id="ah118" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2b6cb0"/></marker>
+            </defs>
+            <line x1="20" y1="170" x2="360" y2="170" stroke="#2b6cb0" stroke-width="2.2" marker-end="url(#ah118)"/>
+            <line x1="20" y1="50" x2="360" y2="50" stroke="#2b6cb0" stroke-width="2.2" marker-end="url(#ah118)"/>
+            <line x1="110" y1="170" x2="240" y2="50" stroke="#0d4f4f" stroke-width="2"/>
+            <line x1="240" y1="50" x2="240" y2="170" stroke="#c0602b" stroke-width="2.2"/>
+            <path d="M228 170 L228 158 L240 158" fill="none" stroke="#c0602b" stroke-width="1.4"/>
+            <path d="M240 62 L252 62 L252 50" fill="none" stroke="#c0602b" stroke-width="1.4"/>
+            <path d="M132 170 A22 22 0 0 0 126.2 155.1" fill="none" stroke="#0d4f4f" stroke-width="1.6"/>
+            <text x="136" y="162" font-size="15" font-style="italic" fill="#0d4f4f">&#952;</text>
+            <circle cx="110" cy="170" r="3.5" fill="#0d4f4f"/>
+            <circle cx="240" cy="50" r="3.5" fill="#0d4f4f"/>
+            <g font-size="16" font-weight="bold">
+                <text x="86" y="194" fill="#0d4f4f">S (<tspan font-style="italic">a&#8407;</tspan><tspan font-size="11" dy="4">1</tspan><tspan dy="-4">)</tspan></text>
+                <text x="222" y="40" fill="#0d4f4f">T (<tspan font-style="italic">a&#8407;</tspan><tspan font-size="11" dy="4">2</tspan><tspan dy="-4">)</tspan></text>
+                <text x="246" y="190" fill="#c0602b">P</text>
+                <text x="366" y="176" fill="#2b6cb0" font-style="italic">l<tspan font-size="11" dy="4">1</tspan></text>
+                <text x="366" y="56" fill="#2b6cb0" font-style="italic">l<tspan font-size="11" dy="4">2</tspan></text>
+            </g>
+        </svg>
+        <figcaption>Fig 11.7 &mdash; The distance between the parallel lines is TP.</figcaption>
+    </figure>
+
+    <p>As \(l_1, l_2\) are coplanar, if the foot of the perpendicular from T on the line \(l_1\) is P, then the distance between the lines \(l_1\) and \(l_2 = |\mathrm{TP}|\).</p>
+    <p>Let \(\theta\) be the angle between the vectors \(\overrightarrow{\mathrm{ST}}\) and \(\vec{b}\). Then</p>
+    \[ \vec{b} \times \overrightarrow{\mathrm{ST}} = \left(|\vec{b}|\,|\overrightarrow{\mathrm{ST}}|\sin\theta\right)\hat{n} \tag{3} \]
+    <p>where \(\hat{n}\) is the unit vector perpendicular to the plane of the lines \(l_1\) and \(l_2\).</p>
+    <p>But \(\overrightarrow{\mathrm{ST}} = \vec{a}_2 - \vec{a}_1\). Therefore, from (3), we get</p>
+    \[ \vec{b} \times (\vec{a}_2 - \vec{a}_1) = |\vec{b}|\,\mathrm{PT}\,\hat{n} \qquad (\text{since } \mathrm{PT} = \mathrm{ST}\sin\theta) \]
+    <p>i.e.,</p>
+    \[ |\vec{b} \times (\vec{a}_2 - \vec{a}_1)| = |\vec{b}|\,\mathrm{PT}\cdot 1 \qquad (\text{as } |\hat{n}| = 1) \]
+    <p>Hence, the distance between the given parallel lines is</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Distance between parallel lines</div>
+        \[ d = |\overrightarrow{\mathrm{PT}}| = \left| \frac{\vec{b} \times (\vec{a}_2 - \vec{a}_1)}{|\vec{b}|} \right| \]
+    </div>
+</div>
+
+<div class="card">
+    <h2>Worked Examples</h2>
+
+    <div class="box box-example">
+        <div class="box-label">Example 9</div>
+        <p>Find the shortest distance between the lines \(l_1\) and \(l_2\) whose vector equations are</p>
+        \[ \vec{r} = \hat{i} + \hat{j} + \lambda\left(2\hat{i} - \hat{j} + \hat{k}\right) \tag{1} \]
+        <p>and</p>
+        \[ \vec{r} = 2\hat{i} + \hat{j} - \hat{k} + \mu\left(3\hat{i} - 5\hat{j} + 2\hat{k}\right) \tag{2} \]
+        <p><strong>Solution</strong> Comparing (1) and (2) with \(\vec{r} = \vec{a}_1 + \lambda\vec{b}_1\) and \(\vec{r} = \vec{a}_2 + \mu\vec{b}_2\) respectively, we get</p>
+        \[ \vec{a}_1 = \hat{i} + \hat{j},\quad \vec{b}_1 = 2\hat{i} - \hat{j} + \hat{k} \]
+        \[ \vec{a}_2 = 2\hat{i} + \hat{j} - \hat{k} \quad\text{and}\quad \vec{b}_2 = 3\hat{i} - 5\hat{j} + 2\hat{k} \]
+        <p>Therefore</p>
+        \[ \vec{a}_2 - \vec{a}_1 = \hat{i} - \hat{k} \]
+        <p>and</p>
+        \[ \vec{b}_1 \times \vec{b}_2 = \left(2\hat{i} - \hat{j} + \hat{k}\right) \times \left(3\hat{i} - 5\hat{j} + 2\hat{k}\right) = \begin{vmatrix} \hat{i} &amp; \hat{j} &amp; \hat{k} \\ 2 &amp; -1 &amp; 1 \\ 3 &amp; -5 &amp; 2 \end{vmatrix} = 3\hat{i} - \hat{j} - 7\hat{k} \]
+        <p>So</p>
+        \[ |\vec{b}_1 \times \vec{b}_2| = \sqrt{9 + 1 + 49} = \sqrt{59} \]
+        <p>Hence, the shortest distance between the given lines is given by</p>
+        \[ d = \left| \frac{(\vec{b}_1 \times \vec{b}_2)\cdot(\vec{a}_2 - \vec{a}_1)}{|\vec{b}_1 \times \vec{b}_2|} \right| = \frac{|3 - 0 + 7|}{\sqrt{59}} = \frac{10}{\sqrt{59}} \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 10</div>
+        <p>Find the distance between the lines \(l_1\) and \(l_2\) given by</p>
+        \[ \vec{r} = \hat{i} + 2\hat{j} - 4\hat{k} + \lambda\left(2\hat{i} + 3\hat{j} + 6\hat{k}\right) \]
+        <p>and</p>
+        \[ \vec{r} = 3\hat{i} + 3\hat{j} - 5\hat{k} + \mu\left(2\hat{i} + 3\hat{j} + 6\hat{k}\right) \]
+        <p><strong>Solution</strong> The two lines are parallel (Why?) We have</p>
+        \[ \vec{a}_1 = \hat{i} + 2\hat{j} - 4\hat{k},\quad \vec{a}_2 = 3\hat{i} + 3\hat{j} - 5\hat{k} \quad\text{and}\quad \vec{b} = 2\hat{i} + 3\hat{j} + 6\hat{k} \]
+        <p>Therefore, the distance between the lines is given by</p>
+        \[ d = \left| \frac{\vec{b} \times (\vec{a}_2 - \vec{a}_1)}{|\vec{b}|} \right| = \left| \frac{\begin{vmatrix} \hat{i} &amp; \hat{j} &amp; \hat{k} \\ 2 &amp; 3 &amp; 6 \\ 2 &amp; 1 &amp; -1 \end{vmatrix}}{\sqrt{4 + 9 + 36}} \right| \]
+        <p>or</p>
+        \[ d = \frac{\left|-9\hat{i} + 14\hat{j} - 4\hat{k}\right|}{\sqrt{49}} = \frac{\sqrt{293}}{\sqrt{49}} = \frac{\sqrt{293}}{7} \]
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Why are the lines in Example 10 parallel?</div>
+        <p>Both lines have the same direction vector \(2\hat{i} + 3\hat{j} + 6\hat{k}\), so their direction ratios are proportional (in fact equal).</p>
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../11-three-dimensional-geometry/09-distance-between-two-skew-lines-11.5.1/index.html" class="nav-btn">&larr; 11.5.1 Distance between two skew lines</a>
+    <a href="../../11-three-dimensional-geometry/11-exercise-11.2/index.html" class="nav-btn">Exercise 11.2 &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

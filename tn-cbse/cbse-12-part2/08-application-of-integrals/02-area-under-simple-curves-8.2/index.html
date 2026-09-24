@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8.2 Area under Simple Curves — Application of Integrals</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Application of Integrals · 8.2 Area under Simple Curves">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../08-application-of-integrals/01-introduction-8.1/index.html" title="8.1 Introduction">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Application of Integrals</a></span>
+    <span class="c2">8.2 Area under Simple Curves</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 8 · Application of Integrals</div><a href="../01-introduction-8.1/index.html">8.1 Introduction</a><a href="../02-area-under-simple-curves-8.2/index.html" aria-current="page">8.2 Area under Simple Curves</a><a href="../03-exercise-8.1/index.html">Exercise 8.1</a><a href="../04-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../05-miscellaneous-exercise-on-chapter-8/index.html">Miscellaneous Exercise on Chapter 8</a><a href="../06-summary/index.html">Summary</a><a href="../07-historical-note/index.html">Historical Note</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../08-application-of-integrals/03-exercise-8.1/index.html" title="Exercise 8.1">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">8</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 8 · Application of Integrals</a></p>
+        <h1>8.2 Area under Simple Curves</h1>
+        <p class="subtitle">Slice a region into thin strips, add them up with an integral, and the area appears</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>The <strong>elementary strip</strong> idea: area of a thin vertical strip is \( dA = y\,dx \)</li>
+        <li>Area under \( y = f(x) \) between \( x = a \) and \( x = b \) as \( \displaystyle\int_a^b f(x)\,dx \)</li>
+        <li>Area bounded by \( x = g(y) \), the y-axis and \( y = c,\ y = d \) using <strong>horizontal strips</strong></li>
+        <li>What to do when the curve lies <span class="teal">below the x-axis</span></li>
+        <li>Areas of the <strong>circle</strong> and the <strong>ellipse</strong>, by vertical and by horizontal strips</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Area as a Sum of Thin Strips</h2>
+    <p>In the previous chapter, we have studied definite integral as the limit of a sum and how to evaluate definite integral using Fundamental Theorem of Calculus. Now, we consider the easy and intuitive way of finding the area bounded by the curve \( y = f(x) \), \(x\)-axis and the ordinates \( x = a \) and \( x = b \). From Fig 8.1, we can think of area under the curve as composed of large number of very thin vertical strips. Consider an arbitrary strip of height \(y\) and width \(dx\), then \(dA\) (area of the elementary strip) \( = y\,dx \), where, \( y = f(x) \).</p>
+    <figure class="diagram">
+        <svg viewBox="0 0 520 325" xmlns="http://www.w3.org/2000/svg" style="max-width:520px;" role="img" aria-label="Region PQRS under a curve y = f(x) between x = a and x = b, with a thin vertical strip of height y and width dx" font-family="Georgia, serif">
+            <polygon points="138.3,249.3 138.3,126.2 140.2,125.3 142.0,124.4 143.8,123.5 145.7,122.7 147.5,121.8 149.4,120.9 151.2,120.1 153.1,119.2 154.9,118.4 156.8,117.5 158.6,116.7 160.5,115.9 162.3,115.1 164.2,114.3 166.0,113.5 167.9,112.7 169.7,112.0 171.6,111.2 173.4,110.5 175.2,109.7 177.1,109.0 178.9,108.3 180.8,107.5 182.6,106.8 184.5,106.1 186.3,105.4 188.2,104.8 190.0,104.1 191.9,103.4 193.7,102.8 195.6,102.1 197.4,101.5 199.3,100.9 201.1,100.3 203.0,99.6 204.8,99.0 206.7,98.5 208.5,97.9 210.3,97.3 212.2,96.7 214.0,96.2 215.9,95.6 217.7,95.1 219.6,94.6 221.4,94.0 223.3,93.5 225.1,93.0 227.0,92.5 228.8,92.0 230.7,91.6 232.5,91.1 234.4,90.6 236.2,90.2 238.1,89.7 239.9,89.3 241.7,88.9 243.6,88.5 245.4,88.1 247.3,87.7 249.1,87.3 251.0,86.9 252.8,86.5 254.7,86.2 256.5,85.8 258.4,85.5 260.2,85.1 262.1,84.8 263.9,84.5 265.8,84.2 267.6,83.9 269.5,83.6 271.3,83.3 273.1,83.0 275.0,82.8 276.8,82.5 278.7,82.3 280.5,82.0 282.4,81.8 284.2,81.6 286.1,81.4 287.9,81.1 289.8,81.0 291.6,80.8 293.5,80.6 295.3,80.4 297.2,80.3 299.0,80.1 300.9,80.0 302.7,79.8 304.5,79.7 306.4,79.6 308.2,79.5 310.1,79.4 311.9,79.3 313.8,79.2 315.6,79.2 317.5,79.1 319.3,79.0 321.2,79.0 323.0,79.0 324.9,78.9 326.7,78.9 328.6,78.9 330.4,78.9 332.3,78.9 334.1,78.9 335.9,79.0 337.8,79.0 339.6,79.0 341.5,79.1 343.3,79.2 345.2,79.2 347.0,79.3 348.9,79.4 350.7,79.5 352.6,79.6 354.4,79.7 356.3,79.8 358.1,80.0 360.0,80.1 361.8,80.3 363.7,80.4 365.5,80.6 367.3,80.8 369.2,80.9 371.0,81.1 372.9,81.3 374.7,81.6 376.6,81.8 378.4,82.0 380.3,82.2 382.1,82.5 384.0,82.7 385.8,83.0 387.7,83.3 389.5,83.6 391.4,83.9 393.2,84.2 395.1,84.5 396.9,84.8 398.8,85.1 400.6,85.4 402.4,85.8 404.3,86.1 406.1,86.5 408.0,86.9 409.8,87.3 411.7,87.6 413.5,88.0 415.4,88.4 417.2,88.9 419.1,89.3 420.9,89.7 422.8,90.2 424.6,90.6 426.5,91.1 428.3,91.5 430.2,92.0 432.0,92.5 433.8,93.0 433.8,249.3" fill="#2b6cb0" fill-opacity="0.22" stroke="none"/>
+            <defs><marker id="ahm1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+            <line x1="16" y1="249.3" x2="504" y2="249.3" stroke="#555" stroke-width="1.4" marker-start="url(#ahm1)" marker-end="url(#ahm1)"/>
+            <line x1="68.8" y1="309" x2="68.8" y2="16" stroke="#555" stroke-width="1.4" marker-start="url(#ahm1)" marker-end="url(#ahm1)"/>
+            <text x="504" y="267.3" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">X</text>
+            <text x="16" y="267.3" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">X′</text>
+            <text x="76.8" y="22" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">Y</text>
+            <text x="76.8" y="307" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">Y′</text>
+            <text x="62.8" y="265.3" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">O</text>
+            <polyline points="110.5,141.0 112.7,139.8 114.9,138.5 117.1,137.3 119.3,136.1 121.5,134.9 123.7,133.8 125.9,132.6 128.1,131.5 130.2,130.3 132.4,129.2 134.6,128.1 136.8,127.0 139.0,125.9 141.2,124.8 143.4,123.7 145.6,122.7 147.8,121.7 150.0,120.6 152.2,119.6 154.4,118.6 156.6,117.6 158.8,116.6 161.0,115.7 163.2,114.7 165.4,113.8 167.6,112.9 169.8,112.0 171.9,111.1 174.1,110.2 176.3,109.3 178.5,108.4 180.7,107.6 182.9,106.7 185.1,105.9 187.3,105.1 189.5,104.3 191.7,103.5 193.9,102.7 196.1,102.0 198.3,101.2 200.5,100.5 202.7,99.7 204.9,99.0 207.1,98.3 209.3,97.6 211.5,97.0 213.6,96.3 215.8,95.6 218.0,95.0 220.2,94.4 222.4,93.8 224.6,93.2 226.8,92.6 229.0,92.0 231.2,91.4 233.4,90.9 235.6,90.3 237.8,89.8 240.0,89.3 242.2,88.8 244.4,88.3 246.6,87.8 248.8,87.4 251.0,86.9 253.2,86.5 255.3,86.0 257.5,85.6 259.7,85.2 261.9,84.8 264.1,84.4 266.3,84.1 268.5,83.7 270.7,83.4 272.9,83.1 275.1,82.7 277.3,82.4 279.5,82.1 281.7,81.9 283.9,81.6 286.1,81.4 288.3,81.1 290.5,80.9 292.7,80.7 294.9,80.5 297.1,80.3 299.2,80.1 301.4,79.9 303.6,79.8 305.8,79.6 308.0,79.5 310.2,79.4 312.4,79.3 314.6,79.2 316.8,79.1 319.0,79.1 321.2,79.0 323.4,79.0 325.6,78.9 327.8,78.9 330.0,78.9 332.2,78.9 334.4,78.9 336.6,79.0 338.8,79.0 340.9,79.1 343.1,79.1 345.3,79.2 347.5,79.3 349.7,79.4 351.9,79.6 354.1,79.7 356.3,79.8 358.5,80.0 360.7,80.2 362.9,80.3 365.1,80.5 367.3,80.8 369.5,81.0 371.7,81.2 373.9,81.5 376.1,81.7 378.3,82.0 380.5,82.3 382.6,82.6 384.8,82.9 387.0,83.2 389.2,83.5 391.4,83.9 393.6,84.2 395.8,84.6 398.0,85.0 400.2,85.4 402.4,85.8 404.6,86.2 406.8,86.6 409.0,87.1 411.2,87.5 413.4,88.0 415.6,88.5 417.8,89.0 420.0,89.5 422.2,90.0 424.3,90.5 426.5,91.1 428.7,91.6 430.9,92.2 433.1,92.8 435.3,93.4 437.5,94.0 439.7,94.6 441.9,95.3 444.1,95.9 446.3,96.6 448.5,97.2 450.7,97.9 452.9,98.6 455.1,99.3 457.3,100.0 459.5,100.8 461.7,101.5" fill="none" fill-opacity="1" stroke="#0d4f4f" stroke-width="2.4" stroke-linejoin="round"/>
+            <line x1="138.3" y1="249.3" x2="138.3" y2="115.8" stroke="#2d2d2d" stroke-width="1.5"/>
+            <line x1="433.8" y1="249.3" x2="433.8" y2="82.6" stroke="#2d2d2d" stroke-width="1.5"/>
+            <rect x="291.3" y="80.2" width="15.6" height="169.1" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="1.3"/>
+            <text x="279.1" y="169.3" font-size="14" fill="#2d2d2d" text-anchor="middle" font-style="italic">y</text>
+            <text x="298.9" y="268.4" font-size="14" fill="#2d2d2d" text-anchor="middle" font-style="italic">dx</text>
+            <text x="138.3" y="268.4" font-size="14" fill="#2d2d2d" text-anchor="middle" font-weight="bold">P</text>
+            <text x="433.8" y="268.4" font-size="14" fill="#2d2d2d" text-anchor="middle" font-weight="bold">Q</text>
+            <text x="126.1" y="114.1" font-size="14" fill="#2d2d2d" text-anchor="middle" font-weight="bold">S</text>
+            <text x="447.8" y="80.8" font-size="14" fill="#2d2d2d" text-anchor="middle" font-weight="bold">R</text>
+            <text x="105.3" y="186.7" font-size="14" fill="#2d2d2d" text-anchor="middle" font-style="italic">x = a</text>
+            <text x="466.9" y="207.6" font-size="14" fill="#2d2d2d" text-anchor="middle" font-style="italic">x = b</text>
+            <text x="329.5" y="65.0" font-size="14" fill="#2d2d2d" text-anchor="middle" font-style="italic">y = f (x)</text>
+        </svg>
+        <figcaption>Fig 8.1 — Area under \( y = f(x) \) from \( x = a \) to \( x = b \), made up of thin vertical strips of area \( y\,dx \)</figcaption>
+    </figure>
+    <p>This area is called the <em>elementary area</em> which is located at an arbitrary position within the region which is specified by some value of \(x\) between \(a\) and \(b\). We can think of the total area A of the region between \(x\)-axis, ordinates \( x = a \), \( x = b \) and the curve \( y = f(x) \) as the result of adding up the elementary areas of thin strips across the region PQRSP. Symbolically, we express</p>
+    <div class="box box-formula">
+        <div class="box-label">Area using vertical strips</div>
+        \[ A = \int_a^b dA = \int_a^b y\,dx = \int_a^b f(x)\,dx \]
+    </div>
+    <p>The area A of the region bounded by the curve \( x = g(y) \), \(y\)-axis and the lines \( y = c \), \( y = d \) is given by</p>
+    <div class="box box-formula">
+        <div class="box-label">Area using horizontal strips</div>
+        \[ A = \int_c^d x\,dy = \int_c^d g(y)\,dy \]
+    </div>
+    <p>Here, we consider horizontal strips as shown in the Fig 8.2</p>
+    <figure class="diagram">
+        <svg viewBox="0 0 420 374" xmlns="http://www.w3.org/2000/svg" style="max-width:420px;" role="img" aria-label="Region bounded by the curve x = g(y), the y-axis and lines y = c and y = d with a horizontal strip of width dy" font-family="Georgia, serif">
+            <polygon points="75.4,257.2 236.5,257.2 238.8,255.4 241.0,253.7 243.3,252.0 245.4,250.2 247.6,248.5 249.6,246.7 251.7,245.0 253.7,243.3 255.6,241.5 257.5,239.8 259.3,238.0 261.1,236.3 262.9,234.6 264.6,232.8 266.3,231.1 267.9,229.3 269.4,227.6 271.0,225.9 272.4,224.1 273.9,222.4 275.2,220.7 276.6,218.9 277.9,217.2 279.1,215.4 280.3,213.7 281.4,212.0 282.5,210.2 283.6,208.5 284.6,206.7 285.5,205.0 286.5,203.3 287.3,201.5 288.1,199.8 288.9,198.0 289.6,196.3 290.3,194.6 290.9,192.8 291.5,191.1 292.1,189.3 292.6,187.6 293.0,185.9 293.4,184.1 293.7,182.4 294.1,180.6 294.3,178.9 294.5,177.2 294.7,175.4 294.8,173.7 294.9,172.0 294.9,170.2 294.9,168.5 294.8,166.7 294.7,165.0 294.5,163.3 294.3,161.5 294.1,159.8 293.7,158.0 293.4,156.3 293.0,154.6 292.6,152.8 292.1,151.1 291.5,149.3 290.9,147.6 290.3,145.9 289.6,144.1 288.9,142.4 288.1,140.6 287.3,138.9 286.5,137.2 285.5,135.4 284.6,133.7 283.6,131.9 282.5,130.2 281.4,128.5 280.3,126.7 279.1,125.0 277.9,123.3 276.6,121.5 275.2,119.8 273.9,118.0 272.4,116.3 271.0,114.6 269.4,112.8 267.9,111.1 266.3,109.3 264.6,107.6 262.9,105.9 261.1,104.1 259.3,102.4 257.5,100.6 255.6,98.9 253.7,97.2 251.7,95.4 249.6,93.7 247.6,91.9 245.4,90.2 243.3,88.5 241.0,86.7 238.8,85.0 236.5,83.2 75.4,83.2" fill="#2b6cb0" fill-opacity="0.22" stroke="none"/>
+            <defs><marker id="ahm2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+            <line x1="16" y1="298.6" x2="404" y2="298.6" stroke="#555" stroke-width="1.4" marker-start="url(#ahm2)" marker-end="url(#ahm2)"/>
+            <line x1="75.4" y1="358" x2="75.4" y2="16" stroke="#555" stroke-width="1.4" marker-start="url(#ahm2)" marker-end="url(#ahm2)"/>
+            <text x="404" y="316.6" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">X</text>
+            <text x="16" y="316.6" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">X′</text>
+            <text x="83.4" y="22" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">Y</text>
+            <text x="83.4" y="356" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">Y′</text>
+            <text x="69.4" y="314.6" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">O</text>
+            <polyline points="205.3,277.9 207.6,276.5 209.9,275.1 212.2,273.7 214.4,272.3 216.6,270.8 218.8,269.4 221.0,268.0 223.1,266.6 225.2,265.2 227.2,263.8 229.2,262.4 231.2,261.0 233.2,259.6 235.1,258.2 237.0,256.8 238.9,255.4 240.7,253.9 242.5,252.5 244.3,251.1 246.0,249.7 247.8,248.3 249.4,246.9 251.1,245.5 252.7,244.1 254.3,242.7 255.9,241.3 257.4,239.9 258.9,238.5 260.4,237.1 261.8,235.6 263.2,234.2 264.6,232.8 265.9,231.4 267.3,230.0 268.5,228.6 269.8,227.2 271.0,225.8 272.2,224.4 273.4,223.0 274.5,221.6 275.6,220.2 276.7,218.7 277.7,217.3 278.7,215.9 279.7,214.5 280.7,213.1 281.6,211.7 282.5,210.3 283.3,208.9 284.2,207.5 285.0,206.1 285.7,204.7 286.5,203.3 287.2,201.9 287.8,200.4 288.5,199.0 289.1,197.6 289.7,196.2 290.2,194.8 290.7,193.4 291.2,192.0 291.7,190.6 292.1,189.2 292.5,187.8 292.9,186.4 293.2,185.0 293.5,183.5 293.8,182.1 294.0,180.7 294.3,179.3 294.4,177.9 294.6,176.5 294.7,175.1 294.8,173.7 294.9,172.3 294.9,170.9 294.9,169.5 294.9,168.1 294.8,166.7 294.7,165.2 294.6,163.8 294.4,162.4 294.2,161.0 294.0,159.6 293.8,158.2 293.5,156.8 293.2,155.4 292.9,154.0 292.5,152.6 292.1,151.2 291.7,149.8 291.2,148.3 290.7,146.9 290.2,145.5 289.6,144.1 289.1,142.7 288.4,141.3 287.8,139.9 287.1,138.5 286.4,137.1 285.7,135.7 284.9,134.3 284.1,132.9 283.3,131.5 282.4,130.0 281.5,128.6 280.6,127.2 279.7,125.8 278.7,124.4 277.7,123.0 276.6,121.6 275.6,120.2 274.5,118.8 273.3,117.4 272.2,116.0 271.0,114.6 269.7,113.1 268.5,111.7 267.2,110.3 265.9,108.9 264.5,107.5 263.1,106.1 261.7,104.7 260.3,103.3 258.8,101.9 257.3,100.5 255.8,99.1 254.2,97.7 252.6,96.3 251.0,94.8 249.3,93.4 247.7,92.0 245.9,90.6 244.2,89.2 242.4,87.8 240.6,86.4 238.8,85.0 236.9,83.6 235.0,82.2 233.1,80.8 231.1,79.4 229.1,77.9 227.1,76.5 225.0,75.1 223.0,73.7 220.8,72.3 218.7,70.9 216.5,69.5 214.3,68.1 212.1,66.7" fill="none" fill-opacity="1" stroke="#0d4f4f" stroke-width="2.4" stroke-linejoin="round"/>
+            <line x1="75.4" y1="257.2" x2="253.0" y2="257.2" stroke="#2d2d2d" stroke-width="1.5"/>
+            <line x1="75.4" y1="83.2" x2="253.0" y2="83.2" stroke="#2d2d2d" stroke-width="1.5"/>
+            <rect x="75.4" y="162.8" width="219.5" height="11.6" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="1.3"/>
+            <text x="60.9" y="172.3" font-size="14" fill="#2d2d2d" text-anchor="middle" font-style="italic">dy</text>
+            <text x="183.1" y="151.6" font-size="14" fill="#2d2d2d" text-anchor="middle" font-style="italic">x</text>
+            <text x="178.9" y="246.8" font-size="14" fill="#2d2d2d" text-anchor="middle" font-style="italic">y = c</text>
+            <text x="178.9" y="72.9" font-size="14" fill="#2d2d2d" text-anchor="middle" font-style="italic">y = d</text>
+            <text x="344.6" y="207.5" font-size="14" fill="#2d2d2d" text-anchor="middle" font-style="italic">x = g(y)</text>
+        </svg>
+        <figcaption>Fig 8.2 — Area between \( x = g(y) \), the y-axis and the lines \( y = c \), \( y = d \), using horizontal strips</figcaption>
+    </figure>
+</div>
+
+<div class="card">
+    <h2>Curves Below the x-axis</h2>
+    <div class="box box-insight">
+        <div class="box-label">Remark</div>
+        <p>If the position of the curve under consideration is below the \(x\)-axis, then since \( f(x) \lt 0 \) from \( x = a \) to \( x = b \), as shown in Fig 8.3, the area bounded by the curve, \(x\)-axis and the ordinates \( x = a,\ x = b \) come out to be negative. But, it is only the numerical value of the area which is taken into consideration. Thus, if the area is negative, we take its absolute value, i.e., \( \left|\displaystyle\int_a^b f(x)\,dx\right| \).</p>
+    </div>
+    <figure class="diagram">
+        <svg viewBox="0 0 540 273" xmlns="http://www.w3.org/2000/svg" style="max-width:540px;" role="img" aria-label="Curve y = f(x) below the x-axis between x = a and x = b; the shaded region lies under the axis" font-family="Georgia, serif">
+            <polygon points="191.3,121.0 191.3,166.3 192.4,167.0 193.5,167.6 194.6,168.3 195.7,168.9 196.7,169.6 197.8,170.2 198.9,170.8 200.0,171.4 201.1,172.0 202.2,172.6 203.2,173.2 204.3,173.8 205.4,174.4 206.5,175.0 207.6,175.5 208.6,176.1 209.7,176.6 210.8,177.2 211.9,177.7 213.0,178.2 214.0,178.7 215.1,179.3 216.2,179.8 217.3,180.3 218.4,180.7 219.5,181.2 220.5,181.7 221.6,182.1 222.7,182.6 223.8,183.0 224.9,183.5 225.9,183.9 227.0,184.3 228.1,184.8 229.2,185.2 230.3,185.6 231.4,186.0 232.4,186.3 233.5,186.7 234.6,187.1 235.7,187.5 236.8,187.8 237.8,188.2 238.9,188.5 240.0,188.8 241.1,189.1 242.2,189.5 243.3,189.8 244.3,190.1 245.4,190.4 246.5,190.6 247.6,190.9 248.7,191.2 249.7,191.5 250.8,191.7 251.9,192.0 253.0,192.2 254.1,192.4 255.2,192.6 256.2,192.9 257.3,193.1 258.4,193.3 259.5,193.5 260.6,193.6 261.6,193.8 262.7,194.0 263.8,194.1 264.9,194.3 266.0,194.4 267.1,194.6 268.1,194.7 269.2,194.8 270.3,194.9 271.4,195.1 272.5,195.2 273.5,195.2 274.6,195.3 275.7,195.4 276.8,195.5 277.9,195.5 278.9,195.6 280.0,195.6 281.1,195.7 282.2,195.7 283.3,195.7 284.4,195.7 285.4,195.7 286.5,195.7 287.6,195.7 288.7,195.7 289.8,195.7 290.8,195.6 291.9,195.6 293.0,195.6 294.1,195.5 295.2,195.4 296.3,195.4 297.3,195.3 298.4,195.2 299.5,195.1 300.6,195.0 301.7,194.9 302.7,194.8 303.8,194.7 304.9,194.5 306.0,194.4 307.1,194.2 308.2,194.1 309.2,193.9 310.3,193.7 311.4,193.6 312.5,193.4 313.6,193.2 314.6,193.0 315.7,192.8 316.8,192.5 317.9,192.3 319.0,192.1 320.1,191.8 321.1,191.6 322.2,191.3 323.3,191.1 324.4,190.8 325.5,190.5 326.5,190.2 327.6,189.9 328.7,189.6 329.8,189.3 330.9,189.0 332.0,188.7 333.0,188.3 334.1,188.0 335.2,187.6 336.3,187.3 337.4,186.9 338.4,186.6 339.5,186.2 340.6,185.8 341.7,185.4 342.8,185.0 343.8,184.6 344.9,184.2 346.0,183.7 347.1,183.3 348.2,182.8 349.3,182.4 350.3,181.9 351.4,181.5 352.5,181.0 353.6,180.5 354.7,180.0 355.7,179.5 356.8,179.0 357.9,178.5 359.0,178.0 360.1,177.5 361.2,176.9 362.2,176.4 363.3,175.8 364.4,175.3 364.4,121.0" fill="#2b6cb0" fill-opacity="0.22" stroke="none"/>
+            <defs><marker id="ahm3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+            <line x1="16" y1="121.0" x2="524" y2="121.0" stroke="#555" stroke-width="1.4" marker-start="url(#ahm3)" marker-end="url(#ahm3)"/>
+            <line x1="152.0" y1="257" x2="152.0" y2="16" stroke="#555" stroke-width="1.4" marker-start="url(#ahm3)" marker-end="url(#ahm3)"/>
+            <text x="524" y="139.0" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">X</text>
+            <text x="16" y="139.0" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">X′</text>
+            <text x="160.0" y="22" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">Y</text>
+            <text x="160.0" y="255" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">Y′</text>
+            <text x="146.0" y="137.0" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">O</text>
+            <polyline points="65.5,35.4 68.0,39.1 70.6,42.7 73.1,46.4 75.7,49.9 78.2,53.5 80.8,56.9 83.4,60.4 85.9,63.8 88.5,67.1 91.0,70.4 93.6,73.7 96.1,76.9 98.7,80.1 101.3,83.3 103.8,86.4 106.4,89.4 108.9,92.4 111.5,95.4 114.0,98.3 116.6,101.2 119.2,104.0 121.7,106.8 124.3,109.6 126.8,112.3 129.4,114.9 131.9,117.6 134.5,120.1 137.1,122.7 139.6,125.2 142.2,127.6 144.7,130.0 147.3,132.4 149.8,134.7 152.4,137.0 154.9,139.2 157.5,141.4 160.1,143.5 162.6,145.6 165.2,147.7 167.7,149.7 170.3,151.7 172.8,153.6 175.4,155.5 178.0,157.3 180.5,159.1 183.1,160.9 185.6,162.6 188.2,164.3 190.7,165.9 193.3,167.5 195.9,169.0 198.4,170.5 201.0,172.0 203.5,173.4 206.1,174.8 208.6,176.1 211.2,177.4 213.8,178.6 216.3,179.8 218.9,181.0 221.4,182.1 224.0,183.1 226.5,184.2 229.1,185.1 231.6,186.1 234.2,187.0 236.8,187.8 239.3,188.6 241.9,189.4 244.4,190.1 247.0,190.8 249.5,191.4 252.1,192.0 254.7,192.5 257.2,193.0 259.8,193.5 262.3,193.9 264.9,194.3 267.4,194.6 270.0,194.9 272.6,195.2 275.1,195.4 277.7,195.5 280.2,195.6 282.8,195.7 285.3,195.7 287.9,195.7 290.5,195.7 293.0,195.6 295.6,195.4 298.1,195.2 300.7,195.0 303.2,194.7 305.8,194.4 308.3,194.0 310.9,193.6 313.5,193.2 316.0,192.7 318.6,192.2 321.1,191.6 323.7,191.0 326.2,190.3 328.8,189.6 331.4,188.9 333.9,188.1 336.5,187.2 339.0,186.3 341.6,185.4 344.1,184.5 346.7,183.4 349.3,182.4 351.8,181.3 354.4,180.2 356.9,179.0 359.5,177.8 362.0,176.5 364.6,175.2 367.2,173.8 369.7,172.4 372.3,171.0 374.8,169.5 377.4,168.0 379.9,166.4 382.5,164.8 385.0,163.1 387.6,161.4 390.2,159.7 392.7,157.9 395.3,156.1 397.8,154.2 400.4,152.3 402.9,150.3 405.5,148.3 408.1,146.3 410.6,144.2 413.2,142.1 415.7,139.9 418.3,137.7 420.8,135.4 423.4,133.1 426.0,130.7 428.5,128.4 431.1,125.9 433.6,123.4 436.2,120.9 438.7,118.4 441.3,115.8 443.9,113.1 446.4,110.4 449.0,107.7 451.5,104.9 454.1,102.1 456.6,99.2 459.2,96.3 461.8,93.3 464.3,90.3 466.9,87.3 469.4,84.2 472.0,81.1 474.5,77.9" fill="none" fill-opacity="1" stroke="#0d4f4f" stroke-width="2.4" stroke-linejoin="round"/>
+            <line x1="191.3" y1="121.0" x2="191.3" y2="166.3" stroke="#2d2d2d" stroke-width="1.5"/>
+            <line x1="364.4" y1="121.0" x2="364.4" y2="175.3" stroke="#2d2d2d" stroke-width="1.5"/>
+            <rect x="273.9" y="121.0" width="11.8" height="74.6" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="1.3"/>
+            <text x="213.0" y="138.7" font-size="13" fill="#2d2d2d" text-anchor="middle" font-style="italic">x = a</text>
+            <text x="370.3" y="142.6" font-size="13" fill="#2d2d2d" text-anchor="start" font-style="italic">x = b</text>
+            <text x="439.1" y="156.4" font-size="14" fill="#2d2d2d" text-anchor="middle" font-style="italic">y = f (x)</text>
+        </svg>
+        <figcaption>Fig 8.3 — A curve lying below the x-axis between \( x = a \) and \( x = b \)</figcaption>
+    </figure>
+    <p>Generally, it may happen that some portion of the curve is above \(x\)-axis and some is below the \(x\)-axis as shown in the Fig 8.4. Here, \( A_1 \lt 0 \) and \( A_2 \gt 0 \). Therefore, the area A bounded by the curve \( y = f(x) \), \(x\)-axis and the ordinates \( x = a \) and \( x = b \) is given by \( A = |A_1| + A_2 \).</p>
+    <figure class="diagram">
+        <svg viewBox="0 0 540 284" xmlns="http://www.w3.org/2000/svg" style="max-width:520px;" role="img" aria-label="Curve crossing the x-axis; region A1 below the axis and region A2 above it between x = a and x = b" font-family="Georgia, serif">
+            <polygon points="148.6,142.1 148.6,191.3 149.7,192.2 150.7,193.1 151.8,194.0 152.8,194.9 153.9,195.8 154.9,196.6 156.0,197.4 157.1,198.3 158.1,199.1 159.2,199.9 160.2,200.7 161.3,201.4 162.3,202.2 163.4,203.0 164.4,203.7 165.5,204.4 166.5,205.1 167.6,205.8 168.6,206.5 169.7,207.1 170.8,207.8 171.8,208.4 172.9,209.0 173.9,209.6 175.0,210.2 176.0,210.7 177.1,211.3 178.1,211.8 179.2,212.3 180.2,212.8 181.3,213.3 182.3,213.8 183.4,214.2 184.5,214.6 185.5,215.0 186.6,215.4 187.6,215.8 188.7,216.2 189.7,216.5 190.8,216.8 191.8,217.2 192.9,217.4 193.9,217.7 195.0,218.0 196.0,218.2 197.1,218.4 198.1,218.6 199.2,218.8 200.3,219.0 201.3,219.1 202.4,219.3 203.4,219.4 204.5,219.5 205.5,219.5 206.6,219.6 207.6,219.6 208.7,219.7 209.7,219.7 210.8,219.6 211.8,219.6 212.9,219.6 214.0,219.5 215.0,219.4 216.1,219.3 217.1,219.2 218.2,219.0 219.2,218.9 220.3,218.7 221.3,218.5 222.4,218.3 223.4,218.0 224.5,217.8 225.5,217.5 226.6,217.2 227.6,216.9 228.7,216.6 229.8,216.2 230.8,215.9 231.9,215.5 232.9,215.1 234.0,214.7 235.0,214.3 236.1,213.8 237.1,213.4 238.2,212.9 239.2,212.4 240.3,211.9 241.3,211.4 242.4,210.8 243.5,210.3 244.5,209.7 245.6,209.1 246.6,208.5 247.7,207.9 248.7,207.2 249.8,206.6 250.8,205.9 251.9,205.2 252.9,204.5 254.0,203.8 255.0,203.1 256.1,202.4 257.1,201.6 258.2,200.8 259.3,200.0 260.3,199.2 261.4,198.4 262.4,197.6 263.5,196.8 264.5,195.9 265.6,195.1 266.6,194.2 267.7,193.3 268.7,192.4 269.8,191.5 270.8,190.6 271.9,189.6 273.0,188.7 274.0,187.7 275.1,186.8 276.1,185.8 277.2,184.8 278.2,183.8 279.3,182.8 280.3,181.8 281.4,180.7 282.4,179.7 283.5,178.7 284.5,177.6 285.6,176.6 286.6,175.5 287.7,174.4 288.8,173.3 289.8,172.2 290.9,171.1 291.9,170.0 293.0,168.9 294.0,167.8 295.1,166.7 296.1,165.5 297.2,164.4 298.2,163.3 299.3,162.1 300.3,161.0 301.4,159.8 302.5,158.6 303.5,157.5 304.6,156.3 305.6,155.1 306.7,154.0 307.7,152.8 308.8,151.6 309.8,150.4 310.9,149.2 311.9,148.1 313.0,146.9 314.0,145.7 315.1,144.5 316.1,143.3 317.2,142.1 317.2,142.1" fill="#2b6cb0" fill-opacity="0.22" stroke="none"/>
+            <polygon points="317.2,142.1 317.2,142.1 318.1,141.1 319.1,140.0 320.0,139.0 320.9,137.9 321.8,136.9 322.8,135.8 323.7,134.8 324.6,133.8 325.5,132.7 326.5,131.7 327.4,130.6 328.3,129.6 329.3,128.6 330.2,127.5 331.1,126.5 332.0,125.5 333.0,124.5 333.9,123.5 334.8,122.4 335.7,121.4 336.7,120.4 337.6,119.4 338.5,118.4 339.5,117.4 340.4,116.4 341.3,115.5 342.2,114.5 343.2,113.5 344.1,112.5 345.0,111.6 345.9,110.6 346.9,109.7 347.8,108.7 348.7,107.8 349.7,106.8 350.6,105.9 351.5,105.0 352.4,104.1 353.4,103.2 354.3,102.2 355.2,101.4 356.1,100.5 357.1,99.6 358.0,98.7 358.9,97.9 359.8,97.0 360.8,96.2 361.7,95.3 362.6,94.5 363.6,93.7 364.5,92.8 365.4,92.0 366.3,91.2 367.3,90.5 368.2,89.7 369.1,88.9 370.0,88.2 371.0,87.4 371.9,86.7 372.8,86.0 373.8,85.2 374.7,84.5 375.6,83.8 376.5,83.2 377.5,82.5 378.4,81.8 379.3,81.2 380.2,80.5 381.2,79.9 382.1,79.3 383.0,78.7 384.0,78.1 384.9,77.5 385.8,76.9 386.7,76.3 387.7,75.8 388.6,75.3 389.5,74.7 390.4,74.2 391.4,73.7 392.3,73.2 393.2,72.8 394.2,72.3 395.1,71.9 396.0,71.4 396.9,71.0 397.9,70.6 398.8,70.2 399.7,69.8 400.6,69.4 401.6,69.1 402.5,68.7 403.4,68.4 404.4,68.1 405.3,67.8 406.2,67.5 407.1,67.2 408.1,66.9 409.0,66.7 409.9,66.5 410.8,66.2 411.8,66.0 412.7,65.8 413.6,65.6 414.6,65.5 415.5,65.3 416.4,65.2 417.3,65.1 418.3,65.0 419.2,64.9 420.1,64.8 421.0,64.7 422.0,64.7 422.9,64.6 423.8,64.6 424.7,64.6 425.7,64.6 426.6,64.6 427.5,64.6 428.5,64.7 429.4,64.7 430.3,64.8 431.2,64.9 432.2,65.0 433.1,65.1 434.0,65.2 434.9,65.4 435.9,65.5 436.8,65.7 437.7,65.9 438.7,66.1 439.6,66.3 440.5,66.5 441.4,66.8 442.4,67.0 443.3,67.3 444.2,67.6 445.1,67.9 446.1,68.2 447.0,68.5 447.9,68.8 448.9,69.2 449.8,69.5 450.7,69.9 451.6,70.3 452.6,70.7 453.5,71.1 454.4,71.5 455.3,72.0 456.3,72.4 457.2,72.9 458.1,73.4 459.1,73.9 460.0,74.4 460.9,74.9 461.8,75.4 462.8,75.9 463.7,76.5 464.6,77.1 465.5,77.6 465.5,142.1" fill="#c0602b" fill-opacity="0.25" stroke="none"/>
+            <defs><marker id="ahm4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+            <line x1="16" y1="142.1" x2="524" y2="142.1" stroke="#555" stroke-width="1.4" marker-start="url(#ahm4)" marker-end="url(#ahm4)"/>
+            <line x1="101.4" y1="268" x2="101.4" y2="16" stroke="#555" stroke-width="1.4" marker-start="url(#ahm4)" marker-end="url(#ahm4)"/>
+            <text x="524" y="160.1" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">X</text>
+            <text x="16" y="160.1" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">X′</text>
+            <text x="109.4" y="22" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">Y</text>
+            <text x="109.4" y="266" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">Y′</text>
+            <text x="95.4" y="158.1" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">O</text>
+            <polyline points="101.4,142.1 103.8,144.8 106.1,147.4 108.5,150.1 110.9,152.7 113.2,155.4 115.6,158.0 117.9,160.6 120.3,163.2 122.7,165.7 125.0,168.2 127.4,170.7 129.7,173.2 132.1,175.6 134.5,178.0 136.8,180.3 139.2,182.6 141.5,184.9 143.9,187.1 146.3,189.2 148.6,191.3 151.0,193.3 153.3,195.3 155.7,197.2 158.1,199.1 160.4,200.8 162.8,202.5 165.1,204.2 167.5,205.7 169.9,207.2 172.2,208.6 174.6,210.0 176.9,211.2 179.3,212.4 181.7,213.5 184.0,214.5 186.4,215.4 188.7,216.2 191.1,216.9 193.5,217.6 195.8,218.2 198.2,218.6 200.5,219.0 202.9,219.3 205.3,219.5 207.6,219.6 210.0,219.7 212.3,219.6 214.7,219.4 217.1,219.2 219.4,218.8 221.8,218.4 224.1,217.9 226.5,217.2 228.9,216.5 231.2,215.7 233.6,214.9 235.9,213.9 238.3,212.8 240.7,211.7 243.0,210.5 245.4,209.2 247.7,207.8 250.1,206.4 252.5,204.8 254.8,203.2 257.2,201.6 259.5,199.8 261.9,198.0 264.3,196.1 266.6,194.2 269.0,192.2 271.3,190.1 273.7,188.0 276.1,185.8 278.4,183.6 280.8,181.3 283.1,179.0 285.5,176.6 287.9,174.2 290.2,171.8 292.6,169.3 294.9,166.8 297.3,164.3 299.7,161.7 302.0,159.1 304.4,156.5 306.7,153.9 309.1,151.2 311.5,148.6 313.8,145.9 316.2,143.3 318.5,140.6 320.9,137.9 323.3,135.3 325.6,132.6 328.0,130.0 330.3,127.4 332.7,124.8 335.1,122.2 337.4,119.6 339.8,117.1 342.1,114.6 344.5,112.1 346.9,109.7 349.2,107.3 351.6,104.9 353.9,102.6 356.3,100.3 358.7,98.1 361.0,95.9 363.4,93.8 365.7,91.8 368.1,89.8 370.5,87.8 372.8,86.0 375.2,84.2 377.5,82.4 379.9,80.8 382.3,79.2 384.6,77.6 387.0,76.2 389.3,74.8 391.7,73.5 394.1,72.3 396.4,71.2 398.8,70.2 401.1,69.2 403.5,68.4 405.9,67.6 408.2,66.9 410.6,66.3 412.9,65.8 415.3,65.4 417.7,65.0 420.0,64.8 422.4,64.6 424.7,64.6 427.1,64.6 429.5,64.7 431.8,64.9 434.2,65.3 436.5,65.6 438.9,66.1 441.3,66.7 443.6,67.4 446.0,68.1 448.3,69.0 450.7,69.9 453.1,70.9 455.4,72.0 457.8,73.2 460.1,74.5 462.5,75.8 464.9,77.2 467.2,78.7 469.6,80.3 471.9,81.9 474.3,83.6 476.7,85.4 479.0,87.3" fill="none" fill-opacity="1" stroke="#0d4f4f" stroke-width="2.4" stroke-linejoin="round"/>
+            <line x1="148.6" y1="142.1" x2="148.6" y2="191.3" stroke="#2d2d2d" stroke-width="1.5"/>
+            <line x1="465.5" y1="142.1" x2="465.5" y2="77.6" stroke="#2d2d2d" stroke-width="1.5"/>
+            <rect x="202.6" y="142.1" width="12.1" height="77.5" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="1.3"/>
+            <rect x="418.3" y="64.6" width="12.1" height="77.5" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="1.3"/>
+            <text x="189.1" y="162.3" font-size="13" fill="#2d2d2d" text-anchor="middle" font-style="italic">x = a</text>
+            <text x="495.9" y="101.7" font-size="13" fill="#2d2d2d" text-anchor="middle" font-style="italic">x = b</text>
+            <text x="209.3" y="239.9" font-size="14" fill="#2d2d2d" text-anchor="middle" font-weight="bold">A<tspan font-size="10" dy="4">1</tspan></text>
+            <text x="425.1" y="54.5" font-size="14" fill="#2d2d2d" text-anchor="middle" font-weight="bold">A<tspan font-size="10" dy="4">2</tspan></text>
+        </svg>
+        <figcaption>Fig 8.4 — Part of the curve below the x-axis (A<sub>1</sub> &lt; 0) and part above (A<sub>2</sub> &gt; 0)</figcaption>
+    </figure>
+    <div class="box box-caution">
+        <div class="box-label">Caution</div>
+        <p>If a curve crosses the \(x\)-axis between \(a\) and \(b\), do not integrate straight across: split the interval at the crossing point, integrate each piece separately and add the absolute values.</p>
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Worked Examples</h2>
+    <div class="box box-example">
+        <div class="box-label">Example 1</div>
+        <p>Find the area enclosed by the circle \( x^2 + y^2 = a^2 \).</p>
+        <figure class="diagram">
+        <svg viewBox="0 0 380 368" xmlns="http://www.w3.org/2000/svg" style="max-width:380px;" role="img" aria-label="Circle x squared plus y squared equals a squared with the first-quadrant region AOBA shaded and a strip" font-family="Georgia, serif">
+            <polygon points="190.0,183.8 305.6,183.8 305.5,181.5 305.5,179.2 305.4,177.0 305.2,174.7 305.0,172.5 304.8,170.2 304.5,167.9 304.1,165.7 303.8,163.5 303.3,161.2 302.9,159.0 302.4,156.8 301.8,154.6 301.2,152.4 300.6,150.2 299.9,148.1 299.2,145.9 298.4,143.8 297.6,141.7 296.8,139.6 295.9,137.5 294.9,135.4 294.0,133.3 293.0,131.3 291.9,129.3 290.8,127.3 289.7,125.3 288.5,123.4 287.3,121.5 286.1,119.6 284.8,117.7 283.5,115.9 282.1,114.0 280.7,112.2 279.3,110.5 277.9,108.7 276.4,107.0 274.9,105.3 273.3,103.7 271.7,102.1 270.1,100.5 268.4,98.9 266.8,97.4 265.0,95.9 263.3,94.5 261.5,93.0 259.7,91.6 257.9,90.3 256.1,89.0 254.2,87.7 252.3,86.5 250.4,85.3 248.4,84.1 246.5,83.0 244.5,81.9 242.5,80.8 240.4,79.8 238.4,78.8 236.3,77.9 234.2,77.0 232.1,76.2 230.0,75.4 227.9,74.6 225.7,73.9 223.5,73.2 221.4,72.6 219.2,72.0 217.0,71.4 214.8,70.9 212.5,70.4 210.3,70.0 208.1,69.6 205.8,69.3 203.6,69.0 201.3,68.8 199.1,68.6 196.8,68.4 194.5,68.3 192.3,68.2 190.0,68.2" fill="#2b6cb0" fill-opacity="0.22" stroke="none"/>
+            <defs><marker id="ahm5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+            <line x1="16" y1="183.8" x2="364" y2="183.8" stroke="#555" stroke-width="1.4" marker-start="url(#ahm5)" marker-end="url(#ahm5)"/>
+            <line x1="190.0" y1="352" x2="190.0" y2="16" stroke="#555" stroke-width="1.4" marker-start="url(#ahm5)" marker-end="url(#ahm5)"/>
+            <text x="364" y="201.8" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">X</text>
+            <text x="16" y="201.8" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">X′</text>
+            <text x="198.0" y="22" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">Y</text>
+            <text x="198.0" y="350" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">Y′</text>
+            <text x="181.9" y="195.3" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">O</text>
+            <polyline points="305.6,183.8 305.5,180.1 305.3,176.5 305.0,172.9 304.6,169.3 304.1,165.7 303.5,162.1 302.8,158.6 301.9,155.0 301.0,151.5 299.9,148.1 298.7,144.6 297.4,141.2 296.1,137.9 294.6,134.6 293.0,131.3 291.3,128.1 289.5,125.0 287.6,121.9 285.6,118.8 283.5,115.9 281.3,113.0 279.0,110.1 276.7,107.4 274.2,104.7 271.7,102.1 269.1,99.5 266.4,97.1 263.7,94.7 260.8,92.5 257.9,90.3 255.0,88.2 251.9,86.2 248.8,84.3 245.7,82.5 242.5,80.8 239.2,79.2 235.9,77.7 232.5,76.3 229.1,75.1 225.7,73.9 222.2,72.8 218.7,71.9 215.2,71.0 211.7,70.3 208.1,69.6 204.5,69.1 200.9,68.7 197.3,68.5 193.6,68.3 190.0,68.2 186.4,68.3 182.7,68.5 179.1,68.7 175.5,69.1 171.9,69.6 168.3,70.3 164.8,71.0 161.3,71.9 157.8,72.8 154.3,73.9 150.9,75.1 147.5,76.3 144.1,77.7 140.8,79.2 137.5,80.8 134.3,82.5 131.2,84.3 128.1,86.2 125.0,88.2 122.1,90.3 119.2,92.5 116.3,94.7 113.6,97.1 110.9,99.5 108.3,102.1 105.8,104.7 103.3,107.4 101.0,110.1 98.7,113.0 96.5,115.9 94.4,118.8 92.4,121.9 90.5,125.0 88.7,128.1 87.0,131.3 85.4,134.6 83.9,137.9 82.6,141.2 81.3,144.6 80.1,148.1 79.0,151.5 78.1,155.0 77.2,158.6 76.5,162.1 75.9,165.7 75.4,169.3 75.0,172.9 74.7,176.5 74.5,180.1 74.4,183.8 74.5,187.4 74.7,191.0 75.0,194.7 75.4,198.3 75.9,201.9 76.5,205.4 77.2,209.0 78.1,212.5 79.0,216.0 80.1,219.5 81.3,222.9 82.6,226.3 83.9,229.7 85.4,233.0 87.0,236.2 88.7,239.4 90.5,242.6 92.4,245.7 94.4,248.7 96.5,251.7 98.7,254.6 101.0,257.4 103.3,260.2 105.8,262.9 108.3,265.5 110.9,268.0 113.6,270.5 116.3,272.8 119.2,275.1 122.1,277.3 125.0,279.4 128.1,281.3 131.2,283.2 134.3,285.0 137.5,286.7 140.8,288.3 144.1,289.8 147.5,291.2 150.9,292.5 154.3,293.7 157.8,294.7 161.3,295.7 164.8,296.6 168.3,297.3 171.9,297.9 175.5,298.4 179.1,298.8 182.7,299.1 186.4,299.3 190.0,299.3 193.6,299.3 197.3,299.1 200.9,298.8 204.5,298.4 208.1,297.9 211.7,297.3 215.2,296.6 218.7,295.7 222.2,294.7 225.7,293.7 229.1,292.5 232.5,291.2 235.9,289.8 239.2,288.3 242.5,286.7 245.7,285.0 248.8,283.2 251.9,281.3 255.0,279.4 257.9,277.3 260.8,275.1 263.7,272.8 266.4,270.5 269.1,268.0 271.7,265.5 274.2,262.9 276.7,260.2 279.0,257.4 281.3,254.6 283.5,251.7 285.6,248.7 287.6,245.7 289.5,242.6 291.3,239.4 293.0,236.2 294.6,233.0 296.1,229.7 297.4,226.3 298.7,222.9 299.9,219.5 301.0,216.0 301.9,212.5 302.8,209.0 303.5,205.4 304.1,201.9 304.6,198.3 305.0,194.7 305.3,191.0 305.5,187.4 305.6,183.8" fill="none" fill-opacity="1" stroke="#0d4f4f" stroke-width="2.4" stroke-linejoin="round"/>
+            <rect x="247.8" y="86.2" width="8.1" height="97.6" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="1.3"/>
+            <text x="238.5" y="120.2" font-size="14" fill="#2d2d2d" text-anchor="end" font-style="italic">y</text>
+            <text x="252.4" y="197.6" font-size="14" fill="#2d2d2d" text-anchor="middle" font-style="italic">dx</text>
+            <text x="184.2" y="61.3" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">B</text>
+            <text x="194.6" y="59.0" font-size="14" fill="#2d2d2d" text-anchor="start" font-style="italic">(0, a)</text>
+            <text x="309.0" y="175.7" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">A(<tspan font-style="italic">a</tspan>, 0)</text>
+        </svg>
+        <figcaption>Fig 8.5 — The circle \( x^2 + y^2 = a^2 \); quadrant AOBA with a vertical strip</figcaption>
+    </figure>
+        <p><strong>Solution</strong> From Fig 8.5, the whole area enclosed by the given circle</p>
+        \[ \begin{aligned} &amp;= 4\,(\text{area of the region AOBA bounded by the curve, } x\text{-axis and the ordinates } x = 0 \text{ and } x = a) \\ &amp;\qquad [\text{as the circle is symmetrical about both } x\text{-axis and } y\text{-axis}] \\ &amp;= 4\int_0^a y\,dx \quad (\text{taking vertical strips}) \\ &amp;= 4\int_0^a \sqrt{a^2 - x^2}\,dx \end{aligned} \]
+        <p>Since \( x^2 + y^2 = a^2 \) gives \( y = \pm\sqrt{a^2 - x^2} \).</p>
+        <p>As the region AOBA lies in the first quadrant, \(y\) is taken as positive. Integrating, we get the whole area enclosed by the given circle</p>
+        \[ \begin{aligned} &amp;= 4\left[\frac{x}{2}\sqrt{a^2 - x^2} + \frac{a^2}{2}\sin^{-1}\frac{x}{a}\right]_0^a \\ &amp;= 4\left[\left(\frac{a}{2}\times 0 + \frac{a^2}{2}\sin^{-1}1\right) - 0\right] = 4\left(\frac{a^2}{2}\right)\left(\frac{\pi}{2}\right) = \pi a^2 \end{aligned} \]
+        <p><strong>Alternatively</strong>, considering horizontal strips as shown in Fig 8.6, the whole area of the region enclosed by circle</p>
+        <figure class="diagram">
+        <svg viewBox="0 0 380 368" xmlns="http://www.w3.org/2000/svg" style="max-width:380px;" role="img" aria-label="Circle x squared plus y squared equals a squared with the first-quadrant region AOBA shaded and a strip" font-family="Georgia, serif">
+            <polygon points="190.0,183.8 305.6,183.8 305.5,181.5 305.5,179.2 305.4,177.0 305.2,174.7 305.0,172.5 304.8,170.2 304.5,167.9 304.1,165.7 303.8,163.5 303.3,161.2 302.9,159.0 302.4,156.8 301.8,154.6 301.2,152.4 300.6,150.2 299.9,148.1 299.2,145.9 298.4,143.8 297.6,141.7 296.8,139.6 295.9,137.5 294.9,135.4 294.0,133.3 293.0,131.3 291.9,129.3 290.8,127.3 289.7,125.3 288.5,123.4 287.3,121.5 286.1,119.6 284.8,117.7 283.5,115.9 282.1,114.0 280.7,112.2 279.3,110.5 277.9,108.7 276.4,107.0 274.9,105.3 273.3,103.7 271.7,102.1 270.1,100.5 268.4,98.9 266.8,97.4 265.0,95.9 263.3,94.5 261.5,93.0 259.7,91.6 257.9,90.3 256.1,89.0 254.2,87.7 252.3,86.5 250.4,85.3 248.4,84.1 246.5,83.0 244.5,81.9 242.5,80.8 240.4,79.8 238.4,78.8 236.3,77.9 234.2,77.0 232.1,76.2 230.0,75.4 227.9,74.6 225.7,73.9 223.5,73.2 221.4,72.6 219.2,72.0 217.0,71.4 214.8,70.9 212.5,70.4 210.3,70.0 208.1,69.6 205.8,69.3 203.6,69.0 201.3,68.8 199.1,68.6 196.8,68.4 194.5,68.3 192.3,68.2 190.0,68.2" fill="#2b6cb0" fill-opacity="0.22" stroke="none"/>
+            <defs><marker id="ahm6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+            <line x1="16" y1="183.8" x2="364" y2="183.8" stroke="#555" stroke-width="1.4" marker-start="url(#ahm6)" marker-end="url(#ahm6)"/>
+            <line x1="190.0" y1="352" x2="190.0" y2="16" stroke="#555" stroke-width="1.4" marker-start="url(#ahm6)" marker-end="url(#ahm6)"/>
+            <text x="364" y="201.8" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">X</text>
+            <text x="16" y="201.8" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">X′</text>
+            <text x="198.0" y="22" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">Y</text>
+            <text x="198.0" y="350" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">Y′</text>
+            <text x="181.9" y="195.3" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">O</text>
+            <polyline points="305.6,183.8 305.5,180.1 305.3,176.5 305.0,172.9 304.6,169.3 304.1,165.7 303.5,162.1 302.8,158.6 301.9,155.0 301.0,151.5 299.9,148.1 298.7,144.6 297.4,141.2 296.1,137.9 294.6,134.6 293.0,131.3 291.3,128.1 289.5,125.0 287.6,121.9 285.6,118.8 283.5,115.9 281.3,113.0 279.0,110.1 276.7,107.4 274.2,104.7 271.7,102.1 269.1,99.5 266.4,97.1 263.7,94.7 260.8,92.5 257.9,90.3 255.0,88.2 251.9,86.2 248.8,84.3 245.7,82.5 242.5,80.8 239.2,79.2 235.9,77.7 232.5,76.3 229.1,75.1 225.7,73.9 222.2,72.8 218.7,71.9 215.2,71.0 211.7,70.3 208.1,69.6 204.5,69.1 200.9,68.7 197.3,68.5 193.6,68.3 190.0,68.2 186.4,68.3 182.7,68.5 179.1,68.7 175.5,69.1 171.9,69.6 168.3,70.3 164.8,71.0 161.3,71.9 157.8,72.8 154.3,73.9 150.9,75.1 147.5,76.3 144.1,77.7 140.8,79.2 137.5,80.8 134.3,82.5 131.2,84.3 128.1,86.2 125.0,88.2 122.1,90.3 119.2,92.5 116.3,94.7 113.6,97.1 110.9,99.5 108.3,102.1 105.8,104.7 103.3,107.4 101.0,110.1 98.7,113.0 96.5,115.9 94.4,118.8 92.4,121.9 90.5,125.0 88.7,128.1 87.0,131.3 85.4,134.6 83.9,137.9 82.6,141.2 81.3,144.6 80.1,148.1 79.0,151.5 78.1,155.0 77.2,158.6 76.5,162.1 75.9,165.7 75.4,169.3 75.0,172.9 74.7,176.5 74.5,180.1 74.4,183.8 74.5,187.4 74.7,191.0 75.0,194.7 75.4,198.3 75.9,201.9 76.5,205.4 77.2,209.0 78.1,212.5 79.0,216.0 80.1,219.5 81.3,222.9 82.6,226.3 83.9,229.7 85.4,233.0 87.0,236.2 88.7,239.4 90.5,242.6 92.4,245.7 94.4,248.7 96.5,251.7 98.7,254.6 101.0,257.4 103.3,260.2 105.8,262.9 108.3,265.5 110.9,268.0 113.6,270.5 116.3,272.8 119.2,275.1 122.1,277.3 125.0,279.4 128.1,281.3 131.2,283.2 134.3,285.0 137.5,286.7 140.8,288.3 144.1,289.8 147.5,291.2 150.9,292.5 154.3,293.7 157.8,294.7 161.3,295.7 164.8,296.6 168.3,297.3 171.9,297.9 175.5,298.4 179.1,298.8 182.7,299.1 186.4,299.3 190.0,299.3 193.6,299.3 197.3,299.1 200.9,298.8 204.5,298.4 208.1,297.9 211.7,297.3 215.2,296.6 218.7,295.7 222.2,294.7 225.7,293.7 229.1,292.5 232.5,291.2 235.9,289.8 239.2,288.3 242.5,286.7 245.7,285.0 248.8,283.2 251.9,281.3 255.0,279.4 257.9,277.3 260.8,275.1 263.7,272.8 266.4,270.5 269.1,268.0 271.7,265.5 274.2,262.9 276.7,260.2 279.0,257.4 281.3,254.6 283.5,251.7 285.6,248.7 287.6,245.7 289.5,242.6 291.3,239.4 293.0,236.2 294.6,233.0 296.1,229.7 297.4,226.3 298.7,222.9 299.9,219.5 301.0,216.0 301.9,212.5 302.8,209.0 303.5,205.4 304.1,201.9 304.6,198.3 305.0,194.7 305.3,191.0 305.5,187.4 305.6,183.8" fill="none" fill-opacity="1" stroke="#0d4f4f" stroke-width="2.4" stroke-linejoin="round"/>
+            <rect x="190.0" y="104.0" width="87.3" height="8.1" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="1.3"/>
+            <text x="178.4" y="112.1" font-size="14" fill="#2d2d2d" text-anchor="end" font-style="italic">dy</text>
+            <text x="230.4" y="96.0" font-size="14" fill="#2d2d2d" text-anchor="middle" font-style="italic">x</text>
+            <text x="184.2" y="61.3" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">B</text>
+            <text x="194.6" y="59.0" font-size="14" fill="#2d2d2d" text-anchor="start" font-style="italic">(0, a)</text>
+            <text x="309.0" y="175.7" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">A(<tspan font-style="italic">a</tspan>, 0)</text>
+        </svg>
+        <figcaption>Fig 8.6 — The circle \( x^2 + y^2 = a^2 \); quadrant AOBA with a horizontal strip</figcaption>
+    </figure>
+        \[ \begin{aligned} &amp;= 4\int_0^a x\,dy = 4\int_0^a \sqrt{a^2 - y^2}\,dy \quad (\text{Why?}) \\ &amp;= 4\left[\frac{y}{2}\sqrt{a^2 - y^2} + \frac{a^2}{2}\sin^{-1}\frac{y}{a}\right]_0^a \\ &amp;= 4\left[\left(\frac{a}{2}\times 0 + \frac{a^2}{2}\sin^{-1}1\right) - 0\right] \\ &amp;= 4\,\frac{a^2}{2}\,\frac{\pi}{2} = \pi a^2 \end{aligned} \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 2</div>
+        <p>Find the area enclosed by the ellipse \( \dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1 \).</p>
+        <figure class="diagram">
+        <svg viewBox="0 0 520 337" xmlns="http://www.w3.org/2000/svg" style="max-width:520px;" role="img" aria-label="Ellipse with vertices A(a,0), A prime(-a,0), B(0,b), B prime(0,-b); first quadrant region AOBA shaded with a strip" font-family="Georgia, serif">
+            <polygon points="260.0,168.3 433.8,168.3 433.8,166.4 433.7,164.5 433.5,162.6 433.3,160.8 433.0,158.9 432.6,157.0 432.2,155.2 431.7,153.3 431.1,151.5 430.5,149.6 429.8,147.8 429.0,145.9 428.2,144.1 427.3,142.3 426.4,140.5 425.3,138.7 424.3,136.9 423.1,135.2 421.9,133.4 420.6,131.7 419.3,130.0 417.9,128.2 416.4,126.5 414.9,124.9 413.3,123.2 411.7,121.5 410.0,119.9 408.2,118.3 406.4,116.7 404.5,115.1 402.6,113.6 400.6,112.1 398.6,110.6 396.5,109.1 394.4,107.6 392.2,106.2 390.0,104.8 387.7,103.4 385.3,102.0 382.9,100.7 380.5,99.3 378.0,98.1 375.5,96.8 372.9,95.6 370.3,94.4 367.6,93.2 364.9,92.0 362.2,90.9 359.4,89.8 356.6,88.8 353.7,87.7 350.8,86.7 347.9,85.8 344.9,84.8 342.0,83.9 338.9,83.1 335.9,82.2 332.8,81.4 329.7,80.7 326.5,79.9 323.4,79.2 320.2,78.6 317.0,77.9 313.7,77.3 310.5,76.8 307.2,76.2 303.9,75.8 300.6,75.3 297.3,74.9 293.9,74.5 290.6,74.1 287.2,73.8 283.8,73.6 280.4,73.3 277.0,73.1 273.6,72.9 270.2,72.8 266.8,72.7 263.4,72.7 260.0,72.7" fill="#2b6cb0" fill-opacity="0.22" stroke="none"/>
+            <defs><marker id="ahm7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+            <line x1="16" y1="168.3" x2="504" y2="168.3" stroke="#555" stroke-width="1.4" marker-start="url(#ahm7)" marker-end="url(#ahm7)"/>
+            <line x1="260.0" y1="321" x2="260.0" y2="16" stroke="#555" stroke-width="1.4" marker-start="url(#ahm7)" marker-end="url(#ahm7)"/>
+            <text x="504" y="186.3" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">X</text>
+            <text x="16" y="186.3" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">X′</text>
+            <text x="268.0" y="22" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">Y</text>
+            <text x="268.0" y="319" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">Y′</text>
+            <text x="253.0" y="178.7" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">O</text>
+            <polyline points="433.8,168.3 433.8,165.3 433.5,162.3 433.1,159.3 432.5,156.3 431.7,153.3 430.8,150.4 429.7,147.4 428.4,144.5 426.9,141.6 425.3,138.7 423.6,135.9 421.6,133.1 419.5,130.3 417.3,127.6 414.9,124.9 412.3,122.2 409.6,119.6 406.8,117.0 403.8,114.5 400.6,112.1 397.4,109.7 394.0,107.3 390.4,105.0 386.7,102.8 382.9,100.7 379.0,98.6 375.0,96.5 370.8,94.6 366.6,92.7 362.2,90.9 357.7,89.2 353.2,87.5 348.5,86.0 343.8,84.5 338.9,83.1 334.0,81.8 329.0,80.5 324.0,79.4 318.9,78.3 313.7,77.3 308.5,76.5 303.2,75.7 297.9,75.0 292.6,74.3 287.2,73.8 281.8,73.4 276.4,73.1 270.9,72.8 265.5,72.7 260.0,72.7 254.5,72.7 249.1,72.8 243.6,73.1 238.2,73.4 232.8,73.8 227.4,74.3 222.1,75.0 216.8,75.7 211.5,76.5 206.3,77.3 201.1,78.3 196.0,79.4 191.0,80.5 186.0,81.8 181.1,83.1 176.2,84.5 171.5,86.0 166.8,87.5 162.3,89.2 157.8,90.9 153.4,92.7 149.2,94.6 145.0,96.5 141.0,98.6 137.1,100.7 133.3,102.8 129.6,105.0 126.0,107.3 122.6,109.7 119.4,112.1 116.2,114.5 113.2,117.0 110.4,119.6 107.7,122.2 105.1,124.9 102.7,127.6 100.5,130.3 98.4,133.1 96.4,135.9 94.7,138.7 93.1,141.6 91.6,144.5 90.3,147.4 89.2,150.4 88.3,153.3 87.5,156.3 86.9,159.3 86.5,162.3 86.2,165.3 86.2,168.3 86.2,171.3 86.5,174.3 86.9,177.3 87.5,180.3 88.3,183.2 89.2,186.2 90.3,189.1 91.6,192.0 93.1,194.9 94.7,197.8 96.4,200.7 98.4,203.5 100.5,206.2 102.7,209.0 105.1,211.7 107.7,214.3 110.4,216.9 113.2,219.5 116.2,222.0 119.4,224.5 122.6,226.9 126.0,229.2 129.6,231.5 133.3,233.7 137.1,235.9 141.0,238.0 145.0,240.0 149.2,241.9 153.4,243.8 157.8,245.6 162.3,247.4 166.8,249.0 171.5,250.6 176.2,252.1 181.1,253.5 186.0,254.8 191.0,256.0 196.0,257.2 201.1,258.2 206.3,259.2 211.5,260.1 216.8,260.9 222.1,261.6 227.4,262.2 232.8,262.7 238.2,263.1 243.6,263.5 249.1,263.7 254.5,263.8 260.0,263.9 265.5,263.8 270.9,263.7 276.4,263.5 281.8,263.1 287.2,262.7 292.6,262.2 297.9,261.6 303.2,260.9 308.5,260.1 313.7,259.2 318.9,258.2 324.0,257.2 329.0,256.0 334.0,254.8 338.9,253.5 343.8,252.1 348.5,250.6 353.2,249.0 357.7,247.4 362.2,245.6 366.6,243.8 370.8,241.9 375.0,240.0 379.0,238.0 382.9,235.9 386.7,233.7 390.4,231.5 394.0,229.2 397.4,226.9 400.6,224.5 403.8,222.0 406.8,219.5 409.6,216.9 412.3,214.3 414.9,211.7 417.3,209.0 419.5,206.2 421.6,203.5 423.6,200.7 425.3,197.8 426.9,194.9 428.4,192.0 429.7,189.1 430.8,186.2 431.7,183.2 432.5,180.3 433.1,177.3 433.5,174.3 433.8,171.3 433.8,168.3" fill="none" fill-opacity="1" stroke="#0d4f4f" stroke-width="2.4" stroke-linejoin="round"/>
+            <rect x="346.9" y="87.2" width="10.4" height="81.1" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="1.3"/>
+            <text x="340.0" y="129.2" font-size="14" fill="#2d2d2d" text-anchor="end" font-style="italic">y</text>
+            <text x="352.1" y="181.3" font-size="14" fill="#2d2d2d" text-anchor="middle" font-style="italic">dx</text>
+            <text x="254.8" y="65.7" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">B</text>
+            <text x="265.2" y="64.0" font-size="14" fill="#2d2d2d" text-anchor="start" font-style="italic">(0, b)</text>
+            <text x="254.8" y="281.3" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">B′</text>
+            <text x="265.2" y="281.3" font-size="14" fill="#2d2d2d" text-anchor="start" font-style="italic">(0, −b)</text>
+            <text x="442.5" y="159.6" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">A</text>
+            <text x="440.8" y="185.7" font-size="14" fill="#2d2d2d" text-anchor="start" font-style="italic">(a, 0)</text>
+            <text x="77.5" y="159.6" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">A′</text>
+            <text x="79.2" y="185.7" font-size="14" fill="#2d2d2d" text-anchor="end" font-style="italic">(−a, 0)</text>
+        </svg>
+        <figcaption>Fig 8.7 — The ellipse \( \dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1 \) with a vertical strip in the first quadrant</figcaption>
+    </figure>
+        <p><strong>Solution</strong> From Fig 8.7, the area of the region ABA&prime;B&prime;A bounded by the ellipse</p>
+        \[ \begin{aligned} &amp;= 4\left(\begin{array}{l} \text{area of the region AOBA in the first quadrant bounded} \\ \text{by the curve, } x\text{-axis and the ordinates } x = 0,\ x = a \end{array}\right) \\ &amp;\qquad (\text{as the ellipse is symmetrical about both } x\text{-axis and } y\text{-axis}) \\ &amp;= 4\int_0^a y\,dx \quad (\text{taking vertical strips}) \end{aligned} \]
+        <p>Now \( \dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1 \) gives \( y = \pm\dfrac{b}{a}\sqrt{a^2 - x^2} \), but as the region AOBA lies in the first quadrant, \(y\) is taken as positive. So, the required area is</p>
+        \[ \begin{aligned} &amp;= 4\int_0^a \frac{b}{a}\sqrt{a^2 - x^2}\,dx \\ &amp;= \frac{4b}{a}\left[\frac{x}{2}\sqrt{a^2 - x^2} + \frac{a^2}{2}\sin^{-1}\frac{x}{a}\right]_0^a \quad (\text{Why?}) \\ &amp;= \frac{4b}{a}\left[\left(\frac{a}{2}\times 0 + \frac{a^2}{2}\sin^{-1}1\right) - 0\right] \\ &amp;= \frac{4b}{a}\,\frac{a^2}{2}\,\frac{\pi}{2} = \pi ab \end{aligned} \]
+        <p><strong>Alternatively</strong>, considering horizontal strips as shown in the Fig 8.8, the area of the ellipse is</p>
+        <figure class="diagram">
+        <svg viewBox="0 0 520 337" xmlns="http://www.w3.org/2000/svg" style="max-width:520px;" role="img" aria-label="Ellipse with vertices A(a,0), A prime(-a,0), B(0,b), B prime(0,-b); first quadrant region AOBA shaded with a strip" font-family="Georgia, serif">
+            <polygon points="260.0,168.3 433.8,168.3 433.8,166.4 433.7,164.5 433.5,162.6 433.3,160.8 433.0,158.9 432.6,157.0 432.2,155.2 431.7,153.3 431.1,151.5 430.5,149.6 429.8,147.8 429.0,145.9 428.2,144.1 427.3,142.3 426.4,140.5 425.3,138.7 424.3,136.9 423.1,135.2 421.9,133.4 420.6,131.7 419.3,130.0 417.9,128.2 416.4,126.5 414.9,124.9 413.3,123.2 411.7,121.5 410.0,119.9 408.2,118.3 406.4,116.7 404.5,115.1 402.6,113.6 400.6,112.1 398.6,110.6 396.5,109.1 394.4,107.6 392.2,106.2 390.0,104.8 387.7,103.4 385.3,102.0 382.9,100.7 380.5,99.3 378.0,98.1 375.5,96.8 372.9,95.6 370.3,94.4 367.6,93.2 364.9,92.0 362.2,90.9 359.4,89.8 356.6,88.8 353.7,87.7 350.8,86.7 347.9,85.8 344.9,84.8 342.0,83.9 338.9,83.1 335.9,82.2 332.8,81.4 329.7,80.7 326.5,79.9 323.4,79.2 320.2,78.6 317.0,77.9 313.7,77.3 310.5,76.8 307.2,76.2 303.9,75.8 300.6,75.3 297.3,74.9 293.9,74.5 290.6,74.1 287.2,73.8 283.8,73.6 280.4,73.3 277.0,73.1 273.6,72.9 270.2,72.8 266.8,72.7 263.4,72.7 260.0,72.7" fill="#2b6cb0" fill-opacity="0.22" stroke="none"/>
+            <defs><marker id="ahm8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+            <line x1="16" y1="168.3" x2="504" y2="168.3" stroke="#555" stroke-width="1.4" marker-start="url(#ahm8)" marker-end="url(#ahm8)"/>
+            <line x1="260.0" y1="321" x2="260.0" y2="16" stroke="#555" stroke-width="1.4" marker-start="url(#ahm8)" marker-end="url(#ahm8)"/>
+            <text x="504" y="186.3" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">X</text>
+            <text x="16" y="186.3" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">X′</text>
+            <text x="268.0" y="22" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">Y</text>
+            <text x="268.0" y="319" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">Y′</text>
+            <text x="253.0" y="178.7" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">O</text>
+            <polyline points="433.8,168.3 433.8,165.3 433.5,162.3 433.1,159.3 432.5,156.3 431.7,153.3 430.8,150.4 429.7,147.4 428.4,144.5 426.9,141.6 425.3,138.7 423.6,135.9 421.6,133.1 419.5,130.3 417.3,127.6 414.9,124.9 412.3,122.2 409.6,119.6 406.8,117.0 403.8,114.5 400.6,112.1 397.4,109.7 394.0,107.3 390.4,105.0 386.7,102.8 382.9,100.7 379.0,98.6 375.0,96.5 370.8,94.6 366.6,92.7 362.2,90.9 357.7,89.2 353.2,87.5 348.5,86.0 343.8,84.5 338.9,83.1 334.0,81.8 329.0,80.5 324.0,79.4 318.9,78.3 313.7,77.3 308.5,76.5 303.2,75.7 297.9,75.0 292.6,74.3 287.2,73.8 281.8,73.4 276.4,73.1 270.9,72.8 265.5,72.7 260.0,72.7 254.5,72.7 249.1,72.8 243.6,73.1 238.2,73.4 232.8,73.8 227.4,74.3 222.1,75.0 216.8,75.7 211.5,76.5 206.3,77.3 201.1,78.3 196.0,79.4 191.0,80.5 186.0,81.8 181.1,83.1 176.2,84.5 171.5,86.0 166.8,87.5 162.3,89.2 157.8,90.9 153.4,92.7 149.2,94.6 145.0,96.5 141.0,98.6 137.1,100.7 133.3,102.8 129.6,105.0 126.0,107.3 122.6,109.7 119.4,112.1 116.2,114.5 113.2,117.0 110.4,119.6 107.7,122.2 105.1,124.9 102.7,127.6 100.5,130.3 98.4,133.1 96.4,135.9 94.7,138.7 93.1,141.6 91.6,144.5 90.3,147.4 89.2,150.4 88.3,153.3 87.5,156.3 86.9,159.3 86.5,162.3 86.2,165.3 86.2,168.3 86.2,171.3 86.5,174.3 86.9,177.3 87.5,180.3 88.3,183.2 89.2,186.2 90.3,189.1 91.6,192.0 93.1,194.9 94.7,197.8 96.4,200.7 98.4,203.5 100.5,206.2 102.7,209.0 105.1,211.7 107.7,214.3 110.4,216.9 113.2,219.5 116.2,222.0 119.4,224.5 122.6,226.9 126.0,229.2 129.6,231.5 133.3,233.7 137.1,235.9 141.0,238.0 145.0,240.0 149.2,241.9 153.4,243.8 157.8,245.6 162.3,247.4 166.8,249.0 171.5,250.6 176.2,252.1 181.1,253.5 186.0,254.8 191.0,256.0 196.0,257.2 201.1,258.2 206.3,259.2 211.5,260.1 216.8,260.9 222.1,261.6 227.4,262.2 232.8,262.7 238.2,263.1 243.6,263.5 249.1,263.7 254.5,263.8 260.0,263.9 265.5,263.8 270.9,263.7 276.4,263.5 281.8,263.1 287.2,262.7 292.6,262.2 297.9,261.6 303.2,260.9 308.5,260.1 313.7,259.2 318.9,258.2 324.0,257.2 329.0,256.0 334.0,254.8 338.9,253.5 343.8,252.1 348.5,250.6 353.2,249.0 357.7,247.4 362.2,245.6 366.6,243.8 370.8,241.9 375.0,240.0 379.0,238.0 382.9,235.9 386.7,233.7 390.4,231.5 394.0,229.2 397.4,226.9 400.6,224.5 403.8,222.0 406.8,219.5 409.6,216.9 412.3,214.3 414.9,211.7 417.3,209.0 419.5,206.2 421.6,203.5 423.6,200.7 425.3,197.8 426.9,194.9 428.4,192.0 429.7,189.1 430.8,186.2 431.7,183.2 432.5,180.3 433.1,177.3 433.5,174.3 433.8,171.3 433.8,168.3" fill="none" fill-opacity="1" stroke="#0d4f4f" stroke-width="2.4" stroke-linejoin="round"/>
+            <rect x="260.0" y="109.2" width="141.4" height="7.0" fill="#ebf4ff" stroke="#2b6cb0" stroke-width="1.3"/>
+            <text x="251.3" y="116.1" font-size="14" fill="#2d2d2d" text-anchor="end" font-style="italic">dy</text>
+            <text x="329.5" y="100.5" font-size="14" fill="#2d2d2d" text-anchor="middle" font-style="italic">x</text>
+            <text x="254.8" y="65.7" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">B</text>
+            <text x="265.2" y="64.0" font-size="14" fill="#2d2d2d" text-anchor="start" font-style="italic">(0, b)</text>
+            <text x="254.8" y="281.3" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">B′</text>
+            <text x="265.2" y="281.3" font-size="14" fill="#2d2d2d" text-anchor="start" font-style="italic">(0, −b)</text>
+            <text x="442.5" y="159.6" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">A</text>
+            <text x="440.8" y="185.7" font-size="14" fill="#2d2d2d" text-anchor="start" font-style="italic">(a, 0)</text>
+            <text x="77.5" y="159.6" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">A′</text>
+            <text x="79.2" y="185.7" font-size="14" fill="#2d2d2d" text-anchor="end" font-style="italic">(−a, 0)</text>
+        </svg>
+        <figcaption>Fig 8.8 — The ellipse \( \dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1 \) with a horizontal strip in the first quadrant</figcaption>
+    </figure>
+        \[ \begin{aligned} &amp;= 4\int_0^b x\,dy = 4\,\frac{a}{b}\int_0^b \sqrt{b^2 - y^2}\,dy \quad (\text{Why?}) \\ &amp;= \frac{4a}{b}\left[\frac{y}{2}\sqrt{b^2 - y^2} + \frac{b^2}{2}\sin^{-1}\frac{y}{b}\right]_0^b \\ &amp;= \frac{4a}{b}\left[\left(\frac{b}{2}\times 0 + \frac{b^2}{2}\sin^{-1}1\right) - 0\right] \\ &amp;= \frac{4a}{b}\,\frac{b^2}{2}\,\frac{\pi}{2} = \pi ab \end{aligned} \]
+    </div>
+    <div class="box box-insight">
+        <div class="box-label">Key Insight</div>
+        <p>When \( a = b \) the ellipse becomes the circle \( x^2 + y^2 = a^2 \), and \( \pi ab \) reduces to \( \pi a^2 \) &mdash; the two examples agree.</p>
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../08-application-of-integrals/01-introduction-8.1/index.html" class="nav-btn">&larr; 8.1 Introduction</a>
+    <a href="../../08-application-of-integrals/03-exercise-8.1/index.html" class="nav-btn">Exercise 8.1 &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

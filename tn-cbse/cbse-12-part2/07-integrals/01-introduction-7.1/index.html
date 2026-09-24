@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.1 Introduction — Integrals</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Integrals · 7.1 Introduction">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <span class="tb-btn" aria-disabled="true">←</span>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Integrals</a></span>
+    <span class="c2">7.1 Introduction</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 7 · Integrals</div><a href="../01-introduction-7.1/index.html" aria-current="page">7.1 Introduction</a><a href="../02-integration-as-an-inverse-process-of-differentiation-7.2/index.html">7.2 Integration as an Inverse Process of Differentiation</a><a href="../03-some-properties-of-indefinite-integral-7.2.1/index.html">7.2.1 Some properties of indefinite integral</a><a href="../04-exercise-7.1/index.html">Exercise 7.1</a><a href="../05-methods-of-integration-7.3/index.html">7.3 Methods of Integration</a><a href="../06-integration-by-substitution-7.3.1/index.html">7.3.1 Integration by substitution</a><a href="../07-exercise-7.2/index.html">Exercise 7.2</a><a href="../08-integration-using-trigonometric-identities-7.3.2/index.html">7.3.2 Integration using trigonometric identities</a><a href="../09-exercise-7.3/index.html">Exercise 7.3</a><a href="../10-integrals-of-some-particular-functions-7.4/index.html">7.4 Integrals of Some Particular Functions</a><a href="../11-exercise-7.4/index.html">Exercise 7.4</a><a href="../12-integration-by-partial-fractions-7.5/index.html">7.5 Integration by Partial Fractions</a><a href="../13-exercise-7.5/index.html">Exercise 7.5</a><a href="../14-integration-by-parts-7.6/index.html">7.6 Integration by Parts</a><a href="../15-integral-of-the-type-7.6.1/index.html">7.6.1 Integral of the type ∫eˣ[f(x) + f′(x)] dx</a><a href="../16-exercise-7.6/index.html">Exercise 7.6</a><a href="../17-integrals-of-some-more-types-7.6.2/index.html">7.6.2 Integrals of some more types</a><a href="../18-exercise-7.7/index.html">Exercise 7.7</a><a href="../19-definite-integral-7.7/index.html">7.7 Definite Integral</a><a href="../20-fundamental-theorem-of-calculus-7.8/index.html">7.8 Fundamental Theorem of Calculus</a><a href="../21-area-function-7.8.1/index.html">7.8.1 Area function</a><a href="../22-first-fundamental-theorem-of-integral-calculus-7.8.2/index.html">7.8.2 First fundamental theorem of integral calculus</a><a href="../23-second-fundamental-theorem-of-integral-calculus-7.8.3/index.html">7.8.3 Second fundamental theorem of integral calculus</a><a href="../24-exercise-7.8/index.html">Exercise 7.8</a><a href="../25-evaluation-of-definite-integrals-by-substitution-7.9/index.html">7.9 Evaluation of Definite Integrals by Substitution</a><a href="../26-exercise-7.9/index.html">Exercise 7.9</a><a href="../27-some-properties-of-definite-integrals-7.10/index.html">7.10 Some Properties of Definite Integrals</a><a href="../28-exercise-7.10/index.html">Exercise 7.10</a><a href="../29-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../30-miscellaneous-exercise-on-chapter-7/index.html">Miscellaneous Exercise on Chapter 7</a><a href="../31-summary/index.html">Summary</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../07-integrals/02-integration-as-an-inverse-process-of-differentiation-7.2/index.html" title="7.2 Integration as an Inverse Process of Differentiation">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">7</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 7 · Integrals</a></p>
+        <h1>7.1 Introduction</h1>
+        <p class="subtitle">From finding slopes to finding areas — the two questions that give birth to Integral Calculus</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="box box-insight" style="text-align:center; font-style:italic;">
+    &#10070; Just as a mountaineer climbs a mountain &ndash; because it is there, so a good mathematics student studies new material because it is there. &#10070;
+    <div style="font-style:normal; font-family:'Segoe UI',sans-serif; font-size:0.95rem; margin-top:0.5rem; color:#c0602b; font-weight:600;">&mdash; James B. Bristol</div>
+</div>
+
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>Why Integral Calculus exists: the problem of <span class="teal">areas</span>, alongside Differential Calculus&rsquo; problem of <span class="teal">slopes</span></li>
+        <li>What an <strong>anti derivative</strong> (primitive) of a function is</li>
+        <li>The meaning of the words <strong>indefinite integral</strong> and <strong>integration</strong></li>
+        <li>The two classes of problems that lead to indefinite and definite integrals</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>From Derivatives to Integrals</h2>
+
+    <figure class="diagram" style="float:right; max-width:190px; margin:0.25rem 0 1rem 1.5rem;">
+        <img src="img/leibnitz.webp" alt="Portrait of G. W. Leibnitz" width="178" height="231" loading="lazy">
+        <figcaption>G. W. Leibnitz (1646&ndash;1716)</figcaption>
+    </figure>
+
+    <p>Differential Calculus is centred on the concept of the <strong>derivative</strong>. The original motivation for the derivative was the problem of defining tangent lines to the graphs of functions and calculating the slope of such lines. Integral Calculus is motivated by the problem of defining and calculating the <strong>area</strong> of the region bounded by the graph of the functions.</p>
+
+    <p>If a function \(f\) is differentiable in an interval I, i.e., its derivative \(f'\) exists at each point of I, then a natural question arises: given \(f'\) at each point of I, can we determine the function?</p>
+
+    <div class="box box-definition" style="clear:both;">
+        <div class="box-label">Definition &mdash; Anti derivative, Indefinite Integral, Integration</div>
+        <p>The functions that could possibly have given function as a derivative are called <strong>anti derivatives</strong> (or <strong>primitive</strong>) of the function.</p>
+        <p>The formula that gives <em>all</em> these anti derivatives is called the <strong><em>indefinite integral</em></strong> of the function, and the process of finding anti derivatives is called <strong>integration</strong>.</p>
+    </div>
+
+    <p>Such type of problems arise in many practical situations. For instance, if we know the instantaneous velocity of an object at any instant, then there arises a natural question, i.e., can we determine the position of the object at any instant? There are several such practical and theoretical situations where the process of integration is involved.</p>
+</div>
+
+<div class="card">
+    <h2>Two Problems, Two Kinds of Integral</h2>
+    <p>The development of integral calculus arises out of the efforts of solving the problems of the following types:</p>
+    <ol type="a">
+        <li>the problem of finding a function whenever its derivative is given,</li>
+        <li>the problem of finding the area bounded by the graph of a function under certain conditions.</li>
+    </ol>
+    <p>These two problems lead to the two forms of the integrals, viz., <strong>indefinite</strong> and <strong>definite</strong> integrals, which together constitute the <strong><em>Integral Calculus</em></strong>.</p>
+
+    <figure class="diagram">
+        <svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg" style="max-width:640px;" role="img" aria-label="Left: a curve with a tangent line showing slope. Right: a curve with the area under it shaded.">
+            <!-- left panel: slope -->
+            <rect x="10" y="10" width="330" height="200" rx="12" fill="#e8f4f4"/>
+            <line x1="40" y1="180" x2="320" y2="180" stroke="#555" stroke-width="1.5"/>
+            <line x1="50" y1="195" x2="50" y2="30" stroke="#555" stroke-width="1.5"/>
+            <path d="M60 170 C 130 165, 200 120, 300 45" fill="none" stroke="#0d4f4f" stroke-width="3"/>
+            <line x1="120" y1="185" x2="290" y2="95" stroke="#c0602b" stroke-width="2.5" stroke-dasharray="7 5"/>
+            <circle cx="198" cy="143" r="5.5" fill="#c0602b"/>
+            <text x="175" y="38" font-size="17" fill="#0d4f4f" text-anchor="middle" font-weight="bold">Derivative</text>
+            <text x="175" y="58" font-size="14" fill="#555" text-anchor="middle">slope of the tangent</text>
+            <!-- right panel: area -->
+            <rect x="360" y="10" width="330" height="200" rx="12" fill="#fef3ec"/>
+            <path d="M430 180 L430 132 C 480 115, 540 95, 620 70 L620 180 Z" fill="#c0602b" fill-opacity="0.25"/>
+            <line x1="390" y1="180" x2="670" y2="180" stroke="#555" stroke-width="1.5"/>
+            <line x1="400" y1="195" x2="400" y2="30" stroke="#555" stroke-width="1.5"/>
+            <path d="M405 140 C 480 115, 540 95, 660 58" fill="none" stroke="#0d4f4f" stroke-width="3"/>
+            <line x1="430" y1="180" x2="430" y2="132" stroke="#c0602b" stroke-width="2"/>
+            <line x1="620" y1="180" x2="620" y2="70" stroke="#c0602b" stroke-width="2"/>
+            <text x="525" y="38" font-size="17" fill="#c0602b" text-anchor="middle" font-weight="bold">Integral</text>
+            <text x="525" y="58" font-size="14" fill="#555" text-anchor="middle">area under the curve</text>
+            <text x="175" y="238" font-size="15" fill="#2d2d2d" text-anchor="middle">Differential Calculus</text>
+            <text x="525" y="238" font-size="15" fill="#2d2d2d" text-anchor="middle">Integral Calculus</text>
+        </svg>
+        <figcaption>The two central questions of calculus: slopes of tangents and areas under curves.</figcaption>
+    </figure>
+
+    <div class="box box-formula">
+        <div class="box-label">Fundamental Theorem of Calculus</div>
+        <p>There is a connection, known as the <strong><em>Fundamental Theorem of Calculus</em></strong>, between indefinite integral and definite integral which makes the definite integral a practical tool for science and engineering.</p>
+    </div>
+
+    <p>The definite integral is also used to solve many interesting problems from various disciplines like economics, finance and probability.</p>
+
+    <p>In this Chapter, we shall confine ourselves to the study of indefinite and definite integrals and their elementary properties including some techniques of integration.</p>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <span class="nav-btn disabled">Start of book</span>
+    <a href="../../07-integrals/02-integration-as-an-inverse-process-of-differentiation-7.2/index.html" class="nav-btn">7.2 Integration as an Inverse Process of Differentiation &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

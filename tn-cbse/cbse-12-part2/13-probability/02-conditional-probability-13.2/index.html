@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13.2 Conditional Probability — Probability</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Probability · 13.2 Conditional Probability">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../13-probability/01-introduction-13.1/index.html" title="13.1 Introduction">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Probability</a></span>
+    <span class="c2">13.2 Conditional Probability</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 13 · Probability</div><a href="../01-introduction-13.1/index.html">13.1 Introduction</a><a href="../02-conditional-probability-13.2/index.html" aria-current="page">13.2 Conditional Probability</a><a href="../03-properties-of-conditional-probability-13.2.1/index.html">13.2.1 Properties of conditional probability</a><a href="../04-exercise-13.1/index.html">Exercise 13.1</a><a href="../05-multiplication-theorem-on-probability-13.3/index.html">13.3 Multiplication Theorem on Probability</a><a href="../06-independent-events-13.4/index.html">13.4 Independent Events</a><a href="../07-exercise-13.2/index.html">Exercise 13.2</a><a href="../08-bayes-theorem-13.5/index.html">13.5 Bayes&#x27; Theorem</a><a href="../09-partition-of-a-sample-space-13.5.1/index.html">13.5.1 Partition of a sample space</a><a href="../10-theorem-of-total-probability-13.5.2/index.html">13.5.2 Theorem of total probability</a><a href="../11-exercise-13.3/index.html">Exercise 13.3</a><a href="../12-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../13-miscellaneous-exercise-on-chapter-13/index.html">Miscellaneous Exercise on Chapter 13</a><a href="../14-summary/index.html">Summary</a><a href="../15-historical-note/index.html">Historical Note</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../13-probability/03-properties-of-conditional-probability-13.2.1/index.html" title="13.2.1 Properties of conditional probability">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">13</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 13 · Probability</a></p>
+        <h1>13.2 Conditional Probability</h1>
+        <p class="subtitle">When extra information shrinks the sample space — the idea behind P(E|F)</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>Does the occurrence of one event affect the probability of another?</li>
+        <li>A three-coin experiment that shows the sample space <span class="teal">shrinking</span> from S to F</li>
+        <li>The formula \( \mathrm{P}(\mathrm{E}|\mathrm{F}) = \dfrac{n(\mathrm{E} \cap \mathrm{F})}{n(\mathrm{F})} = \dfrac{\mathrm{P}(\mathrm{E} \cap \mathrm{F})}{\mathrm{P}(\mathrm{F})} \)</li>
+        <li>The formal <strong>definition</strong> of conditional probability</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>A Motivating Experiment: Tossing Three Coins</h2>
+    <p>Uptill now in probability, we have discussed the methods of finding the probability of events. If we have two events from the same sample space, does the information about the occurrence of one of the events affect the probability of the other event? Let us try to answer this question by taking up a random experiment in which the outcomes are equally likely to occur.</p>
+
+    <p>Consider the experiment of tossing three fair coins. The sample space of the experiment is</p>
+    \[ \mathrm{S} = \{\mathrm{HHH, HHT, HTH, THH, HTT, THT, TTH, TTT}\} \]
+
+    <p>Since the coins are fair, we can assign the probability \( \dfrac{1}{8} \) to each sample point. Let E be the event &lsquo;at least two heads appear&rsquo; and F be the event &lsquo;first coin shows tail&rsquo;. Then</p>
+    \[ \begin{aligned} \mathrm{E} &amp;= \{\mathrm{HHH, HHT, HTH, THH}\} \\ \text{and} \quad \mathrm{F} &amp;= \{\mathrm{THH, THT, TTH, TTT}\} \end{aligned} \]
+    <p>Therefore</p>
+    \[ \begin{aligned} \mathrm{P(E)} &amp;= \mathrm{P}(\{\mathrm{HHH}\}) + \mathrm{P}(\{\mathrm{HHT}\}) + \mathrm{P}(\{\mathrm{HTH}\}) + \mathrm{P}(\{\mathrm{THH}\}) \\ &amp;= \frac{1}{8} + \frac{1}{8} + \frac{1}{8} + \frac{1}{8} = \frac{1}{2} \quad \text{(Why ?)} \end{aligned} \]
+    <p>and</p>
+    \[ \begin{aligned} \mathrm{P(F)} &amp;= \mathrm{P}(\{\mathrm{THH}\}) + \mathrm{P}(\{\mathrm{THT}\}) + \mathrm{P}(\{\mathrm{TTH}\}) + \mathrm{P}(\{\mathrm{TTT}\}) \\ &amp;= \frac{1}{8} + \frac{1}{8} + \frac{1}{8} + \frac{1}{8} = \frac{1}{2} \end{aligned} \]
+    <p>Also \( \mathrm{E} \cap \mathrm{F} = \{\mathrm{THH}\} \) with</p>
+    \[ \mathrm{P(E \cap F)} = \mathrm{P}(\{\mathrm{THH}\}) = \frac{1}{8} \]
+</div>
+
+<div class="card">
+    <h2>Reducing the Sample Space</h2>
+    <p>Now, suppose we are given that the first coin shows tail, i.e. F occurs, then what is the probability of occurrence of E? With the information of occurrence of F, we are sure that the cases in which first coin does not result into a tail should not be considered while finding the probability of E. This information <strong>reduces our sample space</strong> from the set S to its subset F for the event E. In other words, the additional information really amounts to telling us that the situation may be considered as being that of a new random experiment for which the sample space consists of all those outcomes only which are favourable to the occurrence of the event F.</p>
+
+    <p>Now, the sample point of F which is favourable to event E is THH.</p>
+    \[ \text{Thus, Probability of E considering F as the sample space} = \frac{1}{4}, \]
+    \[ \text{or} \quad \text{Probability of E given that the event F has occurred} = \frac{1}{4} \]
+
+    <p>This probability of the event E is called the <em>conditional probability of E given that F has already occurred</em>, and is denoted by \( \mathrm{P(E|F)} \). Thus</p>
+    \[ \mathrm{P(E|F)} = \frac{1}{4} \]
+
+    <p>Note that the elements of F which favour the event E are the common elements of E and F, i.e. the sample points of \( \mathrm{E} \cap \mathrm{F} \).</p>
+
+    <p>Thus, we can also write the conditional probability of E given that F has occurred as</p>
+    \[ \begin{aligned} \mathrm{P(E|F)} &amp;= \frac{\text{Number of elementary events favourable to } \mathrm{E} \cap \mathrm{F}}{\text{Number of elementary events which are favourable to F}} \\[4pt] &amp;= \frac{n(\mathrm{E} \cap \mathrm{F})}{n(\mathrm{F})} \end{aligned} \]
+
+    <p>Dividing the numerator and the denominator by total number of elementary events of the sample space, we see that \( \mathrm{P(E|F)} \) can also be written as</p>
+    \[ \mathrm{P(E|F)} = \frac{\dfrac{n(\mathrm{E} \cap \mathrm{F})}{n(\mathrm{S})}}{\dfrac{n(\mathrm{F})}{n(\mathrm{S})}} = \frac{\mathrm{P(E \cap F)}}{\mathrm{P(F)}} \tag{1} \]
+
+    <p>Note that (1) is valid only when \( \mathrm{P(F)} \ne 0 \) i.e., \( \mathrm{F} \ne \phi \) (Why?)</p>
+</div>
+
+<div class="card">
+    <h2>The Definition</h2>
+    <p>Thus, we can define the conditional probability as follows:</p>
+    <div class="box box-definition">
+        <div class="box-label">Definition 1 &mdash; Conditional Probability</div>
+        <p>If E and F are two events associated with the same sample space of a random experiment, the conditional probability of the event E given that F has occurred, i.e. \( \mathrm{P(E|F)} \) is given by</p>
+        \[ \mathrm{P(E|F)} = \frac{\mathrm{P(E \cap F)}}{\mathrm{P(F)}} \quad \text{provided } \mathrm{P(F)} \ne 0 \]
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight</div>
+        <p>In the three-coin experiment, knowing that F has occurred changed the probability of E from \( \mathrm{P(E)} = \frac{1}{2} \) to \( \mathrm{P(E|F)} = \frac{1}{4} \). Extra information can change probabilities &mdash; conditional probability measures exactly how.</p>
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../13-probability/01-introduction-13.1/index.html" class="nav-btn">&larr; 13.1 Introduction</a>
+    <a href="../../13-probability/03-properties-of-conditional-probability-13.2.1/index.html" class="nav-btn">13.2.1 Properties of conditional probability &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

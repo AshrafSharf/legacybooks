@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.5 Integration by Partial Fractions — Integrals</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Integrals · 7.5 Integration by Partial Fractions">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../07-integrals/11-exercise-7.4/index.html" title="Exercise 7.4">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Integrals</a></span>
+    <span class="c2">7.5 Integration by Partial Fractions</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 7 · Integrals</div><a href="../01-introduction-7.1/index.html">7.1 Introduction</a><a href="../02-integration-as-an-inverse-process-of-differentiation-7.2/index.html">7.2 Integration as an Inverse Process of Differentiation</a><a href="../03-some-properties-of-indefinite-integral-7.2.1/index.html">7.2.1 Some properties of indefinite integral</a><a href="../04-exercise-7.1/index.html">Exercise 7.1</a><a href="../05-methods-of-integration-7.3/index.html">7.3 Methods of Integration</a><a href="../06-integration-by-substitution-7.3.1/index.html">7.3.1 Integration by substitution</a><a href="../07-exercise-7.2/index.html">Exercise 7.2</a><a href="../08-integration-using-trigonometric-identities-7.3.2/index.html">7.3.2 Integration using trigonometric identities</a><a href="../09-exercise-7.3/index.html">Exercise 7.3</a><a href="../10-integrals-of-some-particular-functions-7.4/index.html">7.4 Integrals of Some Particular Functions</a><a href="../11-exercise-7.4/index.html">Exercise 7.4</a><a href="../12-integration-by-partial-fractions-7.5/index.html" aria-current="page">7.5 Integration by Partial Fractions</a><a href="../13-exercise-7.5/index.html">Exercise 7.5</a><a href="../14-integration-by-parts-7.6/index.html">7.6 Integration by Parts</a><a href="../15-integral-of-the-type-7.6.1/index.html">7.6.1 Integral of the type ∫eˣ[f(x) + f′(x)] dx</a><a href="../16-exercise-7.6/index.html">Exercise 7.6</a><a href="../17-integrals-of-some-more-types-7.6.2/index.html">7.6.2 Integrals of some more types</a><a href="../18-exercise-7.7/index.html">Exercise 7.7</a><a href="../19-definite-integral-7.7/index.html">7.7 Definite Integral</a><a href="../20-fundamental-theorem-of-calculus-7.8/index.html">7.8 Fundamental Theorem of Calculus</a><a href="../21-area-function-7.8.1/index.html">7.8.1 Area function</a><a href="../22-first-fundamental-theorem-of-integral-calculus-7.8.2/index.html">7.8.2 First fundamental theorem of integral calculus</a><a href="../23-second-fundamental-theorem-of-integral-calculus-7.8.3/index.html">7.8.3 Second fundamental theorem of integral calculus</a><a href="../24-exercise-7.8/index.html">Exercise 7.8</a><a href="../25-evaluation-of-definite-integrals-by-substitution-7.9/index.html">7.9 Evaluation of Definite Integrals by Substitution</a><a href="../26-exercise-7.9/index.html">Exercise 7.9</a><a href="../27-some-properties-of-definite-integrals-7.10/index.html">7.10 Some Properties of Definite Integrals</a><a href="../28-exercise-7.10/index.html">Exercise 7.10</a><a href="../29-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../30-miscellaneous-exercise-on-chapter-7/index.html">Miscellaneous Exercise on Chapter 7</a><a href="../31-summary/index.html">Summary</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../07-integrals/13-exercise-7.5/index.html" title="Exercise 7.5">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">7</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 7 · Integrals</a></p>
+        <h1>7.5 Integration by Partial Fractions</h1>
+        <p class="subtitle">Break a hard rational function into simple fractions, then integrate each piece</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li><strong>Proper</strong> and <strong>improper</strong> rational functions, and reducing improper ones by long division</li>
+        <li>The five standard forms of <span class="teal">partial fraction decomposition</span> (Table 7.2)</li>
+        <li>Finding the constants A, B, C by <strong>equating coefficients</strong></li>
+        <li>Combining substitution with partial fractions</li>
+        <li>Worked Examples 11 to 16</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Rational Functions</h2>
+    <p>Recall that a rational function is defined as the ratio of two polynomials in the form \( \dfrac{P(x)}{Q(x)} \), where P(\(x\)) and Q(\(x\)) are polynomials in \(x\) and \( Q(x) \neq 0 \).</p>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Proper and Improper Rational Functions</div>
+        <p>If the degree of P(\(x\)) is less than the degree of Q(\(x\)), then the rational function is called <strong>proper</strong>, otherwise, it is called <strong>improper</strong>.</p>
+    </div>
+
+    <p>The improper rational functions can be reduced to the proper rational functions by long division process. Thus, if \( \dfrac{P(x)}{Q(x)} \) is improper, then</p>
+    \[ \frac{P(x)}{Q(x)} = T(x) + \frac{P_1(x)}{Q(x)}, \]
+    <p>where T(\(x\)) is a polynomial in \(x\) and \( \dfrac{P_1(x)}{Q(x)} \) is a proper rational function. As we know how to integrate polynomials, the integration of any rational function is reduced to the integration of a proper rational function.</p>
+
+    <p>The rational functions which we shall consider here for integration purposes will be those whose denominators can be factorised into linear and quadratic factors. Assume that we want to evaluate \( \displaystyle\int \frac{P(x)}{Q(x)}\,dx \), where \( \dfrac{P(x)}{Q(x)} \) is proper rational function. It is always possible to write the integrand as a sum of simpler rational functions by a method called <strong>partial fraction decomposition</strong>. After this, the integration can be carried out easily using the already known methods. The following Table 7.2 indicates the types of simpler partial fractions that are to be associated with various kind of rational functions.</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Table 7.2 &mdash; Forms of Partial Fractions</div>
+        <table>
+            <tr><th>S.No.</th><th>Form of the rational function</th><th>Form of the partial fraction</th></tr>
+            <tr><td>1.</td><td>\( \dfrac{px + q}{(x - a)(x - b)},\ a \neq b \)</td><td>\( \dfrac{A}{x - a} + \dfrac{B}{x - b} \)</td></tr>
+            <tr><td>2.</td><td>\( \dfrac{px + q}{(x - a)^2} \)</td><td>\( \dfrac{A}{x - a} + \dfrac{B}{(x - a)^2} \)</td></tr>
+            <tr><td>3.</td><td>\( \dfrac{px^2 + qx + r}{(x - a)(x - b)(x - c)} \)</td><td>\( \dfrac{A}{x - a} + \dfrac{B}{x - b} + \dfrac{C}{x - c} \)</td></tr>
+            <tr><td>4.</td><td>\( \dfrac{px^2 + qx + r}{(x - a)^2 (x - b)} \)</td><td>\( \dfrac{A}{x - a} + \dfrac{B}{(x - a)^2} + \dfrac{C}{x - b} \)</td></tr>
+            <tr><td>5.</td><td>\( \dfrac{px^2 + qx + r}{(x - a)(x^2 + bx + c)} \)</td><td>\( \dfrac{A}{x - a} + \dfrac{Bx + C}{x^2 + bx + c} \),<br>where \(x^2 + bx + c\) cannot be factorised further</td></tr>
+        </table>
+    </div>
+    <p>In the above table, A, B and C are real numbers to be determined suitably.</p>
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight</div>
+        <p>Each distinct linear factor gets one constant; a repeated linear factor \((x-a)^2\) gets <em>two</em> terms; an irreducible quadratic factor gets a <em>linear</em> numerator \(Bx + C\).</p>
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Worked Examples</h2>
+
+    <div class="box box-example">
+        <div class="box-label">Example 11</div>
+        <p>Find \( \displaystyle \int \frac{dx}{(x + 1)(x + 2)} \)</p>
+        <p><strong>Solution</strong> The integrand is a proper rational function. Therefore, by using the form of partial fraction [Table 7.2 (i)], we write</p>
+        \[ \frac{1}{(x + 1)(x + 2)} = \frac{A}{x + 1} + \frac{B}{x + 2} \tag{1} \]
+        <p>where, real numbers A and B are to be determined suitably. This gives</p>
+        \[ 1 = A(x + 2) + B(x + 1). \]
+        <p>Equating the coefficients of \(x\) and the constant term, we get</p>
+        \[ A + B = 0 \quad \text{and} \quad 2A + B = 1 \]
+        <p>Solving these equations, we get A = 1 and B = &minus;1.</p>
+        <p>Thus, the integrand is given by</p>
+        \[ \frac{1}{(x + 1)(x + 2)} = \frac{1}{x + 1} + \frac{-1}{x + 2} \]
+        <p>Therefore,</p>
+        \[ \begin{aligned} \int \frac{dx}{(x + 1)(x + 2)} &amp;= \int \frac{dx}{x + 1} - \int \frac{dx}{x + 2} \\ &amp;= \log|x + 1| - \log|x + 2| + C \\ &amp;= \log\left| \frac{x + 1}{x + 2} \right| + C \end{aligned} \]
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Remark</div>
+        <p>The equation (1) above is an identity, i.e. a statement true for all (permissible) values of \(x\). Some authors use the symbol &lsquo;\(\equiv\)&rsquo; to indicate that the statement is an identity and use the symbol &lsquo;=&rsquo; to indicate that the statement is an equation, i.e., to indicate that the statement is true only for certain values of \(x\).</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 12</div>
+        <p>Find \( \displaystyle \int \frac{x^2 + 1}{x^2 - 5x + 6}\,dx \)</p>
+        <p><strong>Solution</strong> Here the integrand \( \dfrac{x^2 + 1}{x^2 - 5x + 6} \) is not proper rational function, so we divide \(x^2 + 1\) by \(x^2 - 5x + 6\) and find that</p>
+        \[ \frac{x^2 + 1}{x^2 - 5x + 6} = 1 + \frac{5x - 5}{x^2 - 5x + 6} = 1 + \frac{5x - 5}{(x - 2)(x - 3)} \]
+        <p>Let</p>
+        \[ \frac{5x - 5}{(x - 2)(x - 3)} = \frac{A}{x - 2} + \frac{B}{x - 3} \]
+        <p>So that</p>
+        \[ 5x - 5 = A(x - 3) + B(x - 2) \]
+        <p>Equating the coefficients of \(x\) and constant terms on both sides, we get A + B = 5 and 3A + 2B = 5. Solving these equations, we get A = &minus;5 and B = 10.</p>
+        <p>Thus,</p>
+        \[ \frac{x^2 + 1}{x^2 - 5x + 6} = 1 - \frac{5}{x - 2} + \frac{10}{x - 3} \]
+        <p>Therefore,</p>
+        \[ \begin{aligned} \int \frac{x^2 + 1}{x^2 - 5x + 6}\,dx &amp;= \int dx - 5 \int \frac{1}{x - 2}\,dx + 10 \int \frac{dx}{x - 3} \\ &amp;= x - 5\log|x - 2| + 10\log|x - 3| + C. \end{aligned} \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 13</div>
+        <p>Find \( \displaystyle \int \frac{3x - 2}{(x + 1)^2 (x + 3)}\,dx \)</p>
+        <p><strong>Solution</strong> The integrand is of the type as given in Table 7.2 (4). We write</p>
+        \[ \frac{3x - 2}{(x + 1)^2 (x + 3)} = \frac{A}{x + 1} + \frac{B}{(x + 1)^2} + \frac{C}{x + 3} \]
+        <p>So that</p>
+        \[ \begin{aligned} 3x - 2 &amp;= A(x + 1)(x + 3) + B(x + 3) + C(x + 1)^2 \\ &amp;= A(x^2 + 4x + 3) + B(x + 3) + C(x^2 + 2x + 1) \end{aligned} \]
+        <p>Comparing coefficient of \(x^2\), \(x\) and constant term on both sides, we get A + C = 0, 4A + B + 2C = 3 and 3A + 3B + C = &minus;2. Solving these equations, we get</p>
+        \[ A = \frac{11}{4},\quad B = \frac{-5}{2} \quad \text{and} \quad C = \frac{-11}{4}. \]
+        <p>Thus the integrand is given by</p>
+        \[ \frac{3x - 2}{(x + 1)^2 (x + 3)} = \frac{11}{4(x + 1)} - \frac{5}{2(x + 1)^2} - \frac{11}{4(x + 3)} \]
+        <p>Therefore,</p>
+        \[ \begin{aligned} \int \frac{3x - 2}{(x + 1)^2 (x + 3)} &amp;= \frac{11}{4} \int \frac{dx}{x + 1} - \frac{5}{2} \int \frac{dx}{(x + 1)^2} - \frac{11}{4} \int \frac{dx}{x + 3} \\ &amp;= \frac{11}{4} \log|x + 1| + \frac{5}{2(x + 1)} - \frac{11}{4} \log|x + 3| + C \\ &amp;= \frac{11}{4} \log\left| \frac{x + 1}{x + 3} \right| + \frac{5}{2(x + 1)} + C \end{aligned} \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 14</div>
+        <p>Find \( \displaystyle \int \frac{x^2}{(x^2 + 1)(x^2 + 4)}\,dx \)</p>
+        <p><strong>Solution</strong> Consider \( \dfrac{x^2}{(x^2 + 1)(x^2 + 4)} \) and put \(x^2 = y\).</p>
+        <p>Then</p>
+        \[ \frac{x^2}{(x^2 + 1)(x^2 + 4)} = \frac{y}{(y + 1)(y + 4)} \]
+        <p>Write</p>
+        \[ \frac{y}{(y + 1)(y + 4)} = \frac{A}{y + 1} + \frac{B}{y + 4} \]
+        <p>So that</p>
+        \[ y = A(y + 4) + B(y + 1) \]
+        <p>Comparing coefficients of \(y\) and constant terms on both sides, we get A + B = 1 and 4A + B = 0, which give</p>
+        \[ A = -\frac{1}{3} \quad \text{and} \quad B = \frac{4}{3} \]
+        <p>Thus,</p>
+        \[ \frac{x^2}{(x^2 + 1)(x^2 + 4)} = -\frac{1}{3(x^2 + 1)} + \frac{4}{3(x^2 + 4)} \]
+        <p>Therefore,</p>
+        \[ \begin{aligned} \int \frac{x^2\,dx}{(x^2 + 1)(x^2 + 4)} &amp;= -\frac{1}{3} \int \frac{dx}{x^2 + 1} + \frac{4}{3} \int \frac{dx}{x^2 + 4} \\ &amp;= -\frac{1}{3} \tan^{-1} x + \frac{4}{3} \times \frac{1}{2} \tan^{-1} \frac{x}{2} + C \\ &amp;= -\frac{1}{3} \tan^{-1} x + \frac{2}{3} \tan^{-1} \frac{x}{2} + C \end{aligned} \]
+    </div>
+
+    <p>In the above example, the substitution was made only for the partial fraction part and not for the integration part. Now, we consider an example, where the integration involves a combination of the substitution method and the partial fraction method.</p>
+
+    <div class="box box-example">
+        <div class="box-label">Example 15</div>
+        <p>Find \( \displaystyle \int \frac{(3\sin\phi - 2)\cos\phi}{5 - \cos^2\phi - 4\sin\phi}\,d\phi \)</p>
+        <p><strong>Solution</strong> Let \( y = \sin\phi \)</p>
+        <p>Then \( dy = \cos\phi\,d\phi \)</p>
+        <p>Therefore,</p>
+        \[ \begin{aligned} \int \frac{(3\sin\phi - 2)\cos\phi}{5 - \cos^2\phi - 4\sin\phi}\,d\phi &amp;= \int \frac{(3y - 2)\,dy}{5 - (1 - y^2) - 4y} \\ &amp;= \int \frac{3y - 2}{y^2 - 4y + 4}\,dy \\ &amp;= \int \frac{3y - 2}{(y - 2)^2} = I \ \text{(say)} \end{aligned} \]
+        <p>Now, we write</p>
+        \[ \frac{3y - 2}{(y - 2)^2} = \frac{A}{y - 2} + \frac{B}{(y - 2)^2} \qquad \text{[by Table 7.2 (2)]} \]
+        <p>Therefore,</p>
+        \[ 3y - 2 = A(y - 2) + B \]
+        <p>Comparing the coefficients of \(y\) and constant term, we get A = 3 and B &minus; 2A = &minus;2, which gives A = 3 and B = 4.</p>
+        <p>Therefore, the required integral is given by</p>
+        \[ \begin{aligned} I &amp;= \int \left[ \frac{3}{y - 2} + \frac{4}{(y - 2)^2} \right] dy = 3 \int \frac{dy}{y - 2} + 4 \int \frac{dy}{(y - 2)^2} \\ &amp;= 3\log|y - 2| + 4\left( -\frac{1}{y - 2} \right) + C \\ &amp;= 3\log|\sin\phi - 2| + \frac{4}{2 - \sin\phi} + C \\ &amp;= 3\log(2 - \sin\phi) + \frac{4}{2 - \sin\phi} + C \quad \text{(since, } 2 - \sin\phi \text{ is always positive)} \end{aligned} \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 16</div>
+        <p>Find \( \displaystyle \int \frac{x^2 + x + 1\,dx}{(x + 2)(x^2 + 1)} \)</p>
+        <p><strong>Solution</strong> The integrand is a proper rational function. Decompose the rational function into partial fraction [Table 7.2 (5)]. Write</p>
+        \[ \frac{x^2 + x + 1}{(x^2 + 1)(x + 2)} = \frac{A}{x + 2} + \frac{Bx + C}{(x^2 + 1)} \]
+        <p>Therefore,</p>
+        \[ x^2 + x + 1 = A(x^2 + 1) + (Bx + C)(x + 2) \]
+        <p>Equating the coefficients of \(x^2\), \(x\) and of constant term of both sides, we get A + B = 1, 2B + C = 1 and A + 2C = 1. Solving these equations, we get</p>
+        \[ A = \frac{3}{5},\quad B = \frac{2}{5} \quad \text{and} \quad C = \frac{1}{5} \]
+        <p>Thus, the integrand is given by</p>
+        \[ \frac{x^2 + x + 1}{(x^2 + 1)(x + 2)} = \frac{3}{5(x + 2)} + \frac{\frac{2}{5}x + \frac{1}{5}}{x^2 + 1} = \frac{3}{5(x + 2)} + \frac{1}{5}\left( \frac{2x + 1}{x^2 + 1} \right) \]
+        <p>Therefore,</p>
+        \[ \begin{aligned} \int \frac{x^2 + x + 1}{(x^2 + 1)(x + 2)}\,dx &amp;= \frac{3}{5} \int \frac{dx}{x + 2} + \frac{1}{5} \int \frac{2x}{x^2 + 1}\,dx + \frac{1}{5} \int \frac{1}{x^2 + 1}\,dx \\ &amp;= \frac{3}{5} \log|x + 2| + \frac{1}{5} \log|x^2 + 1| + \frac{1}{5} \tan^{-1} x + C \end{aligned} \]
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../07-integrals/11-exercise-7.4/index.html" class="nav-btn">&larr; Exercise 7.4</a>
+    <a href="../../07-integrals/13-exercise-7.5/index.html" class="nav-btn">Exercise 7.5 &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

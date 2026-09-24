@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.3.1 Integration by substitution — Integrals</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Integrals · 7.3.1 Integration by substitution">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../07-integrals/05-methods-of-integration-7.3/index.html" title="7.3 Methods of Integration">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Integrals</a></span>
+    <span class="c2">7.3.1 Integration by substitution</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 7 · Integrals</div><a href="../01-introduction-7.1/index.html">7.1 Introduction</a><a href="../02-integration-as-an-inverse-process-of-differentiation-7.2/index.html">7.2 Integration as an Inverse Process of Differentiation</a><a href="../03-some-properties-of-indefinite-integral-7.2.1/index.html">7.2.1 Some properties of indefinite integral</a><a href="../04-exercise-7.1/index.html">Exercise 7.1</a><a href="../05-methods-of-integration-7.3/index.html">7.3 Methods of Integration</a><a href="../06-integration-by-substitution-7.3.1/index.html" aria-current="page">7.3.1 Integration by substitution</a><a href="../07-exercise-7.2/index.html">Exercise 7.2</a><a href="../08-integration-using-trigonometric-identities-7.3.2/index.html">7.3.2 Integration using trigonometric identities</a><a href="../09-exercise-7.3/index.html">Exercise 7.3</a><a href="../10-integrals-of-some-particular-functions-7.4/index.html">7.4 Integrals of Some Particular Functions</a><a href="../11-exercise-7.4/index.html">Exercise 7.4</a><a href="../12-integration-by-partial-fractions-7.5/index.html">7.5 Integration by Partial Fractions</a><a href="../13-exercise-7.5/index.html">Exercise 7.5</a><a href="../14-integration-by-parts-7.6/index.html">7.6 Integration by Parts</a><a href="../15-integral-of-the-type-7.6.1/index.html">7.6.1 Integral of the type ∫eˣ[f(x) + f′(x)] dx</a><a href="../16-exercise-7.6/index.html">Exercise 7.6</a><a href="../17-integrals-of-some-more-types-7.6.2/index.html">7.6.2 Integrals of some more types</a><a href="../18-exercise-7.7/index.html">Exercise 7.7</a><a href="../19-definite-integral-7.7/index.html">7.7 Definite Integral</a><a href="../20-fundamental-theorem-of-calculus-7.8/index.html">7.8 Fundamental Theorem of Calculus</a><a href="../21-area-function-7.8.1/index.html">7.8.1 Area function</a><a href="../22-first-fundamental-theorem-of-integral-calculus-7.8.2/index.html">7.8.2 First fundamental theorem of integral calculus</a><a href="../23-second-fundamental-theorem-of-integral-calculus-7.8.3/index.html">7.8.3 Second fundamental theorem of integral calculus</a><a href="../24-exercise-7.8/index.html">Exercise 7.8</a><a href="../25-evaluation-of-definite-integrals-by-substitution-7.9/index.html">7.9 Evaluation of Definite Integrals by Substitution</a><a href="../26-exercise-7.9/index.html">Exercise 7.9</a><a href="../27-some-properties-of-definite-integrals-7.10/index.html">7.10 Some Properties of Definite Integrals</a><a href="../28-exercise-7.10/index.html">Exercise 7.10</a><a href="../29-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../30-miscellaneous-exercise-on-chapter-7/index.html">Miscellaneous Exercise on Chapter 7</a><a href="../31-summary/index.html">Summary</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../07-integrals/07-exercise-7.2/index.html" title="Exercise 7.2">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">7</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 7 · Integrals</a></p>
+        <h1>7.3.1 Integration by substitution</h1>
+        <p class="subtitle">Change the variable, and a tangled integrand collapses into a standard form</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>The <span class="teal">change of variable</span> formula \( \int f(x)\,dx = \int f(g(t))\,g'(t)\,dt \)</li>
+        <li>Choosing a substitution: look for a function whose derivative also occurs in the integrand</li>
+        <li>Standard integrals of \( \tan x,\ \cot x,\ \sec x \) and \( \operatorname{cosec} x \)</li>
+        <li>Worked Examples 5 and 6</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>The Change of Variable Formula</h2>
+    <p>In this section, we consider the method of integration by substitution.</p>
+    <p>The given integral \( \int f(x)\,dx \) can be transformed into another form by changing the independent variable \( x \) to \( t \) by substituting \( x = g(t) \).</p>
+
+    <div class="step-row"><span class="step-num">1</span><div class="step-content">Consider \( \text{I} = \int f(x)\,dx \).</div></div>
+    <div class="step-row"><span class="step-num">2</span><div class="step-content">Put \( x = g(t) \) so that \( \dfrac{dx}{dt} = g'(t) \).</div></div>
+    <div class="step-row"><span class="step-num">3</span><div class="step-content">We write \( dx = g'(t)\,dt \).</div></div>
+    <div class="step-row"><span class="step-num">4</span><div class="step-content">Thus \( \text{I} = \displaystyle\int f(x)\,dx = \int f(g(t))\,g'(t)\,dt \).</div></div>
+
+    <div class="box box-formula">
+        <div class="box-label">Integration by Substitution</div>
+        \[ \int f(x)\,dx = \int f(g(t))\,g'(t)\,dt,\qquad x = g(t) \]
+    </div>
+    <p>This change of variable formula is one of the important tools available to us in the name of integration by substitution. It is often important to guess what will be the useful substitution. Usually, we make a substitution for a function whose derivative also occurs in the integrand as illustrated in the following examples.</p>
+
+    <div class="box box-example">
+        <div class="box-label">Example 5</div>
+        <p>Integrate the following functions w.r.t. \( x \):</p>
+        <p>(i) \( \sin mx \) &nbsp;&nbsp;&nbsp; (ii) \( 2x\sin(x^2 + 1) \) &nbsp;&nbsp;&nbsp; (iii) \( \dfrac{\tan^4\sqrt{x}\,\sec^2\sqrt{x}}{\sqrt{x}} \) &nbsp;&nbsp;&nbsp; (iv) \( \dfrac{\sin(\tan^{-1} x)}{1 + x^2} \)</p>
+        <p><strong>Solution</strong></p>
+        <p>(i) We know that derivative of \( mx \) is \( m \). Thus, we make the substitution \( mx = t \) so that \( m\,dx = dt \).</p>
+        \[ \text{Therefore,}\quad \int \sin mx\,dx = \frac{1}{m}\int \sin t\,dt = -\frac{1}{m}\cos t + \text{C} = -\frac{1}{m}\cos mx + \text{C} \]
+        <p>(ii) Derivative of \( x^2 + 1 \) is \( 2x \). Thus, we use the substitution \( x^2 + 1 = t \) so that \( 2x\,dx = dt \).</p>
+        \[ \text{Therefore,}\quad \int 2x\sin(x^2 + 1)\,dx = \int \sin t\,dt = -\cos t + \text{C} = -\cos(x^2 + 1) + \text{C} \]
+        <p>(iii) Derivative of \( \sqrt{x} \) is \( \dfrac{1}{2}x^{-\frac{1}{2}} = \dfrac{1}{2\sqrt{x}} \). Thus, we use the substitution</p>
+        \[ \sqrt{x} = t \ \text{ so that }\ \frac{1}{2\sqrt{x}}\,dx = dt \ \text{ giving }\ dx = 2t\,dt. \]
+        \[ \text{Thus,}\quad \int \frac{\tan^4\sqrt{x}\,\sec^2\sqrt{x}}{\sqrt{x}}\,dx = \int \frac{2t\tan^4 t\,\sec^2 t\,dt}{t} = 2\int \tan^4 t\,\sec^2 t\,dt \]
+        <p>Again, we make another substitution \( \tan t = u \) so that \( \sec^2 t\,dt = du \).</p>
+        \[ \begin{aligned} \text{Therefore,}\quad 2\int \tan^4 t\,\sec^2 t\,dt &amp;= 2\int u^4\,du = 2\frac{u^5}{5} + \text{C} \\ &amp;= \frac{2}{5}\tan^5 t + \text{C} \quad (\text{since } u = \tan t) \\ &amp;= \frac{2}{5}\tan^5\sqrt{x} + \text{C} \quad (\text{since } t = \sqrt{x}) \end{aligned} \]
+        \[ \text{Hence,}\quad \int \frac{\tan^4\sqrt{x}\,\sec^2\sqrt{x}}{\sqrt{x}}\,dx = \frac{2}{5}\tan^5\sqrt{x} + \text{C} \]
+        <p><strong>Alternatively</strong>, make the substitution \( \tan\sqrt{x} = t \).</p>
+        <p>(iv) Derivative of \( \tan^{-1} x = \dfrac{1}{1 + x^2} \). Thus, we use the substitution</p>
+        \[ \tan^{-1} x = t \ \text{ so that }\ \frac{dx}{1 + x^2} = dt. \]
+        \[ \text{Therefore,}\quad \int \frac{\sin(\tan^{-1} x)}{1 + x^2}\,dx = \int \sin t\,dt = -\cos t + \text{C} = -\cos(\tan^{-1} x) + \text{C} \]
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Four Important Trigonometric Integrals</h2>
+    <p>Now, we discuss some important integrals involving trigonometric functions and their standard integrals using substitution technique. These will be used later without reference.</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Standard Integrals</div>
+        <table>
+            <tbody>
+                <tr><td>(i)</td><td>\( \displaystyle\int \tan x\,dx = \log|\sec x| + \text{C} \)</td></tr>
+                <tr><td>(ii)</td><td>\( \displaystyle\int \cot x\,dx = \log|\sin x| + \text{C} \)</td></tr>
+                <tr><td>(iii)</td><td>\( \displaystyle\int \sec x\,dx = \log|\sec x + \tan x| + \text{C} \)</td></tr>
+                <tr><td>(iv)</td><td>\( \displaystyle\int \operatorname{cosec} x\,dx = \log|\operatorname{cosec} x - \cot x| + \text{C} \)</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>(i) \( \int \tan x\,dx = \log|\sec x| + \text{C} \)</h3>
+    <p>We have</p>
+    \[ \int \tan x\,dx = \int \frac{\sin x}{\cos x}\,dx \]
+    <p>Put \( \cos x = t \) so that \( \sin x\,dx = -dt \).</p>
+    \[ \text{Then}\quad \int \tan x\,dx = -\int \frac{dt}{t} = -\log|t| + \text{C} = -\log|\cos x| + \text{C} \]
+    \[ \text{or}\quad \int \tan x\,dx = \log|\sec x| + \text{C} \]
+
+    <h3>(ii) \( \int \cot x\,dx = \log|\sin x| + \text{C} \)</h3>
+    <p>We have \( \displaystyle\int \cot x\,dx = \int \frac{\cos x}{\sin x}\,dx \).</p>
+    <p>Put \( \sin x = t \) so that \( \cos x\,dx = dt \).</p>
+    \[ \text{Then}\quad \int \cot x\,dx = \int \frac{dt}{t} = \log|t| + \text{C} = \log|\sin x| + \text{C} \]
+
+    <h3>(iii) \( \int \sec x\,dx = \log|\sec x + \tan x| + \text{C} \)</h3>
+    <p>We have</p>
+    \[ \int \sec x\,dx = \int \frac{\sec x\,(\sec x + \tan x)}{\sec x + \tan x}\,dx \]
+    <p>Put \( \sec x + \tan x = t \) so that \( \sec x\,(\tan x + \sec x)\,dx = dt \).</p>
+    \[ \text{Therefore,}\quad \int \sec x\,dx = \int \frac{dt}{t} = \log|t| + \text{C} = \log|\sec x + \tan x| + \text{C} \]
+
+    <h3>(iv) \( \int \operatorname{cosec} x\,dx = \log|\operatorname{cosec} x - \cot x| + \text{C} \)</h3>
+    <p>We have</p>
+    \[ \int \operatorname{cosec} x\,dx = \int \frac{\operatorname{cosec} x\,(\operatorname{cosec} x + \cot x)}{(\operatorname{cosec} x + \cot x)}\,dx \]
+    <p>Put \( \operatorname{cosec} x + \cot x = t \) so that \( -\operatorname{cosec} x\,(\operatorname{cosec} x + \cot x)\,dx = dt \).</p>
+    \[ \begin{aligned} \text{So}\quad \int \operatorname{cosec} x\,dx &amp;= -\int \frac{dt}{t} = -\log|t| = -\log|\operatorname{cosec} x + \cot x| + \text{C} \\ &amp;= -\log\left|\frac{\operatorname{cosec}^2 x - \cot^2 x}{\operatorname{cosec} x - \cot x}\right| + \text{C} \\ &amp;= \log|\operatorname{cosec} x - \cot x| + \text{C} \end{aligned} \]
+</div>
+
+<div class="card">
+    <h2>More Substitutions</h2>
+    <div class="box box-example">
+        <div class="box-label">Example 6</div>
+        <p>Find the following integrals:</p>
+        <p>(i) \( \int \sin^3 x\cos^2 x\,dx \) &nbsp;&nbsp;&nbsp; (ii) \( \displaystyle\int \frac{\sin x}{\sin(x + a)}\,dx \) &nbsp;&nbsp;&nbsp; (iii) \( \displaystyle\int \frac{1}{1 + \tan x}\,dx \)</p>
+        <p><strong>Solution</strong></p>
+        <p>(i) We have</p>
+        \[ \begin{aligned} \int \sin^3 x\cos^2 x\,dx &amp;= \int \sin^2 x\cos^2 x\,(\sin x)\,dx \\ &amp;= \int (1 - \cos^2 x)\cos^2 x\,(\sin x)\,dx \end{aligned} \]
+        <p>Put \( t = \cos x \) so that \( dt = -\sin x\,dx \).</p>
+        \[ \begin{aligned} \text{Therefore,}\quad \int \sin^2 x\cos^2 x\,(\sin x)\,dx &amp;= -\int (1 - t^2)\,t^2\,dt \\ &amp;= -\int (t^2 - t^4)\,dt = -\left(\frac{t^3}{3} - \frac{t^5}{5}\right) + \text{C} \\ &amp;= -\frac{1}{3}\cos^3 x + \frac{1}{5}\cos^5 x + \text{C} \end{aligned} \]
+        <p>(ii) Put \( x + a = t \). Then \( dx = dt \). Therefore</p>
+        \[ \begin{aligned} \int \frac{\sin x}{\sin(x + a)}\,dx &amp;= \int \frac{\sin(t - a)}{\sin t}\,dt \\ &amp;= \int \frac{\sin t\cos a - \cos t\sin a}{\sin t}\,dt \\ &amp;= \cos a\int dt - \sin a\int \cot t\,dt \\ &amp;= (\cos a)\,t - (\sin a)\big[\log|\sin t| + \text{C}_1\big] \\ &amp;= (\cos a)(x + a) - (\sin a)\big[\log|\sin(x + a)| + \text{C}_1\big] \\ &amp;= x\cos a + a\cos a - (\sin a)\log|\sin(x + a)| - \text{C}_1\sin a \end{aligned} \]
+        \[ \text{Hence,}\quad \int \frac{\sin x}{\sin(x + a)}\,dx = x\cos a - \sin a\log|\sin(x + a)| + \text{C}, \]
+        <p>where, \( \text{C} = -\text{C}_1\sin a + a\cos a \), is another arbitrary constant.</p>
+        <p>(iii)</p>
+        \[ \begin{aligned} \int \frac{dx}{1 + \tan x} &amp;= \int \frac{\cos x\,dx}{\cos x + \sin x} \\ &amp;= \frac{1}{2}\int \frac{(\cos x + \sin x + \cos x - \sin x)\,dx}{\cos x + \sin x} \\ &amp;= \frac{1}{2}\int dx + \frac{1}{2}\int \frac{\cos x - \sin x}{\cos x + \sin x}\,dx \\ &amp;= \frac{x}{2} + \frac{\text{C}_1}{2} + \frac{1}{2}\int \frac{\cos x - \sin x}{\cos x + \sin x}\,dx \end{aligned} \tag{1} \]
+        <p>Now, consider \( \text{I} = \displaystyle\int \frac{\cos x - \sin x}{\cos x + \sin x}\,dx \).</p>
+        <p>Put \( \cos x + \sin x = t \) so that \( (\cos x - \sin x)\,dx = dt \).</p>
+        \[ \text{Therefore}\quad \text{I} = \int \frac{dt}{t} = \log|t| + \text{C}_2 = \log|\cos x + \sin x| + \text{C}_2 \]
+        <p>Putting it in (1), we get</p>
+        \[ \begin{aligned} \int \frac{dx}{1 + \tan x} &amp;= \frac{x}{2} + \frac{\text{C}_1}{2} + \frac{1}{2}\log|\cos x + \sin x| + \frac{\text{C}_2}{2} \\ &amp;= \frac{x}{2} + \frac{1}{2}\log|\cos x + \sin x| + \frac{\text{C}_1}{2} + \frac{\text{C}_2}{2} \\ &amp;= \frac{x}{2} + \frac{1}{2}\log|\cos x + \sin x| + \text{C},\ \left(\text{C} = \frac{\text{C}_1}{2} + \frac{\text{C}_2}{2}\right) \end{aligned} \]
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../07-integrals/05-methods-of-integration-7.3/index.html" class="nav-btn">&larr; 7.3 Methods of Integration</a>
+    <a href="../../07-integrals/07-exercise-7.2/index.html" class="nav-btn">Exercise 7.2 &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

@@ -56,8 +56,10 @@ def extract_title(content):
 
 def extract_body(content):
     """Extract main text content from the page."""
+    # Pages built by assemble_sections.py mark their content explicitly
+    marked = re.search(r'<!-- content:start -->(.*?)<!-- content:end -->', content, re.DOTALL)
     # Try to get just the main content area
-    main = re.search(r'<(?:main|article|div\s+class="container")[^>]*>(.*?)</(?:main|article|div)>', content, re.DOTALL | re.IGNORECASE)
+    main = marked or re.search(r'<(?:main|article|div\s+class="container")[^>]*>(.*?)</(?:main|article|div)>', content, re.DOTALL | re.IGNORECASE)
     if main:
         text = main.group(1)
     else:

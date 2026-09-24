@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.2.1 Some properties of indefinite integral — Integrals</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Integrals · 7.2.1 Some properties of indefinite integral">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../07-integrals/02-integration-as-an-inverse-process-of-differentiation-7.2/index.html" title="7.2 Integration as an Inverse Process of Differentiation">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Integrals</a></span>
+    <span class="c2">7.2.1 Some properties of indefinite integral</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 7 · Integrals</div><a href="../01-introduction-7.1/index.html">7.1 Introduction</a><a href="../02-integration-as-an-inverse-process-of-differentiation-7.2/index.html">7.2 Integration as an Inverse Process of Differentiation</a><a href="../03-some-properties-of-indefinite-integral-7.2.1/index.html" aria-current="page">7.2.1 Some properties of indefinite integral</a><a href="../04-exercise-7.1/index.html">Exercise 7.1</a><a href="../05-methods-of-integration-7.3/index.html">7.3 Methods of Integration</a><a href="../06-integration-by-substitution-7.3.1/index.html">7.3.1 Integration by substitution</a><a href="../07-exercise-7.2/index.html">Exercise 7.2</a><a href="../08-integration-using-trigonometric-identities-7.3.2/index.html">7.3.2 Integration using trigonometric identities</a><a href="../09-exercise-7.3/index.html">Exercise 7.3</a><a href="../10-integrals-of-some-particular-functions-7.4/index.html">7.4 Integrals of Some Particular Functions</a><a href="../11-exercise-7.4/index.html">Exercise 7.4</a><a href="../12-integration-by-partial-fractions-7.5/index.html">7.5 Integration by Partial Fractions</a><a href="../13-exercise-7.5/index.html">Exercise 7.5</a><a href="../14-integration-by-parts-7.6/index.html">7.6 Integration by Parts</a><a href="../15-integral-of-the-type-7.6.1/index.html">7.6.1 Integral of the type ∫eˣ[f(x) + f′(x)] dx</a><a href="../16-exercise-7.6/index.html">Exercise 7.6</a><a href="../17-integrals-of-some-more-types-7.6.2/index.html">7.6.2 Integrals of some more types</a><a href="../18-exercise-7.7/index.html">Exercise 7.7</a><a href="../19-definite-integral-7.7/index.html">7.7 Definite Integral</a><a href="../20-fundamental-theorem-of-calculus-7.8/index.html">7.8 Fundamental Theorem of Calculus</a><a href="../21-area-function-7.8.1/index.html">7.8.1 Area function</a><a href="../22-first-fundamental-theorem-of-integral-calculus-7.8.2/index.html">7.8.2 First fundamental theorem of integral calculus</a><a href="../23-second-fundamental-theorem-of-integral-calculus-7.8.3/index.html">7.8.3 Second fundamental theorem of integral calculus</a><a href="../24-exercise-7.8/index.html">Exercise 7.8</a><a href="../25-evaluation-of-definite-integrals-by-substitution-7.9/index.html">7.9 Evaluation of Definite Integrals by Substitution</a><a href="../26-exercise-7.9/index.html">Exercise 7.9</a><a href="../27-some-properties-of-definite-integrals-7.10/index.html">7.10 Some Properties of Definite Integrals</a><a href="../28-exercise-7.10/index.html">Exercise 7.10</a><a href="../29-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../30-miscellaneous-exercise-on-chapter-7/index.html">Miscellaneous Exercise on Chapter 7</a><a href="../31-summary/index.html">Summary</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../07-integrals/04-exercise-7.1/index.html" title="Exercise 7.1">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">7</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 7 · Integrals</a></p>
+        <h1>7.2.1 Some properties of indefinite integral</h1>
+        <p class="subtitle">The rules that let integrals split, scale and combine — and the art of integrating by inspection</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>Differentiation and integration as <span class="teal">inverse</span> operations</li>
+        <li>When two indefinite integrals are <strong>equivalent</strong></li>
+        <li>Linearity: the integral of a sum, and of a constant multiple</li>
+        <li>Finding anti derivatives by the <strong>method of inspection</strong> (Examples 1&ndash;4)</li>
+        <li>Fixing the constant C with an extra condition, and integrals that cannot be found by inspection</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Properties of Indefinite Integrals</h2>
+    <p>In this sub section, we shall derive some properties of indefinite integrals.</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Property (I) &mdash; Differentiation and integration are inverses</div>
+        <p>The process of differentiation and integration are inverses of each other in the sense of the following results:</p>
+        \[ \frac{d}{dx}\int f(x)\,dx = f(x) \]
+        \[ \text{and}\qquad \int f'(x)\,dx = f(x) + \text{C},\ \text{where C is any arbitrary constant.} \]
+    </div>
+    <p><strong>Proof</strong> Let F be any anti derivative of \( f \), i.e.,</p>
+    \[ \frac{d}{dx}\text{F}(x) = f(x) \]
+    <p>Then \( \int f(x)\,dx = \text{F}(x) + \text{C} \). Therefore</p>
+    \[ \begin{aligned} \frac{d}{dx}\int f(x)\,dx &amp;= \frac{d}{dx}\big(\text{F}(x) + \text{C}\big) \\ &amp;= \frac{d}{dx}\text{F}(x) = f(x) \end{aligned} \]
+    <p>Similarly, we note that</p>
+    \[ f'(x) = \frac{d}{dx}f(x) \]
+    \[ \text{and hence}\qquad \int f'(x)\,dx = f(x) + \text{C} \]
+    <p>where C is arbitrary constant called constant of integration.</p>
+</div>
+
+<div class="card">
+    <h2>Equivalent Integrals</h2>
+    <div class="box box-formula">
+        <div class="box-label">Property (II) &mdash; Equivalence</div>
+        <p>Two indefinite integrals with the same derivative lead to the same family of curves and so they are equivalent.</p>
+    </div>
+    <p><strong>Proof</strong> Let \( f \) and \( g \) be two functions such that</p>
+    \[ \frac{d}{dx}\int f(x)\,dx = \frac{d}{dx}\int g(x)\,dx \]
+    \[ \text{or}\qquad \frac{d}{dx}\left[\int f(x)\,dx - \int g(x)\,dx\right] = 0 \]
+    \[ \text{Hence}\qquad \int f(x)\,dx - \int g(x)\,dx = \text{C},\ \text{where C is any real number} \quad (\text{Why?}) \]
+    \[ \text{or}\qquad \int f(x)\,dx = \int g(x)\,dx + \text{C} \]
+    <p>So the families of curves \( \left\{\int f(x)\,dx + \text{C}_1,\ \text{C}_1 \in \mathbf{R}\right\} \) and \( \left\{\int g(x)\,dx + \text{C}_2,\ \text{C}_2 \in \mathbf{R}\right\} \) are identical.</p>
+    <p>Hence, in this sense, \( \int f(x)\,dx \) and \( \int g(x)\,dx \) are equivalent.</p>
+
+    <div class="box box-insight">
+        <div class="box-label">Note</div>
+        <p>The equivalence of the families \( \left\{\int f(x)\,dx + \text{C}_1,\ \text{C}_1 \in \mathbf{R}\right\} \) and \( \left\{\int g(x)\,dx + \text{C}_2,\ \text{C}_2 \in \mathbf{R}\right\} \) is customarily expressed by writing \( \int f(x)\,dx = \int g(x)\,dx \), without mentioning the parameter.</p>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Linearity of the Integral</h2>
+    <div class="box box-formula">
+        <div class="box-label">Property (III) &mdash; Integral of a sum</div>
+        \[ \int \big[f(x) + g(x)\big]\,dx = \int f(x)\,dx + \int g(x)\,dx \]
+    </div>
+    <p><strong>Proof</strong> By Property (I), we have</p>
+    \[ \frac{d}{dx}\left[\int [f(x) + g(x)]\,dx\right] = f(x) + g(x) \tag{1} \]
+    <p>On the otherhand, we find that</p>
+    \[ \begin{aligned} \frac{d}{dx}\left[\int f(x)\,dx + \int g(x)\,dx\right] &amp;= \frac{d}{dx}\int f(x)\,dx + \frac{d}{dx}\int g(x)\,dx \\ &amp;= f(x) + g(x) \end{aligned} \tag{2} \]
+    <p>Thus, in view of Property (II), it follows by (1) and (2) that</p>
+    \[ \int \big(f(x) + g(x)\big)\,dx = \int f(x)\,dx + \int g(x)\,dx. \]
+
+    <div class="box box-formula">
+        <div class="box-label">Property (IV) &mdash; Constant multiple</div>
+        <p>For any real number \( k \),</p>
+        \[ \int k\,f(x)\,dx = k\int f(x)\,dx \]
+    </div>
+    <p><strong>Proof</strong> By the Property (I), \( \dfrac{d}{dx}\displaystyle\int k\,f(x)\,dx = k\,f(x) \).</p>
+    \[ \text{Also}\qquad \frac{d}{dx}\left[k\int f(x)\,dx\right] = k\frac{d}{dx}\int f(x)\,dx = k\,f(x) \]
+    <p>Therefore, using the Property (II), we have \( \int k\,f(x)\,dx = k\int f(x)\,dx \).</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Property (V) &mdash; Generalisation</div>
+        <p>Properties (III) and (IV) can be generalised to a finite number of functions \( f_1, f_2, \ldots, f_n \) and the real numbers, \( k_1, k_2, \ldots, k_n \) giving</p>
+        \[ \begin{aligned} &amp;\int \big[k_1 f_1(x) + k_2 f_2(x) + \ldots + k_n f_n(x)\big]\,dx \\ &amp;\quad= k_1\int f_1(x)\,dx + k_2\int f_2(x)\,dx + \ldots + k_n\int f_n(x)\,dx. \end{aligned} \]
+    </div>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Integration by Inspection</h2>
+    <p>To find an anti derivative of a given function, we search intuitively for a function whose derivative is the given function. The search for the requisite function for finding an anti derivative is known as <strong>integration by the method of inspection</strong>. We illustrate it through some examples.</p>
+
+    <div class="box box-example">
+        <div class="box-label">Example 1</div>
+        <p>Write an anti derivative for each of the following functions using the method of inspection:</p>
+        <p>(i) \( \cos 2x \) &nbsp;&nbsp;&nbsp; (ii) \( 3x^2 + 4x^3 \) &nbsp;&nbsp;&nbsp; (iii) \( \dfrac{1}{x},\ x \ne 0 \)</p>
+        <p><strong>Solution</strong></p>
+        <p>(i) We look for a function whose derivative is \( \cos 2x \). Recall that</p>
+        \[ \frac{d}{dx}\sin 2x = 2\cos 2x \]
+        \[ \text{or}\qquad \cos 2x = \frac{1}{2}\frac{d}{dx}(\sin 2x) = \frac{d}{dx}\left(\frac{1}{2}\sin 2x\right) \]
+        <p>Therefore, an anti derivative of \( \cos 2x \) is \( \dfrac{1}{2}\sin 2x \).</p>
+        <p>(ii) We look for a function whose derivative is \( 3x^2 + 4x^3 \). Note that</p>
+        \[ \frac{d}{dx}\left(x^3 + x^4\right) = 3x^2 + 4x^3. \]
+        <p>Therefore, an anti derivative of \( 3x^2 + 4x^3 \) is \( x^3 + x^4 \).</p>
+        <p>(iii) We know that</p>
+        \[ \frac{d}{dx}(\log x) = \frac{1}{x},\ x \gt 0 \quad\text{and}\quad \frac{d}{dx}[\log(-x)] = \frac{1}{-x}(-1) = \frac{1}{x},\ x \lt 0 \]
+        <p>Combining above, we get \( \dfrac{d}{dx}\big(\log|x|\big) = \dfrac{1}{x},\ x \ne 0 \).</p>
+        <p>Therefore, \( \displaystyle\int \frac{1}{x}\,dx = \log|x| \) is one of the anti derivatives of \( \dfrac{1}{x} \).</p>
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 2</div>
+        <p>Find the following integrals:</p>
+        <p>(i) \( \displaystyle\int \frac{x^3 - 1}{x^2}\,dx \) &nbsp;&nbsp;&nbsp; (ii) \( \displaystyle\int \left(x^{\frac{2}{3}} + 1\right)dx \) &nbsp;&nbsp;&nbsp; (iii) \( \displaystyle\int \left(x^{\frac{3}{2}} + 2e^x - \frac{1}{x}\right)dx \)</p>
+        <p><strong>Solution</strong></p>
+        <p>(i) We have</p>
+        \[ \begin{aligned} \int \frac{x^3 - 1}{x^2}\,dx &amp;= \int x\,dx - \int x^{-2}\,dx \qquad (\text{by Property V}) \\ &amp;= \left(\frac{x^{1+1}}{1+1} + \text{C}_1\right) - \left(\frac{x^{-2+1}}{-2+1} + \text{C}_2\right);\quad \text{C}_1, \text{C}_2 \text{ are constants of integration} \\ &amp;= \frac{x^2}{2} + \text{C}_1 - \frac{x^{-1}}{-1} - \text{C}_2 = \frac{x^2}{2} + \frac{1}{x} + \text{C}_1 - \text{C}_2 \\ &amp;= \frac{x^2}{2} + \frac{1}{x} + \text{C},\ \text{where C} = \text{C}_1 - \text{C}_2 \text{ is another constant of integration.} \end{aligned} \]
+        <div class="box box-insight">
+            <div class="box-label">Note</div>
+            <p>From now onwards, we shall write only one constant of integration in the final answer.</p>
+        </div>
+        <p>(ii) We have</p>
+        \[ \begin{aligned} \int \left(x^{\frac{2}{3}} + 1\right)dx &amp;= \int x^{\frac{2}{3}}\,dx + \int dx \\ &amp;= \frac{x^{\frac{2}{3}+1}}{\frac{2}{3}+1} + x + \text{C} = \frac{3}{5}x^{\frac{5}{3}} + x + \text{C} \end{aligned} \]
+        <p>(iii) We have</p>
+        \[ \begin{aligned} \int \left(x^{\frac{3}{2}} + 2e^x - \frac{1}{x}\right)dx &amp;= \int x^{\frac{3}{2}}\,dx + \int 2e^x\,dx - \int \frac{1}{x}\,dx \\ &amp;= \frac{x^{\frac{3}{2}+1}}{\frac{3}{2}+1} + 2e^x - \log|x| + \text{C} \\ &amp;= \frac{2}{5}x^{\frac{5}{2}} + 2e^x - \log|x| + \text{C} \end{aligned} \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 3</div>
+        <p>Find the following integrals:</p>
+        <p>(i) \( \int (\sin x + \cos x)\,dx \) &nbsp;&nbsp;&nbsp; (ii) \( \int \operatorname{cosec} x\,(\operatorname{cosec} x + \cot x)\,dx \) &nbsp;&nbsp;&nbsp; (iii) \( \displaystyle\int \frac{1 - \sin x}{\cos^2 x}\,dx \)</p>
+        <p><strong>Solution</strong></p>
+        <p>(i) We have</p>
+        \[ \begin{aligned} \int (\sin x + \cos x)\,dx &amp;= \int \sin x\,dx + \int \cos x\,dx \\ &amp;= -\cos x + \sin x + \text{C} \end{aligned} \]
+        <p>(ii) We have</p>
+        \[ \begin{aligned} \int \operatorname{cosec} x\,(\operatorname{cosec} x + \cot x)\,dx &amp;= \int \operatorname{cosec}^2 x\,dx + \int \operatorname{cosec} x \cot x\,dx \\ &amp;= -\cot x - \operatorname{cosec} x + \text{C} \end{aligned} \]
+        <p>(iii) We have</p>
+        \[ \begin{aligned} \int \frac{1 - \sin x}{\cos^2 x}\,dx &amp;= \int \frac{1}{\cos^2 x}\,dx - \int \frac{\sin x}{\cos^2 x}\,dx \\ &amp;= \int \sec^2 x\,dx - \int \tan x \sec x\,dx \\ &amp;= \tan x - \sec x + \text{C} \end{aligned} \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 4</div>
+        <p>Find the anti derivative F of \( f \) defined by \( f(x) = 4x^3 - 6 \), where \( \text{F}(0) = 3 \).</p>
+        <p><strong>Solution</strong> One anti derivative of \( f(x) \) is \( x^4 - 6x \) since</p>
+        \[ \frac{d}{dx}\left(x^4 - 6x\right) = 4x^3 - 6 \]
+        <p>Therefore, the anti derivative F is given by</p>
+        \[ \text{F}(x) = x^4 - 6x + \text{C},\ \text{where C is constant.} \]
+        <p>Given that \( \text{F}(0) = 3 \), which gives,</p>
+        \[ 3 = 0 - 6 \times 0 + \text{C} \quad\text{or}\quad \text{C} = 3 \]
+        <p>Hence, the required anti derivative is the unique function F defined by</p>
+        \[ \text{F}(x) = x^4 - 6x + 3. \]
+    </div>
+</div>
+
+<div class="card">
+    <h2>Remarks</h2>
+    <div class="box box-insight">
+        <div class="box-label">Remarks</div>
+        <p>(i) We see that if F is an anti derivative of \( f \), then so is F + C, where C is any constant. Thus, if we know one anti derivative F of a function \( f \), we can write down an infinite number of anti derivatives of \( f \) by adding any constant to F expressed by \( \text{F}(x) + \text{C},\ \text{C} \in \mathbf{R} \). In applications, it is often necessary to satisfy an additional condition which then determines a specific value of C giving unique anti derivative of the given function.</p>
+        <p>(ii) Sometimes, F is not expressible in terms of elementary functions viz., polynomial, logarithmic, exponential, trigonometric functions and their inverses etc. We are therefore blocked for finding \( \int f(x)\,dx \). For example, it is not possible to find \( \int e^{-x^2}\,dx \) by inspection since we can not find a function whose derivative is \( e^{-x^2} \).</p>
+        <p>(iii) When the variable of integration is denoted by a variable other than \( x \), the integral formulae are modified accordingly. For instance</p>
+        \[ \int y^4\,dy = \frac{y^{4+1}}{4+1} + \text{C} = \frac{1}{5}y^5 + \text{C} \]
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../07-integrals/02-integration-as-an-inverse-process-of-differentiation-7.2/index.html" class="nav-btn">&larr; 7.2 Integration as an Inverse Process of Differentiation</a>
+    <a href="../../07-integrals/04-exercise-7.1/index.html" class="nav-btn">Exercise 7.1 &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

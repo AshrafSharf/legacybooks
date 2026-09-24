@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10.1 Introduction — Vector Algebra</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Vector Algebra · 10.1 Introduction">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../09-differential-equations/18-historical-note/index.html" title="Historical Note">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Vector Algebra</a></span>
+    <span class="c2">10.1 Introduction</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 10 · Vector Algebra</div><a href="../01-introduction-10.1/index.html" aria-current="page">10.1 Introduction</a><a href="../02-some-basic-concepts-10.2/index.html">10.2 Some Basic Concepts</a><a href="../03-types-of-vectors-10.3/index.html">10.3 Types of Vectors</a><a href="../04-exercise-10.1/index.html">Exercise 10.1</a><a href="../05-addition-of-vectors-10.4/index.html">10.4 Addition of Vectors</a><a href="../06-multiplication-of-a-vector-by-a-scalar-10.5/index.html">10.5 Multiplication of a Vector by a Scalar</a><a href="../07-components-of-a-vector-10.5.1/index.html">10.5.1 Components of a vector</a><a href="../08-vector-joining-two-points-10.5.2/index.html">10.5.2 Vector joining two points</a><a href="../09-section-formula-10.5.3/index.html">10.5.3 Section formula</a><a href="../10-exercise-10.2/index.html">Exercise 10.2</a><a href="../11-product-of-two-vectors-10.6/index.html">10.6 Product of Two Vectors</a><a href="../12-scalar-or-dot-product-of-two-vectors-10.6.1/index.html">10.6.1 Scalar (or dot) product of two vectors</a><a href="../13-projection-of-a-vector-on-a-line-10.6.2/index.html">10.6.2 Projection of a vector on a line</a><a href="../14-exercise-10.3/index.html">Exercise 10.3</a><a href="../15-vector-or-cross-product-of-two-vectors-10.6.3/index.html">10.6.3 Vector (or cross) product of two vectors</a><a href="../16-exercise-10.4/index.html">Exercise 10.4</a><a href="../17-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../18-miscellaneous-exercise-on-chapter-10/index.html">Miscellaneous Exercise on Chapter 10</a><a href="../19-summary/index.html">Summary</a><a href="../20-historical-note/index.html">Historical Note</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../10-vector-algebra/02-some-basic-concepts-10.2/index.html" title="10.2 Some Basic Concepts">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">10</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 10 · Vector Algebra</a></p>
+        <h1>10.1 Introduction</h1>
+        <p class="subtitle">How tall are you, and where should the ball go? Two kinds of answers: scalars and vectors</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="box box-insight" style="text-align:center; font-style:italic;">
+    &#10070; In most sciences one generation tears down what another has built and what one has established another undoes. In Mathematics alone each generation builds a new story to the old structure. &#10070;
+    <div style="font-style:normal; font-family:'Segoe UI',sans-serif; font-size:0.95rem; margin-top:0.5rem; color:#c0602b; font-weight:600;">&mdash; Herman Hankel</div>
+</div>
+
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>Quantities with only a <span class="teal">magnitude</span> &mdash; <strong>scalars</strong></li>
+        <li>Quantities with a magnitude <em>and</em> a <span class="teal">direction</span> &mdash; <strong>vectors</strong></li>
+        <li>Everyday examples of scalar and vector quantities from mathematics, physics and engineering</li>
+        <li>What this chapter will study: operations on vectors and their algebraic and geometric properties</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Scalars and Vectors</h2>
+
+    <figure class="diagram" style="float:right; max-width:190px; margin:0.25rem 0 1rem 1.5rem;">
+        <img src="img/hamilton.webp" alt="Portrait of W. R. Hamilton" width="178" height="230" loading="lazy">
+        <figcaption>W.R. Hamilton (1805&ndash;1865)</figcaption>
+    </figure>
+
+    <p>In our day to day life, we come across many queries such as &ndash; <em>What is your height?</em> <em>How should a football player hit the ball to give a pass to another player of his team?</em></p>
+
+    <p>Observe that a possible answer to the first query may be 1.6 meters, a quantity that involves only one value (magnitude) which is a real number. Such quantities are called <strong><em>scalars</em></strong>.</p>
+
+    <p>However, an answer to the second query is a quantity (called force) which involves muscular strength (magnitude) and direction (in which another player is positioned). Such quantities are called <strong><em>vectors</em></strong>.</p>
+
+    <div class="box box-definition" style="clear:both;">
+        <div class="box-label">Scalars and Vectors in a Nutshell</div>
+        <table>
+            <tr><th>Scalar quantity</th><th>Vector quantity</th></tr>
+            <tr><td>involves only one value (magnitude), a real number</td><td>involves a magnitude <em>and</em> a direction</td></tr>
+            <tr><td>length, mass, time, distance, speed, area, volume, temperature, work, money, voltage, density, resistance etc.</td><td>displacement, velocity, acceleration, force, weight, momentum, electric field intensity etc.</td></tr>
+        </table>
+    </div>
+
+    <p>In mathematics, physics and engineering, we frequently come across with both types of quantities, namely, scalar quantities such as length, mass, time, distance, speed, area, volume, temperature, work, money, voltage, density, resistance etc. and vector quantities like displacement, velocity, acceleration, force, weight, momentum, electric field intensity etc.</p>
+</div>
+
+<div class="card">
+    <h2>What Lies Ahead</h2>
+    <p>In this chapter, we will study some of the basic concepts about vectors, various operations on vectors, and their algebraic and geometric properties. These two type of properties, when considered together give a full realisation to the concept of vectors, and lead to their vital applicability in various areas as mentioned above.</p>
+    <div class="box box-insight">
+        <div class="box-label">Key Insight</div>
+        <p>A scalar answers &ldquo;how much?&rdquo;; a vector answers &ldquo;how much, and which way?&rdquo;. The football pass needs both how hard to kick and where to aim.</p>
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../09-differential-equations/18-historical-note/index.html" class="nav-btn">&larr; Historical Note</a>
+    <a href="../../10-vector-algebra/02-some-basic-concepts-10.2/index.html" class="nav-btn">10.2 Some Basic Concepts &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

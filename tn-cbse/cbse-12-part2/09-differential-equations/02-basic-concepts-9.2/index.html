@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.2 Basic Concepts — Differential Equations</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Differential Equations · 9.2 Basic Concepts">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../09-differential-equations/01-introduction-9.1/index.html" title="9.1 Introduction">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Differential Equations</a></span>
+    <span class="c2">9.2 Basic Concepts</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 9 · Differential Equations</div><a href="../01-introduction-9.1/index.html">9.1 Introduction</a><a href="../02-basic-concepts-9.2/index.html" aria-current="page">9.2 Basic Concepts</a><a href="../03-order-of-a-differential-equation-9.2.1/index.html">9.2.1 Order of a differential equation</a><a href="../04-degree-of-a-differential-equation-9.2.2/index.html">9.2.2 Degree of a differential equation</a><a href="../05-exercise-9.1/index.html">Exercise 9.1</a><a href="../06-general-and-particular-solutions-of-a-differential-equatio-9.3/index.html">9.3 General and Particular Solutions of a Differential Equation</a><a href="../07-exercise-9.2/index.html">Exercise 9.2</a><a href="../08-methods-of-solving-first-order-first-degree-differential-e-9.4/index.html">9.4 Methods of Solving First Order, First Degree Differential Equations</a><a href="../09-differential-equations-with-variables-separable-9.4.1/index.html">9.4.1 Differential equations with variables separable</a><a href="../10-exercise-9.3/index.html">Exercise 9.3</a><a href="../11-homogeneous-differential-equations-9.4.2/index.html">9.4.2 Homogeneous Differential Equations</a><a href="../12-exercise-9.4/index.html">Exercise 9.4</a><a href="../13-linear-differential-equations-9.4.3/index.html">9.4.3 Linear Differential Equations</a><a href="../14-exercise-9.5/index.html">Exercise 9.5</a><a href="../15-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../16-miscellaneous-exercise-on-chapter-9/index.html">Miscellaneous Exercise on Chapter 9</a><a href="../17-summary/index.html">Summary</a><a href="../18-historical-note/index.html">Historical Note</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../09-differential-equations/03-order-of-a-differential-equation-9.2.1/index.html" title="9.2.1 Order of a differential equation">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">9</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 9 · Differential Equations</a></p>
+        <h1>9.2 Basic Concepts</h1>
+        <p class="subtitle">When an equation involves a derivative of the unknown, it becomes a differential equation</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>How a <strong>differential equation</strong> differs from ordinary algebraic and trigonometric equations</li>
+        <li>The general definition of a differential equation</li>
+        <li><strong>Ordinary</strong> versus <strong>partial</strong> differential equations</li>
+        <li>Compact notation for derivatives: \(y', y'', y'''\) and \(y_n\)</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Equations With and Without Derivatives</h2>
+    <p>We are already familiar with the equations of the type:</p>
+    \[ \begin{aligned} x^2 - 3x + 3 &amp;= 0 &amp;&amp;\quad \text{(1)}\\ \sin x + \cos x &amp;= 0 &amp;&amp;\quad \text{(2)}\\ x + y &amp;= 7 &amp;&amp;\quad \text{(3)} \end{aligned} \]
+    <p>Let us consider the equation:</p>
+    \[ x\frac{dy}{dx} + y = 0 \tag{4} \]
+    <p>We see that equations (1), (2) and (3) involve independent and/or dependent variable (variables) only but equation (4) involves variables as well as derivative of the dependent variable \(y\) with respect to the independent variable \(x\). Such an equation is called a <em>differential equation</em>.</p>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Differential Equation</div>
+        <p>In general, an equation involving derivative (derivatives) of the dependent variable with respect to independent variable (variables) is called a <strong>differential equation</strong>.</p>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Ordinary Differential Equations</h2>
+    <div class="box box-definition">
+        <div class="box-label">Definition &mdash; Ordinary Differential Equation</div>
+        <p>A differential equation involving derivatives of the dependent variable with respect to only one independent variable is called an <strong>ordinary differential equation</strong>, e.g.,</p>
+        \[ 2\frac{d^2y}{dx^2} + \left(\frac{dy}{dx}\right)^3 = 0 \ \text{ is an ordinary differential equation} \tag{5} \]
+    </div>
+    <p>Of course, there are differential equations involving derivatives with respect to more than one independent variables, called <strong>partial differential equations</strong> but at this stage we shall confine ourselves to the study of ordinary differential equations only. Now onward, we will use the term &lsquo;differential equation&rsquo; for &lsquo;ordinary differential equation&rsquo;.</p>
+
+    <div class="box box-insight">
+        <div class="box-label">Note</div>
+        <ol>
+            <li>We shall prefer to use the following notations for derivatives:
+                \[ \frac{dy}{dx} = y', \quad \frac{d^2y}{dx^2} = y'', \quad \frac{d^3y}{dx^3} = y''' \]
+            </li>
+            <li>For derivatives of higher order, it will be inconvenient to use so many dashes as supersuffix therefore, we use the notation \(y_n\) for \(n\)th order derivative \(\dfrac{d^ny}{dx^n}\).</li>
+        </ol>
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../09-differential-equations/01-introduction-9.1/index.html" class="nav-btn">&larr; 9.1 Introduction</a>
+    <a href="../../09-differential-equations/03-order-of-a-differential-equation-9.2.1/index.html" class="nav-btn">9.2.1 Order of a differential equation &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

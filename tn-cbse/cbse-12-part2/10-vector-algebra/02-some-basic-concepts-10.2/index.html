@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10.2 Some Basic Concepts — Vector Algebra</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Vector Algebra · 10.2 Some Basic Concepts">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../10-vector-algebra/01-introduction-10.1/index.html" title="10.1 Introduction">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Vector Algebra</a></span>
+    <span class="c2">10.2 Some Basic Concepts</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 10 · Vector Algebra</div><a href="../01-introduction-10.1/index.html">10.1 Introduction</a><a href="../02-some-basic-concepts-10.2/index.html" aria-current="page">10.2 Some Basic Concepts</a><a href="../03-types-of-vectors-10.3/index.html">10.3 Types of Vectors</a><a href="../04-exercise-10.1/index.html">Exercise 10.1</a><a href="../05-addition-of-vectors-10.4/index.html">10.4 Addition of Vectors</a><a href="../06-multiplication-of-a-vector-by-a-scalar-10.5/index.html">10.5 Multiplication of a Vector by a Scalar</a><a href="../07-components-of-a-vector-10.5.1/index.html">10.5.1 Components of a vector</a><a href="../08-vector-joining-two-points-10.5.2/index.html">10.5.2 Vector joining two points</a><a href="../09-section-formula-10.5.3/index.html">10.5.3 Section formula</a><a href="../10-exercise-10.2/index.html">Exercise 10.2</a><a href="../11-product-of-two-vectors-10.6/index.html">10.6 Product of Two Vectors</a><a href="../12-scalar-or-dot-product-of-two-vectors-10.6.1/index.html">10.6.1 Scalar (or dot) product of two vectors</a><a href="../13-projection-of-a-vector-on-a-line-10.6.2/index.html">10.6.2 Projection of a vector on a line</a><a href="../14-exercise-10.3/index.html">Exercise 10.3</a><a href="../15-vector-or-cross-product-of-two-vectors-10.6.3/index.html">10.6.3 Vector (or cross) product of two vectors</a><a href="../16-exercise-10.4/index.html">Exercise 10.4</a><a href="../17-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../18-miscellaneous-exercise-on-chapter-10/index.html">Miscellaneous Exercise on Chapter 10</a><a href="../19-summary/index.html">Summary</a><a href="../20-historical-note/index.html">Historical Note</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../10-vector-algebra/03-types-of-vectors-10.3/index.html" title="10.3 Types of Vectors">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">10</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 10 · Vector Algebra</a></p>
+        <h1>10.2 Some Basic Concepts</h1>
+        <p class="subtitle">Directed line segments, position vectors, and the cosines that pin down a direction</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li><strong>Directed lines</strong> and <strong>directed line segments</strong></li>
+        <li>The definition of a <strong>vector</strong>: its initial point, terminal point and magnitude</li>
+        <li>The <strong>position vector</strong> of a point P(<em>x</em>, <em>y</em>, <em>z</em>) and its magnitude \( \sqrt{x^2+y^2+z^2} \)</li>
+        <li><strong>Direction angles</strong>, <strong>direction cosines</strong> \( l, m, n \) and <strong>direction ratios</strong> \( a, b, c \)</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Directed Lines and Vectors</h2>
+    <p>Let &lsquo;<em>l</em>&rsquo; be any straight line in plane or three dimensional space. This line can be given two directions by means of arrowheads. A line with one of these directions prescribed is called a <strong><em>directed line</em></strong> (Fig 10.1 (i), (ii)).</p>
+
+    <figure class="diagram">
+        <svg viewBox="0 0 600 270" xmlns="http://www.w3.org/2000/svg" style="max-width:520px;" role="img" aria-label="Three copies of a line l: (i) directed upward, (ii) directed downward, (iii) the directed line segment AB representing vector a" font-family="'Segoe UI', sans-serif">
+<defs><marker id="f101-t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#0d4f4f"/></marker></defs>
+<line x1="62.0" y1="234.7" x2="80.0" y2="205.0" stroke="#2b6cb0" stroke-width="1.8" stroke-dasharray="2 5"/>
+<line x1="180.0" y1="40.0" x2="198.0" y2="10.3" stroke="#2b6cb0" stroke-width="1.8" stroke-dasharray="2 5"/>
+<text x="182.0" y="14.3" font-size="17" fill="#2d2d2d" text-anchor="middle" font-style="italic" font-family="Georgia, 'Times New Roman', serif">l</text>
+<line x1="80.0" y1="205.0" x2="130.0" y2="122.5" stroke="#0d4f4f" stroke-width="2.4" marker-end="url(#f101-t)"/>
+<line x1="130.0" y1="122.5" x2="180.0" y2="40.0" stroke="#0d4f4f" stroke-width="2.4"/>
+<text x="130.0" y="255.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">(i)</text>
+<line x1="252.0" y1="234.7" x2="270.0" y2="205.0" stroke="#2b6cb0" stroke-width="1.8" stroke-dasharray="2 5"/>
+<line x1="370.0" y1="40.0" x2="388.0" y2="10.3" stroke="#2b6cb0" stroke-width="1.8" stroke-dasharray="2 5"/>
+<text x="372.0" y="14.3" font-size="17" fill="#2d2d2d" text-anchor="middle" font-style="italic" font-family="Georgia, 'Times New Roman', serif">l</text>
+<line x1="370.0" y1="40.0" x2="320.0" y2="122.5" stroke="#0d4f4f" stroke-width="2.4" marker-end="url(#f101-t)"/>
+<line x1="320.0" y1="122.5" x2="270.0" y2="205.0" stroke="#0d4f4f" stroke-width="2.4"/>
+<text x="320.0" y="255.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">(ii)</text>
+<line x1="442.0" y1="234.7" x2="460.0" y2="205.0" stroke="#2b6cb0" stroke-width="1.8" stroke-dasharray="2 5"/>
+<line x1="560.0" y1="40.0" x2="578.0" y2="10.3" stroke="#2b6cb0" stroke-width="1.8" stroke-dasharray="2 5"/>
+<text x="562.0" y="14.3" font-size="17" fill="#2d2d2d" text-anchor="middle" font-style="italic" font-family="Georgia, 'Times New Roman', serif">l</text>
+<line x1="460.0" y1="205.0" x2="485.0" y2="163.8" stroke="#2b6cb0" stroke-width="1.8" stroke-dasharray="2 5"/>
+<line x1="535.0" y1="81.2" x2="560.0" y2="40.0" stroke="#2b6cb0" stroke-width="1.8" stroke-dasharray="2 5"/>
+<line x1="485.0" y1="163.8" x2="510.0" y2="122.5" stroke="#0d4f4f" stroke-width="2.6" marker-end="url(#f101-t)"/>
+<line x1="510.0" y1="122.5" x2="535.0" y2="81.2" stroke="#0d4f4f" stroke-width="2.6"/>
+<line x1="479.9" y1="160.6" x2="490.1" y2="166.9" stroke="#2d2d2d" stroke-width="1.6"/>
+<line x1="529.9" y1="78.1" x2="540.1" y2="84.4" stroke="#2d2d2d" stroke-width="1.6"/>
+<text x="473.0" y="167.8" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">A</text>
+<text x="523.0" y="83.2" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">B</text>
+<g><text x="488.0" y="124.5" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">a</text><path d="M483.8,109.7 H492.8 M489.6,106.9 L492.8,109.7 L489.6,112.5" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<text x="510.0" y="255.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">(iii)</text>
+</svg>
+        <figcaption>Fig 10.1 &mdash; (i), (ii) the line <em>l</em> with each of its two directions; (iii) the directed line segment AB</figcaption>
+    </figure>
+
+    <p>Now observe that if we restrict the line <em>l</em> to the line segment AB, then a magnitude is prescribed on the line <em>l</em> with one of the two directions, so that we obtain a <strong><em>directed line segment</em></strong> (Fig 10.1(iii)). Thus, a directed line segment has magnitude as well as direction.</p>
+
+    <div class="box box-definition">
+        <div class="box-label">Definition 1 &mdash; Vector</div>
+        <p>A quantity that has magnitude as well as direction is called a <strong>vector</strong>.</p>
+    </div>
+
+    <p>Notice that a directed line segment is a vector (Fig 10.1(iii)), denoted as \( \overrightarrow{AB} \) or simply as \( \vec{a} \), and read as &lsquo;vector \( \overrightarrow{AB} \)&rsquo; or &lsquo;vector \( \vec{a} \)&rsquo;.</p>
+
+    <p>The point A from where the vector \( \overrightarrow{AB} \) starts is called its <strong><em>initial point</em></strong>, and the point B where it ends is called its <strong><em>terminal point</em></strong>. The distance between initial and terminal points of a vector is called the <strong><em>magnitude</em></strong> (or length) of the vector, denoted as \( |\overrightarrow{AB}| \), or \( |\vec{a}| \), or \( a \). The arrow indicates the direction of the vector.</p>
+
+    <div class="box box-insight">
+        <div class="box-label">Note</div>
+        <p>Since the length is never negative, the notation \( |\vec{a}| \lt 0 \) has no meaning.</p>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Position Vector</h2>
+    <p>From Class XI, recall the three dimensional right handed rectangular coordinate system (Fig 10.2(i)). Consider a point P in space, having coordinates \( (x, y, z) \) with respect to the origin O(0, 0, 0). Then, the vector \( \overrightarrow{OP} \) having O and P as its initial and terminal points, respectively, is called the <strong><em>position vector</em></strong> of the point P with respect to O. Using distance formula (from Class XI), the magnitude of \( \overrightarrow{OP} \) (or \( \vec{r} \)) is given by</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Magnitude of a Position Vector</div>
+        \[ |\overrightarrow{OP}| = \sqrt{x^2 + y^2 + z^2} \]
+    </div>
+
+    <p>In practice, the position vectors of points A, B, C, etc., with respect to the origin O are denoted by \( \vec{a}, \vec{b}, \vec{c} \), etc., respectively (Fig 10.2 (ii)).</p>
+
+    <figure class="diagram">
+        <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;" role="img" aria-label="(i) Position vector r from the origin O to P(x, y, z); (ii) position vectors a, b, c of points A, B, C" font-family="'Segoe UI', sans-serif">
+<defs><marker id="f102-t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#0d4f4f"/></marker><marker id="f102-k" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#555"/></marker></defs>
+<line x1="110.0" y1="190.0" x2="27.5" y2="257.5" stroke="#555" stroke-width="1.6" marker-end="url(#f102-k)"/>
+<line x1="110.0" y1="190.0" x2="280.0" y2="190.0" stroke="#555" stroke-width="1.6" marker-end="url(#f102-k)"/>
+<line x1="110.0" y1="190.0" x2="110.0" y2="30.0" stroke="#555" stroke-width="1.6" marker-end="url(#f102-k)"/>
+<text x="19.5" y="273.5" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">X</text>
+<text x="294.0" y="195.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">Y</text>
+<text x="110.0" y="22.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">Z</text>
+<text x="140.0" y="210.0" font-size="14" fill="#2d2d2d" text-anchor="middle" font-weight="bold">O(0,0,0)</text>
+<line x1="110.0" y1="190.0" x2="235.0" y2="115.0" stroke="#0d4f4f" stroke-width="2.4" marker-end="url(#f102-t)"/>
+<circle cx="235.0" cy="115.0" r="3.5" fill="#0d4f4f"/>
+<text x="241.0" y="119.0" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">P(<tspan font-style="italic">x,y,z</tspan>)</text>
+<g><text x="166.5" y="142.5" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">r</text><path d="M162.3,127.7 H171.3 M168.1,124.9 L171.3,127.7 L168.1,130.5" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<text x="110.0" y="290.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">(i)</text>
+<line x1="420.0" y1="190.0" x2="337.5" y2="257.5" stroke="#555" stroke-width="1.6" marker-end="url(#f102-k)"/>
+<line x1="420.0" y1="190.0" x2="590.0" y2="190.0" stroke="#555" stroke-width="1.6" marker-end="url(#f102-k)"/>
+<line x1="420.0" y1="190.0" x2="420.0" y2="30.0" stroke="#555" stroke-width="1.6" marker-end="url(#f102-k)"/>
+<text x="329.5" y="273.5" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">X</text>
+<text x="604.0" y="195.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">Y</text>
+<text x="420.0" y="22.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">Z</text>
+<text x="414.0" y="210.0" font-size="14" fill="#2d2d2d" text-anchor="middle" font-weight="bold">O</text>
+<line x1="420.0" y1="190.0" x2="460.0" y2="60.0" stroke="#0d4f4f" stroke-width="2.2" marker-end="url(#f102-t)"/>
+<circle cx="460.0" cy="60.0" r="3" fill="#2d2d2d"/>
+<text x="460.0" y="50.0" font-size="14" fill="#2d2d2d" text-anchor="middle" font-weight="bold">A</text>
+<g><text x="426.0" y="116.5" font-size="17" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">a</text><path d="M422.1,102.6 H430.5 M427.3,99.8 L430.5,102.6 L427.3,105.4" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<line x1="420.0" y1="190.0" x2="550.0" y2="80.0" stroke="#0d4f4f" stroke-width="2.2" marker-end="url(#f102-t)"/>
+<circle cx="550.0" cy="80.0" r="3" fill="#2d2d2d"/>
+<text x="560.0" y="85.0" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">B</text>
+<g><text x="482.5" y="132.5" font-size="17" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">b</text><path d="M478.6,118.6 H487.0 M483.8,115.8 L487.0,118.6 L483.8,121.4" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<line x1="420.0" y1="190.0" x2="545.0" y2="140.0" stroke="#0d4f4f" stroke-width="2.2" marker-end="url(#f102-t)"/>
+<circle cx="545.0" cy="140.0" r="3" fill="#2d2d2d"/>
+<text x="555.0" y="145.0" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">C</text>
+<g><text x="501.5" y="149.0" font-size="17" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">c</text><path d="M497.6,135.1 H506.0 M502.8,132.3 L506.0,135.1 L502.8,137.9" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<text x="420.0" y="290.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">(ii)</text>
+</svg>
+        <figcaption>Fig 10.2 &mdash; (i) the position vector \( \vec{r} = \overrightarrow{OP} \); (ii) position vectors \( \vec{a}, \vec{b}, \vec{c} \) of A, B, C</figcaption>
+    </figure>
+</div>
+
+<div class="card">
+    <h2>Direction Cosines</h2>
+    <p>Consider the position vector \( \overrightarrow{OP} \) (or \( \vec{r} \)) of a point P(<em>x</em>, <em>y</em>, <em>z</em>) as in Fig 10.3. The angles \( \alpha, \beta, \gamma \) made by the vector \( \vec{r} \) with the positive directions of <em>x</em>, <em>y</em> and <em>z</em>-axes respectively, are called its <strong><em>direction angles</em></strong>. The cosine values of these angles, i.e., \( \cos\alpha, \cos\beta \) and \( \cos\gamma \) are called <strong><em>direction cosines</em></strong> of the vector \( \vec{r} \), and usually denoted by \( l, m \) and \( n \), respectively.</p>
+
+    <figure class="diagram">
+        <svg viewBox="0 0 640 380" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;" role="img" aria-label="Direction angles: the vector r = OP makes angles alpha, beta, gamma with the x, y and z axes; triangle OAP is right angled at A" font-family="'Segoe UI', sans-serif">
+<defs><marker id="f103-t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#0d4f4f"/></marker><marker id="f103-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#2b6cb0"/></marker><marker id="f103-k" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 L2.5,5 z" fill="#555"/></marker></defs>
+<line x1="190.0" y1="200.0" x2="80.0" y2="290.0" stroke="#555" stroke-width="1.6" marker-end="url(#f103-k)"/>
+<line x1="190.0" y1="200.0" x2="455.0" y2="200.0" stroke="#555" stroke-width="1.6" marker-end="url(#f103-k)"/>
+<line x1="190.0" y1="200.0" x2="190.0" y2="30.0" stroke="#555" stroke-width="1.6" marker-end="url(#f103-k)"/>
+<text x="72.0" y="306.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">X</text>
+<text x="469.0" y="205.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">Y</text>
+<text x="190.0" y="22.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-weight="bold">Z</text>
+<line x1="118.5" y1="258.5" x2="308.5" y2="258.5" stroke="#2b6cb0" stroke-width="1.2" stroke-dasharray="2 4"/>
+<line x1="380.0" y1="200.0" x2="308.5" y2="258.5" stroke="#2b6cb0" stroke-width="1.2" stroke-dasharray="2 4"/>
+<line x1="118.5" y1="258.5" x2="118.5" y2="168.5" stroke="#2b6cb0" stroke-width="1.2" stroke-dasharray="2 4"/>
+<line x1="190.0" y1="110.0" x2="118.5" y2="168.5" stroke="#2b6cb0" stroke-width="1.2" stroke-dasharray="2 4"/>
+<line x1="380.0" y1="200.0" x2="380.0" y2="110.0" stroke="#2b6cb0" stroke-width="1.2" stroke-dasharray="2 4"/>
+<line x1="190.0" y1="110.0" x2="380.0" y2="110.0" stroke="#2b6cb0" stroke-width="1.2" stroke-dasharray="2 4"/>
+<line x1="308.5" y1="258.5" x2="308.5" y2="168.5" stroke="#2b6cb0" stroke-width="1.2" stroke-dasharray="2 4"/>
+<line x1="118.5" y1="168.5" x2="308.5" y2="168.5" stroke="#2b6cb0" stroke-width="1.2" stroke-dasharray="2 4"/>
+<line x1="380.0" y1="110.0" x2="308.5" y2="168.5" stroke="#2b6cb0" stroke-width="1.2" stroke-dasharray="2 4"/>
+<line x1="308.5" y1="168.5" x2="118.5" y2="258.5" stroke="#2b6cb0" stroke-width="1.6" stroke-dasharray="7 4"/>
+<line x1="308.5" y1="168.5" x2="380.0" y2="200.0" stroke="#2b6cb0" stroke-width="1.6" stroke-dasharray="7 4"/>
+<line x1="308.5" y1="168.5" x2="190.0" y2="110.0" stroke="#2b6cb0" stroke-width="1.6" stroke-dasharray="7 4"/>
+<line x1="190.0" y1="200.0" x2="308.5" y2="168.5" stroke="#0d4f4f" stroke-width="2.6" marker-end="url(#f103-t)"/>
+<circle cx="308.5" cy="168.5" r="4.5" fill="#2d2d2d"/>
+<text x="318.5" y="173.5" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">P(<tspan font-style="italic">x,y,z</tspan>)</text>
+<g><text x="249.2" y="170.7" font-size="18" fill="#0d4f4f" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">r</text><path d="M245.0,155.9 H253.9 M250.7,153.1 L253.9,155.9 L250.7,158.7" fill="none" stroke="#0d4f4f" stroke-width="1.3"/></g>
+<text x="178.0" y="198.0" font-size="14" fill="#2d2d2d" text-anchor="middle" font-weight="bold">O</text>
+<text x="104.5" y="260.5" font-size="14" fill="#2d2d2d" text-anchor="middle" font-weight="bold">A</text>
+<text x="384.0" y="218.0" font-size="14" fill="#2d2d2d" text-anchor="middle" font-weight="bold">B</text>
+<text x="202.0" y="106.0" font-size="14" fill="#2d2d2d" text-anchor="middle" font-weight="bold">C</text>
+<text x="150.5" y="240.1" font-size="15" fill="#2d2d2d" text-anchor="middle" font-style="italic" font-family="Georgia, 'Times New Roman', serif">x</text>
+<text x="285.0" y="194.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-style="italic" font-family="Georgia, 'Times New Roman', serif">y</text>
+<text x="180.0" y="159.0" font-size="15" fill="#2d2d2d" text-anchor="middle" font-style="italic" font-family="Georgia, 'Times New Roman', serif">z</text>
+<path d="M163.7,221.5 A34,34 0 0 0 222.9,191.3" fill="none" stroke="#c0602b" stroke-width="1.6"/>
+<text x="210.9" y="246.0" font-size="15" fill="#c0602b" text-anchor="middle" >α</text>
+<path d="M248.0,200.0 A58,58 0 0 0 246.1,185.1" fill="none" stroke="#c0602b" stroke-width="1.6"/>
+<text x="263.4" y="195.9" font-size="15" fill="#c0602b" text-anchor="middle" >β</text>
+<path d="M190.0,174.0 A26,26 0 0 1 215.1,193.3" fill="none" stroke="#c0602b" stroke-width="1.6"/>
+<text x="213.2" y="174.9" font-size="15" fill="#c0602b" text-anchor="middle" >γ</text>
+<polygon points="440.0,290.0 505.0,345.0 590.0,240.0" fill="#e8f4f4" fill-opacity="1" stroke="#0d4f4f"/>
+<line x1="505.0" y1="345.0" x2="570.0" y2="400.0" stroke="#2b6cb0" stroke-width="1.4" stroke-dasharray="3 3" marker-end="url(#f103-b)"/>
+<text x="577.0" y="409.0" font-size="13" fill="#2d2d2d" text-anchor="middle" font-weight="bold">X</text>
+<path d="M496.6,337.9 l6.9,-8.5 l8.4,7.1" fill="none" stroke="#2d2d2d" stroke-width="1.3"/>
+<path d="M455.3,302.9 A20,20 0 0 0 459.0,283.7" fill="none" stroke="#c0602b" stroke-width="1.6"/>
+<text x="470.0" y="296.0" font-size="13" fill="#c0602b" text-anchor="middle" >α</text>
+<text x="430.0" y="294.0" font-size="14" fill="#2d2d2d" text-anchor="middle" font-weight="bold">O</text>
+<text x="501.0" y="363.0" font-size="14" fill="#2d2d2d" text-anchor="middle" font-weight="bold">A</text>
+<text x="600.0" y="240.0" font-size="14" fill="#2d2d2d" text-anchor="middle" font-weight="bold">P</text>
+<text x="507.0" y="323.0" font-size="13" fill="#2d2d2d" text-anchor="middle" >90°</text>
+</svg>
+        <figcaption>Fig 10.3 &mdash; Direction angles \( \alpha, \beta, \gamma \) of \( \vec{r} \); inset: the right angled triangle OAP</figcaption>
+    </figure>
+
+    <p>From Fig 10.3, one may note that the triangle OAP is right angled, and in it, we have \( \cos\alpha = \dfrac{x}{r} \) (\( r \) stands for \( |\vec{r}| \)). Similarly, from the right angled triangles OBP and OCP, we may write \( \cos\beta = \dfrac{y}{r} \) and \( \cos\gamma = \dfrac{z}{r} \).</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Direction Cosines and Direction Ratios</div>
+        \[ l = \cos\alpha = \frac{x}{r}, \qquad m = \cos\beta = \frac{y}{r}, \qquad n = \cos\gamma = \frac{z}{r} \]
+        <p>Thus, the coordinates of the point P may also be expressed as \( (lr, mr, nr) \). The numbers \( lr, mr \) and \( nr \), proportional to the direction cosines are called as <strong><em>direction ratios</em></strong> of vector \( \vec{r} \), and denoted as \( a, b \) and \( c \), respectively.</p>
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Note</div>
+        <p>One may note that \( l^2 + m^2 + n^2 = 1 \) but \( a^2 + b^2 + c^2 \neq 1 \), in general.</p>
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../10-vector-algebra/01-introduction-10.1/index.html" class="nav-btn">&larr; 10.1 Introduction</a>
+    <a href="../../10-vector-algebra/03-types-of-vectors-10.3/index.html" class="nav-btn">10.3 Types of Vectors &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

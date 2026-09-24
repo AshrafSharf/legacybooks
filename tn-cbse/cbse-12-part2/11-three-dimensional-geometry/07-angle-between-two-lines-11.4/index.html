@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11.4 Angle between Two Lines — Three Dimensional Geometry</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Three Dimensional Geometry · 11.4 Angle between Two Lines">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../11-three-dimensional-geometry/06-equation-of-a-line-through-a-given-point-and-parallel-to-g-11.3.1/index.html" title="11.3.1 Equation of a line through a given point and parallel to a given vector b⃗">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Three Dimensional Geometry</a></span>
+    <span class="c2">11.4 Angle between Two Lines</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 11 · Three Dimensional Geometry</div><a href="../01-introduction-11.1/index.html">11.1 Introduction</a><a href="../02-direction-cosines-and-direction-ratios-of-a-line-11.2/index.html">11.2 Direction Cosines and Direction Ratios of a Line</a><a href="../03-direction-cosines-of-a-line-passing-through-two-points-11.2.1/index.html">11.2.1 Direction cosines of a line passing through two points</a><a href="../04-exercise-11.1/index.html">Exercise 11.1</a><a href="../05-equation-of-a-line-in-space-11.3/index.html">11.3 Equation of a Line in Space</a><a href="../06-equation-of-a-line-through-a-given-point-and-parallel-to-g-11.3.1/index.html">11.3.1 Equation of a line through a given point and parallel to a given vector b⃗</a><a href="../07-angle-between-two-lines-11.4/index.html" aria-current="page">11.4 Angle between Two Lines</a><a href="../08-shortest-distance-between-two-lines-11.5/index.html">11.5 Shortest Distance between Two Lines</a><a href="../09-distance-between-two-skew-lines-11.5.1/index.html">11.5.1 Distance between two skew lines</a><a href="../10-distance-between-parallel-lines-11.5.2/index.html">11.5.2 Distance between parallel lines</a><a href="../11-exercise-11.2/index.html">Exercise 11.2</a><a href="../12-miscellaneous-exercise-on-chapter-11/index.html">Miscellaneous Exercise on Chapter 11</a><a href="../13-summary/index.html">Summary</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../11-three-dimensional-geometry/08-shortest-distance-between-two-lines-11.5/index.html" title="11.5 Shortest Distance between Two Lines">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">11</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 11 · Three Dimensional Geometry</a></p>
+        <h1>11.4 Angle between Two Lines</h1>
+        <p class="subtitle">The dot product of direction vectors measures how two lines in space lean towards each other</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>The acute angle \(\theta\) between two lines from their <strong>direction ratios</strong>: formulas for \(\cos\theta\) and \(\sin\theta\)</li>
+        <li>The same formulas in terms of <strong>direction cosines</strong></li>
+        <li>Conditions for two lines to be <span class="teal">perpendicular</span> or <span class="teal">parallel</span></li>
+        <li>The angle between lines given in <strong>vector</strong> form and in <strong>Cartesian</strong> form, with examples</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Angle from Direction Ratios</h2>
+
+    <figure class="diagram" style="float:right; max-width:300px; margin:0.25rem 0 1rem 1.5rem;">
+        <svg viewBox="60 10 380 280" xmlns="http://www.w3.org/2000/svg" style="max-width:300px;" role="img" aria-label="Two lines L1 and L2 through the origin O with points P and Q, making an angle theta.">
+            <defs>
+                <marker id="ah115" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2d2d2d"/></marker>
+                <marker id="ah115b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2b6cb0"/></marker>
+            </defs>
+            <line x1="200" y1="190" x2="200" y2="30" stroke="#2d2d2d" stroke-width="2" marker-end="url(#ah115)"/>
+            <line x1="200" y1="190" x2="420" y2="190" stroke="#2d2d2d" stroke-width="2" marker-end="url(#ah115)"/>
+            <line x1="200" y1="190" x2="95" y2="269" stroke="#2d2d2d" stroke-width="2" marker-end="url(#ah115)"/>
+            <text x="194" y="24" font-size="17" font-weight="bold">Z</text>
+            <text x="426" y="196" font-size="17" font-weight="bold">Y</text>
+            <text x="78" y="282" font-size="17" font-weight="bold">X</text>
+            <text x="178" y="186" font-size="16" font-weight="bold">O</text>
+            <line x1="90" y1="212" x2="400" y2="150" stroke="#2b6cb0" stroke-width="2.2" marker-start="url(#ah115b)" marker-end="url(#ah115b)"/>
+            <line x1="90" y1="232" x2="370" y2="125" stroke="#2b6cb0" stroke-width="2.2" marker-start="url(#ah115b)" marker-end="url(#ah115b)"/>
+            <circle cx="355" cy="159" r="4.5" fill="#c0602b"/>
+            <circle cx="345" cy="134.6" r="4.5" fill="#c0602b"/>
+            <text x="350" y="178" font-size="16" font-weight="bold" fill="#c0602b">P</text>
+            <text x="332" y="124" font-size="16" font-weight="bold" fill="#c0602b">Q</text>
+            <text x="406" y="152" font-size="16" font-weight="bold" fill="#2b6cb0">L<tspan font-size="11" dy="4">1</tspan></text>
+            <text x="376" y="122" font-size="16" font-weight="bold" fill="#2b6cb0">L<tspan font-size="11" dy="4">2</tspan></text>
+            <path d="M256 168.6 A60 60 0 0 1 258.8 178.2" fill="none" stroke="#0d4f4f" stroke-width="1.8"/>
+            <text x="264" y="178" font-size="15" fill="#0d4f4f" font-style="italic">&#952;</text>
+        </svg>
+        <figcaption>Fig 11.4</figcaption>
+    </figure>
+
+    <p>Let L<sub>1</sub> and L<sub>2</sub> be two lines passing through the origin and with direction ratios \(a_1, b_1, c_1\) and \(a_2, b_2, c_2\), respectively. Let P be a point on L<sub>1</sub> and Q be a point on L<sub>2</sub>. Consider the directed lines OP and OQ as given in Fig 11.4. Let \(\theta\) be the acute angle between OP and OQ.</p>
+    <p>Now recall that the directed line segments OP and OQ are vectors with components \(a_1, b_1, c_1\) and \(a_2, b_2, c_2\), respectively. Therefore, the angle \(\theta\) between them is given by</p>
+
+    <div class="box box-formula" style="clear:both;">
+        <div class="box-label">Angle between two lines (direction ratios)</div>
+        \[ \cos\theta = \left| \frac{a_1a_2 + b_1b_2 + c_1c_2}{\sqrt{a_1^2 + b_1^2 + c_1^2}\,\sqrt{a_2^2 + b_2^2 + c_2^2}} \right| \tag{1} \]
+    </div>
+
+    <p>The angle between the lines in terms of \(\sin\theta\) is given by</p>
+    <div class="math-scroll">
+    \[ \begin{aligned} \sin\theta &amp;= \sqrt{1 - \cos^2\theta} \\ &amp;= \sqrt{1 - \frac{(a_1a_2 + b_1b_2 + c_1c_2)^2}{\left(a_1^2 + b_1^2 + c_1^2\right)\left(a_2^2 + b_2^2 + c_2^2\right)}} \\ &amp;= \frac{\sqrt{\left(a_1^2 + b_1^2 + c_1^2\right)\left(a_2^2 + b_2^2 + c_2^2\right) - (a_1a_2 + b_1b_2 + c_1c_2)^2}}{\sqrt{\left(a_1^2 + b_1^2 + c_1^2\right)}\,\sqrt{\left(a_2^2 + b_2^2 + c_2^2\right)}} \\ &amp;= \frac{\sqrt{(a_1b_2 - a_2b_1)^2 + (b_1c_2 - b_2c_1)^2 + (c_1a_2 - c_2a_1)^2}}{\sqrt{a_1^2 + b_1^2 + c_1^2}\,\sqrt{a_2^2 + b_2^2 + c_2^2}} \end{aligned} \tag{2} \]
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Note</div>
+        <p>In case the lines L<sub>1</sub> and L<sub>2</sub> do not pass through the origin, we may take lines \(\mathrm{L}_1'\) and \(\mathrm{L}_2'\) which are parallel to L<sub>1</sub> and L<sub>2</sub> respectively and pass through the origin.</p>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Angle from Direction Cosines</h2>
+    <p>If instead of direction ratios for the lines L<sub>1</sub> and L<sub>2</sub>, direction cosines, namely, \(l_1, m_1, n_1\) for L<sub>1</sub> and \(l_2, m_2, n_2\) for L<sub>2</sub> are given, then (1) and (2) takes the following form:</p>
+    <div class="box box-formula">
+        <div class="box-label">Angle between two lines (direction cosines)</div>
+        \[ \cos\theta = |l_1l_2 + m_1m_2 + n_1n_2| \quad \left(\text{as } l_1^2 + m_1^2 + n_1^2 = 1 = l_2^2 + m_2^2 + n_2^2\right) \tag{3} \]
+        <p>and</p>
+        \[ \sin\theta = \sqrt{(l_1m_2 - l_2m_1)^2 + (m_1n_2 - m_2n_1)^2 + (n_1l_2 - n_2l_1)^2} \tag{4} \]
+    </div>
+
+    <h3>Perpendicular and parallel lines</h3>
+    <p>Two lines with direction ratios \(a_1, b_1, c_1\) and \(a_2, b_2, c_2\) are</p>
+    <div class="box box-formula">
+        <div class="box-label">Conditions</div>
+        <table>
+            <tr><th>Lines are</th><th>Condition</th></tr>
+            <tr><td>(i) perpendicular, i.e. if \(\theta = 90^\circ\) by (1)</td><td>\(a_1a_2 + b_1b_2 + c_1c_2 = 0\)</td></tr>
+            <tr><td>(ii) parallel, i.e. if \(\theta = 0\) by (2)</td><td>\(\dfrac{a_1}{a_2} = \dfrac{b_1}{b_2} = \dfrac{c_1}{c_2}\)</td></tr>
+        </table>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Angle between Lines Given by Equations</h2>
+    <p>Now, we find the angle between two lines when their equations are given. If \(\theta\) is acute the angle between the lines</p>
+    \[ \vec{r} = \vec{a}_1 + \lambda\vec{b}_1 \quad\text{and}\quad \vec{r} = \vec{a}_2 + \mu\vec{b}_2 \]
+    <p>then</p>
+    <div class="box box-formula">
+        <div class="box-label">Vector form</div>
+        \[ \cos\theta = \left| \frac{\vec{b}_1 \cdot \vec{b}_2}{|\vec{b}_1|\,|\vec{b}_2|} \right| \]
+    </div>
+    <p>In Cartesian form, if \(\theta\) is the angle between the lines</p>
+    \[ \frac{x - x_1}{a_1} = \frac{y - y_1}{b_1} = \frac{z - z_1}{c_1} \tag{1} \]
+    <p>and</p>
+    \[ \frac{x - x_2}{a_2} = \frac{y - y_2}{b_2} = \frac{z - z_2}{c_2} \tag{2} \]
+    <p>where, \(a_1, b_1, c_1\) and \(a_2, b_2, c_2\) are the direction ratios of the lines (1) and (2), respectively, then</p>
+    <div class="box box-formula">
+        <div class="box-label">Cartesian form</div>
+        \[ \cos\theta = \left| \frac{a_1a_2 + b_1b_2 + c_1c_2}{\sqrt{a_1^2 + b_1^2 + c_1^2}\,\sqrt{a_2^2 + b_2^2 + c_2^2}} \right| \]
+    </div>
+</div>
+
+<div class="card">
+    <h2>Worked Examples</h2>
+
+    <div class="box box-example">
+        <div class="box-label">Example 7</div>
+        <p>Find the angle between the pair of lines given by</p>
+        \[ \vec{r} = 3\hat{i} + 2\hat{j} - 4\hat{k} + \lambda\left(\hat{i} + 2\hat{j} + 2\hat{k}\right) \]
+        <p>and</p>
+        \[ \vec{r} = 5\hat{i} - 2\hat{j} + \mu\left(3\hat{i} + 2\hat{j} + 6\hat{k}\right) \]
+        <p><strong>Solution</strong> Here \(\vec{b}_1 = \hat{i} + 2\hat{j} + 2\hat{k}\) and \(\vec{b}_2 = 3\hat{i} + 2\hat{j} + 6\hat{k}\). The angle \(\theta\) between the two lines is given by</p>
+        \[ \begin{aligned} \cos\theta &amp;= \left| \frac{\vec{b}_1 \cdot \vec{b}_2}{|\vec{b}_1|\,|\vec{b}_2|} \right| = \left| \frac{\left(\hat{i} + 2\hat{j} + 2\hat{k}\right)\cdot\left(3\hat{i} + 2\hat{j} + 6\hat{k}\right)}{\sqrt{1 + 4 + 4}\,\sqrt{9 + 4 + 36}} \right| \\ &amp;= \left| \frac{3 + 4 + 12}{3 \times 7} \right| = \frac{19}{21} \end{aligned} \]
+        <p>Hence</p>
+        \[ \theta = \cos^{-1}\left(\frac{19}{21}\right) \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 8</div>
+        <p>Find the angle between the pair of lines</p>
+        \[ \frac{x + 3}{3} = \frac{y - 1}{5} = \frac{z + 3}{4} \quad\text{and}\quad \frac{x + 1}{1} = \frac{y - 4}{1} = \frac{z - 5}{2} \]
+        <p><strong>Solution</strong> The direction ratios of the first line are 3, 5, 4 and the direction ratios of the second line are 1, 1, 2. If \(\theta\) is the angle between them, then</p>
+        \[ \cos\theta = \left| \frac{3\cdot 1 + 5\cdot 1 + 4\cdot 2}{\sqrt{3^2 + 5^2 + 4^2}\,\sqrt{1^2 + 1^2 + 2^2}} \right| = \frac{16}{\sqrt{50}\,\sqrt{6}} = \frac{16}{5\sqrt{2}\,\sqrt{6}} = \frac{8\sqrt{3}}{15} \]
+        <p>Hence, the required angle is \(\cos^{-1}\left(\dfrac{8\sqrt{3}}{15}\right)\).</p>
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../11-three-dimensional-geometry/06-equation-of-a-line-through-a-given-point-and-parallel-to-g-11.3.1/index.html" class="nav-btn">&larr; 11.3.1 Equation of a line through a given point and parallel to a given vector b⃗</a>
+    <a href="../../11-three-dimensional-geometry/08-shortest-distance-between-two-lines-11.5/index.html" class="nav-btn">11.5 Shortest Distance between Two Lines &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

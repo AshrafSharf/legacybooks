@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 9.5 — Differential Equations</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Differential Equations · Exercise 9.5">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../09-differential-equations/13-linear-differential-equations-9.4.3/index.html" title="9.4.3 Linear Differential Equations">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Differential Equations</a></span>
+    <span class="c2">Exercise 9.5</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 9 · Differential Equations</div><a href="../01-introduction-9.1/index.html">9.1 Introduction</a><a href="../02-basic-concepts-9.2/index.html">9.2 Basic Concepts</a><a href="../03-order-of-a-differential-equation-9.2.1/index.html">9.2.1 Order of a differential equation</a><a href="../04-degree-of-a-differential-equation-9.2.2/index.html">9.2.2 Degree of a differential equation</a><a href="../05-exercise-9.1/index.html">Exercise 9.1</a><a href="../06-general-and-particular-solutions-of-a-differential-equatio-9.3/index.html">9.3 General and Particular Solutions of a Differential Equation</a><a href="../07-exercise-9.2/index.html">Exercise 9.2</a><a href="../08-methods-of-solving-first-order-first-degree-differential-e-9.4/index.html">9.4 Methods of Solving First Order, First Degree Differential Equations</a><a href="../09-differential-equations-with-variables-separable-9.4.1/index.html">9.4.1 Differential equations with variables separable</a><a href="../10-exercise-9.3/index.html">Exercise 9.3</a><a href="../11-homogeneous-differential-equations-9.4.2/index.html">9.4.2 Homogeneous Differential Equations</a><a href="../12-exercise-9.4/index.html">Exercise 9.4</a><a href="../13-linear-differential-equations-9.4.3/index.html">9.4.3 Linear Differential Equations</a><a href="../14-exercise-9.5/index.html" aria-current="page">Exercise 9.5</a><a href="../15-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../16-miscellaneous-exercise-on-chapter-9/index.html">Miscellaneous Exercise on Chapter 9</a><a href="../17-summary/index.html">Summary</a><a href="../18-historical-note/index.html">Historical Note</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../09-differential-equations/15-miscellaneous-examples/index.html" title="Miscellaneous Examples">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">9</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 9 · Differential Equations</a></p>
+        <h1>Exercise 9.5</h1>
+        <p class="subtitle">Find the integrating factor, multiply through, and integrate: linear equations in practice</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>General Solutions</h2>
+    <p>For each of the differential equations given in Exercises 1 to 12, find the general solution:</p>
+    <div class="question">
+        <span class="q-num">1</span>
+        <div class="q-body">
+            <p>\( \dfrac{dy}{dx} + 2y = \sin x \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( y = \dfrac{1}{5}(2\sin x - \cos x) + C\,e^{-2x} \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">2</span>
+        <div class="q-body">
+            <p>\( \dfrac{dy}{dx} + 3y = e^{-2x} \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( y = e^{-2x} + C\,e^{-3x} \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">3</span>
+        <div class="q-body">
+            <p>\( \dfrac{dy}{dx} + \dfrac{y}{x} = x^2 \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( xy = \dfrac{x^4}{4} + C \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">4</span>
+        <div class="q-body">
+            <p>\( \dfrac{dy}{dx} + (\sec x)\,y = \tan x \left(0 \le x \lt \dfrac{\pi}{2}\right) \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( y(\sec x + \tan x) = \sec x + \tan x - x + C \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">5</span>
+        <div class="q-body">
+            <p>\( \cos^2 x\dfrac{dy}{dx} + y = \tan x \left(0 \le x \lt \dfrac{\pi}{2}\right) \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( y = (\tan x - 1) + C\,e^{-\tan x} \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">6</span>
+        <div class="q-body">
+            <p>\( x\dfrac{dy}{dx} + 2y = x^2\log x \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( y = \dfrac{x^2}{16}(4\log|x| - 1) + C\,x^{-2} \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">7</span>
+        <div class="q-body">
+            <p>\( x\log x\dfrac{dy}{dx} + y = \dfrac{2}{x}\log x \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( y\log x = \dfrac{-2}{x}(1 + \log|x|) + C \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">8</span>
+        <div class="q-body">
+            <p>\( (1 + x^2)\,dy + 2xy\,dx = \cot x\,dx\ (x \neq 0) \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( y = (1 + x^2)^{-1}\log|\sin x| + C(1 + x^2)^{-1} \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">9</span>
+        <div class="q-body">
+            <p>\( x\dfrac{dy}{dx} + y - x + xy\cot x = 0\ (x \neq 0) \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( y = \dfrac{1}{x} - \cot x + \dfrac{C}{x\sin x} \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">10</span>
+        <div class="q-body">
+            <p>\( (x + y)\dfrac{dy}{dx} = 1 \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( (x + y + 1) = C\,e^{y} \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">11</span>
+        <div class="q-body">
+            <p>\( y\,dx + (x - y^2)\,dy = 0 \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( x = \dfrac{y^2}{3} + \dfrac{C}{y} \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">12</span>
+        <div class="q-body">
+            <p>\( (x + 3y^2)\dfrac{dy}{dx} = y\ (y \gt 0) \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( x = 3y^2 + Cy \)</p></div>
+        </div>
+    </div>
+
+</div>
+
+<div class="card">
+    <h2>Particular Solutions</h2>
+    <p>For each of the differential equations given in Exercises 13 to 15, find a particular solution satisfying the given condition:</p>
+    <div class="question">
+        <span class="q-num">13</span>
+        <div class="q-body">
+            <p>\( \dfrac{dy}{dx} + 2y\tan x = \sin x;\ y = 0 \) when \( x = \dfrac{\pi}{3} \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( y = \cos x - 2\cos^2 x \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">14</span>
+        <div class="q-body">
+            <p>\( (1 + x^2)\dfrac{dy}{dx} + 2xy = \dfrac{1}{1 + x^2};\ y = 0 \) when \( x = 1 \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( y(1 + x^2) = \tan^{-1} x - \dfrac{\pi}{4} \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">15</span>
+        <div class="q-body">
+            <p>\( \dfrac{dy}{dx} - 3y\cot x = \sin 2x;\ y = 2 \) when \( x = \dfrac{\pi}{2} \)</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( y = 4\sin^3 x - 2\sin^2 x \)</p></div>
+        </div>
+    </div>
+
+</div>
+
+<div class="card">
+    <h2>Curves from Tangent Conditions</h2>
+    <div class="question">
+        <span class="q-num">16</span>
+        <div class="q-body">
+            <p>Find the equation of a curve passing through the origin given that the slope of the tangent to the curve at any point \( (x, y) \) is equal to the sum of the coordinates of the point.</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( x + y + 1 = e^{x} \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">17</span>
+        <div class="q-body">
+            <p>Find the equation of a curve passing through the point (0, 2) given that the sum of the coordinates of any point on the curve exceeds the magnitude of the slope of the tangent to the curve at that point by 5.</p>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">\( y = 4 - x - 2\,e^{x} \)</p></div>
+        </div>
+    </div>
+
+</div>
+
+<div class="card">
+    <h2>Choose the Correct Answer</h2>
+    <div class="question">
+        <span class="q-num">18</span>
+        <div class="q-body">
+            <p>The Integrating Factor of the differential equation \( x\dfrac{dy}{dx} - y = 2x^2 \) is</p>
+            <ul class="choices">
+                <li>(A) \( e^{-x} \)</li>
+                <li>(B) \( e^{-y} \)</li>
+                <li>(C) \( \dfrac{1}{x} \)</li>
+                <li>(D) \( x \)</li>
+            </ul>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">(C) \( \dfrac{1}{x} \)</p></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <span class="q-num">19</span>
+        <div class="q-body">
+            <p>The Integrating Factor of the differential equation \( (1 - y^2)\dfrac{dx}{dy} + yx = ay\ (-1 \lt y \lt 1) \) is</p>
+            <ul class="choices">
+                <li>(A) \( \dfrac{1}{y^2 - 1} \)</li>
+                <li>(B) \( \dfrac{1}{\sqrt{y^2 - 1}} \)</li>
+                <li>(C) \( \dfrac{1}{1 - y^2} \)</li>
+                <li>(D) \( \dfrac{1}{\sqrt{1 - y^2}} \)</li>
+            </ul>
+            <button class="solution-toggle">Show Answer</button>
+            <div class="solution-content"><p class="answer-line">(D) \( \dfrac{1}{\sqrt{1 - y^2}} \)</p></div>
+        </div>
+    </div>
+
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../09-differential-equations/13-linear-differential-equations-9.4.3/index.html" class="nav-btn">&larr; 9.4.3 Linear Differential Equations</a>
+    <a href="../../09-differential-equations/15-miscellaneous-examples/index.html" class="nav-btn">Miscellaneous Examples &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.1 Introduction — Differential Equations</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Differential Equations · 9.1 Introduction">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../08-application-of-integrals/07-historical-note/index.html" title="Historical Note">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Differential Equations</a></span>
+    <span class="c2">9.1 Introduction</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 9 · Differential Equations</div><a href="../01-introduction-9.1/index.html" aria-current="page">9.1 Introduction</a><a href="../02-basic-concepts-9.2/index.html">9.2 Basic Concepts</a><a href="../03-order-of-a-differential-equation-9.2.1/index.html">9.2.1 Order of a differential equation</a><a href="../04-degree-of-a-differential-equation-9.2.2/index.html">9.2.2 Degree of a differential equation</a><a href="../05-exercise-9.1/index.html">Exercise 9.1</a><a href="../06-general-and-particular-solutions-of-a-differential-equatio-9.3/index.html">9.3 General and Particular Solutions of a Differential Equation</a><a href="../07-exercise-9.2/index.html">Exercise 9.2</a><a href="../08-methods-of-solving-first-order-first-degree-differential-e-9.4/index.html">9.4 Methods of Solving First Order, First Degree Differential Equations</a><a href="../09-differential-equations-with-variables-separable-9.4.1/index.html">9.4.1 Differential equations with variables separable</a><a href="../10-exercise-9.3/index.html">Exercise 9.3</a><a href="../11-homogeneous-differential-equations-9.4.2/index.html">9.4.2 Homogeneous Differential Equations</a><a href="../12-exercise-9.4/index.html">Exercise 9.4</a><a href="../13-linear-differential-equations-9.4.3/index.html">9.4.3 Linear Differential Equations</a><a href="../14-exercise-9.5/index.html">Exercise 9.5</a><a href="../15-miscellaneous-examples/index.html">Miscellaneous Examples</a><a href="../16-miscellaneous-exercise-on-chapter-9/index.html">Miscellaneous Exercise on Chapter 9</a><a href="../17-summary/index.html">Summary</a><a href="../18-historical-note/index.html">Historical Note</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../09-differential-equations/02-basic-concepts-9.2/index.html" title="9.2 Basic Concepts">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">9</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 9 · Differential Equations</a></p>
+        <h1>9.1 Introduction</h1>
+        <p class="subtitle">From finding derivatives to finding the unknown function itself — equations that involve rates of change</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="box box-insight" style="text-align:center; font-style:italic;">
+    &#10070; He who seeks for methods without having a definite problem in mind seeks for the most part in vain. &#10070;
+    <div style="font-style:normal; font-family:'Segoe UI',sans-serif; font-size:0.95rem; margin-top:0.5rem; color:#c0602b; font-weight:600;">&mdash; D. Hilbert</div>
+</div>
+
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>How the problem &ldquo;given \(g\), find \(f\) with \(f' = g\)&rdquo; leads to a <strong>differential equation</strong></li>
+        <li>Why differential equations matter across Physics, Chemistry, Biology, Economics and more</li>
+        <li>A roadmap of the chapter: basic concepts, general and particular solutions, and methods for first order&ndash;first degree equations</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>What Is a Differential Equation?</h2>
+
+    <figure class="diagram" style="float:right; max-width:190px; margin:0.25rem 0 1rem 1.5rem;">
+        <img src="img/poincare.webp" alt="Portrait of Henri Poincare" width="176" height="230" loading="lazy">
+        <figcaption>Henri Poincare (1854&ndash;1912)</figcaption>
+    </figure>
+
+    <p>In Class XI and in Chapter 5 of the present book, we discussed how to differentiate a given function \(f\) with respect to an independent variable, i.e., how to find \(f'(x)\) for a given function \(f\) at each \(x\) in its domain of definition. Further, in the chapter on Integral Calculus, we discussed how to find a function \(f\) whose derivative is the function \(g\), which may also be formulated as follows:</p>
+
+    <p>For a given function \(g\), find a function \(f\) such that</p>
+    \[ \frac{dy}{dx} = g(x), \quad \text{where } y = f(x) \tag{1} \]
+
+    <div class="box box-definition" style="clear:both;">
+        <div class="box-label">Differential Equation</div>
+        <p>An equation of the form (1) is known as a <em>differential equation</em>. A formal definition will be given later.</p>
+    </div>
+
+    <p>These equations arise in a variety of applications, may it be in Physics, Chemistry, Biology, Anthropology, Geology, Economics etc. Hence, an indepth study of differential equations has assumed prime importance in all modern scientific investigations.</p>
+</div>
+
+<div class="card">
+    <h2>What This Chapter Covers</h2>
+    <p>In this chapter, we will study</p>
+    <ul>
+        <li>some basic concepts related to differential equation,</li>
+        <li>general and particular solutions of a differential equation,</li>
+        <li>formation of differential equations,</li>
+        <li>some methods to solve a first order &ndash; first degree differential equation, and</li>
+        <li>some applications of differential equations in different areas.</li>
+    </ul>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../08-application-of-integrals/07-historical-note/index.html" class="nav-btn">&larr; Historical Note</a>
+    <a href="../../09-differential-equations/02-basic-concepts-9.2/index.html" class="nav-btn">9.2 Basic Concepts &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

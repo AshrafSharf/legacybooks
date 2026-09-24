@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11.5.1 Distance between two skew lines — Three Dimensional Geometry</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Three Dimensional Geometry · 11.5.1 Distance between two skew lines">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../11-three-dimensional-geometry/08-shortest-distance-between-two-lines-11.5/index.html" title="11.5 Shortest Distance between Two Lines">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Three Dimensional Geometry</a></span>
+    <span class="c2">11.5.1 Distance between two skew lines</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 11 · Three Dimensional Geometry</div><a href="../01-introduction-11.1/index.html">11.1 Introduction</a><a href="../02-direction-cosines-and-direction-ratios-of-a-line-11.2/index.html">11.2 Direction Cosines and Direction Ratios of a Line</a><a href="../03-direction-cosines-of-a-line-passing-through-two-points-11.2.1/index.html">11.2.1 Direction cosines of a line passing through two points</a><a href="../04-exercise-11.1/index.html">Exercise 11.1</a><a href="../05-equation-of-a-line-in-space-11.3/index.html">11.3 Equation of a Line in Space</a><a href="../06-equation-of-a-line-through-a-given-point-and-parallel-to-g-11.3.1/index.html">11.3.1 Equation of a line through a given point and parallel to a given vector b⃗</a><a href="../07-angle-between-two-lines-11.4/index.html">11.4 Angle between Two Lines</a><a href="../08-shortest-distance-between-two-lines-11.5/index.html">11.5 Shortest Distance between Two Lines</a><a href="../09-distance-between-two-skew-lines-11.5.1/index.html" aria-current="page">11.5.1 Distance between two skew lines</a><a href="../10-distance-between-parallel-lines-11.5.2/index.html">11.5.2 Distance between parallel lines</a><a href="../11-exercise-11.2/index.html">Exercise 11.2</a><a href="../12-miscellaneous-exercise-on-chapter-11/index.html">Miscellaneous Exercise on Chapter 11</a><a href="../13-summary/index.html">Summary</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../11-three-dimensional-geometry/10-distance-between-parallel-lines-11.5.2/index.html" title="11.5.2 Distance between parallel lines">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">11</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 11 · Three Dimensional Geometry</a></p>
+        <h1>11.5.1 Distance between two skew lines</h1>
+        <p class="subtitle">Project any joining segment onto the common perpendicular b⃗₁ × b⃗₂</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>In This Section</h2>
+    <ul class="overview-list">
+        <li>The common perpendicular of two skew lines lies along \(\vec{b}_1 \times \vec{b}_2\)</li>
+        <li>Shortest distance as the <span class="teal">projection</span> of \(\overrightarrow{\mathrm{ST}} = \vec{a}_2 - \vec{a}_1\) on that direction</li>
+        <li>The vector formula \(d = \left|\dfrac{(\vec{b}_1 \times \vec{b}_2)\cdot(\vec{a}_2 - \vec{a}_1)}{|\vec{b}_1 \times \vec{b}_2|}\right|\)</li>
+        <li>The equivalent <strong>Cartesian</strong> formula using a determinant</li>
+    </ul>
+</div>
+
+<hr class="section-divider">
+
+<div class="card">
+    <h2>Deriving the Shortest Distance</h2>
+    <p>We now determine the shortest distance between two skew lines in the following way: Let \(l_1\) and \(l_2\) be two skew lines with equations (Fig. 11.6)</p>
+    \[ \vec{r} = \vec{a}_1 + \lambda\vec{b}_1 \tag{1} \]
+    <p>and</p>
+    \[ \vec{r} = \vec{a}_2 + \mu\vec{b}_2 \tag{2} \]
+
+    <figure class="diagram">
+        <svg viewBox="0 0 380 200" xmlns="http://www.w3.org/2000/svg" style="max-width:380px;" role="img" aria-label="Skew lines l1 and l2; S on l1, T on l2; PQ is the common perpendicular with P on l1 and Q on l2.">
+            <defs>
+                <marker id="ah117" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2b6cb0"/></marker>
+                <marker id="ah117o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#c0602b"/></marker>
+            </defs>
+            <line x1="20" y1="170" x2="340" y2="170" stroke="#2b6cb0" stroke-width="2.2" marker-start="url(#ah117)" marker-end="url(#ah117)"/>
+            <line x1="30" y1="20" x2="340" y2="73.7" stroke="#2b6cb0" stroke-width="2.2" marker-start="url(#ah117)" marker-end="url(#ah117)"/>
+            <line x1="80" y1="170" x2="100" y2="32.1" stroke="#0d4f4f" stroke-width="2"/>
+            <line x1="270" y1="170" x2="270" y2="61.6" stroke="#c0602b" stroke-width="2.2"/>
+            <line x1="270" y1="125" x2="270" y2="108" stroke="#c0602b" stroke-width="2.2" marker-end="url(#ah117o)"/>
+            <path d="M258 170 L258 158 L270 158" fill="none" stroke="#c0602b" stroke-width="1.4"/>
+            <circle cx="80" cy="170" r="3.5" fill="#0d4f4f"/>
+            <circle cx="100" cy="32.1" r="3.5" fill="#0d4f4f"/>
+            <circle cx="270" cy="170" r="3.5" fill="#c0602b"/>
+            <circle cx="270" cy="61.6" r="3.5" fill="#c0602b"/>
+            <g font-size="16" font-weight="bold">
+                <text x="72" y="192" fill="#0d4f4f">S</text>
+                <text x="94" y="22" fill="#0d4f4f">T</text>
+                <text x="264" y="192" fill="#c0602b">P</text>
+                <text x="262" y="50" fill="#c0602b">Q</text>
+                <text x="346" y="176" fill="#2b6cb0" font-style="italic">l<tspan font-size="11" dy="4">1</tspan></text>
+                <text x="346" y="80" fill="#2b6cb0" font-style="italic">l<tspan font-size="11" dy="4">2</tspan></text>
+            </g>
+        </svg>
+        <figcaption>Fig 11.6 &mdash; PQ is the shortest distance between the skew lines \(l_1\) and \(l_2\).</figcaption>
+    </figure>
+
+    <p>Take any point S on \(l_1\) with position vector \(\vec{a}_1\) and T on \(l_2\), with position vector \(\vec{a}_2\). Then the magnitude of the shortest distance vector will be equal to that of the projection of ST along the direction of the line of shortest distance (See 10.6.2).</p>
+
+    <p>If \(\overrightarrow{\mathrm{PQ}}\) is the shortest distance vector between \(l_1\) and \(l_2\), then it being perpendicular to both \(\vec{b}_1\) and \(\vec{b}_2\), the unit vector \(\hat{n}\) along \(\overrightarrow{\mathrm{PQ}}\) would therefore be</p>
+    \[ \hat{n} = \frac{\vec{b}_1 \times \vec{b}_2}{|\vec{b}_1 \times \vec{b}_2|} \tag{3} \]
+    <p>Then \(\overrightarrow{\mathrm{PQ}} = d\,\hat{n}\), where \(d\) is the magnitude of the shortest distance vector. Let \(\theta\) be the angle between \(\overrightarrow{\mathrm{ST}}\) and \(\overrightarrow{\mathrm{PQ}}\). Then</p>
+    \[ \mathrm{PQ} = \mathrm{ST}\,|\cos\theta| \]
+    <p>But</p>
+    \[ \begin{aligned} \cos\theta &amp;= \left| \frac{\overrightarrow{\mathrm{PQ}} \cdot \overrightarrow{\mathrm{ST}}}{|\overrightarrow{\mathrm{PQ}}|\,|\overrightarrow{\mathrm{ST}}|} \right| \\ &amp;= \left| \frac{d\,\hat{n}\cdot(\vec{a}_2 - \vec{a}_1)}{d\ \mathrm{ST}} \right| &amp;&amp; \left(\text{since } \overrightarrow{\mathrm{ST}} = \vec{a}_2 - \vec{a}_1\right) \\ &amp;= \left| \frac{(\vec{b}_1 \times \vec{b}_2)\cdot(\vec{a}_2 - \vec{a}_1)}{\mathrm{ST}\,|\vec{b}_1 \times \vec{b}_2|} \right| &amp;&amp; [\text{From } (3)] \end{aligned} \]
+    <p>Hence, the required shortest distance is \(d = \mathrm{PQ} = \mathrm{ST}\,|\cos\theta|\), or</p>
+
+    <div class="box box-formula">
+        <div class="box-label">Shortest distance between skew lines &mdash; vector form</div>
+        \[ d = \left| \frac{(\vec{b}_1 \times \vec{b}_2)\cdot(\vec{a}_2 - \vec{a}_1)}{|\vec{b}_1 \times \vec{b}_2|} \right| \]
+    </div>
+</div>
+
+<div class="card">
+    <h2>Cartesian Form</h2>
+    <p>The shortest distance between the lines</p>
+    \[ l_1 : \frac{x - x_1}{a_1} = \frac{y - y_1}{b_1} = \frac{z - z_1}{c_1} \quad\text{and}\quad l_2 : \frac{x - x_2}{a_2} = \frac{y - y_2}{b_2} = \frac{z - z_2}{c_2} \]
+    <p>is</p>
+    <div class="box box-formula">
+        <div class="box-label">Shortest distance between skew lines &mdash; Cartesian form</div>
+        <div class="math-scroll">
+        \[ d = \left| \frac{\begin{vmatrix} x_2 - x_1 &amp; y_2 - y_1 &amp; z_2 - z_1 \\ a_1 &amp; b_1 &amp; c_1 \\ a_2 &amp; b_2 &amp; c_2 \end{vmatrix}}{\sqrt{(b_1c_2 - b_2c_1)^2 + (c_1a_2 - c_2a_1)^2 + (a_1b_2 - a_2b_1)^2}} \right| \]
+        </div>
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight</div>
+        <p>The numerator is the scalar triple product \([\,\vec{a}_2 - \vec{a}_1,\ \vec{b}_1,\ \vec{b}_2\,]\). If it is zero, the shortest distance is zero: the two lines intersect.</p>
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../11-three-dimensional-geometry/08-shortest-distance-between-two-lines-11.5/index.html" class="nav-btn">&larr; 11.5 Shortest Distance between Two Lines</a>
+    <a href="../../11-three-dimensional-geometry/10-distance-between-parallel-lines-11.5.2/index.html" class="nav-btn">11.5.2 Distance between parallel lines &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>

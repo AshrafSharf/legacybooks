@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miscellaneous Examples — Application of Integrals</title>
+    <meta name="description" content="Class 12 Mathematics · Part 2 · Application of Integrals · Miscellaneous Examples">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <a class="tb-btn" data-nav="prev" href="../../08-application-of-integrals/03-exercise-8.1/index.html" title="Exercise 8.1">←</a>
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 12 Mathematics · Part 2</a> · <a href="../index.html">Application of Integrals</a></span>
+    <span class="c2">Miscellaneous Examples</span>
+  </div>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary><div class="drawer-panel"><div class="dh">Chapter 8 · Application of Integrals</div><a href="../01-introduction-8.1/index.html">8.1 Introduction</a><a href="../02-area-under-simple-curves-8.2/index.html">8.2 Area under Simple Curves</a><a href="../03-exercise-8.1/index.html">Exercise 8.1</a><a href="../04-miscellaneous-examples/index.html" aria-current="page">Miscellaneous Examples</a><a href="../05-miscellaneous-exercise-on-chapter-8/index.html">Miscellaneous Exercise on Chapter 8</a><a href="../06-summary/index.html">Summary</a><a href="../07-historical-note/index.html">Historical Note</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../08-application-of-integrals/05-miscellaneous-exercise-on-chapter-8/index.html" title="Miscellaneous Exercise on Chapter 8">→</a>
+</div>
+</header>
+<div class="hero">
+    <div class="chapter-num">8</div>
+    <div class="inner">
+        <p class="eyebrow"><a href="../index.html">Chapter 8 · Application of Integrals</a></p>
+        <h1>Miscellaneous Examples</h1>
+        <p class="subtitle">Areas that dip below the x-axis: split, take absolute values, and add</p>
+    </div>
+</div>
+<div class="container">
+<!-- content:start -->
+<div class="card">
+    <h2>Areas Above and Below the x-axis</h2>
+
+    <div class="box box-example">
+        <div class="box-label">Example 3</div>
+        <p>Find the area of the region bounded by the line \( y = 3x + 2 \), the \(x\)-axis and the ordinates \( x = -1 \) and \( x = 1 \).</p>
+        <figure class="diagram">
+        <svg viewBox="0 0 360 460" xmlns="http://www.w3.org/2000/svg" style="max-width:360px;" role="img" aria-label="Line y = 3x + 2 crossing the x-axis at A(-2/3, 0); triangle ACB below the axis from x = -1 and triangle ADE above the axis up to x = 1" font-family="Georgia, serif">
+            <polygon points="107.0,311.3 107.0,359.1 131.3,311.3" fill="#c0602b" fill-opacity="0.3" stroke="none"/>
+            <polygon points="131.3,311.3 253.0,72.2 253.0,311.3" fill="#2b6cb0" fill-opacity="0.22" stroke="none"/>
+            <defs><marker id="ahm1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+            <line x1="16" y1="311.3" x2="344" y2="311.3" stroke="#555" stroke-width="1.4" marker-start="url(#ahm1)" marker-end="url(#ahm1)"/>
+            <line x1="180.0" y1="444" x2="180.0" y2="16" stroke="#555" stroke-width="1.4" marker-start="url(#ahm1)" marker-end="url(#ahm1)"/>
+            <text x="344" y="329.3" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">X</text>
+            <text x="16" y="329.3" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">X′</text>
+            <text x="188.0" y="22" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">Y</text>
+            <text x="188.0" y="442" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">Y′</text>
+            <line x1="107.0" y1="307.3" x2="107.0" y2="315.3" stroke="#555"/>
+            <text x="107.0" y="328.3" font-size="12" fill="#555" text-anchor="middle"></text>
+            <line x1="253.0" y1="307.3" x2="253.0" y2="315.3" stroke="#555"/>
+            <text x="253.0" y="328.3" font-size="12" fill="#555" text-anchor="middle"></text>
+            <text x="187.3" y="332.8" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">O</text>
+            <line x1="74.2" y1="423.6" x2="267.6" y2="43.6" stroke="#0d4f4f" stroke-width="2.4"/>
+            <line x1="107.0" y1="287.4" x2="107.0" y2="378.2" stroke="#2d2d2d" stroke-width="1.5"/>
+            <line x1="253.0" y1="311.3" x2="253.0" y2="72.2" stroke="#2d2d2d" stroke-width="1.5"/>
+            <text x="103.3" y="301.7" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">C</text>
+            <text x="134.7" y="301.7" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">A</text>
+            <text x="110.7" y="368.6" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">B</text>
+            <text x="258.8" y="67.5" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">D</text>
+            <text x="256.6" y="332.8" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">E</text>
+            <text x="101.2" y="337.6" font-size="13" fill="#2d2d2d" text-anchor="end" font-style="italic">x = −1</text>
+            <text x="258.8" y="148.7" font-size="13" fill="#2d2d2d" text-anchor="start" font-style="italic">x = 1</text>
+            <text x="139.8" y="356.7" font-size="12" fill="#2d2d2d" text-anchor="start" font-style="italic">(−2/3, 0)</text>
+            <text x="165.4" y="139.2" font-size="13" fill="#0d4f4f" text-anchor="end" font-style="italic">y = 3x + 2</text>
+        </svg>
+        <figcaption>Fig 8.9 — The line \( y = 3x + 2 \) between \( x = -1 \) and \( x = 1 \): region ACBA lies below the x-axis, region ADEA above it</figcaption>
+    </figure>
+        <p><strong>Solution</strong> As shown in the Fig 8.9, the line \( y = 3x + 2 \) meets \(x\)-axis at \( x = \dfrac{-2}{3} \) and its graph lies below \(x\)-axis for \( x \in \left(-1, \dfrac{-2}{3}\right) \) and above \(x\)-axis for \( x \in \left(\dfrac{-2}{3}, 1\right) \).</p>
+        <p>The required area = Area of the region ACBA + Area of the region ADEA</p>
+        \[ \begin{aligned} &amp;= \left|\int_{-1}^{\frac{-2}{3}} (3x + 2)\,dx\right| + \int_{\frac{-2}{3}}^{1} (3x + 2)\,dx \\ &amp;= \left|\left[\frac{3x^2}{2} + 2x\right]_{-1}^{\frac{-2}{3}}\right| + \left[\frac{3x^2}{2} + 2x\right]_{\frac{-2}{3}}^{1} = \frac{1}{6} + \frac{25}{6} = \frac{13}{3} \end{aligned} \]
+    </div>
+
+    <div class="box box-example">
+        <div class="box-label">Example 4</div>
+        <p>Find the area bounded by the curve \( y = \cos x \) between \( x = 0 \) and \( x = 2\pi \).</p>
+        <figure class="diagram">
+        <svg viewBox="0 0 540 259" xmlns="http://www.w3.org/2000/svg" style="max-width:540px;" role="img" aria-label="Graph of y = cos x from 0 to 2 pi with regions OABO, BCDB and DEFD shaded" font-family="Georgia, serif">
+            <polygon points="69.8,129.4 69.8,69.7 70.4,69.7 71.0,69.7 71.6,69.7 72.2,69.7 72.8,69.7 73.4,69.8 74.0,69.8 74.5,69.8 75.1,69.9 75.7,69.9 76.3,70.0 76.9,70.1 77.5,70.1 78.1,70.2 78.6,70.3 79.2,70.4 79.8,70.5 80.4,70.6 81.0,70.7 81.6,70.8 82.2,70.9 82.8,71.0 83.3,71.2 83.9,71.3 84.5,71.4 85.1,71.6 85.7,71.7 86.3,71.9 86.9,72.1 87.4,72.2 88.0,72.4 88.6,72.6 89.2,72.8 89.8,73.0 90.4,73.2 91.0,73.4 91.6,73.6 92.1,73.8 92.7,74.0 93.3,74.2 93.9,74.4 94.5,74.7 95.1,74.9 95.7,75.1 96.2,75.4 96.8,75.6 97.4,75.9 98.0,76.2 98.6,76.4 99.2,76.7 99.8,77.0 100.3,77.3 100.9,77.6 101.5,77.9 102.1,78.2 102.7,78.5 103.3,78.8 103.9,79.1 104.5,79.4 105.0,79.7 105.6,80.1 106.2,80.4 106.8,80.7 107.4,81.1 108.0,81.4 108.6,81.8 109.1,82.1 109.7,82.5 110.3,82.9 110.9,83.2 111.5,83.6 112.1,84.0 112.7,84.4 113.3,84.7 113.8,85.1 114.4,85.5 115.0,85.9 115.6,86.3 116.2,86.7 116.8,87.2 117.4,87.6 117.9,88.0 118.5,88.4 119.1,88.8 119.7,89.3 120.3,89.7 120.9,90.2 121.5,90.6 122.1,91.1 122.6,91.5 123.2,92.0 123.8,92.4 124.4,92.9 125.0,93.3 125.6,93.8 126.2,94.3 126.7,94.8 127.3,95.2 127.9,95.7 128.5,96.2 129.1,96.7 129.7,97.2 130.3,97.7 130.9,98.2 131.4,98.7 132.0,99.2 132.6,99.7 133.2,100.2 133.8,100.7 134.4,101.2 135.0,101.8 135.5,102.3 136.1,102.8 136.7,103.3 137.3,103.9 137.9,104.4 138.5,104.9 139.1,105.5 139.6,106.0 140.2,106.5 140.8,107.1 141.4,107.6 142.0,108.2 142.6,108.7 143.2,109.3 143.8,109.8 144.3,110.4 144.9,110.9 145.5,111.5 146.1,112.1 146.7,112.6 147.3,113.2 147.9,113.8 148.4,114.3 149.0,114.9 149.6,115.5 150.2,116.0 150.8,116.6 151.4,117.2 152.0,117.7 152.6,118.3 153.1,118.9 153.7,119.5 154.3,120.1 154.9,120.6 155.5,121.2 156.1,121.8 156.7,122.4 157.2,123.0 157.8,123.5 158.4,124.1 159.0,124.7 159.6,125.3 160.2,125.9 160.8,126.5 161.4,127.1 161.9,127.6 162.5,128.2 163.1,128.8 163.7,129.4 163.7,129.4" fill="#2b6cb0" fill-opacity="0.22" stroke="none"/>
+            <polygon points="163.7,129.4 164.9,130.6 166.0,131.8 167.2,132.9 168.4,134.1 169.6,135.3 170.7,136.4 171.9,137.6 173.1,138.8 174.3,139.9 175.4,141.1 176.6,142.2 177.8,143.4 178.9,144.5 180.1,145.6 181.3,146.7 182.5,147.9 183.6,149.0 184.8,150.1 186.0,151.2 187.2,152.3 188.3,153.3 189.5,154.4 190.7,155.5 191.9,156.5 193.0,157.6 194.2,158.6 195.4,159.6 196.5,160.6 197.7,161.6 198.9,162.6 200.1,163.6 201.2,164.5 202.4,165.5 203.6,166.4 204.8,167.3 205.9,168.2 207.1,169.1 208.3,170.0 209.5,170.8 210.6,171.7 211.8,172.5 213.0,173.3 214.1,174.1 215.3,174.8 216.5,175.6 217.7,176.3 218.8,177.0 220.0,177.7 221.2,178.4 222.4,179.1 223.5,179.7 224.7,180.3 225.9,181.0 227.0,181.5 228.2,182.1 229.4,182.6 230.6,183.2 231.7,183.7 232.9,184.1 234.1,184.6 235.3,185.0 236.4,185.5 237.6,185.9 238.8,186.2 240.0,186.6 241.1,186.9 242.3,187.2 243.5,187.5 244.6,187.8 245.8,188.0 247.0,188.2 248.2,188.4 249.3,188.6 250.5,188.7 251.7,188.9 252.9,189.0 254.0,189.0 255.2,189.1 256.4,189.1 257.5,189.2 258.7,189.1 259.9,189.1 261.1,189.0 262.2,189.0 263.4,188.9 264.6,188.7 265.8,188.6 266.9,188.4 268.1,188.2 269.3,188.0 270.5,187.8 271.6,187.5 272.8,187.2 274.0,186.9 275.1,186.6 276.3,186.2 277.5,185.9 278.7,185.5 279.8,185.0 281.0,184.6 282.2,184.1 283.4,183.7 284.5,183.2 285.7,182.6 286.9,182.1 288.0,181.5 289.2,181.0 290.4,180.3 291.6,179.7 292.7,179.1 293.9,178.4 295.1,177.7 296.3,177.0 297.4,176.3 298.6,175.6 299.8,174.8 301.0,174.1 302.1,173.3 303.3,172.5 304.5,171.7 305.6,170.8 306.8,170.0 308.0,169.1 309.2,168.2 310.3,167.3 311.5,166.4 312.7,165.5 313.9,164.5 315.0,163.6 316.2,162.6 317.4,161.6 318.6,160.6 319.7,159.6 320.9,158.6 322.1,157.6 323.2,156.5 324.4,155.5 325.6,154.4 326.8,153.3 327.9,152.3 329.1,151.2 330.3,150.1 331.5,149.0 332.6,147.9 333.8,146.7 335.0,145.6 336.1,144.5 337.3,143.4 338.5,142.2 339.7,141.1 340.8,139.9 342.0,138.8 343.2,137.6 344.4,136.4 345.5,135.3 346.7,134.1 347.9,132.9 349.1,131.8 350.2,130.6 351.4,129.4" fill="#c0602b" fill-opacity="0.28" stroke="none"/>
+            <polygon points="351.4,129.4 351.4,129.4 352.0,128.8 352.6,128.2 353.2,127.6 353.7,127.1 354.3,126.5 354.9,125.9 355.5,125.3 356.1,124.7 356.7,124.1 357.3,123.5 357.9,123.0 358.4,122.4 359.0,121.8 359.6,121.2 360.2,120.6 360.8,120.1 361.4,119.5 362.0,118.9 362.5,118.3 363.1,117.7 363.7,117.2 364.3,116.6 364.9,116.0 365.5,115.5 366.1,114.9 366.6,114.3 367.2,113.8 367.8,113.2 368.4,112.6 369.0,112.1 369.6,111.5 370.2,110.9 370.8,110.4 371.3,109.8 371.9,109.3 372.5,108.7 373.1,108.2 373.7,107.6 374.3,107.1 374.9,106.5 375.4,106.0 376.0,105.5 376.6,104.9 377.2,104.4 377.8,103.9 378.4,103.3 379.0,102.8 379.6,102.3 380.1,101.8 380.7,101.2 381.3,100.7 381.9,100.2 382.5,99.7 383.1,99.2 383.7,98.7 384.2,98.2 384.8,97.7 385.4,97.2 386.0,96.7 386.6,96.2 387.2,95.7 387.8,95.2 388.4,94.8 388.9,94.3 389.5,93.8 390.1,93.3 390.7,92.9 391.3,92.4 391.9,92.0 392.5,91.5 393.0,91.1 393.6,90.6 394.2,90.2 394.8,89.7 395.4,89.3 396.0,88.8 396.6,88.4 397.2,88.0 397.7,87.6 398.3,87.2 398.9,86.7 399.5,86.3 400.1,85.9 400.7,85.5 401.3,85.1 401.8,84.7 402.4,84.4 403.0,84.0 403.6,83.6 404.2,83.2 404.8,82.9 405.4,82.5 405.9,82.1 406.5,81.8 407.1,81.4 407.7,81.1 408.3,80.7 408.9,80.4 409.5,80.1 410.1,79.7 410.6,79.4 411.2,79.1 411.8,78.8 412.4,78.5 413.0,78.2 413.6,77.9 414.2,77.6 414.7,77.3 415.3,77.0 415.9,76.7 416.5,76.4 417.1,76.2 417.7,75.9 418.3,75.6 418.9,75.4 419.4,75.1 420.0,74.9 420.6,74.7 421.2,74.4 421.8,74.2 422.4,74.0 423.0,73.8 423.5,73.6 424.1,73.4 424.7,73.2 425.3,73.0 425.9,72.8 426.5,72.6 427.1,72.4 427.7,72.2 428.2,72.1 428.8,71.9 429.4,71.7 430.0,71.6 430.6,71.4 431.2,71.3 431.8,71.2 432.3,71.0 432.9,70.9 433.5,70.8 434.1,70.7 434.7,70.6 435.3,70.5 435.9,70.4 436.5,70.3 437.0,70.2 437.6,70.1 438.2,70.1 438.8,70.0 439.4,69.9 440.0,69.9 440.6,69.8 441.1,69.8 441.7,69.8 442.3,69.7 442.9,69.7 443.5,69.7 444.1,69.7 444.7,69.7 445.2,69.7 445.2,129.4" fill="#2b6cb0" fill-opacity="0.22" stroke="none"/>
+            <defs><marker id="ahm2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+            <line x1="16" y1="129.4" x2="524" y2="129.4" stroke="#555" stroke-width="1.4" marker-start="url(#ahm2)" marker-end="url(#ahm2)"/>
+            <line x1="69.8" y1="243" x2="69.8" y2="16" stroke="#555" stroke-width="1.4" marker-start="url(#ahm2)" marker-end="url(#ahm2)"/>
+            <text x="524" y="147.4" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">X</text>
+            <text x="16" y="147.4" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">X′</text>
+            <text x="77.8" y="22" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">Y</text>
+            <text x="77.8" y="241" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">Y′</text>
+            <text x="65.1" y="144.3" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">O</text>
+            <polyline points="69.8,69.7 72.2,69.7 74.5,69.8 76.9,70.1 79.2,70.4 81.6,70.8 83.9,71.3 86.3,71.9 88.6,72.6 91.0,73.4 93.3,74.2 95.7,75.1 98.0,76.2 100.3,77.3 102.7,78.5 105.0,79.7 107.4,81.1 109.7,82.5 112.1,84.0 114.4,85.5 116.8,87.2 119.1,88.8 121.5,90.6 123.8,92.4 126.2,94.3 128.5,96.2 130.9,98.2 133.2,100.2 135.5,102.3 137.9,104.4 140.2,106.5 142.6,108.7 144.9,110.9 147.3,113.2 149.6,115.5 152.0,117.7 154.3,120.1 156.7,122.4 159.0,124.7 161.4,127.1 163.7,129.4 166.0,131.8 168.4,134.1 170.7,136.4 173.1,138.8 175.4,141.1 177.8,143.4 180.1,145.6 182.5,147.9 184.8,150.1 187.2,152.3 189.5,154.4 191.9,156.5 194.2,158.6 196.5,160.6 198.9,162.6 201.2,164.5 203.6,166.4 205.9,168.2 208.3,170.0 210.6,171.7 213.0,173.3 215.3,174.8 217.7,176.3 220.0,177.7 222.4,179.1 224.7,180.3 227.0,181.5 229.4,182.6 231.7,183.7 234.1,184.6 236.4,185.5 238.8,186.2 241.1,186.9 243.5,187.5 245.8,188.0 248.2,188.4 250.5,188.7 252.9,189.0 255.2,189.1 257.5,189.2 259.9,189.1 262.2,189.0 264.6,188.7 266.9,188.4 269.3,188.0 271.6,187.5 274.0,186.9 276.3,186.2 278.7,185.5 281.0,184.6 283.4,183.7 285.7,182.6 288.0,181.5 290.4,180.3 292.7,179.1 295.1,177.7 297.4,176.3 299.8,174.8 302.1,173.3 304.5,171.7 306.8,170.0 309.2,168.2 311.5,166.4 313.9,164.5 316.2,162.6 318.6,160.6 320.9,158.6 323.2,156.5 325.6,154.4 327.9,152.3 330.3,150.1 332.6,147.9 335.0,145.6 337.3,143.4 339.7,141.1 342.0,138.8 344.4,136.4 346.7,134.1 349.1,131.8 351.4,129.4 353.7,127.1 356.1,124.7 358.4,122.4 360.8,120.1 363.1,117.7 365.5,115.5 367.8,113.2 370.2,110.9 372.5,108.7 374.9,106.5 377.2,104.4 379.6,102.3 381.9,100.2 384.2,98.2 386.6,96.2 388.9,94.3 391.3,92.4 393.6,90.6 396.0,88.8 398.3,87.2 400.7,85.5 403.0,84.0 405.4,82.5 407.7,81.1 410.1,79.7 412.4,78.5 414.7,77.3 417.1,76.2 419.4,75.1 421.8,74.2 424.1,73.4 426.5,72.6 428.8,71.9 431.2,71.3 433.5,70.8 435.9,70.4 438.2,70.1 440.6,69.8 442.9,69.7 445.2,69.7" fill="none" fill-opacity="1" stroke="#0d4f4f" stroke-width="2.4" stroke-linejoin="round"/>
+            <line x1="445.2" y1="129.4" x2="445.2" y2="69.7" stroke="#2d2d2d" stroke-width="1.5"/>
+            <text x="63.9" y="66.7" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">A</text>
+            <text x="166.7" y="123.4" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">B</text>
+            <text x="257.5" y="204.1" font-size="14" fill="#2d2d2d" text-anchor="middle" font-weight="bold">C</text>
+            <text x="348.4" y="123.4" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">D</text>
+            <text x="451.2" y="69.7" font-size="14" fill="#2d2d2d" text-anchor="start" font-weight="bold">E</text>
+            <text x="439.3" y="144.3" font-size="14" fill="#2d2d2d" text-anchor="end" font-weight="bold">F</text>
+            <text x="163.7" y="147.3" font-size="13" fill="#555" text-anchor="middle">π/2</text>
+            <text x="257.5" y="147.3" font-size="13" fill="#555" text-anchor="middle">π</text>
+            <text x="351.4" y="147.3" font-size="13" fill="#555" text-anchor="middle">3π/2</text>
+            <text x="462.0" y="147.3" font-size="13" fill="#555" text-anchor="middle">2π</text>
+            <text x="207.3" y="84.6" font-size="13" fill="#0d4f4f" text-anchor="middle" font-style="italic">y = cos x</text>
+        </svg>
+        <figcaption>Fig 8.10 — \( y = \cos x \) on \( [0, 2\pi] \): regions OABO and DEFD above the x-axis, BCDB below</figcaption>
+    </figure>
+        <p><strong>Solution</strong> From the Fig 8.10, the required area = area of the region OABO + area of the region BCDB + area of the region DEFD.</p>
+        <p>Thus, we have the required area</p>
+        \[ \begin{aligned} &amp;= \int_0^{\frac{\pi}{2}} \cos x\,dx + \left|\int_{\frac{\pi}{2}}^{\frac{3\pi}{2}} \cos x\,dx\right| + \int_{\frac{3\pi}{2}}^{2\pi} \cos x\,dx \\ &amp;= \big[\sin x\big]_0^{\frac{\pi}{2}} + \left|\big[\sin x\big]_{\frac{\pi}{2}}^{\frac{3\pi}{2}}\right| + \big[\sin x\big]_{\frac{3\pi}{2}}^{2\pi} \\ &amp;= 1 + 2 + 1 = 4 \end{aligned} \]
+    </div>
+
+    <div class="box box-insight">
+        <div class="box-label">Key Insight</div>
+        <p>Integrating \( \cos x \) straight from \(0\) to \(2\pi\) gives \( [\sin x]_0^{2\pi} = 0 \), because the parts above and below the axis cancel. Area is never negative, so each part is taken with its absolute value.</p>
+    </div>
+</div>
+<!-- content:end -->
+
+<div class="nav-footer">
+    <a href="../../08-application-of-integrals/03-exercise-8.1/index.html" class="nav-btn">&larr; Exercise 8.1</a>
+    <a href="../../08-application-of-integrals/05-miscellaneous-exercise-on-chapter-8/index.html" class="nav-btn">Miscellaneous Exercise on Chapter 8 &rarr;</a>
+</div>
+</div><!-- end container -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../../assets/section.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=2"></script>
+</body>
+</html>
