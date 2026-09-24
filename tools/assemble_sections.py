@@ -30,7 +30,29 @@ SMALL = {"a", "an", "and", "as", "at", "by", "for", "in", "of", "on", "or", "the
 
 
 def e(s):
-    return html.escape(s or "", quote=True)
+    # combining arrows only render through KaTeX; plain-text spots drop them
+    return html.escape((s or "").replace("\u20d7", ""), quote=True)
+
+SUB = str.maketrans("₀₁₂₃₄₅₆₇₈₉", "0123456789")
+VEC_RE = re.compile(r"([A-Za-z])\u20d7([₀-₉]?)")
+TEX_VEC_RE = re.compile(r"\\\(\\vec\{([A-Za-z])\}(?:_\{(\d)\})?\\\)")
+
+
+def to_math(text):
+    """Combining-arrow vectors (b⃗₁) → KaTeX, for text shown in the page body."""
+    return VEC_RE.sub(lambda m: "\\(\\vec{%s}%s\\)" % (
+        m.group(1), "_{%s}" % m.group(2).translate(SUB) if m.group(2) else ""), text)
+
+
+def from_math(text):
+    """Inverse of to_math, used when recovering titles from built pages."""
+    return TEX_VEC_RE.sub(lambda m: m.group(1) + "\u20d7" + (
+        "₀₁₂₃₄₅₆₇₈₉"[int(m.group(2))] if m.group(2) else ""), text)
+
+
+def plain(text):
+    """Drop combining arrows where KaTeX does not run (tab title, crumbs, buttons)."""
+    return text.replace("\u20d7", "")
 
 
 def slug_title(slug):
@@ -75,10 +97,10 @@ def from_page(path):
     meta = {}
     t = re.search(r'<div class="hero">.*?<h1>(.*?)</h1>', src, re.S)
     if t:
-        meta["title"] = html.unescape(t.group(1))
+        meta["title"] = from_math(html.unescape(t.group(1)))
     st = re.search(r'<p class="subtitle">(.*?)</p>', src, re.S)
     if st:
-        meta["subtitle"] = html.unescape(st.group(1))
+        meta["subtitle"] = from_math(html.unescape(st.group(1)))
     return meta, m.group(1)
 
 
@@ -128,12 +150,12 @@ def topbar(crumb1, crumb2, prev=None, nxt=None, drawer=""):
 
 def hero(num, eyebrow, title, subtitle):
     numdiv = f'<div class="chapter-num">{e(str(num))}</div>' if num != "" else ""
-    sub = f'<p class="subtitle">{e(subtitle)}</p>' if subtitle else ""
+    sub = f'<p class="subtitle">{e(to_math(subtitle))}</p>' if subtitle else ""
     return f"""<div class="hero">
     {numdiv}
     <div class="inner">
         <p class="eyebrow">{eyebrow}</p>
-        <h1>{e(title)}</h1>
+        <h1>{e(to_math(title))}</h1>
         {sub}
     </div>
 </div>"""

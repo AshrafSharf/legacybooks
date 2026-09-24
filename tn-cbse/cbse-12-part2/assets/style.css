@@ -109,9 +109,9 @@ li { margin-bottom: 0.4rem; }
     pointer-events: none;
 }
 svg { max-width: 100%; height: auto; display: block; margin: 1.5rem auto; }
-.katex { font-size: 1.3em; }
+.katex { font-size: 1.08em; }
 
-.katex-display { margin: 1.5rem 0; overflow-x: auto; font-size: 1.35em; }
+.katex-display { margin: 1.25rem 0; overflow-x: auto; overflow-y: hidden; padding: 0.2rem 0; font-size: 1em; }
 table {
     width: 100%;
     border-collapse: collapse;
@@ -390,7 +390,6 @@ svg text { font-family: 'Georgia', 'Times New Roman', serif; }
 .solution-content .answer-line { font-weight: 600; color: #276749; }
 
 /* ---------- math helpers ---------- */
-.katex-display > .katex { white-space: normal; }
 .eq-tag { float: right; color: #888; font-style: normal; font-size: 0.95rem; }
 .math-scroll { overflow-x: auto; }
 
