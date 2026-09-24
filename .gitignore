@@ -1,0 +1,2 @@
+# Source textbook PDFs stay local; only the generated HTML/figures are published
+*.pdf
