@@ -31,31 +31,37 @@
   <p class="sec-meta">Textbook pages 10–12 · 4 figures</p>
 </div>
 <article class="prose">
-<p>In this section, we derive a simple yet important rule for the sum of the first n natural numbers. To begin with, can you find the sum of the first ten natural numbers without actually adding all of them? Let us try a unique approach. Let S denote the sum of the first ten natural numbers. Thus \(S = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10\). We can also write it as \(S = 10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1\). If we place these two equations, one below the other, we notice something interesting.</p>
-<div class="mathblock"><p>\(S = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10\)</p>
-<p>\(S = 10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1\)</p></div>
-<p>Each pair of corresponding numbers, \(1 + 10\), \(2 + 9\), \(3 + 8\), … , \(10 + 1\), in the two equations add up to 11. Adding the two equations for S, we get \(2S = 11 + 11 + 11 +\) … \(+ 11\) (that is, 11 added 10 times). This leads to \(2S = 110\) or \(S = 55\). The sum of the first 10 natural numbers is indeed 55.</p>
+<p>In this section, we derive a simple yet important rule for the sum of the first \(n\) natural numbers. To begin with, can you find the sum of the first ten natural numbers without actually adding all of them?</p>
+<p>Let us try a unique approach. Let S denote the sum of the first ten natural numbers. Thus \(\text{S} = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10\). We can also write it as \(\text{S} = 10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1\). If we place these two equations, one below the other, we notice something interesting.</p>
+<div class="mathblock"><p>\(\text{S} = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10\)</p>
+<p>\(\text{S} = 10 + 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1\)</p></div>
+<p>Each pair of corresponding numbers, \(1 + 10,\ 2 + 9,\ 3 + 8,\ \ldots,\ 10 + 1\), in the two equations add up to 11.</p>
+<p>Adding the two equations for S, we get</p>
+<div class="mathblock"><p>\(2\text{S} = 11 + 11 + 11 + \cdots + 11\) (that is, 11 added 10 times).</p></div>
+<p>This leads to \(2\text{S} = 110\) or \(\text{S} = 55\). The sum of the first 10 natural numbers is indeed 55.</p>
 <figure class="fig wide"><img src="img/fig-p2-1.webp" alt="Figure from the textbook page" loading="lazy" width="884" height="119"></figure>
-<p>This method of writing the sum from 1 to any number, reversing the sum and then adding the two expressions can be used to arrive at the formula for the sum of the first n natural numbers for any value of n.</p>
-<div class="mathblock"><p>Let \(S = 1 + 2 + \ldots + n\).</p>
-<p>Then \(S = n + (n - 1) + \ldots + 1\).</p>
-<p>So, \(2S = n(n + 1)\).</p>
-<p>We conclude \(S = \frac{n(n + 1)}{2}\).</p></div>
+<p>This method of writing the sum from 1 to any number, reversing the sum and then adding the two expressions can be used to arrive at the formula for the sum of the first \(n\) natural numbers for any value of \(n\).</p>
+<div class="mathblock"><p>Let \(\text{S} = 1 + 2 + \cdots + n\).</p>
+<p>Then \(\text{S} = n + (n - 1) + \cdots + 1\).</p>
+<p>So, \(2\text{S} = n(n + 1)\). We conclude \(\text{S} = \frac{n(n + 1)}{2}\).</p></div>
 <p>We can also think of this argument pictorially.</p>
 <figure class="fig side-fig"><img src="img/fig-p2-2.webp" alt="Fig. 8.5" loading="lazy" width="310" height="321"><figcaption>Fig. 8.5</figcaption></figure>
 <p>The diagram in Fig. 8.5 represents the method to find the sum \(1 + 2 + 3 + 4 + 5 + 6\). Note that the figure comprises two sets of circles that represent the sum \(1 + 2 + 3 + 4 + 5 + 6\) above and below of the zigzag partition. The total number of circles forms a \(7 \times 6\) rectangular array.</p>
 <div class="mathblock"><p>\(2 \times (1 + 2 + 3 + 4 + 5 + 6) = 7 \times 6\)</p></div>
-<p>Thus, Fig. 8.5 represents the fact \(2 \times (1 + 2 + 3 + 4 + 5 + 6) = 7 \times 6\). This can similarly be extended to find the sum</p>
-<div class="mathblock"><p>\(1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10\).</p><p>Namely, \(2 \times (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10) = 10 \times 11\). In general, \(2 \times (1 + 2 + 3 + 4 +\) … + n) \(= n \times\) \((n + 1)\). Therefore, \(1 + 2 + 3 + 4 +\) … \(+ n = \frac{n(n + 1)}{2}\) .</p></div>
-<p>If we use the notation \(S_n\) to represent the sum of the first n natural numbers, then \(S_{n} = \frac{n(n + 1)}{2}\) .</p>
-<p>The first known written mention of this result can be found in Āryabhaṭa’s Āryabhaṭīya, Chapter 2, Verse 19. The verse provides two ways to calculate the sum, with the second part describing that the sum can be calculated by taking the sum of the first and last terms, divided by two (the average), and multiplied by the number of terms.</p>
+<p>Thus, Fig. 8.5 represents the fact \(2 \times (1 + 2 + 3 + 4 + 5 + 6) = 7 \times 6\).</p>
+<p>This can similarly be extended to find the sum</p>
+<div class="mathblock"><p>\(1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10\).</p></div>
+<p>Namely, \(2 \times (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10) = 10 \times 11\).</p>
+<p>In general, \(2 \times (1 + 2 + 3 + 4 + \cdots + n) = n \times (n + 1)\).</p>
+<p>Therefore, \(1 + 2 + 3 + 4 + \cdots + n = \frac{n(n + 1)}{2}\).</p>
+<p>If we use the notation \(\text{S}_n\) to represent the sum of the first \(n\) natural numbers, then \(\text{S}_n = \frac{n(n + 1)}{2}\).</p>
+<p>The first known written mention of this result can be found in Āryabhaṭa’s <em>Āryabhaṭīya</em>, Chapter 2, Verse 19. The verse provides two ways to calculate the sum, with the second part describing that the sum can be calculated by taking the sum of the first and last terms, divided by two (the average), and multiplied by the number of terms.</p>
 <figure class="fig wide"><img src="img/fig-p3-1.webp" alt="Figure from the textbook page" loading="lazy" width="884" height="119"></figure>
-<p>Also, this formula can be used to find the sum of consecutive numbers</p>
-<div class="mathblock"><p>such as \(25 + 26 + 27 +\) … \(+ 58\).</p></div>
-<p>Note that \(25 + 26 + 27 + \ldots + 58 = (1 + 2 + 3 + \ldots + 58) - (1 + 2 + 3 + \ldots + 24)\)</p>
-<div class="mathblock"><p>\(= S_{58} - S_{24} = \frac{58 \times 59}{2} - \frac{24 \times 25}{2} = 29 \times 59 - 12 \times 25 = 1711 - 300 = 1411\).</p></div>
+<p>Also, this formula can be used to find the sum of consecutive numbers such as \(25 + 26 + 27 + \cdots + 58\).</p>
+<p>Note that \(25 + 26 + 27 + \cdots + 58 = (1 + 2 + 3 + \cdots + 58) - (1 + 2 + 3 + \cdots + 24)\)</p>
+<div class="mathblock"><p>\(= \text{S}_{58} - \text{S}_{24} = \frac{58 \times 59}{2} - \frac{24 \times 25}{2} = 29 \times 59 - 12 \times 25 = 1711 - 300 = 1411\).</p></div>
 <div class="callout"><p class="callout-title">Think and Reflect</p>
-<p>Let us revisit the sequence \(t_n\) of triangular numbers 1, 3, 6, 10, 15, … shown in Fig. 8.1. Note that the \(n^{\text{th}}\) term of this sequence is the sum of the first \(n\) natural numbers. Thus \(t_n = \frac{n(n + 1)}{2}\).</p>
+<p>Let us revisit the sequence \(t_n\) of triangular numbers 1, 3, 6, 10, 15, … shown in Fig. 8.1. Note that the \(n^{th}\) term of this sequence is the sum of the first \(n\) natural numbers. Thus \(t_n = \frac{n(n + 1)}{2}\).</p>
 <p>Can you use this to find the \(10^{\text{th}}\), \(17^{\text{th}}\) and \(80^{\text{th}}\) triangular numbers?</p>
 </div>
 <figure class="fig"><img src="img/fig-p3-2.webp" alt="Figure from the textbook page" loading="lazy" width="338" height="70"></figure>

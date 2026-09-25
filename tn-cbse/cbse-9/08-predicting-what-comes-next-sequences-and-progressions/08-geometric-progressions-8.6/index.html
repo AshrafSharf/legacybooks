@@ -36,9 +36,9 @@
 <p>If we count the total number of green squares in the four stages of the pattern, we get the sequence 3, 6, 12, 24.</p>
 <div class="callout"><p class="callout-title">Think and Reflect</p>
 <p>Can you predict the number of squares in Stages 5 and 6 of the pattern? In Stages 10, 11 and 12? In Stage 20? At any stage? How is this different from the growing pattern in Fig. 8.3?</p>
+</div>
 <p>We observe that at each stage, the number of green squares is doubled or is twice the number of squares in the previous stage. The number of squares at successive stages is 3, \(3 + 3 = 6\), \(6 + 6 = 12\), \(12 + 12 = 24\), …</p>
 <p>These may be rewritten as</p>
-</div>
 <div class="mathblock"><p>3, \(3 \times 2\), \(3 \times 4\), \(3 \times 8\), … or as 3, \(3 \times 2\), \(3 \times 2^{2}\), \(3 \times 2^{3}\), …</p></div>
 <p>If we treat these expressions as the terms of a sequence, we get</p>
 <div class="mathblock"><p>\(t_{1} = 3\), \(t_{2} = 3 \times 2\), \(t_{3} = 3 \times 2^{2}\), \(t_{4}= 3 \times 2^{3}\)</p></div>
@@ -63,17 +63,17 @@
 <h3 id="s-8-6-1-fun-with-fractals">8.6.1 Fun with Fractals</h3>
 <p>Recall from Grade 8 another interesting pattern as shown in Fig. 8.7. Stage 0 represents a piece of paper cut in the shape of an equilateral triangle. Let us join the midpoints of the three sides of the triangle leading to four smaller equilateral triangles. Now remove the central triangle. You will get the figure in Stage 1 with a triangular hole in the centre. Repeat the process on all three black triangles in Stage 1. This will lead to the figure in Stage 2. In a similar manner, we arrive at Stage 3 from Stage 2. The process can be continued forever! This fascinating pattern is known as the Sierpiński triangle. This is actually a fractal. We will learn more about fractals in a later grade.</p>
 <figure class="fig"><img src="img/fig-p3-1.webp" alt="Fig. 8.7" loading="lazy" width="616" height="128"><figcaption>Fig. 8.7</figcaption></figure>
-<p>Stage 0 Stage 1 Stage 2 Stage 3</p>
+<p class="caption">Stage 0 &emsp; Stage 1 &emsp; Stage 2 &emsp; Stage 3</p>
 <p>Wacław Sierpiński \((1882 - 1969)\) was a Polish mathematician known for his numerous contributions to mathematics, including the Sierpiński gasket, one of the earliest and most famous examples of a fractal.</p>
 <div class="callout"><p class="callout-title">Think and Reflect</p>
 <p>Observe the Sierpiński triangle and try to answer the following questions</p>
-</div>
 <ol type="a">
 <li>How many black triangles are there in Stages 0 to 3 of Fig. 8.7?</li>
 <li>Can you predict the number of black triangles at Stages 4 and 5?</li>
 <li>Can you find a rule for the number of black triangles at the \(n^{\text{th}}\) stage?</li>
 <li>Suppose the area of the triangle (that is, the black region) in Stage 0 is 1 square unit. What is the area of the black region in Stages 1, 2 and 3? What will be the area of the black region in Stages 4 and 5? Find a rule for the area of the black region at the \(n^{\text{th}}\) stage. What happens to this area as \(n\), the number of stages, goes on increasing?</li>
 </ol>
+</div>
 <p>We observe that the number of black triangles is 1, 3, 9 and 27 in Stages 0, 1, 2 and 3 respectively. In fact, in every stage, each black triangle is replaced with three smaller triangles at the next stage. Thus, the number of black triangles at every stage is three times the number at the previous stage. At Stages 4 and 5 the number of black triangles will be 81 and 243. Note that the sequence 1, 3, 9, 27, 81, 243, … is a GP since every successive term of the sequence can be obtained by multiplying the previous term by 3. Also, all the terms of this sequence are powers of 3:</p>
 <p>\(1 = 3^0\), \(3 = 3^1\), \(9 = 3^2\) and so on. Continuing in this manner we observe that the exponent of 3 matches the stage number, as shown in Table 1. Thus,</p>
 <p>the number of black triangles at the \(n^{\text{th}}\) stage of the Sierpiński triangle is given by \(3^n\). The number of black triangles increases very quickly as the stage numbers increase. Can you explain why? What about the area of the black region? In Stage 1, the equilateral triangle at Stage 0 is divided into 4 equal parts and the central part is removed. This means that, if the black region at Stage 0 is 1 square unit, then the black region at Stage 1 is \(\frac{3}{4}\) square units. This process is repeated on Stage 1 to arrive at Stage 2. Hence, the black region at Stage 2 will be \(\frac{3}{4}\) of the black region of Stage 1, which is equal to \(\frac{3}{4} \times \frac{3}{4} = \left(\frac{3}{4}\right)^2\).</p>
@@ -90,7 +90,7 @@
 <figure class="fig table-fig"><img src="img/fig-p6-2.webp" alt="Fig. 8.9: Points emerging from a GP do not lie on a straight line" loading="lazy" width="499" height="718"><figcaption>Fig. 8.9: Points emerging from a GP do not lie on a straight line</figcaption></figure>
 <figure class="fig table-fig wide"><img src="img/fig-p7-1.webp" alt="Fig. 8.10: Points emerging from a GP arising out of the stages of the Sierpiński Triangle" loading="lazy" width="879" height="543"><figcaption>Fig. 8.10: Points emerging from a GP arising out of the stages of the Sierpiński Triangle</figcaption></figure>
 <p>Here is another example in which a GP arises.</p>
-<p><strong>Example 10:</strong> A ball is dropped from a height of 24 feet above the ground. Each time the ball bounces up to \(\frac{3}{4}\) of its previous height.</p>
+<p><strong>Example 10:</strong> A ball is dropped from a height of 24 feet above the ground. Each time the ball bounces up to \(\left(\frac{3}{4}\right)^{\text{th}}\) of its previous height.</p>
 <ol type="a">
 <li>Can you write the sequence of numbers obtained from the heights attained by the ball in five successive bounces?</li>
 <li>How many bounces are required for the ball to remain below a height of \(\frac{1}{6}\) of the original height from which it was dropped?</li>
@@ -112,7 +112,7 @@
 <li>*A sequence is given by the recursive rule \(t_{1} = 2\), \(t_{n+1} = 3t_n - 2\) for \(n \ge 1\). Which term of the sequence is 730?</li>
 <li>Which term of the GP: 2, 6, 18, … is 4374? Write the explicit formula as well as the recursive formula for the \(n^{\text{th}}\) term.</li>
 <li>A ball is dropped from a height of 80 metres. After hitting the ground, it bounces back to 60% of the height from which it fell. It continues bouncing in this way — each time rising to 60% of the previous height.
-<ol type="a">
+<ol type="i">
 <li>What height does the ball reach after the \(5^{\text{th}}\) bounce?</li>
 <li>What is the total vertical distance the ball has travelled by the time it hits the ground for the \(6^{\text{th}}\) time?</li>
 </ol>

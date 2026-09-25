@@ -33,11 +33,12 @@
 <article class="prose">
 <h2 id="s-i-the-mesopotamian-number-system">I. The Mesopotamian Number System</h2>
 <figure class="fig wide"><img src="img/fig-p1-2.webp" alt="Figure from the textbook page" loading="lazy" width="936" height="412"></figure>
-<p>In the beginning, the number system used in ancient Mesopotamia had different symbols for different landmark numbers. In later times, it became a base-60 system, also called the sexagesimal system, with a very efficient number representation. It has puzzled many why they chose base 60. Different theories exist to explain this, ranging from the connection between 60 and the periods of some important events (like the length of their lunar month which had 30 days, or the time taken for the Sun to complete one revolution around the Earth when Earth is taken to be stationary), the ease of representing fractions (we will not go into this here), their earlier sequence of landmark numbers \(- 1\), 10, 60, 600, 3600, 36000,… - getting reduced to only the powers of 60, and so on. The influence of the Mesopotamian sexagesimal system, also known as the Babylonian number system, can be seen even now in our units of time measurements \(- 1\) hour \(= 60\) minutes and 1 minute \(= 60\) seconds. This system used the symbol for 1 and for 10. Let us now briefly pause on the study of their number system, and ideate on how one can build an efficient number system using the Mesopotamian features seen so far.</p>
+<p>In the beginning, the number system used in ancient Mesopotamia had different symbols for different landmark numbers. In later times, it became a base-60 system, also called the sexagesimal system, with a very efficient number representation. It has puzzled many why they chose base 60. Different theories exist to explain this, ranging from the connection between 60 and the periods of some important events (like the length of their lunar month which had 30 days, or the time taken for the Sun to complete one revolution around the Earth when Earth is taken to be stationary), the ease of representing fractions (we will not go into this here), their earlier sequence of landmark numbers — 1, 10, 60, 600, 3600, 36000,… — getting reduced to only the powers of 60, and so on. The influence of the Mesopotamian sexagesimal system, also known as the Babylonian number system, can be seen even now in our units of time measurements — 1 hour \(= 60\) minutes and 1 minute \(= 60\) seconds. This system used the symbol <img src="img/fig-fix-p23-1.webp" alt="Mesopotamian symbol for 1" style="height:1.3em;width:auto;vertical-align:middle;display:inline"> for 1 and <img src="img/fig-fix-p23-2.webp" alt="Mesopotamian symbol for 10" style="height:1.3em;width:auto;vertical-align:middle;display:inline"> for 10. Let us now briefly pause on the study of their number system, and ideate on how one can build an efficient number system using the Mesopotamian features seen so far.</p>
 <figure class="fig wide"><img src="img/fig-p1-3.webp" alt="Figure from the textbook page" loading="lazy" width="1367" height="139"></figure>
 <figure class="fig wide"><img src="img/fig-p2-1.webp" alt="Figure from the textbook page" loading="lazy" width="1391" height="131"></figure>
-<p>Let us give our own symbols to their landmark numbers -</p>
-<div class="mathblock"><p>\(60^0 = 1 \quad 60^1 = 60 \quad 60^2 = 3600 \quad 60^3 = 216000 \quad \ldots\)</p></div>
+<p>Let us give our own symbols to their landmark numbers —</p>
+<div class="mathblock"><p>\(1 \qquad 60 \qquad 60^2 = 3600 \qquad 60^3 = 216000\ \ldots\)</p></div>
+<figure class="fig"><img src="img/fig-fix-p24-1.webp" alt="Figure from the textbook page" loading="lazy"></figure>
 <figure class="fig"><img src="img/fig-p2-2.webp" alt="Figure from the textbook page" loading="lazy" width="235" height="82"></figure>
 <figure class="fig side-fig"><img src="img/fig-p2-3.webp" alt="Figure from the textbook page" loading="lazy" width="94" height="82"></figure>
 
@@ -52,15 +53,15 @@
 <p>We can simply represent this number as</p>
 <figure class="fig"><img src="img/fig-p3-2.webp" alt="Figure from the textbook page" loading="lazy" width="215" height="113"></figure>
 <p>which can be read as ten 60s and one 40, just as we have written in the equation.</p>
-<p>Example: Let us try another number \(- 7530\).</p>
+<p>Example: Let us try another number — 7530.</p>
 <div class="mathblock"><p>\(7530 = (2) \times 3600 + (5) \times 60 + 30\)</p></div>
 <p>So, its representation would be</p>
 <figure class="fig"><img src="img/fig-p3-3.webp" alt="Figure from the textbook page" loading="lazy" width="383" height="97"></figure>
-<p>Note that when a number is grouped into powers of 60 for its representation, no power of 60 can occur 60 or more times. If this happens, then 60 of them can be grouped to form the next power of 60. For example, consider the expression -</p>
-<div class="mathblock"><p>\((1) \times 60^2 + (70) \times 60 + 2 = (1) \times 60^2 + (60 + 10) \times 60 + 2\)</p></div>
-<div class="mathblock"><p>\(= (1) \times 60^2 + 60^2 + (10) \times 60 + 2\)</p></div>
-<div class="mathblock"><p>\(= (2) \times 60^2 + (10) \times 60 + 2\)</p></div>
-<p>Therefore, any number can be represented using the numerals from \(1 - 59\), along with the numerals for landmark numbers. Now, what if we make the representation even more compact by dropping the symbols for the different powers of 60 altogether?</p>
+<p>Note that when a number is grouped into powers of 60 for its representation, no power of 60 can occur 60 or more times. If this happens, then 60 of them can be grouped to form the next power of 60. For example, consider the expression —</p>
+<div class="mathblock"><p>\((1) \times 3600 + (70) \times 60 + 2 = (1) \times 60^2 + (60 + 10) \times 60 + 2\)</p>
+<p>\(= (1) \times 60^2 + 60^2 + (10) \times 60 + 2\)</p>
+<p>\(= (2) \times 60^2 + (10) \times 60 + 2\)</p></div>
+<p>Therefore, any number can be represented using the numerals from 1–59, along with the numerals for landmark numbers. Now, what if we make the representation even more compact by dropping the symbols for the different powers of 60 altogether?</p>
 <figure class="fig wide"><img src="img/fig-p3-4.webp" alt="Figure from the textbook page" loading="lazy" width="909" height="429"></figure>
 <figure class="fig wide"><img src="img/fig-p3-5.webp" alt="Figure from the textbook page" loading="lazy" width="1367" height="139"></figure>
 <figure class="fig wide"><img src="img/fig-p4-1.webp" alt="Figure from the textbook page" loading="lazy" width="1391" height="131"></figure>

@@ -43,7 +43,7 @@
 <div class="mathblock"><p>\(2^2 - 1 = (1+1)^2 - 1\), &emsp; \(3^2 - 1 = (2+1)^2 - 1\), &emsp; \(4^2 - 1 = (3+1)^2 - 1\), &emsp; \(5^2 - 1 = (4+1)^2 - 1\) &emsp; . . . &emsp; \((k+1)^2 - 1\)</p></div>
 <p><strong>Method 2</strong></p>
 <figure class="fig"><img src="img/fig-p2-3.webp" alt="Figure from the textbook page" loading="lazy" width="662" height="193"></figure>
-<div class="mathblock"><p>\(1^2 + 2 \times 1\), &emsp; \(2^2 + 2 \times 2\), &emsp; \(3^2 + 2 \times 3\), &emsp; \(4^2 + 2 \times 4\) &emsp; . . . &emsp; \(k^2 + 2 \times k\)</p></div>
+<div class="mathblock"><p>\(1 + 2 \times 1 = 1^2 + 2 \times 1\), &emsp; \(2^2 + 2 \times 2\), &emsp; \(3^2 + 2 \times 3\), &emsp; \(4^2 + 2 \times 4\) &emsp; . . . &emsp; \(k^2 + 2 \times k\)</p></div>
 <p><strong>Method 3</strong></p>
 <figure class="fig"><img src="img/fig-p2-4.webp" alt="Figure from the textbook page" loading="lazy" width="650" height="190"></figure>
 <div class="mathblock"><p>\(1 \times 2 + 1 = 1 \times (1+1) + 1\), &emsp; \(2 \times 3 + 2 = 2 \times (2+1) + 2\), &emsp; \(3 \times 4 + 3 = 3 \times (3+1) + 3\), &emsp; \(4 \times 5 + 4 = 4 \times (4+1) + 4\) &emsp; . . . &emsp; \(k \times (k+1) + k\)</p></div>
@@ -53,9 +53,7 @@
 <figure class="fig"><img src="img/fig-p3-2.webp" alt="Figure from the textbook page" loading="lazy" width="636" height="177"></figure>
 <div class="mathblock"><p>\(1 \times 3 = 1 \times (1+2)\), &emsp; \(2 \times 4 = 2 \times (2+2)\), &emsp; \(3 \times 5 = 3 \times (3+2)\), &emsp; \(4 \times 6 = 4 \times (4+2)\) &emsp; . . . &emsp; \(k \times (k+2)\)</p></div>
 <p>Does your method match any of these, or is it different? Each expression that we have identified appears different, but are they really different? Since they describe the same pattern, they should all be the same. Let us simplify each expression and find out.</p>
-<div class="mathblock"><p>\((k+1)^2 - 1\) &emsp; | &emsp; \(k^2 + 2 \times k\) &emsp; | &emsp; \(k \times (k+1) + k\) &emsp; | &emsp; \(k \times (k+2)\)</p></div>
-<div class="mathblock"><p>\(= k^2 + 1 + 2k - 1\) &emsp; | &emsp; \(= k^2 + 2k\) &emsp; | &emsp; \(= k^2 + k + k\) &emsp; | &emsp; \(= k^2 + 2k\)</p></div>
-<div class="mathblock"><p>\(= k^2 + 2k\) &emsp; | &emsp; &emsp; | &emsp; \(= k^2 + 2k\)</p></div>
+<div class="mathblock"><p>\[\begin{array}{r|l|r|l} (k+1)^2 - 1 & \;k^2 + 2 \times k & \;k \times (k+1) + k & \;k \times (k+2) \\ = k^2 + 1 + 2k - 1 & \;= k^2 + 2k & = k^2 + k + k & \;= k^2 + 2k \\ = k^2 + 2k & & = k^2 + 2k & \end{array}\]</p></div>
 <p>When carried out correctly, all methods lead to the same answer; \(k^2 + 2k\). The expression \(k^2 + 2k\) gives the number of circles at Step <em>k</em> of this pattern.</p>
 <p>In Mathematics, there are often multiple ways of looking at a pattern, and different ways of approaching and solving the same problem. Finding such ways often requires a great deal of creativity and imagination! While one or two of the ways might be your favourite(s), it can be amusing and enriching to explore other ways as well.</p>
 <p>Use this formula to find the number of circles in Step 15.</p>
@@ -66,7 +64,6 @@
 <p>Write an algebraic expression for the number of tiles in Step <em>n</em>. Share your methods with the class. Can you find more than one method to arrive at the answer?</p>
 <p>Find the area of the (interior) shaded region in the figure below. All four rectangles have the same dimensions.</p>
 <figure class="fig side-fig"><img src="img/fig-p4-1.webp" alt="Figure from the textbook page" loading="lazy" width="290" height="290"></figure>
-<p>Tadang’s method:</p>
 <p><strong>Tadang’s method:</strong> The total region is a square of side \((m + n)\) with an area \((m + n)^2\). Subtracting the area of four rectangles from the total area will give the area of the interior shaded region.</p>
 <div class="mathblock"><p>That is, \((m + n)^2 - 4mn\).</p></div>
 <p><strong>Yusuf’s method:</strong> The shaded region is a square with sidelength \((n - m)\). So, its area is \((n - m)^2\).</p>
@@ -79,16 +76,15 @@
 <p>Area of ABCD \(= x^2\). Area of EFGH \(= xy\).</p>
 <p>Required area \(= x^2 - xy\).</p>
 <p><strong>Vaishnavi’s method:</strong></p>
-<p>\(QS = y + x + y = x + 2y\).</p>
+<div class="mathblock"><p>\(\text{QS} = y + x + y\)</p><p>\(= x + 2y\).</p></div>
 <p>Area of PQSR \(= x(x + 2y)\). Required area = Area of PQSR − (area of the three rectangles)</p>
 <div class="mathblock"><p>\(= x(x + 2y) - 3xy\).</p></div>
 <figure class="fig wide"><img src="img/fig-p4-4.webp" alt="Figure from the textbook page" loading="lazy" width="1363" height="139"></figure>
 <p><strong>Aditya’s method:</strong></p>
 <p>The required area is 2 times the area of JKLM.</p>
-<div class="mathblock"><p>\(JK = \frac{x - y}{2}\), \(KM = x\)</p></div>
+<div class="mathblock"><p>\(\text{JK} = \frac{x - y}{2}\), \(\text{KM} = x\)</p></div>
 <p>Area (JKML) \(= x\left(\frac{x - y}{2}\right)\). Required area \(= 2 \times\) Area of JKML</p>
-<div class="mathblock"><p>\(= 2x\left(\frac{x - y}{2}\right)\)</p></div>
-<p>\(= x(x - y)\).</p>
+<div class="mathblock"><p>\(= 2x\left(\frac{x - y}{2}\right)\)</p><p>\(= x(x - y)\).</p></div>
 <p>By expanding the expressions, verify that all three expressions are equivalent. If \(x = 8\) and \(y = 3\), find the area of the shaded region.</p>
 <figure class="fig side-fig"><img src="img/fig-p5-1.webp" alt="Figure from the textbook page" loading="lazy" width="125" height="95"></figure>
 <p>Write an expression for the area of the dashed region in the figure below. Use more than one method to arrive at the answer. Substitute \(p = 6\), \(r = 3.5\), and \(s = 9\), and calculate the area.</p>

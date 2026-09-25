@@ -34,14 +34,13 @@
 <p>Can you say, without actually calculating, which of these numbers are divisible by 9: 999, 909, 900, 90, 990? All of them.</p>
 <figure class="fig wide"><img src="img/fig-p1-2.webp" alt="Figure from the textbook page" loading="lazy" width="1388" height="139"></figure>
 <figure class="fig wide"><img src="img/fig-p2-1.webp" alt="Figure from the textbook page" loading="lazy" width="1365" height="113"></figure>
-<p>Can we say that any number made up of only the digits ‘0’ and ‘9’, in any order, will always be divisible by 9? Yes, if each digit is either 0 or 9, then each term in its expanded form will be \(9 \times\) or \(0 \times\) (the ‘ ’ denotes a place value). This means each term will be a multiple of 9, for example,</p>
+<p>Can we say that any number made up of only the digits ‘0’ and ‘9’, in any order, will always be divisible by 9? Yes, if each digit is either 0 or 9, then each term in its expanded form will be \(9 \times \square\) or \(0 \times \square\) (the ‘\(\square\)’ denotes a place value). This means each term will be a multiple of 9, for example,</p>
 <div class="mathblock"><p>\(99009 = 9 \times 10000 + 9 \times 1000 + 0 \times 100 + 0 \times 10 + 9 \times 1\).</p></div>
 <p>But this shortcut alone cannot identify all the multiples of 9. Unlike the numbers 2, 5, and 10, we cannot identify the multiples of 9 by just looking at the unit’s digit. 99 and 109 are two numbers with 9 as the units digit; but 99 is divisible by 9, while 109 is not. Is 10 divisible by 9? If not, what is the remainder? Check the divisibility of other multiples of 10 (10, 20, 30, ...) by 9. You will notice that for any multiple of 10, the remainder is the same as the number of tens. Similarly, look at the remainder when the multiples of 100 (100, 200, 300, … ) are divided by 9. What do you notice? The remainder is the same as the number of hundreds for any multiple of 100. Using this observation, find the remainder when 427 is divided by 9.</p>
 <figure class="fig side-fig"><img src="img/fig-p2-2.webp" alt="Figure from the textbook page" loading="lazy" width="168" height="188"></figure>
 <figure class="fig"><img src="img/fig-p2-3.webp" alt="Figure from the textbook page" loading="lazy" width="338" height="240"></figure>
 <p>We see that 427 has 4 hundreds; thus, its corresponding remainder (upon division by 9) would be 4. 427 has 2 tens, and its corresponding remainder would be 2. We have 7 units also remaining. Adding all the remainders, we get \(4 + 2 + 7 = 13\). We can make one more group of 9 with 13, leaving a remainder of 4. Therefore, \(427 \div 9\) gives a remainder of 4.</p>
 <figure class="fig"><img src="img/fig-p2-4.webp" alt="Figure from the textbook page" loading="lazy" width="445" height="257"></figure>
-<p>(Remainder)</p>
 <figure class="fig wide"><img src="img/fig-p2-5.webp" alt="Figure from the textbook page" loading="lazy" width="1365" height="139"></figure>
 <figure class="fig wide"><img src="img/fig-p3-1.webp" alt="Figure from the textbook page" loading="lazy" width="1367" height="113"></figure>
 <p>Will this work with bigger numbers? You can see that this is true for any place value:</p>
@@ -50,17 +49,23 @@
 <div class="mathblock"><p>\(10 = 9 + 1\)</p></div>
 <div class="mathblock"><p>\(100 = 99 + 1\)</p></div>
 <div class="mathblock"><p>\(1000 = 999 + 1\)</p></div>
-<p>\(10000 = 9999 + 1\), and so on. Each digit thus denotes the remainder when the corresponding place value is divided by 9. For example, to find the remainder of 7309 when divided by 9, we can just add all the digits \(- 7 + 3 + 0 + 9 -\) to get 19. This can be seen as follows:</p>
+<p>\(10000 = 9999 + 1\), and so on. Each digit thus denotes the remainder when the corresponding place value is divided by 9. For example, to find the remainder of 7309 when divided by 9, we can just add all the digits — \(7 + 3 + 0 + 9\) — to get 19. This can be seen as follows:</p>
 <figure class="fig wide"><img src="img/fig-p3-3.webp" alt="Figure from the textbook page" loading="lazy" width="1040" height="389"></figure>
-<div class="callout"><p>This is a multiple of 9 So, we need to just consider this part(i.e., \(7 + 3 + 9 = 19)\)</p></div>
-<div class="mathblock"><p>\(7 \times 1000 + 3 \times 100 + 0 \times 10 + 9 \times 1 = 7 \times (999 + 1) + 3 \times (99 + 1) + 0 \times (9 + 1) + 9 \times (0+1) = (7 \times 999 + 3 \times 99 + 0 \times 9 + 9 \times 0) + (7 \times 1 + 3 \times 1 + 0 \times 1 + 9 \times 1) = (7 \times 999 + 3 \times 99 + 0 \times 9 + 9 \times 0) + (7 + 3 + 0 + 9)\).</p></div>
-<p>This is a multiple of 9 So, we need to just consider this part</p>
-<p>This means that the number 7309 is 19 more than some multiple of 9. The digits 1 and 9 can further be added to get \(1 + 9 = 10\). Now, we can say that 7309 is 10 more than a multiple of 9. And repeating this step for the number 10, we get the remainder to be \(1 + 0 = 1\), meaning 7309 is 1 more than a multiple of 9. Therefore, \(7309 \div 9\) gives a remainder of 1. A number is divisible by 9 if and only if the sum of its digits is divisible by 9. Also, we can add the digits of a number repeatedly till a single digit is obtained. This single digit is the remainder when the number is divided by 9.</p>
+<div class="mathblock">
+<p>\(7 \times 1000 + 3 \times 100 + 0 \times 10 + 9 \times 1\)</p>
+<p>\(= 7 \times (999 + 1) + 3 \times (99 + 1) + 0 \times (9 + 1) + 9 \times (0+1)\)</p>
+<p>\(= (7 \times 999 + 3 \times 99 + 0 \times 9 + 9 \times 0) + (7 \times 1 + 3 \times 1 + 0 \times 1 + 9 \times 1)\)</p>
+<p>\(= (\underbrace{7 \times 999 + 3 \times 99 + 0 \times 9 + 9 \times 0}_{\text{This is a multiple of 9}}) + (\underbrace{7 + 3 + 0 + 9}_{\text{So, we need to just consider this part}})\).</p>
+</div>
+<p>This means that the number 7309 is 19 more than some multiple of 9. The digits 1 and 9 can further be added to get \(1 + 9 = 10\). Now, we can say that 7309 is 10 more than a multiple of 9. And repeating this step for the number 10, we get the remainder to be \(1 + 0 = 1\), meaning 7309 is 1 more than a multiple of 9. Therefore, \(7309 \div 9\) gives a remainder of 1.</p>
+<p>A number is divisible by 9 if and only if the sum of its digits is divisible by 9. Also, we can add the digits of a number repeatedly till a single digit is obtained. This single digit is the remainder when the number is divided by 9.</p>
 <p>Look at each of the following statements. Which are correct and why?</p>
-<p>If a number is divisible by 9, then the sum of its digits is divisible by 9.</p>
+<ol type="i">
+<li>If a number is divisible by 9, then the sum of its digits is divisible by 9.</li>
+</ol>
 <figure class="fig wide"><img src="img/fig-p3-4.webp" alt="Figure from the textbook page" loading="lazy" width="1388" height="146"></figure>
 <figure class="fig wide"><img src="img/fig-p4-1.webp" alt="Figure from the textbook page" loading="lazy" width="1365" height="113"></figure>
-<ol>
+<ol type="i" start="2">
 <li>If the sum of the digits of a number is divisible by 9, then the number is divisible by 9.</li>
 
 <li>If a number is not divisible by 9, then the sum of its digits is not divisible by 9.</li>
@@ -68,16 +73,8 @@
 <li>If the sum of the digits of a number is not divisible by 9, then the number is not divisible by 9.</li>
 </ol>
 <figure class="fig wide"><img src="img/fig-p4-2.webp" alt="Figure from the textbook page" loading="lazy" width="1040" height="216"></figure>
-<ol>
-<li>Find, without dividing, whether the following numbers are divisible by 9.</li>
-
-<li>(i) 123 (ii) 405 (iii) 8888 (iv) 93547 (v) 358095</li>
-<li>Find the smallest multiple of 9 with no odd digits.</li>
-<li>Find the multiple of 9 that is closest to the number 6000.</li>
-<li>How many multiples of 9 are there between the numbers 4300 and 4400?</li>
-</ol>
 <h2 id="s-a-shortcut-for-divisibility-by-3">A Shortcut for Divisibility by 3</h2>
-<p>We know that all the multiples of 9 are also multiples of 3. That is, if a number is divisible by 9, it will also be divisible by 3. However, there are other multiples of 3 that are not multiples of 9 — for example, 15, 33, and 87.</p>
+<p>We know that all the multiples of 9 are also multiples of 3. That is, if a number is divisible by 9, it will also be divisible by 3. However, there are other multiples of 3 that are not multiples of 9 for example — 15, 33, and 87.</p>
 <p>The shortcut to find the divisibility by 3 is similar to the method for 9. A number is divisible by 3 if the sum of its digits is divisible by 3. Explore the remainders when powers of 10 are divided by 3. Explain why this method works.</p>
 <h2 id="s-a-shortcut-for-divisibility-by-11">A Shortcut for Divisibility by 11</h2>
 <p>Interestingly, the shortcut for 11 is also based on checking the remainders with place value. Let us see how.</p>
