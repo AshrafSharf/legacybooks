@@ -28,7 +28,7 @@
 <div class="sec-head">
   <p class="eyebrow"><a href="../index.html">Chapter 2 · Operations with Integers</a></p>
   <h1>Carrom Coin Integers</h1>
-  <p class="sec-meta">Textbook pages 2–6 · 15 figures</p>
+  <p class="sec-meta">Textbook pages 2–6 · 11 figures</p>
 </div>
 <article class="prose">
 <p>A carrom coin is struck to move it to the right. Each strike moves the coin a certain number of units of distance rightwards based on the force of the strike.</p>
@@ -36,8 +36,9 @@
 <p>To begin with, the coin is at point 0. If the coin is struck twice, with the first strike moving it by 4 units and the second strike moving it by 3 units, what will be the final position of the coin?</p>
 <p>It is clear that the coin will be \(4 + 3 = 7\) units from 0.</p>
 <p>If the coin is struck twice, and if the two movements are known, can you give a formula for the final position of the coin? If the first strike moves the coin 'a' units to the right and if the second strike moves the coin 'b' units to the right, then the final position is \(P = a + b\), where P is the distance of the coin from the starting point 0.</p>
+<figure class="fig"><img src="img/fig-fix-p2-1.webp" alt="Coin moved a units then b units to the right from 0 to P, P = a + b" loading="lazy" width="557" height="258"></figure>
 <p>Now, suppose the coin can be struck to move it in either direction — left or right.</p>
-<figure class="fig"><img src="img/fig-p2-1.webp" alt="Figure from the textbook page" loading="lazy" width="396" height="107"></figure>
+<figure class="fig"><img src="img/fig-fix-p3-1.webp" alt="Coin at 0 on a line, with arrows pointing left (−ve) and right (+ve)" loading="lazy" width="615" height="158"></figure>
 <p>The coin is at 0. If it is struck twice (the direction of the two strikes may be the same or different) can you give a formula for the final position of the coin? One way to do this is to consider different cases of the directions of the strikes</p>
 <ul>
 <li>both are rightward,</li>
@@ -46,7 +47,7 @@
 <li>the first one is leftward and the second one is rightward.</li>
 </ul>
 <p>An efficient way to model this situation is to use positive and negative integers. First, let us model the line on which the coin moves as a number line.</p>
-<figure class="fig wide"><img src="img/fig-p2-2.webp" alt="Figure from the textbook page" loading="lazy" width="1115" height="214"></figure>
+<figure class="fig wide"><img src="img/fig-fix-p3-2.webp" alt="Number line from −5 to 6, −ve to the left and +ve to the right" loading="lazy" width="1097" height="76"></figure>
 <p>Let us consider the rightward movement positive and the leftward movement negative. Suppose the first strike moves the coin rightward by 5 units from 0, and the second strike leftward by 7 units, then we take the First Movement \(= 5\) units. Second Movement \(= -7\) units.</p>
 <p>What is the final position of the coin? This can be found by simply adding the two movements: \(5 + (-7) = -2\). So the coin is at \(-2\), or it is 2 units to the left of 0. In general, if the first strike moves the coin 'a' units (which is positive if the strike is to the right and negative if the strike is to the left), and the second strike 'b' units (which is positive if the strike is to the right and negative if the strike is to the left), then the final position 'P', after the two strikes, is again \(P = a + b\).</p>
 <p>Based on this new model, answer the following questions:</p>
@@ -58,16 +59,16 @@
 <figure class="fig side-fig"><img src="img/fig-p3-1.webp" alt="Figure from the textbook page" loading="lazy" width="142" height="100"></figure>
 <p>From the figures below, what can you conclude about the magnitudes of <em>a</em> and <em>b</em> compared to each other, and what are their directions? Remember to start from 0.</p>
 <p>1.</p>
-<figure class="fig"><img src="img/fig-p3-2.webp" alt="Figure from the textbook page" loading="lazy" width="369" height="253"></figure>
+<figure class="fig"><img src="img/fig-fix-p4-1.webp" alt="Figure 1: movements a and b ending at P, to the left of 0" loading="lazy" width="906" height="333"></figure>
 <p>2.</p>
-<figure class="fig"><img src="img/fig-p3-3.webp" alt="Figure from the textbook page" loading="lazy" width="285" height="227"></figure>
+<figure class="fig"><img src="img/fig-fix-p4-2.webp" alt="Figure 2: movements a and b ending at P, to the right of 0" loading="lazy" width="1081" height="299"></figure>
 <p>3.</p>
-<figure class="fig"><img src="img/fig-p3-4.webp" alt="Figure from the textbook page" loading="lazy" width="339" height="187"></figure>
-<figure class="fig wide"><img src="img/fig-p3-5.webp" alt="Figure from the textbook page" loading="lazy" width="1116" height="295"></figure>
+<figure class="fig"><img src="img/fig-fix-p4-3.webp" alt="Figure 3: movements a and b ending at P, which is at 0" loading="lazy" width="939" height="341"></figure>
 <p>In addition to the number line, we used the token model to understand integers. We used this model to perform addition and subtraction in Grade 6. Let us do a quick recall. We used green token to represent positive 1 and red token to represent negative 1, that is \(-1\). Together they make zero, as they cancel each other out.</p>
 <p>Find \((+7) - (+18)\).</p>
 <p>To subtract 18 from 7, i.e., \((+7) - (+18)\), we need to remove 18 positives from 7 positives.</p>
-<figure class="fig"><img src="img/fig-p4-1.webp" alt="Figure from the textbook page" loading="lazy" width="757" height="116"></figure>
+<figure class="fig"><img src="img/fig-fix-p5-1.webp" alt="7 green positive tokens" loading="lazy" width="466" height="75"></figure>
+<p>But there are not enough tokens to remove 18 positives!</p>
 <p>We put in enough zero pairs so that we can remove 18 positives. How many? We have 7 positives and we need 11 more. So we need to put in 11 zero pairs:</p>
 <figure class="fig wide"><img src="img/fig-p4-2.webp" alt="Figure from the textbook page" loading="lazy" width="937" height="128"></figure>
 <p>We can now remove 18 positives.</p>
@@ -80,7 +81,7 @@
 <li>\(7 - 18 = 7 + (-18)\) (additive inverse of 18 is \(-18\))</li>
 <li>\(4 - (-12) = 4 + 12\) (additive inverse of \(-12\) is 12)</li>
 </ol>
-<p><strong>Note to the Teacher:</strong> Tokens of different shapes may be used for positive and negative numbers for visually challenged students.</p>
+<p><strong>Note to the Teacher:</strong> Tokens of different shapes may be used for positive and negative numbers for visually challanged students.</p>
 <p>Additive inverse of an integer <em>a</em> is represented as \(-a\). So the additive inverse of 18 is represented as \(-(18) = -18\), and the additive inverse of \(-18\) is represented as \(-(-18) = 18\).</p>
 </article>
 <nav class="pager"><a class="" data-nav="prev" href="../../02-operations-with-integers/02-figure-it-out/index.html"><span class="dir">← Previous</span><span class="t">Figure it Out</span><span class="ch">Operations with Integers</span></a><a class="nx" data-nav="next" href="../../02-operations-with-integers/04-multiplication-of-integers-2.2/index.html"><span class="dir">Next →</span><span class="t">2.2 Multiplication of Integers</span><span class="ch">Operations with Integers</span></a></nav>
