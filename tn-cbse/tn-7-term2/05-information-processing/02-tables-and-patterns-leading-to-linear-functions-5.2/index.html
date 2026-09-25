@@ -35,57 +35,66 @@
 <p>Observe the following pattern</p>
 <p>Consider a circular disc . Circular rings of same width are drawn around the disc . Proceed in the same way to get the shapes following a pattern as shown below.</p>
 <figure class="fig table-fig wide"><img src="img/fig-p1-2.webp" alt="Fig. 5.1" loading="lazy" width="938" height="271"><figcaption>Fig. 5.1</figcaption></figure>
-<p>Let us express the above pattern of shapes in the form of a table. Let x denote the number of steps and y denote the total number of circular rings.</p>
-<figure class="fig"><img src="img/fig-p2-1.webp" alt="Figure from the textbook page" loading="lazy" width="452" height="96"></figure>
-<p>Here let us find the relationship between the number of steps and number of circular rings. Hence the relationship between x and y can be generalised as \(y = 2x - 1\)</p>
+<p>Let us express the above pattern of shapes in the form of a table. Let \(x\) denote the number of steps and \(y\) denote the total number of circular rings.</p>
+<table>
+<tbody>
+<tr><th>Number of steps \((x)\)</th><td>1</td><td>2</td><td>3</td><td>4</td><td>\(\ldots\)</td></tr>
+<tr><th>Number of circular rings \((y)\)</th><td>1</td><td>3</td><td>5</td><td>7</td><td>\(\ldots\)</td></tr>
+</tbody>
+</table>
+<p>Here let us find the relationship between the number of steps and number of circular rings. Hence the relationship between \(x\) and \(y\) can be generalised as \(y = 2x - 1\)</p>
 <h4 class="callout-h" id="s-situation-2">Situation 2</h4>
 <figure class="fig"><img src="img/fig-p2-2.webp" alt="Figure from the textbook page" loading="lazy" width="158" height="85"></figure>
-<p>Consider an equilateral triangle of any size . Mark the midpoints of sides of a</p>
-<p>triangle and join them to form four equilateral triangles . Proceed in the same way to get the shapes following a pattern as shown below.</p>
+<p>Consider an equilateral triangle of any size . Mark the midpoints of sides of a triangle and join them to form four equilateral triangles . Proceed in the same way to get the shapes following a pattern as shown below.</p>
 <figure class="fig table-fig wide"><img src="img/fig-p2-3.webp" alt="Figure from the textbook page" loading="lazy" width="1035" height="287"></figure>
-<p>Let us express this repeated process in the form of a table. Here let us find the relationship between the number of steps (x) and total number of vertices (y).</p>
-<figure class="fig"><img src="img/fig-p2-4.webp" alt="Figure from the textbook page" loading="lazy" width="342" height="96"></figure>
-<p>1 2 3 4 …</p>
-<div class="mathblock"><p>\(3 \times 2 = 3 3 \times 2 = 6 3 \times 2 = 12 3 \times 2 = 24\) …</p></div>
-<p>Hence, the relationship between x and y can be generalised as \(y = 3 \times (2\) ) . From the above situations, you could have understood that even if an action is repeatedly done, the properties of the shape do not change.</p>
+<p>Let us express this repeated process in the form of a table. Here let us find the relationship between the number of steps \((x)\) and total number of vertices \((y)\).</p>
+<table>
+<tbody>
+<tr><th>Number of steps \((x)\)</th><td>1</td><td>2</td><td>3</td><td>4</td><td>\(\ldots\)</td></tr>
+<tr><th>Number of vertices \((y)\)</th><td>\(3 \times 2^{0} = 3\)</td><td>\(3 \times 2^{1} = 6\)</td><td>\(3 \times 2^{2} = 12\)</td><td>\(3 \times 2^{3} = 24\)</td><td>\(\ldots\)</td></tr>
+</tbody>
+</table>
+<p>Hence, the relationship between \(x\) and \(y\) can be generalised as \(y = 3 \times \left(2^{x-1}\right)\).</p>
+<p>From the above situations, you could have understood that even if an action is repeatedly done, the properties of the shape do not change.</p>
 <h4 class="callout-h" id="s-example-5-1">Example 5.1</h4>
-<p>In the following figures, polygons are formed by increasing the number of sides using</p>
-<p>matchsticks as given below.</p>
+<p>In the following figures, polygons are formed by increasing the number of sides using matchsticks as given below.</p>
 <figure class="fig table-fig wide"><img src="img/fig-p2-5.webp" alt="Fig. 5.2" loading="lazy" width="1146" height="233"><figcaption>Fig. 5.2</figcaption></figure>
 <p>Find the number of sticks required to form the next three shapes by tabulation and generalisation.</p>
 <h4 class="callout-h" id="s-solution">Solution</h4>
-<p>In the above pattern of polygons, in the first shape \((x =1)\), we get a closed shape called</p>
-<p>a triangle. Similarly the second shape \((x = 2\) ) gives a four sided polygon and the third shape \((x = 3)\) is a five sided polygon and continuing in the same way two more shapes are formed. If the number of match sticks required to form each of the shapes is taken as y, then the values of x and y are tabulated as given below.</p>
-<figure class="fig"><img src="img/fig-p3-1.webp" alt="Figure from the textbook page" loading="lazy" width="123" height="148"></figure>
-<p>1 2 3 4 5 ...</p>
-<p>3 4 5 7 ... Observe the table and express y in terms of \(\frac{6}{x as below :}\)</p>
-<div class="mathblock"><p>when \(x =1\), \(y = 3 = 1+2\)</p><p>when \(x = 2\) , \(y = 4 = 2+2\) when \(x = 3\), \(y = 5 = 3+2\) when \(x = 4\) , \(y = 6 = 4+2\) when \(x = 5\), \(y = 7 = 5+2\)</p></div>
-<p>Hence, each of the values of y which we get from the table is 2 more than x. That is</p>
-<div class="mathblock"><p>\(y = x + 2\).</p></div>
+<p>In the above pattern of polygons, in the first shape \((x = 1)\), we get a closed shape called a triangle. Similarly the second shape \((x = 2)\) gives a four sided polygon and the third shape \((x = 3)\) is a five sided polygon and continuing in the same way two more shapes are formed. If the number of match sticks required to form each of the shapes is taken as \(y\), then the values of \(x\) and \(y\) are tabulated as given below.</p>
+<table>
+<tbody>
+<tr><th>\(x\)</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>\(\ldots\)</td></tr>
+<tr><th>\(y\)</th><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>\(\ldots\)</td></tr>
+</tbody>
+</table>
+<p>Observe the table and express \(y\) in terms of \(x\) as below :</p>
+<div class="mathblock"><p>when \(x = 1\), \(y = 3 = 1+2\)</p><p>when \(x = 2\), \(y = 4 = 2+2\)</p><p>when \(x = 3\), \(y = 5 = 3+2\)</p><p>when \(x = 4\), \(y = 6 = 4+2\)</p><p>when \(x = 5\), \(y = 7 = 5+2\)</p></div>
+<p>Hence, each of the values of \(y\) which we get from the table is 2 more than \(x\). That is \(y = x + 2\).</p>
 <p>Therefore,</p>
-<p>6th shape (x=6) will have \(y = 8 = 6+2 (8\) match sticks)</p>
-<p>7th shape (x=7) will have \(y = 9 = 7+2 (9\) match sticks)</p>
-<p>8th shape (x=8) will have \(y = 10 = 8+2 (10\) match sticks)</p>
+<div class="mathblock"><p>6th shape \((x=6)\) will have \(y = 8 = 6+2\) (8 match sticks)</p><p>7th shape \((x=7)\) will have \(y = 9 = 7+2\) (9 match sticks)</p><p>8th shape \((x=8)\) will have \(y = 10 = 8+2\) (10 match sticks)</p></div>
 <p>We clearly see that the next three shapes will require 8, 9 and 10 matchsticks.</p>
 <div class="callout"><p class="callout-title">Activity</p>
 <p>Observe the pattern given below. Continue the pattern for three more steps.</p>
-<p>, , , ___ , ___ , ___ .</p>
-<p>Let, 'x' be the number of steps and 'y' be the number of match sticks. Tabulate the values of 'x' and 'y' and verify the relationship \(y = 7x+5\).</p>
+<figure class="fig wide"><img src="img/fig-fix-p3-1.webp" alt="Figure from the textbook page" loading="lazy"></figure>
+<p>Let, '\(x\)' be the number of steps and '\(y\)' be the number of match sticks. Tabulate the values of '\(x\)' and '\(y\)' and verify the relationship \(y = 7x+5\).</p>
 </div>
 <div class="callout"><p class="callout-title">Try these</p>
 <ol>
-<li>In the given figure, let x denote the number of steps and y denote its area. Find the relationship between x and y by tabulation.</li>
-<li>In the figure, let x denotes the number of steps and y denotes the number of matchsticks used. Find the relationship between x and y by tabulation.</li>
-<li>Observe the table given below.</li>
+<li>In the given figure, let \(x\) denote the number of steps and \(y\) denote its area. Find the relationship between \(x\) and \(y\) by tabulation.
+<figure class="fig wide"><img src="img/fig-fix-p4-1.webp" alt="Figure from the textbook page" loading="lazy"></figure></li>
+<li>In the figure, let \(x\) denotes the number of steps and \(y\) denotes the number of matchsticks used. Find the relationship between \(x\) and \(y\) by tabulation.
+<figure class="fig"><img src="img/fig-fix-p4-2.webp" alt="Figure from the textbook page" loading="lazy"></figure></li>
+<li>Observe the table given below.
+<table>
+<tbody>
+<tr><th>\(x\)</th><td>\(-2\)</td><td>\(-1\)</td><td>0</td><td>1</td><td>2</td><td>8</td><td>\(\ldots\)</td></tr>
+<tr><th>\(y\)</th><td>\(-4\)</td><td>\(-2\)</td><td>0</td><td>2</td><td>4</td><td>?</td><td>\(\ldots\)</td></tr>
+</tbody>
+</table>
+<p>Find the relationship between \(x\) and \(y\). What will be the value of \(y\), when \(x = 8\).</p></li>
 </ol>
-<p>\(x - 2 - 1 0 1 2 8\) ... \(y - 4 - 2 0 2 4\) ? ... Find the relationship between x and y. What will be the value of y, when \(x = 8\).</p>
 </div>
-<figure class="fig wide"><img src="img/fig-p4-1.webp" alt="Figure from the textbook page" loading="lazy" width="1146" height="68"></figure>
-<ol>
-<li>Match the given patterns of shapes with the appropriate number pattern and its generalization.</li>
-<li>Sequence :</li>
-</ol>
-<figure class="fig table-fig wide"><img src="img/fig-p4-2.webp" alt="Figure from the textbook page" loading="lazy" width="893" height="660"></figure>
 </article>
 <nav class="pager"><a class="" data-nav="prev" href="../../05-information-processing/01-introduction-5.1/index.html"><span class="dir">← Previous</span><span class="t">5.1 Introduction</span><span class="ch">Information Processing</span></a><a class="nx" data-nav="next" href="../../05-information-processing/03-exercise-5.1/index.html"><span class="dir">Next →</span><span class="t">Exercise 5.1</span><span class="ch">Information Processing</span></a></nav>
 </main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>

@@ -31,37 +31,40 @@
  <p class="sec-meta">Textbook pages 16–19 · 8 figures</p>
 </div>
 <article class="prose">
-<p>We have learnt in earlier classes, on how all beautiful things in nature as well as man made things are connected with Mathematics. Now, we just refresh everyone's memory and show how Math can be beautiful when seen in physical and biological things everywhere around us. Fibonacci (real name Leonardo Bonacci) was an Italian mathematician who developed the Fibonacci Sequence. Remember the pattern of the Fibonacci sequence we already studied in standard VI it looks like this: 1, 1, 2, 3, 5, 8, 13, 21, 34... and it goes on. Let us tabulate the Fibonacci sequence and find a rule. Term (n) 1 F (n)</p>
-<figure class="fig wide"><img src="img/fig-p1-2.webp" alt="Figure from the textbook page" loading="lazy" width="919" height="102"></figure>
-<p>We observe that the 3 term of the Fibonacci sequence</p>
-<p>rd</p>
-<p>is the sum of 2 term and the 1 term.</p>
-<p>nd st</p>
+<p>We have learnt in earlier classes, on how all beautiful things in nature as well as man made things are connected with Mathematics. Now, we just refresh everyone's memory and show how Math can be beautiful when seen in physical and biological things everywhere around us.</p>
+<p>Fibonacci (real name Leonardo Bonacci) was an Italian mathematician who developed the Fibonacci Sequence. Remember the pattern of the Fibonacci sequence we already studied in standard VI it looks like this: 1, 1, 2, 3, 5, 8, 13, 21, 34... and it goes on.</p>
+<p>Let us tabulate the Fibonacci sequence and find a rule.</p>
+<table>
+<tr><th>Term (n)</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>...</td></tr>
+<tr><th>F (n)</th><td>1</td><td>1</td><td>2</td><td>3</td><td>5</td><td>8</td><td>13</td><td>21</td><td>34</td><td>55</td><td>89</td><td>144</td><td>233</td><td>377</td><td>610</td><td>...</td></tr>
+</table>
+<p>We observe that the 3<sup>rd</sup> term of the Fibonacci sequence is the sum of 2<sup>nd</sup> <strong>term</strong> and the 1<sup>st</sup> <strong>term</strong>.</p>
+<figure class="fig"><img src="img/fig-fix-p16-1.webp" alt="Figure from the textbook page" loading="lazy"></figure>
 <p>That is, \(F(3) = F(2) + F(1)\) and so we can extend and write the rule is</p>
-<div class="mathblock"><p>F(n)= F(n \(- 1) +\) F(n \(- 2)\)</p></div>
-<p>where F(n) is the \(n^{\text{th}}\) term</p>
-<p>F(n \(- 1)\) is the previous term to the \(n^{\text{th}}\) term</p>
-<p>F(n \(- 2)\) is the term before the (n \(- 1)\) term</p>
+<div class="mathblock"><p>\(F(n) = F(n-1) + F(n-2)\)</p></div>
+<p>where \(F(n)\) is the \(n^{\text{th}}\) term</p>
+<p>\(F(n-1)\) is the previous term to the \(n^{\text{th}}\) term</p>
+<p>\(F(n-2)\) is the term before the \((n-1)^{\text{th}}\) term</p>
 <p>This is how the Fibonacci Sequence is obtained. Let us learn more from the following real life examples.</p>
 <h4 class="callout-h" id="s-situation">Situation:</h4>
 <p>Let us look at the family tree of a male drone bee and a female bee as shown Fig 7.19. Here, female bees have 2 parents, male (drone) bees have just one parent, a female. (Male bee (drone) are produced by the queen's unfertilized eggs, so male(drone) bees only have a mother but no father!)</p>
 <figure class="fig wide"><img src="img/fig-p2-1.webp" alt="Fig. 7.19" loading="lazy" width="956" height="674"><figcaption>Fig. 7.19</figcaption></figure>
 <p>From the picture the following points are noted:</p>
 <ol>
-<li>The male A has 1 parent, a female B .</li>
-<li>The male A has 2 grandparents C , since his mother had parents C , a male and a female.</li>
+<li>The male Ⓐ has 1 parent, a female Ⓑ.</li>
+<li>The male Ⓐ has 2 grandparents Ⓒ, since his mother had parents Ⓒ, a male and a female.</li>
+<li>The male Ⓐ has <strong>3</strong> great-grandparents Ⓓ: since his grandmother has two parents but his grandfather has only one.</li>
 </ol>
-<figure class="fig"><img src="img/fig-p2-2.webp" alt="Figure from the textbook page" loading="lazy" width="127" height="46"></figure>
-<ol>
-<li>The male A has 3 great-grandparents D : since his grandmother has two parents but his</li>
-</ol>
-<p>grandfather has only one. Now, answer, how many great-great-grandparents did the male A have? Let us try to find the relationship among the pattern of bees family by representing in the tabular form given below,</p>
-<figure class="fig table-fig"><img src="img/fig-p2-3.webp" alt="Figure from the textbook page" loading="lazy" width="341" height="259"></figure>
-<p>Grandparents Grandparents Great C D</p>
-<figure class="fig table-fig side-fig"><img src="img/fig-p2-4.webp" alt="Figure from the textbook page" loading="lazy" width="439" height="259"></figure>
+<p>Now, answer, how many great-great-grandparents did the male Ⓐ have?</p>
+<p>Let us try to find the relationship among the pattern of bees family by representing in the tabular form given below,</p>
+<table>
+<tr><th>Number of Ⓐ</th><th>Parents Ⓑ</th><th>Grandparents Ⓒ</th><th>Great Grandparents Ⓓ</th><th>Great- Great Grandparents Ⓔ</th><th>Great- Great-Great Grandparents Ⓕ</th></tr>
+<tr><th>a Male bee (1)</th><td>1</td><td>2</td><td>3</td><td>5</td><td>8</td></tr>
+<tr><th>a Female bee (1)</th><td>2</td><td>3</td><td>5</td><td>8</td><td>13</td></tr>
+</table>
 <p>We see the Fibonacci numbers 1, 1, 2, 3, 5, 8, 13… in the above table.</p>
 <div class="callout"><p class="callout-title">Note</p>
-<p>The difference between two consecutive numbers of the Fibonacci sequence increase very quickly. ((For example \(F(5) - F(4) = 5 - 3 = 2\) ; \(F(10) - F(9) = 55 - 34 = 21\) ; \(F(15) - F(14) = 610 - 377 = 233)(1\), 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946 ...))</p>
+<p>The difference between two consecutive numbers of the Fibonacci sequence increase very quickly. ((For example \(F(5) - F(4) = 5 - 3 = 2\) ; \(F(10) - F(9) = 55 - 34 = 21\) ; \(F(15) - F(14) = 610 - 377 = 233\))(1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946 ...))</p>
 </div>
 <h4 class="callout-h" id="s-example-7-7">Example 7.7</h4>
 <p>Given that one pair of new born rabbits they produce a new pair each month and from the second month, each new pair can breed themselves. Find how many pairs of rabbits are bred from one pair in a year, and find the relationship between the number of months and the number of pairs of rabbits by tabulation (a pair means (a male and a female)).</p>

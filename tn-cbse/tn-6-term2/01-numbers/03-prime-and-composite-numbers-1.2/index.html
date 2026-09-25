@@ -40,7 +40,6 @@
 </ul>
 <figure class="fig table-fig wide"><img src="img/fig-p1-3.webp" alt="Figure from the textbook page" loading="lazy" width="1147" height="324"></figure>
 <p>From the table, we conclude that</p>
-<figure class="fig side-fig"><img src="img/fig-p2-1.webp" alt="Figure from the textbook page" loading="lazy" width="345" height="177"></figure>
 <ul>
 <li><strong>A natural number greater than 1, having only two factors namely 1 and the number itself, is called a <em>prime number</em>.</strong>
 <p>For example, 2 (\(1 \times 2\)) is a prime number as is 13 (\(1 \times 13\)).</p></li>
@@ -50,10 +49,11 @@
 <div class="callout"><p><strong>Note</strong></p><p>The number '1' is neither prime nor composite</p></div>
 <p>A number is a <strong><em>perfect number</em></strong> if the sum of its factors other than the given number gives the same number. For example, <strong><em>6 is a perfect number</em></strong>, since adding the factors of 6 (other than 6), namely 1, 2 and 3 gives the given number 6. i.e., \(1+2+3 = 6\) is the given number. Check whether 28, 54 and 496 are perfect numbers or not.</p>
 <div class="callout"><p class="callout-title">Activity</p>
+<figure class="fig side-fig"><img src="img/fig-fix-p5-1.webp" alt="Figure from the textbook page" loading="lazy"></figure>
 <ol type="i">
 <li>List out the prime and composite numbers represented by the dates in the month of October.</li>
 <li>Generate a few composite numbers by product of two or more natural numbers.</li>
-<li>Classify the numbers 34, 57, 71, 93, 101, 111 and 291 as prime</li>
+<li>Classify the numbers 34, 57, 71, 93, 101, 111 and 291 as prime or composite.</li>
 </ol>
 </div>
 <h3 id="s-1-2-1-finding-the-prime-numbers-by-sieve-of-eratosthenes-m">1.2.1 Finding the Prime Numbers by Sieve of Eratosthenes Method</h3>
@@ -66,16 +66,16 @@
 
 <h4>SIEVE OF ERATOSTHENES</h4>
 <table class="cipher-table">
-<tr><td>1</td><td><strong>2</strong></td><td><strong>3</strong></td><td>4</td><td><strong>5</strong></td><td>6</td><td><strong>7</strong></td><td>8</td><td>9</td><td>10</td></tr>
-<tr><td><strong>11</strong></td><td>12</td><td><strong>13</strong></td><td>14</td><td>15</td><td>16</td><td><strong>17</strong></td><td>18</td><td><strong>19</strong></td><td>20</td></tr>
-<tr><td>21</td><td>22</td><td><strong>23</strong></td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td><strong>29</strong></td><td>30</td></tr>
-<tr><td><strong>31</strong></td><td>32</td><td>33</td><td>34</td><td>35</td><td>36</td><td><strong>37</strong></td><td>38</td><td>39</td><td>40</td></tr>
-<tr><td><strong>41</strong></td><td>42</td><td><strong>43</strong></td><td>44</td><td>45</td><td>46</td><td><strong>47</strong></td><td>48</td><td>49</td><td>50</td></tr>
-<tr><td>51</td><td>52</td><td><strong>53</strong></td><td>54</td><td>55</td><td>56</td><td>57</td><td>58</td><td><strong>59</strong></td><td>60</td></tr>
-<tr><td><strong>61</strong></td><td>62</td><td>63</td><td>64</td><td>65</td><td>66</td><td><strong>67</strong></td><td>68</td><td>69</td><td>70</td></tr>
-<tr><td><strong>71</strong></td><td>72</td><td><strong>73</strong></td><td>74</td><td>75</td><td>76</td><td>77</td><td>78</td><td><strong>79</strong></td><td>80</td></tr>
-<tr><td>81</td><td>82</td><td><strong>83</strong></td><td>84</td><td>85</td><td>86</td><td>87</td><td>88</td><td><strong>89</strong></td><td>90</td></tr>
-<tr><td>91</td><td>92</td><td>93</td><td>94</td><td>95</td><td>96</td><td><strong>97</strong></td><td>98</td><td>99</td><td>100</td></tr>
+<tr><td style="background:#9b8ec4">1</td><td><strong>2</strong></td><td><strong>3</strong></td><td><s>4</s></td><td><strong>5</strong></td><td><s>6</s></td><td><strong>7</strong></td><td><s>8</s></td><td><s>9</s></td><td><s>10</s></td></tr>
+<tr><td><strong>11</strong></td><td><s>12</s></td><td><strong>13</strong></td><td><s>14</s></td><td><s>15</s></td><td><s>16</s></td><td><strong>17</strong></td><td><s>18</s></td><td><strong>19</strong></td><td><s>20</s></td></tr>
+<tr><td><s>21</s></td><td><s>22</s></td><td><strong>23</strong></td><td><s>24</s></td><td><s>25</s></td><td><s>26</s></td><td><s>27</s></td><td><s>28</s></td><td><strong>29</strong></td><td><s>30</s></td></tr>
+<tr><td><strong>31</strong></td><td><s>32</s></td><td><s>33</s></td><td><s>34</s></td><td><s>35</s></td><td><s>36</s></td><td><strong>37</strong></td><td><s>38</s></td><td><s>39</s></td><td><s>40</s></td></tr>
+<tr><td><strong>41</strong></td><td><s>42</s></td><td><strong>43</strong></td><td><s>44</s></td><td><s>45</s></td><td><s>46</s></td><td><strong>47</strong></td><td><s>48</s></td><td><s>49</s></td><td><s>50</s></td></tr>
+<tr><td><s>51</s></td><td><s>52</s></td><td><strong>53</strong></td><td><s>54</s></td><td><s>55</s></td><td><s>56</s></td><td><s>57</s></td><td><s>58</s></td><td><strong>59</strong></td><td><s>60</s></td></tr>
+<tr><td><strong>61</strong></td><td><s>62</s></td><td><s>63</s></td><td><s>64</s></td><td><s>65</s></td><td><s>66</s></td><td><strong>67</strong></td><td><s>68</s></td><td><s>69</s></td><td><s>70</s></td></tr>
+<tr><td><strong>71</strong></td><td><s>72</s></td><td><strong>73</strong></td><td><s>74</s></td><td><s>75</s></td><td><s>76</s></td><td><s>77</s></td><td><s>78</s></td><td><strong>79</strong></td><td><s>80</s></td></tr>
+<tr><td><s>81</s></td><td><s>82</s></td><td><strong>83</strong></td><td><s>84</s></td><td><s>85</s></td><td><s>86</s></td><td><s>87</s></td><td><s>88</s></td><td><strong>89</strong></td><td><s>90</s></td></tr>
+<tr><td><s>91</s></td><td><s>92</s></td><td><s>93</s></td><td><s>94</s></td><td><s>95</s></td><td><s>96</s></td><td><strong>97</strong></td><td><s>98</s></td><td><s>99</s></td><td><s>100</s></td></tr>
 </table>
 <p>From the Sieve of Eratosthenes, we observe that,</p>
 <ul>

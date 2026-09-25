@@ -34,11 +34,13 @@
 <p>Suppose that you are already given a list that is partially filled. How would you complete it? In the activity with 4-digit numbers we had experienced this already. The idea is to find how the filled in part is arranged and use the same idea to complete the rest.</p>
 <h3 id="s-6-3-1-sudoku">6.3.1 Sudoku</h3>
 <p>Sudoku is a number game. Completion with some constraints is best enjoyed in Sudoku. This is a puzzle where there is a partially filled in grid. Horizontal lines of cells in the grid are called as rows and vertical lines of cells in the grid are called as columns. In 9x9 Sudoku, you have to fill in the remaining blank cells with numbers from 1 to 9 so that no number repeats in a row, or in a column. In 3x3 Sudoku, you can use only the numbers from 1 to 3. In 4x4 Sudoku, you can use only the numbers from 1 to 4 and so on.</p>
-<figure class="fig table-fig"><img src="img/fig-p1-1.webp" alt="Fig. 6.8" loading="lazy" width="537" height="452"><figcaption>Fig. 6.8</figcaption></figure>
-<h2 id="s-sudoku">Sudoku</h2>
-<div class="callout"><p class="callout-title">Do you know?</p><p>The word Sudoku comes from the Japanese language. Su means 'number' and Doku means 'single'. It refers to the condition that each number is listed only once in each row, column. The modern version of this puzzle is said to have come from Howard Garns.</p></div>
-<p>In Fig, 6.8 (a) two rows are fixed. We get only one possible way to complete the third row (Fig. 6.8 (b)).</p>
 <ol type="i">
+<li>3X3 Sudoku</li>
+</ol>
+<figure class="fig table-fig"><img src="img/fig-p1-1.webp" alt="Fig. 6.8" loading="lazy" width="537" height="452"><figcaption>Fig. 6.8</figcaption></figure>
+<div class="callout"><p class="callout-title">Do you know?</p><p><strong>Sudoku</strong></p><p>The word Sudoku comes from the Japanese language. Su means 'number' and Doku means 'single'. It refers to the condition that each number is listed only once in each row, column. The modern version of this puzzle is said to have come from Howard Garns.</p></div>
+<p>In Fig, 6.8 (a) two rows are fixed. We get only one possible way to complete the third row (Fig. 6.8 (b)).</p>
+<ol type="i" start="2">
 <li>3X3 sudoku</li>
 </ol>
 <figure class="fig table-fig"><img src="img/fig-p2-1.webp" alt="Fig. 6.9" loading="lazy" width="256" height="241"><figcaption>Fig. 6.9</figcaption></figure>
@@ -46,18 +48,18 @@
 <figure class="fig table-fig"><img src="img/fig-p2-2.webp" alt="Fig. 6.10" loading="lazy" width="253" height="282"><figcaption>Fig. 6.10</figcaption></figure>
 <figure class="fig table-fig"><img src="img/fig-p2-3.webp" alt="Figure from the textbook page" loading="lazy" width="253" height="282"></figure>
 <p>To fill the third row, bear in mind that numbers cannot be repeated in the row or in the column. The third row can be filled by only one way in each case.</p>
-<ol type="i">
+<ol type="i" start="3">
 <li>\(3 \times 3\) sudoku</li>
 </ol>
 <figure class="fig table-fig"><img src="img/fig-p2-4.webp" alt="Figure from the textbook page" loading="lazy" width="256" height="242"></figure>
 <p>In how many different ways can the first row be arranged? The first row can be arranged in six ways as (1,2,3), (1,3,2), (2,1,3), (2,3,1), (3,1,2) and (3,2,1).</p>
-<ol type="i">
+<ol type="i" start="4">
 <li>Let us find all possible solutions to solve \(3 \times 3\) sudoku puzzle.</li>
 </ol>
 <figure class="fig table-fig wide"><img src="img/fig-p2-5.webp" alt="Figure from the textbook page" loading="lazy" width="1092" height="290"></figure>
 <figure class="fig table-fig wide"><img src="img/fig-p3-1.webp" alt="Fig. 6.11" loading="lazy" width="1092" height="581"><figcaption>Fig. 6.11</figcaption></figure>
 <p>We get 12 possible ways.</p>
-<ol type="i">
+<ol type="i" start="4">
 <li>Here is a partially filled 4x4 sudoku.</li>
 </ol>
 <figure class="fig table-fig"><img src="img/fig-p3-2.webp" alt="Fig. 6.12" loading="lazy" width="374" height="316"><figcaption>Fig. 6.12</figcaption></figure>
@@ -69,7 +71,8 @@
 <p>In a magic triangle, numbers are to be filled without repetition on the sides of a triangle. So that the sum of each side remains the same.</p>
 <p>Fill up the circle with the numbers from 1 to 6 without repetition so that each side of the magic triangle adds upto 12.</p>
 <figure class="fig"><img src="img/fig-p4-1.webp" alt="Fig. 6.14" loading="lazy" width="321" height="247"><figcaption>Fig. 6.14</figcaption></figure>
-<p>Step 1: Place the larger numbers at the corners of the triangle i.e., 4 ,5, and 6. Step 2: Place the smaller numbers i.e., 1,2 and 3 in the middle of each side.</p>
+<p><strong>Step 1:</strong> Place the larger numbers at the corners of the triangle i.e., 4 ,5, and 6.</p>
+<p><strong>Step 2:</strong> Place the smaller numbers i.e., 1,2 and 3 in the middle of each side.</p>
 <figure class="fig"><img src="img/fig-p4-2.webp" alt="Fig. 6.15" loading="lazy" width="745" height="313"><figcaption>Fig. 6.15</figcaption></figure>
 <p>Wrong Placement of numbers (first row 4, second row 1, 3 and third row 5, 2, 6) Sum of the numbers on three sides of the triangle are 10, 13 and 13. All the total are not the same. This placement of numbers is not correct.</p>
 <p>Try the other way, by changing the numbers as shown in the figure, given below.</p>
@@ -80,7 +83,7 @@
 <figure class="fig"><img src="img/fig-p5-1.webp" alt="Fig. 6.17" loading="lazy" width="790" height="340"><figcaption>Fig. 6.17</figcaption></figure>
 <p>Correct placement of numbers. (first row 4, second row 3, 2 and third row 5, 1, 6) This is the desired magic triangle.</p>
 <h3 id="s-6-3-3-more-figures-in-a-figure">6.3.3 More figures in a figure</h3>
-<p>Examples</p>
+<h4 id="s-examples">Examples</h4>
 <p>How many triangles are there in the given figures?</p>
 <figure class="fig"><img src="img/fig-p5-2.webp" alt="Figure from the textbook page" loading="lazy" width="517" height="381"></figure>
 <figure class="fig"><img src="img/fig-p5-3.webp" alt="Fig. 6.18" loading="lazy" width="495" height="369"><figcaption>Fig. 6.18</figcaption></figure>
@@ -89,14 +92,14 @@
 <figure class="fig side-fig"><img src="img/fig-p5-4.webp" alt="Figure from the textbook page" loading="lazy" width="375" height="323"></figure>
 <p>Combining A &amp; D, B &amp; D and D &amp; C do not form any triangles.</p>
 <p>Combining A, B &amp; D; A, C &amp; D and B, D &amp; C also do not form any triangles.</p>
-<p>Combining A, B, C</p>
-<p>\(D = 1\) triangle ` Total number of triangles \(= 4 + 1 = 5\)</p>
+<p>Combining A, B, C &amp; D \(= 1\) triangle</p>
+<p>\(\therefore\) Total number of triangles \(= 4 + 1 = 5\)</p>
 <h4 id="s-ii-solution">(ii) Solution</h4>
 <figure class="fig side-fig"><img src="img/fig-p6-1.webp" alt="Figure from the textbook page" loading="lazy" width="400" height="327"></figure>
 <p>A, B, C, D, &amp; E are five triangles.</p>
 <p>No combination of these triangles taken 2 at a time, form any triangle.</p>
 <p>Only the combinations of A, F &amp; C; A, F &amp; D; B, F &amp; E; B, F &amp; D and C, F &amp; E form triangles when taken 3 triangles at a time. Hence, the total number of triangles \(= 5 + 5 = 10\).</p>
-<figure class="fig"><img src="img/fig-p6-2.webp" alt="Figure from the textbook page" loading="lazy" width="329" height="64"></figure>
+<h3 id="s-exercise-6-1">Exercise 6.1</h3>
 <figure class="fig side-fig"><img src="img/fig-p6-3.webp" alt="Figure from the textbook page" loading="lazy" width="195" height="185"></figure>
 <ol>
 <li>Suppose, you have two shorts, one is black and the other one is blue; three shirts which are in white, blue and red. You again wish to make different combinations, but you always want to make sure that the shorts and shirt that you wear are of different colours. List and check how many combinations are possible now.</li>
@@ -106,11 +109,14 @@
 <figure class="fig"><img src="img/fig-p6-4.webp" alt="Figure from the textbook page" loading="lazy" width="365" height="283"></figure>
 <figure class="fig side-fig"><img src="img/fig-p6-5.webp" alt="Figure from the textbook page" loading="lazy" width="195" height="185"></figure>
 <figure class="fig side-fig"><img src="img/fig-p6-6.webp" alt="Figure from the textbook page" loading="lazy" width="347" height="271"></figure>
-<ol>
-<li>Using the numbers from 1 to 9</li>
+<ol start="4">
+<li>Using the numbers from 1 to 9
+<ol type="i">
 <li>Can you form a magic triangle?</li>
 <li>How many magic triangles can be formed?</li>
 <li>What are the sums of the sides of the magic triangle?</li>
+</ol>
+</li>
 <li>Arrange the odd numbers from 1 to 17 without repetition to get a sum of 30 on each side of the magic triangle.</li>
 </ol>
 <figure class="fig"><img src="img/fig-p6-7.webp" alt="Figure from the textbook page" loading="lazy" width="369" height="287"></figure>

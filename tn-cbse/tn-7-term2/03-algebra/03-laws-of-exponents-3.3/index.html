@@ -58,7 +58,7 @@
 <ol type="i">
 <li>\(5^7 \times 5^3 = 5^{7+3} = 5^{10}\) [since \(a^m \times a^n = a^{m+n}\)]</li>
 <li>\(3^3 \times 3^2 \times 3^4 = 3^{3+2} \times 3^4 = 3^5 \times 3^4 = 3^{5+4} = 3^9\)</li>
-<li>\(25 \times 32 \times 625 \times 64 = (5 \times 5) \times (2 \times 2 \times 2 \times 2 \times 2) \times (5 \times 5 \times 5 \times 5) \times (2 \times 2 \times 2 \times 2 \times 2 \times 2)\)
+<li><figure class="fig side-fig"><img src="img/fig-fix-p5-1.webp" alt="Figure from the textbook page" loading="lazy"></figure>\(25 \times 32 \times 625 \times 64 = (5 \times 5) \times (2 \times 2 \times 2 \times 2 \times 2) \times (5 \times 5 \times 5 \times 5) \times (2 \times 2 \times 2 \times 2 \times 2 \times 2)\)
 <br>\(= 5^2 \times 2^5 \times 5^4 \times 2^6\)
 <br>\(= (5^2 \times 5^4) \times (2^5 \times 2^6)\) [grouping exponential numbers with the same base]
 <br>\(= 5^{2+4} \times 2^{5+6} = 5^6 \times 2^{11}\)</li>
@@ -77,28 +77,41 @@
 <p>Thus, we can observe that for any non-zero integer '<em>a</em>' and for whole numbers '<em>m</em>' and '<em>n</em>', consider \(a^m\) and \(a^n\), \(m > n\).</p>
 <p>That is, \(a^m = a \times a \times a \times \ldots \times a\) (<em>m</em> times); \(a^n = a \times a \times a \times \ldots \times a\) (<em>n</em> times)</p>
 <div class="mathblock"><p>\(\frac{a^m}{a^n} = \frac{a \times a \times \ldots \times a \text{ (m times)}}{a \times a \times \ldots \times a \text{ (n times)}} = a \times a \times \ldots \times a \text{ (m-n times)} = a^{m-n}\)</p></div>
-<figure class="fig"><img src="img/fig-p2-2.webp" alt="Figure from the textbook page" loading="lazy" width="762" height="90"></figure>
+<figure class="fig side-fig"><img src="img/fig-fix-p6-1.webp" alt="Figure from the textbook page" loading="lazy"></figure>
 <p>Therefore, \(\frac{a^m}{a^n} = a^{m-n}\). This is called <strong>Quotient Rule</strong> of exponents.</p>
+<div class="callout"><p class="callout-title">Think</p>
+<p>What is Half of \(2^{10}\)? Ragu claims the answer is \(2^5\). Is he correct? Discuss.</p>
+</div>
 <p><strong>Example 3.8</strong> Simplify using quotient rule of exponents.</p>
 <p>(i) \(\frac{10^8}{10^6}\) &emsp; (ii) \(\frac{2^8 \times 3^5 \times 5^4}{3^3 \times 5^3 \times 2^4}\) &emsp; (iii) \(\frac{6^4}{6^0}\)</p>
 <p><strong>Solution</strong></p>
 <ol type="i">
 <li>\(\frac{10^8}{10^6} = 10^{8-6} = 10^2\)</li>
 <li>\(\frac{2^8 \times 3^5 \times 5^4}{3^3 \times 5^3 \times 2^4} = \frac{2^8}{2^4} \times \frac{3^5}{3^3} \times \frac{5^4}{5^3}\) [grouping exponential numbers with the same base]
-<br>\(= 2^{8-4} \times 3^{5-3} \times 5^{4-3} = 2^4 \times 3^2 \times 5^1\)</li>
+<br>\(= 2^{8-4} \times 3^{5-3} \times 5^{4-3} = 2^4 \times 3^2 \times 5^1\) \(\left[\frac{a^m}{a^n} = a^{m-n}\right]\)</li>
 <li>\(\frac{6^4}{6^0} = 6^{4-0} = 6^4\) (or) \(\frac{6^4}{6^0} = \frac{6^4}{1} = 6^4\) [since \(6^0 = 1\)]</li>
 </ol>
 <figure class="fig side-fig"><img src="img/fig-p3-1.webp" alt="Figure from the textbook page" loading="lazy" width="342" height="360"></figure>
 <h3>3.3.3 Power of Exponential form</h3>
 <p>Let us find the value of \((2^2)^5\)</p>
 <div class="mathblock"><p>\((2^2)^5 = 2^2 \times 2^2 \times 2^2 \times 2^2 \times 2^2 = 2^{2+2+2+2+2}\) (By Product rule)</p></div>
-<div class="mathblock"><p>\(= 2^{10} = 2^{2 \times 5}\)</p></div>
+<div class="mathblock"><p>\(2^{10} = 2^{2 \times 5}\)</p></div>
 <p>Similarly, \((3^3)^4 = 3^3 \times 3^3 \times 3^3 \times 3^3 = 3^{3+3+3+3} = 3^{12} = 3^{3 \times 4}\)</p>
 <div class="mathblock"><p>\((5^6)^2 = 5^6 \times 5^6 = 5^{6+6} = 5^{12} = 5^{6 \times 2}\)</p></div>
 <p>In general, for any non-zero integer '<em>a</em>' and whole number '<em>m</em>' and '<em>n</em>',</p>
 <div class="mathblock"><p>\((a^m)^n = (a^m \times a^m \times a^m \times \ldots \times a^m)\) (<em>n</em> times)</p></div>
 <div class="mathblock"><p>\(= a^{m+m+\ldots+m \text{ (n times)}}\)</p></div>
 <div class="mathblock"><p>\(= a^{m \times n}\)</p></div>
+<div class="callout"><p class="callout-title">Try these</p>
+<p>Simplify and write the following in exponent form.</p>
+<ol>
+<li>\((3^2)^3\)</li>
+<li>\([(-5)^3]^2\)</li>
+<li>\((20^6)^2\)</li>
+<li>\((10^3)^5\)</li>
+</ol>
+</div>
+<figure class="fig side-fig"><img src="img/fig-p3-3.webp" alt="Figure from the textbook page" loading="lazy" width="305" height="227"><figcaption>Fig. 3.5</figcaption></figure>
 <p>Hence, \((a^m)^n = a^{m \times n}\). This is called <strong>Power Rule</strong> of exponents.</p>
 <p><strong>Example 3.9</strong> Simplify using power rule of exponents.</p>
 <p>(i) \((8^3)^4\) &emsp; (ii) \((11^5)^2\) &emsp; (iii) \((2^6)^2 \times (2^4)^7\)</p>
@@ -110,7 +123,10 @@
 <br>\(= 2^{12} \times 2^{28}\)
 <br>\(= 2^{12+28} = 2^{40}\) [since \(a^m \times a^n = a^{m+n}\)]</li>
 </ol>
-<p>We learnt that \(2^2 = 2 \times 2\). What is the value of \(2^{2^2}\)? Discuss.</p>
+<div class="callout"><p class="callout-title">Think</p>
+<p>We learnt that \(2^2 = 2 \times 2\).</p>
+<p>What is the value of \(2^{2^2}\)? Discuss.</p>
+</div>
 <h3>3.3.4 Exponent Numbers with Different Base and Same Power</h3>
 <ol>
 <li><p>To understand the multiplication of exponent numbers with different base and same powers, let us consider the following example,</p>
@@ -129,10 +145,49 @@
 <div class="mathblock"><p>\(= \frac{20 \times 20 \times 20 \times 20 \times 20}{2 \times 2 \times 2 \times 2 \times 2}\)</p></div>
 <p>Therefore, \(10^5 = \frac{20^5}{2^5}\). But we know that \(10 = \frac{20}{2}\).</p>
 <p>Hence, \(10^5 = \left(\frac{20}{2}\right)^5 = \frac{20^5}{2^5}\).</p>
+<figure class="fig side-fig"><img src="img/fig-p4-2.webp" alt="Figure from the textbook page" loading="lazy" width="359" height="265"><figcaption>Fig. 3.6</figcaption></figure>
 <p>Hence, for any two non-zero integers '<em>a</em>' and '<em>b</em>' and a whole number '<em>m</em>' (\(m > 0\)),</p>
 <div class="mathblock"><p>\(\left(\frac{a}{b}\right)^m = \frac{a}{b} \times \frac{a}{b} \times \ldots \times \frac{a}{b}\) (<em>m</em> times) \(= \frac{a \times a \times \ldots \times a \text{ (m times)}}{b \times b \times \ldots \times b \text{ (m times)}} = \frac{a^m}{b^m}\)</p></div>
 <p>Therefore, \(\left(\frac{a}{b}\right)^m = \frac{a^m}{b^m}\).</p></li>
 </ol>
+<div class="callout"><p class="callout-title">Try these</p>
+<ol>
+<li><p>Express the following exponent numbers using \(a^m \times b^m = (a \times b)^m\).</p>
+<ol type="i">
+<li>\(5^2 \times 3^2\)</li>
+<li>\(x^3 \times y^3\)</li>
+<li>\(7^4 \times 8^4\)</li>
+</ol></li>
+<li><p>Simplify the following exponent numbers by using \(\left(\frac{a}{b}\right)^m = \frac{a^m}{b^m}\).</p>
+<ol type="i">
+<li>\(5^3 \div 2^3\)</li>
+<li>\((-2)^4 \div 3^4\)</li>
+<li>\(8^6 \div 5^6\)</li>
+<li>\(6^3 \div (-7)^3\)</li>
+</ol></li>
+</ol>
+</div>
+<p><strong>Example 3.10</strong> Simplify by using the law of exponents.</p>
+<p>(i) \(7^6 \times 3^6\) &emsp; (ii) \(4^3 \times 2^3 \times 5^3\) &emsp; (iii) \(72^5 \div 9^5\) &emsp; (iv) \(6^{13} \times 48^{13} \div 12^{13}\)</p>
+<p><strong>Solution</strong></p>
+<ol type="i">
+<li>\(7^6 \times 3^6 = (7 \times 3)^6 = 21^6\) [Since, \(a^m \times b^m = (a \times b)^m\)]</li>
+<li>\(4^3 \times 2^3 \times 5^3 = (4 \times 2 \times 5)^3 = 40^3\) [Rule extended for 3 numbers]</li>
+<li>\(72^5 \div 9^5 = (72 \div 9)^5 = 8^5\) [Since, \(\frac{a^m}{b^m} = \left(\frac{a}{b}\right)^m\)]</li>
+<li>\(6^{13} \times 48^{13} \div 12^{13} = 6^{13} \times (48^{13} \div 12^{13})\) [BIDMAS]
+<br>\(= 6^{13} \times \left(\frac{48}{12}\right)^{13}\) [Since, \(\frac{a^m}{b^m} = \left(\frac{a}{b}\right)^m\)]
+<br>\(= 6^{13} \times 4^{13}\)
+<br>\(= (6 \times 4)^{13}\) [Since, \(a^m \times b^m = (a \times b)^m\)]
+<br>\(= (24)^{13}\)</li>
+</ol>
+<figure class="fig side-fig"><img src="img/fig-p5-1.webp" alt="Figure from the textbook page" loading="lazy" width="178" height="168"></figure>
+<div class="callout"><p class="callout-title">Do You Know?</p>
+<ol>
+<li>All the 10 digits appear once in the expansion of \(32043^2\). That is, the value of \(32043^2 = 1026753849\).</li>
+<li><p>There are beautiful equations with same exponent consecutive natural numbers as the base.</p>
+<div class="mathblock"><p>\(3^2 + 4^2 = 5^2\)</p><p>\(10^2 + 11^2 + 12^2 = 13^2 + 14^2\)</p></div></li>
+</ol>
+</div>
 </article>
 <nav class="pager"><a class="" data-nav="prev" href="../../03-algebra/02-exponents-and-powers-3.2/index.html"><span class="dir">← Previous</span><span class="t">3.2 Exponents and Powers</span><span class="ch">Algebra</span></a><a class="nx" data-nav="next" href="../../03-algebra/04-exercise-3.1/index.html"><span class="dir">Next →</span><span class="t">Exercise 3.1</span><span class="ch">Algebra</span></a></nav>
 </main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
