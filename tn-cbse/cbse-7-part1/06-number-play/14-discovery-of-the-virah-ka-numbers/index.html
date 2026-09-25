@@ -28,7 +28,7 @@
 <div class="sec-head">
   <p class="eyebrow"><a href="../index.html">Chapter 6 · Number Play</a></p>
   <h1>Discovery of the Virahāṅka Numbers</h1>
-  <p class="sec-meta">Textbook pages 13–16 · 9 figures</p>
+  <p class="sec-meta">Textbook pages 13–16 · 4 figures</p>
 </div>
 <article class="prose">
 <p>The Virahāṅka numbers first came up thousands of years ago in the works of Sanskrit and Prakrit linguists in their study of poetry!</p>
@@ -37,7 +37,6 @@
 <p>This leads to numerous mathematical questions, which the ancient poets in these languages considered extensively. A number of important mathematical discoveries were made in the process of asking and answering these questions about poetry.</p>
 <p>One of these particularly important questions was the following.</p>
 <p>How many rhythms are there with 8 beats consisting of short syllables (1 beat) and long syllables (2 beats)? That is, in how many ways can one fill 8 beats with short and long syllables, where a short syllable takes one beat of time and a long syllable takes two beats of time.</p>
-<figure class="fig wide"><img src="img/fig-p1-2.webp" alt="Figure from the textbook page" loading="lazy" width="1184" height="219"></figure>
 <p>Here are some possibilities:</p>
 <p><strong>long long long long</strong><br>
 short short short short short short short short<br>
@@ -53,7 +52,6 @@ short <strong>long long</strong> short <strong>long</strong><br>
 <figure class="fig table-fig"><img src="img/fig-p2-1.webp" alt="Figure from the textbook page" loading="lazy" width="735" height="503"></figure>
 <p>Try writing the number 5 as a sum of <strong>1s</strong> and <strong>2s</strong> in all possible ways in your notebook! How many ways did you find? (You should find 8 different ways!) Can you figure out the answer without listing down all the possibilities? Can you try it for \(n = 8\)?</p>
 <p>Here is a systematic way to write down all rhythms of short and long syllables having 5 beats. Write a <strong>‘1+’</strong> in front of all rhythms having 4 beats, and then a <strong>‘2+’</strong> in front of all rhythms having 3 beats. This gives us all the rhythms having 5 beats:</p>
-<figure class="fig wide"><img src="img/fig-p2-2.webp" alt="Figure from the textbook page" loading="lazy" width="1185" height="218"></figure>
 <figure class="fig table-fig wide"><img src="img/fig-p3-1.webp" alt="Figure from the textbook page" loading="lazy" width="824" height="188"></figure>
 <p>Thus, there are 8 rhythms having 5 beats!</p>
 <p>The reason this method works is that every 5-beat rhythm must begin with either a ‘1+’ or a ‘2+’. If it begins with a ‘1+’, then the remaining numbers must give a 4-beat rhythm, and we can write all those down. If it begins with a 2+, then the remaining number must give a 3-beat rhythm, and we can write all those down. Therefore, the number of 5-beat rhythms is the number of 4-beat rhythms, plus the number of 3-beat rhythms.</p>
@@ -65,7 +63,6 @@ short <strong>long long</strong> short <strong>long</strong><br>
 <p>So, how many rhythms of short and long syllables are there having 8 beats? We simply take the 8th element of the <strong>Virahāṅka</strong> sequence:</p>
 <p>1, 2, 3, 5, 8, 13, 21, <mark>34</mark>, 55, ...</p>
 <p>Thus, there are 34 rhythms having 8 beats.</p>
-<figure class="fig wide"><img src="img/fig-p3-2.webp" alt="Figure from the textbook page" loading="lazy" width="1151" height="245"></figure>
 <p>Write the next number in the sequence, after 55.</p>
 <p>We have seen that the next number in the sequence is given by adding the two previous numbers. Check that this holds true for the numbers given above. The next number is \(34 + 55 = 89\).</p>
 <p>Write the next 3 numbers in the sequence:</p>

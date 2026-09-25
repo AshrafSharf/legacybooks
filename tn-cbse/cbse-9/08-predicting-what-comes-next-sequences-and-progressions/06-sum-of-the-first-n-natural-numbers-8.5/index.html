@@ -28,7 +28,7 @@
 <div class="sec-head">
   <p class="eyebrow"><a href="../index.html">Chapter 8 · Predicting What Comes Next Sequences and Progressions</a></p>
   <h1>8.5 Sum of the First n Natural Numbers</h1>
-  <p class="sec-meta">Textbook pages 10–12 · 4 figures</p>
+  <p class="sec-meta">Textbook pages 10–12 · 1 figure</p>
 </div>
 <article class="prose">
 <p>In this section, we derive a simple yet important rule for the sum of the first \(n\) natural numbers. To begin with, can you find the sum of the first ten natural numbers without actually adding all of them?</p>
@@ -39,7 +39,9 @@
 <p>Adding the two equations for S, we get</p>
 <div class="mathblock"><p>\(2\text{S} = 11 + 11 + 11 + \cdots + 11\) (that is, 11 added 10 times).</p></div>
 <p>This leads to \(2\text{S} = 110\) or \(\text{S} = 55\). The sum of the first 10 natural numbers is indeed 55.</p>
-<figure class="fig wide"><img src="img/fig-p2-1.webp" alt="Figure from the textbook page" loading="lazy" width="884" height="119"></figure>
+<div class="callout"><p class="callout-title">Think and Reflect</p>
+<p>Can the same approach be used to find the sum of \(1 + 2 + 3 + \cdots + 100\)?</p>
+</div>
 <p>This method of writing the sum from 1 to any number, reversing the sum and then adding the two expressions can be used to arrive at the formula for the sum of the first \(n\) natural numbers for any value of \(n\).</p>
 <div class="mathblock"><p>Let \(\text{S} = 1 + 2 + \cdots + n\).</p>
 <p>Then \(\text{S} = n + (n - 1) + \cdots + 1\).</p>
@@ -56,7 +58,9 @@
 <p>Therefore, \(1 + 2 + 3 + 4 + \cdots + n = \frac{n(n + 1)}{2}\).</p>
 <p>If we use the notation \(\text{S}_n\) to represent the sum of the first \(n\) natural numbers, then \(\text{S}_n = \frac{n(n + 1)}{2}\).</p>
 <p>The first known written mention of this result can be found in Āryabhaṭa’s <em>Āryabhaṭīya</em>, Chapter 2, Verse 19. The verse provides two ways to calculate the sum, with the second part describing that the sum can be calculated by taking the sum of the first and last terms, divided by two (the average), and multiplied by the number of terms.</p>
-<figure class="fig wide"><img src="img/fig-p3-1.webp" alt="Figure from the textbook page" loading="lazy" width="884" height="119"></figure>
+<div class="callout"><p class="callout-title">Think and Reflect</p>
+<p>Can you use this formula to find \(\text{S}_{20}\), \(\text{S}_{50}\) or \(\text{S}_{1000}\)?</p>
+</div>
 <p>Also, this formula can be used to find the sum of consecutive numbers such as \(25 + 26 + 27 + \cdots + 58\).</p>
 <p>Note that \(25 + 26 + 27 + \cdots + 58 = (1 + 2 + 3 + \cdots + 58) - (1 + 2 + 3 + \cdots + 24)\)</p>
 <div class="mathblock"><p>\(= \text{S}_{58} - \text{S}_{24} = \frac{58 \times 59}{2} - \frac{24 \times 25}{2} = 29 \times 59 - 12 \times 25 = 1711 - 300 = 1411\).</p></div>
@@ -64,7 +68,6 @@
 <p>Let us revisit the sequence \(t_n\) of triangular numbers 1, 3, 6, 10, 15, … shown in Fig. 8.1. Note that the \(n^{th}\) term of this sequence is the sum of the first \(n\) natural numbers. Thus \(t_n = \frac{n(n + 1)}{2}\).</p>
 <p>Can you use this to find the \(10^{\text{th}}\), \(17^{\text{th}}\) and \(80^{\text{th}}\) triangular numbers?</p>
 </div>
-<figure class="fig"><img src="img/fig-p3-2.webp" alt="Figure from the textbook page" loading="lazy" width="338" height="70"></figure>
 </article>
 <nav class="pager"><a class="" data-nav="prev" href="../../08-predicting-what-comes-next-sequences-and-progressions/05-arithmetic-progressions-8.4/index.html"><span class="dir">← Previous</span><span class="t">8.4 Arithmetic Progressions</span><span class="ch">Predicting What Comes Next Sequences and Progressions</span></a><a class="nx" data-nav="next" href="../../08-predicting-what-comes-next-sequences-and-progressions/07-exercise-8.2/index.html"><span class="dir">Next →</span><span class="t">Exercise 8.2</span><span class="ch">Predicting What Comes Next Sequences and Progressions</span></a></nav>
 </main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
