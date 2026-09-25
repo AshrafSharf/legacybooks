@@ -105,7 +105,7 @@
 <li>Multiply those mid-points by the respective frequency of each class and obtain the sum of \(fx\)</li>
 <li>Divide \(\sum fx\) by \(\sum f\) to obtain mean</li>
 </ol>
-<figure class="fig"><img src="img/fig-p5-1.webp" alt="Figure from the textbook page" loading="lazy" width="278" height="76"></figure>
+<h4 class="callout-h" id="s-example-8-1">Example 8.1</h4>
 <p>The following data gives the number of residents in an area based on their age. Find the average age of the residents.</p>
 <figure class="fig table-fig wide"><img src="img/fig-p5-2.webp" alt="Figure from the textbook page" loading="lazy" width="1150" height="123"></figure>
 <h4 class="callout-h" id="s-solution">Solution</h4>
@@ -121,7 +121,9 @@
 <li>Multiply each of the corresponding frequency '\(f\)' with '\(d\)' and obtain \(\sum fd\)</li>
 <li>Apply the formula \(\bar{X} = A + \frac{\sum fd}{\sum f}\)</li>
 </ol>
-<figure class="fig table-fig wide"><img src="img/fig-p6-1.webp" alt="Figure from the textbook page" loading="lazy" width="1145" height="277"></figure>
+<h4 class="callout-h" id="s-example-8-2">Example 8.2</h4>
+<p>Find the mean for the following frequency table:</p>
+<figure class="fig table-fig wide"><img src="img/fig-fix-p9-1.webp" alt="Table: class intervals 100-120 to 220-240 with frequencies 10, 8, 4, 4, 3, 1, 2" loading="lazy" width="1452" height="186"></figure>
 <h4 class="callout-h" id="s-solution">Solution</h4>
 <p>Let Assumed mean \(A = 170\)</p>
 <figure class="fig table-fig"><img src="img/fig-p6-2.webp" alt="Figure from the textbook page" loading="lazy" width="749" height="507"></figure>
@@ -129,7 +131,9 @@
 <p><strong>Step Deviation Method</strong></p>
 <p>In order to simplify the calculation, we divide the deviation by the width of class intervals (i.e. calculate \(\frac{x - A}{c}\)) and then multiply by \(c\) in the formula for getting the mean of the data. The formula to calculate the Arithmetic Mean is</p>
 <div class="mathblock"><p>\(\bar{X} = A + \left[\frac{\sum fd}{\sum f} \times c\right]\), where \(d = \frac{x - A}{c}\)</p></div>
-<figure class="fig wide"><img src="img/fig-p7-1.webp" alt="Figure from the textbook page" loading="lazy" width="1146" height="183"></figure>
+<h4 class="callout-h" id="s-example-8-3">Example 8.3</h4>
+<p>Find the mean of the following distribution using Step Deviation Method.</p>
+<figure class="fig table-fig wide"><img src="img/fig-fix-p10-1.webp" alt="Table: class intervals 0-8 to 40-48 with frequencies 10, 20, 14, 16, 18, 22" loading="lazy" width="1416" height="126"></figure>
 <h4 class="callout-h" id="s-solution">Solution</h4>
 <p>Let Assumed mean \(A = 28\), class width \(c = 8\)</p>
 <figure class="fig table-fig wide"><img src="img/fig-p7-2.webp" alt="Figure from the textbook page" loading="lazy" width="1146" height="797"></figure>
@@ -143,7 +147,7 @@
 <li><em>If each observation is increased or decreased by \(k\) (constant) then the arithmetic mean is also increased or decreased by \(k\) respectively.</em></li>
 <li><em>If each observation is multiplied or divided by \(k\), \(k \neq 0\), then the arithmetic mean is also multiplied or divided by the same quantity \(k\) respectively.</em></li>
 </ol>
-<figure class="fig"><img src="img/fig-p8-1.webp" alt="Figure from the textbook page" loading="lazy" width="278" height="76"></figure>
+<h4 class="callout-h" id="s-example-8-4">Example 8.4</h4>
 <p>Find the sum of the deviations from the arithmetic mean for the following observations: 21, 30, 22, 16, 24, 28, 18, 17</p>
 <h4 class="callout-h">Solution</h4>
 <div class="mathblock"><p>\(\bar{X} = \frac{\sum_{i=1}^{8} x_i}{n} = \frac{21 + 30 + 22 + 16 + 24 + 28 + 18 + 17}{8} = \frac{176}{8} = 22\)</p></div>
@@ -151,7 +155,7 @@
 <p>Sum of the deviations</p>
 <div class="mathblock"><p>\(= (21-22)+(30-22)+(22-22)+(16-22)+(24-22)+(28-22)+(18-22)+(17-22)\)</p><p>\(= 16 - 16 = 0\). or equivalently, \(\sum_{i=1}^{8}(x_i - \bar{X}) = 0\)</p></div>
 <p>Hence, we conclude that sum of the deviations from the Arithmetic Mean is zero.</p>
-<figure class="fig"><img src="img/fig-p8-2.webp" alt="Figure from the textbook page" loading="lazy" width="278" height="75"></figure>
+<h4 class="callout-h" id="s-example-8-5">Example 8.5</h4>
 <p>The arithmetic mean of 6 values is 45 and if each value is increased by 4, then find the arithmetic mean of new set of values.</p>
 <h4 class="callout-h">Solution</h4>
 <p>Let \(x_1, x_2, x_3, x_4, x_5, x_6\) be the given set of values then \(\frac{\sum_{i=1}^{6} x_i}{6} = 45\).</p>
@@ -167,15 +171,15 @@
 <div class="mathblock"><p>Then \(\bar{X} = \frac{\sum_{i=1}^{7} x_i}{7} = 30\) or \(\sum_{i=1}^{7} x_i = 210\)</p></div>
 <p>If each value is divided by 3, then the mean of new set of values is</p>
 <div class="mathblock"><p>\(\dfrac{\displaystyle\sum_{i=1}^{7} \frac{x_i}{3}}{7} = \dfrac{\left(\frac{x_1}{3} + \frac{x_2}{3} + \frac{x_3}{3} + \frac{x_4}{3} + \frac{x_5}{3} + \frac{x_6}{3} + \frac{x_7}{3}\right)}{7}\)</p><p>\(= \dfrac{\displaystyle\sum_{i=1}^{7} x_i}{21} = \dfrac{210}{21} = 10\)</p></div>
+<p><strong>Aliter</strong></p>
+<p>If \(Y\) is the set of values obtained by dividing each value of \(X\) by 3.</p>
+<p>Then, \(\bar{Y} = \frac{\bar{X}}{3} = \frac{30}{3} = 10\).</p>
 <div class="callout"><p class="callout-title">Progress Check</p>
 <ol>
 <li>The Mean of 12 numbers is 20. If each number is multiplied by 6, then the new mean is \(\underline{\qquad}\)</li>
 <li>The Mean of 30 numbers is 16. If each number is divided by 4, then the new mean is \(\underline{\qquad}\)</li>
 </ol>
 </div>
-<p><strong>Aliter</strong></p>
-<p>If \(Y\) is the set of values obtained by dividing each value of \(X\) by 3.</p>
-<p>Then, \(\bar{Y} = \frac{\bar{X}}{3} = \frac{30}{3} = 10\).</p>
 <h4 class="callout-h" id="s-example-8-7">Example 8.7</h4>
 <p>The average mark of 25 students was found to be 78.4. Later on, it was found that score of 96 was misread as 69. Find the correct mean of the marks.</p>
 <h4 class="callout-h" id="s-solution">Solution</h4>
@@ -184,13 +188,6 @@
 <div class="callout"><p class="callout-title">Progress Check</p>
 <p>There are four numbers. If we leave out any one number, the average of the remaining three numbers will be 45, 60, 65 or 70. What is the average of all four numbers?</p>
 </div>
-<h4 class="callout-h" id="s-exercise-8-1">Exercise 8.1</h4>
-<ol>
-<li>In a week, temperature of a certain place is measured during winter are as follows \(26^{\circ}\text{C}, 24^{\circ}\text{C}, 28^{\circ}\text{C}, 31^{\circ}\text{C}, 30^{\circ}\text{C}, 26^{\circ}\text{C}, 24^{\circ}\text{C}\). Find the mean temperature of the week.</li>
-<li>The mean weight of 4 members of a family is 60kg.Three of them have the weight 56kg, 68kg and 72kg respectively. Find the weight of the fourth member.</li>
-<li>In a class test in mathematics, 10 students scored 75 marks, 12 students scored 60 marks, 8 students scored 40 marks and 3 students scored 30 marks. Find the mean of their score.</li>
-<li>In a research laboratory scientists treated 6 mice with lung cancer using natural medicine. Ten days later, they measured the volume of the tumor in each mouse and given the results in the table.</li>
-</ol>
 </article>
 <nav class="pager"><a class="" data-nav="prev" href="../../08-statistics/03-measures-of-central-tendency-8.3/index.html"><span class="dir">← Previous</span><span class="t">8.3 Measures of Central Tendency</span><span class="ch">Statistics</span></a><a class="nx" data-nav="next" href="../../08-statistics/05-exercise-8.1/index.html"><span class="dir">Next →</span><span class="t">Exercise 8.1</span><span class="ch">Statistics</span></a></nav>
 </main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>

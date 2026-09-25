@@ -33,6 +33,7 @@
 <article class="prose">
 <p>We have learnt about the union, intersection, complement and difference of sets. Now we will go through some practical problems on sets related to everyday life.</p>
 <h3 id="s-results">Results:</h3>
+<figure class="fig side-fig"><img src="img/fig-fix-p29-1.webp" alt="Venn diagram of sets A and B in U showing regions A − B, A ∩ B and B − A" loading="lazy" width="573" height="360"><figcaption>Fig. 1.32</figcaption></figure>
 <p>If <em>A</em> and <em>B</em> are two finite sets, then</p>
 <ol type="i">
 <li>\(n(A \cup B) = n(A) + n(B) - n(A \cap B)\)</li>
@@ -40,7 +41,6 @@
 <li>\(n(B - A) = n(B) - n(A \cap B)\)</li>
 <li>\(n(A') = n(U) - n(A)\)</li>
 </ol>
-<p class="caption">Fig. 1.32</p>
 <div class="callout"><p class="callout-title">Note</p>
 <p>From the above results we may get,</p>
 <ul>
@@ -51,43 +51,53 @@
 </div>
 <h4 class="callout-h" id="s-example-1-27">Example 1.27</h4>
 <p>From the Venn diagram, verify that \(n(A \cup B) = n(A) + n(B) - n(A \cap B)\)</p>
-<figure class="fig side-fig"><img src="img/fig-p1-1.webp" alt="Figure from the textbook page" loading="lazy" width="455" height="272"></figure>
 <h4 class="callout-h" id="s-solution-27">Solution</h4>
-<p>From the Venn diagram,</p>
+<figure class="fig side-fig"><img src="img/fig-fix-p29-2.webp" alt="Venn diagram: A has 5, 15 only; A ∩ B has 10, 20; B has 30, 40, 50 only" loading="lazy" width="573" height="387"><figcaption>Fig. 1.33</figcaption></figure>
+<p>From the venn diagram,</p>
 <div class="mathblock">
-<p>\(A = \{5, 10, 15, 20\}\) &ensp; \(B = \{10, 20, 30, 40, 50\}\)</p>
+<p>\(A = \{5, 10, 15, 20\}\)</p>
+<p>\(B = \{10, 20, 30, 40, 50,\}\)</p>
 <p>Then \(A \cup B = \{5, 10, 15, 20, 30, 40, 50\}\)</p>
 <p>\(A \cap B = \{10, 20\}\)</p>
 <p>\(n(A) = 4\), \(n(B) = 5\), \(n(A \cup B) = 7\), \(n(A \cap B) = 2\)</p>
-<p>\(n(A \cup B) = 7\) &ensp; ... (1)</p>
-<p>\(n(A) + n(B) - n(A \cap B) = 4 + 5 - 2 = 7\) &ensp; ... (2)</p>
+<p>\(n(A \cup B) = 7\) &ensp; \(\rightarrow\) (1)</p>
+<p>\(n(A) + n(B) - n(A \cap B) = 4 + 5 - 2\)</p>
+<p>\(= 7\) &ensp; \(\rightarrow\) (2)</p>
 </div>
-<p class="caption">Fig. 1.33</p>
 <p>From (1) and (2), \(n(A \cup B) = n(A) + n(B) - n(A \cap B)\).</p>
-<figure class="fig"><img src="img/fig-p1-2.webp" alt="Figure from the textbook page" loading="lazy" width="278" height="68"></figure>
 <h4 class="callout-h" id="s-example-1-28">Example 1.28</h4>
-<p>If \(n(A) = 36\), \(n(B) = 10\), \(n(A \cup B) = 40\), and \(n(A') = 27\), find \(n(U)\) and \(n(A \cap B)\).</p>
+<p>If \(n(A) = 36\), \(n(B) = 10\), \(n(A \cup B) = 40\), and \(n(A') = 27\) find \(n(U)\) and \(n(A \cap B)\).</p>
 <h4 class="callout-h" id="s-solution-28">Solution</h4>
 <div class="mathblock"><p>\(n(A) = 36\), \(n(B) = 10\), \(n(A \cup B) = 40\), \(n(A') = 27\)</p></div>
 <ol type="i">
 <li>\(n(U) = n(A) + n(A') = 36 + 27 = 63\)</li>
 <li>\(n(A \cap B) = n(A) + n(B) - n(A \cup B) = 36 + 10 - 40 = 46 - 40 = 6\)</li>
 </ol>
-<figure class="fig wide"><img src="img/fig-p2-1.webp" alt="Figure from the textbook page" loading="lazy" width="1147" height="385"></figure>
-<figure class="fig"><img src="img/fig-p2-2.webp" alt="Figure from the textbook page" loading="lazy" width="278" height="68"></figure>
+<div class="callout"><p class="callout-title">Activity-4</p>
+<p>Fill in the blanks with appropriate cardinal numbers.</p>
+<div style="overflow-x:auto"><table>
+<thead><tr><th>S.No.</th><th>\(n(A)\)</th><th>\(n(B)\)</th><th>\(n(A \cup B)\)</th><th>\(n(A \cap B)\)</th><th>\(n(A - B)\)</th><th>\(n(B - A)\)</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>30</td><td>45</td><td>65</td><td></td><td></td><td></td></tr>
+<tr><td>2</td><td>20</td><td></td><td>55</td><td>10</td><td></td><td></td></tr>
+<tr><td>3</td><td>50</td><td>65</td><td></td><td>25</td><td></td><td></td></tr>
+<tr><td>4</td><td>30</td><td>43</td><td>70</td><td></td><td></td><td></td></tr>
+</tbody>
+</table></div>
+</div>
 <h4 class="callout-h" id="s-example-1-29">Example 1.29</h4>
 <p>Let \(A = \{b, d, e, g, h\}\) and \(B = \{a, e, c, h\}\). Verify that \(n(A - B) = n(A) - n(A \cap B)\).</p>
 <h4 class="callout-h" id="s-solution-29">Solution</h4>
+<div class="mathblock">
 <p>\(A = \{b, d, e, g, h\}\), \(B = \{a, e, c, h\}\)</p>
 <p>\(A - B = \{b, d, g\}\)</p>
-<div class="mathblock"><p>\(n(A - B) = 3\) &ensp; ... (1)</p></div>
+<p>\(n(A - B) = 3\) &ensp; ... (1)</p>
 <p>\(A \cap B = \{e, h\}\)</p>
-<div class="mathblock">
-<p>\(n(A \cap B) = 2\), \(n(A) = 5\)</p>
-<p>\(n(A) - n(A \cap B) = 5 - 2 = 3\) &ensp; ... (2)</p>
+<p>\(n(A \cap B) = 2\), &ensp; \(n(A) = 5\)</p>
+<p>\(n(A) - n(A \cap B) = 5 - 2\)</p>
+<p>\(= 3\) &ensp; ... (2)</p>
 </div>
-<p>From (1) and (2) we get \(n(A - B) = n(A) - n(A \cap B)\).</p>
-<figure class="fig"><img src="img/fig-p2-3.webp" alt="Figure from the textbook page" loading="lazy" width="278" height="68"></figure>
+<p>Form (1) and (2) we get \(n(A - B) = n(A) - n(A \cap B)\).</p>
 <h4 class="callout-h" id="s-example-1-30">Example 1.30</h4>
 <p>In a school, all students play either Hockey or Cricket or both. 300 play Hockey, 250 play Cricket and 110 play both games. Find</p>
 <ol type="i">
@@ -97,7 +107,7 @@
 </ol>
 <h4 class="callout-h" id="s-solution-30">Solution:</h4>
 <p>Let <em>H</em> be the set of all students who play Hockey and <em>C</em> be the set of all students who play Cricket.</p>
-<figure class="fig side-fig"><img src="img/fig-p2-4.webp" alt="Figure from the textbook page" loading="lazy" width="432" height="252"></figure>
+<figure class="fig side-fig"><img src="img/fig-p2-4.webp" alt="Venn diagram: H only 300 − 110 = 190, both 110, C only 250 − 110 = 140" loading="lazy" width="432" height="252"><figcaption>Fig. 1.34</figcaption></figure>
 <p>Then \(n(H) = 300\), \(n(C) = 250\) and \(n(H \cap C) = 110\)</p>
 <p>Using Venn diagram,</p>
 <p>From the Venn diagram,</p>
@@ -106,24 +116,22 @@
 <li>The number of students who play only Cricket \(= 140\)</li>
 <li>The total number of students in the school \(= 190 + 110 + 140 = 440\)</li>
 </ol>
-<p class="caption">Fig. 1.34</p>
 <p><strong>Aliter</strong></p>
 <ol type="i">
 <li>
 <p>The number of students who play only Hockey</p>
-<div class="mathblock"><p>\(n(H - C) = n(H) - n(H \cap C) = 300 - 110 = 190\)</p></div>
+<div class="mathblock"><p>\(n(H - C) = n(H) - n(H \cap C)\)</p><p>\(= 300 - 110 = 190\)</p></div>
 </li>
 <li>
 <p>The number of students who play only Cricket</p>
-<div class="mathblock"><p>\(n(C - H) = n(C) - n(H \cap C) = 250 - 110 = 140\)</p></div>
+<div class="mathblock"><p>\(n(C - H) = n(C) - n(H \cap C)\)</p><p>\(= 250 - 110 = 140\)</p></div>
 </li>
 <li>
 <p>The total number of students in the school</p>
-<figure class="fig side-fig"><img src="img/fig-p3-1.webp" alt="Figure from the textbook page" loading="lazy" width="199" height="189"></figure>
-<div class="mathblock"><p>\(n(H \cup C) = n(H) + n(C) - n(H \cap C) = 300 + 250 - 110 = 440\)</p></div>
+<div class="mathblock"><p>\(n(H \cup C) = n(H) + n(C) - n(H \cap C)\)</p><p>\(= 300 + 250 - 110 = 440\)</p></div>
 </li>
 </ol>
-<figure class="fig"><img src="img/fig-p3-2.webp" alt="Figure from the textbook page" loading="lazy" width="278" height="68"></figure>
+<figure class="fig"><img src="img/fig-p3-1.webp" alt="QR code WI49C" loading="lazy" width="199" height="189"></figure>
 <h4 class="callout-h" id="s-example-1-31">Example 1.31</h4>
 <p>In a party of 60 people, 35 had Vanilla ice cream, 30 had Chocolate ice cream. All the people had at least one ice cream. Then how many of them had,</p>
 <ol type="i">
@@ -133,9 +141,10 @@
 </ol>
 <h4 class="callout-h" id="s-solution-31">Solution:</h4>
 <p>Let <em>V</em> be the set of people who had Vanilla ice cream and <em>C</em> be the set of people who had Chocolate ice cream.</p>
-<div class="mathblock"><p>Then \(n(V) = 35\), \(n(C) = 30\), \(n(V \cup C) = 60\)</p></div>
-<p>Let <em>x</em> be the number of people who had both ice creams. From the Venn diagram</p>
-<figure class="fig side-fig"><img src="img/fig-p3-3.webp" alt="Figure from the textbook page" loading="lazy" width="408" height="237"></figure>
+<p>Then \(n(V) = 35\), \(n(C) = 30\), \(n(V \cup C) = 60\),</p>
+<p>Let <em>x</em> be the number of people who had both ice creams.</p>
+<figure class="fig side-fig"><img src="img/fig-p3-3.webp" alt="Venn diagram: V only 35 − x, both x, C only 30 − x" loading="lazy" width="408" height="237"><figcaption>Fig. 1.35</figcaption></figure>
+<p>From the Venn diagram</p>
 <div class="mathblock">
 <p>\(35 - x + x + 30 - x = 60\)</p>
 <p>\(65 - x = 60\)</p>
@@ -146,103 +155,108 @@
 <li>Number of people who had only Vanilla ice cream \(= 35 - x = 35 - 5 = 30\)</li>
 <li>Number of people who had only Chocolate ice cream \(= 30 - x = 30 - 5 = 25\)</li>
 </ol>
-<p class="caption">Fig. 1.35</p>
 <p>We have learnt to solve problems involving two sets using the formula \(n(A \cup B) = n(A) + n(B) - n(A \cap B)\). Suppose we have three sets, we can apply this formula to get a similar formula for three sets.</p>
-<figure class="fig wide"><img src="img/fig-p4-1.webp" alt="Figure from the textbook page" loading="lazy" width="1146" height="116"></figure>
+<div class="callout">
+<p>For any three finite sets <em>A</em>, <em>B</em> and <em>C</em></p>
+<div class="mathblock"><p>\(n(A \cup B \cup C) = n(A) + n(B) + n(C) - n(A \cap B) - n(B \cap C) - n(A \cap C) + n(A \cap B \cap C)\)</p></div>
+</div>
 <div class="callout"><p class="callout-title">Note</p>
 <p>Let us consider the following results which will be useful in solving problems using Venn diagram. Let three sets <em>A</em>, <em>B</em> and <em>C</em> represent the students. From the Venn diagram,</p>
+<figure class="fig side-fig"><img src="img/fig-fix-p32-1.webp" alt="Venn diagram of three sets A, B, C with regions a, b, c (only one set), x, y, z (exactly two sets) and r (all three)" loading="lazy" width="378" height="315"><figcaption>Fig. 1.36</figcaption></figure>
 <p>Number of students in only set \(A = a\), only set \(B = b\), only set \(C = c\).</p>
 <ul>
-<li>Total number of students in only one set \(= a + b + c\)</li>
-<li>Total number of students in only two sets \(= x + y + z\)</li>
+<li>Total number of students in only one set \(= (a + b + c)\)</li>
+<li>Total number of students in only two sets \(= (x + y + z)\)</li>
 <li>Number of students exactly in three sets \(= r\)</li>
 <li>Total number of students in atleast two sets (two or more sets) \(= x + y + z + r\)</li>
-<li>Total number of students in 3 sets \(= a + b + c + x + y + z + r\)</li>
+<li>Total number of students in 3 sets \(= (a + b + c + x + y + z + r)\)</li>
 </ul>
-<p class="caption">Fig. 1.36</p>
 </div>
-<figure class="fig"><img src="img/fig-p4-2.webp" alt="Figure from the textbook page" loading="lazy" width="278" height="68"></figure>
 <h4 class="callout-h" id="s-example-1-32">Example 1.32</h4>
-<p>In a college, 240 students play cricket, 180 students play football, 164 students play hockey, 42 play both cricket and football, 38 play both football and hockey, 40 play both cricket and hockey and 16 play all the three games. If each student participates in atleast one game, then find (i) the number of students in the college (ii) the number of students who play only one game.</p>
+<p>In a college, 240 students play cricket, 180 students play football, 164 students play hockey, 42 play both cricket and football, 38 play both football and hockey, 40 play both cricket and hockey and 16 play all the three games. If each student participate in atleast one game, then find (i) the number of students in the college (ii) the number of students who play only one game.</p>
 <h4 class="callout-h" id="s-solution-32">Solution</h4>
 <p>Let <em>C</em>, <em>F</em> and <em>H</em> represent sets of students who play Cricket, Football and Hockey respectively.</p>
+<figure class="fig side-fig"><img src="img/fig-p4-3.webp" alt="Venn diagram: C only 240 − (26 + 16 + 24) = 174, F only 180 − (26 + 16 + 22) = 116, H only 164 − (24 + 16 + 22) = 102, C∩F only 26, F∩H only 22, C∩H only 24, all three 16" loading="lazy" width="349" height="310"><figcaption>Fig. 1.37</figcaption></figure>
 <div class="mathblock">
-<p>Then, \(n(C) = 240\), \(n(F) = 180\), \(n(H) = 164\), \(n(C \cap F) = 42\), \(n(F \cap H) = 38\), \(n(C \cap H) = 40\), \(n(C \cap F \cap H) = 16\).</p>
+<p>Then, \(n(C) = 240\), \(n(F) = 180\), \(n(H) = 164\), \(n(C \cap F) = 42\),</p>
+<p>\(n(F \cap H) = 38\), \(n(C \cap H) = 40\), \(n(C \cap F \cap H) = 16\).</p>
 </div>
-<figure class="fig side-fig"><img src="img/fig-p4-3.webp" alt="Figure from the textbook page" loading="lazy" width="349" height="310"></figure>
 <p>Let us represent the given data in a Venn diagram.</p>
-<ol type="i">
-<li>
-<p>The number of students in the college</p>
+<p>(i) The number of students in the college</p>
 <div class="mathblock"><p>\(= 174 + 26 + 116 + 22 + 102 + 24 + 16 = 480\)</p></div>
-</li>
-<li>
-<p>The number of students who play only one game</p>
+<p>(ii) The number of students who play only one game</p>
 <div class="mathblock"><p>\(= 174 + 116 + 102 = 392\)</p></div>
-</li>
-</ol>
-<p class="caption">Fig. 1.37</p>
-<figure class="fig"><img src="img/fig-p5-1.webp" alt="Figure from the textbook page" loading="lazy" width="278" height="68"></figure>
 <h4 class="callout-h" id="s-example-1-33">Example 1.33</h4>
-<p>In a residential area with 600 families, \(\frac{3}{5}\) owned scooter, \(\frac{1}{3}\) owned car, \(\frac{1}{4}\) owned bicycle, 120 families owned scooter and car, 86 owned car and bicycle while 90 families owned scooter and bicycle. If \(\frac{2}{15}\) of families owned all the three types of vehicles, then find (i) the number of families who owned atleast two types of vehicle. (ii) the number of families who owned no vehicle.</p>
+<p>In a residential area with 600 families \(\frac{3}{5}\) owned scooter, \(\frac{1}{3}\) owned car, \(\frac{1}{4}\) owned bicycle, 120 families owned scooter and car, 86 owned car and bicylce while 90 families owned scooter and bicylce. If \(\frac{2}{15}\) of families owned all the three types of vehicles, then find (i) the number of families owned atleast two types of vehicle. (ii) the number of families owned no vehicle.</p>
 <h4 class="callout-h" id="s-solution-33">Solution</h4>
 <p>Let <em>S</em>, <em>C</em> and <em>B</em> represent sets of families who owned Scooter, Car and Bicycle respectively.</p>
-<figure class="fig side-fig"><img src="img/fig-p5-2.webp" alt="Figure from the textbook page" loading="lazy" width="385" height="347"></figure>
+<figure class="fig side-fig"><img src="img/fig-p5-2.webp" alt="Venn diagram in U(600): S only 360 − (40 + 80 + 10) = 230, C only 200 − (40 + 80 + 6) = 74, B only 150 − (10 + 80 + 6) = 54, S∩C only 40, C∩B only 6, S∩B only 10, all three 80" loading="lazy" width="385" height="347"><figcaption>Fig. 1.38</figcaption></figure>
 <div class="mathblock">
-<p>Given, \(n(U) = 600\)</p>
-<p>\(n(S) = \frac{3}{5} \times 600 = 360\)</p>
-<p>\(n(C) = \frac{1}{3} \times 600 = 200\)</p>
-<p>\(n(B) = \frac{1}{4} \times 600 = 150\)</p>
+<p>Given, &ensp; \(n(U) = 600\) &ensp; \(n(S) = \frac{3}{5} \times 600 = 360\)</p>
+<p>\(n(C) = \frac{1}{3} \times 600 = 200\) &ensp; \(n(B) = \frac{1}{4} \times 600 = 150\)</p>
 <p>\(n(S \cap C \cap B) = \frac{2}{15} \times 600 = 80\)</p>
 </div>
 <p>From Venn diagram,</p>
 <ol type="i">
-<li>The number of families who owned atleast two types of vehicles \(= 40 + 6 + 10 + 80 = 136\)</li>
-<li>The number of families who owned no vehicle \(= 600 -\) (owned atleast one vehicle)</li>
+<li>The number of families owned atleast two types of vehicles \(= 40 + 6 + 10 + 80 = 136\)</li>
+<li>
+<p>The number of families owned no vehicle</p>
+<div class="mathblock">
+<p>\(= 600 -\) (owned atleast one vehicle)</p>
+<p>\(= 600 - (230 + 40 + 74 + 6 + 54 + 10 + 80)\)</p>
+<p>\(= 600 - 494 = 106\)</p>
+</div>
+</li>
 </ol>
-<p class="caption">Fig. 1.38</p>
-<div class="mathblock"><p>\(= 600 - (230 + 40 + 74 + 6 + 54 + 10 + 80) = 600 - 494 = 106\)</p></div>
 <h4 class="callout-h" id="s-example-1-34">Example 1.34</h4>
 <p>In a group of 100 students, 85 students speak Tamil, 40 students speak English, 20 students speak French, 32 speak Tamil and English, 13 speak English and French and 10 speak Tamil and French. If each student knows atleast any one of these languages, then find the number of students who speak all these three languages.</p>
 <h4 class="callout-h" id="s-solution-34">Solution</h4>
 <p>Let <em>A</em>, <em>B</em> and <em>C</em> represent sets of students who speak Tamil, English and French respectively.</p>
-<div class="mathblock"><p>Given, \(n(A \cup B \cup C) = 100\), \(n(A) = 85\), \(n(B) = 40\), \(n(C) = 20\), \(n(A \cap B) = 32\), \(n(B \cap C) = 13\), \(n(A \cap C) = 10\).</p></div>
-<p>We know that,</p>
-<div class="mathblock"><p>\(n(A \cup B \cup C) = n(A) + n(B) + n(C) - n(A \cap B) - n(B \cap C) - n(A \cap C) + n(A \cap B \cap C)\)</p></div>
 <div class="mathblock">
+<p>Given, &ensp; \(n(A \cup B \cup C) = 100\), \(n(A) = 85\), \(n(B) = 40\), \(n(C) = 20\),</p>
+<p>\(n(A \cap B) = 32\), \(n(B \cap C) = 13\), \(n(A \cap C) = 10\).</p>
+</div>
+<p>We know that,</p>
+<div class="mathblock">
+<p>\(n(A \cup B \cup C) = n(A) + n(B) + n(C) - n(A \cap B) - n(B \cap C) - n(A \cap C) + n(A \cap B \cap C)\)</p>
 <p>\(100 = 85 + 40 + 20 - 32 - 13 - 10 + n(A \cap B \cap C)\)</p>
 <p>Then, \(n(A \cap B \cap C) = 100 - 90 = 10\)</p>
 </div>
 <p>Therefore, 10 students speak all the three languages.</p>
-<figure class="fig"><img src="img/fig-p6-1.webp" alt="Figure from the textbook page" loading="lazy" width="278" height="68"></figure>
 <h4 class="callout-h" id="s-example-1-35">Example 1.35</h4>
-<p>A survey was conducted among 200 magazine subscribers of three different magazines <em>A</em>, <em>B</em> and <em>C</em>. It was found that 75 members do not subscribe magazine <em>A</em>, 100 members do not subscribe magazine <em>B</em>, 50 members do not subscribe magazine <em>C</em> and 125 subscribe atleast two of the three magazines. Find</p>
+<p>A survey was conducted among 200 magazine subscribers of three different magazines <em>A</em>, <em>B</em> and <em>C</em>. It was found that 75 members do not subscribe magazine <em>A</em>, 100 members do not subscribe magazine <em>B</em>, 50 members do not subscribe magazine C and 125 subscribe atleast two of the three magazines. Find</p>
 <ol type="i">
 <li>Number of members who subscribe exactly two magazines.</li>
 <li>Number of members who subscribe only one magazine.</li>
 </ol>
 <h4 class="callout-h" id="s-solution-35">Solution</h4>
-<figure class="fig side-fig"><img src="img/fig-p6-2.webp" alt="Figure from the textbook page" loading="lazy" width="337" height="297"></figure>
+<figure class="fig side-fig"><img src="img/fig-fix-p34-1.webp" alt="Venn diagram of A(125), B(100), C(150) with regions a, b, c, x, y, z and r" loading="lazy" width="462" height="411"><figcaption>Fig. 1.39</figcaption></figure>
 <p>Total number of subscribers \(= 200\)</p>
-<figure class="fig"><img src="img/fig-p6-3.webp" alt="Figure from the textbook page" loading="lazy" width="550" height="173"></figure>
+<div style="overflow-x:auto"><table>
+<thead><tr><th>Magazine</th><th>Do not subscribe</th><th>Subscribe</th></tr></thead>
+<tbody>
+<tr><td><em>A</em></td><td>75</td><td>125</td></tr>
+<tr><td><em>B</em></td><td>100</td><td>100</td></tr>
+<tr><td><em>C</em></td><td>50</td><td>150</td></tr>
+</tbody>
+</table></div>
 <p>From the Venn diagram,</p>
-<p class="caption">Fig. 1.39</p>
 <p>Number of members who subscribe only one magazine \(= a + b + c\)</p>
 <p>Number of members who subscribe exactly two magazines \(= x + y + z\)</p>
 <p>and 125 members subscribe atleast two magazines.</p>
 <div class="mathblock">
 <p>That is, \(x + y + z + r = 125\) &ensp; ... (1)</p>
-<p>Now, \(n(A \cup B \cup C) = 200\), \(n(A) = 125\), \(n(B) = 100\), \(n(C) = 150\)</p>
-<p>\(n(A \cap B) = x + r\), \(n(B \cap C) = y + r\), \(n(A \cap C) = z + r\), \(n(A \cap B \cap C) = r\)</p>
+<p>Now, \(n(A \cup B \cup C) = 200\), \(n(A) = 125\), \(n(B) = 100\), \(n(C) = 150\), \(n(A \cap B) = x + r\)</p>
+<p>\(n(B \cap C) = y + r\), &ensp; \(n(A \cap C) = z + r\), &ensp; \(n(A \cap B \cap C) = r\)</p>
 </div>
-<p>We know that, \(n(A \cup B \cup C) = n(A) + n(B) + n(C) - n(A \cap B) - n(B \cap C) - n(A \cap C) + n(A \cap B \cap C)\)</p>
+<p>We know that,</p>
 <div class="mathblock">
-<p>\(200 = 125 + 100 + 150 - (x + r) - (y + r) - (z + r) + r\)</p>
+<p>\(n(A \cup B \cup C) = n(A) + n(B) + n(C) - n(A \cap B) - n(B \cap C) - n(A \cap C) + n(A \cap B \cap C)\)</p>
+<p>\(200 = 125 + 100 + 150 - x - r - y - r - z - r + r\)</p>
 <p>\(= 375 - (x + y + z + r) - r\)</p>
-<p>\(= 375 - 125 - r\) &ensp; [since \(x + y + z + r = 125\)]</p>
-<p>\(200 = 250 - r\)</p>
-<p>\(\Rightarrow r = 50\)</p>
-<p>From (1), \(x + y + z + 50 = 125\)</p>
+<p>\(= 375 - 125 - r\) &ensp; \(\left[\because\ x + y + z + r = 125\right]\)</p>
+<p>\(200 = 250 - r\) &ensp; \(\Rightarrow r = 50\)</p>
+<p>From (1) \(x + y + z + 50 = 125\)</p>
 <p>We get, \(x + y + z = 75\)</p>
 </div>
 <p>Therefore, number of members who subscribe exactly two magazines \(= 75\).</p>
@@ -250,7 +264,7 @@
 <div class="mathblock">
 <p>\((a + b + c) + (x + y + z + r) = 200\) &ensp; ... (2)</p>
 </div>
-<p>Substitute (1) in (2),</p>
+<p>substitute (1) in (2),</p>
 <div class="mathblock">
 <p>\(a + b + c + 125 = 200\)</p>
 <p>\(a + b + c = 75\)</p>

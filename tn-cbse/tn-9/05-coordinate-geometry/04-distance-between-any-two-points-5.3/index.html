@@ -31,19 +31,16 @@
  <p class="sec-meta">Textbook pages 9–18 · 17 figures</p>
 </div>
 <article class="prose">
-<ol start="3">
-<li>Plot the following points in the coordinate plane and join them. What is your conclusion about the resulting figure?
-<ol type="i">
-<li>\((-5, 3)\) \((-1, 3)\) \((0, 3)\) \((5, 3)\)</li>
-<li>\((0, -4)\) \((0, -2)\) \((0, 4)\) \((0, 5)\)</li>
-</ol></li>
-<li>Plot the following points in the coordinate plane. Join them in order. What type of geometrical shape is formed?
-<ol type="i">
-<li>\((0, 0)\) \((-4, 0)\) \((-4, -4)\) \((0, -4)\)</li>
-<li>\((-3, 3)\) \((2, 3)\) \((-6, -1)\) \((5, -1)\)</li>
-</ol></li>
+<p>Akila and Shanmugam are friends living on the same street in Sathyamangalam. Shanmugam's house is at the intersection of one street with another street on which there is a library. They both study in the same school, and that is not far from Shanmugam's house. Try to draw a picture of their houses, library and school by yourself before looking at the map below. Consider the school as the origin. (We can do this ! That is the whole point about the co-ordinate language we are using.)</p>
+<figure class="fig side-fig"><img src="img/fig-fix-p9-1.webp" alt="Fig. 5.13: school at the origin, Akila’s house, Shanmugam’s house and the library marked on a grid" loading="lazy" width="606" height="663"></figure>
+<p>Now fix the scale as 1 unit = 50 metres. Here are some questions for you to answer by studying the given figure (Fig 5.13).</p>
+<ol>
+<li>How far is Akila's house from Shanmugam's house?</li>
+<li>How far is the library from Shanmugam's house?</li>
+<li>How far is the school from Shanmugam's and Akila's house?</li>
+<li>How far is the library from Akila's house?</li>
+<li>How far is Shanmugam's house from Akila's house?</li>
 </ol>
-<figure class="fig table-fig wide"><img src="img/fig-p1-1.webp" alt="Figure from the textbook page" loading="lazy" width="1082" height="1400"></figure>
 <p>Question 5 is not needed after answering question 1. Obviously, the distance from point <em>A</em> to <em>B</em> is the same as the distance from point <em>B</em> to <em>A</em>, and we usually call it the distance between points <em>A</em> and <em>B</em>. But as mathematicians we are supposed to note down properties as and when we see them, so it is better to note this too: distance \((A,B)\) = distance \((B,A)\). This is true for all points <em>A</em> and <em>B</em> on the plane, so of course question 5 is same as question 1.</p>
 <div class="callout"><p class="callout-title">Note</p>
 <p>The equation distance(A,B)=distance(B,A) is not always obvious. Suppose that the road from A to B is a one-way street on which you cannot go the other way? Then the distance from B to A might be longer ! But we will avoid all these complications and assume that we can go both ways.</p>
@@ -59,14 +56,55 @@
 <p>The "straight line distance" is usually called "as the crow flies". This is to mean that we don't worry about any obstacles and routes on the ground, but how we would get from A to B if we could fly. No bird ever flies on straight lines, though.</p>
 <p>We can give a systematic answer to this: given any two points \(A = (x, y)\) and \(B = (x', y')\) on the plane, find distance\((A,B)\). It is easy to derive a formula in terms of the four numbers \(x\), \(y\), \(x'\) and \(y'\). This is what we set out to do now.</p>
 <h3 id="s-5-3-1-distance-between-two-points-on-the-coordinate-axes">5.3.1 Distance Between Two Points on the Coordinate Axes</h3>
-<figure class="fig table-fig wide"><img src="img/fig-p3-1.webp" alt="Figure from the textbook page" loading="lazy" width="937" height="1400"></figure>
-<figure class="fig table-fig wide"><img src="img/fig-p4-1.webp" alt="Figure from the textbook page" loading="lazy" width="1077" height="1400"></figure>
+<figure class="fig side-fig"><img src="img/fig-fix-p11-1.webp" alt="Fig. 5.14: points A and B on the x-axis" loading="lazy" width="693" height="663"></figure>
+<p><strong>Points on \(x\) – axis:</strong> If two points lie on the \(x\)- axis, then the distance between them is equal to the difference between the \(x\)- coordinates.</p>
+<p>Consider two points \(A(x_1, 0)\) and \(B(x_2, 0)\) on the \(x\)-axis .</p>
+<p>The distance of <em>B</em> from <em>A</em> is</p>
+<div class="mathblock">
+<p>\(AB = OB - OA = x_2 - x_1\) if \(x_2 &gt; x_1\) or</p>
+<p>\(= x_1 - x_2\) if \(x_1 &gt; x_2\)</p>
+<p>\(AB = |x_2 - x_1|\)</p>
+</div>
+<p>(Read as modulus or absolute value of \(x_2 - x_1\))</p>
+<figure class="fig side-fig"><img src="img/fig-fix-p11-2.webp" alt="Fig. 5.15: points P and Q on the y-axis" loading="lazy" width="606" height="738"></figure>
+<p><strong>Points on \(y\) – axis:</strong> If two points lie on \(y\)-axis then the distance between them is equal to the difference between the \(y\)-coordinates.</p>
+<p>Consider two points \(P(0, y_1)\) and \(Q(0, y_2)\)</p>
+<p>The distance <em>Q</em> from <em>P</em> is</p>
+<div class="mathblock">
+<p>\(PQ = OQ - OP.\)</p>
+<p>\(= y_2 - y_1\) if \(y_2 &gt; y_1\) or</p>
+<p>\(= y_1 - y_2\) if \(y_1 &gt; y_2\)</p>
+<p>\(PQ = |y_2 - y_1|\)</p>
+</div>
+<p>(Read as modulus or absolute value of \(y_2 - y_1\))</p>
+<h3 id="s-5-3-2-distance-between-two-points-lying-on-a-line-parallel-to-coordinate-axes">5.3.2 Distance Between Two Points Lying on a Line Parallel to Coordinate Axes</h3>
+<figure class="fig side-fig"><img src="img/fig-fix-p11-3.webp" alt="Fig. 5.16: A and B on a line parallel to the x-axis, with feet P and Q on the x-axis" loading="lazy" width="693" height="657"></figure>
+<p>Consider the points \(A(x_1, y_1)\) and \(B(x_2, y_1)\). Since the \(y\) - coordinates are equal the points lie on a line parallel to \(x\)- axis. From <em>A</em> and <em>B</em> draw <em>AP</em> and <em>BQ</em> perpendicular to \(x\)- axis respectively. Observe the given figure (Fig. 5.16), it is obvious that the distance <em>AB</em> is same as the distance <em>PQ</em></p>
+<p>Distance \(AB\) = Distance between \(PQ = |x_2 - x_1|\) [The difference between \(x\) coordinates]</p>
+<p>Similarly consider the line joining the two points \(A(x_1, y_1)\) and \(B(x_1, y_2)\), parallel to \(y\) – axis.</p>
+<figure class="fig side-fig"><img src="img/fig-fix-p12-1.webp" alt="Fig. 5.17: A and B on a line parallel to the y-axis, with feet Q and P on the y-axis" loading="lazy" width="699" height="744"></figure>
+<p>Then the distance between these two points is</p>
+<div class="mathblock"><p>\(|y_2 - y_1|\)</p></div>
+<p>[The difference between y coordinates]</p>
+<h3 id="s-5-3-3-distance-between-two-points-on-a-plane">5.3.3 Distance Between Two Points on a Plane.</h3>
+<p>Let \(P(x_1, y_1)\) and \(Q(x_2, y_2)\) be two points in the Cartesian plane (or \(xy\) – plane), at a distance '<em>d</em>' apart that is \(d = PQ\).</p>
+<figure class="fig"><img src="img/fig-fix-p12-2.webp" alt="Fig. 5.18: right triangle PQR with P(x1, y1), Q(x2, y2) and feet M, N on the x-axis" loading="lazy" width="1029" height="921"></figure>
+<h3 class="callout-h" id="s-step-1">Step 1</h3>
+<p>By the definition of coordinates,</p>
+<div class="mathblock">
+<p>\(OM = x_1 \qquad MP = y_1\)</p>
+<p>\(ON = x_2 \qquad NQ = y_2\)</p>
+</div>
+<p>Now, \((PR \perp NQ)\)</p>
+<p>\(PR = MN\) (Opposite sides of the rectangle <em>MNRP</em>)</p>
 <p>\(= ON - OM\) (Measuring the distance from O)</p>
 <div class="mathblock"><p>\(= x_2 - x_1\) ……..(1)</p></div>
 <p>And \(RQ = NQ - NR\)</p>
 <p>\(= NQ - MP\) (Opposite sides of the rectangle MNRP)</p>
-<figure class="fig side-fig"><img src="img/fig-p5-1.webp" alt="Figure from the textbook page" loading="lazy" width="194" height="185"></figure>
 <div class="mathblock"><p>\(= y_2 - y_1\) ………..(2)</p></div>
+<div class="callout"><p class="callout-title">Thinking Corner</p>
+<p>A man goes 3 km towards north and then 4 km towards east. How far is he away from the initial position?</p>
+</div>
 <h3 class="callout-h" id="s-step-2">Step 2</h3>
 <p>Triangle PQR is right angled at R. \((PR \perp NQ)\)</p>
 <p>\(PQ^2 = PR^2 + RQ^2\) (By Pythagoras theorem)</p>
@@ -86,12 +124,40 @@
 <p>distance(A,B) + distance(B,C) = distance(A,C), the points A, B and C must be collinear. Similarly, when A, B and C are the vertices of a right angled triangle, \(\angle ABC = 90^{\circ}\) we know that:</p>
 <p>\(\text{distance}(AB)^2 + \text{distance}(BC)^2 = \text{distance}(AC)^2\)</p>
 <p>with appropriate naming of vertices. We can also show that the converse holds: whenever the equality here holds for A, B and C, they must be the vertices of a right angled triangle.</p>
-<p>The following examples illustrate how these properties of distances are useful for answering</p>
-<figure class="fig table-fig wide"><img src="img/fig-p6-1.webp" alt="Figure from the textbook page" loading="lazy" width="1328" height="1381"></figure>
-<figure class="fig"><img src="img/fig-p7-1.webp" alt="Figure from the textbook page" loading="lazy" width="278" height="68"></figure>
+<p>The following examples illustrate how these properties of distances are useful for answering questions about specific geometric shapes.</p>
+<h4 class="callout-h" id="s-example-5-4">Example 5.4</h4>
+<p>Find the distance between the points \((-4, 3)\), \((2, -3)\).</p>
+<h4 class="callout-h" id="s-solution-5-4">Solution</h4>
+<figure class="fig side-fig"><img src="img/fig-fix-p14-1.webp" alt="Fig. 5.19: segment joining P(−4, 3) and Q(2, −3)" loading="lazy" width="780" height="912"></figure>
+<p>The distance between the points (-4, 3), (2,-3) is</p>
+<div class="mathblock">
+<p>\(d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}\)</p>
+<p>\(= \sqrt{(2 + 4)^2 + (-3 - 3)^2}\)</p>
+<p>\(= \sqrt{(6^2 + (-6)^2)} = \sqrt{(36 + 36)}\)</p>
+<p>\(= \sqrt{(36 \times 2)}\)</p>
+<p>\(= 6\sqrt{2}\)</p>
+</div>
+<h4 class="callout-h" id="s-example-5-5">Example 5.5</h4>
+<p>Show that the following points \(A(3,1)\) , \(B(6,4)\) and \(C(8,6)\) lies on a straight line.</p>
+<h4 class="callout-h" id="s-solution-5-5">Solution</h4>
+<div class="callout"><p class="callout-title">Collinear points</p>
+<p>To show the collinearity of three points, we prove that the sum of the distance between two pairs of points is equal to the third pair of points.</p>
+<p>In otherwords, points <em>A</em>, <em>B</em>, <em>C</em> are collinear if \(AB + BC = AC\)</p>
+</div>
+<p>Using the distance formula, we have</p>
+<div class="mathblock">
+<p>\(AB = \sqrt{(6 - 3)^2 + (4 - 1)^2} = \sqrt{9 + 9} = \sqrt{18} = 3\sqrt{2}\)</p>
+<p>\(BC = \sqrt{(8 - 6)^2 + (6 - 4)^2} = \sqrt{(4 + 4)} = \sqrt{8} = 2\sqrt{2}\)</p>
+<p>\(AC = \sqrt{(8 - 3)^2 + (6 - 1)^2} = \sqrt{25 + 25} = \sqrt{50} = 5\sqrt{2}\)</p>
+<p>\(AB + BC = 3\sqrt{2} + 2\sqrt{2} = 5\sqrt{2} = AC\)</p>
+</div>
+<p>Therefore the points lie on a straight line.</p>
+<h4 class="callout-h" id="s-example-5-6">Example 5.6</h4>
 <p>Show that the points A(7,10), B(-2,5), C(3,-4) are the vertices of a right angled triangle.</p>
-<h4 class="callout-h" id="s-solution">Solution</h4>
-<figure class="fig side-fig"><img src="img/fig-p7-2.webp" alt="Figure from the textbook page" loading="lazy" width="362" height="387"></figure>
+<h4 class="callout-h" id="s-solution-1">Solution</h4>
+<div class="callout"><p class="callout-title">Right angled triangle</p>
+<p>We know that the sum of the squares of two sides is equal to the square of the third side,which is the hypotenuse of a right angled triangle.</p>
+</div>
 <div class="mathblock">
 <p>Here \(A = (7, 10)\), \(B = (-2, 5)\), \(C = (3, -4)\)</p>
 <p>\(AB = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}\)</p>
@@ -113,9 +179,9 @@
 <div class="mathblock"><p>\(AB^2 + BC^2 = 106 + 106 = 212 = AC^2\)</p></div>
 <p>Since \(AB^2 + BC^2 = AC^2\)</p>
 <p>\(\therefore\) \(\triangle ABC\) is a right angled triangle, right angled at B.</p>
-<figure class="fig"><img src="img/fig-p8-1.webp" alt="Figure from the textbook page" loading="lazy" width="278" height="68"></figure>
+<h4 class="callout-h" id="s-example-5-7">Example 5.7</h4>
 <p>Show that the points A\((-4, -3)\), B(3,1), C(3,6), D\((-4, 2)\) taken in that order form the vertices of a parallelogram.</p>
-<h4 class="callout-h" id="s-solution">Solution</h4>
+<h4 class="callout-h" id="s-solution-2">Solution</h4>
 <p>Let A\((-4, -3)\), B(3, 1), C(3, 6), D\((-4, 2)\) be the four vertices of any quadrilateral ABCD. Using the distance formula,</p>
 
 <div class="mathblock"><p>Let \(d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}\)</p></div>
@@ -133,18 +199,18 @@
 <p>\(AB = CD = \sqrt{65}\) and \(BC = AD = 5\)</p>
 </div>
 <p>Here, the opposite sides are equal. Hence ABCD is a parallelogram.</p>
-<figure class="fig"><img src="img/fig-p8-2.webp" alt="Figure from the textbook page" loading="lazy" width="278" height="67"></figure>
+<h4 class="callout-h" id="s-example-5-8">Example 5.8</h4>
 <p>Calculate the distance between the points A (7, 3) and B which lies on the x-axis whose abscissa is 11.</p>
-<h4 class="callout-h" id="s-solution">Solution</h4>
+<h4 class="callout-h" id="s-solution-3">Solution</h4>
 <p>Since B is on the x-axis, the y-coordinate of B is 0.</p>
 <p>So, the coordinates of the point B is (11, 0)</p>
 <p>By the distance formula the distance between the points A (7, 3), B (11, 0) is</p>
 <div class="mathblock"><p>\(d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}\)</p></div>
 <div class="mathblock"><p>\(AB = \sqrt{(11-7)^2 + (0-3)^2} = \sqrt{(4)^2 + (-3)^2} = \sqrt{16 + 9} = \sqrt{25}\)</p></div>
 <div class="mathblock"><p>\(= 5\)</p></div>
-<figure class="fig"><img src="img/fig-p9-1.webp" alt="Figure from the textbook page" loading="lazy" width="278" height="68"></figure>
+<h4 class="callout-h" id="s-example-5-9">Example 5.9</h4>
 <p>Find the value of 'a' such that \(PQ = QR\) where P, Q, and R are the points whose coordinates are \((6, -1)\), \((1, 3)\) and \((a, 8)\) respectively.</p>
-<h4 class="callout-h" id="s-solution">Solution</h4>
+<h4 class="callout-h" id="s-solution-4">Solution</h4>
 <p>Given P \((6, -1)\), Q \((1, 3)\) and R \((a, 8)\)</p>
 <div class="mathblock">
 <p>\(PQ = \sqrt{(1-6)^2 + (3+1)^2} = \sqrt{(-5)^2 + (4)^2} = \sqrt{41}\)</p>
@@ -160,9 +226,9 @@
 <p>\(a = 1 + 4\) or \(a = 1 - 4\)</p>
 <p>\(a = 5\) or \(a = -3\)</p>
 </div>
-<figure class="fig"><img src="img/fig-p9-3.webp" alt="Figure from the textbook page" loading="lazy" width="278" height="68"></figure>
+<h4 class="callout-h" id="s-example-5-10">Example 5.10</h4>
 <p>Let \(A(2, 2)\), \(B(8, -4)\) be two given points in a plane. If a point P lies on the X- axis (in positive side), and divides AB in the ratio 1: 2, then find the coordinates of P.</p>
-<h4 class="callout-h" id="s-solution">Solution</h4>
+<h4 class="callout-h" id="s-solution-5">Solution</h4>
 <p>Given points are \(A(2, 2)\) and \(B(8, -4)\) and let \(P = (x, 0)\) [P lies on x axis]</p>
 <p>By the distance formula</p>
 <div class="mathblock">
@@ -183,12 +249,11 @@
 <p>\(x^2 = 16\)</p>
 <p>\(x = \pm 4\)</p>
 </div>
-<figure class="fig side-fig"><img src="img/fig-p10-1.webp" alt="Figure from the textbook page" loading="lazy" width="195" height="185"></figure>
 <p>As the point P lies on x-axis (positive side), its x- coordinate cannot be \(-4\).</p>
 <p>Hence the coordinates of P is \((4, 0)\)</p>
-<figure class="fig"><img src="img/fig-p10-2.webp" alt="Figure from the textbook page" loading="lazy" width="278" height="68"></figure>
+<h4 class="callout-h" id="s-example-5-11">Example 5.11</h4>
 <p>Show that \((4, 3)\) is the centre of the circle passing through the points \((9, 3)\), \((7, -1)\), \((-1, 3)\). Also find its radius.</p>
-<h4 class="callout-h" id="s-solution">Solution</h4>
+<h4 class="callout-h" id="s-solution-6">Solution</h4>
 <p>Let \(P(4, 3)\), \(A(9, 3)\), \(B(7, -1)\) and \(C(-1, 3)\)</p>
 <p>If P is the centre of the circle which passes through the points A, B, and C, then P is equidistant from A, B and C (i.e.) \(PA = PB = PC\)</p>
 <p>By distance formula,</p>
@@ -200,26 +265,6 @@
 <p>\(PA = PB = PC = 5\), Radius \(= 5\)</p>
 </div>
 <p>Therefore P is the centre of the circle, passing through A, B and C</p>
-<figure class="fig"><img src="img/fig-p10-4.webp" alt="Figure from the textbook page" loading="lazy" width="332" height="80"></figure>
-<ol>
-<li>Find the distance between the following pairs of points.
-<ol type="i">
-<li>\((1, 2)\) and \((4, 3)\)</li>
-<li>\((3, 4)\) and \((-7, 2)\)</li>
-<li>\((a, b)\) and \((c, b)\)</li>
-<li>\((3, -9)\) and \((-2, 3)\)</li>
-</ol></li>
-<li>Determine whether the given set of points in each case are collinear or not.
-<ol type="i">
-<li>\((7, -2), (5, 1), (3, 4)\)</li>
-<li>\((a, -2), (a, 3), (a, 0)\)</li>
-</ol></li>
-<li>Show that the following points taken in order form an isosceles triangle.
-<ol type="i">
-<li>\(A(5, 4)\), \(B(2, 0)\), \(C(-2, 3)\)</li>
-<li>\(A(6, -4)\), \(B(-2, -4)\), \(C(2, 10)\)</li>
-</ol></li>
-</ol>
 </article>
 <nav class="pager"><a class="" data-nav="prev" href="../../05-coordinate-geometry/03-exercise-5.1/index.html"><span class="dir">← Previous</span><span class="t">Exercise 5.1</span><span class="ch">Coordinate Geometry</span></a><a class="nx" data-nav="next" href="../../05-coordinate-geometry/05-exercise-5.2/index.html"><span class="dir">Next →</span><span class="t">Exercise 5.2</span><span class="ch">Coordinate Geometry</span></a></nav>
 </main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>

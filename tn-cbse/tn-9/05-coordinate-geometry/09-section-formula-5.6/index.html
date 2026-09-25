@@ -33,12 +33,22 @@
 <article class="prose">
 <p>We studied bisection and trisection of a given line segment. These are only particular cases of the general problem of dividing a line segment joining two points \((x_1, y_1)\) and \((x_2, y_2)\) in the ratio \(m : n\).</p>
 <p>Given a segment \(AB\) and a positive real number \(r\).</p>
-<figure class="fig"><img src="img/fig-fix-p26-1.webp" alt="Figure from the textbook page" loading="lazy"></figure>
+<figure class="fig"><img src="img/fig-fix-p26-1.webp" alt="Fig. 5.33: points O, A, P, B on a line with coordinates x1, x, x2; AP is r units and PB is 1 unit" loading="lazy"></figure>
 <p>We wish to find the coordinate of point \(P\) which divides \(AB\) in the ratio \(r:1\). This means \(\frac{AP}{PB} = \frac{r}{1}\) or \(AP = r(PB)\).</p>
 <p>This means that \(x - x_1 = r(x_2 - x)\)</p>
 <p>Solving this, \(x = \frac{rx_2 + x_1}{r + 1}\) ….. (1)</p>
 <p>We can use this result for points on a line to the general case as follows.</p>
-<figure class="fig table-fig wide"><img src="img/fig-p2-1.webp" alt="Figure from the textbook page" loading="lazy" width="1149" height="1285"></figure>
+<figure class="fig"><img src="img/fig-fix-p27-1.webp" alt="Fig. 5.34: P(x, y) divides A(x1, y1) and B(x2, y2) in the ratio r : 1, with projections A', P', B' on the x-axis" loading="lazy"></figure>
+<div class="mathblock"><p>Taking \(AP : PB = r:1\), we get \(A'P' : P'B' = r:1\).</p>
+<p>Therefore \(A'P' = r(P'B')\)</p>
+<p>Thus, \((x - x_1) = r(x_2 - x)\)</p>
+<p>which gives \(x = \frac{rx_2 + x_1}{r+1}\) … [see (1)]</p>
+<p>Precisely in the same way we can have \(y = \frac{ry_2 + y_1}{r+1}\)</p></div>
+<p>If \(P\) is between \(A\) and \(B\), and \(\frac{AP}{PB} = r\), then we have the formula,</p>
+<p>\[P \text{ is } \left(\frac{rx_2 + x_1}{r+1}, \frac{ry_2 + y_1}{r+1}\right).\]</p>
+<div class="callout"><p class="callout-title">Thinking Corner</p>
+<p>(i) What happens when \(m = n = 1\)? Can you identify it with a result already proved?</p>
+<p>(ii) \(AP : PB = 1 : 2\) and \(AQ : QB = 2:1\). What is \(AP : AB\)? What is \(AQ : AB\)?</p></div>
 <p>If \(r\) is taken as \(\frac{m}{n}\), then the section formula is \(\left(\frac{mx_2 + nx_1}{m+n}, \frac{my_2 + ny_1}{m+n}\right)\), which is the standard form.</p>
 <div class="callout"><p class="callout-title">Note</p>
 <ul>
@@ -51,18 +61,40 @@
 <h4 class="callout-h" id="s-example-5-17">Example 5.17</h4>
 <p>Find the coordinates of the point which divides the line segment joining the points \((3,5)\) and \((8,-10)\) internally in the ratio 3:2.</p>
 <h4 class="callout-h" id="s-solution">Solution</h4>
-<figure class="fig table-fig wide"><img src="img/fig-p3-1.webp" alt="Figure from the textbook page" loading="lazy" width="874" height="1086"></figure>
+<figure class="fig"><img src="img/fig-fix-p28-1.webp" alt="Fig. 5.35: P(x, y) divides A(3, 5) and B(8, -10) in the ratio 3 : 2" loading="lazy"></figure>
+<p>Let \(A(3,5)\), \(B(8,-10)\) be the given points and let the point \(P(x,y)\) divides the line segment \(AB\) internally in the ratio 3:2.</p>
+<p>By section formula, \(P(x, y) = P\left(\frac{mx_2 + nx_1}{m+n}, \frac{my_2 + ny_1}{m+n}\right)\)</p>
 <p>Here \(x_1 = 3,\ y_1 = 5,\ x_2 = 8,\ y_2 = -10\) and \(m = 3,\ n = 2\)</p>
 <div class="mathblock"><p>Therefore \(P(x, y) = P\left(\frac{3(8)+2(3)}{3+2}, \frac{3(-10)+2(5)}{3+2}\right) = P\left(\frac{24+6}{5}, \frac{-30+10}{5}\right) = P(6, -4)\)</p></div>
-<figure class="fig table-fig wide"><img src="img/fig-p4-1.webp" alt="Figure from the textbook page" loading="lazy" width="1146" height="1323"></figure>
-<p>joining \(A(-3,5)\) and \(B\) internally in the ratio 1:6?</p>
+<h4 class="callout-h" id="s-example-5-18">Example 5.18</h4>
+<p>In what ratio does the point \(P(-2, 4)\) divide the line segment joining the points \(A(-3, 6)\) and \(B(1, -2)\) internally?</p>
+<h4 class="callout-h" id="s-solution-3">Solution</h4>
+<figure class="fig"><img src="img/fig-fix-p29-1.webp" alt="Fig. 5.36: P(-2, 4) divides A(-3, 6) and B(1, -2) in the ratio m : n" loading="lazy"></figure>
+<p>Given points are \(A(-3, 6)\) and \(B(1, -2)\). \(P(-2, 4)\) divide \(AB\) internally in the ratio \(m : n\).</p>
+<p>By section formula,</p>
+<div class="mathblock"><p>\(P(x, y) = P\left(\frac{mx_2 + nx_1}{m+n}, \frac{my_2 + ny_1}{m+n}\right) = P(-2,4)\) …..(1)</p></div>
+<p>Here \(x_1 = -3,\ y_1 = 6,\ x_2 = 1,\ y_2 = -2\)</p>
+<div class="mathblock"><p>\((1) \Rightarrow \left(\frac{m(1)+n(-3)}{m+n}, \frac{m(-2)+n(6)}{m+n}\right) = P(-2,4)\)</p></div>
+<p>Equating \(x\)-coordinates, we get</p>
+<div class="mathblock"><p>\(\frac{m-3n}{m+n} = -2\) or \(m - 3n = -2m - 2n\)</p>
+<p>\(3m = n\)</p>
+<p>\(\frac{m}{n} = \frac{1}{3}\)</p>
+<p>\(m : n = 1:3\)</p></div>
+<p>Hence \(P\) divides \(AB\) internally in the ratio 1:3.</p>
+<div class="callout"><p class="callout-title">Note</p>
+<p>We may arrive at the same result by also equating the y-coordinates.</p>
+<p>Try it.</p></div>
+<h4 class="callout-h" id="s-example-5-19">Example 5.19</h4>
+<p>What are the coordinates of \(B\) if point \(P(-2,3)\) divides the line segment joining \(A(-3,5)\) and \(B\) internally in the ratio 1:6?</p>
 <h4 class="callout-h" id="s-solution-2">Solution</h4>
 <p>Let \(A(-3,5)\) and \(B(x_2, y_2)\) be the given two points.</p>
 <p>Given \(P(-2,3)\) divides \(AB\) internally in the ratio 1:6.</p>
 <div class="mathblock"><p>By section formula, \(P\left(\frac{mx_2 + nx_1}{m+n}, \frac{my_2 + ny_1}{m+n}\right) = P(-2,3)\)</p>
 <p>\(P\left(\frac{1(x_2)+6(-3)}{1+6}, \frac{1(y_2)+6(5)}{1+6}\right) = P(-2,3)\)</p></div>
 <p>Equating the coordinates</p>
-<figure class="fig table-fig"><img src="img/fig-p5-1.webp" alt="Figure from the textbook page" loading="lazy" width="700" height="196"></figure>
+<div class="mathblock"><p>\(\frac{x_2 - 18}{7} = -2\) &nbsp;&nbsp;&nbsp;&nbsp; \(\frac{y_2 + 30}{7} = 3\)</p>
+<p>\(x_2 - 18 = -14\) &nbsp;&nbsp;&nbsp;&nbsp; \(y_2 + 30 = 21\)</p>
+<p>\(x_2 = 4\) &nbsp;&nbsp;&nbsp;&nbsp; \(y_2 = -9\)</p></div>
 <p>Therefore, the coordinate of \(B\) is \((4,-9)\)</p>
 </article>
 <nav class="pager"><a class="" data-nav="prev" href="../../05-coordinate-geometry/08-points-of-trisection-of-a-line-segment-5.5/index.html"><span class="dir">← Previous</span><span class="t">5.5 Points of Trisection of a Line Segment</span><span class="ch">Coordinate Geometry</span></a><a class="nx" data-nav="next" href="../../05-coordinate-geometry/10-exercise-5.4/index.html"><span class="dir">Next →</span><span class="t">Exercise 5.4</span><span class="ch">Coordinate Geometry</span></a></nav>
