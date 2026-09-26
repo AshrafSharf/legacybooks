@@ -25,7 +25,7 @@ BOOKS = {
 }
 KATEX = "https://cdn.jsdelivr.net/npm/katex@0.16.9/dist"
 SEARCH = 'assets/search.js?v=1789782771'
-SHOT = 'assets/screenshot.js?v=2'
+SHOT = 'assets/screenshot.js?v=3'
 SMALL = {"a", "an", "and", "as", "at", "by", "for", "in", "of", "on", "or", "the", "to", "with"}
 
 

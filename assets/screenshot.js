@@ -1,5 +1,5 @@
 /*  Legacy Books — full-page screenshot download
-    Adds a camera FAB that captures the entire page as PNG via html2canvas.  */
+    Adds a camera FAB that captures the entire page as JPEG via html2canvas.  */
 (function () {
   'use strict';
 
@@ -65,6 +65,7 @@
         windowHeight: document.documentElement.scrollHeight,
         useCORS: true,
         allowTaint: true,
+        backgroundColor: '#ffffff',
         scale: 2,
         ignoreElements: function (el) {
           return el.classList && (
@@ -76,11 +77,20 @@
         },
       }).then(function (canvas) {
         var title = document.title.replace(/[^a-zA-Z0-9 _-]/g, '').trim().replace(/\s+/g, '-') || 'page';
-        var link = document.createElement('a');
-        link.download = title + '.png';
-        link.href = canvas.toDataURL('image/png');
-        link.click();
-        toast('Screenshot saved!');
+        // JPEG, not PNG: a full-page capture at 2x is huge losslessly
+        return new Promise(function (resolve, reject) {
+          canvas.toBlob(function (blob) {
+            if (!blob) { reject(new Error('toBlob returned null')); return; }
+            var url = URL.createObjectURL(blob);
+            var link = document.createElement('a');
+            link.download = title + '.jpg';
+            link.href = url;
+            link.click();
+            setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+            toast('Screenshot saved!');
+            resolve();
+          }, 'image/jpeg', 0.85);
+        });
       }).catch(function (err) {
         console.error('Screenshot error:', err);
         toast('Screenshot failed — try again');
@@ -95,7 +105,7 @@
     var fab = document.createElement('button');
     fab.className = 'lb-screenshot-fab';
     fab.setAttribute('aria-label', 'Download page as image');
-    fab.title = 'Download page as PNG';
+    fab.title = 'Download page as JPEG';
     fab.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>';
     fab.addEventListener('click', capture);
     document.body.appendChild(fab);
