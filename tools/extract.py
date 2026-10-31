@@ -103,6 +103,43 @@ def clean_ws(s):
     return re.sub(r'\s+', ' ', s).strip()
 
 
+# Symbol / Wingdings fonts put their glyphs in the private-use area (U+F0xx,
+# where xx is the Adobe Symbol code).  Map them back to real characters;
+# big-bracket construction pieces map to "" and are dropped.
+SYMBOL_PUA = {
+    0x20: ' ', 0x28: '(', 0x29: ')', 0x2B: '+', 0x2C: ',', 0x2D: '-', 0x2E: '.',
+    0x2F: '/', 0x3C: '<', 0x3D: '=', 0x3E: '>', 0x40: '≅', 0x44: '∆', 0x53: 'Σ',
+    0x5B: '[', 0x5D: ']', 0x5E: '⊥', 0x61: 'α', 0x62: 'β', 0x67: 'γ', 0x70: 'π',
+    0x71: 'θ', 0x7B: '{', 0x7C: '|', 0x7D: '}', 0xA2: '′', 0xA3: '≤', 0xA5: '∞',
+    0xAB: '↔', 0xAE: '→', 0xB0: '°', 0xB1: '±', 0xB3: '≥', 0xB4: '×', 0xB7: '•',
+    0xB8: '÷', 0xB9: '≠', 0xBA: '≡', 0xBB: '≈', 0xBC: '…', 0xC7: '∩', 0xC8: '∪',
+    0xCE: '∈', 0xD0: '∠', 0xD6: '√', 0xD7: '·', 0xDE: '⇒', 0xE5: 'Σ',
+}
+SYMBOL_PUA.update({c: '' for c in range(0xE6, 0xF0)})
+SYMBOL_PUA.update({c: '' for c in range(0xF1, 0xFF)})
+SYMBOL_PUA.update({c: chr(c) for c in range(0x30, 0x3A)})      # digits
+
+
+def fix_glyphs(text, font):
+    if not any(0xF000 <= ord(c) <= 0xF0FF for c in text):
+        return text
+    f = font.lower()
+    out = []
+    for c in text:
+        o = ord(c)
+        if 0xF000 <= o <= 0xF0FF:
+            code = o - 0xF000
+            if "wingding" in f or "dingbat" in f:
+                out.append('•' if code in (0x6C, 0x6E, 0xA7, 0xA8) else '')
+            elif "extra" in f:
+                out.append('')
+            else:
+                out.append(SYMBOL_PUA.get(code, ''))
+        else:
+            out.append(c)
+    return ''.join(out)
+
+
 # ---------------------------------------------------------------- span layer
 def collect_spans(page):
     out = []
@@ -114,6 +151,7 @@ def collect_spans(page):
             if abs(d[1]) > 0.2:          # rotated / vertical text (spine labels)
                 continue
             for s in line["spans"]:
+                s["text"] = fix_glyphs(s["text"], s["font"])
                 if not s["text"].strip():
                     continue
                 r = pymupdf.Rect(s["bbox"])
@@ -285,7 +323,27 @@ def fuse_fractions(spans, bars, body):
 # ------------------------------------------------------------------ line pass
 def build_lines(spans, body):
     """Group spans into visual lines, applying sup/sub and math markers."""
-    spans = sorted(spans, key=lambda s: (round(s["bbox"].y1, 1), s["bbox"].x0))
+    # a small raised/lowered span (exponent, subscript) sorts with the
+    # full-size span it hangs off, so it stays on that span's line
+    for s in spans:
+        s["ky"] = s["bbox"].y1
+        if s["size"] >= 0.85 * body:
+            continue
+        best = None
+        for t in spans:
+            if t is s or t["size"] < 0.95 * body:
+                continue
+            tb, sb = t["bbox"], s["bbox"]
+            if tb.x1 < sb.x0 - 4 or tb.x0 > sb.x1 + 4:
+                continue
+            if not (sb.y1 > tb.y0 + 0.2 * tb.height and sb.y0 < tb.y1 - 0.2 * tb.height):
+                continue
+            d = abs(sb.x0 - tb.x1)
+            if best is None or d < best[0]:
+                best = (d, tb.y1)
+        if best:
+            s["ky"] = best[1]
+    spans = sorted(spans, key=lambda s: (round(s["ky"], 1), s["bbox"].x0))
     lines, cur = [], []
     for s in spans:
         if not cur:
@@ -293,7 +351,7 @@ def build_lines(spans, body):
             continue
         prev = cur[-1]
         tol = max(3.0, 0.45 * min(prev["bbox"].height, s["bbox"].height))
-        same = abs(s["bbox"].y1 - prev["bbox"].y1) <= tol or (
+        same = abs(s["ky"] - prev["ky"]) <= tol or (
             s["bbox"].y0 < prev["bbox"].y1 - 0.45 * prev["bbox"].height
             and s["bbox"].y1 > prev["bbox"].y0 + 0.45 * prev["bbox"].height
             and abs(s["size"] - prev["size"]) < 0.1)
@@ -498,11 +556,21 @@ def page_items(page, pno, body, imgdir, imgprefix, drop_margins=True):
     PA = W * H
     spans = collect_spans(page)
 
+    # running heads on pages cropped to odd heights: a small ALL-CAPS run
+    # near the top marks the head row; caps words and the page number on
+    # that row are dropped wherever the row sits
+    head_rows = [s["bbox"].y0 for s in spans
+                 if drop_margins and s["bbox"].y1 < max(0.2 * H, 100) and s["size"] <= body + 0.6
+                 and re.fullmatch(r'[A-Z]{3,}( [A-Z]+)*', s["text"].strip())]
+
     kept = []
     for s in spans:
         t = s["text"].strip()
         r = s["bbox"]
         if JUNK_RE.search(t):
+            continue
+        if head_rows and re.fullmatch(r'[A-Z ]+|\d{1,3}', t) and \
+                any(abs(r.y0 - y) < 3 for y in head_rows):
             continue
         if drop_margins and ((r.y1 < 0.088 * H) or (r.y0 > 0.905 * H)):
             if s["size"] <= body + 0.6 or RUNNING_HEAD_RE.match(t) or len(t) < 4:

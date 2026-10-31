@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>1.2 The Fundamental Theorem of Arithmetic — Real Numbers</title>
+<meta name="description" content="Class 10 Mathematics · Real Numbers · 1.2 The Fundamental Theorem of Arithmetic">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="../../../assets/book.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 10 Mathematics</a></span>
+    <span class="c2">Real Numbers · 1.2 The Fundamental Theorem of Arithmetic</span>
+  </div>
+  <a class="tb-btn" data-nav="prev" href="../../01-real-numbers/01-introduction-1.1/index.html" title="1.1 Introduction">←</a>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary>
+<div class="drawer-panel"><div class="dh">Real Numbers</div><a href="../01-introduction-1.1/index.html">1.1 Introduction</a><a href="../02-the-fundamental-theorem-of-arithmetic-1.2/index.html" aria-current="page">1.2 The Fundamental Theorem of Arithmetic</a><a href="../03-exercise-1.1/index.html">Exercise 1.1</a><a href="../04-revisiting-irrational-numbers-1.3/index.html">1.3 Revisiting Irrational Numbers</a><a href="../05-exercise-1.2/index.html">Exercise 1.2</a><a href="../06-summary-1.4/index.html">1.4 Summary</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../01-real-numbers/03-exercise-1.1/index.html" title="Exercise 1.1">→</a>
+  <button class="tb-btn" data-theme-toggle title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<div class="progress"><span style="width:2.0%"></span></div>
+</header>
+<main class="wrap">
+<div class="sec-head">
+  <p class="eyebrow"><a href="../index.html">Chapter 1 · Real Numbers</a></p>
+  <h1>1.2 The Fundamental Theorem of Arithmetic</h1>
+  <p class="sec-meta">2 figures</p>
+</div>
+<article class="prose">
+<p>In your earlier classes, you have seen that any natural number can be written as a product of its prime factors. For instance, \(2 = 2\), \(4 = 2 \times 2\), \(253 = 11 \times 23\), and so on. Now, let us try and look at natural numbers from the other direction. That is, can any natural number be obtained by multiplying prime numbers? Let us see.</p>
+<p>Take any collection of prime numbers, say 2, 3, 7, 11 and 23. If we multiply some or all of these numbers, allowing them to repeat as many times as we wish, we can produce a large collection of positive integers (In fact, infinitely many). Let us list a few :</p>
+<div class="mathblock"><p>\(7 \times 11 \times 23 = 1771\) &emsp; \(3 \times 7 \times 11 \times 23 = 5313\)</p></div>
+<div class="mathblock"><p>\(2 \times 3 \times 7 \times 11 \times 23 = 10626\) &emsp; \(2^{3} \times 3 \times 7^{3} = 8232\)</p></div>
+<div class="mathblock"><p>\(2^{2} \times 3 \times 7 \times 11 \times 23 = 21252\)</p></div>
+<p>and so on.</p>
+<figure class="fig side-fig"><img src="img/factor-tree.webp" alt="Factor tree of 32760: 2, 2, 2, 3, 3, 5, 7 and 13" loading="lazy" width="772" height="899"></figure>
+<p>Now, let us suppose your collection of primes includes all the possible primes. What is your guess about the size of this collection? Does it contain only a finite number of integers, or infinitely many? Infact, there are infinitely many primes. So, if we combine all these primes in all possible ways, we will get an infinite collection of numbers, all the primes and all possible products of primes. The question is – can we produce all the composite numbers this way? What do you think? Do you think that there may be a composite number which is not the product of powers of primes? Before we answer this, let us factorise positive integers, that is, do the opposite of what we have done so far.</p>
+<p>We are going to use the factor tree with which you are all familiar. Let us take some large number, say, 32760, and factorise it as shown.</p>
+<p>So we have factorised 32760 as \(2 \times 2 \times 2 \times 3 \times 3 \times 5 \times 7 \times 13\) as a product of primes, i.e., \(32760 = 2^{3} \times 3^{2} \times 5 \times 7 \times 13\) as a product of powers of primes. Let us try another number, say, 123456789. This can be written as \(3^{2} \times 3803 \times 3607\). Of course, you have to check that 3803 and 3607 are primes! (Try it out for several other natural numbers yourself.) This leads us to a conjecture that every composite number can be written as the product of powers of primes. In fact, this statement is true, and is called the <strong>Fundamental Theorem of Arithmetic</strong> because of its basic crucial importance to the study of integers. Let us now formally state this theorem.</p>
+<p><strong>Theorem 1.1 (Fundamental Theorem of Arithmetic) :</strong> <em>Every composite number can be expressed (factorised) as a product of primes, and this factorisation is unique, apart from the order in which the prime factors occur.</em></p>
+<figure class="fig side-fig"><img src="img/gauss.webp" alt="Portrait of Carl Friedrich Gauss" loading="lazy" width="556" height="703"><figcaption>Carl Friedrich Gauss (1777 – 1855)</figcaption></figure>
+<aside class="sidenote"><p>An equivalent version of Theorem 1.2 was probably first recorded as Proposition 14 of Book IX in Euclid’s Elements, before it came to be known as the Fundamental Theorem of Arithmetic. However, the first correct proof was given by Carl Friedrich Gauss in his <em>Disquisitiones Arithmeticae</em>.</p><p>Carl Friedrich Gauss is often referred to as the ‘Prince of Mathematicians’ and is considered one of the three greatest mathematicians of all time, along with Archimedes and Newton. He has made fundamental contributions to both mathematics and science.</p></aside>
+<p>The Fundamental Theorem of Arithmetic says that every composite number can be factorised as a product of primes. Actually it says more. It says that given any composite number it can be factorised as a product of prime numbers in a <strong>‘unique’</strong> way, except for the order in which the primes occur. That is, given any composite number there is one and only one way to write it as a product of primes, as long as we are not particular about the order in which the primes occur. So, for example, we regard \(2 \times 3 \times 5 \times 7\) as the same as \(3 \times 5 \times 7 \times 2\), or any other possible order in which these primes are written. This fact is also stated in the following form:</p>
+<p><em>The prime factorisation of a natural number is unique, except for the order of its factors.</em></p>
+<p>In general, given a composite number <em>x</em>, we factorise it as \(x = p_{1}p_{2} \ldots p_{n}\), where \(p_{1}, p_{2}, \ldots, p_{n}\) are primes and written in ascending order, i.e., \(p_{1} \le p_{2} \le \ldots \le p_{n}\). If we combine the same primes, we will get powers of primes. For example,</p>
+<div class="mathblock"><p>\(32760 = 2 \times 2 \times 2 \times 3 \times 3 \times 5 \times 7 \times 13 = 2^{3} \times 3^{2} \times 5 \times 7 \times 13\)</p></div>
+<p>Once we have decided that the order will be ascending, then the way the number is factorised, is unique.</p>
+<p>The Fundamental Theorem of Arithmetic has many applications, both within mathematics and in other fields. Let us look at some examples.</p>
+<h4 class="callout-h">Example 1 :</h4>
+<p>Consider the numbers \(4^{n}\), where <em>n</em> is a natural number. Check whether there is any value of <em>n</em> for which \(4^{n}\) ends with the digit zero.</p>
+<h4 class="callout-h">Solution :</h4>
+<p>If the number \(4^{n}\), for any <em>n</em>, were to end with the digit zero, then it would be divisible by 5. That is, the prime factorisation of \(4^{n}\) would contain the prime 5. This is not possible because \(4^{n} = (2)^{2n}\); so the only prime in the factorisation of \(4^{n}\) is 2. So, the uniqueness of the Fundamental Theorem of Arithmetic guarantees that there are no other primes in the factorisation of \(4^{n}\). So, there is no natural number <em>n</em> for which \(4^{n}\) ends with the digit zero.</p>
+<p>You have already learnt how to find the HCF and LCM of two positive integers using the Fundamental Theorem of Arithmetic in earlier classes, without realising it! This method is also called the prime factorisation method. Let us recall this method through an example.</p>
+<h4 class="callout-h">Example 2 :</h4>
+<p>Find the LCM and HCF of 6 and 20 by the prime factorisation method.</p>
+<h4 class="callout-h">Solution :</h4>
+<p>We have : \(6 = 2^{1} \times 3^{1}\) and \(20 = 2 \times 2 \times 5 = 2^{2} \times 5^{1}\).</p>
+<p>You can find \(\text{HCF}(6, 20) = 2\) and \(\text{LCM}(6, 20) = 2 \times 2 \times 3 \times 5 = 60\), as done in your earlier classes.</p>
+<p>Note that \(\text{HCF}(6, 20) = 2^{1}\) = <strong>Product of the smallest power of each common prime factor in the numbers.</strong></p>
+<p>\(\text{LCM}(6, 20) = 2^{2} \times 3^{1} \times 5^{1}\) = <strong>Product of the greatest power of each prime factor, involved in the numbers.</strong></p>
+<p>From the example above, you might have noticed that \(\text{HCF}(6, 20) \times \text{LCM}(6, 20) = 6 \times 20\). In fact, we can verify that <strong>for any two positive integers <em>a</em> and <em>b</em>, \(\text{HCF}(a, b) \times \text{LCM}(a, b) = a \times b\).</strong> We can use this result to find the LCM of two positive integers, if we have already found the HCF of the two positive integers.</p>
+<h4 class="callout-h">Example 3 :</h4>
+<p>Find the HCF of 96 and 404 by the prime factorisation method. Hence, find their LCM.</p>
+<h4 class="callout-h">Solution :</h4>
+<p>The prime factorisation of 96 and 404 gives :</p>
+<div class="mathblock"><p>\(96 = 2^{5} \times 3, \quad 404 = 2^{2} \times 101\)</p></div>
+<p>Therefore, the HCF of these two integers is \(2^{2} = 4\).</p>
+<div class="mathblock"><p>Also, \(\text{LCM}(96, 404) = \dfrac{96 \times 404}{\text{HCF}(96, 404)} = \dfrac{96 \times 404}{4} = 9696\)</p></div>
+<h4 class="callout-h">Example 4 :</h4>
+<p>Find the HCF and LCM of 6, 72 and 120, using the prime factorisation method.</p>
+<h4 class="callout-h">Solution :</h4>
+<p>We have :</p>
+<div class="mathblock"><p>\(6 = 2 \times 3, \quad 72 = 2^{3} \times 3^{2}, \quad 120 = 2^{3} \times 3 \times 5\)</p></div>
+<p>Here, \(2^{1}\) and \(3^{1}\) are the smallest powers of the common factors 2 and 3, respectively.</p>
+<div class="mathblock"><p>So, \(\text{HCF}(6, 72, 120) = 2^{1} \times 3^{1} = 2 \times 3 = 6\)</p></div>
+<p>\(2^{3}\), \(3^{2}\) and \(5^{1}\) are the greatest powers of the prime factors 2, 3 and 5 respectively involved in the three numbers.</p>
+<div class="mathblock"><p>So, \(\text{LCM}(6, 72, 120) = 2^{3} \times 3^{2} \times 5^{1} = 360\)</p></div>
+<p><strong>Remark :</strong> Notice, \(6 \times 72 \times 120 \ne \text{HCF}(6, 72, 120) \times \text{LCM}(6, 72, 120)\). So, the product of three numbers is not equal to the product of their HCF and LCM.</p>
+</article>
+<nav class="pager"><a class="" data-nav="prev" href="../../01-real-numbers/01-introduction-1.1/index.html"><span class="dir">← Previous</span><span class="t">1.1 Introduction</span><span class="ch">Real Numbers</span></a><a class="nx" data-nav="next" href="../../01-real-numbers/03-exercise-1.1/index.html"><span class="dir">Next →</span><span class="t">Exercise 1.1</span><span class="ch">Real Numbers</span></a></nav>
+</main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'\\(',right:'\\)',display:false},
+    {left:'$$',right:'$$',display:true},
+    {left:'\\[',right:'\\]',display:true}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']})"></script>
+<script src="../../../assets/book.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=3"></script>
+</body>
+</html>

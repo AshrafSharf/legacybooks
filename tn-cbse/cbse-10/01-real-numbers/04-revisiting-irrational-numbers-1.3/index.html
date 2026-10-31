@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>1.3 Revisiting Irrational Numbers — Real Numbers</title>
+<meta name="description" content="Class 10 Mathematics · Real Numbers · 1.3 Revisiting Irrational Numbers">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="../../../assets/book.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 10 Mathematics</a></span>
+    <span class="c2">Real Numbers · 1.3 Revisiting Irrational Numbers</span>
+  </div>
+  <a class="tb-btn" data-nav="prev" href="../../01-real-numbers/03-exercise-1.1/index.html" title="Exercise 1.1">←</a>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary>
+<div class="drawer-panel"><div class="dh">Real Numbers</div><a href="../01-introduction-1.1/index.html">1.1 Introduction</a><a href="../02-the-fundamental-theorem-of-arithmetic-1.2/index.html">1.2 The Fundamental Theorem of Arithmetic</a><a href="../03-exercise-1.1/index.html">Exercise 1.1</a><a href="../04-revisiting-irrational-numbers-1.3/index.html" aria-current="page">1.3 Revisiting Irrational Numbers</a><a href="../05-exercise-1.2/index.html">Exercise 1.2</a><a href="../06-summary-1.4/index.html">1.4 Summary</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../01-real-numbers/05-exercise-1.2/index.html" title="Exercise 1.2">→</a>
+  <button class="tb-btn" data-theme-toggle title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<div class="progress"><span style="width:4.1%"></span></div>
+</header>
+<main class="wrap">
+<div class="sec-head">
+  <p class="eyebrow"><a href="../index.html">Chapter 1 · Real Numbers</a></p>
+  <h1>1.3 Revisiting Irrational Numbers</h1>
+  <p class="sec-meta"></p>
+</div>
+<article class="prose">
+<p>In Class IX, you were introduced to irrational numbers and many of their properties. You studied about their existence and how the rationals and the irrationals together made up the real numbers. You even studied how to locate irrationals on the number line. However, we did not prove that they were irrationals. In this section, we will prove that \(\sqrt{2}\), \(\sqrt{3}\), \(\sqrt{5}\) and, in general, \(\sqrt{p}\) is irrational, where <em>p</em> is a prime. One of the theorems, we use in our proof, is the Fundamental Theorem of Arithmetic.</p>
+<p>Recall, a number ‘<em>s</em>’ is called <em>irrational</em> if it cannot be written in the form \(\frac{p}{q}\), where <em>p</em> and <em>q</em> are integers and \(q \ne 0\). Some examples of irrational numbers, with which you are already familiar, are :</p>
+<div class="mathblock"><p>\(\sqrt{2},\ \sqrt{3},\ \sqrt{15},\ \pi,\ -\dfrac{\sqrt{2}}{\sqrt{3}},\ 0.10110111011110\ldots\), etc.</p></div>
+<p>Before we prove that \(\sqrt{2}\) is irrational, we need the following theorem, whose proof is based on the Fundamental Theorem of Arithmetic.</p>
+<p><strong>Theorem 1.2 :</strong> <em>Let p be a prime number. If p divides \(a^{2}\), then p divides a, where a is a positive integer.</em></p>
+<h4 class="callout-h">*Proof :</h4>
+<p>Let the prime factorisation of <em>a</em> be as follows :</p>
+<div class="mathblock"><p>\(a = p_{1}p_{2} \ldots p_{n}\), where \(p_{1}, p_{2}, \ldots, p_{n}\) are primes, not necessarily distinct.</p></div>
+<div class="mathblock"><p>Therefore, \(a^{2} = (p_{1}p_{2} \ldots p_{n})(p_{1}p_{2} \ldots p_{n}) = p_{1}^{2}p_{2}^{2} \ldots p_{n}^{2}\).</p></div>
+<p>Now, we are given that <em>p</em> divides \(a^{2}\). Therefore, from the Fundamental Theorem of Arithmetic, it follows that <em>p</em> is one of the prime factors of \(a^{2}\). However, using the uniqueness part of the Fundamental Theorem of Arithmetic, we realise that the only prime factors of \(a^{2}\) are \(p_{1}, p_{2}, \ldots, p_{n}\). So <em>p</em> is one of \(p_{1}, p_{2}, \ldots, p_{n}\).</p>
+<p>Now, since \(a = p_{1}p_{2} \ldots p_{n}\), <em>p</em> divides <em>a</em>.</p>
+<p>We are now ready to give a proof that \(\sqrt{2}\) is irrational.</p>
+<p>The proof is based on a technique called ‘proof by contradiction’. (This technique is discussed in some detail in Appendix 1).</p>
+<p><strong>Theorem 1.3 :</strong> <em>\(\sqrt{2}\) is irrational.</em></p>
+<h4 class="callout-h">Proof :</h4>
+<p>Let us assume, to the contrary, that \(\sqrt{2}\) is rational.</p>
+<p>So, we can find integers <em>r</em> and \(s\ (\ne 0)\) such that \(\sqrt{2} = \frac{r}{s}\).</p>
+<p>Suppose <em>r</em> and <em>s</em> have a common factor other than 1. Then, we divide by the common factor to get \(\sqrt{2} = \frac{a}{b}\), where <em>a</em> and <em>b</em> are coprime.</p>
+<p>So, \(b\sqrt{2} = a\).</p>
+<p>Squaring on both sides and rearranging, we get \(2b^{2} = a^{2}\). Therefore, 2 divides \(a^{2}\).</p>
+<p>Now, by Theorem 1.2, it follows that 2 divides <em>a</em>.</p>
+<p>So, we can write \(a = 2c\) for some integer <em>c</em>.</p>
+<p>Substituting for <em>a</em>, we get \(2b^{2} = 4c^{2}\), that is, \(b^{2} = 2c^{2}\).</p>
+<p>This means that 2 divides \(b^{2}\), and so 2 divides <em>b</em> (again using Theorem 1.2 with \(p = 2\)).</p>
+<p>Therefore, <em>a</em> and <em>b</em> have at least 2 as a common factor.</p>
+<p>But this contradicts the fact that <em>a</em> and <em>b</em> have no common factors other than 1.</p>
+<p>This contradiction has arisen because of our incorrect assumption that \(\sqrt{2}\) is rational.</p>
+<p>So, we conclude that \(\sqrt{2}\) is irrational.</p>
+<h4 class="callout-h">Example 5 :</h4>
+<p>Prove that \(\sqrt{3}\) is irrational.</p>
+<h4 class="callout-h">Solution :</h4>
+<p>Let us assume, to the contrary, that \(\sqrt{3}\) is rational.</p>
+<p>That is, we can find integers <em>a</em> and \(b\ (\ne 0)\) such that \(\sqrt{3} = \frac{a}{b}\).</p>
+<p>Suppose <em>a</em> and <em>b</em> have a common factor other than 1, then we can divide by the common factor, and assume that <em>a</em> and <em>b</em> are coprime.</p>
+<p>So, \(b\sqrt{3} = a\).</p>
+<p>Squaring on both sides, and rearranging, we get \(3b^{2} = a^{2}\).</p>
+<p>Therefore, \(a^{2}\) is divisible by 3, and by Theorem 1.2, it follows that <em>a</em> is also divisible by 3.</p>
+<p>So, we can write \(a = 3c\) for some integer <em>c</em>.</p>
+<p>Substituting for <em>a</em>, we get \(3b^{2} = 9c^{2}\), that is, \(b^{2} = 3c^{2}\).</p>
+<p>This means that \(b^{2}\) is divisible by 3, and so <em>b</em> is also divisible by 3 (using Theorem 1.2 with \(p = 3\)).</p>
+<p>Therefore, <em>a</em> and <em>b</em> have at least 3 as a common factor.</p>
+<p>But this contradicts the fact that <em>a</em> and <em>b</em> are coprime.</p>
+<p>This contradiction has arisen because of our incorrect assumption that \(\sqrt{3}\) is rational.</p>
+<p>So, we conclude that \(\sqrt{3}\) is irrational.</p>
+<p>In Class IX, we mentioned that :</p>
+<ul class="qlist"><li><span class="mk">•</span><span class="lt">the sum or difference of a rational and an irrational number is irrational and</span></li><li><span class="mk">•</span><span class="lt">the product and quotient of a non-zero rational and irrational number is irrational.</span></li></ul>
+<p>We prove some particular cases here.</p>
+<h4 class="callout-h">Example 6 :</h4>
+<p>Show that \(5 - \sqrt{3}\) is irrational.</p>
+<h4 class="callout-h">Solution :</h4>
+<p>Let us assume, to the contrary, that \(5 - \sqrt{3}\) is rational.</p>
+<p>That is, we can find coprime <em>a</em> and \(b\ (b \ne 0)\) such that \(5 - \sqrt{3} = \frac{a}{b}\).</p>
+<p>Therefore, \(5 - \frac{a}{b} = \sqrt{3}\).</p>
+<p>Rearranging this equation, we get \(\sqrt{3} = 5 - \frac{a}{b} = \frac{5b - a}{b}\).</p>
+<p>Since <em>a</em> and <em>b</em> are integers, we get \(5 - \frac{a}{b}\) is rational, and so \(\sqrt{3}\) is rational.</p>
+<p>But this contradicts the fact that \(\sqrt{3}\) is irrational.</p>
+<p>This contradiction has arisen because of our incorrect assumption that \(5 - \sqrt{3}\) is rational.</p>
+<p>So, we conclude that \(5 - \sqrt{3}\) is irrational.</p>
+<h4 class="callout-h">Example 7 :</h4>
+<p>Show that \(3\sqrt{2}\) is irrational.</p>
+<h4 class="callout-h">Solution :</h4>
+<p>Let us assume, to the contrary, that \(3\sqrt{2}\) is rational.</p>
+<p>That is, we can find coprime <em>a</em> and \(b\ (b \ne 0)\) such that \(3\sqrt{2} = \frac{a}{b}\).</p>
+<p>Rearranging, we get \(\sqrt{2} = \frac{a}{3b}\).</p>
+<p>Since 3, <em>a</em> and <em>b</em> are integers, \(\frac{a}{3b}\) is rational, and so \(\sqrt{2}\) is rational.</p>
+<p>But this contradicts the fact that \(\sqrt{2}\) is irrational.</p>
+<p>So, we conclude that \(3\sqrt{2}\) is irrational.</p>
+<p class="footnote">* Not from the examination point of view.</p>
+</article>
+<nav class="pager"><a class="" data-nav="prev" href="../../01-real-numbers/03-exercise-1.1/index.html"><span class="dir">← Previous</span><span class="t">Exercise 1.1</span><span class="ch">Real Numbers</span></a><a class="nx" data-nav="next" href="../../01-real-numbers/05-exercise-1.2/index.html"><span class="dir">Next →</span><span class="t">Exercise 1.2</span><span class="ch">Real Numbers</span></a></nav>
+</main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'\\(',right:'\\)',display:false},
+    {left:'$$',right:'$$',display:true},
+    {left:'\\[',right:'\\]',display:true}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']})"></script>
+<script src="../../../assets/book.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=3"></script>
+</body>
+</html>

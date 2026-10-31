@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>5.3 Nth Term of an Ap — Arithmetic Progressions</title>
+<meta name="description" content="Class 10 Mathematics · Arithmetic Progressions · 5.3 Nth Term of an Ap">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="../../../assets/book.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 10 Mathematics</a></span>
+    <span class="c2">Arithmetic Progressions · 5.3 Nth Term of an Ap</span>
+  </div>
+  <a class="tb-btn" data-nav="prev" href="../../05-arithmetic-progressions/03-exercise-5.1/index.html" title="Exercise 5.1">←</a>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary>
+<div class="drawer-panel"><div class="dh">Arithmetic Progressions</div><a href="../01-introduction-5.1/index.html">5.1 Introduction</a><a href="../02-arithmetic-progressions-5.2/index.html">5.2 Arithmetic Progressions</a><a href="../03-exercise-5.1/index.html">Exercise 5.1</a><a href="../04-nth-term-of-an-ap-5.3/index.html" aria-current="page">5.3 Nth Term of an Ap</a><a href="../05-exercise-5.2/index.html">Exercise 5.2</a><a href="../06-sum-of-first-n-terms-of-an-ap-5.4/index.html">5.4 Sum of First N Terms of an Ap</a><a href="../07-exercise-5.3/index.html">Exercise 5.3</a><a href="../08-exercise-5.4/index.html">Exercise 5.4</a><a href="../09-summary-5.5/index.html">5.5 Summary</a><a href="../10-a-note-to-the-reader/index.html">A Note to the Reader</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../05-arithmetic-progressions/05-exercise-5.2/index.html" title="Exercise 5.2">→</a>
+  <button class="tb-btn" data-theme-toggle title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<div class="progress"><span style="width:33.7%"></span></div>
+</header>
+<main class="wrap">
+<div class="sec-head">
+  <p class="eyebrow"><a href="../index.html">Chapter 5 · Arithmetic Progressions</a></p>
+  <h1>5.3 Nth Term of an Ap</h1>
+  <p class="sec-meta">1 figure</p>
+</div>
+<article class="prose">
+<h3 id="s-th-term-of-an-ap">th Term of an AP</h3>
+<p>job and got selected. She has been offered the job with a starting monthly salary of ` 8000, with an annual increment of ` 500. What would be her monthly salary for the fifth year? To answer this, let us first see what her monthly salary for the second year would be. It would be ` \((8000 + 500) =\) ` 8500. In the same way, we can find the monthly salary for the 3rd, 4th and 5th year by adding ` 500 to the salary of the previous year. So, the salary for the 3rd year = ` \((8500 + 500)\)</p>
+<div class="mathblock"><p>= ` \((8000 + 500 + 500) =\) ` \((8000 + 2 \times 500)\)</p></div>
+<p>= ` \([8000 + (3 - 1) \times 500]\) (for the 3rd year)</p>
+<div class="mathblock"><p>= ` 9000</p></div>
+<p>Salary for the 4th year = ` \((9000 + 500)\)</p>
+<div class="mathblock"><p>= ` \((8000 + 500 + 500 + 500) =\) ` \((8000 + 3 \times 500)\)</p></div>
+<p>= ` \([8000 + (4 - 1) \times 500]\) (for the 4th year)</p>
+<div class="mathblock"><p>= ` 9500</p></div>
+<p>Salary for the 5th year = ` \((9500 + 500)\)</p>
+<div class="mathblock"><p>= ` \((8000+500+500+500 + 500) =\) ` \((8000 + 4 \times 500)\)</p></div>
+<p>= ` \([8000 + (5 - 1) \times 500]\) (for the 5th year)</p>
+<div class="mathblock"><p>= ` 10000</p></div>
+<p>Observe that we are getting a list of numbers</p>
+<p>8000, 8500, 9000, 9500, 10000, . . .</p>
+<p>These numbers are in AP. (Why?)</p>
+<p>Now, looking at the pattern formed above, can you find her monthly salary for the 6th year? The 15th year? And, assuming that she will still be working in the job, what about the monthly salary for the 25th year? You would calculate this by adding ` 500 each time to the salary of the previous year to give the answer. Can we make this process shorter? Let us see. You may have already got some idea from the way we have obtained the salaries above. Salary for the 15th year</p>
+<p>= Salary for the 14th year + ` 500</p>
+<figure class="fig"><img src="img/fig-p2-1.webp" alt="Figure from the textbook page" loading="lazy" width="480" height="65"></figure>
+<div class="mathblock"><p>= ` \([8000 + 14 \times 500]\)</p><p>= ` \([8000 + (15 - 1) \times 500] =\) ` 15000</p></div>
+<p>i.e., First salary \(+ (15 - 1) \times\) Annual increment.</p>
+<p>In the same way, her monthly salary for the 25th year would be</p>
+<div class="mathblock"><p>` \([8000 + (25 - 1) \times 500] =\) ` 20000</p></div>
+<p>= First salary \(+ (25 - 1) \times\) Annual increment</p>
+<p>This example would have given you some idea about how to write the 15th term, or the 25th term, and more generally, the nth term of the AP. Let a_{1}, a_{2}, a_{3}, . . . be an AP whose first term a_{1} is a and the common difference is d.</p>
+<p>Then,</p>
+<p>the second term \(a_{2} = a + d = a + (2 - 1) d\) the third term \(a_{3} = a_{2} + d =\) (a + d) \(+ d = a + 2d = a + (3 - 1) d\) the fourth term \(a_{4} = a_{3} + d =\) (a \(+ 2d) + d = a + 3d = a + (4 - 1) d\)</p>
+<p class="lead">. . . . . . . .</p>
+<p class="lead">. . . . . . . .</p>
+<p>Looking at the pattern, we can say that the nth term \(a_{n} = a +\) (n \(- 1) d\). So, the nth term a_{n} of the AP with first term a and common difference d is</p>
+<div class="mathblock"><p>given by \(a_{n} = a +\) (n \(- 1) d\).</p></div>
+<p>a_{n} is also called the general term of the AP. If there are m terms in the AP, then a_{m} represents the last term which is sometimes also denoted by l. Let us consider some examples.</p>
+<p>Example 3 : Find the 10th term of the AP : 2, 7, 12, . . .</p>
+<p>Solution : Here, \(a = 2\), \(d = 7 - 2 = 5\) and \(n = 10\).</p>
+<div class="mathblock"><p>We have \(a_{n} = a +\) (n \(- 1) d\) So, \(a_{10} = 2 + (10 - 1) \times 5 = 2 + 45 = 47\)</p></div>
+<p>Therefore, the 10th term of the given AP is 47.</p>
+<p>Example 4 : Which term of the AP : 21, 18, 15, . . . is \(- 81\)? Also, is any term 0? Give reason for your answer.</p>
+<p>Solution : Here, \(a = 21\), \(d = 18 - 21 = - 3\) and \(a_{n} = - 81\), and we have to find n.</p>
+<div class="mathblock"><p>As \(a_{n} = a +\) ( \(n - 1) d\), we have \(- 81 = 21 +\) (n \(- 1)( - 3)\)</p><p>\(- 81 = 24 - 3n\)</p><p>\(- 105 = - 3n\)</p><p>So, \(n = 35\)</p></div>
+<p>Therefore, the 35th term of the given AP is \(- 81\).</p>
+<p>Next, we want to know if there is any n for which \(a_{n} = 0\). If such an n is there, then</p>
+<div class="mathblock"><p>\(21 +\) (n \(- 1)\) ( \(- 3) = 0\),</p><p>i.e., \(3(n - 1) = 21\)</p><p>i.e., \(n = 8\)</p></div>
+<p>So, the eighth term is 0.</p>
+<p>Example 5 : Determine the AP whose 3rd term is 5 and the 7th term is 9. Solution : We have</p>
+<div class="mathblock"><p>\(a_{3} = a + (3 - 1) d = a + 2d = 5 (1)\)</p><p>and \(a_{7} = a + (7 - 1) d = a + 6d = 9 (2)\)</p></div>
+<p>Solving the pair of linear equations (1) and (2), we get</p>
+<div class="mathblock"><p>\(a = 3\), \(d = 1\)</p></div>
+<p>Hence, the required AP is 3, 4, 5, 6, 7, . . .</p>
+<p>Example 6 : Check whether 301 is a term of the list of numbers 5, 11, 17, 23, . . . Solution : We have :</p>
+<div class="mathblock"><p>\(a_{2} - a_{1} = 11 - 5 = 6\), \(a_{3} - a_{2} = 17 - 11 = 6\), \(a_{4} - a_{3} = 23 - 17 = 6\)</p></div>
+<p>As \(a_{k} + 1 - a_{k}\) is the same for \(k = 1\), 2, 3, etc., the given list of numbers is an AP. Now, \(a = 5\) and \(d = 6\).</p>
+<p>Let 301 be a term, say, the nth term of this AP.</p>
+<p>We know that</p>
+<div class="mathblock"><p>\(a_{n} = a +\) (n \(- 1) d\)</p><p>So, \(301 = 5 +\) (n \(- 1) \times 6\)</p><p>i.e., \(301 = 6n - 1\)</p><p>So, \(n = \frac{302}{6} = \frac{151}{3}\)</p></div>
+<p>But n should be a positive integer (Why?). So, 301 is not a term of the given list of numbers.</p>
+<p>Example 7 : How many two-digit numbers are divisible by 3? Solution : The list of two-digit numbers divisible by 3 is :</p>
+<p>12, 15, 18, . . . , 99</p>
+<p>Is this an AP? Yes it is. Here, \(a = 12\), \(d = 3\), \(a_{n} = 99\).</p>
+<div class="mathblock"><p>As \(a_{n} = a +\) (n \(- 1) d\), we have \(99 = 12 +\) (n \(- 1) \times 3\)</p><p>i.e., \(87 =\) (n \(- 1) \times 3\)</p><p>i.e., \(n - 1 = \frac{87}{3} = 29\)</p><p>i.e., \(n = 29 + 1 = 30\)</p></div>
+<p>So, there are 30 two-digit numbers divisible by 3.</p>
+<p>Example 8 : Find the 11th term from the last term (towards the first term) of the AP : 10, 7, 4, . . ., \(- 62\).</p>
+<p>Solution : Here, \(a = 10\), \(d = 7 - 10 = - 3\), \(l = - 62\),</p>
+<div class="mathblock"><p>where \(l = a +\) (n \(- 1) d\)</p></div>
+<p>To find the 11th term from the last term, we will find the total number of terms in the AP.</p>
+<div class="mathblock"><p>So, \(- 62 = 10 +\) (n \(- 1)( - 3)\)</p><p>i.e., \(- 72 =\) (n \(- 1)( - 3)\)</p><p>i.e., \(n - 1 = 24\)</p><p>or \(n = 25\)</p></div>
+<p>So, there are 25 terms in the given AP. The 11th term from the last term will be the 15th term. (Note that it will not be the 14th term. Why?)</p>
+<div class="mathblock"><p>So, \(a_{15} = 10 + (15 - 1)( - 3) = 10 - 42 = - 32\)</p></div>
+<p>i.e., the 11th term from the last term is \(- 32\).</p>
+<p>Alternative Solution :</p>
+<p>If we write the given AP in the reverse order, then \(a = - 62\) and \(d = 3\) (Why?) So, the question now becomes finding the 11th term with these a and d.</p>
+<div class="mathblock"><p>So, \(a_{11} = - 62 + (11 - 1) \times 3 = - 62 + 30 = - 32\)</p></div>
+<p>So, the 11th term, which is now the required term, is \(- 32\).</p>
+<p>Example 9 : A sum of ` 1000 is invested at 8% simple interest per year. Calculate the interest at the end of each year. Do these interests form an AP? If so, find the interest at the end of 30 years making use of this fact.</p>
+<p>Solution : We know that the formula to calculate simple interest is given by</p>
+<p>Simple Interest \(= \frac{P \times R \times T}{100}\)</p>
+<p>So, the interest at the end of the 1st year = ` \(\frac{1000 \times 8 \times 1}{100} =\) ` 80 The interest at the end of the 2nd year = ` \(\frac{1000 \times 8 \times 2}{100} =\) ` 160 The interest at the end of the 3rd year = ` \(\frac{1000 \times 8 \times 3}{100} =\) ` 240 Similarly, we can obtain the interest at the end of the 4th year, 5th year, and so on. So, the interest (in `) at the end of the 1st, 2nd, 3rd, . . . years, respectively are</p>
+<p>80, 160, 240, . . .</p>
+<p>It is an AP as the difference between the consecutive terms in the list is 80, i.e.,</p>
+<div class="mathblock"><p>\(d = 80\). Also, \(a = 80\).</p></div>
+<p>So, to find the interest at the end of 30 years, we shall find a_{30}.</p>
+<div class="mathblock"><p>Now, \(a_{30} = a + (30 - 1) d = 80 + 29 \times 80 = 2400\)</p></div>
+<p>So, the interest at the end of 30 years will be ` 2400.</p>
+<p>Example 10 : In a flower bed, there are 23 rose plants in the first row, 21 in the second, 19 in the third, and so on. There are 5 rose plants in the last row. How many rows are there in the flower bed?</p>
+<p>Solution : The number of rose plants in the 1st, 2nd, 3rd, . . ., rows are :</p>
+<p>23, 21, 19, . . ., 5</p>
+<p>It forms an AP (Why?). Let the number of rows in the flower bed be n.</p>
+<div class="mathblock"><p>Then \(a = 23\), \(d = 21 - 23 = - 2\), \(a_{n} = 5\) As, \(a_{n} = a +\) (n \(- 1) d\) We have, \(5 = 23 +\) (n \(- 1)( - 2)\)</p><p>i.e., \(- 18 =\) (n \(- 1)( - 2)\)</p><p>i.e., \(n = 10\)</p></div>
+</article>
+<nav class="pager"><a class="" data-nav="prev" href="../../05-arithmetic-progressions/03-exercise-5.1/index.html"><span class="dir">← Previous</span><span class="t">Exercise 5.1</span><span class="ch">Arithmetic Progressions</span></a><a class="nx" data-nav="next" href="../../05-arithmetic-progressions/05-exercise-5.2/index.html"><span class="dir">Next →</span><span class="t">Exercise 5.2</span><span class="ch">Arithmetic Progressions</span></a></nav>
+</main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'\\(',right:'\\)',display:false},
+    {left:'$$',right:'$$',display:true},
+    {left:'\\[',right:'\\]',display:true}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']})"></script>
+<script src="../../../assets/book.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=3"></script>
+</body>
+</html>
