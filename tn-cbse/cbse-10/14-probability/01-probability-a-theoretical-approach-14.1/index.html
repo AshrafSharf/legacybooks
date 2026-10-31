@@ -28,216 +28,217 @@
 <div class="sec-head">
   <p class="eyebrow"><a href="../index.html">Chapter 14 · Probability</a></p>
   <h1>14.1 Probability a Theoretical Approach</h1>
-  <p class="sec-meta">6 figures</p>
+  <p class="sec-meta">4 figures</p>
 </div>
 <article class="prose">
-<figure class="fig"><img src="img/fig-p1-1.webp" alt="Figure from the textbook page" loading="lazy" width="170" height="186"></figure>
-<figure class="fig side-fig"><img src="img/fig-p1-2.webp" alt="Figure from the textbook page" loading="lazy" width="172" height="138"></figure>
 <h2 id="s-probability">PROBABILITY</h2>
-<p class="lead">The theory of probabilities and the theory of errors now constitute a formidable body of great mathematical interest and of great practical importance.</p>
-<aside class="sidenote"><p>- R.S. Woodward</p></aside>
-<p>Let us consider the following situation : Suppose a coin is tossed at random.</p>
-<p>When we speak of a coin, we assume it to be ‘fair’, that is, it is symmetrical so that there is no reason for it to come down more often on one side than the other. We call this property of the coin as being ‘unbiased’. By the phrase ‘random toss’, we mean that the coin is allowed to fall freely without any bias or interference.</p>
-<p>We know, in advance, that the coin can only land in one of two possible ways - either head up or tail up (we dismiss the possibility of its ‘landing’ on its edge, which may be possible, for example, if it falls on sand). We can reasonably assume that each outcome, head or tail, is as likely to occur as the other. We refer to this by saying that the outcomes head and tail, are equally likely. For another example of equally likely outcomes, suppose we throw a die once. For us, a die will always mean a fair die. What are the possible outcomes? They are 1, 2, 3, 4, 5, 6. Each number has the same possibility of showing up. So the equally likely outcomes of throwing a die are 1, 2, 3, 4, 5 and 6.</p>
-<p>Are the outcomes of every experiment equally likely? Let us see. Suppose that a bag contains 4 red balls and 1 blue ball, and you draw a ball without looking into the bag. What are the outcomes? Are the outcomes \(- a\) red ball and a blue ball equally likely? Since there are 4 red balls and only one blue ball, you would agree that you are more likely to get a red ball than a blue ball. So, the outcomes (a red ball or a blue ball) are not equally likely. However, the outcome of drawing a ball of any colour from the bag is equally likely. So, all experiments do not necessarily have equally likely outcomes. However, in this chapter, from now on, we will assume that all the experiments</p>
-<p>have equally likely outcomes.</p>
+<p class="lead"><em>The theory of probabilities and the theory of errors now constitute a formidable body of great mathematical interest and of great practical importance.</em></p>
+<p class="lead">– R.S. Woodward</p>
+<h3>14.1 Probability — A Theoretical Approach</h3>
+<p>Let us consider the following situation :</p>
+<p>Suppose a coin is tossed <em>at random</em>.</p>
+<aside class="sidenote"><p>When we speak of a coin, we assume it to be ‘fair’, that is, it is symmetrical so that there is no reason for it to come down more often on one side than the other. We call this property of the coin as being ‘unbiased’. By the phrase ‘random toss’, we mean that the coin is allowed to fall freely without any <em>bias</em> or <em>interference</em>.</p></aside>
+<p>We know, in advance, that the coin can only land in one of two possible ways — either head up or tail up (we dismiss the possibility of its ‘landing’ on its edge, which may be possible, for example, if it falls on sand). We can reasonably assume that each outcome, head or tail, is <em>as likely to occur as the other.</em> We refer to this by saying that <em>the outcomes</em> head and tail, <em>are equally likely</em>.</p>
+<p>For another example of equally likely outcomes, suppose we throw a die once. For us, a die will always mean a fair die. What are the possible outcomes? They are 1, 2, 3, 4, 5, 6. Each number has the same possibility of showing up. So the <em>equally likely outcomes</em> of throwing a die are 1, 2, 3, 4, 5 and 6.</p>
+<p>Are the outcomes of every experiment equally likely? Let us see.</p>
+<p>Suppose that a bag contains 4 red balls and 1 blue ball, and you draw a ball without looking into the bag. What are the outcomes? Are the outcomes — a red ball and a blue ball equally likely? Since there are 4 red balls and only one blue ball, you would agree that you are more likely to get a red ball than a blue ball. So, the outcomes (a red ball or a blue ball) are <em>not</em> equally likely. However, the outcome of drawing a ball of any colour from the bag is equally likely. So, all experiments do not necessarily have equally likely outcomes.</p>
+<p>However, in this chapter, from now on, we will <strong>assume that all the experiments have equally likely outcomes.</strong></p>
 <p>In Class IX, we defined the experimental or empirical probability P(E) of an event E as</p>
-<p>Number of trials in which the event happened P(E) = Total number of trials</p>
-<p>The empirical interpretation of probability can be applied to every event associated with an experiment which can be repeated a large number of times. The requirement of repeating an experiment has some limitations, as it may be very expensive or unfeasible in many situations. Of course, it worked well in coin tossing or die throwing experiments. But how about repeating the experiment of launching a satellite in order to compute the empirical probability of its failure during launching, or the repetition of the phenomenon of an earthquake to compute the empirical probability of a multi- storeyed building getting destroyed in an earthquake? In experiments where we are prepared to make certain assumptions, the repetition of an experiment can be avoided, as the assumptions help in directly calculating the exact (theoretical) probability. The assumption of equally likely outcomes (which is valid in many experiments, as in the two examples above, of a coin and of a die) is one such assumption that leads us to the following definition of probability of an event. The theoretical probability (also called classical probability) of an event E, written as P(E), is defined as</p>
-<p>P(E) = Number of outcomes favourable to E , Number of all possible outcomes of the experiment</p>
-<p>where we assume that the outcomes of the experiment are equally likely. We will briefly refer to theoretical probability as probability. This definition of probability was given by Pierre Simon Laplace in 1795.</p>
-<p>Probability theory had its origin in the 16th century when an Italian physician and mathematician J.Cardan wrote the first book on the subject, The Book on Games of Chance. Since its inception, the study of probability has attracted the attention of great mathematicians. James Bernoulli \((1654 - 1705)\), A. de Moivre \((1667 - 1754)\), and Pierre Simon Laplace are among those who made significant contributions to this field. Laplace’s Theorie Analytique des Probabilités, 1812, is considered to be the greatest contribution by a single person to the theory of probability. Pierre Simon Laplace In recent years, probability has been used extensively in \((1749 - 1827)\) many areas such as biology, economics, genetics, physics, sociology etc.</p>
+<div class="mathblock"><p>\(\text{P(E)} = \dfrac{\text{Number of trials in which the event happened}}{\text{Total number of trials}}\)</p></div>
+<p>The empirical interpretation of probability can be applied to every event associated with an experiment which can be repeated a large number of times. The requirement of repeating an experiment has some limitations, as it may be very expensive or unfeasible in many situations. Of course, it worked well in coin tossing or die throwing experiments. But how about repeating the experiment of launching a satellite in order to compute the empirical probability of its failure during launching, or the repetition of the phenomenon of an earthquake to compute the empirical probability of a multi-storeyed building getting destroyed in an earthquake?</p>
+<p>In experiments where we are prepared to make certain assumptions, the repetition of an experiment can be avoided, as the assumptions help in directly calculating the exact (theoretical) probability. The assumption of equally likely outcomes (which is valid in many experiments, as in the two examples above, of a coin and of a die) is one such assumption that leads us to the following definition of probability of an event.</p>
+<p>The <strong>theoretical probability</strong> (also called <strong>classical probability</strong>) of an event E, written as P(E), is defined as</p>
+<div class="mathblock"><p>\(\textbf{P(E)} = \dfrac{\textbf{Number of outcomes favourable to E}}{\textbf{Number of all possible outcomes of the experiment}},\)</p></div>
+<p>where we assume that the outcomes of the experiment are <em>equally likely</em>.</p>
+<p>We will briefly refer to theoretical probability as probability.</p>
+<p>This definition of probability was given by Pierre Simon Laplace in 1795.</p>
+<aside class="sidenote"><figure class="fig"><img src="img/fig-fix-p3-1.webp" alt="Pierre Simon Laplace (1749 – 1827)" loading="lazy" width="275" height="406"></figure><p>Probability theory had its origin in the 16th century when an Italian physician and mathematician J.Cardan wrote the first book on the subject, <em>The Book on Games of Chance</em>. Since its inception, the study of probability has attracted the attention of great mathematicians. James Bernoulli (1654 – 1705), A. de Moivre (1667 – 1754), and Pierre Simon Laplace are among those who made significant contributions to this field. Laplace’s <em>Theorie Analytique des Probabilités</em>, 1812, is considered to be the greatest contribution by a single person to the theory of probability. In recent years, probability has been used extensively in many areas such as biology, economics, genetics, physics, sociology etc.</p></aside>
 <p>Let us find the probability for some of the events associated with experiments where the equally likely assumption holds.</p>
-<p>Example 1 : Find the probability of getting a head when a coin is tossed once. Also find the probability of getting a tail.</p>
-<p>Solution : In the experiment of tossing a coin once, the number of possible outcomes is two - Head (H) and Tail (T). Let E be the event ‘getting a head’. The number of outcomes favourable to E, (i.e., of getting a head) is 1. Therefore,</p>
-<p>Number of outcomes favourable to E P(E) \(= P\) (head) = Number of all possible outcomes \(= \frac{1}{2}\)</p>
+<h4 class="callout-h">Example 1 :</h4>
+<p>Find the probability of getting a head when a coin is tossed once. Also find the probability of getting a tail.</p>
+<h4 class="callout-h">Solution :</h4>
+<p>In the experiment of tossing a coin once, the number of possible outcomes is two — Head (H) and Tail (T). Let E be the event ‘getting a head’. The number of outcomes favourable to E, (i.e., of getting a head) is 1. Therefore,</p>
+<div class="mathblock"><p>\(\text{P(E)} = \text{P(head)} = \dfrac{\text{Number of outcomes favourable to E}}{\text{Number of all possible outcomes}} = \dfrac{1}{2}\)</p></div>
 <p>Similarly, if F is the event ‘getting a tail’, then</p>
-<p>P(F) = P(tail) \(= \frac{1}{2}\) (Why ?)</p>
-<p>Example 2 : A bag contains a red ball, a blue ball and a yellow ball, all the balls being of the same size. Kritika takes out a ball from the bag without looking into it. What is the probability that she takes out the</p>
+<div class="mathblock"><p>\(\text{P(F)} = \text{P(tail)} = \dfrac{1}{2} \quad \text{(Why ?)}\)</p></div>
+<h4 class="callout-h">Example 2 :</h4>
+<p>A bag contains a red ball, a blue ball and a yellow ball, all the balls being of the same size. Kritika takes out a ball from the bag without looking into it. What is the probability that she takes out the</p>
 <ul class="qlist">
-<li><span class="mk">(i)</span><span class="lt">yellow ball? (ii) red ball? (iii) blue ball?</span></li>
+<li><span class="mk">(i)</span><span class="lt">yellow ball?</span></li>
+<li><span class="mk">(ii)</span><span class="lt">red ball?</span></li>
+<li><span class="mk">(iii)</span><span class="lt">blue ball?</span></li>
 </ul>
-<p>Solution : Kritika takes out a ball from the bag without looking into it. So, it is equally likely that she takes out any one of them.</p>
+<h4 class="callout-h">Solution :</h4>
+<p>Kritika takes out a ball from the bag without looking into it. So, it is equally likely that she takes out any one of them.</p>
 <p>Let Y be the event ‘the ball taken out is yellow’, B be the event ‘the ball taken out is blue’, and R be the event ‘the ball taken out is red’.</p>
-<p>Now, the number of possible outcomes \(= 3\).</p>
+<p>Now, the number of possible outcomes = 3.</p>
+<p>(i) The number of outcomes favourable to the event Y = 1.</p>
+<div class="mathblock"><p>\(\text{So,}\quad \text{P(Y)} = \dfrac{1}{3}\)</p></div>
+<p>Similarly, (ii) \(\text{P(R)} = \dfrac{1}{3}\) and (iii) \(\text{P(B)} = \dfrac{1}{3}\).</p>
+<h4 class="callout-h">Remarks :</h4>
 <ul class="qlist">
-<li><span class="mk">(i)</span><span class="lt">The number of outcomes favourable to the event \(Y = 1\).</span></li>
+<li><span class="mk">1.</span><span class="lt">An event having only one outcome of the experiment is called an <em>elementary event.</em> In Example 1, both the events E and F are elementary events. Similarly, in Example 2, all the three events, Y, B and R are elementary events.</span></li>
+<li><span class="mk">2.</span><span class="lt">In Example 1, we note that : P(E) + P(F) = 1</span></li>
 </ul>
-<div class="mathblock"><p>So, P(Y) \(= \frac{1}{3}\)</p></div>
-<p>Similarly, (ii) P(R) \(= \frac{1}{3}\) and (iii) P(B) \(= \frac{1}{3} \cdot\)</p>
-<p>Remarks :</p>
-<ul class="qlist">
-<li><span class="mk">1.</span><span class="lt">An event having only one outcome of the experiment is called an elementary</span></li>
-</ul>
-<p>event. In Example 1, both the events E and F are elementary events. Similarly, in Example 2, all the three events, Y, B and R are elementary events.</p>
-<ul class="qlist">
-<li><span class="mk">2.</span><span class="lt">In Example 1, we note that : P(E) + P(F) \(= 1\)</span></li>
-</ul>
-<p>In Example 2, we note that : P(Y) + P(R) + P(B) \(= 1\) Observe that the sum of the probabilities of all the elementary events of an experiment is 1. This is true in general also.</p>
-<p>Example 3 : Suppose we throw a die once. (i) What is the probability of getting a number greater than 4 ? (ii) What is the probability of getting a number less than or equal to 4 ?</p>
-<p>Solution : (i) Here, let E be the event ‘getting a number greater than 4’. The number of possible outcomes is six : 1, 2, 3, 4, 5 and 6, and the outcomes favourable to E are 5 and 6. Therefore, the number of outcomes favourable to E is 2. So,</p>
-<p>P(E) = P(number greater than \(4) = \frac{2}{6} = \frac{1}{3}\)</p>
-<ul class="qlist">
-<li><span class="mk">(ii)</span><span class="lt">Let F be the event ‘getting a number less than or equal to 4’.</span></li>
-</ul>
-<p>Number of possible outcomes \(= 6\)</p>
+<p>In Example 2, we note that : P(Y) + P(R) + P(B) = 1</p>
+<p>Observe that <strong>the sum of the probabilities of all the elementary events of an experiment</strong> is 1. This is true in general also.</p>
+<h4 class="callout-h">Example 3 :</h4>
+<p>Suppose we throw a die once. (i) What is the probability of getting a number greater than 4 ? (ii) What is the probability of getting a number less than or equal to 4 ?</p>
+<h4 class="callout-h">Solution :</h4>
+<p>(i) Here, let E be the event ‘getting a number greater than 4’. The number of possible outcomes is six : 1, 2, 3, 4, 5 and 6, and the outcomes favourable to E are 5 and 6. Therefore, the number of outcomes favourable to E is 2. So,</p>
+<div class="mathblock"><p>\(\text{P(E)} = \text{P(number greater than 4)} = \dfrac{2}{6} = \dfrac{1}{3}\)</p></div>
+<p>(ii) Let F be the event ‘getting a number less than or equal to 4’.</p>
+<p>Number of possible outcomes = 6</p>
 <p>Outcomes favourable to the event F are 1, 2, 3, 4.</p>
 <p>So, the number of outcomes favourable to F is 4.</p>
-<p>Therefore, P(F) \(= \frac{4}{6} = \frac{2}{3}\)</p>
-<p>Are the events E and F in the example above elementary events? No, they are not because the event E has 2 outcomes and the event F has 4 outcomes. Remarks : From Example 1, we note that</p>
-<div class="mathblock"><p>P(E) + P(F) \(= \frac{1}{2} + \frac{1}{2} = 1 (1)\)</p></div>
-<p>where E is the event ‘getting a head’ and F is the event ‘getting a tail’. From (i) and (ii) of Example 3, we also get</p>
-<div class="mathblock"><p>P(E) + P(F) \(= \frac{1}{3} + \frac{2}{3} = 1 (2)\)</p></div>
-<p>where E is the event ‘getting a number &gt;4’ and F is the event ‘getting a number \(\le\) 4’. Note that getting a number not greater than 4 is same as getting a number less than or equal to 4, and vice versa. In (1) and (2) above, is F not the same as ‘not E’? Yes, it is. We denote the event ‘not E’ by E .</p>
-<div class="mathblock"><p>So, P(E) + P(not E) \(= 1\)</p></div>
-<p>i.e., P(E) + P( E ) \(= 1\), which gives us P( E ) \(= 1 -\) P(E).</p>
-<p>In general, it is true that for an event E,</p>
-<div class="mathblock"><p>P( E ) \(= 1 -\) P(E)</p></div>
-<p>The event E , representing ‘not E’, is called the complement of the event E. We also say that E and E are complementary events. Before proceeding further, let us try to find the answers to the following questions:</p>
+<div class="mathblock"><p>\(\text{Therefore,}\quad \text{P(F)} = \dfrac{4}{6} = \dfrac{2}{3}\)</p></div>
+<p>Are the events E and F in the example above elementary events? No, they are <strong>not</strong> because the event E has 2 outcomes and the event F has 4 outcomes.</p>
+<h4 class="callout-h">Remarks :</h4>
+<p>From Example 1, we note that</p>
+<div class="mathblock"><p>\(\text{P(E)} + \text{P(F)} = \dfrac{1}{2} + \dfrac{1}{2} = 1 \qquad (1)\)</p></div>
+<p>where E is the event ‘getting a head’ and F is the event ‘getting a tail’.</p>
+<p>From (i) and (ii) of Example 3, we also get</p>
+<div class="mathblock"><p>\(\text{P(E)} + \text{P(F)} = \dfrac{1}{3} + \dfrac{2}{3} = 1 \qquad (2)\)</p></div>
+<p>where E is the event ‘getting a number \(\gt 4\)’ and F is the event ‘getting a number \(\le 4\)’.</p>
+<p>Note that getting a number <em>not</em> greater than 4 is same as getting a number less than or equal to 4, and vice versa.</p>
+<p>In (1) and (2) above, is F not the same as ‘not E’? Yes, it is. We denote the event ‘not E’ by \(\overline{\text{E}}\).</p>
+<div class="mathblock"><p>\(\text{So,}\quad \text{P(E)} + \text{P(not E)} = 1\)</p><p>\(\text{i.e.,}\quad \text{P(E)} + \text{P}(\overline{\text{E}}) = 1, \quad \text{which gives us} \quad \text{P}(\overline{\text{E}}) = 1 - \text{P(E)}.\)</p></div>
+<p><strong>In general, it is true that for an event E,</strong></p>
+<div class="mathblock"><p>\(\mathbf{P(\overline{E}) = 1 - P(E)}\)</p></div>
+<p>The event \(\overline{\text{E}}\), representing ‘not E’, is called the <strong>complement</strong> of the event E. We also say that E and \(\overline{\text{E}}\) are <strong>complementary</strong> events.</p>
+<p>Before proceeding further, let us try to find the answers to the following questions:</p>
 <ul class="qlist">
 <li><span class="mk">(i)</span><span class="lt">What is the probability of getting a number 8 in a single throw of a die?</span></li>
 <li><span class="mk">(ii)</span><span class="lt">What is the probability of getting a number less than 7 in a single throw of a die?</span></li>
 </ul>
-<p>Let us answer (i) :</p>
-<p>We know that there are only six possible outcomes in a single throw of a die. These outcomes are 1, 2, 3, 4, 5 and 6. Since no face of the die is marked 8, so there is no outcome favourable to 8, i.e., the number of such outcomes is zero. In other words, getting 8 in a single throw of a die, is impossible.</p>
-<div class="mathblock"><p>So, P(getting \(8) = \frac{0}{6} = 0\)</p></div>
-<p>That is, the probability of an event which is impossible to occur is 0. Such an event is called an impossible event.</p>
-<p>Let us answer (ii) :</p>
-<p>Since every face of a die is marked with a number less than 7, it is sure that we will always get a number less than 7 when it is thrown once. So, the number of favourable outcomes is the same as the number of all possible outcomes, which is 6. Therefore, P(E) = P(getting a number less than \(7) = \frac{6}{6} = 1\) So, the probability of an event which is sure (or certain) to occur is 1. Such an event is called a sure event or a certain event.</p>
-<p>Note : From the definition of the probability P(E), we see that the numerator (number of outcomes favourable to the event E) is always less than or equal to the denominator (the number of all possible outcomes). Therefore,</p>
-<div class="mathblock"><p>\(0 \le\) P(E) \(\le 1\)</p></div>
-<p>Now, let us take an example related to playing cards. Have you seen a deck of playing cards? It consists of 52 cards which are divided into 4 suits of 13 cards each - spades ( ), hearts ( ), diamonds ( ) and clubs (•). Clubs and spades are of black colour, while hearts and diamonds are of red colour. The cards in each suit are ace, king, queen, jack, 10, 9, 8, 7, 6, 5, 4, 3 and 2. Kings, queens and jacks are called face cards.</p>
-<p>Example 4 : One card is drawn from a well-shuffled deck of 52 cards. Calculate the probability that the card will</p>
+<p><strong>Let us answer (i) :</strong></p>
+<p>We know that there are only six possible outcomes in a single throw of a die. These outcomes are 1, 2, 3, 4, 5 and 6. Since no face of the die is marked 8, so there is no outcome favourable to 8, i.e., the number of such outcomes is zero. In other words, getting 8 in a single throw of a die, is <em>impossible</em>.</p>
+<div class="mathblock"><p>\(\text{So,}\quad \text{P(getting 8)} = \dfrac{0}{6} = 0\)</p></div>
+<p>That is, the probability of an event which is <em>impossible</em> to occur is 0. Such an event is called an <strong>impossible event</strong>.</p>
+<p><strong>Let us answer (ii) :</strong></p>
+<p>Since every face of a die is marked with a number less than 7, it is <em>sure</em> that we will always get a number less than 7 when it is thrown once. So, the number of favourable outcomes is the same as the number of all possible outcomes, which is 6.</p>
+<div class="mathblock"><p>\(\text{Therefore,}\quad \text{P(E)} = \text{P(getting a number less than 7)} = \dfrac{6}{6} = 1\)</p></div>
+<p>So, the probability of an event which is <em>sure</em> (or <em>certain</em>) to occur is 1. Such an event is called a <strong>sure event</strong> or a <strong>certain event</strong>.</p>
+<p><strong>Note :</strong> From the definition of the probability P(E), we see that the numerator (number of outcomes favourable to the event E) is always less than or equal to the denominator (the number of all possible outcomes). Therefore,</p>
+<div class="mathblock"><p>\(\mathbf{0 \le P(E) \le 1}\)</p></div>
+<p>Now, let us take an example related to playing cards. Have you seen a deck of playing cards? It consists of 52 cards which are divided into 4 suits of 13 cards each— spades (\(\spadesuit\)), hearts (\(\heartsuit\)), diamonds (\(\diamondsuit\)) and clubs (\(\clubsuit\)). Clubs and spades are of black colour, while hearts and diamonds are of red colour. The cards in each suit are ace, king, queen, jack, 10, 9, 8, 7, 6, 5, 4, 3 and 2. Kings, queens and jacks are called <em>face cards</em>.</p>
+<h4 class="callout-h">Example 4 :</h4>
+<p>One card is drawn from a well-shuffled deck of 52 cards. Calculate the probability that the card will</p>
 <ul class="qlist">
 <li><span class="mk">(i)</span><span class="lt">be an ace,</span></li>
 <li><span class="mk">(ii)</span><span class="lt">not be an ace.</span></li>
 </ul>
-<p>Solution : Well-shuffling ensures equally likely outcomes.</p>
+<h4 class="callout-h">Solution :</h4>
+<p>Well-shuffling ensures <em>equally likely</em> outcomes.</p>
 <ul class="qlist">
-<li><span class="mk">(i)</span><span class="lt">There are 4 aces in a deck. Let E be the event ‘the card is an ace’.</span></li>
+<li><span class="mk">(i)</span><span class="lt">There are 4 aces in a deck. Let E be the event ‘the card is an ace’.<br>The number of outcomes favourable to E = 4<br>The number of possible outcomes = 52 (Why ?)<br>Therefore, \(\text{P(E)} = \dfrac{4}{52} = \dfrac{1}{13}\)</span></li>
+<li><span class="mk">(ii)</span><span class="lt">Let F be the event ‘card drawn is not an ace’.<br>The number of outcomes favourable to the event F = 52 – 4 = 48 (Why?)<br>The number of possible outcomes = 52<br>Therefore, \(\text{P(F)} = \dfrac{48}{52} = \dfrac{12}{13}\)</span></li>
 </ul>
-<p>The number of outcomes favourable to \(E = 4\)</p>
-<p>The number of possible outcomes \(= 52\) (Why ?)</p>
-<p>Therefore, P(E) \(= \frac{4}{52} = \frac{1}{13}\)</p>
+<h4 class="callout-h">Remark :</h4>
+<p>Note that F is nothing but \(\overline{\text{E}}\). Therefore, we can also calculate P(F) as follows: \(\text{P(F)} = \text{P}(\overline{\text{E}}) = 1 - \text{P(E)} = 1 - \dfrac{1}{13} = \dfrac{12}{13}\).</p>
+<h4 class="callout-h">Example 5 :</h4>
+<p>Two players, Sangeeta and Reshma, play a tennis match. It is known that the probability of Sangeeta winning the match is 0.62. What is the probability of Reshma winning the match?</p>
+<h4 class="callout-h">Solution :</h4>
+<p>Let S and R denote the events that Sangeeta wins the match and Reshma wins the match, respectively.</p>
+<div class="mathblock"><p>\(\text{The probability of Sangeeta’s winning} = \text{P(S)} = 0.62 \quad \text{(given)}\)</p><p>\(\text{The probability of Reshma’s winning} = \text{P(R)} = 1 - \text{P(S)}\)</p><p>\(\text{[As the events R and S are complementary]}\)</p><p>\(= 1 - 0.62 = 0.38\)</p></div>
+<h4 class="callout-h">Example 6 :</h4>
+<p>Savita and Hamida are friends. What is the probability that both will have (i) different birthdays? (ii) the same birthday? (ignoring a leap year).</p>
+<h4 class="callout-h">Solution :</h4>
+<p>Out of the two friends, one girl, say, Savita’s birthday can be any day of the year. Now, Hamida’s birthday can also be any day of 365 days in the year.</p>
+<p>We assume that these 365 outcomes are equally likely.</p>
 <ul class="qlist">
-<li><span class="mk">(ii)</span><span class="lt">Let F be the event ‘card drawn is not an ace’.</span></li>
-</ul>
-<p>The number of outcomes favourable to the event \(F = 52 - 4 = 48\) (Why?)</p>
-<p>The number of possible outcomes \(= 52\)</p>
-<p>Therefore, P(F) \(= \frac{48}{52} = \frac{12}{13}\)</p>
-<p>Remark : Note that F is nothing but E . Therefore, we can also calculate P(F) as</p>
-<p>follows: P(F) = P( E ) \(= 1 -\) P(E) \(= 1 - \frac{1}{13} = \frac{12}{13} \cdot\)</p>
-<p>Example 5 : Two players, Sangeeta and Reshma, play a tennis match. It is known that the probability of Sangeeta winning the match is 0.62. What is the probability of Reshma winning the match?</p>
-<p>Solution : Let S and R denote the events that Sangeeta wins the match and Reshma wins the match, respectively. The probability of Sangeeta’s winning = P(S) \(= 0.62\) (given) The probability of Reshma’s winning = P(R) \(= 1 -\) P(S)</p>
-<aside class="sidenote"><p>[As the events R and S are complementary]</p></aside>
-<div class="mathblock"><p>\(= 1 - 0.62 = 0.38\)</p></div>
-<p>Example 6 : Savita and Hamida are friends. What is the probability that both will have (i) different birthdays? (ii) the same birthday? (ignoring a leap year). Solution : Out of the two friends, one girl, say, Savita’s birthday can be any day of the year. Now, Hamida’s birthday can also be any day of 365 days in the year. We assume that these 365 outcomes are equally likely.</p>
-<ul class="qlist">
-<li><span class="mk">(i)</span><span class="lt">If Hamida’s birthday is different from Savita’s, the number of favourable outcomes</span></li>
-</ul>
-<p>for her birthday is \(365 - 1 = 364\)</p>
-<p>So, P (Hamida’s birthday is different from Savita’s birthday) \(= \frac{364}{365}\)</p>
-<ul class="qlist">
+<li><span class="mk">(i)</span><span class="lt">If Hamida’s birthday is different from Savita’s, the number of favourable outcomes for her birthday is 365 – 1 = 364<br>So, \(\text{P(Hamida’s birthday is different from Savita’s birthday)} = \dfrac{364}{365}\)</span></li>
 <li><span class="mk">(ii)</span><span class="lt">P(Savita and Hamida have the same birthday)</span></li>
 </ul>
-<p>\(= 1 - P\) (both have different birthdays)</p>
-<div class="mathblock"><p>\(= 1 - \frac{364}{365}\) [Using P( E ) \(= 1 -\) P(E)] \(= \frac{1}{365}\)</p></div>
-<p>Example 7 : There are 40 students in Class X of a school of whom 25 are girls and 15 are boys. The class teacher has to select one student as a class representative. She writes the name of each student on a separate card, the cards being identical. Then she puts cards in a bag and stirs them thoroughly. She then draws one card from the bag. What is the probability that the name written on the card is the name of (i) a girl?</p>
+<div class="mathblock"><p>\(= 1 - \text{P(both have different birthdays)}\)</p><p>\(= 1 - \dfrac{364}{365} \qquad [\text{Using P}(\overline{\text{E}}) = 1 - \text{P(E)}]\)</p><p>\(= \dfrac{1}{365}\)</p></div>
+<h4 class="callout-h">Example 7 :</h4>
+<p>There are 40 students in Class X of a school of whom 25 are girls and 15 are boys. The class teacher has to select one student as a class representative. She writes the name of each student on a separate card, the cards being identical. Then she puts cards in a bag and stirs them thoroughly. She then draws one card from the bag. What is the probability that the name written on the card is the name of (i) a girl? (ii) a boy?</p>
+<h4 class="callout-h">Solution :</h4>
+<p>There are 40 students, and only one name card has to be chosen.</p>
 <ul class="qlist">
-<li><span class="mk">(ii)</span><span class="lt">a boy?</span></li>
+<li><span class="mk">(i)</span><span class="lt">The number of all possible outcomes is 40<br>The number of outcomes favourable for a card with the name of a girl = 25 (Why?)<br>Therefore, \(\text{P(card with name of a girl)} = \text{P(Girl)} = \dfrac{25}{40} = \dfrac{5}{8}\)</span></li>
+<li><span class="mk">(ii)</span><span class="lt">The number of outcomes favourable for a card with the name of a boy = 15 (Why?)<br>Therefore, \(\text{P(card with name of a boy)} = \text{P(Boy)} = \dfrac{15}{40} = \dfrac{3}{8}\)</span></li>
 </ul>
-<p>Solution : There are 40 students, and only one name card has to be chosen.</p>
+<p><strong>Note :</strong> We can also determine P(Boy), by taking</p>
+<div class="mathblock"><p>\(\text{P(Boy)} = 1 - \text{P(not Boy)} = 1 - \text{P(Girl)} = 1 - \dfrac{5}{8} = \dfrac{3}{8}\)</p></div>
+<h4 class="callout-h">Example 8 :</h4>
+<p>A box contains 3 blue, 2 white, and 4 red marbles. If a marble is drawn at <em>random</em> from the box, what is the probability that it will be</p>
 <ul class="qlist">
-<li><span class="mk">(i)</span><span class="lt">The number of all possible outcomes is 40</span></li>
+<li><span class="mk">(i)</span><span class="lt">white?</span></li>
+<li><span class="mk">(ii)</span><span class="lt">blue?</span></li>
+<li><span class="mk">(iii)</span><span class="lt">red?</span></li>
 </ul>
-<p>The number of outcomes favourable for a card with the name of a girl \(= 25\) (Why?) Therefore, P (card with name of a girl) = P(Girl) \(= \frac{25}{40} = \frac{5}{8}\)</p>
-<ul class="qlist">
-<li><span class="mk">(ii)</span><span class="lt">The number of outcomes favourable for a card with the name of a boy \(= 15\) (Why?)</span></li>
-</ul>
-<p>Therefore, P(card with name of a boy) = P(Boy) \(= \frac{15}{40} = \frac{3}{8}\) Note : We can also determine P(Boy), by taking</p>
-<p>P(Boy) \(= 1 -\) P(not Boy) \(= 1 -\) P(Girl) \(= 1 - \frac{5}{8} = \frac{3}{8}\)</p>
-<p>Example 8 : A box contains 3 blue, 2 white, and 4 red marbles. If a marble is drawn at random from the box, what is the probability that it will be</p>
-<ul class="qlist">
-<li><span class="mk">(i)</span><span class="lt">white? (ii) blue? (iii) red?</span></li>
-</ul>
-<p>Solution : Saying that a marble is drawn at random is a short way of saying that all the marbles are equally likely to be drawn. Therefore, the number of possible outcomes \(= 3 +2 + 4 = 9\) (Why?) Let W denote the event ‘the marble is white’, B denote the event ‘the marble is blue’ and R denote the event ‘marble is red’.</p>
-<ul class="qlist">
-<li><span class="mk">(i)</span><span class="lt">The number of outcomes favourable to the event \(W = 2\)</span></li>
-</ul>
-<div class="mathblock"><p>So, P(W) \(= \frac{2}{9}\)</p></div>
-<p>Similarly, (ii) P(B) \(= \frac{3}{9} = \frac{1}{3}\) and (iii) P(R) \(= \frac{4}{9}\)</p>
-<p>Note that P(W) + P(B) + P(R) \(= 1\).</p>
-<p>Example 9 : Harpreet tosses two different coins simultaneously (say, one is of ` 1 and other of ` 2). What is the probability that she gets at least one head? Solution : We write H for ‘head’ and T for ‘tail’. When two coins are tossed simultaneously, the possible outcomes are (H, H), (H, T), (T, H), (T, T), which are all equally likely. Here (H, H) means head up on the first coin (say on ` 1) and head up on the second coin (` 2). Similarly (H, T) means head up on the first coin and tail up on the second coin and so on. The outcomes favourable to the event E, ‘at least one head’ are (H, H), (H, T) and (T, H). (Why?)</p>
+<h4 class="callout-h">Solution :</h4>
+<p>Saying that a marble is drawn at random is a short way of saying that all the marbles are equally likely to be drawn. Therefore, the</p>
+<p>number of possible outcomes = 3 + 2 + 4 = 9 (Why?)</p>
+<p>Let W denote the event ‘the marble is white’, B denote the event ‘the marble is blue’ and R denote the event ‘marble is red’.</p>
+<p>(i) The number of outcomes favourable to the event W = 2</p>
+<div class="mathblock"><p>\(\text{So,}\quad \text{P(W)} = \dfrac{2}{9}\)</p></div>
+<p>Similarly, (ii) \(\text{P(B)} = \dfrac{3}{9} = \dfrac{1}{3}\) and (iii) \(\text{P(R)} = \dfrac{4}{9}\)</p>
+<p>Note that P(W) + P(B) + P(R) = 1.</p>
+<h4 class="callout-h">Example 9 :</h4>
+<p>Harpreet tosses two different coins simultaneously (say, one is of ₹ 1 and other of ₹ 2). What is the probability that she gets <em>at least</em> one head?</p>
+<h4 class="callout-h">Solution :</h4>
+<p>We write H for ‘head’ and T for ‘tail’. When two coins are tossed simultaneously, the possible outcomes are (H, H), (H, T), (T, H), (T, T), which are all <em>equally likely</em>. Here (H, H) means head up on the first coin (say on ₹ 1) and head up on the second coin (₹ 2). Similarly (H, T) means head up on the first coin and tail up on the second coin and so on.</p>
+<p>The outcomes favourable to the event E, ‘at least one head’ are (H, H), (H, T) and (T, H). (Why?)</p>
 <p>So, the number of outcomes favourable to E is 3.</p>
-<div class="mathblock"><p>Therefore, P(E) \(= \frac{3}{4}\)</p></div>
-<p>i.e., the probability that Harpreet gets at least one head is \(\frac{3}{4} \cdot\) Note : You can also find P(E) as follows:</p>
-<p>P (E) \(= 1 -\) P(E) \(= 1 - \frac{1}{4} = \frac{3}{4}\) Since P(E) = P(no head) \(= \frac{1}{4}\)</p>
-<p>Did you observe that in all the examples discussed so far, the number of possible outcomes in each experiment was finite? If not, check it now. There are many experiments in which the outcome is any number between two given numbers, or in which the outcome is every point within a circle or rectangle, etc. Can you now count the number of all possible outcomes? As you know, this is not possible since there are infinitely many numbers between two given numbers, or there are infinitely many points within a circle. So, the definition of (theoretical) probability which you have learnt so far cannot be applied in the present form. What is the way out? To answer this, let us consider the following example : Example 10* : In a musical chair game, the person playing the music has been advised to stop playing the music at any time within 2 minutes after she starts playing. What is the probability that the music will stop within the first half-minute after starting?</p>
-<p>Solution : Here the possible outcomes are all the numbers between 0 and 2. This is the portion of the number line from 0 to 2 (see Fig. 14.1).</p>
-<p class="caption">Fig. 14.1</p>
-<ul class="qlist">
-<li><span class="mk">*</span><span class="lt">Not from the examination point of view.</span></li>
-</ul>
+<div class="mathblock"><p>\(\text{Therefore,}\quad \text{P(E)} = \dfrac{3}{4}\)</p></div>
+<p>i.e., the probability that Harpreet gets at least one head is \(\dfrac{3}{4}\).</p>
+<p><strong>Note :</strong> You can also find P(E) as follows:</p>
+<div class="mathblock"><p>\(\text{P(E)} = 1 - \text{P}(\overline{\text{E}}) = 1 - \dfrac{1}{4} = \dfrac{3}{4} \qquad \left(\text{Since P}(\overline{\text{E}}) = \text{P(no head)} = \dfrac{1}{4}\right)\)</p></div>
+<p>Did you observe that in all the examples discussed so far, the number of possible outcomes in each experiment was finite? If not, check it now.</p>
+<p>There are many experiments in which the outcome is any number between two given numbers, or in which the outcome is every point within a circle or rectangle, etc. Can you now count the number of all possible outcomes? As you know, this is not possible since there are infinitely many numbers between two given numbers, or there are infinitely many points within a circle. So, the definition of (theoretical) probability which you have learnt so far cannot be applied in the present form. What is the way out? To answer this, let us consider the following example :</p>
+<h4 class="callout-h">Example 10* :</h4>
+<p>In a musical chair game, the person playing the music has been advised to stop playing the music at any time within 2 minutes after she starts playing. What is the probability that the music will stop within the first half-minute after starting?</p>
+<h4 class="callout-h">Solution :</h4>
+<p>Here the possible outcomes are all the numbers between 0 and 2. This is the portion of the number line from 0 to 2 (see Fig. 14.1).</p>
+<figure class="fig"><img src="img/fig-fix-p9-1.webp" alt="Fig. 14.1: number line from 0 to 2" loading="lazy" width="468" height="55"><figcaption>Fig. 14.1</figcaption></figure>
+<p><small>* Not from the examination point of view.</small></p>
 <p>Let E be the event that ‘the music is stopped within the first half-minute’.</p>
-<p>The outcomes favourable to E are points on the number line from 0 to \(\frac{1}{2}\) . The distance from 0 to 2 is 2, while the distance from 0 to \(\frac{1}{2}\) is \(\frac{1}{2}\) . Since all the outcomes are equally likely, we can argue that, of the total distance of 2, the distance favourable to the event E is \(\frac{1}{2}\) .</p>
-<p>So, P(E) = Total distance inDistance favourablewhich outcomes can lieto the event \(E = \frac{1}{2} 2 = \frac{1}{4}\)</p>
+<p>The outcomes favourable to E are points on the number line from 0 to \(\dfrac{1}{2}\).</p>
+<p>The distance from 0 to 2 is 2, while the distance from 0 to \(\dfrac{1}{2}\) is \(\dfrac{1}{2}\).</p>
+<p>Since all the outcomes are equally likely, we can argue that, of the total distance of 2, the distance favourable to the event E is \(\dfrac{1}{2}\).</p>
+<div class="mathblock"><p>\(\text{So,}\quad \text{P(E)} = \dfrac{\text{Distance favourable to the event E}}{\text{Total distance in which outcomes can lie}} = \dfrac{\;\dfrac{1}{2}\;}{2} = \dfrac{1}{4}\)</p></div>
 <p>Can we now extend the idea of Example 10 for finding the probability as the ratio of the favourable area to the total area?</p>
-<p>Example 11* : A missing helicopter is reported to have crashed somewhere in the rectangular region shown in Fig. 14.2. What is the probability that it crashed inside the lake shown in the figure?</p>
+<h4 class="callout-h">Example 11* :</h4>
+<p>A missing helicopter is reported to have crashed somewhere in the rectangular region shown in Fig. 14.2. What is the probability that it crashed inside the lake shown in the figure?</p>
 <figure class="fig wide"><img src="img/fig-p10-1.webp" alt="Fig. 14.2" loading="lazy" width="711" height="377"><figcaption>Fig. 14.2</figcaption></figure>
-<p>Solution : The helicopter is equally likely to crash anywhere in the region. Area of the entire region where the helicopter can crash</p>
-<div class="mathblock"><p>\(= (4.5 \times 9) km^{2} = 40.5 km^{2}\)</p></div>
-<ul class="qlist">
-<li><span class="mk">*</span><span class="lt">Not from the examination point of view.</span></li>
-</ul>
-<p>Area of the lake \(= (2.5 \times 3) km^{2} = 7.5 km^{2}\)</p>
-<p>Therefore, P (helicopter crashed in the lake) \(= \frac{7.5}{40.5} = \frac{75}{405} = \frac{5}{27}\)</p>
-<p>Example 12 : A carton consists of 100 shirts of which 88 are good, 8 have minor defects and 4 have major defects. Jimmy, a trader, will only accept the shirts which are good, but Sujatha, another trader, will only reject the shirts which have major defects. One shirt is drawn at random from the carton. What is the probability that</p>
+<h4 class="callout-h">Solution :</h4>
+<p>The helicopter is equally likely to crash anywhere in the region.</p>
+<p>Area of the entire region where the helicopter can crash</p>
+<div class="mathblock"><p>\(= (4.5 \times 9)\ \text{km}^{2} = 40.5\ \text{km}^{2}\)</p></div>
+<p><small>* Not from the examination point of view.</small></p>
+<p>Area of the lake \(= (2.5 \times 3)\ \text{km}^{2} = 7.5\ \text{km}^{2}\)</p>
+<p>Therefore, \(\text{P(helicopter crashed in the lake)} = \dfrac{7.5}{40.5} = \dfrac{75}{405} = \dfrac{5}{27}\)</p>
+<h4 class="callout-h">Example 12 :</h4>
+<p>A carton consists of 100 shirts of which 88 are good, 8 have minor defects and 4 have major defects. Jimmy, a trader, will only accept the shirts which are good, but Sujatha, another trader, will only reject the shirts which have major defects. One shirt is drawn at random from the carton. What is the probability that</p>
 <ul class="qlist">
 <li><span class="mk">(i)</span><span class="lt">it is acceptable to Jimmy?</span></li>
 <li><span class="mk">(ii)</span><span class="lt">it is acceptable to Sujatha?</span></li>
 </ul>
-<p>Solution : One shirt is drawn at random from the carton of 100 shirts. Therefore, there are 100 equally likely outcomes.</p>
+<h4 class="callout-h">Solution :</h4>
+<p>One shirt is drawn at random from the carton of 100 shirts. Therefore, there are 100 equally likely outcomes.</p>
 <ul class="qlist">
-<li><span class="mk">(i)</span><span class="lt">The number of outcomes favourable (i.e., acceptable) to Jimmy \(= 88\) (Why?)</span></li>
+<li><span class="mk">(i)</span><span class="lt">The number of outcomes favourable (i.e., acceptable) to Jimmy = 88 (Why?)<br>Therefore, \(\text{P(shirt is acceptable to Jimmy)} = \dfrac{88}{100} = 0.88\)</span></li>
+<li><span class="mk">(ii)</span><span class="lt">The number of outcomes favourable to Sujatha = 88 + 8 = 96 (Why?)<br>So, \(\text{P(shirt is acceptable to Sujatha)} = \dfrac{96}{100} = 0.96\)</span></li>
 </ul>
-<p>Therefore, P (shirt is acceptable to Jimmy) \(= \frac{88}{100} = 0.88\)</p>
+<h4 class="callout-h">Example 13 :</h4>
+<p>Two dice, one blue and one grey, are thrown at the same time. Write down all the possible outcomes. What is the probability that the sum of the two numbers appearing on the top of the dice is</p>
 <ul class="qlist">
-<li><span class="mk">(ii)</span><span class="lt">The number of outcomes favourable to Sujatha \(= 88 + 8 = 96\) (Why?)</span></li>
+<li><span class="mk">(i)</span><span class="lt">8?</span></li>
+<li><span class="mk">(ii)</span><span class="lt">13?</span></li>
+<li><span class="mk">(iii)</span><span class="lt">less than or equal to 12?</span></li>
 </ul>
-<p>So, P (shirt is acceptable to Sujatha) \(= \frac{96}{100} = 0.96\)</p>
-<p>Example 13 : Two dice, one blue and one grey, are thrown at the same time. Write down all the possible outcomes. What is the probability that the sum of the two numbers appearing on the top of the dice is</p>
-<ul class="qlist">
-<li><span class="mk">(i)</span><span class="lt">8? (ii) 13? (iii) less than or equal to 12?</span></li>
-</ul>
-<p>Solution : When the blue die shows ‘1’, the grey die could show any one of the numbers 1, 2, 3, 4, 5, 6. The same is true when the blue die shows ‘2’, ‘3’, ‘4’, ‘5’ or ‘6’. The possible outcomes of the experiment are listed in the table below; the first number in each ordered pair is the number appearing on the blue die and the second number is that on the grey die.</p>
-<figure class="fig"><img src="img/fig-p12-1.webp" alt="Figure from the textbook page" loading="lazy" width="117" height="103"></figure>
-<figure class="fig"><img src="img/fig-p12-3.webp" alt="Figure from the textbook page" loading="lazy" width="170" height="254"></figure>
-<p>(1, 1) (1, 2) (1, 3) (1, 4) (1, 5) (1, 6)</p>
-<figure class="fig"><img src="img/fig-p12-2.webp" alt="Figure from the textbook page" loading="lazy" width="471" height="241"></figure>
-<p>(2, 1)</p>
-<p>(3, 1)</p>
-<p>(4, 1)</p>
-<p>(5, 1)</p>
-<p>(6, 1)</p>
-<p class="caption">Fig. 14.3</p>
+<h4 class="callout-h">Solution :</h4>
+<p>When the blue die shows ‘1’, the grey die could show any one of the numbers 1, 2, 3, 4, 5, 6. The same is true when the blue die shows ‘2’, ‘3’, ‘4’, ‘5’ or ‘6’. The possible outcomes of the experiment are listed in the table below; the first number in each ordered pair is the number appearing on the blue die and the second number is that on the grey die.</p>
+<figure class="fig wide"><img src="img/fig-fix-p12-1.webp" alt="Fig. 14.3: the 36 outcomes of throwing two dice" loading="lazy" width="900" height="494"><figcaption>Fig. 14.3</figcaption></figure>
 <p>Note that the pair (1, 4) is different from (4, 1). (Why?)</p>
-<p>So, the number of possible outcomes \(= 6 \times 6 = 36\).</p>
+<p>So, the number of possible outcomes = 6 × 6 = 36.</p>
 <ul class="qlist">
-<li><span class="mk">(i)</span><span class="lt">The outcomes favourable to the event ‘the sum of the two numbers is 8’ denoted</span></li>
+<li><span class="mk">(i)</span><span class="lt">The outcomes favourable to the event ‘the sum of the two numbers is 8’ denoted by E, are: (2, 6), (3, 5), (4, 4), (5, 3), (6, 2) (see Fig. 14.3)<br>i.e., the number of outcomes favourable to E = 5.<br>Hence, \(\text{P(E)} = \dfrac{5}{36}\)</span></li>
+<li><span class="mk">(ii)</span><span class="lt">As you can see from Fig. 14.3, there is no outcome favourable to the event F, ‘the sum of two numbers is 13’.<br>So, \(\text{P(F)} = \dfrac{0}{36} = 0\)</span></li>
+<li><span class="mk">(iii)</span><span class="lt">As you can see from Fig. 14.3, all the outcomes are favourable to the event G, ‘sum of two numbers \(\le 12\)’.<br>So, \(\text{P(G)} = \dfrac{36}{36} = 1\)</span></li>
 </ul>
-<p>by E, are: (2, 6), (3, 5), (4, 4), (5, 3), (6, 2) (see Fig. 14.3)</p>
-<p>i.e., the number of outcomes favourable to \(E = 5\).</p>
-<div class="mathblock"><p>Hence, P(E) \(= \frac{5}{36}\)</p></div>
-<ul class="qlist">
-<li><span class="mk">(ii)</span><span class="lt">As you can see from Fig. 14.3, there is no outcome favourable to the event F,</span></li>
-</ul>
-<p>‘the sum of two numbers is 13’.</p>
-<div class="mathblock"><p>So, P(F) \(= \frac{0}{36} = 0\)</p></div>
-<ul class="qlist">
-<li><span class="mk">(iii)</span><span class="lt">As you can see from Fig. 14.3, all the outcomes are favourable to the event G,</span></li>
-</ul>
-<p>‘sum of two numbers £ 12’.</p>
-<div class="mathblock"><p>So, P(G) \(= \frac{36}{36} = 1\)</p></div>
 </article>
 <nav class="pager"><a class="" data-nav="prev" href="../../13-statistics/09-a-note-to-the-reader/index.html"><span class="dir">← Previous</span><span class="t">A Note to the Reader</span><span class="ch">Statistics</span></a><a class="nx" data-nav="next" href="../../14-probability/02-exercise-14.1/index.html"><span class="dir">Next →</span><span class="t">Exercise 14.1</span><span class="ch">Probability</span></a></nav>
 </main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>

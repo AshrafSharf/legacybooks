@@ -89,6 +89,9 @@ img{max-width:100%;height:auto}
   letter-spacing:.08em;text-transform:uppercase;color:var(--accent-2);
   background:var(--accent-2-soft);border-radius:99px;padding:.3rem .85rem;margin:2em 0 .7em}
 .prose .lead{color:var(--ink-soft);font-style:italic}
+.prose table.tbl{border-collapse:collapse;margin:1.1rem auto;font-size:.95rem;display:block;overflow-x:auto;max-width:100%;width:max-content}
+.prose table.tbl th,.prose table.tbl td{border:1px solid var(--rule);padding:.35em .75em;text-align:center;vertical-align:middle}
+.prose table.tbl th{font-family:var(--sans);font-size:.85rem;font-weight:700}
 .prose .caption{font-family:var(--sans);font-size:.78rem;color:var(--ink-soft);text-align:center;
   margin:-.5em 0 1.4em}
 

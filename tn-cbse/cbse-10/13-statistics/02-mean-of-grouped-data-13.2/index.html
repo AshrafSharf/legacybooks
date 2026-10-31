@@ -28,134 +28,111 @@
 <div class="sec-head">
   <p class="eyebrow"><a href="../index.html">Chapter 13 · Statistics</a></p>
   <h1>13.2 Mean of Grouped Data</h1>
-  <p class="sec-meta">9 figures</p>
+  <p class="sec-meta">11 figures</p>
 </div>
 <article class="prose">
-<p>The mean (or average) of observations, as we know, is the sum of the values of all the observations divided by the total number of observations. From Class IX, recall that if x_{1}, x_{2},. . ., x_{n} are observations with respective frequencies f_{1}, f_{2}, . . ., f_{n}, then this means observation x_{1} occurs f_{1} times, x_{2} occurs f_{2} times, and so on. Now, the sum of the values of all the observations \(= f_{1}x_{1} + f_{2}x_{2} +\) . . . \(+ f_{n}x_{n}\), and the number of observations \(= f_{1} + f_{2} +\) . . . \(+ f_{n}\). So, the mean x of the data is given by</p>
-<div class="mathblock"><p>\(f_{1}x_{1} + f_{2}x_{2} + + f_{n}x_{n}\)</p></div>
-<p>\(x =\)</p>
-<div class="mathblock"><p>\(f_{1} + f_{2} + + f_{n}\)</p></div>
-<p>Recall that we can write this in short form by using the Greek letter Σ (capital sigma) which means summation. That is,</p>
-<p>\(Σ^{n}\)</p>
-<p class="lead">f_{i}x_{i}</p>
-<p>\(x =\)</p>
-<div class="mathblock"><p>i=1</p></div>
-<p>\(Σ^{n}\)</p>
-<p class="lead">f_{i}</p>
-<div class="mathblock"><p>i=1</p></div>
-<p>which, more briefly, is written as \(x = \frac{Σfixi}{Σf} _{i}\) , if it is understood that i varies from 1 to n.</p>
+<h3>13.2 Mean of Grouped Data</h3>
+<p>The mean (or average) of observations, as we know, is the sum of the values of all the observations divided by the total number of observations. From Class IX, recall that if \(x_{1}, x_{2}, \ldots, x_{n}\) are observations with respective frequencies \(f_{1}, f_{2}, \ldots, f_{n}\), then this means observation \(x_{1}\) occurs \(f_{1}\) times, \(x_{2}\) occurs \(f_{2}\) times, and so on.</p>
+<p>Now, the sum of the values of all the observations \(= f_{1}x_{1} + f_{2}x_{2} + \ldots + f_{n}x_{n}\), and the number of observations \(= f_{1} + f_{2} + \ldots + f_{n}\).</p>
+<p>So, the mean \(\overline{x}\) of the data is given by</p>
+<div class="mathblock"><p>\(\overline{x} = \dfrac{f_{1}x_{1} + f_{2}x_{2} + \cdots + f_{n}x_{n}}{f_{1} + f_{2} + \cdots + f_{n}}\)</p></div>
+<p>Recall that we can write this in short form by using the Greek letter \(\Sigma\) (capital sigma) which means summation. That is,</p>
+<div class="mathblock"><p>\(\overline{x} = \dfrac{\displaystyle\sum_{i=1}^{n} f_{i}x_{i}}{\displaystyle\sum_{i=1}^{n} f_{i}}\)</p></div>
+<p>which, more briefly, is written as \(\overline{x} = \dfrac{\Sigma f_{i}x_{i}}{\Sigma f_{i}}\), if it is understood that <em>i</em> varies from 1 to <em>n</em>.</p>
 <p>Let us apply this formula to find the mean in the following example.</p>
-<p>Example 1 : The marks obtained by 30 students of Class X of a certain school in a Mathematics paper consisting of 100 marks are presented in table below. Find the mean of the marks obtained by the students.</p>
-<figure class="fig table-fig wide"><img src="img/fig-p2-1.webp" alt="Table 13.1" loading="lazy" width="887" height="175"><figcaption>Table 13.1</figcaption></figure>
-<p>Solution: Recall that to find the mean marks, we require the product of each x_{i} with the corresponding frequency f_{i}. So, let us put them in a column as shown in Table 13.1.</p>
-<figure class="fig wide"><img src="img/fig-p2-2.webp" alt="Figure from the textbook page" loading="lazy" width="886" height="544"></figure>
-<p>Σ f_{i}x_{i}</p>
-<div class="mathblock"><p>Now, \(x =\) Σ \(f_{i} = \frac{1779}{30} = 59.3\)</p></div>
+<h4 class="callout-h">Example 1 :</h4>
+<p>The marks obtained by 30 students of Class X of a certain school in a Mathematics paper consisting of 100 marks are presented in table below. Find the mean of the marks obtained by the students.</p>
+<figure class="fig table-fig wide"><img src="img/fig-p2-1.webp" alt="Marks obtained and number of students" loading="lazy" width="887" height="175"></figure>
+<h4 class="callout-h">Solution:</h4>
+<p>Recall that to find the mean marks, we require the product of each \(x_{i}\) with the corresponding frequency \(f_{i}\). So, let us put them in a column as shown in Table 13.1.</p>
+<figure class="fig table-fig wide"><img src="img/fig-p2-2.webp" alt="Table 13.1" loading="lazy" width="886" height="544"><figcaption>Table 13.1</figcaption></figure>
+<div class="mathblock"><p>\(\text{Now,}\quad \overline{x} = \dfrac{\Sigma f_{i}x_{i}}{\Sigma f_{i}} = \dfrac{1779}{30} = 59.3\)</p></div>
 <p>Therefore, the mean marks obtained is 59.3.</p>
 <p>In most of our real life situations, data is usually so large that to make a meaningful study it needs to be condensed as grouped data. So, we need to convert given ungrouped data into grouped data and devise some method to find its mean.</p>
-<p>Let us convert the ungrouped data of Example 1 into grouped data by forming class-intervals of width, say 15. Remember that, while allocating frequencies to each class-interval, students falling in any upper class-limit would be considered in the next class, e.g., 4 students who have obtained 40 marks would be considered in the class- interval 40-55 and not in 25-40. With this convention in our mind, let us form a grouped frequency distribution table (see Table 13.2).</p>
+<p>Let us convert the ungrouped data of Example 1 into grouped data by forming class-intervals of width, say 15. Remember that, while allocating frequencies to each class-interval, students falling in any upper class-limit would be considered in the next class, e.g., 4 students who have obtained 40 marks would be considered in the class-interval 40-55 and not in 25-40. With this convention in our mind, let us form a grouped frequency distribution table (see Table 13.2).</p>
 <figure class="fig table-fig wide"><img src="img/fig-p3-1.webp" alt="Table 13.2" loading="lazy" width="889" height="128"><figcaption>Table 13.2</figcaption></figure>
-<p>Now, for each class-interval, we require a point which would serve as the representative of the whole class. It is assumed that the frequency of each class- interval is centred around its mid-point. So the mid-point (or class mark) of each class can be chosen to represent the observations falling in the class. Recall that we find the mid-point of a class (or its class mark) by finding the average of its upper and lower limits. That is,</p>
-<p>Upper class limit + Lower class limit Class mark \(= 2\)</p>
-<p>With reference to Table 13.2, for the class 10-25, the class mark is \(\frac{10+25}{2}\) , i.e., 17.5. Similarly, we can find the class marks of the remaining class intervals. We put them in Table 13.3. These class marks serve as our x_{i}’s. Now, in general, for the ith class interval, we have the frequency f_{i} corresponding to the class mark x_{i}. We can now proceed to compute the mean in the same manner as in Example 1.</p>
-<p class="caption">Table 13.3</p>
-<p>Class interval Number of students ( f_{i}) Class mark (x_{i}) f_{i}x_{i}</p>
-<p>\(10 - 25 2 17.5 35.0 25 - 40 3 32.5 97.5 40 - 55 7 47.5 332.5 55 - 70 6 62.5 375.0 70 - 85 6 77.5 465.0 85 - 100 6 92.5 555.0\)</p>
-<div class="mathblock"><p>Total Σ \(f_{i} = 30\) Σ \(f_{i}x_{i} = 1860.0\)</p></div>
-<p>The sum of the values in the last column gives us Σ f_{i}x_{i}. So, the mean x of the given data is given by Σf_{i}x_{i}</p>
-<div class="mathblock"><p>\(x =\) Σ \(f_{i} = \frac{1860.0}{30} = 62\)</p></div>
-<p>This new method of finding the mean is known as the Direct Method. We observe that Tables 13.1 and 13.3 are using the same data and employing the same formula for the calculation of the mean but the results obtained are different. Can you think why this is so, and which one is more accurate? The difference in the two values is because of the mid-point assumption in Table 13.3, 59.3 being the exact mean, while 62 an approximate mean. Sometimes when the numerical values of x_{i} and f_{i} are large, finding the product of x_{i} and f_{i} becomes tedious and time consuming. So, for such situations, let us think of a method of reducing these calculations. We can do nothing with the f_{i}’s, but we can change each x_{i} to a smaller number so that our calculations become easy. How do we do this? What about subtracting a fixed number from each of these x_{i}’s? Let us try this method. The first step is to choose one among the x_{i}’s as the assumed mean, and denote it by ‘a’. Also, to further reduce our calculation work, we may take ‘a’ to be that x_{i} which lies in the centre of x_{1}, x_{2}, . . ., x_{n}. So, we can choose \(a = 47.5\) or \(a = 62.5\). Let</p>
-<div class="mathblock"><p>us choose \(a = 47.5\).</p></div>
-<p>The next step is to find the difference d_{i} between a and each of the x_{i}’s, that is, the deviation of ‘a’ from each of the x_{i}’s.</p>
-<div class="mathblock"><p>i.e., \(d_{i} = x_{i} - a = x_{i} - 47.5\)</p></div>
-<p>The third step is to find the product of d_{i} with the corresponding f_{i}, and take the sum of all the f_{i}d_{i}’s. The calculations are shown in Table 13.4.</p>
-<p class="caption">Table 13.4</p>
-<p>Class interval Number of Class mark \(d_{i}= x_{i} - 47.5 f_{i}d_{i}\)</p>
-<p>students ( f_{i}) (x_{i})</p>
-<p>\(10 - 25 2 17.5 - 30 - 60 25 - 40 3 32.5 - 15 - 45 40 - 55 7 47.5 0 0 55 - 70 6 62.5 15 90 70 - 85 6 77.5 30 180 85 - 100 6 92.5 45 270\)</p>
-<div class="mathblock"><p>Total \(Σf_{i} = 30 Σf_{i}d_{i} = 435\)</p></div>
-<p>Σf d_{i} _{i} So, from Table 13.4, the mean of the deviations, \(d = Σf_{i}\) .</p>
-<p>Now, let us find the relation between d and x . Since in obtaining d, we subtracted ‘a’ from each x_{i}, so, in order to get the mean x , we need to add ‘a’ to \(\frac{i}{d}\) . This can be explained mathematically as:</p>
-<p>Σf d_{i} _{i} Mean of deviations, \(d = Σf_{i}\)</p>
-<div class="mathblock"><p>So, \(d = \frac{fi(xia)}{Σf} _{i}\)</p></div>
-<aside class="sidenote"><p>Σ -</p><p>Σf_{i}x_{i} Σ</p></aside>
-<div class="mathblock"><p> = Σfi - (f  ai}{Σf} _{i}</p></div>
-<div class="mathblock"><p>\(= x - a \frac{fi}{Σf} _{i}\)</p></div>
-<p>\(= x -\)</p>
-<div class="mathblock"><p>So, \(x = a + \frac{a}{d}\)</p><p>i.e.,  x = a + (f  dii}{Σf} _{i}</p></div>
-<p>Substituting the values of a, Σf_{i}d_{i} and Σf_{i} from Table 13.4, we get</p>
-<div class="mathblock"><p>\(x = 47.5 + \frac{435}{30} = 47.5 + 14.5 = 62\).</p></div>
-<p>Therefore, the mean of the marks obtained by the students is 62. The method discussed above is called the Assumed Mean Method.</p>
-<p>Activity 1 : From the Table 13.3 find the mean by taking each of x_{i} (i.e., 17.5, 32.5, and so on) as ‘a’. What do you observe? You will find that the mean determined in each case is the same, i.e., 62. (Why ?) So, we can say that the value of the mean obtained does not depend on the choice of ‘a’. Observe that in Table 13.4, the values in Column 4 are all multiples of 15. So, if we divide the values in the entire Column 4 by 15, we would get smaller numbers to multiply with f_{i}. (Here, 15 is the class size of each class interval.)</p>
-<p>- So, let \(u_{i} = \frac{xia}{h}\) , where a is the assumed mean and h is the class size. Now, we calculate u_{i} in this way and continue as before (i.e., find f_{i}u_{i}and then Σf_{i}u_{i}). Taking \(h = 15\), let us form Table 13.5.</p>
-<p class="caption">Table 13.5</p>
-<figure class="fig table-fig wide"><img src="img/fig-p6-1.webp" alt="Figure from the textbook page" loading="lazy" width="889" height="399"></figure>
-<p>Σf u Let = Σ Here, again let us find the relation between \(\frac{fi}{u}\) and x .</p>
-<div class="mathblock"><p>We have, \(u_{i} = \frac{xi-a}{h}\)</p><p>Therefore, \(u = Σf^{i} \frac{(xi-a)}{h} =\)</p></div>
-<aside class="sidenote"><p>\(Σf_{i} \frac{1}{h} \frac{Σfixi-aΣfi}{Σf} _{i}\)</p></aside>
-<p>\(= \frac{1}{h} \frac{Σfixi}{Σf} _{i} - a \frac{Σfi}{Σf} _{i}\)</p>
-<div class="mathblock"><p>\(= \frac{1}{h}\) [x - a]</p></div>
-<p>So, hu \(= x - a\)</p>
-<p>i.e., \(x = a +\) hu</p>
-<div class="mathblock"><p>So,  x = a + h (Σf  uii}{Σf} _{i}</p></div>
-<p>Now, substituting the values of a, h, Σf_{i}u_{i} and Σf_{i} from Table 14.5, we get</p>
-<div class="mathblock"><p>\(x = 47.5 + 15 \times \frac{29}{30} = 47.5 + 14.5 = 62\)</p></div>
-<p>So, the mean marks obtained by a student is 62. The method discussed above is called the Step-deviation method. We note that :</p>
+<p>Now, for each class-interval, we require a point which would serve as the representative of the whole class. <em>It is assumed that the frequency of each class-interval is centred around its mid-point</em>. So the <em>mid-point</em> (or <em>class mark</em>) of each class can be chosen to represent the observations falling in the class. Recall that we find the mid-point of a class (or its class mark) by finding the average of its upper and lower limits. That is,</p>
+<div class="mathblock"><p>\(\textbf{Class mark} = \dfrac{\textbf{Upper class limit + Lower class limit}}{\textbf{2}}\)</p></div>
+<p>With reference to Table 13.2, for the class 10-25, the class mark is \(\dfrac{10+25}{2}\), i.e., 17.5. Similarly, we can find the class marks of the remaining class intervals. We put them in Table 13.3. These class marks serve as our \(x_{i}\)’s. Now, in general, for the <em>i</em>th class interval, we have the frequency \(f_{i}\) corresponding to the class mark \(x_{i}\). We can now proceed to compute the mean in the same manner as in Example 1.</p>
+<figure class="fig table-fig wide"><img src="img/fig-fix-p4-1.webp" alt="Table 13.3" loading="lazy" width="900" height="364"><figcaption>Table 13.3</figcaption></figure>
+<p>The sum of the values in the last column gives us \(\Sigma f_{i}x_{i}\). So, the mean \(\overline{x}\) of the given data is given by</p>
+<div class="mathblock"><p>\(\overline{x} = \dfrac{\Sigma f_{i}x_{i}}{\Sigma f_{i}} = \dfrac{1860.0}{30} = 62\)</p></div>
+<p>This new method of finding the mean is known as the <strong>Direct Method</strong>.</p>
+<p>We observe that Tables 13.1 and 13.3 are using the same data and employing the same formula for the calculation of the mean but the results obtained are different. Can you think why this is so, and which one is more accurate? The difference in the two values is because of the mid-point assumption in Table 13.3, 59.3 being the exact mean, while 62 an approximate mean.</p>
+<p>Sometimes when the numerical values of \(x_{i}\) and \(f_{i}\) are large, finding the product of \(x_{i}\) and \(f_{i}\) becomes tedious and time consuming. So, for such situations, let us think of a method of reducing these calculations.</p>
+<p>We can do nothing with the \(f_{i}\)’s, but we can change each \(x_{i}\) to a smaller number so that our calculations become easy. How do we do this? What about subtracting a fixed number from each of these \(x_{i}\)’s? Let us try this method.</p>
+<p>The first step is to choose one among the \(x_{i}\)’s as the <em>assumed mean</em>, and denote it by ‘<em>a</em>’. Also, to further reduce our calculation work, we may take ‘<em>a</em>’ to be that \(x_{i}\) which lies in the centre of \(x_{1}, x_{2}, \ldots, x_{n}\). So, we can choose \(a = 47.5\) or \(a = 62.5\). Let us choose \(a = 47.5\).</p>
+<p>The next step is to find the difference \(d_{i}\) between <em>a</em> and each of the \(x_{i}\)’s, that is, the <strong>deviation</strong> of ‘<em>a</em>’ from each of the \(x_{i}\)’s.</p>
+<div class="mathblock"><p>\(\text{i.e.,}\quad d_{i} = x_{i} - a = x_{i} - 47.5\)</p></div>
+<p>The third step is to find the product of \(d_{i}\) with the corresponding \(f_{i}\), and take the sum of all the \(f_{i}d_{i}\)’s. The calculations are shown in Table 13.4.</p>
+<figure class="fig table-fig wide"><img src="img/fig-fix-p5-1.webp" alt="Table 13.4" loading="lazy" width="900" height="357"><figcaption>Table 13.4</figcaption></figure>
+<p>So, from Table 13.4, the mean of the deviations, \(\overline{d} = \dfrac{\Sigma f_{i}d_{i}}{\Sigma f_{i}}\).</p>
+<p>Now, let us find the relation between \(\overline{d}\) and \(\overline{x}\).</p>
+<p>Since in obtaining \(d_{i}\), we subtracted ‘<em>a</em>’ from each \(x_{i}\), so, in order to get the mean \(\overline{x}\), we need to add ‘<em>a</em>’ to \(\overline{d}\). This can be explained mathematically as:</p>
+<div class="mathblock"><p>\(\text{Mean of deviations,}\quad \overline{d} = \dfrac{\Sigma f_{i}d_{i}}{\Sigma f_{i}}\)</p><p>\(\text{So,}\quad \overline{d} = \dfrac{\Sigma f_{i}(x_{i} - a)}{\Sigma f_{i}} = \dfrac{\Sigma f_{i}x_{i}}{\Sigma f_{i}} - \dfrac{\Sigma f_{i}a}{\Sigma f_{i}} = \overline{x} - a\dfrac{\Sigma f_{i}}{\Sigma f_{i}} = \overline{x} - a\)</p><p>\(\text{So,}\quad \overline{x} = a + \overline{d}\)</p><p>\(\text{i.e.,}\quad \overline{x} = a + \dfrac{\Sigma f_{i}d_{i}}{\Sigma f_{i}}\)</p></div>
+<p>Substituting the values of <em>a</em>, \(\Sigma f_{i}d_{i}\) and \(\Sigma f_{i}\) from Table 13.4, we get</p>
+<div class="mathblock"><p>\(\overline{x} = 47.5 + \dfrac{435}{30} = 47.5 + 14.5 = 62.\)</p></div>
+<p>Therefore, the mean of the marks obtained by the students is 62.</p>
+<p>The method discussed above is called the <strong>Assumed Mean Method</strong>.</p>
+<h4 class="callout-h">Activity 1 :</h4>
+<p>From the Table 13.3 find the mean by taking each of \(x_{i}\) (i.e., 17.5, 32.5, and so on) as ‘<em>a</em>’. What do you observe? You will find that the mean determined in each case is the same, i.e., 62. (Why ?)</p>
+<p>So, we can say that the value of the mean obtained does not depend on the choice of ‘<em>a</em>’.</p>
+<p>Observe that in Table 13.4, the values in Column 4 are all multiples of 15. So, if we divide the values in the entire Column 4 by 15, we would get smaller numbers to multiply with \(f_{i}\). (Here, 15 is the class size of each class interval.)</p>
+<p>So, let \(u_{i} = \dfrac{x_{i} - a}{h}\), where <em>a</em> is the assumed mean and <em>h</em> is the class size.</p>
+<p>Now, we calculate \(u_{i}\) in this way and continue as before (i.e., find \(f_{i}u_{i}\) and then \(\Sigma f_{i}u_{i}\)). Taking \(h = 15\), let us form Table 13.5.</p>
+<figure class="fig table-fig wide"><img src="img/fig-p6-1.webp" alt="Table 13.5" loading="lazy" width="889" height="399"><figcaption>Table 13.5</figcaption></figure>
+<div class="mathblock"><p>\(\text{Let}\quad \overline{u} = \dfrac{\Sigma f_{i}u_{i}}{\Sigma f_{i}}\)</p></div>
+<p>Here, again let us find the relation between \(\overline{u}\) and \(\overline{x}\).</p>
+<div class="mathblock"><p>\(\text{We have,}\quad u_{i} = \dfrac{x_{i} - a}{h}\)</p><p>\(\text{Therefore,}\quad \overline{u} = \dfrac{\Sigma f_{i}\dfrac{(x_{i} - a)}{h}}{\Sigma f_{i}} = \dfrac{1}{h}\left[\dfrac{\Sigma f_{i}x_{i} - a\Sigma f_{i}}{\Sigma f_{i}}\right]\)</p><p>\(= \dfrac{1}{h}\left[\dfrac{\Sigma f_{i}x_{i}}{\Sigma f_{i}} - a\dfrac{\Sigma f_{i}}{\Sigma f_{i}}\right] = \dfrac{1}{h}\left[\overline{x} - a\right]\)</p><p>\(\text{So,}\quad h\overline{u} = \overline{x} - a\)</p><p>\(\text{i.e.,}\quad \overline{x} = a + h\overline{u}\)</p><p>\(\text{So,}\quad \overline{x} = a + h\left(\dfrac{\Sigma f_{i}u_{i}}{\Sigma f_{i}}\right)\)</p></div>
+<p>Now, substituting the values of <em>a</em>, <em>h</em>, \(\Sigma f_{i}u_{i}\) and \(\Sigma f_{i}\) from Table 13.5, we get</p>
+<div class="mathblock"><p>\(\overline{x} = 47.5 + 15 \times \left(\dfrac{29}{30}\right) = 47.5 + 14.5 = 62\)</p></div>
+<p>So, the mean marks obtained by a student is 62.</p>
+<p>The method discussed above is called the <strong>Step-deviation</strong> method.</p>
+<p>We note that :</p>
 <ul class="qlist">
-<li><span class="mk">•</span><span class="lt">the step-deviation method will be convenient to apply if all the d_{i}’s have a</span></li>
-</ul>
-<p>common factor.</p>
-<ul class="qlist">
+<li><span class="mk">•</span><span class="lt">the step-deviation method will be convenient to apply if all the \(d_{i}\)’s have a common factor.</span></li>
 <li><span class="mk">•</span><span class="lt">The mean obtained by all the three methods is the same.</span></li>
-<li><span class="mk">•</span><span class="lt">The assumed mean method and step-deviation method are just simplified</span></li>
+<li><span class="mk">•</span><span class="lt">The assumed mean method and step-deviation method are just simplified forms of the direct method.</span></li>
+<li><span class="mk">•</span><span class="lt">The formula \(\overline{x} = a + h\overline{u}\) still holds if <em>a</em> and <em>h</em> are not as given above, but are any non-zero numbers such that \(u_{i} = \dfrac{x_{i} - a}{h}\).</span></li>
 </ul>
-<p>forms of the direct method.</p>
-<ul class="qlist">
-<li><span class="mk">•</span><span class="lt">The formula \(x = a +\) hu still holds if a and h are not as given above, but are</span></li>
-</ul>
-<p>any non-zero numbers such that \(u_{i} = \frac{xi-a}{h}\) . Let us apply these methods in another example.</p>
-<p>Example 2 : The table below gives the percentage distribution of female teachers in the primary schools of rural areas of various states and union territories (U.T.) of India. Find the mean percentage of female teachers by all the three methods discussed in this section.</p>
-<figure class="fig table-fig wide"><img src="img/fig-p8-1.webp" alt="Table 13.6" loading="lazy" width="887" height="175"><figcaption>Table 13.6</figcaption></figure>
-<p>Source : Seventh All India School Education Survey conducted by NCERT</p>
-<p>Solution : Let us find the class marks, x_{i}, of each class, and put them in a column (see Table 13.6):</p>
-<figure class="fig wide"><img src="img/fig-p8-2.webp" alt="Figure from the textbook page" loading="lazy" width="887" height="507"></figure>
-<p>Here we take \(a = 50\), \(h = 10\), then \(d_{i} = x_{i} - 50\) and \(= \frac{xi-50}{10}\) .</p>
-<p>We now find di and ui and put them in Table 13.7.</p>
-<p class="caption">Table 13.7</p>
-<figure class="fig table-fig wide"><img src="img/fig-p9-1.webp" alt="Figure from the textbook page" loading="lazy" width="889" height="449"></figure>
-<p>From the table above, we obtain \(Σf_{i} = 35\), \(Σf_{i}x_{i} = 1390\),</p>
-<div class="mathblock"><p>\(Σf_{i}d_{i} = - 360\), \(Σf_{i}u_{i} = - 36\).</p></div>
-<p>Σf_{i}x_{i} Using the direct method, \(x = = = 39.71\)</p>
-<div class="mathblock"><p>\(Σf_{i} \frac{1390}{35}\)</p></div>
+<p>Let us apply these methods in another example.</p>
+<h4 class="callout-h">Example 2 :</h4>
+<p>The table below gives the percentage distribution of female teachers in the primary schools of rural areas of various states and union territories (U.T.) of India. Find the mean percentage of female teachers by all the three methods discussed in this section.</p>
+<figure class="fig table-fig wide"><img src="img/fig-p8-1.webp" alt="Percentage of female teachers and number of States/U.T." loading="lazy" width="887" height="175"></figure>
+<p><strong>Source :</strong> <em>Seventh All India School Education Survey conducted by NCERT</em></p>
+<h4 class="callout-h">Solution :</h4>
+<p>Let us find the class marks, \(x_{i}\), of each class, and put them in a column (see Table 13.6):</p>
+<figure class="fig table-fig wide"><img src="img/fig-p8-2.webp" alt="Table 13.6" loading="lazy" width="887" height="507"><figcaption>Table 13.6</figcaption></figure>
+<p>Here we take \(a = 50\), \(h = 10\), then \(d_{i} = x_{i} - 50\) and \(u_{i} = \dfrac{x_{i} - 50}{10}\).</p>
+<p>We now find \(d_{i}\) and \(u_{i}\) and put them in Table 13.7.</p>
+<figure class="fig table-fig wide"><img src="img/fig-p9-1.webp" alt="Table 13.7" loading="lazy" width="889" height="449"><figcaption>Table 13.7</figcaption></figure>
+<p>From the table above, we obtain \(\Sigma f_{i} = 35\), \(\Sigma f_{i}x_{i} = 1390\),</p>
+<div class="mathblock"><p>\(\Sigma f_{i}d_{i} = -360, \quad \Sigma f_{i}u_{i} = -36.\)</p></div>
+<p>Using the direct method, \(\overline{x} = \dfrac{\Sigma f_{i}x_{i}}{\Sigma f_{i}} = \dfrac{1390}{35} = 39.71\)</p>
 <p>Using the assumed mean method,</p>
-<p>Σ \(x = a + \frac{f  dii}{Σf}  _{i} = 50 + \frac{( - 360)}{35} = 39.71\)</p>
+<div class="mathblock"><p>\(\overline{x} = a + \dfrac{\Sigma f_{i}d_{i}}{\Sigma f_{i}} = 50 + \dfrac{(-360)}{35} = 39.71\)</p></div>
 <p>Using the step-deviation method,</p>
-<div class="mathblock"><p>\(x = a + Σf_{i} \times h = 50 + \frac{ - 36}{35} \times 10 = 39.71\)</p></div>
-<p>Σf u_{i} _{i}</p>
+<div class="mathblock"><p>\(\overline{x} = a + \left(\dfrac{\Sigma f_{i}u_{i}}{\Sigma f_{i}}\right) \times h = 50 + \left(\dfrac{-36}{35}\right) \times 10 = 39.71\)</p></div>
 <p>Therefore, the mean percentage of female teachers in the primary schools of rural areas is 39.71.</p>
-<p>Remark : The result obtained by all the three methods is the same. So the choice of method to be used depends on the numerical values of x_{i} and f_{i}. If x_{i} and f_{i} are sufficiently small, then the direct method is an appropriate choice. If x_{i} and f_{i} are numerically large numbers, then we can go for the assumed mean method or step-deviation method. If the class sizes are unequal, and x_{i} are large numerically, we can still apply the step-deviation method by taking h to be a suitable divisor of all the d_{i}’s.</p>
-<p>Example 3 : The distribution below shows the number of wickets taken by bowlers in one-day cricket matches. Find the mean number of wickets by choosing a suitable method. What does the mean signify?</p>
-<figure class="fig table-fig wide"><img src="img/fig-p10-1.webp" alt="Table 13.8" loading="lazy" width="889" height="183"><figcaption>Table 13.8</figcaption></figure>
-<p>Solution : Here, the class size varies, and the x_{i},s are large. Let us still apply the step- deviation method with \(a = 200\) and \(h = 20\). Then, we obtain the data as in Table 13.8.</p>
-<figure class="fig table-fig wide"><img src="img/fig-p10-2.webp" alt="Figure from the textbook page" loading="lazy" width="889" height="486"></figure>
-<p>So, \(u = \frac{ - 106}{45}\) ⋅ Therefore, \(x = 200 + 20 \frac{ - 106}{45} = 200 - 47.11 = 152.89\).</p>
+<h4 class="callout-h">Remark :</h4>
+<p>The result obtained by all the three methods is the same. So the choice of method to be used depends on the numerical values of \(x_{i}\) and \(f_{i}\). If \(x_{i}\) and \(f_{i}\) are sufficiently small, then the direct method is an appropriate choice. If \(x_{i}\) and \(f_{i}\) are numerically large numbers, then we can go for the assumed mean method or step-deviation method. If the class sizes are unequal, and \(x_{i}\) are large numerically, we can still apply the step-deviation method by taking <em>h</em> to be a suitable divisor of all the \(d_{i}\)’s.</p>
+<h4 class="callout-h">Example 3 :</h4>
+<p>The distribution below shows the number of wickets taken by bowlers in one-day cricket matches. Find the mean number of wickets by choosing a suitable method. What does the mean signify?</p>
+<figure class="fig table-fig wide"><img src="img/fig-p10-1.webp" alt="Number of wickets and number of bowlers" loading="lazy" width="889" height="183"></figure>
+<h4 class="callout-h">Solution :</h4>
+<p>Here, the class size varies, and the \(x_{i}\)’s are large. Let us still apply the step-deviation method with \(a = 200\) and \(h = 20\). Then, we obtain the data as in Table 13.8.</p>
+<figure class="fig table-fig wide"><img src="img/fig-p10-2.webp" alt="Table 13.8" loading="lazy" width="889" height="486"><figcaption>Table 13.8</figcaption></figure>
+<p>So, \(\overline{u} = \dfrac{-106}{45}\). Therefore, \(\overline{x} = 200 + 20\left(\dfrac{-106}{45}\right) = 200 - 47.11 = 152.89.\)</p>
 <p>This tells us that, on an average, the number of wickets taken by these 45 bowlers in one-day cricket is 152.89.</p>
 <p>Now, let us see how well you can apply the concepts discussed in this section!</p>
 <h4 class="callout-h" id="s-activity-2">Activity 2 :</h4>
 <p>Divide the students of your class into three groups and ask each group to do one of the following activities.</p>
 <ul class="qlist">
-<li><span class="mk">1.</span><span class="lt">Collect the marks obtained by all the students of your class in Mathematics in the</span></li>
+<li><span class="mk">1.</span><span class="lt">Collect the marks obtained by all the students of your class in Mathematics in the latest examination conducted by your school. Form a grouped frequency distribution of the data obtained.</span></li>
+<li><span class="mk">2.</span><span class="lt">Collect the daily maximum temperatures recorded for a period of 30 days in your city. Present this data as a grouped frequency table.</span></li>
+<li><span class="mk">3.</span><span class="lt">Measure the heights of all the students of your class (in cm) and form a grouped frequency distribution table of this data.</span></li>
 </ul>
-<p>latest examination conducted by your school. Form a grouped frequency distribution of the data obtained.</p>
-<ul class="qlist">
-<li><span class="mk">2.</span><span class="lt">Collect the daily maximum temperatures recorded for a period of 30 days in your</span></li>
-</ul>
-<p>city. Present this data as a grouped frequency table.</p>
-<ul class="qlist">
-<li><span class="mk">3.</span><span class="lt">Measure the heights of all the students of your class (in cm) and form a grouped</span></li>
-</ul>
-<p>frequency distribution table of this data.</p>
-<p>After all the groups have collected the data and formed grouped frequency distribution tables, the groups should find the mean in each case by the method which</p>
+<p>After all the groups have collected the data and formed grouped frequency distribution tables, the groups should find the mean in each case by the method which they find appropriate.</p>
 </article>
 <nav class="pager"><a class="" data-nav="prev" href="../../13-statistics/01-introduction-13.1/index.html"><span class="dir">← Previous</span><span class="t">13.1 Introduction</span><span class="ch">Statistics</span></a><a class="nx" data-nav="next" href="../../13-statistics/03-exercise-13.1/index.html"><span class="dir">Next →</span><span class="t">Exercise 13.1</span><span class="ch">Statistics</span></a></nav>
 </main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
