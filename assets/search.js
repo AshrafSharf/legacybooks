@@ -30,6 +30,29 @@
   var activeIdx = -1;
   var loading = false;
   var loaded = false;
+  var filterBar = null;
+  var grades = [];          // grade keys present in the index, e.g. ['6','7',…,'other']
+  var excluded = loadExcluded();
+  var EXCL_KEY = 'lb-search-excluded';
+
+  function loadExcluded() {
+    try {
+      var raw = localStorage.getItem('lb-search-excluded');
+      var arr = raw ? JSON.parse(raw) : [];
+      var o = {};
+      for (var i = 0; i < arr.length; i++) o[arr[i]] = true;
+      return o;
+    } catch (e) { return {}; }
+  }
+  function saveExcluded() {
+    try { localStorage.setItem(EXCL_KEY, JSON.stringify(Object.keys(excluded))); } catch (e) {}
+  }
+
+  /* class number from the book path (tn-cbse/cbse-10/…, tn-cbse/tn-7-term1/…), else 'other' */
+  function gradeOf(d) {
+    var m = (d.bookPath || d.path || '').match(/(?:^|\/)(?:cbse|tn)-(\d+)(?:-|\/)/);
+    return m ? m[1] : 'other';
+  }
 
   /* ── inject CSS ── */
   var style = document.createElement('style');
@@ -56,6 +79,19 @@
     '.lb-search-input::placeholder{color:#aaa}',
     '.lb-search-esc{font-family:system-ui,sans-serif;font-size:.72rem;padding:.15rem .45rem;border-radius:4px;border:1px solid #ccc;color:#888;background:transparent;cursor:pointer}',
     '@media(prefers-color-scheme:dark){.lb-search-esc{border-color:#444;color:#888}}',
+    /* class filter bar */
+    '.lb-search-filters{display:none;align-items:center;gap:.35rem;flex-wrap:wrap;padding:.5rem 1rem;border-bottom:1px solid #e2d9ce;font-family:system-ui,sans-serif;font-size:.75rem}',
+    '.lb-search-filters.ready{display:flex}',
+    '@media(prefers-color-scheme:dark){.lb-search-filters{border-color:#2c313a}}',
+    '.lb-search-filters-label{color:#888;font-weight:600;margin-right:.15rem}',
+    '.lb-search-chip{font:inherit;font-weight:600;padding:.18rem .55rem;border-radius:99px;cursor:pointer;border:1px solid #0d4f4f;background:#0d4f4f;color:#fff;transition:background .1s,color .1s}',
+    '.lb-search-chip.off{background:transparent;color:#999;border-color:#ccc;text-decoration:line-through}',
+    '@media(prefers-color-scheme:dark){.lb-search-chip{background:#2a7a74;border-color:#2a7a74}.lb-search-chip.off{background:transparent;color:#666;border-color:#444}}',
+    '.lb-search-filters-sep{width:1px;align-self:stretch;background:#e2d9ce;margin:0 .25rem}',
+    '@media(prefers-color-scheme:dark){.lb-search-filters-sep{background:#2c313a}}',
+    '.lb-search-preset{font:inherit;padding:.18rem .5rem;border-radius:6px;cursor:pointer;border:1px solid #ccc;background:transparent;color:#666}',
+    '.lb-search-preset:hover{border-color:#0d4f4f;color:#0d4f4f}',
+    '@media(prefers-color-scheme:dark){.lb-search-preset{border-color:#444;color:#aaa}.lb-search-preset:hover{border-color:#5fbdb5;color:#5fbdb5}}',
     /* results */
     '.lb-search-results{overflow-y:auto;padding:.4rem;flex:1}',
     '.lb-search-empty{padding:2rem 1rem;text-align:center;color:#999;font-size:.95rem}',
@@ -122,6 +158,7 @@
       '    <input class="lb-search-input" type="text" placeholder="Search all books…" autocomplete="off" spellcheck="false">',
       '    <button class="lb-search-esc">Esc</button>',
       '  </div>',
+      '  <div class="lb-search-filters"></div>',
       '  <div class="lb-search-results"></div>',
       '  <div class="lb-search-footer">Fuzzy search across 1,500+ pages · ↑↓ to navigate · Enter to open</div>',
       '</div>',
@@ -130,6 +167,9 @@
 
     input = overlay.querySelector('.lb-search-input');
     results = overlay.querySelector('.lb-search-results');
+    filterBar = overlay.querySelector('.lb-search-filters');
+    filterBar.addEventListener('mousedown', function (e) { e.preventDefault(); }); // keep focus in the input
+    filterBar.addEventListener('click', onFilterClick);
 
     overlay.addEventListener('click', function (e) {
       if (e.target === overlay) closeSearch();
@@ -185,9 +225,20 @@
   }
 
   function buildMiniSearch() {
+    var seen = {};
+    for (var i = 0; i < docs.length; i++) {
+      docs[i].grade = gradeOf(docs[i]);
+      seen[docs[i].grade] = true;
+    }
+    grades = Object.keys(seen).sort(function (a, b) {
+      if (a === 'other') return 1;
+      if (b === 'other') return -1;
+      return a - b;
+    });
+    renderFilters();
     miniSearch = new MiniSearch({
       fields: ['title', 'headings', 'body', 'tags', 'chapter', 'book'],
-      storeFields: ['title', 'book', 'bookPath', 'chapter', 'chapterPath', 'section', 'path', 'body', 'tags'],
+      storeFields: ['title', 'book', 'bookPath', 'chapter', 'chapterPath', 'section', 'path', 'body', 'tags', 'grade'],
       searchOptions: {
         boost: { title: 5, headings: 3, tags: 4, chapter: 2, book: 1, body: 1 },
         fuzzy: 0.2,
@@ -196,6 +247,56 @@
     });
     miniSearch.addAll(docs);
   }
+
+  /* ── class filters ── */
+  var PRESETS = [
+    { label: '6–9', keep: ['6', '7', '8', '9'] },
+    { label: '10–12', keep: ['10', '11', '12'] },
+    { label: 'All', keep: null },
+  ];
+
+  function renderFilters() {
+    if (!filterBar) return;
+    var html = '<span class="lb-search-filters-label">Classes</span>';
+    for (var i = 0; i < grades.length; i++) {
+      var g = grades[i];
+      html += '<button type="button" class="lb-search-chip' + (excluded[g] ? ' off' : '') + '" data-grade="' + g + '"' +
+        ' title="Click to ' + (excluded[g] ? 'include' : 'exclude') + ' · Alt/Option-click for only this">' +
+        (g === 'other' ? 'Other' : g) + '</button>';
+    }
+    html += '<span class="lb-search-filters-sep"></span>';
+    for (var p = 0; p < PRESETS.length; p++) {
+      html += '<button type="button" class="lb-search-preset" data-preset="' + p + '">' + PRESETS[p].label + '</button>';
+    }
+    filterBar.innerHTML = html;
+    filterBar.classList.add('ready');
+  }
+
+  function onFilterClick(e) {
+    var btn = e.target.closest('button');
+    if (!btn) return;
+    if (btn.hasAttribute('data-grade')) {
+      var g = btn.getAttribute('data-grade');
+      if (e.altKey) {
+        excluded = {};
+        for (var i = 0; i < grades.length; i++) if (grades[i] !== g) excluded[grades[i]] = true;
+      } else if (excluded[g]) {
+        delete excluded[g];
+      } else {
+        excluded[g] = true;
+      }
+    } else if (btn.hasAttribute('data-preset')) {
+      var keep = PRESETS[+btn.getAttribute('data-preset')].keep;
+      excluded = {};
+      if (keep) for (var j = 0; j < grades.length; j++) if (keep.indexOf(grades[j]) === -1) excluded[grades[j]] = true;
+    }
+    saveExcluded();
+    renderFilters();
+    input.focus();
+    onInput();
+  }
+
+  function isIncluded(r) { return !excluded[r.grade]; }
 
   /* ── build breadcrumb HTML ── */
   function buildCrumbs(h) {
@@ -240,14 +341,18 @@
     if (!q) { showHint(); return; }
     if (!loaded) return;
 
-    var hits = miniSearch.search(q, { combineWith: 'AND' });
+    var hits = miniSearch.search(q, { combineWith: 'AND', filter: isIncluded });
     if (hits.length === 0) {
-      hits = miniSearch.search(q, { combineWith: 'OR' });
+      hits = miniSearch.search(q, { combineWith: 'OR', filter: isIncluded });
     }
     hits = hits.slice(0, 30);
 
     if (hits.length === 0) {
-      results.innerHTML = '<div class="lb-search-empty">No results for “' + escHtml(q) + '”</div>';
+      var msg = 'No results for “' + escHtml(q) + '”';
+      if (Object.keys(excluded).length && miniSearch.search(q, { combineWith: 'OR' }).length) {
+        msg += '<br><small>There are matches in the classes you’ve excluded.</small>';
+      }
+      results.innerHTML = '<div class="lb-search-empty">' + msg + '</div>';
       return;
     }
 
