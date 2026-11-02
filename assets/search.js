@@ -31,27 +31,37 @@
   var loading = false;
   var loaded = false;
   var filterBar = null;
-  var grades = [];          // grade keys present in the index, e.g. ['6','7',…,'other']
-  var excluded = loadExcluded();
-  var EXCL_KEY = 'lb-search-excluded';
+  var grades = [];          // class numbers present in the index, e.g. ['6','7',…,'12']
+  var BOARDS = [
+    { key: 'cbse', label: 'CBSE' },
+    { key: 'tn', label: 'TN Board' },
+    { key: 'algebra', label: 'Algebra books' },
+  ];
+  /* Selected pills = what is searched. An empty group means no limit on that group. */
+  var FILTER_KEY = 'lb-search-filters-v2';
+  var sel = loadSelection();
 
-  function loadExcluded() {
+  function loadSelection() {
+    var def = { board: { cbse: true }, grade: { '6': true } };
     try {
-      var raw = localStorage.getItem('lb-search-excluded');
-      var arr = raw ? JSON.parse(raw) : [];
-      var o = {};
-      for (var i = 0; i < arr.length; i++) o[arr[i]] = true;
-      return o;
-    } catch (e) { return {}; }
+      var raw = localStorage.getItem(FILTER_KEY);
+      if (!raw) return def;
+      var o = JSON.parse(raw), out = { board: {}, grade: {} };
+      (o.board || []).forEach(function (k) { out.board[k] = true; });
+      (o.grade || []).forEach(function (k) { out.grade[k] = true; });
+      return out;
+    } catch (e) { return def; }
   }
-  function saveExcluded() {
-    try { localStorage.setItem(EXCL_KEY, JSON.stringify(Object.keys(excluded))); } catch (e) {}
+  function saveSelection() {
+    try {
+      localStorage.setItem(FILTER_KEY, JSON.stringify({ board: Object.keys(sel.board), grade: Object.keys(sel.grade) }));
+    } catch (e) {}
   }
 
-  /* class number from the book path (tn-cbse/cbse-10/…, tn-cbse/tn-7-term1/…), else 'other' */
+  /* class number from the book path (tn-cbse/cbse-10/…, tn-cbse/tn-7-term1/…), else '' */
   function gradeOf(d) {
     var m = (d.bookPath || d.path || '').match(/(?:^|\/)(?:cbse|tn)-(\d+)(?:-|\/)/);
-    return m ? m[1] : 'other';
+    return m ? m[1] : '';
   }
 
   /* ── inject CSS ── */
@@ -84,14 +94,15 @@
     '.lb-search-filters.ready{display:flex}',
     '@media(prefers-color-scheme:dark){.lb-search-filters{border-color:#2c313a}}',
     '.lb-search-filters-label{color:#888;font-weight:600;margin-right:.15rem}',
-    '.lb-search-chip{font:inherit;font-weight:600;padding:.18rem .55rem;border-radius:99px;cursor:pointer;border:1px solid #0d4f4f;background:#0d4f4f;color:#fff;transition:background .1s,color .1s}',
-    '.lb-search-chip.off{background:transparent;color:#999;border-color:#ccc;text-decoration:line-through}',
-    '@media(prefers-color-scheme:dark){.lb-search-chip{background:#2a7a74;border-color:#2a7a74}.lb-search-chip.off{background:transparent;color:#666;border-color:#444}}',
-    '.lb-search-filters-sep{width:1px;align-self:stretch;background:#e2d9ce;margin:0 .25rem}',
+    '.lb-search-filters-sep{width:1px;align-self:stretch;background:#e2d9ce;margin:0 .35rem}',
     '@media(prefers-color-scheme:dark){.lb-search-filters-sep{background:#2c313a}}',
-    '.lb-search-preset{font:inherit;padding:.18rem .5rem;border-radius:6px;cursor:pointer;border:1px solid #ccc;background:transparent;color:#666}',
-    '.lb-search-preset:hover{border-color:#0d4f4f;color:#0d4f4f}',
-    '@media(prefers-color-scheme:dark){.lb-search-preset{border-color:#444;color:#aaa}.lb-search-preset:hover{border-color:#5fbdb5;color:#5fbdb5}}',
+    '.lb-search-chip{font:inherit;font-weight:600;padding:.18rem .6rem;border-radius:99px;cursor:pointer;border:1px solid #ccc;background:transparent;color:#777;transition:background .1s,color .1s,border-color .1s}',
+    '.lb-search-chip:hover{border-color:#999;color:#444}',
+    '.lb-search-chip.on{background:#0d4f4f;border-color:#0d4f4f;color:#fff}',
+    '.lb-search-chip.on.cbse{background:#6b3fb8;border-color:#6b3fb8}',
+    '.lb-search-chip.on.tn{background:#95600a;border-color:#95600a}',
+    '@media(prefers-color-scheme:dark){.lb-search-chip{border-color:#444;color:#999}.lb-search-chip:hover{border-color:#777;color:#ddd}',
+    '.lb-search-chip.on{background:#2a7a74;border-color:#2a7a74;color:#fff}.lb-search-chip.on.cbse{background:#7d55c9;border-color:#7d55c9}.lb-search-chip.on.tn{background:#a86f12;border-color:#a86f12}}',
     /* results */
     '.lb-search-results{overflow-y:auto;padding:.4rem;flex:1}',
     '.lb-search-empty{padding:2rem 1rem;text-align:center;color:#999;font-size:.95rem}',
@@ -113,6 +124,13 @@
     '.lb-search-crumb-book .lb-search-crumb-label{background:#e2f0ee;color:#1f6f6b}',
     '.lb-search-crumb-book .lb-search-crumb-text{color:#1f6f6b}',
     '@media(prefers-color-scheme:dark){.lb-search-crumb-book .lb-search-crumb-label{background:#16262a;color:#5fbdb5}.lb-search-crumb-book .lb-search-crumb-text{color:#5fbdb5}}',
+    /* board-specific book labels: CBSE — purple, TN State Board — amber */
+    '.lb-search-crumb-book.cbse .lb-search-crumb-label{background:#efe8fb;color:#6b3fb8}',
+    '.lb-search-crumb-book.cbse .lb-search-crumb-text{color:#6b3fb8}',
+    '@media(prefers-color-scheme:dark){.lb-search-crumb-book.cbse .lb-search-crumb-label{background:#251d33;color:#b79cf0}.lb-search-crumb-book.cbse .lb-search-crumb-text{color:#b79cf0}}',
+    '.lb-search-crumb-book.tn .lb-search-crumb-label{background:#fbefd9;color:#95600a}',
+    '.lb-search-crumb-book.tn .lb-search-crumb-text{color:#95600a}',
+    '@media(prefers-color-scheme:dark){.lb-search-crumb-book.tn .lb-search-crumb-label{background:#2e2414;color:#e3b260}.lb-search-crumb-book.tn .lb-search-crumb-text{color:#e3b260}}',
     /* chapter label — terracotta */
     '.lb-search-crumb-chapter .lb-search-crumb-label{background:#f6e7e0;color:#b0472b}',
     '.lb-search-crumb-chapter .lb-search-crumb-text{color:#b0472b}',
@@ -228,17 +246,14 @@
     var seen = {};
     for (var i = 0; i < docs.length; i++) {
       docs[i].grade = gradeOf(docs[i]);
-      seen[docs[i].grade] = true;
+      docs[i].board = boardOf(docs[i]) || 'algebra';
+      if (docs[i].grade) seen[docs[i].grade] = true;
     }
-    grades = Object.keys(seen).sort(function (a, b) {
-      if (a === 'other') return 1;
-      if (b === 'other') return -1;
-      return a - b;
-    });
+    grades = Object.keys(seen).sort(function (a, b) { return a - b; });
     renderFilters();
     miniSearch = new MiniSearch({
       fields: ['title', 'headings', 'body', 'tags', 'chapter', 'book'],
-      storeFields: ['title', 'book', 'bookPath', 'chapter', 'chapterPath', 'section', 'path', 'body', 'tags', 'grade'],
+      storeFields: ['title', 'book', 'bookPath', 'chapter', 'chapterPath', 'section', 'path', 'body', 'tags', 'grade', 'board'],
       searchOptions: {
         boost: { title: 5, headings: 3, tags: 4, chapter: 2, book: 1, body: 1 },
         fuzzy: 0.2,
@@ -248,25 +263,20 @@
     miniSearch.addAll(docs);
   }
 
-  /* ── class filters ── */
-  var PRESETS = [
-    { label: '6–9', keep: ['6', '7', '8', '9'] },
-    { label: '10–12', keep: ['10', '11', '12'] },
-    { label: 'All', keep: null },
-  ];
-
+  /* ── board + class filters ── */
   function renderFilters() {
     if (!filterBar) return;
-    var html = '<span class="lb-search-filters-label">Classes</span>';
+    var html = '<span class="lb-search-filters-label">Books</span>';
+    for (var b = 0; b < BOARDS.length; b++) {
+      var k = BOARDS[b].key;
+      html += '<button type="button" class="lb-search-chip ' + k + (sel.board[k] ? ' on' : '') + '" data-board="' + k + '"' +
+        ' aria-pressed="' + !!sel.board[k] + '">' + BOARDS[b].label + '</button>';
+    }
+    html += '<span class="lb-search-filters-sep"></span><span class="lb-search-filters-label">Class</span>';
     for (var i = 0; i < grades.length; i++) {
       var g = grades[i];
-      html += '<button type="button" class="lb-search-chip' + (excluded[g] ? ' off' : '') + '" data-grade="' + g + '"' +
-        ' title="Click to ' + (excluded[g] ? 'include' : 'exclude') + ' · Alt/Option-click for only this">' +
-        (g === 'other' ? 'Other' : g) + '</button>';
-    }
-    html += '<span class="lb-search-filters-sep"></span>';
-    for (var p = 0; p < PRESETS.length; p++) {
-      html += '<button type="button" class="lb-search-preset" data-preset="' + p + '">' + PRESETS[p].label + '</button>';
+      html += '<button type="button" class="lb-search-chip' + (sel.grade[g] ? ' on' : '') + '" data-grade="' + g + '"' +
+        ' aria-pressed="' + !!sel.grade[g] + '">' + g + '</button>';
     }
     filterBar.innerHTML = html;
     filterBar.classList.add('ready');
@@ -275,37 +285,40 @@
   function onFilterClick(e) {
     var btn = e.target.closest('button');
     if (!btn) return;
-    if (btn.hasAttribute('data-grade')) {
-      var g = btn.getAttribute('data-grade');
-      if (e.altKey) {
-        excluded = {};
-        for (var i = 0; i < grades.length; i++) if (grades[i] !== g) excluded[grades[i]] = true;
-      } else if (excluded[g]) {
-        delete excluded[g];
-      } else {
-        excluded[g] = true;
-      }
-    } else if (btn.hasAttribute('data-preset')) {
-      var keep = PRESETS[+btn.getAttribute('data-preset')].keep;
-      excluded = {};
-      if (keep) for (var j = 0; j < grades.length; j++) if (keep.indexOf(grades[j]) === -1) excluded[grades[j]] = true;
-    }
-    saveExcluded();
+    var group = btn.hasAttribute('data-board') ? 'board' : btn.hasAttribute('data-grade') ? 'grade' : null;
+    if (!group) return;
+    var k = btn.getAttribute('data-' + group);
+    if (sel[group][k]) delete sel[group][k]; else sel[group][k] = true;
+    saveSelection();
     renderFilters();
     input.focus();
     onInput();
   }
 
-  function isIncluded(r) { return !excluded[r.grade]; }
+  function hasAny(o) { for (var k in o) if (o[k]) return true; return false; }
+
+  function isIncluded(r) {
+    if (hasAny(sel.board) && !sel.board[r.board]) return false;
+    // the algebra books have no class, so the class pills don't apply to them
+    if (r.board !== 'algebra' && hasAny(sel.grade) && !sel.grade[r.grade]) return false;
+    return true;
+  }
+
+  /* 'cbse' | 'tn' | '' from the book path (tn-cbse/cbse-10/…, tn-cbse/tn-7-term1/…) */
+  function boardOf(h) {
+    var m = (h.bookPath || h.path || '').match(/(?:^|\/)(cbse|tn)-\d+(?:-|\/)/);
+    return m ? m[1] : '';
+  }
 
   /* ── build breadcrumb HTML ── */
   function buildCrumbs(h) {
     var parts = [];
 
     if (h.book) {
+      var board = boardOf(h);
       parts.push(
-        '<span class="lb-search-crumb-book">' +
-        '<span class="lb-search-crumb-label">Book</span> ' +
+        '<span class="lb-search-crumb-book' + (board ? ' ' + board : '') + '">' +
+        '<span class="lb-search-crumb-label">' + (board === 'cbse' ? 'CBSE' : board === 'tn' ? 'TN Board' : 'Book') + '</span> ' +
         '<span class="lb-search-crumb-text">' + escHtml(h.book) + '</span>' +
         '</span>'
       );
@@ -349,8 +362,8 @@
 
     if (hits.length === 0) {
       var msg = 'No results for “' + escHtml(q) + '”';
-      if (Object.keys(excluded).length && miniSearch.search(q, { combineWith: 'OR' }).length) {
-        msg += '<br><small>There are matches in the classes you’ve excluded.</small>';
+      if ((hasAny(sel.board) || hasAny(sel.grade)) && miniSearch.search(q, { combineWith: 'OR' }).length) {
+        msg += '<br><small>There are matches in books or classes you haven’t selected.</small>';
       }
       results.innerHTML = '<div class="lb-search-empty">' + msg + '</div>';
       return;
