@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>8.2 Measures of Dispersion — Statistics and Probability</title>
+<meta name="description" content="Class 10 Mathematics · Statistics and Probability · 8.2 Measures of Dispersion">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="../../../assets/book.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 10 Mathematics</a></span>
+    <span class="c2">Statistics and Probability · 8.2 Measures of Dispersion</span>
+  </div>
+  <a class="tb-btn" data-nav="prev" href="../../08-statistics-and-probability/01-chapter-opener/index.html" title="Chapter opener; 8.1 Introduction">←</a>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary>
+<div class="drawer-panel"><div class="dh">Statistics and Probability</div><a href="../01-chapter-opener/index.html">Chapter opener; 8.1 Introduction</a><a href="../02-measures-of-dispersion-8.2/index.html" aria-current="page">8.2 Measures of Dispersion</a><a href="../03-exercise-8.1/index.html">Exercise 8.1</a><a href="../04-coefficient-of-variation-8.3/index.html">8.3 Coefficient of Variation</a><a href="../05-exercise-8.2/index.html">Exercise 8.2</a><a href="../06-probability-8.4/index.html">8.4 Probability</a><a href="../07-exercise-8.3/index.html">Exercise 8.3</a><a href="../08-algebra-of-events-8.5/index.html">8.5 Algebra of Events</a><a href="../09-addition-theorem-of-probability-8.6/index.html">8.6 Addition Theorem of Probability</a><a href="../10-exercise-8.4/index.html">Exercise 8.4</a><a href="../11-exercise-8.5/index.html">Exercise 8.5</a><a href="../12-unit-exercise/index.html">Unit Exercise</a><a href="../13-summary/index.html">Points to Remember</a><a href="../14-ict-corner/index.html">ICT Corner</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../08-statistics-and-probability/03-exercise-8.1/index.html" title="Exercise 8.1">→</a>
+  <button class="tb-btn" data-theme-toggle title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<div class="progress"><span style="width:90.8%"></span></div>
+</header>
+<main class="wrap">
+<div class="sec-head">
+  <p class="eyebrow"><a href="../index.html">Chapter 8 · Statistics and Probability</a></p>
+  <h1>8.2 Measures of Dispersion</h1>
+  <p class="sec-meta">Textbook pages 3–13 · 2 figures</p>
+</div>
+<article class="prose">
+<h2 id="s-8-2-measures-of-dispersion">8.2 Measures of Dispersion</h2>
+<p>The following data provide the runs scored by two batsmen in the last 10 matches.</p>
+<p>Batsman A: 25, 20, 45, 93, 8, 14, 32, 87, 72, 4</p>
+<p>Batsman B: 33, 50, 47, 38, 45, 40, 36, 48, 37, 26</p>
+<div class="mathblock">
+<p>\(\text{Mean of Batsman A} = \dfrac{25 + 20 + 45 + 93 + 8 + 14 + 32 + 87 + 72 + 4}{10} = 40\)</p>
+<p>\(\text{Mean of Batsman B} = \dfrac{33 + 50 + 47 + 38 + 45 + 40 + 36 + 48 + 37 + 26}{10} = 40\)</p>
+</div>
+<p>The mean of both datas are same (40), but they differ significantly.</p>
+<figure class="fig wide"><img src="img/fig-fix-p1-1.webp" alt="Scatter charts of runs scored in 10 matches by Batsman A (spread from 0 to 100) and Batsman B (grouped around 40)" loading="lazy" width="1521" height="513"></figure>
+<p>From the above diagrams, we see that runs of batsman \(B\) are grouped around the mean. But the runs of batsman \(A\) are scattered from 0 to 100, though they both have same mean.</p>
+<p>Thus, some additional statistical information may be required to determine how the values are spread in data. For this, we shall discuss <strong>Measures of Dispersion</strong>.</p>
+<p>Dispersion is a measure which gives an idea about the scatteredness of the values.</p>
+<p><strong>Measures of Variation</strong> (or) Dispersion of a data provide an idea of how observations spread out (or) scattered throughout the data.</p>
+<h4 id="s-different-measures-of-dispersion-are">Different Measures of Dispersion are</h4>
+<ol>
+<li>Range</li>
+<li>Mean deviation</li>
+<li>Quartile deviation</li>
+<li>Standard deviation</li>
+<li>Variance</li>
+<li>Coefficient of Variation</li>
+</ol>
+<h3 id="s-8-2-1-range">8.2.1 Range</h3>
+<p>The difference between the largest value and the smallest value is called Range.</p>
+<div class="mathblock">
+<p>\(\text{Range } R = L - S\)</p>
+<p>\(\text{Coefficient of range} = \dfrac{L - S}{L + S}\)</p>
+</div>
+<p>where \(L\) - Largest value; \(S\) - Smallest value</p>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<p>The range of first 10 prime numbers is _______</p>
+</div>
+<h4 class="callout-h" id="s-example-8-1">Example 8.1</h4>
+<p>Find the range and coefficient of range of the following data: 25, 67, 48, 53, 18, 39, 44.</p>
+<h4 class="callout-h" id="s-solution-8-1">Solution</h4>
+<p>Largest value \(L = 67\); Smallest value \(S = 18\)</p>
+<div class="mathblock">
+<p>\(\text{Range } R = L - S = 67 - 18 = 49\)</p>
+<p>\(\text{Coefficient of range} = \dfrac{L - S}{L + S}\)</p>
+<p>\(\text{Coefficient of range} = \dfrac{67 - 18}{67 + 18} = \dfrac{49}{85} = 0.576\)</p>
+</div>
+<h4 class="callout-h" id="s-example-8-2">Example 8.2</h4>
+<p>Find the range of the following distribution.</p>
+<table class="tbl">
+<tbody>
+<tr><th>Age (in years)</th><td>16-18</td><td>18-20</td><td>20-22</td><td>22-24</td><td>24-26</td><td>26-28</td></tr>
+<tr><th>Number of students</th><td>0</td><td>4</td><td>6</td><td>8</td><td>2</td><td>2</td></tr>
+</tbody>
+</table>
+<h4 class="callout-h" id="s-solution-8-2">Solution</h4>
+<div class="mathblock">
+<p>\(\text{Here Largest value } L = 28\)</p>
+<p>\(\text{Smallest value } S = 18\)</p>
+<p>\(\text{Range } R = L - S\)</p>
+<p>\(R = 28 - 18 = 10 \text{ Years}\)</p>
+</div>
+<div class="callout"><p class="callout-title">Note</p>
+<p>If the frequency of initial class is zero, then the next class will be considered for the calculation of range.</p>
+</div>
+<h4 class="callout-h" id="s-example-8-3">Example 8.3</h4>
+<p>The range of a set of data is 13.67 and the largest value is 70.08. Find the smallest value.</p>
+<h4 class="callout-h" id="s-solution-8-3">Solution</h4>
+<div class="mathblock">
+<p>\(\text{Range } R = 13.67\)</p>
+<p>\(\text{Largest value } L = 70.08\)</p>
+<p>\(\text{Range } R = L - S\)</p>
+<p>\(13.67 = 70.08 - S\)</p>
+<p>\(S = 70.08 - 13.67 = 56.41\)</p>
+</div>
+<p>Therefore, the smallest value is 56.41.</p>
+<div class="callout"><p class="callout-title">Note</p>
+<p>The range of a set of data does not give the clear idea about the dispersion of the data from measures of Central Tendency. For this, we need a measure which depend upon the deviation from the measures of Central Tendency.</p>
+</div>
+<h3 id="s-8-2-2-deviations-from-the-mean">8.2.2 Deviations from the mean</h3>
+<p>For a given data with \(n\) observations \(x_1, x_2, \ldots x_n\), the deviations from the mean \(\overline{x}\) are \(x_1 - \overline{x},\ x_2 - \overline{x},\ \ldots,\ x_n - \overline{x}\).</p>
+<h3 id="s-8-2-3-squares-of-deviations-from-the-mean">8.2.3 Squares of deviations from the mean</h3>
+<p>The squares of deviations from the mean \(\overline{x}\) of the observations \(x_1, x_2, \ldots, x_n\) are \((x_1 - \overline{x})^2, (x_2 - \overline{x})^2, \ldots, (x_n - \overline{x})^2\) or \(\displaystyle\sum_{i=1}^{n} (x_i - \overline{x})^2\)</p>
+<div class="callout"><p class="callout-title">Note</p>
+<p>We note that \((x_i - \overline{x})^2 \ge 0\) for all observations \(x_i,\ i = 1, 2, 3, \ldots, n\). If the deviations from the mean \((x_i - \overline{x})\) are small, then the squares of the deviations will be very small.</p>
+</div>
+<h3 id="s-8-2-4-variance">8.2.4 Variance</h3>
+<p>The mean of the squares of the deviations from the mean is called <strong>Variance</strong>. It is denoted by \(\sigma^2\) (read as sigma square).</p>
+<div class="mathblock">
+<p>\[\begin{aligned} \text{Variance} &amp;= \text{Mean of squares of deviations} \\ &amp;= \frac{(x_1 - \overline{x})^2 + (x_2 - \overline{x})^2 + \ldots + (x_n - \overline{x})^2}{n} \\ \text{Variance } \sigma^2 &amp;= \frac{\sum_{i=1}^{n} (x_i - \overline{x})^2}{n} \end{aligned}\]</p>
+</div>
+<div class="callout"><p class="callout-title">Thinking Corner</p>
+<p>Can variance be negative?</p>
+</div>
+<h3 id="s-8-2-5-standard-deviation">8.2.5 Standard Deviation</h3>
+<p>The positive square root of Variance is called <strong>Standard deviation</strong>. That is, standard deviation is the positive square root of the mean of the squares of deviations of the given values from their mean. It is denoted by \(\sigma\).</p>
+<p>Standard deviation gives a clear idea about how far the values are spreading or deviating from the mean.</p>
+<div class="mathblock"><p>\[\text{Standard deviation } \sigma = \sqrt{\frac{\sum_{i=1}^{n} (x_i - \overline{x})^2}{n}}\]</p></div>
+<div class="callout"><p class="callout-title">Do you know?</p>
+<p>Karl Pearson was the first person to use the word standard deviation. German mathematician Gauss used the word Mean error.</p>
+</div>
+<figure class="fig wide"><img src="img/fig-fix-p3-1.webp" alt="Chart: Calculation of standard deviation — ungrouped data (direct, mean, assumed mean, step deviation methods) and grouped data, both discrete and continuous (mean, assumed mean, step deviation methods)" loading="lazy" width="1470" height="564"></figure>
+<h3 id="s-calculation-of-standard-deviation-for-ungrouped-data">Calculation of Standard Deviation for ungrouped data</h3>
+<h4 id="s-i-direct-method">(i) Direct Method</h4>
+<div class="mathblock">
+<p>\[\begin{aligned} \text{Standard deviation } \sigma &amp;= \sqrt{\frac{\Sigma (x_i - \overline{x})^2}{n}} \\ &amp;= \sqrt{\frac{\Sigma (x_i^2 - 2x_i\overline{x} + \overline{x}^2)}{n}} \\ &amp;= \sqrt{\frac{\Sigma x_i^2}{n} - 2\overline{x}\frac{\Sigma x_i}{n} + \frac{\overline{x}^2}{n} \times (1 + 1 + \cdots \text{ to } n \text{ times})} \\ &amp;= \sqrt{\frac{\Sigma x_i^2}{n} - 2\overline{x} \times \overline{x} + \frac{\overline{x}^2}{n} \times n} = \sqrt{\frac{\Sigma x_i^2}{n} - 2\overline{x}^2 + \overline{x}^2} = \sqrt{\frac{\Sigma x_i^2}{n} - \overline{x}^2} \end{aligned}\]</p>
+<p>\[\text{Standard deviation, } \sigma = \sqrt{\frac{\Sigma x_i^2}{n} - \left(\frac{\Sigma x_i}{n}\right)^2}\]</p>
+</div>
+<div class="callout"><p class="callout-title">Note</p>
+<p>The standard deviation and mean have same units in which the data are given.</p>
+</div>
+<div class="callout"><p class="callout-title">Note</p>
+<ul>
+<li>While computing standard deviation, arranging data in ascending order is not mandatory.</li>
+<li>If the data values are given directly then to find standard deviation we can use the formula \(\sigma = \sqrt{\dfrac{\Sigma x_i^2}{n} - \left(\dfrac{\Sigma x_i}{n}\right)^2}\)</li>
+<li>If the data values are not given directly but the squares of the deviations from the mean of each observation is given then to find standard deviation we can use the formula \(\sigma = \sqrt{\dfrac{\Sigma (x_i - \overline{x})^2}{n}}\).</li>
+</ul>
+</div>
+<h4 class="callout-h" id="s-example-8-4">Example 8.4</h4>
+<p>The number of televisions sold in each day of a week are 13, 8, 4, 9, 7, 12, 10. Find its standard deviation.</p>
+<h4 class="callout-h" id="s-solution-8-4">Solution</h4>
+<table class="tbl">
+<thead><tr><th>\(x_i\)</th><th>\(x_i^2\)</th></tr></thead>
+<tbody>
+<tr><td>13</td><td>169</td></tr>
+<tr><td>8</td><td>64</td></tr>
+<tr><td>4</td><td>16</td></tr>
+<tr><td>9</td><td>81</td></tr>
+<tr><td>7</td><td>49</td></tr>
+<tr><td>12</td><td>144</td></tr>
+<tr><td>10</td><td>100</td></tr>
+<tr><td>\(\Sigma x_i = 63\)</td><td>\(\Sigma x_i^2 = 623\)</td></tr>
+</tbody>
+</table>
+<p>Standard deviation</p>
+<div class="mathblock">
+<p>\[\begin{aligned} \sigma &amp;= \sqrt{\frac{\Sigma x_i^2}{n} - \left(\frac{\Sigma x_i}{n}\right)^2} \\ &amp;= \sqrt{\frac{623}{7} - \left(\frac{63}{7}\right)^2} \\ &amp;= \sqrt{89 - 81} = \sqrt{8} \end{aligned}\]</p>
+</div>
+<p>Hence, \(\sigma \simeq 2.83\)</p>
+<div class="callout"><p class="callout-title">Thinking Corner</p>
+<p>Can the standard deviation be more than the variance?</p>
+</div>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<p>If the variance is 0.49 then the standard deviation is _____.</p>
+</div>
+<h4 id="s-ii-mean-method">(ii) Mean method</h4>
+<p>Another convenient way of finding standard deviation is to use the following formula.</p>
+<div class="mathblock">
+<p>\(\text{Standard deviation (by mean method) } \sigma = \sqrt{\dfrac{\Sigma (x_i - \overline{x})^2}{n}}\)</p>
+<p>\(\text{If } d_i = x_i - \overline{x} \text{ are the deviations, then } \sigma = \sqrt{\dfrac{\Sigma d_i^2}{n}}\)</p>
+</div>
+<h4 class="callout-h" id="s-example-8-5">Example 8.5</h4>
+<p>The amount of rainfall in a particular season for 6 days are given as 17.8 cm, 19.2 cm, 16.3 cm, 12.5 cm, 12.8 cm and 11.4 cm. Find its standard deviation.</p>
+<h4 class="callout-h" id="s-solution-8-5">Solution</h4>
+<p>Arranging the numbers in ascending order we get, 11.4, 12.5, 12.8, 16.3, 17.8, 19.2. Number of observations \(n = 6\)</p>
+<div class="mathblock"><p>\(\text{Mean} = \dfrac{11.4 + 12.5 + 12.8 + 16.3 + 17.8 + 19.2}{6} = \dfrac{90}{6} = 15\)</p></div>
+<table class="tbl">
+<thead><tr><th>\(x_i\)</th><th>\(d_i = x_i - \overline{x}\)<br>\(= x_i - 15\)</th><th>\(d_i^2\)</th></tr></thead>
+<tbody>
+<tr><td>11.4</td><td>\(-3.6\)</td><td>12.96</td></tr>
+<tr><td>12.5</td><td>\(-2.5\)</td><td>6.25</td></tr>
+<tr><td>12.8</td><td>\(-2.2\)</td><td>4.84</td></tr>
+<tr><td>16.3</td><td>1.3</td><td>1.69</td></tr>
+<tr><td>17.8</td><td>2.8</td><td>7.84</td></tr>
+<tr><td>19.2</td><td>4.2</td><td>17.64</td></tr>
+<tr><td></td><td></td><td>\(\Sigma d_i^2 = 51.22\)</td></tr>
+</tbody>
+</table>
+<div class="mathblock">
+<p>\[\begin{aligned} \text{Standard deviation } \sigma &amp;= \sqrt{\frac{\Sigma d_i^2}{n}} \\ &amp;= \sqrt{\frac{51.22}{6}} = \sqrt{8.53} \end{aligned}\]</p>
+</div>
+<p>Hence, \(\sigma \simeq 2.9\)</p>
+<h4 id="s-iii-assumed-mean-method">(iii) Assumed Mean method</h4>
+<p>When the mean value is not an integer (since calculations are very tedious in decimal form) then it is better to use the <strong>assumed mean method</strong> to find the <strong>standard deviation</strong>.</p>
+<p>Let \(x_1, x_2, x_3, \ldots, x_n\) be the given data values and let \(\overline{x}\) be their mean.</p>
+<p>Let \(d_i\) be the deviation of \(x_i\) from the assumed mean \(A\), which is usually the middle value or near the middle value of the given data.</p>
+<div class="mathblock">
+<p>\[\begin{aligned} d_i &amp;= x_i - A \text{ gives, } x_i = d_i + A &amp;&amp; \ldots(1) \\ \Sigma d_i &amp;= \Sigma (x_i - A) \\ &amp;= \Sigma x_i - (A + A + A + \cdots \text{ to } n \text{ times}) \\ \Sigma d_i &amp;= \Sigma x_i - A \times n \\ \frac{\Sigma d_i}{n} &amp;= \frac{\Sigma x_i}{n} - A \\ \overline{d} &amp;= \overline{x} - A \text{ (or) } \overline{x} = \overline{d} + A &amp;&amp; \ldots(2) \end{aligned}\]</p>
+<p>\[\begin{aligned} \text{Standard deviation } \sigma &amp;= \sqrt{\frac{\Sigma (x_i - \overline{x})^2}{n}} = \sqrt{\frac{\Sigma (d_i + A - \overline{d} - A)^2}{n}} &amp;&amp; \text{(using (1) and (2))} \\ &amp;= \sqrt{\frac{\Sigma (d_i - \overline{d})^2}{n}} = \sqrt{\frac{\Sigma (d_i^2 - 2d_i \times \overline{d} + \overline{d}^2)}{n}} \\ &amp;= \sqrt{\frac{\Sigma d_i^2}{n} - 2\overline{d}\frac{\Sigma d_i}{n} + \frac{\overline{d}^2}{n}(1 + 1 + 1 + \cdots \text{ to } n \text{ times})} \\ &amp;= \sqrt{\frac{\Sigma d_i^2}{n} - 2\overline{d} \times \overline{d} + \frac{\overline{d}^2}{n} \times n} &amp;&amp; (\text{since } \overline{d} \text{ is a constant}) \\ &amp;= \sqrt{\frac{\Sigma d_i^2}{n} - \overline{d}^2} \end{aligned}\]</p>
+<p>\[\text{Standard deviation } \sigma = \sqrt{\frac{\Sigma d_i^2}{n} - \left(\frac{\Sigma d_i}{n}\right)^2}\]</p>
+</div>
+<div class="callout"><p class="callout-title">Thinking Corner</p>
+<p>For any collection of \(n\) values, can you find the value of</p>
+<p>(i) \(\Sigma (x_i - \overline{x})\) &emsp; (ii) \((\Sigma x_i) - \overline{x}\)</p>
+</div>
+<h4 class="callout-h" id="s-example-8-6">Example 8.6</h4>
+<p>The marks scored by 10 students in a class test are 25, 29, 30, 33, 35, 37, 38, 40, 44, 48. Find the standard deviation.</p>
+<h4 class="callout-h" id="s-solution-8-6">Solution</h4>
+<p>The mean of marks is 35.9 which is not an integer. Hence we take assumed mean, \(A = 35,\ n = 10\).</p>
+<table class="tbl">
+<thead><tr><th>\(x_i\)</th><th>\(d_i = x_i - A\)<br>\(d_i = x_i - 35\)</th><th>\(d_i^2\)</th></tr></thead>
+<tbody>
+<tr><td>25</td><td>\(-10\)</td><td>100</td></tr>
+<tr><td>29</td><td>\(-6\)</td><td>36</td></tr>
+<tr><td>30</td><td>\(-5\)</td><td>25</td></tr>
+<tr><td>33</td><td>\(-2\)</td><td>4</td></tr>
+<tr><td>35</td><td>0</td><td>0</td></tr>
+<tr><td>37</td><td>2</td><td>4</td></tr>
+<tr><td>38</td><td>3</td><td>9</td></tr>
+<tr><td>40</td><td>5</td><td>25</td></tr>
+<tr><td>44</td><td>9</td><td>81</td></tr>
+<tr><td>48</td><td>13</td><td>169</td></tr>
+<tr><td></td><td>\(\Sigma d_i = 9\)</td><td>\(\Sigma d_i^2 = 453\)</td></tr>
+</tbody>
+</table>
+<p>Standard deviation</p>
+<div class="mathblock">
+<p>\[\begin{aligned} \sigma &amp;= \sqrt{\frac{\Sigma d_i^2}{n} - \left(\frac{\Sigma d_i}{n}\right)^2} \\ &amp;= \sqrt{\frac{453}{10} - \left(\frac{9}{10}\right)^2} \\ &amp;= \sqrt{45.3 - 0.81} \\ &amp;= \sqrt{44.49} \\ \sigma &amp;\simeq 6.67 \end{aligned}\]</p>
+</div>
+<h4 id="s-iv-step-deviation-method">(iv) Step deviation method</h4>
+<p>Let \(x_1, x_2, x_3, \ldots x_n\) be the given data. Let A be the assumed mean.</p>
+<p>Let \(c\) be the common divisor of \(x_i - A\).</p>
+<div class="mathblock">
+<p>\[\begin{aligned} \text{Let} \quad d_i &amp;= \frac{x_i - A}{c} \\ \text{Then} \quad x_i &amp;= d_i c + A &amp;&amp; \ldots(1) \\ \Sigma x_i &amp;= \Sigma (d_i c + A) = c\,\Sigma d_i + A \times n \\ \frac{\Sigma x_i}{n} &amp;= c\frac{\Sigma d_i}{n} + A \\ \overline{x} &amp;= c\overline{d} + A &amp;&amp; \ldots(2) \\ x_i - \overline{x} &amp;= cd_i + A - c\overline{d} - A = c(d_i - \overline{d}) &amp;&amp; \text{(using (1) and (2))} \\ \sigma &amp;= \sqrt{\frac{\Sigma (x_i - \overline{x})^2}{n}} = \sqrt{\frac{\Sigma (c(d_i - \overline{d}))^2}{n}} = \sqrt{\frac{c^2 \Sigma (d_i - \overline{d})^2}{n}} \\ \sigma &amp;= c \times \sqrt{\frac{\Sigma d_i^2}{n} - \left(\frac{\Sigma d_i}{n}\right)^2} \end{aligned}\]</p>
+</div>
+<div class="callout"><p class="callout-title">Note</p>
+<p>We can use any of the above methods for finding the standard deviation</p>
+</div>
+<div class="callout"><p class="callout-title">Activity 1</p>
+<p>Find the standard deviation of the marks obtained by you in all five subjects in the quarterly examination and in the midterm test separately. What do you observe from your results.</p>
+</div>
+<h4 class="callout-h" id="s-example-8-7">Example 8.7</h4>
+<p>The amount that the children have spent for purchasing some eatables in one day trip of a school are 5, 10, 15, 20, 25, 30, 35, 40. Using step deviation method, find the standard deviation of the amount they have spent.</p>
+<h4 class="callout-h" id="s-solution-8-7">Solution</h4>
+<p>We note that all the observations are divisible by 5. Hence we can use the step deviation method. Let the Assumed mean \(A = 20,\ n = 8\).</p>
+<table class="tbl">
+<thead><tr><th>\(x_i\)</th><th>\(d_i = x_i - A\)<br>\(d_i = x_i - 20\)</th><th>\(d_i = \dfrac{x_i - A}{c}\)<br>\(c = 5\)</th><th>\(d_i^2\)</th></tr></thead>
+<tbody>
+<tr><td>5</td><td>\(-15\)</td><td>\(-3\)</td><td>9</td></tr>
+<tr><td>10</td><td>\(-10\)</td><td>\(-2\)</td><td>4</td></tr>
+<tr><td>15</td><td>\(-5\)</td><td>\(-1\)</td><td>1</td></tr>
+<tr><td>20</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>25</td><td>5</td><td>1</td><td>1</td></tr>
+<tr><td>30</td><td>10</td><td>2</td><td>4</td></tr>
+<tr><td>35</td><td>15</td><td>3</td><td>9</td></tr>
+<tr><td>40</td><td>20</td><td>4</td><td>16</td></tr>
+<tr><td></td><td></td><td>\(\Sigma d_i = 4\)</td><td>\(\Sigma d_i^2 = 44\)</td></tr>
+</tbody>
+</table>
+<p>Standard deviation</p>
+<div class="mathblock">
+<p>\[\begin{aligned} \sigma &amp;= \sqrt{\frac{\Sigma d_i^2}{n} - \left(\frac{\Sigma d_i}{n}\right)^2} \times c \\ &amp;= \sqrt{\frac{44}{8} - \left(\frac{4}{8}\right)^2} \times 5 = \sqrt{\frac{11}{2} - \frac{1}{4}} \times 5 \\ &amp;= \sqrt{5.5 - 0.25} \times 5 = 2.29 \times 5 \\ \sigma &amp;\simeq 11.45 \end{aligned}\]</p>
+</div>
+<h4 class="callout-h" id="s-example-8-8">Example 8.8</h4>
+<p>Find the standard deviation of the following data 7, 4, 8, 10, 11. Add 3 to all the values then find the standard deviation for the new values.</p>
+<h4 class="callout-h" id="s-solution-8-8">Solution</h4>
+<p>Arranging the values in ascending order we get, 4, 7, 8, 10, 11 and \(n = 5\)</p>
+<table class="tbl">
+<thead><tr><th>\(x_i\)</th><th>\(x_i^2\)</th></tr></thead>
+<tbody>
+<tr><td>4</td><td>16</td></tr>
+<tr><td>7</td><td>49</td></tr>
+<tr><td>8</td><td>64</td></tr>
+<tr><td>10</td><td>100</td></tr>
+<tr><td>11</td><td>121</td></tr>
+<tr><td>\(\Sigma x_i = 40\)</td><td>\(\Sigma x_i^2 = 350\)</td></tr>
+</tbody>
+</table>
+<p>Standard deviation</p>
+<div class="mathblock">
+<p>\[\begin{aligned} \sigma &amp;= \sqrt{\frac{\Sigma x_i^2}{n} - \left(\frac{\Sigma x_i}{n}\right)^2} \\ &amp;= \sqrt{\frac{350}{5} - \left(\frac{40}{5}\right)^2} \\ \sigma &amp;= \sqrt{6} \simeq 2.45 \end{aligned}\]</p>
+</div>
+<p>When we add 3 to all the values, we get the new values as 7, 10, 11, 13, 14.</p>
+<table class="tbl">
+<thead><tr><th>\(x_i\)</th><th>\(x_i^2\)</th></tr></thead>
+<tbody>
+<tr><td>7</td><td>49</td></tr>
+<tr><td>10</td><td>100</td></tr>
+<tr><td>11</td><td>121</td></tr>
+<tr><td>13</td><td>169</td></tr>
+<tr><td>14</td><td>196</td></tr>
+<tr><td>\(\Sigma x_i = 55\)</td><td>\(\Sigma x_i^2 = 635\)</td></tr>
+</tbody>
+</table>
+<p>Standard deviation</p>
+<div class="mathblock">
+<p>\[\begin{aligned} \sigma &amp;= \sqrt{\frac{\Sigma x_i^2}{n} - \left(\frac{\Sigma x_i}{n}\right)^2} \\ &amp;= \sqrt{\frac{635}{5} - \left(\frac{55}{5}\right)^2} \\ \sigma &amp;= \sqrt{6} \simeq 2.45 \end{aligned}\]</p>
+</div>
+<div class="callout">
+<p>We see that the standard deviation will not change when we add some fixed constant \(k\) to all the values.</p>
+</div>
+<h4 class="callout-h" id="s-example-8-9">Example 8.9</h4>
+<p>Find the standard deviation of the data 2, 3, 5, 7, 8. Multiply each data by 4. Find the standard deviation of the new values.</p>
+<h4 class="callout-h" id="s-solution-8-9">Solution</h4>
+<p>Given, \(n = 5\)</p>
+<table class="tbl">
+<thead><tr><th>\(x_i\)</th><th>\(x_i^2\)</th></tr></thead>
+<tbody>
+<tr><td>2</td><td>4</td></tr>
+<tr><td>3</td><td>9</td></tr>
+<tr><td>5</td><td>25</td></tr>
+<tr><td>7</td><td>49</td></tr>
+<tr><td>8</td><td>64</td></tr>
+<tr><td>\(\Sigma x_i = 25\)</td><td>\(\Sigma x_i^2 = 151\)</td></tr>
+</tbody>
+</table>
+<div class="mathblock">
+<p>\[\begin{aligned} \text{Standard deviation } \sigma &amp;= \sqrt{\frac{\Sigma x_i^2}{n} - \left(\frac{\Sigma x_i}{n}\right)^2} \\ \sigma &amp;= \sqrt{\frac{151}{5} - \left(\frac{25}{5}\right)^2} = \sqrt{30.2 - 25} = \sqrt{5.2} \simeq 2.28 \end{aligned}\]</p>
+</div>
+<p>When we multiply each data by 4, we get the new values as 8, 12, 20, 28, 32.</p>
+<table class="tbl">
+<thead><tr><th>\(x_i\)</th><th>\(x_i^2\)</th></tr></thead>
+<tbody>
+<tr><td>8</td><td>64</td></tr>
+<tr><td>12</td><td>144</td></tr>
+<tr><td>20</td><td>400</td></tr>
+<tr><td>28</td><td>784</td></tr>
+<tr><td>32</td><td>1024</td></tr>
+<tr><td>\(\Sigma x_i = 100\)</td><td>\(\Sigma x_i^2 = 2416\)</td></tr>
+</tbody>
+</table>
+<div class="mathblock">
+<p>\[\begin{aligned} \text{Standard deviation } \sigma &amp;= \sqrt{\frac{\Sigma x_i^2}{n} - \left(\frac{\Sigma x_i}{n}\right)^2} \\ &amp;= \sqrt{\frac{2416}{5} - \left(\frac{100}{5}\right)^2} = \sqrt{483.2 - 400} = \sqrt{83.2} \\ \sigma &amp;= \sqrt{16 \times 5.2} = 4\sqrt{5.2} \simeq 9.12 \end{aligned}\]</p>
+</div>
+<div class="callout">
+<p>We see that when we multiply each data by some fixed constant \(k\) the standard deviation also get multiplied by \(k\).</p>
+</div>
+<h4 class="callout-h" id="s-example-8-10">Example 8.10</h4>
+<p>Find the mean and variance of the first \(n\) natural numbers.</p>
+<h4 class="callout-h" id="s-solution-8-10">Solution</h4>
+<div class="mathblock">
+<p>\[\begin{aligned} \text{Mean } \overline{x} &amp;= \frac{\text{Sum of all the observations}}{\text{Number of observations}} \\ &amp;= \frac{\Sigma x_i}{n} = \frac{1 + 2 + 3 + \ldots + n}{n} = \frac{n(n+1)}{2 \times n} \\ \text{Mean } \overline{x} &amp;= \frac{n+1}{2} \\ \text{Variance } \sigma^2 &amp;= \frac{\Sigma x_i^2}{n} - \left(\frac{\Sigma x_i}{n}\right)^2 &amp;&amp; \left[\begin{aligned} \Sigma x_i^2 &amp;= 1^2 + 2^2 + 3^2 + \ldots + n^2 \\ (\Sigma x_i)^2 &amp;= (1 + 2 + 3 + \ldots + n)^2 \end{aligned}\right] \\ &amp;= \frac{n(n+1)(2n+1)}{6 \times n} - \left[\frac{n(n+1)}{2 \times n}\right]^2 \\ &amp;= \frac{2n^2 + 3n + 1}{6} - \frac{n^2 + 2n + 1}{4} \\ \text{Variance } \sigma^2 &amp;= \frac{4n^2 + 6n + 2 - 3n^2 - 6n - 3}{12} = \frac{n^2 - 1}{12}. \end{aligned}\]</p>
+</div>
+<h3 id="s-calculation-of-standard-deviation-for-grouped-data">Calculation of Standard deviation for grouped data</h3>
+<h4 id="s-i-mean-method-grouped">(i) Mean method</h4>
+<div class="mathblock">
+<p>\[\begin{aligned} \text{Standard deviation } \sigma &amp;= \sqrt{\frac{\Sigma f_i (x_i - \overline{x})^2}{N}} \\ d_i &amp;= x_i - \overline{x} \\ \sigma &amp;= \sqrt{\frac{\Sigma f_i d_i^2}{N}}, \text{ where, } N = \sum_{i=1}^{n} f_i \end{aligned}\]</p>
+</div>
+<p>(\(f_i\) are frequency values of the corresponding data points \(x_i\))</p>
+<h4 class="callout-h" id="s-example-8-11">Example 8.11</h4>
+<p>48 students were asked to write the total number of hours per week they spent on watching television. With this information find the standard deviation of hours spent for watching television.</p>
+<table class="tbl">
+<tbody>
+<tr><th>\(x\)</th><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+<tr><th>\(f\)</th><td>3</td><td>6</td><td>9</td><td>13</td><td>8</td><td>5</td><td>4</td></tr>
+</tbody>
+</table>
+<h4 class="callout-h" id="s-solution-8-11">Solution</h4>
+<table class="tbl">
+<thead><tr><th>\(x_i\)</th><th>\(f_i\)</th><th>\(x_i f_i\)</th><th>\(d_i = x_i - \overline{x}\)</th><th>\(d_i^2\)</th><th>\(f_i d_i^2\)</th></tr></thead>
+<tbody>
+<tr><td>6</td><td>3</td><td>18</td><td>\(-3\)</td><td>9</td><td>27</td></tr>
+<tr><td>7</td><td>6</td><td>42</td><td>\(-2\)</td><td>4</td><td>24</td></tr>
+<tr><td>8</td><td>9</td><td>72</td><td>\(-1\)</td><td>1</td><td>9</td></tr>
+<tr><td>9</td><td>13</td><td>117</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>10</td><td>8</td><td>80</td><td>1</td><td>1</td><td>8</td></tr>
+<tr><td>11</td><td>5</td><td>55</td><td>2</td><td>4</td><td>20</td></tr>
+<tr><td>12</td><td>4</td><td>48</td><td>3</td><td>9</td><td>36</td></tr>
+<tr><td></td><td>\(N = 48\)</td><td>\(\Sigma x_i f_i = 432\)</td><td>\(\Sigma d_i = 0\)</td><td></td><td>\(\Sigma f_i d_i^2 = 124\)</td></tr>
+</tbody>
+</table>
+<p>Mean</p>
+<div class="mathblock"><p>\(\overline{x} = \dfrac{\Sigma x_i f_i}{N} = \dfrac{432}{48} = 9 \quad (\because N = \Sigma f_i)\)</p></div>
+<p>Standard deviation</p>
+<div class="mathblock">
+<p>\(\sigma = \sqrt{\dfrac{\Sigma f_i d_i^2}{N}} = \sqrt{\dfrac{124}{48}} = \sqrt{2.58}\)</p>
+<p>\(\sigma \simeq 1.6\)</p>
+</div>
+<h4 id="s-ii-assumed-mean-method-grouped">(ii) Assumed Mean method</h4>
+<p>Let \(x_1, x_2, x_3, \ldots x_n\) be the given data with frequencies \(f_1, f_2, f_3, \ldots f_n\) respectively. Let \(\overline{x}\) be their mean and \(A\) be the assumed mean.</p>
+<div class="mathblock">
+<p>\(d_i = x_i - A\)</p>
+<p>\(\text{Standard deviation, } \sigma = \sqrt{\dfrac{\Sigma f_i d_i^2}{N} - \left(\dfrac{\Sigma f_i d_i}{N}\right)^2}\)</p>
+</div>
+<h4 class="callout-h" id="s-example-8-12">Example 8.12</h4>
+<p>The marks scored by the students in a slip test are given below. Find the standard deviation of their marks.</p>
+<table class="tbl">
+<tbody>
+<tr><th>\(x\)</th><td>4</td><td>6</td><td>8</td><td>10</td><td>12</td></tr>
+<tr><th>\(f\)</th><td>7</td><td>3</td><td>5</td><td>9</td><td>5</td></tr>
+</tbody>
+</table>
+<h4 class="callout-h" id="s-solution-8-12">Solution</h4>
+<p>Let the assumed mean, \(A = 8\)</p>
+<table class="tbl">
+<thead><tr><th>\(x_i\)</th><th>\(f_i\)</th><th>\(d_i = x_i - A\)</th><th>\(f_i d_i\)</th><th>\(f_i d_i^2\)</th></tr></thead>
+<tbody>
+<tr><td>4</td><td>7</td><td>\(-4\)</td><td>\(-28\)</td><td>112</td></tr>
+<tr><td>6</td><td>3</td><td>\(-2\)</td><td>\(-6\)</td><td>12</td></tr>
+<tr><td>8</td><td>5</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>10</td><td>9</td><td>2</td><td>18</td><td>36</td></tr>
+<tr><td>12</td><td>5</td><td>4</td><td>20</td><td>80</td></tr>
+<tr><td></td><td>\(N = 29\)</td><td></td><td>\(\Sigma f_i d_i = 4\)</td><td>\(\Sigma f_i d_i^2 = 240\)</td></tr>
+</tbody>
+</table>
+<p>Standard deviation</p>
+<div class="mathblock">
+<p>\[\begin{aligned} \sigma &amp;= \sqrt{\frac{\Sigma f_i d_i^2}{N} - \left(\frac{\Sigma f_i d_i}{N}\right)^2} \\ &amp;= \sqrt{\frac{240}{29} - \left(\frac{4}{29}\right)^2} = \sqrt{\frac{240 \times 29 - 16}{29 \times 29}} \\ \sigma &amp;= \sqrt{\frac{6944}{29 \times 29}} \Rightarrow \sigma \simeq 2.87 \end{aligned}\]</p>
+</div>
+<h3 id="s-calculation-of-standard-deviation-for-continuous-frequency-distribution">Calculation of Standard deviation for continuous frequency distribution</h3>
+<h4 id="s-i-mean-method-continuous">(i) Mean method</h4>
+<div class="mathblock"><p>\(\text{Standard deviation } \sigma = \sqrt{\dfrac{\Sigma f_i (x_i - \overline{x})^2}{N}}\)</p></div>
+<p>where, \(x_i =\) Middle value of the \(i\)th class.<br>\(f_i =\) Frequency of the \(i\)th class.</p>
+<h4 id="s-ii-shortcut-method-or-step-deviation-method">(ii) Shortcut method (or) Step deviation method</h4>
+<p>To make the calculation simple, we provide the following formula. Let \(A\) be the assumed mean, \(x_i\) be the middle value of the \(i^{\text{th}}\) class and \(c\) is the width of the class interval.</p>
+<div class="mathblock">
+<p>\(d_i = \dfrac{x_i - A}{c}\)</p>
+<p>\(\sigma = c \times \sqrt{\dfrac{\Sigma f_i d_i^2}{N} - \left(\dfrac{\Sigma f_i d_i}{N}\right)^2}\)</p>
+</div>
+<h4 class="callout-h" id="s-example-8-13">Example 8.13</h4>
+<p>Marks of the students in a particular subject of a class are given below. Find its standard deviation.</p>
+<table class="tbl">
+<tbody>
+<tr><th>Marks</th><td>0-10</td><td>10-20</td><td>20-30</td><td>30-40</td><td>40-50</td><td>50-60</td><td>60-70</td></tr>
+<tr><th>Number of students</th><td>8</td><td>12</td><td>17</td><td>14</td><td>9</td><td>7</td><td>4</td></tr>
+</tbody>
+</table>
+<h4 class="callout-h" id="s-solution-8-13">Solution</h4>
+<p>Let the assumed mean, \(A = 35,\ c = 10\)</p>
+<table class="tbl">
+<thead><tr><th>Marks</th><th>Mid value<br>\((x_i)\)</th><th>\(f_i\)</th><th>\(d_i = x_i - A\)</th><th>\(d_i = \dfrac{x_i - A}{c}\)</th><th>\(f_i d_i\)</th><th>\(f_i d_i^2\)</th></tr></thead>
+<tbody>
+<tr><td>0-10</td><td>5</td><td>8</td><td>\(-30\)</td><td>\(-3\)</td><td>\(-24\)</td><td>72</td></tr>
+<tr><td>10-20</td><td>15</td><td>12</td><td>\(-20\)</td><td>\(-2\)</td><td>\(-24\)</td><td>48</td></tr>
+<tr><td>20-30</td><td>25</td><td>17</td><td>\(-10\)</td><td>\(-1\)</td><td>\(-17\)</td><td>17</td></tr>
+<tr><td>30-40</td><td>35</td><td>14</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>40-50</td><td>45</td><td>9</td><td>10</td><td>1</td><td>9</td><td>9</td></tr>
+<tr><td>50-60</td><td>55</td><td>7</td><td>20</td><td>2</td><td>14</td><td>28</td></tr>
+<tr><td>60-70</td><td>65</td><td>4</td><td>30</td><td>3</td><td>12</td><td>36</td></tr>
+<tr><td></td><td></td><td>\(N = 71\)</td><td></td><td></td><td>\(\Sigma f_i d_i = -30\)</td><td>\(\Sigma f_i d_i^2 = 210\)</td></tr>
+</tbody>
+</table>
+<div class="mathblock">
+<p>\[\begin{aligned} \text{Standard deviation } \sigma &amp;= c \times \sqrt{\frac{\Sigma f_i d_i^2}{N} - \left(\frac{\Sigma f_i d_i}{N}\right)^2} \\ \sigma &amp;= 10 \times \sqrt{\frac{210}{71} - \left(\frac{-30}{71}\right)^2} = 10 \times \sqrt{\frac{210}{71} - \frac{900}{5041}} \\ &amp;= 10 \times \sqrt{2.779}\,; \quad \sigma \simeq 16.67 \end{aligned}\]</p>
+</div>
+<div class="callout"><p class="callout-title">Thinking Corner</p>
+<ol>
+<li>The standard deviation of a data is 2.8, if 5 is added to all the data values then the new standard deviation is ___.</li>
+<li>If \(S\) is the standard deviation of values \(p, q, r\) then standard deviation of \(p-3, q-3, r-3\) is ___.</li>
+</ol>
+</div>
+<h4 class="callout-h" id="s-example-8-14">Example 8.14</h4>
+<p>The mean and standard deviation of 15 observations are found to be 10 and 5 respectively. On rechecking it was found that one of the observation with value 8 was incorrect. Calculate the correct mean and standard deviation if the correct observation value was 23?</p>
+<h4 class="callout-h" id="s-solution-8-14">Solution</h4>
+<p>\(n = 15,\ \overline{x} = 10,\ \sigma = 5;\ \overline{x} = \dfrac{\Sigma x}{n};\ \Sigma x = 15 \times 10 = 150\)</p>
+<div class="mathblock">
+<p>\[\begin{aligned} \text{Wrong observation value} &amp;= 8, \text{ Correct observation value} = 23. \\ \text{Correct total} &amp;= 150 - 8 + 23 = 165 \\ \text{Correct mean } \overline{x} &amp;= \frac{165}{15} = 11 \\ \text{Standard deviation } \sigma &amp;= \sqrt{\frac{\Sigma x^2}{n} - \left(\frac{\Sigma x}{n}\right)^2} \\ \text{Incorrect value of } \sigma &amp;= 5 = \sqrt{\frac{\Sigma x^2}{15} - (10)^2} \\ 25 &amp;= \frac{\Sigma x^2}{15} - 100 \Rightarrow \frac{\Sigma x^2}{15} = 125 \\ \text{Incorrect value of } \Sigma x^2 &amp;= 1875 \\ \text{Correct value of } \Sigma x^2 &amp;= 1875 - 8^2 + 23^2 = 2340 \\ \text{Correct standard deviation } \sigma &amp;= \sqrt{\frac{2340}{15} - (11)^2} \\ \sigma &amp;= \sqrt{156 - 121} = \sqrt{35} \qquad \sigma \simeq 5.9 \end{aligned}\]</p>
+</div>
+</article>
+<nav class="pager"><a class="" data-nav="prev" href="../../08-statistics-and-probability/01-chapter-opener/index.html"><span class="dir">← Previous</span><span class="t">Chapter opener; 8.1 Introduction</span><span class="ch">Statistics and Probability</span></a><a class="nx" data-nav="next" href="../../08-statistics-and-probability/03-exercise-8.1/index.html"><span class="dir">Next →</span><span class="t">Exercise 8.1</span><span class="ch">Statistics and Probability</span></a></nav>
+</main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'\\(',right:'\\)',display:false},
+    {left:'$$',right:'$$',display:true},
+    {left:'\\[',right:'\\]',display:true}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']})"></script>
+<script src="../../../assets/book.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=3"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2.9 Geometric Progression — Numbers and Sequences</title>
+<meta name="description" content="Class 10 Mathematics · Numbers and Sequences · 2.9 Geometric Progression">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="../../../assets/book.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 10 Mathematics</a></span>
+    <span class="c2">Numbers and Sequences · 2.9 Geometric Progression</span>
+  </div>
+  <a class="tb-btn" data-nav="prev" href="../../02-numbers-and-sequences/14-exercise-2.6/index.html" title="Exercise 2.6">←</a>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary>
+<div class="drawer-panel"><div class="dh">Numbers and Sequences</div><a href="../01-chapter-opener/index.html">Chapter opener; 2.1 Introduction</a><a href="../02-euclid-s-division-lemma-2.2/index.html">2.2 Euclid’s Division Lemma</a><a href="../03-euclid-s-division-algorithm-2.3/index.html">2.3 Euclid’s Division Algorithm</a><a href="../04-exercise-2.1/index.html">Exercise 2.1</a><a href="../05-fundamental-theorem-of-arithmetic-2.4/index.html">2.4 Fundamental Theorem of Arithmetic</a><a href="../06-exercise-2.2/index.html">Exercise 2.2</a><a href="../07-modular-arithmetic-2.5/index.html">2.5 Modular Arithmetic</a><a href="../08-exercise-2.3/index.html">Exercise 2.3</a><a href="../09-sequences-2.6/index.html">2.6 Sequences</a><a href="../10-exercise-2.4/index.html">Exercise 2.4</a><a href="../11-arithmetic-progression-2.7/index.html">2.7 Arithmetic Progression</a><a href="../12-exercise-2.5/index.html">Exercise 2.5</a><a href="../13-series-2.8/index.html">2.8 Series</a><a href="../14-exercise-2.6/index.html">Exercise 2.6</a><a href="../15-geometric-progression-2.9/index.html" aria-current="page">2.9 Geometric Progression</a><a href="../16-exercise-2.7/index.html">Exercise 2.7</a><a href="../17-sum-to-n-terms-of-a-geometric-progression-2.10/index.html">2.10 Sum to n terms of a Geometric progression</a><a href="../18-exercise-2.8/index.html">Exercise 2.8</a><a href="../19-special-series-2.11/index.html">2.11 Special Series</a><a href="../20-exercise-2.9/index.html">Exercise 2.9</a><a href="../21-exercise-2.10/index.html">Exercise 2.10</a><a href="../22-unit-exercise/index.html">Unit Exercise</a><a href="../23-summary/index.html">Points to Remember</a><a href="../24-ict-corner/index.html">ICT Corner</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../02-numbers-and-sequences/16-exercise-2.7/index.html" title="Exercise 2.7">→</a>
+  <button class="tb-btn" data-theme-toggle title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<div class="progress"><span style="width:22.2%"></span></div>
+</header>
+<main class="wrap">
+<div class="sec-head">
+  <p class="eyebrow"><a href="../index.html">Chapter 2 · Numbers and Sequences</a></p>
+  <h1>2.9 Geometric Progression</h1>
+  <p class="sec-meta">Textbook pages 32–37 · 2 figures</p>
+</div>
+<article class="prose">
+<figure class="fig side-fig"><img src="img/fig-fix-triangles.webp" alt="Triangle ABC with DEF formed by joining midpoints of its sides, GHI inside DEF, and JKL inside GHI" loading="lazy" width="496" height="427"><figcaption>Fig. 2.13</figcaption></figure>
+<p>In the diagram given in Fig.2.13, \(\triangle DEF\) is formed by joining the mid points of the sides AB, \(BC\) and \(CA\) of \(\triangle ABC\). Then the size of the triangle \(\triangle DEF\) is exactly one-fourth of the size of \(\triangle ABC\). Similarly \(\triangle GHI\) is also one-fourth of \(\triangle DEF\) and so on. In general, the successive areas are one-fourth of the previous areas.</p>
+<p>The area of these triangles are</p>
+<div class="mathblock"><p>\(\triangle ABC,\ \dfrac{1}{4}\triangle ABC,\ \dfrac{1}{4} \times \dfrac{1}{4}\triangle ABC, \ldots\)</p><p>That is, \(\triangle ABC,\ \dfrac{1}{4}\triangle ABC,\ \dfrac{1}{16}\triangle ABC, \ldots\)</p></div>
+<p>In this case, we see that beginning with \(\triangle ABC\), we see that the successive triangles are formed whose areas are precisely one-fourth the area of the previous triangle. So, each term is obtained by multiplying \(\dfrac{1}{4}\) to the previous term.</p>
+<figure class="fig side-fig"><img src="img/fig-p2-2.webp" alt="Tree of persons: one affected person affects two, each of whom affects two more, giving 1, 2, 4, 8 persons" loading="lazy" width="478" height="426"><figcaption>Fig. 2.14</figcaption></figure>
+<p>As another case, let us consider that a viral disease is spreading in a way such that at any stage two new persons get affected from an affected person. At first stage, one person is affected, at second stage two persons are affected and is spreading to four persons and so on. Then, number of persons affected at each stage are 1, 2, 4, 8, &hellip; where except the first term, each term is precisely twice the previous term.</p>
+<p>From the above examples, it is clear that each term is got by multiplying a fixed number to the preceding number.</p>
+<p>This idea leads us to the concept of <strong>Geometric Progression</strong>.</p>
+<div class="callout"><p class="callout-title">Definition</p>
+<p>A Geometric Progression is a sequence in which each term is obtained by <strong>multiplying</strong> a fixed <strong>non-zero number</strong> to the preceding term except the first term. The fixed number is called <strong>common ratio</strong>. The common ratio is usually denoted by \(r\).</p></div>
+<h3 id="s-2-9-1">2.9.1 General form of Geometric Progression</h3>
+<p>Let \(a\) and \(r \ne 0\) be real numbers. Then the numbers of the form \(a, ar, ar^2, \ldots ar^{n-1} \ldots\) is called a <strong>Geometric Progression</strong>. The number &lsquo;\(a\)&rsquo; is called the first term and number &lsquo;\(r\)&rsquo; is called the common ratio.</p>
+<p>We note that beginning with first term \(a\), each term is obtained by multiplied with the common ratio &lsquo;\(r\)&rsquo; to give \(ar, ar^2, ar^3, \ldots\)</p>
+<h3 id="s-2-9-2">2.9.2 General term of Geometric Progression</h3>
+<p>We try to find a formula for \(n^{th}\) term or general term of Geometric Progression (G.P.) whose terms are in the common ratio.</p>
+<p>\(a, ar, ar^2, \ldots, ar^{n-1}, \ldots\) where \(a\) is the first term and &lsquo;\(r\)&rsquo; is the common ratio. Let \(t_n\) be the \(n^{th}\) term of the G.P.</p>
+<div class="mathblock"><p>Then \(\quad \begin{aligned} t_1 &amp;= a = a \times r^0 = a \times r^{1-1} \\ t_2 &amp;= t_1 \times r = a \times r = a \times r^{2-1} \\ t_3 &amp;= t_2 \times r = ar \times r = ar^2 = ar^{3-1} \\ &amp;\ \ \vdots \\ t_n &amp;= t_{n-1} \times r = ar^{n-2} \times r = ar^{n-2+1} = ar^{n-1} \end{aligned}\)</p></div>
+<div class="callout"><p>Thus, the general term or \(n^{th}\) term of a G.P. is \(t_n = ar^{n-1}\)</p></div>
+<div class="callout"><p class="callout-title">Note</p>
+<p>If we consider the ratio of successive terms of the G.P. then we have</p>
+<div class="mathblock"><p>\(\dfrac{t_2}{t_1} = \dfrac{ar}{a} = r,\ \dfrac{t_3}{t_2} = \dfrac{ar^2}{ar} = r,\ \dfrac{t_4}{t_3} = \dfrac{ar^3}{ar^2} = r,\ \dfrac{t_5}{t_4} = \dfrac{ar^4}{ar^3} = r, \ldots\)</p></div>
+<p>Thus, the ratio between any two consecutive terms of the Geometric Progression is always constant and that constant is the common ratio of the given Progression.</p></div>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<ol>
+<li>A G.P. is obtained by multiplying \(\underline{\qquad}\) to the preceding term.</li>
+<li>The ratio between any two consecutive terms of the G.P. is \(\underline{\qquad}\) and it is called \(\underline{\qquad}\).</li>
+<li>Fill in the blanks if the following are in G.P.
+<ol type="i">
+<li>\(\dfrac{1}{8}, \dfrac{3}{4}, \dfrac{9}{2}, \underline{\qquad}\)</li>
+<li>\(7, \dfrac{7}{2}, \underline{\qquad}\)</li>
+<li>\(\underline{\qquad}, 2\sqrt{2}, 4, \ldots\)</li>
+</ol></li>
+</ol>
+</div>
+<h4 class="callout-h">Example 2.40</h4>
+<p>Which of the following sequences form a Geometric Progression?</p>
+<p>(i) 7, 14, 21, 28, &hellip; &emsp; (ii) \(\dfrac{1}{2}\), 1, 2, 4, &hellip; &emsp; (iii) 5, 25, 50, 75, &hellip;</p>
+<h4 class="callout-h">Solution</h4>
+<p>To check if a given sequence form a G.P. we have to see if the ratio between successive terms are equal.</p>
+<ol type="i">
+<li>7, 14, 21, 28, &hellip;
+<div class="mathblock"><p>\(\dfrac{t_2}{t_1} = \dfrac{14}{7} = 2; \quad \dfrac{t_3}{t_2} = \dfrac{21}{14} = \dfrac{3}{2}; \quad \dfrac{t_4}{t_3} = \dfrac{28}{21} = \dfrac{4}{3}\)</p></div>
+<p>Since the ratios between successive terms are not equal, the sequence 7, 14, 21, 28, &hellip; is not a Geometric Progression.</p></li>
+<li>\(\dfrac{1}{2}\), 1, 2, 4, &hellip;
+<div class="mathblock"><p>\(\dfrac{t_2}{t_1} = \dfrac{1}{\frac{1}{2}} = 2; \quad \dfrac{t_3}{t_2} = \dfrac{2}{1} = 2; \quad \dfrac{t_4}{t_3} = \dfrac{4}{2} = 2\)</p></div>
+<p>Here the ratios between successive terms are equal. Therefore the sequence \(\dfrac{1}{2}\), 1, 2, 4, &hellip; is a Geometric Progression with common ratio \(r = 2\).</p></li>
+<li>5, 25, 50, 75,&hellip;
+<div class="mathblock"><p>\(\dfrac{t_2}{t_1} = \dfrac{25}{5} = 5; \quad \dfrac{t_3}{t_2} = \dfrac{50}{25} = 2; \quad \dfrac{t_4}{t_3} = \dfrac{75}{50} = \dfrac{3}{2}\)</p></div>
+<p>Since the ratios between successive terms are not equal, the sequence 5, 25, 50, 75,&hellip; is not a Geometric Progression.</p></li>
+</ol>
+<div class="callout"><p class="callout-title">Thinking Corner</p>
+<p>Is the sequence \(2, 2^2, 2^{2^2}, 2^{2^{2^2}}, \ldots\) is a G.P.?</p></div>
+<h4 class="callout-h">Example 2.41</h4>
+<p>Find the geometric progression whose first term and common ratios are given by (i) \(a = -7,\ r = 6\) (ii) \(a = 256,\ r = 0.5\)</p>
+<h4 class="callout-h">Solution</h4>
+<ol type="i">
+<li>The general form of Geometric progression is \(a, ar, ar^2, \ldots\)
+<div class="mathblock"><p>\(a = -7,\quad ar = -7 \times 6 = -42,\quad ar^2 = -7 \times 6^2 = -252\)</p></div>
+<p>Therefore the required Geometric Progression is \(-7, -42, -252, \ldots\)</p></li>
+<li>The general form of Geometric progression is \(a, ar, ar^2, \ldots\)
+<div class="mathblock"><p>\(a = 256,\quad ar = 256 \times 0.5 = 128,\quad ar^2 = 256 \times (0.5)^2 = 64\)</p></div>
+<p>Therefore the required Geometric progression is 256, 128, 64,&hellip;.</p></li>
+</ol>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<ol>
+<li>If first term \(= a\), common ratio \(= r\), then find the value of \(t_9\) and \(t_{27}\).</li>
+<li>In a G.P. if \(t_1 = \dfrac{1}{5}\) and \(t_2 = \dfrac{1}{25}\) then the common ratio is \(\underline{\qquad}\).</li>
+</ol>
+</div>
+<h4 class="callout-h">Example 2.42</h4>
+<p>Find the \(8^{th}\) term of the G.P. 9, 3, 1,&hellip;</p>
+<h4 class="callout-h">Solution</h4>
+<p>To find the \(8^{th}\) term we have to use the \(n^{th}\) term formula \(t_n = ar^{n-1}\)</p>
+<p>First term \(a = 9\), Common ratio \(r = \dfrac{t_2}{t_1} = \dfrac{3}{9} = \dfrac{1}{3}\)</p>
+<div class="mathblock"><p>\(t_8 = 9 \times \left(\dfrac{1}{3}\right)^{8-1} = 9 \times \left(\dfrac{1}{3}\right)^7 = \dfrac{1}{243}\)</p></div>
+<p>Therefore the \(8^{th}\) term of the G.P. is \(\dfrac{1}{243}\).</p>
+<h4 class="callout-h">Example 2.43</h4>
+<p>In a Geometric progression, the \(4^{th}\) term is \(\dfrac{8}{9}\) and the \(7^{th}\) term is \(\dfrac{64}{243}\). Find the Geometric Progression.</p>
+<h4 class="callout-h">Solution</h4>
+<div class="mathblock"><p>\(4^{th}\) term, \(t_4 = \dfrac{8}{9} \Rightarrow ar^3 = \dfrac{8}{9} \qquad \ldots(1)\)</p><p>\(7^{th}\) term, \(t_7 = \dfrac{64}{243} \Rightarrow ar^6 = \dfrac{64}{243} \qquad \ldots(2)\)</p></div>
+<div class="mathblock"><p>Dividing (2) by (1) we get, \(\dfrac{ar^6}{ar^3} = \dfrac{\frac{64}{243}}{\frac{8}{9}}\)</p><p>\(r^3 = \dfrac{8}{27} \Rightarrow r = \dfrac{2}{3}\)</p></div>
+<p>Substituting the value of \(r\) in (1), we get \(a \times \left[\dfrac{2}{3}\right]^3 = \dfrac{8}{9} \Rightarrow a = 3\)</p>
+<p>Therefore the Geometric Progression is \(a, ar, ar^2, \ldots\) That is, \(3, 2, \dfrac{4}{3}, \ldots\)</p>
+<div class="callout"><p class="callout-title">Note</p>
+<ul>
+<li>When the product of three consecutive terms of a G.P. are given, we can take the three terms as \(\dfrac{a}{r}, a, ar\).</li>
+<li>When the products of four consecutive terms are given for a G.P. then we can take the four terms as \(\dfrac{a}{r^3}, \dfrac{a}{r}, ar, ar^3\).</li>
+<li>When each term of a Geometric Progression is multiplied or divided by a non&ndash;zero constant then the resulting sequence is also a Geometric Progression.</li>
+</ul>
+</div>
+<h4 class="callout-h">Example 2.44</h4>
+<p>The product of three consecutive terms of a Geometric Progression is 343 and their sum is \(\dfrac{91}{3}\). Find the three terms.</p>
+<h4 class="callout-h">Solution</h4>
+<p>Since the product of 3 consecutive terms is given.</p>
+<p>we can take them as \(\dfrac{a}{r}, a, ar\).</p>
+<p>Product of the terms \(= 343\)</p>
+<div class="mathblock"><p>\(\begin{aligned} \dfrac{a}{r} \times a \times ar &amp;= 343 \\ a^3 = 7^3 \Rightarrow a &amp;= 7 \end{aligned}\)</p></div>
+<p>Sum of the terms \(= \dfrac{91}{3}\)</p>
+<div class="mathblock"><p>Hence \(a\left(\dfrac{1}{r} + 1 + r\right) = \dfrac{91}{3} \Rightarrow 7\left(\dfrac{1 + r + r^2}{r}\right) = \dfrac{91}{3}\)</p><p>\(3 + 3r + 3r^2 = 13r \Rightarrow 3r^2 - 10r + 3 = 0\)</p><p>\((3r - 1)(r - 3) = 0 \Rightarrow r = 3 \text{ or } r = \dfrac{1}{3}\)</p></div>
+<p>If \(a = 7,\ r = 3\) then the three terms are \(\dfrac{7}{3}, 7, 21\).</p>
+<p>If \(a = 7,\ r = \dfrac{1}{3}\) then the three terms are \(21, 7, \dfrac{7}{3}\).</p>
+<div class="callout"><p class="callout-title">Thinking Corner</p>
+<ol>
+<li>Split 64 into three parts such that the numbers are in G.P.</li>
+<li>If \(a, b, c, \ldots\) are in G.P. then \(2a, 2b, 2c, \ldots\) are in \(\underline{\qquad}\)</li>
+<li>If 3, \(x\), 6.75 are in G.P. then \(x\) is \(\underline{\qquad}\)</li>
+</ol>
+</div>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<p>Three non-zero numbers \(a, b, c\) are in G.P. if and only if \(\underline{\qquad}\).</p></div>
+<h3 id="s-condition-three-numbers-gp">Condition for three numbers to be in G.P.</h3>
+<p>If \(a, b, c\) are in G.P. then \(b = ar,\ c = ar^2\). So \(ac = a \times ar^2 = (ar)^2 = b^2\). Thus \(b^2 = ac\)</p>
+<p>Similarly, if \(b^2 = ac\), then \(\dfrac{b}{a} = \dfrac{c}{b}\). So \(a, b, c\) are in G.P.</p>
+<p>Thus three non-zero numbers \(a, b, c\) are in G.P. if and only if \(b^2 = ac\).</p>
+<h4 class="callout-h">Example 2.45</h4>
+<p>The present value of a machine is &#8377;40,000 and its value depreciates each year by 10%. Find the estimated value of the machine in the \(6^{th}\) year.</p>
+<h4 class="callout-h">Solution</h4>
+<p>The value of the machine at present is &#8377;40,000. Since it is depreciated at the rate of 10% after one year the value of the machine is 90% of the initial value.</p>
+<p>That is the value of the machine at the end of the first year is \(40{,}000 \times \dfrac{90}{100}\)</p>
+<p>After two years, the value of the machine is 90% of the value in the first year.</p>
+<p>Value of the machine at the end of the \(2^{nd}\) year is \(40{,}000 \times \left(\dfrac{90}{100}\right)^2\)</p>
+<p>Continuing this way, the value of the machine depreciates in the following way as</p>
+<div class="mathblock"><p>\(40000,\ 40000 \times \dfrac{90}{100},\ 40000 \times \left(\dfrac{90}{100}\right)^2 \ldots\)</p></div>
+<p>This sequence is in the form of G.P. with first term 40,000 and common ratio \(\dfrac{90}{100}\). For finding the value of the machine at the end of \(5^{th}\) year (i.e. in \(6^{th}\) year), we need to find the sixth term of this G.P.</p>
+<div class="mathblock"><p>Thus, \(n = 6,\ a = 40{,}000,\ r = \dfrac{90}{100}\).</p><p>Using \(t_n = ar^{n-1}\), we have \(t_6 = 40{,}000 \times \left(\dfrac{90}{100}\right)^{6-1} = 40000 \times \left(\dfrac{90}{100}\right)^5\)</p><p>\(t_6 = 40{,}000 \times \dfrac{9}{10} \times \dfrac{9}{10} \times \dfrac{9}{10} \times \dfrac{9}{10} \times \dfrac{9}{10} = 23619.6\)</p></div>
+<p>Therefore the value of the machine in \(6^{th}\) year \(=\) &#8377;23619.60</p>
+</article>
+<nav class="pager"><a class="" data-nav="prev" href="../../02-numbers-and-sequences/14-exercise-2.6/index.html"><span class="dir">← Previous</span><span class="t">Exercise 2.6</span><span class="ch">Numbers and Sequences</span></a><a class="nx" data-nav="next" href="../../02-numbers-and-sequences/16-exercise-2.7/index.html"><span class="dir">Next →</span><span class="t">Exercise 2.7</span><span class="ch">Numbers and Sequences</span></a></nav>
+</main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'\\(',right:'\\)',display:false},
+    {left:'$$',right:'$$',display:true},
+    {left:'\\[',right:'\\]',display:true}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']})"></script>
+<script src="../../../assets/book.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=3"></script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3.9 Matrices — Algebra</title>
+<meta name="description" content="Class 10 Mathematics · Algebra · 3.9 Matrices">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="../../../assets/book.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 10 Mathematics</a></span>
+    <span class="c2">Algebra · 3.9 Matrices</span>
+  </div>
+  <a class="tb-btn" data-nav="prev" href="../../03-algebra/31-exercise-3.16/index.html" title="Exercise 3.16">←</a>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary>
+<div class="drawer-panel"><div class="dh">Algebra</div><a href="../01-chapter-opener/index.html">Chapter opener; 3.1 Introduction</a><a href="../02-simultaneous-linear-equations-in-three-variables-3.2/index.html">3.2 Simultaneous Linear Equations in Three Variables</a><a href="../03-exercise-3.1/index.html">Exercise 3.1</a><a href="../04-gcd-and-lcm-of-polynomials-3.3/index.html">3.3 GCD and LCM of Polynomials</a><a href="../05-exercise-3.2/index.html">Exercise 3.2</a><a href="../06-relationship-between-lcm-and-gcd-3.3.3/index.html">3.3.3 Relationship between LCM and GCD</a><a href="../07-exercise-3.3/index.html">Exercise 3.3</a><a href="../08-rational-expressions-3.4/index.html">3.4 Rational Expressions</a><a href="../09-exercise-3.4/index.html">Exercise 3.4</a><a href="../10-operations-of-rational-expressions-3.4.3/index.html">3.4.3 Operations of Rational Expressions</a><a href="../11-exercise-3.5/index.html">Exercise 3.5</a><a href="../12-exercise-3.6/index.html">Exercise 3.6</a><a href="../13-square-root-of-polynomials-3.5/index.html">3.5 Square Root of Polynomials</a><a href="../14-exercise-3.7/index.html">Exercise 3.7</a><a href="../15-finding-the-square-root-of-a-polynomial-by-division-method-3.5.2/index.html">3.5.2 Finding the Square Root of a Polynomial by Division Method</a><a href="../16-exercise-3.8/index.html">Exercise 3.8</a><a href="../17-quadratic-equations-3.6/index.html">3.6 Quadratic Equations</a><a href="../18-exercise-3.9/index.html">Exercise 3.9</a><a href="../19-solving-quadratic-equations-3.6.4/index.html">3.6.4 Solving Quadratic Equations</a><a href="../20-exercise-3.10/index.html">Exercise 3.10</a><a href="../21-exercise-3.11/index.html">Exercise 3.11</a><a href="../22-solving-problems-involving-quadratic-equations-3.6.5/index.html">3.6.5 Solving Problems Involving Quadratic Equations</a><a href="../23-exercise-3.12/index.html">Exercise 3.12</a><a href="../24-nature-of-roots-of-a-quadratic-equation-3.6.6/index.html">3.6.6 Nature of Roots of a Quadratic Equation</a><a href="../25-exercise-3.13/index.html">Exercise 3.13</a><a href="../26-the-relation-between-roots-and-coefficients-of-a-quadratic-equation-3.6.7/index.html">3.6.7 The Relation between Roots and Coefficients of a Quadratic Equation</a><a href="../27-exercise-3.14/index.html">Exercise 3.14</a><a href="../28-graph-of-variations-3.7/index.html">3.7 Graph of Variations</a><a href="../29-exercise-3.15/index.html">Exercise 3.15</a><a href="../30-quadratic-graphs-3.8/index.html">3.8 Quadratic Graphs</a><a href="../31-exercise-3.16/index.html">Exercise 3.16</a><a href="../32-matrices-3.9/index.html" aria-current="page">3.9 Matrices</a><a href="../33-exercise-3.17/index.html">Exercise 3.17</a><a href="../34-operations-on-matrices-3.9.3/index.html">3.9.3 Operations on Matrices</a><a href="../35-exercise-3.18/index.html">Exercise 3.18</a><a href="../36-exercise-3.19/index.html">Exercise 3.19</a><a href="../37-exercise-3.20/index.html">Exercise 3.20</a><a href="../38-unit-exercise/index.html">Unit Exercise</a><a href="../39-summary/index.html">Points to Remember</a><a href="../40-ict-corner/index.html">ICT Corner</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../03-algebra/33-exercise-3.17/index.html" title="Exercise 3.17">→</a>
+  <button class="tb-btn" data-theme-toggle title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<div class="progress"><span style="width:49.0%"></span></div>
+</header>
+<main class="wrap">
+<div class="sec-head">
+  <p class="eyebrow"><a href="../index.html">Chapter 3 · Algebra</a></p>
+  <h1>3.9 Matrices</h1>
+  <p class="sec-meta">Textbook pages 53–60</p>
+</div>
+<article class="prose">
+<h3>Introduction</h3>
+<p>Let us consider the following information. Vanitha has 12 story books, 20 notebooks and 4 pencils. Radha has 27 story books, 17 notebooks and 6 pencils. Gokul has 7 story books, 11 notebooks and 4 pencils. Geetha has 10 story books, 12 notebooks and 5 pencils.</p>
+<table class="tbl">
+<thead><tr><th>Details</th><th>Story Books</th><th>Note Books</th><th>Pencils</th></tr></thead>
+<tbody>
+<tr><td>Vanitha</td><td>12</td><td>20</td><td>4</td></tr>
+<tr><td>Radha</td><td>27</td><td>17</td><td>6</td></tr>
+<tr><td>Gokul</td><td>7</td><td>11</td><td>4</td></tr>
+<tr><td>Geetha</td><td>10</td><td>12</td><td>5</td></tr>
+</tbody>
+</table>
+<p>Now we arrange this information in the tabular form as follows.</p>
+<div class="mathblock"><p>\(\begin{array}{r} \text{First row} \\ \text{Second row} \\ \text{Third row} \\ \text{Fourth row} \\ {} \end{array} \begin{array}{c} \begin{pmatrix} 12 &amp; 20 &amp; 4 \\ 27 &amp; 17 &amp; 6 \\ 7 &amp; 11 &amp; 4 \\ 10 &amp; 12 &amp; 5 \end{pmatrix} \\ \begin{array}{ccc} \text{First} &amp; \text{Second} &amp; \text{Third} \\ \text{Column} &amp; \text{Column} &amp; \text{Column} \end{array} \end{array}\)</p></div>
+<p>Here the items possessed by four people are aligned or positioned in a rectangular array containing four horizontal and three vertical arrangements. The horizontal arrangements are called <strong>“rows”</strong> and the vertical arrangements are called <strong>“columns”</strong>. The whole rectangular arrangement is called a <strong>“Matrix”</strong>. Generally, if we arrange things in a rectangular array, we call it as “ Matrix”.</p>
+<p>Applications of matrices are found in several scientific fields. In Physics, matrices are applied in the calculations of battery power outputs, resistor conversion of electrical energy into other forms of energy. In computer based applications, matrices play a vital role in the projection of three dimensional image into a two dimensional screen, creating a realistic seeming motions. In graphic software, Matrix Algebra is used to process linear transformations to render images. One of the most important usage of matrices are encryption of message codes. The encryption and decryption process are carried out using matrix multiplication and inverse operations. The concept of matrices is used in transmission of codes when the messages are lengthy. In Geology, matrices are used for taking seismic surveys. In Robotics, matrices are used to identify the robot movements.</p>
+<div class="callout"><p class="callout-title">Definition</p>
+<p>A matrix is a rectangular array of elements. The horizontal arrangements are called <strong>rows</strong> and vertical arrangements are called <strong>columns</strong>.</p>
+</div>
+<p>For example, \(\begin{pmatrix} 4 &amp; 8 &amp; 0 \\ 1 &amp; 9 &amp; -2 \end{pmatrix}\) is a matrix.</p>
+<p>Usually capital letters such as \(A,\ B,\ C,\ X,\ Y, \ldots\) etc., are used to represent the matrices and small letters such as \(a,\ b,\ c,\ l,\ m,\ n,\ a_{12},\ a_{13}, \ldots\) to indicate the entries or elements of the matrices.</p>
+<p>The following are some examples of matrices</p>
+<div class="mathblock"><p>\(\text{(i)}\ \begin{pmatrix} 8 &amp; 4 &amp; -1 \\ \frac{1}{2} &amp; 5 &amp; 4 \\ 9 &amp; 0 &amp; 1 \end{pmatrix} \qquad \text{(ii)}\ \begin{pmatrix} 1 + x &amp; x^3 &amp; \sin x \\ \cos x &amp; 2 &amp; \tan x \end{pmatrix} \qquad \text{(iii)}\ \begin{pmatrix} 3 + 1 &amp; \sqrt{2} &amp; -1 \\ 1.5 &amp; 8 &amp; 9 \\ \frac{1}{3} &amp; 13 &amp; \frac{-7}{9} \end{pmatrix}\)</p></div>
+<h3>3.9.1 Order of a Matrix</h3>
+<p>If a matrix \(A\) has \(m\) number of rows and \(n\) number of columns, then the order of the matrix \(A\) is (Number of rows)\(\times\)(Number of columns) that is, \(m \times n\). We read \(m \times n\) as \(m\) cross \(n\) or \(m\) by \(n\). It may be noted that \(m \times n\) is not a product of \(m\) and \(n\).</p>
+<p>General form of a matrix \(A\) with \(m\) rows and \(n\) columns (order \(m \times n\)) can be written in the form</p>
+<div class="mathblock"><p>\(A = \begin{pmatrix} a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1j} &amp; \cdots &amp; a_{1n} \\ a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2j} &amp; \cdots &amp; a_{2n} \\ \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\ a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mj} &amp; \cdots &amp; a_{mn} \end{pmatrix}\)</p></div>
+<p>where, \(a_{11}, a_{12}, \ldots\) denote entries of the matrix. \(a_{11}\) is the element in first row, first column, \(a_{12}\) is the element in the first row, second column, and so on.</p>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<ol>
+<li>Find is the element in the second row and third column of the matrix \(\begin{pmatrix} 1 &amp; -2 &amp; 3 \\ 2 &amp; 1 &amp; 5 \end{pmatrix}\)</li>
+<li>Find is the order of the matrix \(\begin{pmatrix} \sin\theta \\ \cos\theta \\ \tan\theta \end{pmatrix}\)</li>
+<li>Determine the entries denoted by \(a_{11}, a_{22}, a_{33}, a_{44}\) from the matrix \(\begin{pmatrix} 2 &amp; 1 &amp; 3 &amp; 4 \\ 5 &amp; 9 &amp; -4 &amp; \sqrt{7} \\ 3 &amp; \frac{5}{2} &amp; 8 &amp; 9 \\ 7 &amp; 0 &amp; 1 &amp; 4 \end{pmatrix}\)</li>
+</ol>
+</div>
+<p>In general, \(a_{ij}\) is the element in the \(i^{\text{th}}\) row and \(j^{\text{th}}\) column and is referred as \((i, j)^{\text{th}}\) element.</p>
+<p>With this notation, we can express the matrix \(A\) as \(A = (a_{ij})_{m \times n}\) where \(i = 1, 2, \ldots m\) and \(j = 1, 2, \ldots n\).</p>
+<p>The total number of entries in the matrix \(A = (a_{ij})_{m \times n}\) is \(mn\).</p>
+<div class="callout"><p class="callout-title">Note</p>
+<p>When giving the order of a matrix, you should always mention the number of rows first, followed by the number of columns.</p>
+</div>
+<p>For example,</p>
+<table class="tbl">
+<thead><tr><th>S.No.</th><th>Matrices</th><th>Elements of the matrix</th><th>Order of the matrix</th></tr></thead>
+<tbody>
+<tr><td>1.</td><td>\(\begin{pmatrix} \sin\theta &amp; -\cos\theta \\ \cos\theta &amp; \sin\theta \end{pmatrix}\)</td><td>\(a_{11} = \sin\theta,\ a_{12} = -\cos\theta,\ a_{21} = \cos\theta,\ a_{22} = \sin\theta\)</td><td>2×2</td></tr>
+<tr><td>2.</td><td>\(\begin{pmatrix} 1 &amp; 3 \\ \sqrt{2} &amp; 5 \\ \frac{1}{2} &amp; -4 \end{pmatrix}\)</td><td>\(a_{11} = 1,\ a_{12} = 3,\ a_{21} = \sqrt{2},\ a_{22} = 5,\ a_{31} = \frac{1}{2},\ a_{32} = -4\)</td><td>3×2</td></tr>
+</tbody>
+</table>
+<div class="callout"><p class="callout-title">Activity 4</p>
+<ol type="i">
+<li>Take calendar sheets of a particular month in a particular year.</li>
+<li>Construct matrices from the dates of the calendar sheet.</li>
+<li>Write down the number of possible matrices of orders \(2 \times 2,\ 3 \times 2,\ 2 \times 3,\ 3 \times 3,\ 4 \times 3\), etc.</li>
+<li>Find the maximum possible order of a matrix that you can create from the given calendar sheet.</li>
+<li>Mention the use of matrices to organize information from daily life situations.</li>
+</ol>
+</div>
+<h3>3.9.2 Types of Matrices</h3>
+<p>In this section, we shall define certain types of matrices.</p>
+<h4>1. Row Matrix</h4>
+<p>A matrix is said to be a <strong>row matrix</strong> if it has only one row and any number of columns. A row matrix is also called as a <strong>row vector</strong>.</p>
+<p>For example, \(A = \begin{pmatrix} 8 &amp; 9 &amp; 4 &amp; 3 \end{pmatrix}\), \(B = \begin{pmatrix} -\frac{\sqrt{3}}{2} &amp; 1 &amp; \sqrt{3} \end{pmatrix}\) are row matrices of order \(1 \times 4\) and \(1 \times 3\) respectively.</p>
+<p>In general \(A = \begin{pmatrix} a_{11} &amp; a_{12} &amp; a_{13} &amp; \ldots &amp; a_{1n} \end{pmatrix}\) is a row matrix of order \(1 \times n\).</p>
+<h4>2. Column Matrix</h4>
+<p>A matrix is said to be a <strong>column matrix</strong> if it has only one column and any number of rows. It is also called as a <strong>column vector</strong>.</p>
+<p>For example, \(A = \begin{pmatrix} \sin x \\ \cos x \\ 1 \end{pmatrix}\), \(B = \begin{pmatrix} \sqrt{5} \\ 7 \end{pmatrix}\) and \(C = \begin{pmatrix} 8 \\ -3 \\ 23 \\ 17 \end{pmatrix}\) are column matrices of order \(3 \times 1\), \(2 \times 1\) and \(4 \times 1\) respectively.</p>
+<p>In general, \(A = \begin{pmatrix} a_{11} \\ a_{21} \\ a_{31} \\ \vdots \\ a_{m1} \end{pmatrix}\) is a column matrix of order \(m \times 1\).</p>
+<h4>3. Square Matrix</h4>
+<p>A matrix in which the <strong>number of rows</strong> is <strong>equal to</strong> the <strong>number of columns</strong> is called a <strong>square matrix</strong>. Thus a matrix \(A = (a_{ij})_{m \times n}\) will be a square matrix if \(m = n\)</p>
+<p>For example, \(\begin{pmatrix} 1 &amp; 3 \\ 4 &amp; 5 \end{pmatrix}_{2 \times 2},\ \begin{pmatrix} -1 &amp; 0 &amp; 2 \\ 3 &amp; 6 &amp; 8 \\ 2 &amp; 3 &amp; 5 \end{pmatrix}_{3 \times 3}\) are square matrices.</p>
+<p>In general, \(\begin{pmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{pmatrix}_{2 \times 2},\ \begin{pmatrix} b_{11} &amp; b_{12} &amp; b_{13} \\ b_{21} &amp; b_{22} &amp; b_{23} \\ b_{31} &amp; b_{32} &amp; b_{33} \end{pmatrix}\) are square matrices of orders \(2 \times 2\) and \(3 \times 3\) respectively.</p>
+<p>\(A = (a_{ij})_{m \times m}\) is a square matrix of order \(m\).</p>
+<div class="callout"><p class="callout-title">Definition</p>
+<p>In a square matrix, the elements of the form \(a_{11}, a_{22}, a_{33}, \ldots\) (i.e) \(a_{ii}\) are called leading <strong>diagonal elements</strong>. For example in the matrix \(\begin{pmatrix} 1 &amp; 3 \\ 4 &amp; 5 \end{pmatrix}\), 1 and 5 are leading diagonal elements.</p>
+</div>
+<h4>4. Diagonal Matrix</h4>
+<p>A square matrix, all of whose elements, except those in the leading diagonal are zero is called a <strong>diagonal matrix</strong>.</p>
+<p>(ie) A square matrix \(A = (a_{ij})\) is said to be diagonal matrix if \(a_{ij} = 0\) for \(i \neq j\). Note that some elements of the leading diagonal may be zero but not all.</p>
+<p>For example, \(\begin{pmatrix} 8 &amp; 0 &amp; 0 \\ 0 &amp; -3 &amp; 0 \\ 0 &amp; 0 &amp; 11 \end{pmatrix},\ \begin{pmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{pmatrix}\) are diagonal matrices.</p>
+<h4>5. Scalar Matrix</h4>
+<p>A diagonal matrix in which all the leading diagonal elements are equal is called a <strong>scalar matrix.</strong></p>
+<p>For example, \(\begin{pmatrix} 4 &amp; 0 \\ 0 &amp; 4 \end{pmatrix},\ \begin{pmatrix} k &amp; 0 &amp; 0 \\ 0 &amp; k &amp; 0 \\ 0 &amp; 0 &amp; k \end{pmatrix},\ \begin{pmatrix} 5 &amp; 0 &amp; 0 \\ 0 &amp; 5 &amp; 0 \\ 0 &amp; 0 &amp; 5 \end{pmatrix}\)</p>
+<p>In general, \(A = (a_{ij})_{m \times m}\) is said to be a scalar matrix if</p>
+<div class="mathblock"><p>\(a_{ij} = \begin{cases} 0 &amp; \text{when } i \neq j \\ k &amp; \text{when } i = j \end{cases} \quad \text{where } k \text{ is constant.}\)</p></div>
+<h4>6. Identity (or) Unit Matrix</h4>
+<p>A square matrix in which elements in the leading diagonal are all “1” and rest are all zero is called an <strong>identity matrix</strong> or <strong>unit matrix.</strong></p>
+<p>Thus, the square matrix \(A = (a_{ij})\) is an identity matrix if \(a_{ij} = \begin{cases} 1 &amp; \text{if } i = j \\ 0 &amp; \text{if } i \neq j \end{cases}\)</p>
+<p>A unit matrix of order \(n\) is written as \(I_n\).</p>
+<p>\(I_2 = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix},\ I_3 = \begin{pmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{pmatrix}\) are identity matrices of order 2 and 3 respectively.</p>
+<h4>7. Zero matrix (or) null matrix</h4>
+<p>A matrix is said to be a <strong>zero matrix</strong> or <strong>null matrix</strong> if all its elements are zero.</p>
+<p>For example, \((0),\ \begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 0 \end{pmatrix},\ \begin{pmatrix} 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{pmatrix}\) are all zero matrices of order \(1 \times 1\), \(2 \times 2\) and \(3 \times 3\) but of different orders. We denote zero matrix of order \(n \times n\) by \(O_n\).</p>
+<p>\(\begin{pmatrix} 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{pmatrix}\) is a zero matrix of the order \(2 \times 3\).</p>
+<h4>8. Transpose of a matrix</h4>
+<p>The matrix which is obtained by interchanging the elements in rows and columns of the given matrix \(A\) is called <strong>transpose of</strong> \(A\) and is denoted by \(A^T\).</p>
+<p>For example,</p>
+<p>(a) If \(A = \begin{pmatrix} 5 &amp; 3 &amp; -1 \\ 2 &amp; 8 &amp; 9 \\ -4 &amp; 7 &amp; 5 \end{pmatrix}_{3 \times 3}\) then \(A^T = \begin{pmatrix} 5 &amp; 2 &amp; -4 \\ 3 &amp; 8 &amp; 7 \\ -1 &amp; 9 &amp; 5 \end{pmatrix}_{3 \times 3}\)</p>
+<p>(b) If \(B = \begin{pmatrix} 1 &amp; 5 \\ 8 &amp; 9 \\ 4 &amp; 3 \end{pmatrix}_{3 \times 2}\) then \(B^T = \begin{pmatrix} 1 &amp; 8 &amp; 4 \\ 5 &amp; 9 &amp; 3 \end{pmatrix}_{2 \times 3}\)</p>
+<p>If order of \(A\) is \(m \times n\) then order of \(A^T\) is \(n \times m\).</p>
+<p>We note that \((A^T)^T = A\).</p>
+<h4>9. Triangular Matrix</h4>
+<p>A square matrix in which all the entries above the leading diagonal are zero is called a <strong>lower triangular matrix</strong>.</p>
+<p>If all the entries below the leading diagonal are zero, then it is called an <strong>upper triangular matrix</strong>.</p>
+<div class="callout"><p class="callout-title">Definition</p>
+<p>A square matrix \(A = (a_{ij})_{n \times n}\) is called upper triangular matrix if \(a_{ij} = 0\) for \(i &gt; j\) and is called lower triangular matrix if \(a_{ij} = 0\), \(i &lt; j\).</p>
+</div>
+<p>For example, \(A = \begin{pmatrix} 1 &amp; 7 &amp; -3 \\ 0 &amp; 2 &amp; 4 \\ 0 &amp; 0 &amp; 7 \end{pmatrix}\) is an upper triangular matrix and \(B = \begin{pmatrix} 8 &amp; 0 &amp; 0 \\ 4 &amp; 5 &amp; 0 \\ -11 &amp; 3 &amp; 1 \end{pmatrix}\) is a lower triangular matrix.</p>
+<h4>Equal Matrices</h4>
+<p>Two matrices \(A\) and \(B\) are said to be equal if and only if they have the same order and each element of matrix \(A\) is equal to the corresponding element of matrix \(B\). That is, \(a_{ij} = b_{ij}\) for all \(i,\ j\).</p>
+<p>For example, if \(A = \begin{pmatrix} 5 &amp; 1 \\ 0 &amp; 3 \end{pmatrix}\), \(B = \begin{pmatrix} 1^2 + 2^2 &amp; \sin^2\theta + \cos^2\theta \\ 1 + \frac{3}{2} - \frac{5}{2} &amp; 2 + \sec^2\theta - \tan^2\theta \end{pmatrix}\) then we note that \(A\) and \(B\) have same order and \(a_{ij} = b_{ij}\) for every \(i,\ j\). Hence \(A\) and \(B\) are equal matrices.</p>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<ol>
+<li>The number of column(s) in a column matrix are ________.</li>
+<li>The number of row(s) in a row matrix are ________.</li>
+<li>The non-diagonal elements in any unit matrix are ________.</li>
+<li>Does there exist a square matrix with 32 elements?</li>
+</ol>
+</div>
+<h4>The negative of a matrix</h4>
+<p>The negative of a matrix \(A_{m \times n}\) denoted by \(-A_{m \times n}\) is the matrix formed by replacing each element in the matrix \(A_{m \times n}\) with its additive inverse.</p>
+<p>Additive inverse of an element \(k\) is \(-k\). That is, every element of \(-A\) is the negative of the corresponding element of \(A\).</p>
+<p>For example, if \(A = \begin{pmatrix} 2 &amp; -4 &amp; 9 \\ 5 &amp; -3 &amp; -1 \end{pmatrix}_{2 \times 3}\) then \(-A = \begin{pmatrix} -2 &amp; 4 &amp; -9 \\ -5 &amp; 3 &amp; 1 \end{pmatrix}_{2 \times 3}\)</p>
+<h4 class="callout-h">Example 3.56</h4>
+<p>Consider the following information regarding the number of men and women workers in three factories I, II and III.</p>
+<table class="tbl">
+<thead><tr><th>Factory</th><th>Men</th><th>Women</th></tr></thead>
+<tbody>
+<tr><td>I</td><td>23</td><td>18</td></tr>
+<tr><td>II</td><td>47</td><td>36</td></tr>
+<tr><td>III</td><td>15</td><td>16</td></tr>
+</tbody>
+</table>
+<p>Represent the above information in the form of a matrix. What does the entry in the second row and first column represent?</p>
+<h4 class="callout-h">Solution</h4>
+<p>The information is represented in the form of a \(3 \times 2\) matrix as follows</p>
+<div class="mathblock"><p>\(A = \begin{pmatrix} 23 &amp; 18 \\ 47 &amp; 36 \\ 15 &amp; 16 \end{pmatrix}\)</p></div>
+<p>The entry in the second row and first column represent that there are 47 men workers in factory II.</p>
+<h4 class="callout-h">Example 3.57</h4>
+<p>If a matrix has 16 elements, what are the possible orders it can have?</p>
+<h4 class="callout-h">Solution</h4>
+<p>We know that a matrix of order \(m \times n\), has \(mn\) elements. Thus to find all possible orders of a matrix with 16 elements, we will find all ordered pairs of natural numbers whose product is 16.</p>
+<p>Such ordered pairs are (1,16), (16,1), (4,4), (8,2), (2,8)</p>
+<p>Hence possible orders are \(1 \times 16,\ 16 \times 1,\ 4 \times 4,\ 2 \times 8,\ 8 \times 2\)</p>
+<div class="callout"><p class="callout-title">Activity 5</p>
+<table class="tbl">
+<thead><tr><th>No.</th><th>Elements</th><th>Possible orders</th><th>Number of possible orders</th></tr></thead>
+<tbody>
+<tr><td>1.</td><td>4</td><td></td><td>3</td></tr>
+<tr><td>2.</td><td></td><td>1×9, 9×1, 3×3</td><td></td></tr>
+<tr><td>3.</td><td>20</td><td></td><td></td></tr>
+<tr><td>4.</td><td>8</td><td></td><td>4</td></tr>
+<tr><td>5.</td><td>1</td><td></td><td></td></tr>
+<tr><td>6.</td><td>100</td><td></td><td></td></tr>
+<tr><td>7.</td><td></td><td>1×10, 10×1, 2×5, 5×2</td><td></td></tr>
+</tbody>
+</table>
+<p>Do you find any relationship between number of elements (second column) and number of possible orders (fourth column)? If so, what is it?</p>
+</div>
+<h4 class="callout-h">Example 3.58</h4>
+<p>Construct a \(3 \times 3\) matrix whose elements are \(a_{ij} = i^2j^2\)</p>
+<h4 class="callout-h">Solution</h4>
+<p>The general 3×3 matrix is given by \(A = \begin{pmatrix} a_{11} &amp; a_{12} &amp; a_{13} \\ a_{21} &amp; a_{22} &amp; a_{23} \\ a_{31} &amp; a_{32} &amp; a_{33} \end{pmatrix}\), \(a_{ij} = i^2j^2\)</p>
+<div class="mathblock"><p>\(a_{11} = 1^2 \times 1^2 = 1 \times 1 = 1;\quad a_{12} = 1^2 \times 2^2 = 1 \times 4 = 4;\quad a_{13} = 1^2 \times 3^2 = 1 \times 9 = 9;\)</p><p>\(a_{21} = 2^2 \times 1^2 = 4 \times 1 = 4;\quad a_{22} = 2^2 \times 2^2 = 4 \times 4 = 16;\quad a_{23} = 2^2 \times 3^2 = 4 \times 9 = 36\)</p><p>\(a_{31} = 3^2 \times 1^2 = 9 \times 1 = 9;\quad a_{32} = 3^2 \times 2^2 = 9 \times 4 = 36;\quad a_{33} = 3^2 \times 3^2 = 9 \times 9 = 81\)</p></div>
+<p>Hence the required matrix is \(A = \begin{pmatrix} 1 &amp; 4 &amp; 9 \\ 4 &amp; 16 &amp; 36 \\ 9 &amp; 36 &amp; 81 \end{pmatrix}\)</p>
+<h4 class="callout-h">Example 3.59</h4>
+<p>Find the value of \(a,\ b,\ c,\ d\) from the equation \(\begin{pmatrix} a - b &amp; 2a + c \\ 2a - b &amp; 3c + d \end{pmatrix} = \begin{pmatrix} 1 &amp; 5 \\ 0 &amp; 2 \end{pmatrix}\)</p>
+<h4 class="callout-h">Solution</h4>
+<p>The given matrices are equal. Thus all corresponding elements are equal.</p>
+<div class="mathblock"><p>\(\begin{aligned} \text{Therefore,}\quad a - b &amp;= 1 &amp;&amp; \ldots(1) \\ 2a + c &amp;= 5 &amp;&amp; \ldots(2) \\ 2a - b &amp;= 0 &amp;&amp; \ldots(3) \\ 3c + d &amp;= 2 &amp;&amp; \ldots(4) \\ (3) \Rightarrow\quad 2a - b &amp;= 0 \\ 2a &amp;= b &amp;&amp; \ldots(5) \end{aligned}\)</p></div>
+<div class="mathblock"><p>\(\text{Put } 2a = b \text{ in equation (1)},\ a - 2a = 1 \;\Rightarrow\; a = -1\)</p><p>\(\text{Put } a = -1 \text{ in equation (5)},\ 2(-1) = b \;\Rightarrow\; b = -2\)</p><p>\(\text{Put } a = -1 \text{ in equation (2)},\ 2(-1) + c = 5 \;\Rightarrow\; c = 7\)</p><p>\(\text{Put } c = 7 \text{ in equation (4)},\ 3(7) + d = 2 \;\Rightarrow\; d = -19\)</p></div>
+<p>Therefore, \(a = -1,\ b = -2,\ c = 7,\ d = -19\)</p>
+</article>
+<nav class="pager"><a class="" data-nav="prev" href="../../03-algebra/31-exercise-3.16/index.html"><span class="dir">← Previous</span><span class="t">Exercise 3.16</span><span class="ch">Algebra</span></a><a class="nx" data-nav="next" href="../../03-algebra/33-exercise-3.17/index.html"><span class="dir">Next →</span><span class="t">Exercise 3.17</span><span class="ch">Algebra</span></a></nav>
+</main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'\\(',right:'\\)',display:false},
+    {left:'$$',right:'$$',display:true},
+    {left:'\\[',right:'\\]',display:true}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']})"></script>
+<script src="../../../assets/book.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=3"></script>
+</body>
+</html>

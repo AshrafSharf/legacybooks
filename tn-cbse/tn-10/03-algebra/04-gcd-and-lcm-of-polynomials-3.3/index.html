@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3.3 GCD and LCM of Polynomials — Algebra</title>
+<meta name="description" content="Class 10 Mathematics · Algebra · 3.3 GCD and LCM of Polynomials">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="../../../assets/book.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 10 Mathematics</a></span>
+    <span class="c2">Algebra · 3.3 GCD and LCM of Polynomials</span>
+  </div>
+  <a class="tb-btn" data-nav="prev" href="../../03-algebra/03-exercise-3.1/index.html" title="Exercise 3.1">←</a>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary>
+<div class="drawer-panel"><div class="dh">Algebra</div><a href="../01-chapter-opener/index.html">Chapter opener; 3.1 Introduction</a><a href="../02-simultaneous-linear-equations-in-three-variables-3.2/index.html">3.2 Simultaneous Linear Equations in Three Variables</a><a href="../03-exercise-3.1/index.html">Exercise 3.1</a><a href="../04-gcd-and-lcm-of-polynomials-3.3/index.html" aria-current="page">3.3 GCD and LCM of Polynomials</a><a href="../05-exercise-3.2/index.html">Exercise 3.2</a><a href="../06-relationship-between-lcm-and-gcd-3.3.3/index.html">3.3.3 Relationship between LCM and GCD</a><a href="../07-exercise-3.3/index.html">Exercise 3.3</a><a href="../08-rational-expressions-3.4/index.html">3.4 Rational Expressions</a><a href="../09-exercise-3.4/index.html">Exercise 3.4</a><a href="../10-operations-of-rational-expressions-3.4.3/index.html">3.4.3 Operations of Rational Expressions</a><a href="../11-exercise-3.5/index.html">Exercise 3.5</a><a href="../12-exercise-3.6/index.html">Exercise 3.6</a><a href="../13-square-root-of-polynomials-3.5/index.html">3.5 Square Root of Polynomials</a><a href="../14-exercise-3.7/index.html">Exercise 3.7</a><a href="../15-finding-the-square-root-of-a-polynomial-by-division-method-3.5.2/index.html">3.5.2 Finding the Square Root of a Polynomial by Division Method</a><a href="../16-exercise-3.8/index.html">Exercise 3.8</a><a href="../17-quadratic-equations-3.6/index.html">3.6 Quadratic Equations</a><a href="../18-exercise-3.9/index.html">Exercise 3.9</a><a href="../19-solving-quadratic-equations-3.6.4/index.html">3.6.4 Solving Quadratic Equations</a><a href="../20-exercise-3.10/index.html">Exercise 3.10</a><a href="../21-exercise-3.11/index.html">Exercise 3.11</a><a href="../22-solving-problems-involving-quadratic-equations-3.6.5/index.html">3.6.5 Solving Problems Involving Quadratic Equations</a><a href="../23-exercise-3.12/index.html">Exercise 3.12</a><a href="../24-nature-of-roots-of-a-quadratic-equation-3.6.6/index.html">3.6.6 Nature of Roots of a Quadratic Equation</a><a href="../25-exercise-3.13/index.html">Exercise 3.13</a><a href="../26-the-relation-between-roots-and-coefficients-of-a-quadratic-equation-3.6.7/index.html">3.6.7 The Relation between Roots and Coefficients of a Quadratic Equation</a><a href="../27-exercise-3.14/index.html">Exercise 3.14</a><a href="../28-graph-of-variations-3.7/index.html">3.7 Graph of Variations</a><a href="../29-exercise-3.15/index.html">Exercise 3.15</a><a href="../30-quadratic-graphs-3.8/index.html">3.8 Quadratic Graphs</a><a href="../31-exercise-3.16/index.html">Exercise 3.16</a><a href="../32-matrices-3.9/index.html">3.9 Matrices</a><a href="../33-exercise-3.17/index.html">Exercise 3.17</a><a href="../34-operations-on-matrices-3.9.3/index.html">3.9.3 Operations on Matrices</a><a href="../35-exercise-3.18/index.html">Exercise 3.18</a><a href="../36-exercise-3.19/index.html">Exercise 3.19</a><a href="../37-exercise-3.20/index.html">Exercise 3.20</a><a href="../38-unit-exercise/index.html">Unit Exercise</a><a href="../39-summary/index.html">Points to Remember</a><a href="../40-ict-corner/index.html">ICT Corner</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../03-algebra/05-exercise-3.2/index.html" title="Exercise 3.2">→</a>
+  <button class="tb-btn" data-theme-toggle title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<div class="progress"><span style="width:30.7%"></span></div>
+</header>
+<main class="wrap">
+<div class="sec-head">
+  <p class="eyebrow"><a href="../index.html">Chapter 3 · Algebra</a></p>
+  <h1>3.3 GCD and LCM of Polynomials</h1>
+  <p class="sec-meta">Textbook pages 9–12 · 6 figures</p>
+</div>
+<article class="prose">
+<h3 id="s-3-3-1-gcd">3.3.1 Greatest Common Divisor (GCD) or Highest Common Factor (HCF) of Polynomials</h3>
+<p>In our previous class we have learnt how to find the GCD (HCF) of second degree and third degree expressions by the method of factorization. Now we shall learn how to find the GCD of the given polynomials by the method of long division.</p>
+<p>As discussed in Chapter 2, (Numbers and Sequences) to find GCD of two positive integers using Euclidean Algorithm, similar techniques can be employed for two given polynomials also.</p>
+<p>The following procedure gives a systematic way of finding Greatest Common Divisor of two given polynomials \(f(x)\) and \(g(x)\).</p>
+<dl>
+<dt>Step 1:</dt><dd>First, divide \(f(x)\) by \(g(x)\) to obtain \(f(x) = g(x)q(x) + r(x)\) where \(q(x)\) is the quotient and \(r(x)\) is the remainder. Then, \(\deg[r(x)] &lt; \deg[g(x)]\)</dd>
+<dt>Step 2:</dt><dd>If the remainder \(r(x)\) is non-zero, divide \(g(x)\) by \(r(x)\) to obtain \(g(x) = r(x)q_1(x) + r_1(x)\) where \(r_1(x)\) is the new remainder. Then \(\deg[r_1(x)] &lt; \deg[r(x)]\). If the remainder \(r_1(x)\) is zero, then \(r(x)\) is the required GCD.</dd>
+<dt>Step 3:</dt><dd>If \(r_1(x)\) is non-zero, then continue the process until we get zero as remainder. The divisor at this stage will be the required GCD.</dd>
+</dl>
+<p>We write \(GCD[f(x), g(x)]\) to denote the GCD of the polynomials \(f(x), g(x)\).</p>
+<div class="callout"><p class="callout-title">Note</p>
+<p>If \(f(x)\) and \(g(x)\) are two polynomials of same degree then the polynomial carrying the highest coefficient will be the dividend. In case, if both have the same coefficient then compare the next least degree&rsquo;s coefficient and proceed with the division.</p>
+</div>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<ol>
+<li>When two polynomials of same degree has to be divided, __________ should be considered to fix the dividend and divisor.</li>
+<li>If \(r(x) = 0\) when \(f(x)\) is divided by \(g(x)\) then \(g(x)\) is called ________ of the polynomials.</li>
+<li>If \(f(x) = g(x)q(x) + r(x)\), _________ must be added to \(f(x)\) to make \(f(x)\) completely divisible by \(g(x)\).</li>
+<li>If \(f(x) = g(x)q(x) + r(x)\), _________ must be subtracted to \(f(x)\) to make \(f(x)\) completely divisible by \(g(x)\).</li>
+</ol>
+</div>
+<h4 class="callout-h">Example 3.10</h4>
+<p>Find the GCD of the polynomials \(x^3 + x^2 - x + 2\) and \(2x^3 - 5x^2 + 5x - 3\).</p>
+<h4 class="callout-h">Solution</h4>
+<p>Let \(f(x) = 2x^3 - 5x^2 + 5x - 3\) and \(g(x) = x^3 + x^2 - x + 2\)</p>
+<figure class="fig table-fig"><img src="img/fig-fix-p2-1.webp" alt="Long division: 2x^3 − 5x^2 + 5x − 3 divided by x^3 + x^2 − x + 2 gives quotient 2 and remainder −7x^2 + 7x − 7 = −7(x^2 − x + 1)" loading="lazy" width="738" height="339"></figure>
+<p>\(-7(x^2 - x + 1) \neq 0\), note that \(-7\) is not a divisor of \(g(x)\)</p>
+<p>Now dividing \(g(x) = x^3 + x^2 - x + 2\) by the new remainder \(x^2 - x + 1\) (leaving the constant factor), we get</p>
+<figure class="fig table-fig"><img src="img/fig-fix-p2-2.webp" alt="Long division: x^3 + x^2 − x + 2 divided by x^2 − x + 1 gives quotient x + 2 and remainder 0" loading="lazy" width="654" height="384"></figure>
+<p>Here, we get zero remainder.</p>
+<p>Therefore, \(\text{GCD}(2x^3 - 5x^2 + 5x - 3,\ x^3 + x^2 - x + 2) = x^2 - x + 1\).</p>
+<h4 class="callout-h">Example 3.11</h4>
+<p>Find the GCD of \(6x^3 - 30x^2 + 60x - 48\) and \(3x^3 - 12x^2 + 21x - 18\).</p>
+<h4 class="callout-h">Solution</h4>
+<p>Let, \(f(x) = 6x^3 - 30x^2 + 60x - 48 = 6(x^3 - 5x^2 + 10x - 8)\) and<br>\(g(x) = 3x^3 - 12x^2 + 21x - 18 = 3(x^3 - 4x^2 + 7x - 6)\)</p>
+<p>Now, we shall find the GCD of \(x^3 - 5x^2 + 10x - 8\) and \(x^3 - 4x^2 + 7x - 6\)</p>
+<figure class="fig table-fig"><img src="img/fig-fix-p3-1.webp" alt="Long division: x^3 − 4x^2 + 7x − 6 divided by x^3 − 5x^2 + 10x − 8 gives quotient 1 and remainder x^2 − 3x + 2" loading="lazy" width="792" height="252"></figure>
+<figure class="fig table-fig"><img src="img/fig-fix-p3-2.webp" alt="Long division: x^3 − 5x^2 + 10x − 8 divided by x^2 − 3x + 2 gives quotient x − 2 and remainder 2x − 4 = 2(x − 2)" loading="lazy" width="672" height="387"></figure>
+<figure class="fig table-fig"><img src="img/fig-fix-p3-3.webp" alt="Long division: x^2 − 3x + 2 divided by x − 2 gives quotient x − 1 and remainder 0" loading="lazy" width="582" height="339"></figure>
+<p>Here, we get zero as remainder.</p>
+<p>GCD of leading coefficients 3 and 6 is 3.</p>
+<p>Thus, \(\text{GCD}\left[(6x^3 - 30x^2 + 60x - 48,\ 3x^3 - 12x^2 + 21x - 18)\right] = 3(x - 2)\).</p>
+<h3 id="s-3-3-2-lcm">3.3.2 Least Common Multiple (LCM) of Polynomials</h3>
+<p>The Least Common Multiple of two or more algebraic expressions is the expression of highest degree (or power) such that the expressions exactly divide it.</p>
+<p>Consider the following simple expressions \(a^3b^2,\ a^2b^3\).</p>
+<p>For these expressions \(LCM = a^3b^3\).</p>
+<p>To find LCM by factorization method</p>
+<ol type="i">
+<li>Each expression is first resolved into its factors.</li>
+<li>The highest power of the factors will be the LCM.</li>
+<li>If the expressions have numerical coefficients, find their LCM.</li>
+<li>The product of the LCM of factors and coefficient is the required LCM.</li>
+</ol>
+<h4 class="callout-h">Example 3.12</h4>
+<p>Find the LCM of the following</p>
+<ol type="i">
+<li>\(8x^4y^2,\ 48x^2y^4\)</li>
+<li>\(5x - 10,\ 5x^2 - 20\)</li>
+<li>\(x^4 - 1,\ x^2 - 2x + 1\)</li>
+<li>\(x^3 - 27,\ (x - 3)^2,\ x^2 - 9\)</li>
+</ol>
+<h4 class="callout-h">Solution</h4>
+<ol type="i">
+<li>\(8x^4y^2,\ 48x^2y^4\)
+<p>First let us find the LCM of the numerical coefficients.</p>
+<p>That is, \(\text{LCM}(8, 48) = 2 \times 2 \times 2 \times 6 = 48\)</p>
+<p>Then find the LCM of the terms involving variables.</p>
+<p>That is, \(\text{LCM}(x^4y^2, x^2y^4) = x^4y^4\)</p>
+<p>Finally find the LCM of the given expression.</p>
+<p>We conclude that the LCM of the given expression is the product of the LCM of the numerical coefficient and the LCM of the terms with variables.</p>
+<p>Therefore, \(\text{LCM}(8x^4y^2, 48x^2y^4) = 48x^4y^4\)</p></li>
+<li>\((5x - 10),\ (5x^2 - 20)\)
+<div class="mathblock"><p>\(\begin{aligned} 5x - 10 &amp;= 5(x - 2) \\ 5x^2 - 20 &amp;= 5(x^2 - 4) = 5(x + 2)(x - 2) \end{aligned}\)</p></div>
+<p>Therefore, \(\text{LCM}\,[(5x - 10), (5x^2 - 20)] = 5(x + 2)(x - 2)\)</p></li>
+<li>\((x^4 - 1),\ x^2 - 2x + 1\)
+<div class="mathblock"><p>\(\begin{aligned} x^4 - 1 &amp;= (x^2)^2 - 1 = (x^2 + 1)(x^2 - 1) = (x^2 + 1)(x + 1)(x - 1) \\ x^2 - 2x + 1 &amp;= (x - 1)^2 \end{aligned}\)</p></div>
+<p>Therefore, \(\text{LCM}\,[(x^4 - 1), (x^2 - 2x + 1)] = (x^2 + 1)(x + 1)(x - 1)^2\)</p></li>
+<li>\(x^3 - 27,\ (x - 3)^2,\ x^2 - 9\)
+<p>\(x^3 - 27 = (x - 3)(x^2 + 3x + 9)\); \((x - 3)^2 = (x - 3)^2\); \((x^2 - 9) = (x + 3)(x - 3)\)</p>
+<p>Therefore, \(\text{LCM}\,[(x^3 - 27), (x - 3)^2, (x^2 - 9)] = (x - 3)^2(x + 3)(x^2 + 3x + 9)\)</p></li>
+</ol>
+<div class="callout"><p class="callout-title">Thinking Corner</p>
+<p>Complete the factor tree for the given polynomials \(f(x)\) and \(g(x)\). Hence find their GCD and LCM.</p>
+<figure class="fig"><img src="img/fig-fix-p4-1.webp" alt="Factor trees: f(x) = 2x^3 − 9x^2 − 32x − 21 with factors 2x + 3, (blank), x + 1; g(x) = 2x^3 − 7x^2 − 43x − 42 with factors (blank), (blank), x + 2" loading="lazy" width="1023" height="216"></figure>
+<p>\(\text{GCD}\,[f(x) \text{ and } g(x)] = \) ______ &emsp; \(\text{LCM}\,[f(x) \text{ and } g(x)] = \) ______</p>
+</div>
+</article>
+<nav class="pager"><a class="" data-nav="prev" href="../../03-algebra/03-exercise-3.1/index.html"><span class="dir">← Previous</span><span class="t">Exercise 3.1</span><span class="ch">Algebra</span></a><a class="nx" data-nav="next" href="../../03-algebra/05-exercise-3.2/index.html"><span class="dir">Next →</span><span class="t">Exercise 3.2</span><span class="ch">Algebra</span></a></nav>
+</main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'\\(',right:'\\)',display:false},
+    {left:'$$',right:'$$',display:true},
+    {left:'\\[',right:'\\]',display:true}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']})"></script>
+<script src="../../../assets/book.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=3"></script>
+</body>
+</html>

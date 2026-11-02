@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2.4 Fundamental Theorem of Arithmetic — Numbers and Sequences</title>
+<meta name="description" content="Class 10 Mathematics · Numbers and Sequences · 2.4 Fundamental Theorem of Arithmetic">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="../../../assets/book.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 10 Mathematics</a></span>
+    <span class="c2">Numbers and Sequences · 2.4 Fundamental Theorem of Arithmetic</span>
+  </div>
+  <a class="tb-btn" data-nav="prev" href="../../02-numbers-and-sequences/04-exercise-2.1/index.html" title="Exercise 2.1">←</a>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary>
+<div class="drawer-panel"><div class="dh">Numbers and Sequences</div><a href="../01-chapter-opener/index.html">Chapter opener; 2.1 Introduction</a><a href="../02-euclid-s-division-lemma-2.2/index.html">2.2 Euclid’s Division Lemma</a><a href="../03-euclid-s-division-algorithm-2.3/index.html">2.3 Euclid’s Division Algorithm</a><a href="../04-exercise-2.1/index.html">Exercise 2.1</a><a href="../05-fundamental-theorem-of-arithmetic-2.4/index.html" aria-current="page">2.4 Fundamental Theorem of Arithmetic</a><a href="../06-exercise-2.2/index.html">Exercise 2.2</a><a href="../07-modular-arithmetic-2.5/index.html">2.5 Modular Arithmetic</a><a href="../08-exercise-2.3/index.html">Exercise 2.3</a><a href="../09-sequences-2.6/index.html">2.6 Sequences</a><a href="../10-exercise-2.4/index.html">Exercise 2.4</a><a href="../11-arithmetic-progression-2.7/index.html">2.7 Arithmetic Progression</a><a href="../12-exercise-2.5/index.html">Exercise 2.5</a><a href="../13-series-2.8/index.html">2.8 Series</a><a href="../14-exercise-2.6/index.html">Exercise 2.6</a><a href="../15-geometric-progression-2.9/index.html">2.9 Geometric Progression</a><a href="../16-exercise-2.7/index.html">Exercise 2.7</a><a href="../17-sum-to-n-terms-of-a-geometric-progression-2.10/index.html">2.10 Sum to n terms of a Geometric progression</a><a href="../18-exercise-2.8/index.html">Exercise 2.8</a><a href="../19-special-series-2.11/index.html">2.11 Special Series</a><a href="../20-exercise-2.9/index.html">Exercise 2.9</a><a href="../21-exercise-2.10/index.html">Exercise 2.10</a><a href="../22-unit-exercise/index.html">Unit Exercise</a><a href="../23-summary/index.html">Points to Remember</a><a href="../24-ict-corner/index.html">ICT Corner</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../02-numbers-and-sequences/06-exercise-2.2/index.html" title="Exercise 2.2">→</a>
+  <button class="tb-btn" data-theme-toggle title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<div class="progress"><span style="width:15.7%"></span></div>
+</header>
+<main class="wrap">
+<div class="sec-head">
+  <p class="eyebrow"><a href="../index.html">Chapter 2 · Numbers and Sequences</a></p>
+  <h1>2.4 Fundamental Theorem of Arithmetic</h1>
+  <p class="sec-meta">Textbook pages 8–10 · 3 figures</p>
+</div>
+<article class="prose">
+<p>Let us consider the following conversation between a Teacher and students.</p>
+<table class="tbl">
+<thead><tr><th>Speaker</th><th>Says</th></tr></thead>
+<tbody>
+<tr><td><strong>Teacher</strong></td><td>Factorise the number 240.</td></tr>
+<tr><td>Malar</td><td>\(24 \times 10\)</td></tr>
+<tr><td>Raghu</td><td>\(8 \times 30\)</td></tr>
+<tr><td>Iniya</td><td>\(12 \times 20\)</td></tr>
+<tr><td>Kumar</td><td>\(15 \times 16\)</td></tr>
+<tr><td>Malar</td><td>Whose answer is correct Sir?</td></tr>
+<tr><td><strong>Teacher</strong></td><td>All the answers are correct.</td></tr>
+<tr><td>Raghu</td><td>How sir?</td></tr>
+<tr><td><strong>Teacher</strong></td><td>Split each of the factors into product of prime numbers.</td></tr>
+<tr><td>Malar</td><td>\(2 \times 2 \times 2 \times 3 \times 2 \times 5\)</td></tr>
+<tr><td>Raghu</td><td>\(2 \times 2 \times 2 \times 2 \times 3 \times 5\)</td></tr>
+<tr><td>Iniya</td><td>\(2 \times 2 \times 3 \times 2 \times 2 \times 5\)</td></tr>
+<tr><td>Kumar</td><td>\(3 \times 5 \times 2 \times 2 \times 2 \times 2\)</td></tr>
+<tr><td><strong>Teacher</strong></td><td>Good! Now, count the number of 2&rsquo;s, 3&rsquo;s and 5&rsquo;s.</td></tr>
+<tr><td>Malar</td><td>I got four 2&rsquo;s, one 3 and one 5.</td></tr>
+<tr><td>Raghu</td><td>I got four 2&rsquo;s, one 3 and one 5.</td></tr>
+<tr><td>Iniya</td><td>I also got the same numbers too.</td></tr>
+<tr><td>Kumar</td><td>Me too sir.</td></tr>
+<tr><td>Malar</td><td>All of us got four 2&rsquo;s, one 3 and one 5. This is very surprising to us.</td></tr>
+<tr><td><strong>Teacher</strong></td><td>Yes, It should be. Once any number is factorized up to a product of prime numbers, everyone should get the same collection of prime numbers.</td></tr>
+</tbody>
+</table>
+<p>This concept leads us to the following important theorem.</p>
+<h3 id="s-theorem-4">Theorem 4 (Fundamental Theorem of Arithmetic) (without proof)</h3>
+<div class="callout"><p>&ldquo;Every positive integer (except the number 1) can be represented in exactly one way apart from rearrangement as a product of one or more primes.&rdquo;</p></div>
+<figure class="fig"><img src="img/fig-fix-tree.webp" alt="Tree diagram: N splits into x1, x2, x3; these split into y1 to y6; and so on down to prime powers p1^q1, p2^q2, ..., pn^qn" loading="lazy" width="862" height="545"><figcaption>Fig. 2.2</figcaption></figure>
+<p>The fundamental theorem asserts that every composite number can be decomposed as a product of prime numbers and that the decomposition is unique. In the sense that there is one and only way to express the decomposition as product of primes.</p>
+<p>In general, we conclude that given a composite number N, we decompose it uniquely in the form \(N = p_1^{q_1} \times p_2^{q_2} \times p_3^{q_3} \times \cdots \times p_n^{q_n}\) where \(p_1, p_2, p_3, \ldots, p_n\) are primes and \(q_1, q_2, q_3, \ldots, q_n\) are natural numbers.</p>
+<p>First, we try to factorize N into its factors. If all the factors are themselves primes then we can stop. Otherwise, we try to further split the factors which are not prime. Continue the process till we get only prime numbers.</p>
+<div class="callout"><p class="callout-title">Thinking Corner</p>
+<p>Is 1 a prime number?</p></div>
+<h3 id="s-illustration">Illustration</h3>
+<p>For example, if we try to factorize 32760 we get</p>
+<div class="mathblock"><p>\(\begin{aligned} 32760 &amp;= 2 \times 2 \times 2 \times 3 \times 3 \times 5 \times 7 \times 13 \\ &amp;= 2^3 \times 3^2 \times 5^1 \times 7^1 \times 13^1 \end{aligned}\)</p></div>
+<p>Thus, in whatever way we try to factorize 32760, we should finally get three 2&rsquo;s, two 3&rsquo;s, one 5, one 7 and one 13.</p>
+<p>The fact that &ldquo;Every composite number can be written uniquely as the product of power of primes&rdquo; is called <strong>Fundamental Theorem of Arithmetic</strong>.</p>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<ol>
+<li>Every natural number except \(\underline{\qquad}\) can be expressed as \(\underline{\qquad}\).</li>
+<li>In how many ways a composite number can be written as product of power of primes?</li>
+<li>The number of divisors of any prime number is \(\underline{\qquad}\).</li>
+</ol>
+</div>
+<h3 id="s-2-4-1-significance">2.4.1 Significance of the Fundamental Theorem of Arithmetic</h3>
+<p>The fundamental theorem about natural numbers except 1, that we have stated above has several applications, both in Mathematics and in other fields. The theorem is vastly important in Mathematics, since it highlights the fact that prime numbers are the &lsquo;Building Blocks&rsquo; for all the positive integers. Thus, prime numbers can be compared to atoms making up a molecule.</p>
+<div class="callout"><p class="callout-title">Do you know?</p>
+<ol>
+<li>If a prime number \(p\) divides \(ab\) then either \(p\) divides \(a\) or \(p\) divides \(b\), that is \(p\) divides at least one of them.</li>
+<li>If a composite number \(n\) divides \(ab\), then \(n\) neither divide \(a\) nor \(b\). For example, 6 divides \(4 \times 3\) but 6 neither divide 4 nor 3.</li>
+</ol>
+</div>
+<h4 class="callout-h">Example 2.7</h4>
+<p>In the given factorisation, find the numbers \(m\) and \(n\).</p>
+<figure class="fig side-fig"><img src="img/fig-fix-factor.webp" alt="Factor tree: m splits into 2 and a box; the box splits into 3 and n; n splits into 5 and a box; that box splits into 5 and 2" loading="lazy" width="254" height="460"><figcaption>Fig. 2.3</figcaption></figure>
+<h4 class="callout-h">Solution</h4>
+<div class="mathblock"><p>\(\begin{aligned} \text{Value of the first box from bottom} &amp;= 5 \times 2 = 10 \\ \text{Value of } n &amp;= 5 \times 10 = 50 \\ \text{Value of the second box from bottom} &amp;= 3 \times 50 = 150 \\ \text{Value of } m &amp;= 2 \times 150 = 300 \end{aligned}\)</p></div>
+<p>Thus, the required numbers are \(m = 300,\ n = 50\)</p>
+<h4 class="callout-h">Example 2.8</h4>
+<p>Can the number \(6^n\), \(n\) being a natural number end with the digit 5? Give reason for your answer.</p>
+<h4 class="callout-h">Solution</h4>
+<p>Since \(6^n = (2 \times 3)^n = 2^n \times 3^n\),</p>
+<p>2 is a factor of \(6^n\). So, \(6^n\) is always even.</p>
+<p>But any number whose last digit is 5 is always odd.</p>
+<p>Hence, \(6^n\) cannot end with the digit 5.</p>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<ol>
+<li>Let \(m\) divides \(n\). Then GCD and LCM of \(m, n\) are \(\underline{\qquad}\) and \(\underline{\qquad}\).</li>
+<li>The HCF of numbers of the form \(2^m\) and \(3^n\) is \(\underline{\qquad}\).</li>
+</ol>
+</div>
+<h4 class="callout-h">Example 2.9</h4>
+<p>Is \(7 \times 5 \times 3 \times 2 + 3\) a composite number? Justify your answer.</p>
+<h4 class="callout-h">Solution</h4>
+<p>Yes, the given number is a composite number, because</p>
+<div class="mathblock"><p>\(7 \times 5 \times 3 \times 2 + 3 = 3 \times (7 \times 5 \times 2 + 1) = 3 \times 71\)</p></div>
+<p>Since the given number can be factorized in terms of two primes, it is a composite number.</p>
+<h4 class="callout-h">Example 2.10</h4>
+<p>&lsquo;\(a\)&rsquo; and &lsquo;\(b\)&rsquo; are two positive integers such that \(a^b \times b^a = 800\). Find &lsquo;\(a\)&rsquo; and &lsquo;\(b\)&rsquo;.</p>
+<h4 class="callout-h">Solution</h4>
+<p>The number 800 can be factorized as</p>
+<div class="mathblock"><p>\(800 = 2 \times 2 \times 2 \times 2 \times 2 \times 5 \times 5 = 2^5 \times 5^2\)</p></div>
+<p>Hence, \(a^b \times b^a = 2^5 \times 5^2\)</p>
+<p>This implies that \(a = 2\) and \(b = 5\) (or) \(a = 5\) and \(b = 2\).</p>
+<div class="callout"><p class="callout-title">Thinking Corner</p>
+<p>Can you think of positive integers \(a\), \(b\) such that \(a^b = b^a\)?</p></div>
+<div class="callout"><p class="callout-title">Activity 3</p>
+<figure class="fig side-fig"><img src="img/fig-fix-atm.webp" alt="An ATM card" loading="lazy" width="294" height="189"><figcaption>Fig. 2.4</figcaption></figure>
+<p>Can you find the 4-digit pin number &lsquo;\(pqrs\)&rsquo; of an ATM card such that \(p^2 \times q^1 \times r^4 \times s^3 = 3{,}15{,}000\)?</p>
+</div>
+</article>
+<nav class="pager"><a class="" data-nav="prev" href="../../02-numbers-and-sequences/04-exercise-2.1/index.html"><span class="dir">← Previous</span><span class="t">Exercise 2.1</span><span class="ch">Numbers and Sequences</span></a><a class="nx" data-nav="next" href="../../02-numbers-and-sequences/06-exercise-2.2/index.html"><span class="dir">Next →</span><span class="t">Exercise 2.2</span><span class="ch">Numbers and Sequences</span></a></nav>
+</main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'\\(',right:'\\)',display:false},
+    {left:'$$',right:'$$',display:true},
+    {left:'\\[',right:'\\]',display:true}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']})"></script>
+<script src="../../../assets/book.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=3"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2.8 Series — Numbers and Sequences</title>
+<meta name="description" content="Class 10 Mathematics · Numbers and Sequences · 2.8 Series">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="../../../assets/book.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 10 Mathematics</a></span>
+    <span class="c2">Numbers and Sequences · 2.8 Series</span>
+  </div>
+  <a class="tb-btn" data-nav="prev" href="../../02-numbers-and-sequences/12-exercise-2.5/index.html" title="Exercise 2.5">←</a>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary>
+<div class="drawer-panel"><div class="dh">Numbers and Sequences</div><a href="../01-chapter-opener/index.html">Chapter opener; 2.1 Introduction</a><a href="../02-euclid-s-division-lemma-2.2/index.html">2.2 Euclid’s Division Lemma</a><a href="../03-euclid-s-division-algorithm-2.3/index.html">2.3 Euclid’s Division Algorithm</a><a href="../04-exercise-2.1/index.html">Exercise 2.1</a><a href="../05-fundamental-theorem-of-arithmetic-2.4/index.html">2.4 Fundamental Theorem of Arithmetic</a><a href="../06-exercise-2.2/index.html">Exercise 2.2</a><a href="../07-modular-arithmetic-2.5/index.html">2.5 Modular Arithmetic</a><a href="../08-exercise-2.3/index.html">Exercise 2.3</a><a href="../09-sequences-2.6/index.html">2.6 Sequences</a><a href="../10-exercise-2.4/index.html">Exercise 2.4</a><a href="../11-arithmetic-progression-2.7/index.html">2.7 Arithmetic Progression</a><a href="../12-exercise-2.5/index.html">Exercise 2.5</a><a href="../13-series-2.8/index.html" aria-current="page">2.8 Series</a><a href="../14-exercise-2.6/index.html">Exercise 2.6</a><a href="../15-geometric-progression-2.9/index.html">2.9 Geometric Progression</a><a href="../16-exercise-2.7/index.html">Exercise 2.7</a><a href="../17-sum-to-n-terms-of-a-geometric-progression-2.10/index.html">2.10 Sum to n terms of a Geometric progression</a><a href="../18-exercise-2.8/index.html">Exercise 2.8</a><a href="../19-special-series-2.11/index.html">2.11 Special Series</a><a href="../20-exercise-2.9/index.html">Exercise 2.9</a><a href="../21-exercise-2.10/index.html">Exercise 2.10</a><a href="../22-unit-exercise/index.html">Unit Exercise</a><a href="../23-summary/index.html">Points to Remember</a><a href="../24-ict-corner/index.html">ICT Corner</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../02-numbers-and-sequences/14-exercise-2.6/index.html" title="Exercise 2.6">→</a>
+  <button class="tb-btn" data-theme-toggle title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<div class="progress"><span style="width:20.9%"></span></div>
+</header>
+<main class="wrap">
+<div class="sec-head">
+  <p class="eyebrow"><a href="../index.html">Chapter 2 · Numbers and Sequences</a></p>
+  <h1>2.8 Series</h1>
+  <p class="sec-meta">Textbook pages 27–31 · 1 figure</p>
+</div>
+<article class="prose">
+<p>The sum of the terms of a sequence is called <strong>series</strong>. Let \(a_1, a_2, a_3, \ldots, a_n, \ldots\) be the sequence of real numbers. Then the real number \(a_1 + a_2 + a_3 + \cdots\) is defined as the series of real numbers.</p>
+<p>If a series has finite number of terms then it is called a <strong>Finite series</strong>. If a series has infinite number of terms then it is called an <strong>Infinite series</strong>. Let us focus our attention only on studying finite series.</p>
+<h3 id="s-2-8-1">2.8.1 Sum to <em>n</em> terms of an A.P.</h3>
+<p>A series whose terms are in Arithmetic progression is called <strong>Arithmetic series</strong>.</p>
+<p>Let \(a,\ a + d,\ a + 2d,\ a + 3d, \ldots\) be the Arithmetic Progression.</p>
+<p>The sum of first \(n\) terms of a Arithmetic Progression denoted by \(S_n\) is given by,</p>
+<div class="mathblock"><p>\(S_n = a + (a + d) + (a + 2d) + \cdots + (a + (n - 1)d) \qquad \ldots(1)\)</p></div>
+<p>Rewriting the above in reverse order</p>
+<div class="mathblock"><p>\(S_n = (a + (n - 1)d) + (a + (n - 2)d) + \cdots + (a + d) + a \qquad \ldots(2)\)</p></div>
+<p>Adding (1) and (2) we get,</p>
+<div class="mathblock"><p>\(\begin{aligned} 2S_n &amp;= [a + a + (n - 1)d] + [a + d + a + (n - 2)d] + \cdots + [a + (n - 2)d + (a + d)] + [a + (n - 1)d + a] \\ &amp;= [2a + (n - 1)d] + [2a + (n - 1)d] + \cdots + [2a + (n - 1)d] \quad (n \text{ terms}) \end{aligned}\)</p><p>\(2S_n = n \times [2a + (n - 1)d] \quad \Rightarrow \quad S_n = \dfrac{n}{2}[2a + (n - 1)d]\)</p></div>
+<div class="callout"><p class="callout-title">Note</p>
+<p>If the first term \(a\), and the last term \(l\) (\(n^{th}\) term) are given then</p>
+<div class="mathblock"><p>\(S_n = \dfrac{n}{2}[2a + (n - 1)d] = \dfrac{n}{2}[a + a + (n - 1)d] \qquad (\because l = a + (n - 1)d)\)</p><p>\(S_n = \dfrac{n}{2}[a + l].\)</p></div></div>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<ol>
+<li>The sum of terms of a sequence is called \(\underline{\qquad}\).</li>
+<li>If a series have finite number of terms then it is called \(\underline{\qquad}\).</li>
+<li>A series whose terms are in \(\underline{\qquad}\) is called Arithmetic series.</li>
+<li>If the first and last terms of an A.P. are given, then the formula to find the sum is \(\underline{\qquad}\).</li>
+</ol>
+</div>
+<h4 class="callout-h">Example 2.31</h4>
+<p>Find the sum of first 15 terms of the A. P. \(8, 7\frac{1}{4}, 6\frac{1}{2}, 5\frac{3}{4}, \ldots\)</p>
+<h4 class="callout-h">Solution</h4>
+<p>Here the first term \(a = 8\), common difference \(d = 7\frac{1}{4} - 8 = -\dfrac{3}{4}\),</p>
+<div class="mathblock"><p>Sum of first \(n\) terms of an A.P. \(\quad S_n = \dfrac{n}{2}[2a + (n - 1)d]\)</p><p>\(S_{15} = \dfrac{15}{2}\left[2 \times 8 + (15 - 1)\left(-\dfrac{3}{4}\right)\right]\)</p><p>\(S_{15} = \dfrac{15}{2}\left[16 - \dfrac{21}{2}\right] = \dfrac{165}{4}\)</p></div>
+<h4 class="callout-h">Example 2.32</h4>
+<p>Find the sum of \(0.40 + 0.43 + 0.46 + \cdots + 1\).</p>
+<h4 class="callout-h">Solution</h4>
+<p>Here the value of \(n\) is not given. But the last term is given. From this, we can find the value of \(n\).</p>
+<p>Given, \(a = 0.40\) and \(l = 1\), we find \(d = 0.43 - 0.40 = 0.03\).</p>
+<div class="mathblock"><p>\(\begin{aligned} \text{Therefore, } n &amp;= \left(\dfrac{l - a}{d}\right) + 1 \\ &amp;= \left(\dfrac{1 - 0.40}{0.03}\right) + 1 = 21 \end{aligned}\)</p></div>
+<div class="mathblock"><p>Sum of first \(n\) terms of an A.P. \(\quad S_n = \dfrac{n}{2}[a + l]\)</p><p>\(n = 21.\) Therefore, \(S_{21} = \dfrac{21}{2}[0.40 + 1] = 14.7\)</p></div>
+<p>So, the sum of 21 terms of the given series is 14.7.</p>
+<h4 class="callout-h">Example 2.33</h4>
+<p>How many terms of the series \(1 + 5 + 9 + \ldots\) must be taken so that their sum is 190?</p>
+<h4 class="callout-h">Solution</h4>
+<p>Here we have to find the value of \(n\), such that \(S_n = 190\).</p>
+<p>First term \(a = 1\), common difference \(d = 5 - 1 = 4\).</p>
+<p>Sum of first \(n\) terms of an A.P.</p>
+<div class="mathblock"><p>\(\begin{aligned} S_n = \dfrac{n}{2}[2a + (n - 1)d] &amp;= 190 \\ \dfrac{n}{2}[2 \times 1 + (n - 1) \times 4] &amp;= 190 \\ n[4n - 2] &amp;= 380 \\ 2n^2 - n - 190 &amp;= 0 \\ (n - 10)(2n + 19) &amp;= 0 \end{aligned}\)</p></div>
+<p>But, \(n = 10\) as \(n = -\dfrac{19}{2}\) is impossible. Therefore, \(n = 10\).</p>
+<div class="callout"><p class="callout-title">Thinking Corner</p>
+<p>The value of \(n\) must be positive. Why?</p></div>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<p>State True or False. Justify it.</p>
+<ol>
+<li>The \(n^{th}\) term of any A.P. is of the form \(pn + q\) where \(p\) and \(q\) are some constants.</li>
+<li>The sum to \(n^{th}\) term of any A.P. is of the form \(pn^2 + qn + r\) where \(p, q, r\) are some constants.</li>
+</ol>
+</div>
+<h4 class="callout-h">Example 2.34</h4>
+<p>The \(13^{th}\) term of an A.P. is 3 and the sum of first 13 terms is 234. Find the common difference and the sum of first 21 terms.</p>
+<h4 class="callout-h">Solution</h4>
+<p>Given, the \(13^{th}\) term \(= 3\) so, \(t_{13} = a + 12d = 3 \qquad \ldots(1)\)</p>
+<div class="mathblock"><p>Sum of first 13 terms \(= 234 \quad \Rightarrow S_{13} = \dfrac{13}{2}[2a + 12d] = 234\)</p><p>\(2a + 12d = 36 \qquad \ldots(2)\)</p></div>
+<p>Solving (1) and (2) we get, \(a = 33,\ d = \dfrac{-5}{2}\)</p>
+<p>Therefore, common difference is \(\dfrac{-5}{2}\).</p>
+<div class="mathblock"><p>Sum of first 21 terms \(\quad S_{21} = \dfrac{21}{2}\left[2 \times 33 + (21 - 1) \times \left(-\dfrac{5}{2}\right)\right] = \dfrac{21}{2}[66 - 50] = 168.\)</p></div>
+<h4 class="callout-h">Example 2.35</h4>
+<p>In an A.P. the sum of first \(n\) terms is \(\dfrac{5n^2}{2} + \dfrac{3n}{2}\). Find the \(17^{th}\) term.</p>
+<h4 class="callout-h">Solution</h4>
+<p>The \(17^{th}\) term can be obtained by subtracting the sum of first 16 terms from the sum of first 17 terms</p>
+<div class="mathblock"><p>\(S_{17} = \dfrac{5 \times (17)^2}{2} + \dfrac{3 \times 17}{2} = \dfrac{1445}{2} + \dfrac{51}{2} = 748\)</p><p>\(S_{16} = \dfrac{5 \times (16)^2}{2} + \dfrac{3 \times 16}{2} = \dfrac{1280}{2} + \dfrac{48}{2} = 664\)</p><p>Now, \(\quad t_{17} = S_{17} - S_{16} = 748 - 664 = 84\)</p></div>
+<h4 class="callout-h">Example 2.36</h4>
+<p>Find the sum of all natural numbers between 300 and 600 which are divisible by 7.</p>
+<h4 class="callout-h">Solution</h4>
+<p>The natural numbers between 300 and 600 which are divisible by 7 are 301, 308, 315, &hellip;, 595.</p>
+<p>The sum of all natural numbers between 300 and 600 is \(301 + 308 + 315 + \cdots + 595\).</p>
+<p>The terms of the above series are in A.P.</p>
+<p>First term \(a = 301\); common difference \(d = 7\); Last term \(l = 595\).</p>
+<div class="mathblock"><p>\(n = \left(\dfrac{l - a}{d}\right) + 1 = \left(\dfrac{595 - 301}{7}\right) + 1 = 43\)</p><p>\(\because S_n = \dfrac{n}{2}[a + l]\), we have \(S_{43} = \dfrac{43}{2}[301 + 595] = 19264.\)</p></div>
+<h4 class="callout-h">Example 2.37</h4>
+<p>A mosaic is designed in the shape of an equilateral triangle, 12 ft on each side. Each tile in the mosaic is in the shape of an equilateral triangle of 12 inch side. The tiles are alternate in colour as shown in the figure. Find the number of tiles of each colour and total number of tiles in the mosaic.</p>
+<figure class="fig side-fig"><img src="img/fig-p4-1.webp" alt="Equilateral triangle mosaic of side 12 feet made of alternating white and blue triangular tiles" loading="lazy" width="369" height="309"><figcaption>Fig. 2.12</figcaption></figure>
+<h4 class="callout-h">Solution</h4>
+<p>Since the mosaic is in the shape of an equilateral triangle of 12 feet, and the tile is in the shape of an equilateral triangle of 12 inch (1 feet), there will be 12 rows in the mosaic.</p>
+<p>From the figure, it is clear that number of white tiles in each row are 1, 2, 3, 4, &hellip;, 12 which clearly forms an Arithmetic Progression.</p>
+<p>Similarly the number of blue tiles in each row are 0, 1, 2, 3, &hellip;, 11 which is also an Arithmetic Progression.</p>
+<div class="mathblock"><p>Number of white tiles \(= 1 + 2 + 3 + \cdots + 12 = \dfrac{12}{2}[1 + 12] = 78\)</p><p>Number of blue tiles \(= 0 + 1 + 2 + 3 + \cdots + 11 = \dfrac{12}{2}[0 + 11] = 66\)</p><p>The total number of tiles in the mosaic \(= 78 + 66 = 144\)</p></div>
+<h4 class="callout-h">Example 2.38</h4>
+<p>The houses of a street are numbered from 1 to 49. Senthil&rsquo;s house is numbered such that the sum of numbers of the houses prior to Senthil&rsquo;s house is equal to the sum of numbers of the houses following Senthil&rsquo;s house. Find Senthil&rsquo;s house number?</p>
+<h4 class="callout-h">Solution</h4>
+<p>Let Senthil&rsquo;s house number be \(x\).</p>
+<p>It is given that</p>
+<div class="mathblock"><p>\(\begin{aligned} 1 + 2 + 3 + \cdots + (x - 1) &amp;= (x + 1) + (x + 2) + \cdots + 49 \\ 1 + 2 + 3 + \cdots + (x - 1) &amp;= [1 + 2 + 3 + \cdots + 49] - [1 + 2 + 3 + \cdots + x] \\ \dfrac{x - 1}{2}[1 + (x - 1)] &amp;= \dfrac{49}{2}[1 + 49] - \dfrac{x}{2}[1 + x] \\ \dfrac{x(x - 1)}{2} &amp;= \dfrac{49 \times 50}{2} - \dfrac{x(x + 1)}{2} \\ x^2 - x &amp;= 2450 - x^2 - x \Rightarrow 2x^2 = 2450 \\ x^2 &amp;= 1225 \Rightarrow x = 35 \end{aligned}\)</p></div>
+<p>Therefore, Senthil&rsquo;s house number is 35.</p>
+<h4 class="callout-h">Example 2.39</h4>
+<p>The sum of first \(n\), \(2n\) and \(3n\) terms of an A.P. are \(S_1\), \(S_2\) and \(S_3\) respectively. Prove that \(S_3 = 3(S_2 - S_1)\).</p>
+<h4 class="callout-h">Solution</h4>
+<p>If \(S_1, S_2\) and \(S_3\) are sum of first \(n\), \(2n\) and \(3n\) terms of an A.P. respectively then</p>
+<div class="mathblock"><p>\(S_1 = \dfrac{n}{2}[2a + (n - 1)d], \quad S_2 = \dfrac{2n}{2}[2a + (2n - 1)d], \quad S_3 = \dfrac{3n}{2}[2a + (3n - 1)d]\)</p></div>
+<p>Consider,</p>
+<div class="mathblock"><p>\(\begin{aligned} S_2 - S_1 &amp;= \dfrac{2n}{2}[2a + (2n - 1)d] - \dfrac{n}{2}[2a + (n - 1)d] \\ &amp;= \dfrac{n}{2}\big[[4a + 2(2n - 1)d] - [2a + (n - 1)d]\big] \\ S_2 - S_1 &amp;= \dfrac{n}{2} \times [2a + (3n - 1)d] \\ 3(S_2 - S_1) &amp;= \dfrac{3n}{2}[2a + (3n - 1)d] \\ 3(S_2 - S_1) &amp;= S_3 \end{aligned}\)</p></div>
+<div class="callout"><p class="callout-title">Thinking Corner</p>
+<ol>
+<li>What is the sum of first \(n\) odd natural numbers?</li>
+<li>What is the sum of first \(n\) even natural numbers?</li>
+</ol>
+</div>
+</article>
+<nav class="pager"><a class="" data-nav="prev" href="../../02-numbers-and-sequences/12-exercise-2.5/index.html"><span class="dir">← Previous</span><span class="t">Exercise 2.5</span><span class="ch">Numbers and Sequences</span></a><a class="nx" data-nav="next" href="../../02-numbers-and-sequences/14-exercise-2.6/index.html"><span class="dir">Next →</span><span class="t">Exercise 2.6</span><span class="ch">Numbers and Sequences</span></a></nav>
+</main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'\\(',right:'\\)',display:false},
+    {left:'$$',right:'$$',display:true},
+    {left:'\\[',right:'\\]',display:true}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']})"></script>
+<script src="../../../assets/book.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=3"></script>
+</body>
+</html>

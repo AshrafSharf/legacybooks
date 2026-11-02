@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2.3 Euclid’s Division Algorithm — Numbers and Sequences</title>
+<meta name="description" content="Class 10 Mathematics · Numbers and Sequences · 2.3 Euclid’s Division Algorithm">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="../../../assets/book.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 10 Mathematics</a></span>
+    <span class="c2">Numbers and Sequences · 2.3 Euclid’s Division Algorithm</span>
+  </div>
+  <a class="tb-btn" data-nav="prev" href="../../02-numbers-and-sequences/02-euclid-s-division-lemma-2.2/index.html" title="2.2 Euclid’s Division Lemma">←</a>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary>
+<div class="drawer-panel"><div class="dh">Numbers and Sequences</div><a href="../01-chapter-opener/index.html">Chapter opener; 2.1 Introduction</a><a href="../02-euclid-s-division-lemma-2.2/index.html">2.2 Euclid’s Division Lemma</a><a href="../03-euclid-s-division-algorithm-2.3/index.html" aria-current="page">2.3 Euclid’s Division Algorithm</a><a href="../04-exercise-2.1/index.html">Exercise 2.1</a><a href="../05-fundamental-theorem-of-arithmetic-2.4/index.html">2.4 Fundamental Theorem of Arithmetic</a><a href="../06-exercise-2.2/index.html">Exercise 2.2</a><a href="../07-modular-arithmetic-2.5/index.html">2.5 Modular Arithmetic</a><a href="../08-exercise-2.3/index.html">Exercise 2.3</a><a href="../09-sequences-2.6/index.html">2.6 Sequences</a><a href="../10-exercise-2.4/index.html">Exercise 2.4</a><a href="../11-arithmetic-progression-2.7/index.html">2.7 Arithmetic Progression</a><a href="../12-exercise-2.5/index.html">Exercise 2.5</a><a href="../13-series-2.8/index.html">2.8 Series</a><a href="../14-exercise-2.6/index.html">Exercise 2.6</a><a href="../15-geometric-progression-2.9/index.html">2.9 Geometric Progression</a><a href="../16-exercise-2.7/index.html">Exercise 2.7</a><a href="../17-sum-to-n-terms-of-a-geometric-progression-2.10/index.html">2.10 Sum to n terms of a Geometric progression</a><a href="../18-exercise-2.8/index.html">Exercise 2.8</a><a href="../19-special-series-2.11/index.html">2.11 Special Series</a><a href="../20-exercise-2.9/index.html">Exercise 2.9</a><a href="../21-exercise-2.10/index.html">Exercise 2.10</a><a href="../22-unit-exercise/index.html">Unit Exercise</a><a href="../23-summary/index.html">Points to Remember</a><a href="../24-ict-corner/index.html">ICT Corner</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../02-numbers-and-sequences/04-exercise-2.1/index.html" title="Exercise 2.1">→</a>
+  <button class="tb-btn" data-theme-toggle title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<div class="progress"><span style="width:14.4%"></span></div>
+</header>
+<main class="wrap">
+<div class="sec-head">
+  <p class="eyebrow"><a href="../index.html">Chapter 2 · Numbers and Sequences</a></p>
+  <h1>2.3 Euclid’s Division Algorithm</h1>
+  <p class="sec-meta">Textbook pages 4–7</p>
+</div>
+<article class="prose">
+<p>In the previous section, we have studied about Euclid&rsquo;s division lemma and its applications. We now study the concept Euclid&rsquo;s Division Algorithm. The word &lsquo;algorithm&rsquo; comes from the name of 9<sup>th</sup> century Persian Mathematician Al-khwarizmi. An algorithm means a series of methodical step-by-step procedure of calculating successively on the results of earlier steps till the desired answer is obtained.</p>
+<p>Euclid&rsquo;s division algorithm provides an easier way to compute the Highest Common Factor (HCF) of two given positive integers. Let us now prove the following theorem.</p>
+<h3 id="s-theorem-2">Theorem 2</h3>
+<p>If \(a\) and \(b\) are positive integers such that \(a = bq + r\), then every common divisor of \(a\) and \(b\) is a common divisor of \(b\) and \(r\) and vice-versa.</p>
+<h3 id="s-euclids-division-algorithm">Euclid&rsquo;s Division Algorithm</h3>
+<p>To find Highest Common Factor of two positive integers \(a\) and \(b\), where \(a &gt; b\)</p>
+<p><strong>Step 1:</strong> Using Euclid&rsquo;s division lemma \(a = bq + r;\ 0 \le r &lt; b\). where \(q\) is the quotient, \(r\) is the remainder. If \(r = 0\) then \(b\) is the Highest Common Factor of \(a\) and \(b\).</p>
+<p><strong>Step 2:</strong> Otherwise applying Euclid&rsquo;s division lemma divide \(b\) by \(r\) to get \(b = rq_1 + r_1,\ 0 \le r_1 &lt; r\)</p>
+<p><strong>Step 3:</strong> If \(r_1 = 0\) then \(r\) is the Highest common factor of \(a\) and \(b\).</p>
+<p><strong>Step 4:</strong> Otherwise using Euclid&rsquo;s division lemma, repeat the process until we get the remainder zero. In that case, the corresponding divisor is the HCF of \(a\) and \(b\).</p>
+<div class="callout"><p class="callout-title">Note</p>
+<ul>
+<li>The above algorithm will always produce remainder zero at some stage. Hence the algorithm should terminate.</li>
+<li>Euclid&rsquo;s Division Algorithm is a repeated application of Division Lemma until we get zero remainder.</li>
+<li>Highest Common Factor (HCF) of two positive numbers is denoted by \((a, b)\).</li>
+<li>Highest Common Factor (HCF) is also called as Greatest Common Divisor (GCD).</li>
+</ul>
+</div>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<ol>
+<li>Euclid&rsquo;s division algorithm is a repeated application of division lemma until we get remainder as \(\underline{\qquad}\).</li>
+<li>The HCF of two equal positive integers \(k, k\) is \(\underline{\qquad}\).</li>
+</ol>
+</div>
+<h3 id="s-illustration-1">Illustration 1</h3>
+<p>Using the above Algorithm, let us find HCF of two given positive integers. Let \(a = 273\) and \(b = 119\) be the two given positive integers such that \(a &gt; b\).</p>
+<p>We start dividing 273 by 119 using Euclid&rsquo;s division lemma.</p>
+<div class="mathblock"><p>we get, \(\quad 273 = 119 \times 2 + 35 \qquad \ldots(1)\)</p></div>
+<p>The remainder is \(35 \ne 0\).</p>
+<p>Therefore, applying Euclid&rsquo;s Division Algorithm to the divisor 119 and remainder 35. we get,</p>
+<div class="mathblock"><p>\(119 = 35 \times 3 + 14 \qquad \ldots(2)\)</p></div>
+<p>The remainder is \(14 \ne 0\).</p>
+<p>Applying Euclid&rsquo;s Division Algorithm to the divisor 35 and remainder 14.</p>
+<div class="mathblock"><p>we get, \(\quad 35 = 14 \times 2 + 7 \qquad \ldots(3)\)</p></div>
+<p>The remainder is \(7 \ne 0\).</p>
+<p>Applying Euclid&rsquo;s Division Algorithm to the divisor 14 and remainder 7.</p>
+<div class="mathblock"><p>we get, \(\quad 14 = 7 \times 2 + 0 \qquad \ldots(4)\)</p></div>
+<p>The remainder at this stage \(= 0\).</p>
+<p>The divisor at this stage \(= 7\).</p>
+<p>Therefore, Highest Common Factor of \(273, 119 = 7\).</p>
+<h4 class="callout-h">Example 2.4</h4>
+<p>If the Highest Common Factor of 210 and 55 is expressible in the form \(55x - 325\), find \(x\).</p>
+<h4 class="callout-h">Solution</h4>
+<p>Using Euclid&rsquo;s Division Algorithm, let us find the HCF of given numbers</p>
+<div class="mathblock"><p>\(\begin{aligned} 210 &amp;= 55 \times 3 + 45 \\ 55 &amp;= 45 \times 1 + 10 \\ 45 &amp;= 10 \times 4 + 5 \\ 10 &amp;= 5 \times 2 + 0 \end{aligned}\)</p></div>
+<p>The remainder is zero.</p>
+<p>So, the last divisor 5 is the Highest Common Factor (HCF) of 210 and 55.</p>
+<p>\(\because\) HCF is expressible in the form \(55x - 325 = 5\)</p>
+<div class="mathblock"><p>\(\begin{aligned} \Rightarrow \quad 55x &amp;= 330 \\ x &amp;= 6 \end{aligned}\)</p></div>
+<h4 class="callout-h">Example 2.5</h4>
+<p>Find the greatest number that will divide 445 and 572 leaving remainders 4 and 5 respectively.</p>
+<h4 class="callout-h">Solution</h4>
+<p>Since the remainders are 4, 5 respectively the required number is the HCF of the number \(445 - 4 = 441,\ 572 - 5 = 567\).</p>
+<p>Hence, we will determine the HCF of 441 and 567. Using Euclid&rsquo;s Division Algorithm, we have,</p>
+<div class="mathblock"><p>\(\begin{aligned} 567 &amp;= 441 \times 1 + 126 \\ 441 &amp;= 126 \times 3 + 63 \\ 126 &amp;= 63 \times 2 + 0 \end{aligned}\)</p></div>
+<p>Therefore, HCF of \(441, 567 = 63\) and so the required number is 63.</p>
+<div class="callout"><p class="callout-title">Activity 1</p>
+<p>This activity helps you to find HCF of two positive numbers. We first observe the following instructions.</p>
+<ol type="i">
+<li>Construct a rectangle whose length and breadth are the given numbers.</li>
+<li>Try to fill the rectangle using small squares.</li>
+<li>Try with \(1 \times 1\) square; Try with \(2 \times 2\) square; Try with \(3 \times 3\) square and so on.</li>
+<li>The side of the largest square that can fill the whole rectangle without any gap will be HCF of the given numbers.</li>
+<li>Find the HCF of (a) 12, 20 (b) 16, 24 (c) 11, 9</li>
+</ol>
+</div>
+<h3 id="s-theorem-3">Theorem 3</h3>
+<p>If \(a\) and \(b\) are two positive integers with \(a &gt; b\) then G.C.D of \((a, b) =\) GCD of \((a - b, b)\).</p>
+<div class="callout"><p class="callout-title">Activity 2</p>
+<p>This is another activity to determine HCF of two given positive integers.</p>
+<ol type="i">
+<li>From the given numbers, subtract the smaller from the larger number.</li>
+<li>From the remaining numbers, subtract smaller from the larger.</li>
+<li>Repeat the subtraction process by subtracting smaller from the larger.</li>
+<li>Stop the process, when the numbers become equal.</li>
+<li>The number representing equal numbers obtained in step (iv), will be the HCF of the given numbers.</li>
+</ol>
+</div>
+<div class="callout"><p>Using this Activity, find the HCF of</p>
+<p>(i) 90, 15 &emsp; (ii) 80, 25 &emsp; (iii) 40, 16 &emsp; (iv) 23, 12 &emsp; (v) 93, 13</p></div>
+<h3 id="s-hcf-of-three-numbers">Highest Common Factor of three numbers</h3>
+<div class="callout"><p>We can apply Euclid&rsquo;s Division Algorithm twice to find the Highest Common Factor (HCF) of three positive integers using the following procedure.</p>
+<p>Let \(a, b, c\) be the given positive integers.</p>
+<ol type="i">
+<li>Find HCF of \(a, b\). Call it as \(d\)
+<div class="mathblock"><p>\(d = (a, b)\)</p></div></li>
+<li>Find HCF of \(d\) and \(c\).
+<p>This will be the HCF of the three given numbers \(a, b, c\)</p></li>
+</ol>
+</div>
+<h4 class="callout-h">Example 2.6</h4>
+<p>Find the HCF of 396, 504, 636.</p>
+<h4 class="callout-h">Solution</h4>
+<p>To find HCF of three given numbers, first we have to find HCF of the first two numbers.</p>
+<p>To find HCF of 396 and 504</p>
+<p>Using Euclid&rsquo;s division algorithm we get \(\quad 504 = 396 \times 1 + 108\)</p>
+<p>The remainder is \(108 \ne 0\)</p>
+<p>Again applying Euclid&rsquo;s division algorithm \(\quad 396 = 108 \times 3 + 72\)</p>
+<p>The remainder is \(72 \ne 0\),</p>
+<p>Again applying Euclid&rsquo;s division algorithm \(\quad 108 = 72 \times 1 + 36\)</p>
+<p>The remainder is \(36 \ne 0\),</p>
+<p>Again applying Euclid&rsquo;s division algorithm \(\quad 72 = 36 \times 2 + 0\)</p>
+<p>Here the remainder is zero. Therefore HCF of \(396, 504 = 36\).</p>
+<p>To find the HCF of 636 and 36.</p>
+<p>Using Euclid&rsquo;s division algorithm we get \(\quad 636 = 36 \times 17 + 24\)</p>
+<p>The remainder is \(24 \ne 0\)</p>
+<p>Again applying Euclid&rsquo;s division algorithm \(\quad 36 = 24 \times 1 + 12\)</p>
+<p>The remainder is \(12 \ne 0\)</p>
+<p>Again applying Euclid&rsquo;s division algorithm \(\quad 24 = 12 \times 2 + 0\)</p>
+<p>Here the remainder is zero. Therefore HCF of \(636, 36 = 12\)</p>
+<p>Therefore Highest Common Factor of 396, 504 and 636 is 12.</p>
+<div class="callout"><p class="callout-title">Do you know?</p>
+<p>Two positive integers are said to be relatively prime or co prime if their Highest Common Factor is 1.</p></div>
+</article>
+<nav class="pager"><a class="" data-nav="prev" href="../../02-numbers-and-sequences/02-euclid-s-division-lemma-2.2/index.html"><span class="dir">← Previous</span><span class="t">2.2 Euclid’s Division Lemma</span><span class="ch">Numbers and Sequences</span></a><a class="nx" data-nav="next" href="../../02-numbers-and-sequences/04-exercise-2.1/index.html"><span class="dir">Next →</span><span class="t">Exercise 2.1</span><span class="ch">Numbers and Sequences</span></a></nav>
+</main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'\\(',right:'\\)',display:false},
+    {left:'$$',right:'$$',display:true},
+    {left:'\\[',right:'\\]',display:true}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']})"></script>
+<script src="../../../assets/book.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=3"></script>
+</body>
+</html>

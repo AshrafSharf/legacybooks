@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>4.3 Thales Theorem and Angle Bisector Theorem — Geometry</title>
+<meta name="description" content="Class 10 Mathematics · Geometry · 4.3 Thales Theorem and Angle Bisector Theorem">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="../../../assets/book.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 10 Mathematics</a></span>
+    <span class="c2">Geometry · 4.3 Thales Theorem and Angle Bisector Theorem</span>
+  </div>
+  <a class="tb-btn" data-nav="prev" href="../../04-geometry/03-exercise-4.1/index.html" title="Exercise 4.1">←</a>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary>
+<div class="drawer-panel"><div class="dh">Geometry</div><a href="../01-chapter-opener/index.html">Chapter opener; 4.1 Introduction</a><a href="../02-similarity-4.2/index.html">4.2 Similarity</a><a href="../03-exercise-4.1/index.html">Exercise 4.1</a><a href="../04-thales-theorem-and-angle-bisector-theorem-4.3/index.html" aria-current="page">4.3 Thales Theorem and Angle Bisector Theorem</a><a href="../05-exercise-4.2/index.html">Exercise 4.2</a><a href="../06-pythagoras-theorem-4.4/index.html">4.4 Pythagoras Theorem</a><a href="../07-exercise-4.3/index.html">Exercise 4.3</a><a href="../08-circles-and-tangents-4.5/index.html">4.5 Circles and Tangents</a><a href="../09-concurrency-theorems-4.6/index.html">4.6 Concurrency Theorems</a><a href="../10-exercise-4.4/index.html">Exercise 4.4</a><a href="../11-exercise-4.5/index.html">Exercise 4.5</a><a href="../12-unit-exercise/index.html">Unit Exercise</a><a href="../13-summary/index.html">Points to Remember</a><a href="../14-ict-corner/index.html">ICT Corner</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../04-geometry/05-exercise-4.2/index.html" title="Exercise 4.2">→</a>
+  <button class="tb-btn" data-theme-toggle title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<div class="progress"><span style="width:56.9%"></span></div>
+</header>
+<main class="wrap">
+<div class="sec-head">
+  <p class="eyebrow"><a href="../index.html">Chapter 4 · Geometry</a></p>
+  <h1>4.3 Thales Theorem and Angle Bisector Theorem</h1>
+  <p class="sec-meta">Textbook pages 11–21 · 22 figures</p>
+</div>
+<article class="prose">
+<h3 id="s-4-3-1-introduction">4.3.1 Introduction</h3>
+<figure class="fig side-fig"><img src="img/thales.webp" alt="Portrait of Thales (640 - 540 BC (BCE))" loading="lazy" width="277" height="425"></figure>
+<p>Thales, (640 - 540 BC (BCE)) the most famous Greek mathematician and philosopher lived around seventh century BC (BCE). He possessed knowledge to the extent that he became the first of seven sages of Greece. Thales was the first man to announce that any idea that emerged should be tested scientifically and only then it can be accepted. In this aspect, he did great investigations in mathematics and astronomy and discovered many concepts. He was credited for providing first proof in mathematics, which today is called by the name “Basic Proportionality Theorem”. It is also called “Thales Theorem” named after its discoverer.</p>
+<p>The discovery of the Thales theorem itself is a very interesting story. When Thales travelled to Egypt, he was challenged by Egyptians to determine the height of one of several magnificent pyramids that they had constructed. Thales accepted the challenge and used similarity of triangles to determine the same successfully, another triumphant application of Geometry. Since \(X_0\), \(X_1\) and \(H_0\) are known, we can determine the height \(H_1\) of the pyramid.</p>
+<figure class="fig wide"><img src="img/f427.webp" alt="Line of sight over two pyramids: H1/X1 = H0/X0" loading="lazy" width="837" height="354"><figcaption>Fig. 4.27</figcaption></figure>
+<p>To understand the basic proportionality theorem or Thales theorem, let us do the following activity.</p>
+<div class="callout"><p class="callout-title">Activity 2</p>
+<figure class="fig side-fig"><img src="img/f428.webp" alt="Triangle ABC on ruled paper cut by parallel lines MN, PQ, RS" loading="lazy" width="390" height="432"></figure>
+<p>Take any ruled paper and draw a triangle \(ABC\) with its base on one of the lines. Several parallel lines will cut the triangle \(ABC\).</p>
+<p>Select any one line among them and name the points where it meets the sides \(AB\) and \(AC\) as \(P\) and \(Q\).</p>
+<p>Can we find the ratio of \(\dfrac{AP}{PB}\) and \(\dfrac{AQ}{QC}\). By measuring \(AP\), \(PB\), \(AQ\) and \(QC\) through a scale, verify whether the ratios are equal or not? Try for different parallel lines, say \(MN\) and \(RS\).</p>
+<p>Now find the ratios \(\dfrac{AM}{MB}, \dfrac{AN}{NC}\) and \(\dfrac{AR}{RB}, \dfrac{AS}{SC}\).</p>
+<p>Check if they are equal? The conclusion will lead us to one of the most important theorem in Geometry, which we will discuss below.</p>
+</div>
+<h3 id="s-theorem-1-basic-proportionality-theorem-bpt-or-thales-theorem">Theorem 1: Basic Proportionality Theorem (BPT) or Thales theorem</h3>
+<p><strong>Statement</strong></p>
+<figure class="fig side-fig"><img src="img/f429.webp" alt="Triangle ABC with DE parallel to BC" loading="lazy" width="366" height="285"></figure>
+<p>A straight line drawn parallel to a side of triangle intersecting the other two sides, divides the sides in the same ratio.</p>
+<p><strong>Proof</strong></p>
+<p><strong>Given:</strong> In \(\Delta ABC\), \(D\) is a point on \(AB\) and \(E\) is a point on \(AC\).</p>
+<p><strong>To prove:</strong> \(\dfrac{AD}{DB} = \dfrac{AE}{EC}\)</p>
+<p><strong>Construction:</strong> Draw a line \(DE \parallel BC\)</p>
+<table class="tbl">
+<thead><tr><th>No.</th><th>Statement</th><th>Reason</th></tr></thead>
+<tbody>
+<tr><td>1.</td><td>\(\angle ABC = \angle ADE = \angle 1\)</td><td>Corresponding angles are equal because \(DE \parallel BC\)</td></tr>
+<tr><td>2.</td><td>\(\angle ACB = \angle AED = \angle 2\)</td><td>Corresponding angles are equal because \(DE \parallel BC\)</td></tr>
+<tr><td>3.</td><td>\(\angle DAE = \angle BAC = \angle 3\)</td><td>Both triangles have a common angle</td></tr>
+<tr><td rowspan="6">4.</td><td>\(\Delta ABC \sim \Delta ADE\)</td><td>By \(AAA\) similarity</td></tr>
+<tr><td>\(\dfrac{AB}{AD} = \dfrac{AC}{AE}\)</td><td>Corresponding sides are proportional</td></tr>
+<tr><td>\(\dfrac{AD + DB}{AD} = \dfrac{AE + EC}{AE}\)</td><td>Split \(AB\) and \(AC\) using the points \(D\) and \(E\).</td></tr>
+<tr><td>\(1 + \dfrac{DB}{AD} = 1 + \dfrac{EC}{AE}\)</td><td>On simplification</td></tr>
+<tr><td>\(\dfrac{DB}{AD} = \dfrac{EC}{AE}\)</td><td>Cancelling 1 on both sides</td></tr>
+<tr><td>\(\dfrac{AD}{DB} = \dfrac{AE}{EC}\)</td><td>Taking reciprocals</td></tr>
+<tr><td colspan="3">Hence proved</td></tr>
+</tbody>
+</table>
+<h3 id="s-corollary">Corollary</h3>
+<figure class="fig side-fig"><img src="img/f430.webp" alt="Triangle ABC with DE parallel to BC" loading="lazy" width="369" height="372"></figure>
+<p>If in \(\Delta ABC\), a straight line \(DE\) parallel to \(BC\), intersects \(AB\) at \(D\) and \(AC\) at \(E\), then</p>
+<p>(i) \(\dfrac{AB}{AD} = \dfrac{AC}{AE}\) &nbsp;&nbsp; (ii) \(\dfrac{AB}{DB} = \dfrac{AC}{EC}\).</p>
+<p><strong>Proof</strong></p>
+<p>In \(\Delta ABC\), \(DE \parallel BC\),</p>
+<p>Therefore, \(\dfrac{AD}{DB} = \dfrac{AE}{EC}\) (by Basic Proportionality Theorem)</p>
+<p>(i) Taking reciprocals, we get \(\dfrac{DB}{AD} = \dfrac{EC}{AE}\)</p>
+<div class="mathblock"><p>Add 1 to both in the sides \(\dfrac{DB}{AD} + 1 = \dfrac{EC}{AE} + 1\)</p><p>\(\dfrac{DB + AD}{AD} = \dfrac{EC + AE}{AE}\) so, \(\dfrac{AB}{AD} = \dfrac{AC}{AE}\)</p></div>
+<p>(ii) Add 1 to both the sides</p>
+<div class="mathblock"><p>\(\dfrac{AD}{DB} + 1 = \dfrac{AE}{EC} + 1\)</p><p>Therefore, \(\dfrac{AB}{DB} = \dfrac{AC}{EC}\)</p></div>
+<p>Is the converse of Basic Proportionality Theorem also true? To examine let us do the following illustration.</p>
+<p><strong>Illustration</strong></p>
+<figure class="fig side-fig"><img src="img/f431.webp" alt="Angle XAY with points B1, B2, B3, B4, B on AX and C1, C2, C3, C4, C on AY joined" loading="lazy" width="642" height="540"></figure>
+<p>Draw an angle \(XAY\) on your notebook as shown in Fig.4.31 and on ray \(AX\), mark points \(B_1, B_2, B_3, B_4\) and \(B\) such that \(AB_1 = B_1B_2 = B_2B_3 = B_3B_4 = B_4B = 1\) cm.</p>
+<p>Similarly on ray \(AY\), mark points \(C_1, C_2, C_3, C_4\) and \(C\), such that \(AC_1 = C_1C_2 = C_2C_3 = C_3C_4 = C_4C = 2\) cm, Join \(B_1C_1\) and \(BC\).</p>
+<p>Observe that \(\dfrac{AB_1}{B_1B} = \dfrac{AC_1}{C_1C} = \dfrac{1}{4}\) and \(B_1C_1 \parallel BC\)</p>
+<p>Similarly joining \(B_2C_2\), \(B_3C_3\) and \(B_4C_4\) you see that</p>
+<div class="mathblock"><p>\(\dfrac{AB_2}{B_2B} = \dfrac{AC_2}{C_2C} = \dfrac{2}{3}\) and \(B_2C_2 \parallel BC\)</p><p>\(\dfrac{AB_3}{B_3B} = \dfrac{AC_3}{C_3C} = \dfrac{3}{2}\) and \(B_3C_3 \parallel BC\)</p><p>\(\dfrac{AB_4}{B_4B} = \dfrac{AC_4}{C_4C} = \dfrac{4}{1}\) and \(B_4C_4 \parallel BC\)</p></div>
+<p>From this we observe that if a line divides two sides of a triangle in the same ratio, then the line is parallel to the third side.</p>
+<p>Therefore, we obtain the following theorem called converse of the Thales theorem.</p>
+<h3 id="s-theorem-2-converse-of-basic-proportionality-theorem">Theorem 2: Converse of Basic Proportionality Theorem</h3>
+<p><strong>Statement</strong></p>
+<p>If a straight line divides any two sides of a triangle in the same ratio, then the line must be parallel to the third side.</p>
+<p><strong>Proof</strong></p>
+<figure class="fig side-fig"><img src="img/f432.webp" alt="Triangle ABC with D on AB, E and F on AC, DF dashed" loading="lazy" width="366" height="357"></figure>
+<p><strong>Given</strong> : In \(\Delta ABC\), \(\dfrac{AD}{DB} = \dfrac{AE}{EC}\)</p>
+<p><strong>To prove</strong> : \(DE \parallel BC\)</p>
+<p><strong>Construction</strong> : If \(DE\) is not parallel to \(BC\), draw \(DF \parallel BC\).</p>
+<table class="tbl">
+<thead><tr><th>No.</th><th>Statement</th><th>Reason</th></tr></thead>
+<tbody>
+<tr><td>1.</td><td>\(\dfrac{AD}{DB} = \dfrac{AE}{EC}\) ...(1)</td><td>Given</td></tr>
+<tr><td>2.</td><td>\(\Delta ABC,\ DF \parallel BC\)</td><td>Construction</td></tr>
+<tr><td>3.</td><td>\(\dfrac{AD}{DB} = \dfrac{AF}{FC}\) ...(2)</td><td>Thales theorem</td></tr>
+<tr><td rowspan="7">4.</td><td>\(\dfrac{AE}{EC} = \dfrac{AF}{FC}\)</td><td>From (1) and (2)</td></tr>
+<tr><td>\(\dfrac{AE}{EC} + 1 = \dfrac{AF}{FC} + 1\)<br>\(\dfrac{AE + EC}{EC} = \dfrac{AF + FC}{FC}\)</td><td>Adding 1 to both sides</td></tr>
+<tr><td>\(\dfrac{AC}{EC} = \dfrac{AC}{FC}\)</td><td></td></tr>
+<tr><td>\(EC = FC\)</td><td>Cancelling \(AC\) on both sides</td></tr>
+<tr><td>Therefore, \(E = F\)</td><td>Our assumption that \(DE\) is not parallel to \(BC\) is wrong.</td></tr>
+<tr><td>Thus \(DE \parallel BC\)</td><td>Hence proved</td></tr>
+</tbody>
+</table>
+<h3 id="s-theorem-3-angle-bisector-theorem">Theorem 3: Angle Bisector Theorem</h3>
+<p><strong>Statement</strong></p>
+<p>The internal bisector of an angle of a triangle divides the opposite side internally in the ratio of the corresponding sides containing the angle.</p>
+<p><strong>Proof</strong></p>
+<figure class="fig side-fig"><img src="img/f433.webp" alt="Triangle ABC with internal bisector AD extended to E; CE parallel to AB" loading="lazy" width="453" height="315"></figure>
+<p><strong>Given</strong> : In \(\Delta ABC\), AD is the internal bisector</p>
+<p><strong>To prove</strong> : \(\dfrac{AB}{AC} = \dfrac{BD}{CD}\)</p>
+<p><strong>Construction</strong> : Draw a line through \(C\) parallel to \(AB\). Extend \(AD\) to meet line through \(C\) at \(E\)</p>
+<table class="tbl">
+<thead><tr><th>No</th><th>Statement</th><th>Reason</th></tr></thead>
+<tbody>
+<tr><td>1.</td><td>\(\angle AEC = \angle BAE = \angle 1\)<br>\(\angle ABD = \angle ECD = \angle 2\)</td><td>Two parallel lines cut by a transversal make alternate angles equal.</td></tr>
+<tr><td>2.</td><td>\(\Delta ACE\) is isosceles<br>\(AC = CE\) ...(1)</td><td>In \(\Delta ACE,\ \angle CAE = \angle CEA\)</td></tr>
+<tr><td>3.</td><td>\(\Delta ABD \sim \Delta ECD\)<br>\(\dfrac{AB}{CE} = \dfrac{BD}{CD}\)</td><td>By AA Similarity</td></tr>
+<tr><td>4.</td><td>\(\dfrac{AB}{AC} = \dfrac{BD}{CD}\)</td><td>From (1) \(AC = CE\).<br>Hence proved.</td></tr>
+</tbody>
+</table>
+<div class="callout"><p class="callout-title">Activity 3</p>
+<figure class="fig side-fig"><img src="img/f434.webp" alt="Fig. 4.34(a) triangle ABC folded along AD, CE, BF meeting at O; Fig. 4.34(b) folded half" loading="lazy" width="543" height="402"></figure>
+<p><strong>Step 1:</strong> Take a chart and cut it like a triangle as shown in Fig.4.34(a).</p>
+<p><strong>Step 2:</strong> Then fold it along the symmetric line \(AD\). Then C and B will be one upon the other.</p>
+<p><strong>Step 3:</strong> Similarly fold it along CE, then \(B\) and \(A\) will be one upon the other.</p>
+<p><strong>Step 4:</strong> Similarly fold it along BF, then \(A\) and \(C\) will be one upon the other.</p>
+<p>Find \(AB,\ AC,\ BD,\ DC\) using a scale.</p>
+<p>Find \(\dfrac{AB}{AC}, \dfrac{BD}{DC}\) check if they are equal?</p>
+<p>In the three cases, the internal bisector of an angle of a triangle divides the opposite side internally in the ratio of the corresponding sides containing the angle.</p>
+<p>What do you conclude from this activity?</p>
+</div>
+<h3 id="s-theorem-4-converse-of-angle-bisector-theorem">Theorem 4: Converse of Angle Bisector Theorem</h3>
+<p><strong>Statement</strong></p>
+<figure class="fig side-fig"><img src="img/f435.webp" alt="Triangle ABC with AD dividing BC; CE parallel to DA meets BA extended at E" loading="lazy" width="321" height="561"></figure>
+<p>If a straight line through one vertex of a triangle divides the opposite side internally in the ratio of the other two sides, then the line bisects the angle internally at the vertex.</p>
+<p><strong>Proof</strong></p>
+<p><strong>Given</strong> : ABC is a triangle. \(AD\) divides \(BC\) in the ratio of the sides containing the angles \(\angle A\) to meet \(BC\) at \(D\).</p>
+<p>That is \(\dfrac{AB}{AC} = \dfrac{BD}{DC}\) ... (1)</p>
+<p><strong>To prove</strong> : AD bisects \(\angle A\) i.e. \(\angle 1 = \angle 2\)</p>
+<p><strong>Construction</strong> : Draw \(CE \parallel DA\). Extend \(BA\) to meet at \(E\).</p>
+<table class="tbl">
+<thead><tr><th>No.</th><th>Statement</th><th>Reason</th></tr></thead>
+<tbody>
+<tr><td>1.</td><td>Let \(\angle BAD = \angle 1\) and \(\angle DAC = \angle 2\)</td><td>Assumption</td></tr>
+<tr><td>2.</td><td>\(\angle BAD = \angle AEC = \angle 1\)</td><td>Since \(DA \parallel CE\) and \(AC\) is transversal, corresponding angles are equal</td></tr>
+<tr><td>3.</td><td>\(\angle DAC = \angle ACE = \angle 2\)</td><td>Since \(DA \parallel CE\) and \(AC\) is transversal, Alternate angles are equal</td></tr>
+<tr><td>4.</td><td>\(\dfrac{BA}{AE} = \dfrac{BD}{DC}\) ... (2)</td><td>In \(\Delta BCE\) by Thales theorem</td></tr>
+<tr><td>5.</td><td>\(\dfrac{AB}{AC} = \dfrac{BD}{DC}\)</td><td>From (1)</td></tr>
+<tr><td>6.</td><td>\(\dfrac{AB}{AC} = \dfrac{BA}{AE}\)</td><td>From (1) and (2)</td></tr>
+<tr><td>7.</td><td>\(AC = AE\) ... (3)</td><td>Cancelling \(AB\)</td></tr>
+<tr><td>8.</td><td>\(\angle 1 = \angle 2\)</td><td>\(\Delta ACE\) is isosceles by (3)</td></tr>
+<tr><td>9.</td><td>AD bisects \(\angle A\)</td><td>Since, \(\angle 1 = \angle BAD = \angle 2 = \angle DAC\). Hence proved</td></tr>
+</tbody>
+</table>
+<h4 class="callout-h" id="s-example-4-12">Example 4.12</h4>
+<p>In \(\Delta ABC\), if \(DE \parallel BC\), \(AD = x\), \(DB = x - 2\), \(AE = x + 2\) and \(EC = x - 1\) then find the lengths of the sides \(AB\) and \(AC\).</p>
+<figure class="fig side-fig"><img src="img/f436.webp" alt="Triangle ABC with DE parallel to BC; AD = x, DB = x − 2, AE = x + 2, EC = x − 1" loading="lazy" width="357" height="369"></figure>
+<h4 class="callout-h" id="s-solution">Solution</h4>
+<p>In \(\Delta ABC\) we have \(DE \parallel BC\).</p>
+<div class="mathblock"><p>By Thales theorem, we have \(\dfrac{AD}{DB} = \dfrac{AE}{EC}\)</p><p>\(\dfrac{x}{x-2} = \dfrac{x+2}{x-1}\) gives \(x(x-1) = (x-2)(x+2)\)</p><p>Hence, \(x^2 - x = x^2 - 4\) so, \(x = 4\)</p></div>
+<p>When \(x = 4\), \(AD = 4\), \(DB = x - 2 = 2\), \(AE = x + 2 = 6\), \(EC = x - 1 = 3\).</p>
+<p>Hence, \(AB = AD + DB = 4 + 2 = 6\), \(AC = AE + EC = 6 + 3 = 9\).</p>
+<p>Therefore, \(AB = 6,\ AC = 9\).</p>
+<h4 class="callout-h" id="s-example-4-13">Example 4.13</h4>
+<p>\(D\) and \(E\) are respectively the points on the sides \(AB\) and \(AC\) of a \(\Delta ABC\) such that \(AB = 5.6\) cm, \(AD = 1.4\) cm, \(AC = 7.2\) cm and \(AE = 1.8\) cm, show that \(DE \parallel BC\).</p>
+<figure class="fig side-fig"><img src="img/f437.webp" alt="Triangle ABC with AD = 1.4, DB = 4.2, AE = 1.8, EC = 5.4" loading="lazy" width="366" height="354"></figure>
+<h4 class="callout-h" id="s-solution-2">Solution</h4>
+<p>We have \(AB = 5.6\) cm, \(AD = 1.4\) cm, \(AC = 7.2\) cm and \(AE = 1.8\) cm.</p>
+<div class="mathblock"><p>\(BD = AB - AD = 5.6 - 1.4 = 4.2\) cm</p><p>and \(EC = AC - AE = 7.2 - 1.8 = 5.4\) cm.</p><p>\(\dfrac{AD}{DB} = \dfrac{1.4}{4.2} = \dfrac{1}{3}\) and \(\dfrac{AE}{EC} = \dfrac{1.8}{5.4} = \dfrac{1}{3}\)</p><p>\(\dfrac{AD}{DB} = \dfrac{AE}{EC}\)</p></div>
+<p>Therefore, by converse of Basic Proportionality Theorem, we have \(DE\) is parallel to \(BC\). Hence proved.</p>
+<h4 class="callout-h" id="s-example-4-14">Example 4.14</h4>
+<p>In the Fig.4.38, \(DE \parallel AC\) and \(DC \parallel AP\). Prove that \(\dfrac{BE}{EC} = \dfrac{BC}{CP}\).</p>
+<figure class="fig side-fig"><img src="img/f438.webp" alt="Triangle BPA with D on BA, E and C on BP; DE parallel to AC, DC parallel to AP" loading="lazy" width="489" height="381"></figure>
+<h4 class="callout-h" id="s-solution-3">Solution</h4>
+<p>In \(\Delta BPA\), we have \(DC \parallel AP\). By Basic Proportionality Theorem,</p>
+<div class="mathblock"><p>we have \(\dfrac{BC}{CP} = \dfrac{BD}{DA}\) ...(1)</p></div>
+<p>In \(\Delta BCA\), we have \(DE \parallel AC\). By Basic Proportionality Theorem, we have,</p>
+<div class="mathblock"><p>\(\dfrac{BE}{EC} = \dfrac{BD}{DA}\) ...(2)</p></div>
+<p>From (1) and (2) we get, \(\dfrac{BE}{EC} = \dfrac{BC}{CP}\). Hence proved.</p>
+<h4 class="callout-h" id="s-example-4-15">Example 4.15</h4>
+<p>In the Fig.4.39, \(AD\) is the bisector of \(\angle A\). If \(BD = 4\) cm, \(DC = 3\) cm and \(AB = 6\) cm, find \(AC\).</p>
+<figure class="fig side-fig"><img src="img/f439.webp" alt="Triangle ABC with bisector AD; AB = 6 cm, BD = 4 cm, DC = 3 cm" loading="lazy" width="357" height="333"></figure>
+<h4 class="callout-h" id="s-solution-4">Solution</h4>
+<p>In \(\Delta ABC\), \(AD\) is the bisector of \(\angle A\)</p>
+<p>By Angle Bisector Theorem</p>
+<div class="mathblock"><p>\(\dfrac{BD}{DC} = \dfrac{AB}{AC}\)</p><p>\(\dfrac{4}{3} = \dfrac{6}{AC}\) gives \(4AC = 18\). Hence, \(AC = \dfrac{9}{2} = 4.5\) cm</p></div>
+<h4 class="callout-h" id="s-example-4-16">Example 4.16</h4>
+<p>In the Fig. 4.40, \(AD\) is the bisector of \(\angle BAC\), if \(AB = 10\) cm, \(AC = 14\) cm and BC \(= 6\) cm. Find \(BD\) and \(DC\).</p>
+<figure class="fig side-fig"><img src="img/f440.webp" alt="Triangle ABC with bisector AD; AB = 10 cm, AC = 14 cm, BC = 6 cm, BD = x, DC = 6 − x" loading="lazy" width="405" height="447"></figure>
+<h4 class="callout-h" id="s-solution-5">Solution</h4>
+<p>Let \(BD = x\) cm, then \(DC = (6 - x)\) cm</p>
+<p>AD is the bisector of \(\angle A\)</p>
+<p>By Angle Bisector Theorem</p>
+<div class="mathblock"><p>\(\dfrac{AB}{AC} = \dfrac{BD}{DC}\)</p><p>\(\dfrac{10}{14} = \dfrac{x}{6-x}\) gives \(\dfrac{5}{7} = \dfrac{x}{6-x}\)</p><p>\(12x = 30\) we get, \(x = \dfrac{30}{12} = 2.5\) cm</p></div>
+<p>Therefore, \(BD = 2.5\) cm, \(DC = 6 - x = 6 - 2.5 = 3.5\) cm</p>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<ol>
+<li>A straight line drawn \(\underline{\qquad}\) to a side of a triangle divides the other two sides proportionally.</li>
+<li>Basic Proportionality Theorem is also known as \(\underline{\qquad}\).</li>
+<li>Let \(\Delta ABC\) be equilateral. If \(D\) is a point on \(BC\) and \(AD\) is the internal bisector of \(\angle A\). Using Angle Bisector Theorem, \(\dfrac{BD}{DC}\) is \(\underline{\qquad}\).</li>
+<li>The \(\underline{\qquad}\) of an angle of a triangle divides the opposite side internally in the ratio of the corresponding sides containing the angle.</li>
+<li>If the median \(AD\) to the side \(BC\) of a \(\Delta ABC\) is also an angle bisector of \(\angle A\) then \(\dfrac{AB}{AC}\) is \(\underline{\qquad}\).</li>
+</ol>
+</div>
+<h3 id="s-4-3-2-construction-of-triangle">4.3.2 Construction of triangle</h3>
+<p>We have already learnt in previous class how to construct triangles when sides and angles are given.</p>
+<p>In this section, let us construct a triangle when the following are given :</p>
+<ol type="i">
+<li>the base, vertical angle and the median on the base</li>
+<li>the base, vertical angle and the altitude on the base</li>
+<li>the base, vertical angle and the point on the base where the bisector of the vertical angle meets the base.</li>
+</ol>
+<p>First, we consider the following construction,</p>
+<p><strong>Construction of a segment of a circle on a given line segment containing an angle \(\theta\)</strong></p>
+<figure class="fig side-fig"><img src="img/f441.webp" alt="Segment of a circle on AB containing angle θ: AE with angle BAE = θ, AF perpendicular to AE, perpendicular bisector of AB meets AF at O" loading="lazy" width="492" height="774"></figure>
+<p><strong>Construction</strong></p>
+<p><strong>Step 1:</strong> Draw a line segment \(\overline{AB}\).</p>
+<p><strong>Step 2:</strong> At \(A\), take \(\angle BAE = \theta\). Draw \(AE\).</p>
+<p><strong>Step 3:</strong> Draw, \(AF \perp AE\).</p>
+<p><strong>Step 4:</strong> Draw the perpendicular bisector of \(AB\) meeting \(AF\) at \(O\).</p>
+<p><strong>Step 5:</strong> With \(O\) as centre and \(OA\) as radius draw a circle \(ABH\).</p>
+<p><strong>Step 6:</strong> Take any point \(C\) on the circle, By the alternate segments theorem, the major arc \(ACB\) is the required segment of the circle containing the angle \(\theta\).</p>
+<div class="callout"><p class="callout-title">Note</p>
+<p>If \(C_1, C_2, \ldots\) are points on the circle, then all the triangles \(\Delta BAC_1,\ \Delta BAC_2, \ldots\) are with same base and the same vertical angle.</p>
+</div>
+<h3 id="s-construction-median">Construction of a triangle when its base, the vertical angle and the median from the vertex of the base are given.</h3>
+<h4 class="callout-h" id="s-example-4-17">Example 4.17</h4>
+<p>Construct a \(\Delta PQR\) in which \(PQ = 8\) cm, \(\angle R = 60^\circ\) and the median \(RG\) from \(R\) to \(PQ\) is 5.8 cm. Find the length of the altitude from \(R\) to \(PQ\).</p>
+<figure class="fig side-fig"><img src="img/rough442.webp" alt="Rough diagram: triangle PQR with PQ = 8 cm, angle R = 60°, median RG = 5.8 cm" loading="lazy" width="312" height="447"></figure>
+<h4 class="callout-h" id="s-solution-6">Solution</h4>
+<figure class="fig"><img src="img/f442.webp" alt="Construction of triangle PQR with PQ = 8 cm, angle R = 60°, median RG = 5.8 cm; altitude RM = 3.8 cm" loading="lazy" width="975" height="987"></figure>
+<p><strong>Construction</strong></p>
+<p><strong>Step 1:</strong> Draw a line segment \(PQ = 8\) cm.</p>
+<p><strong>Step 2:</strong> At \(P\), draw \(PE\) such that \(\angle QPE = 60^\circ\).</p>
+<p><strong>Step 3:</strong> At \(P\), draw \(PF\) such that \(\angle EPF = 90^\circ\).</p>
+<p><strong>Step 4:</strong> Draw the perpendicular bisector to \(PQ\), which intersects \(PF\) at \(O\) and \(PQ\) at \(G\).</p>
+<p><strong>Step 5:</strong> With \(O\) as centre and \(OP\) as radius draw a circle.</p>
+<p><strong>Step 6:</strong> From \(G\) mark arcs of radius 5.8 cm on the circle. Mark them as \(R\) and \(S\).</p>
+<p><strong>Step 7:</strong> Join \(PR\) and \(RQ\). Then \(\Delta PQR\) is the required triangle.</p>
+<p><strong>Step 8:</strong> From \(R\) draw a line \(RN\) perpendicular to \(LQ\). \(LQ\) meets \(RN\) at \(M\)</p>
+<p><strong>Step 9:</strong> The length of the altitude is \(RM = 3.8\) cm.</p>
+<div class="callout"><p class="callout-title">Note</p>
+<p>We can get another \(\Delta PQS\) for the given measurements.</p>
+</div>
+<h3 id="s-construction-altitude">Construct a triangle when its base, the vertical angle and the altitude from the vertex to the base are given.</h3>
+<h4 class="callout-h" id="s-example-4-18">Example 4.18</h4>
+<p>Construct a triangle \(\Delta PQR\) such that \(QR = 5\) cm, \(\angle P = 30^\circ\) and the altitude from \(P\) to \(QR\) is of length 4.2 cm.</p>
+<figure class="fig side-fig"><img src="img/rough443.webp" alt="Rough diagram: triangle PQR with QR = 5 cm, angle P = 30°, altitude PG = 4.2 cm" loading="lazy" width="312" height="366"></figure>
+<h4 class="callout-h" id="s-solution-7">Solution</h4>
+<figure class="fig"><img src="img/f443.webp" alt="Construction of triangle PQR with QR = 5 cm, angle P = 30° and altitude 4.2 cm" loading="lazy" width="1032" height="1179"><figcaption>Fig. 4.43</figcaption></figure>
+<p><strong>Construction</strong></p>
+<p><strong>Step 1 :</strong> Draw a line segment \(QR = 5\) cm.</p>
+<p><strong>Step 2 :</strong> At \(Q\) draw \(QE\) such that \(\angle RQE = 30^\circ\).</p>
+<p><strong>Step 3 :</strong> At \(Q\) draw \(QF\) such that \(\angle EQF = 90^\circ\).</p>
+<p><strong>Step 4 :</strong> Draw the perpendicular bisector \(XY\) to \(QR\) which intersects \(QF\) at \(O\) and \(QR\) at \(G\).</p>
+<p><strong>Step 5 :</strong> With \(O\) as centre and \(OQ\) as radius draw a circle.</p>
+<p><strong>Step 6:</strong> From \(G\) mark an arc in the line \(XY\) at \(M\), such that \(GM = 4.2\) cm.</p>
+<p><strong>Step 7 :</strong> Draw \(AB\) through \(M\) which is parallel to \(QR\).</p>
+<p><strong>Step 8 :</strong> \(AB\) meets the circle at \(P\) and \(S\).</p>
+<p><strong>Step 9 :</strong> Join \(QP\) and \(RP\). Then \(\Delta PQR\) is the required triangle.</p>
+<div class="callout"><p class="callout-title">Note</p>
+<p>\(\Delta SQR\) is another required triangle for the given measurements.</p>
+</div>
+<h3 id="s-construction-bisector">Construct of a triangle when its base, the vertical angle and the point on the base where the bisector of the vertical angle meets the base</h3>
+<h4 class="callout-h" id="s-example-4-19">Example 4.19</h4>
+<p>Draw a triangle \(ABC\) of base \(BC = 8\) cm, \(\angle A = 60^\circ\) and the bisector of \(\angle A\) meets \(BC\) at \(D\) such that \(BD = 6\) cm.</p>
+<figure class="fig side-fig"><img src="img/rough444.webp" alt="Rough diagram: triangle ABC with BC = 8 cm, angle A = 60°, BD = 6 cm" loading="lazy" width="261" height="315"></figure>
+<h4 class="callout-h" id="s-solution-8">Solution</h4>
+<figure class="fig"><img src="img/f444.webp" alt="Construction of triangle ABC with BC = 8 cm, angle A = 60° and bisector meeting BC at D with BD = 6 cm" loading="lazy" width="870" height="999"><figcaption>Fig. 4.44</figcaption></figure>
+<p><strong>Construction</strong></p>
+<p><strong>Step 1 :</strong> Draw a line segment \(BC = 8\) cm.</p>
+<p><strong>Step 2 :</strong> At \(B\), draw \(BE\) such that \(\angle CBE = 60^\circ\).</p>
+<p><strong>Step 3 :</strong> At \(B\), draw BF such that \(\angle EBF = 90^\circ\).</p>
+<p><strong>Step 4 :</strong> Draw the perpendicular bisector to \(BC\), which intersects \(BF\) at \(O\) and \(BC\) at \(G\).</p>
+<p><strong>Step 5 :</strong> With \(O\) as centre and \(OB\) as radius draw a circle.</p>
+<p><strong>Step 6 :</strong> From \(B\), mark an arc of 6cm on \(BC\) at \(D\).</p>
+<p><strong>Step 7 :</strong> The perpendicular bisector intersects the circle at I. Joint \(ID\).</p>
+<p><strong>Step 8 :</strong> \(ID\) produced meets the circle at \(A\). Now join \(AB\) and \(AC\).</p>
+<p>Then \(\Delta ABC\) is the required triangle.</p>
+</article>
+<nav class="pager"><a class="" data-nav="prev" href="../../04-geometry/03-exercise-4.1/index.html"><span class="dir">← Previous</span><span class="t">Exercise 4.1</span><span class="ch">Geometry</span></a><a class="nx" data-nav="next" href="../../04-geometry/05-exercise-4.2/index.html"><span class="dir">Next →</span><span class="t">Exercise 4.2</span><span class="ch">Geometry</span></a></nav>
+</main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'\\(',right:'\\)',display:false},
+    {left:'$$',right:'$$',display:true},
+    {left:'\\[',right:'\\]',display:true}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']})"></script>
+<script src="../../../assets/book.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=3"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2.10 Sum to n terms of a Geometric progression — Numbers and Sequences</title>
+<meta name="description" content="Class 10 Mathematics · Numbers and Sequences · 2.10 Sum to n terms of a Geometric progression">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="../../../assets/book.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 10 Mathematics</a></span>
+    <span class="c2">Numbers and Sequences · 2.10 Sum to n terms of a Geometric progression</span>
+  </div>
+  <a class="tb-btn" data-nav="prev" href="../../02-numbers-and-sequences/16-exercise-2.7/index.html" title="Exercise 2.7">←</a>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary>
+<div class="drawer-panel"><div class="dh">Numbers and Sequences</div><a href="../01-chapter-opener/index.html">Chapter opener; 2.1 Introduction</a><a href="../02-euclid-s-division-lemma-2.2/index.html">2.2 Euclid’s Division Lemma</a><a href="../03-euclid-s-division-algorithm-2.3/index.html">2.3 Euclid’s Division Algorithm</a><a href="../04-exercise-2.1/index.html">Exercise 2.1</a><a href="../05-fundamental-theorem-of-arithmetic-2.4/index.html">2.4 Fundamental Theorem of Arithmetic</a><a href="../06-exercise-2.2/index.html">Exercise 2.2</a><a href="../07-modular-arithmetic-2.5/index.html">2.5 Modular Arithmetic</a><a href="../08-exercise-2.3/index.html">Exercise 2.3</a><a href="../09-sequences-2.6/index.html">2.6 Sequences</a><a href="../10-exercise-2.4/index.html">Exercise 2.4</a><a href="../11-arithmetic-progression-2.7/index.html">2.7 Arithmetic Progression</a><a href="../12-exercise-2.5/index.html">Exercise 2.5</a><a href="../13-series-2.8/index.html">2.8 Series</a><a href="../14-exercise-2.6/index.html">Exercise 2.6</a><a href="../15-geometric-progression-2.9/index.html">2.9 Geometric Progression</a><a href="../16-exercise-2.7/index.html">Exercise 2.7</a><a href="../17-sum-to-n-terms-of-a-geometric-progression-2.10/index.html" aria-current="page">2.10 Sum to n terms of a Geometric progression</a><a href="../18-exercise-2.8/index.html">Exercise 2.8</a><a href="../19-special-series-2.11/index.html">2.11 Special Series</a><a href="../20-exercise-2.9/index.html">Exercise 2.9</a><a href="../21-exercise-2.10/index.html">Exercise 2.10</a><a href="../22-unit-exercise/index.html">Unit Exercise</a><a href="../23-summary/index.html">Points to Remember</a><a href="../24-ict-corner/index.html">ICT Corner</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../02-numbers-and-sequences/18-exercise-2.8/index.html" title="Exercise 2.8">→</a>
+  <button class="tb-btn" data-theme-toggle title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<div class="progress"><span style="width:23.5%"></span></div>
+</header>
+<main class="wrap">
+<div class="sec-head">
+  <p class="eyebrow"><a href="../index.html">Chapter 2 · Numbers and Sequences</a></p>
+  <h1>2.10 Sum to n terms of a Geometric progression</h1>
+  <p class="sec-meta">Textbook pages 38–41 · 1 figure</p>
+</div>
+<article class="prose">
+<p>A series whose terms are in Geometric progression is called <strong>Geometric series</strong>.</p>
+<p>Let \(a, ar, ar^2, \ldots, ar^{n-1}, \ldots\) be the Geometric Progression.</p>
+<p>The sum of first \(n\) terms of the Geometric progression is</p>
+<div class="mathblock"><p>\(S_n = a + ar + ar^2 + \cdots + ar^{n-2} + ar^{n-1} \qquad \ldots(1)\)</p></div>
+<p>Multiplying both sides by \(r\), we get \(rS_n = ar + ar^2 + ar^3 + \cdots + ar^{n-1} + ar^n \qquad \ldots(2)\)</p>
+<div class="mathblock"><p>\((2) - (1) \Rightarrow rS_n - S_n = ar^n - a\)</p><p>\(S_n(r - 1) = a(r^n - 1)\)</p></div>
+<div class="mathblock"><p>Thus, the sum to n terms is \(S_n = \dfrac{a(r^n - 1)}{r - 1},\ r \ne 1.\)</p></div>
+<div class="callout"><p class="callout-title">Note</p>
+<p>The above formula for sum of first \(n\) terms of a G.P. is not applicable when \(r = 1\).</p>
+<p>If \(r = 1\), then \(S_n = a + a + a + \cdots + a = na\)</p></div>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<ol>
+<li>A series whose terms are in Geometric progression is called \(\underline{\qquad}\).</li>
+<li>When \(r = 1\), the formula for finding sum to \(n\) terms of a G.P. is \(\underline{\qquad}\).</li>
+<li>When \(r \ne 1\), the formula for finding sum to n terms of a G.P. is \(\underline{\qquad}\).</li>
+</ol>
+</div>
+<h3 id="s-2-10-1">2.10.1 Sum to infinite terms of a G.P.</h3>
+<p>The sum of infinite terms of a G.P. is given by \(S_\infty = a + ar + ar^2 + ar^3 + \cdots = \dfrac{a}{1 - r},\ -1 &lt; r &lt; 1\)</p>
+<h4 class="callout-h">Example 2.46</h4>
+<p>Find the sum of 8 terms of the G.P. \(1, -3, 9, -27, \ldots\)</p>
+<h4 class="callout-h">Solutions</h4>
+<p>Here, the first term \(a = 1\), common ratio \(r = \dfrac{-3}{1} = -3 &lt; 1\), Here, \(n = 8\).</p>
+<div class="mathblock"><p>Sum to \(n\) terms of a G.P. is \(\quad S_n = \dfrac{a(r^n - 1)}{r - 1}\) if \(r \ne 1\)</p><p>Hence, \(\quad S_8 = \dfrac{1((-3)^8 - 1)}{(-3) - 1} = \dfrac{6561 - 1}{-4} = -1640\)</p></div>
+<h4 class="callout-h">Example 2.47</h4>
+<p>Find the first term of a G.P. in which \(S_6 = 4095\) and \(r = 4\).</p>
+<h4 class="callout-h">Solution</h4>
+<p>Common ratio \(= 4 &gt; 1\), Sum of first 6 terms \(S_6 = 4095\)</p>
+<div class="mathblock"><p>Hence, \(\quad S_6 = \dfrac{a(r^n - 1)}{r - 1} = 4095\)</p><p>\(\because r = 4,\ \dfrac{a(4^6 - 1)}{4 - 1} = 4095 \Rightarrow a \times \dfrac{4095}{3} = 4095\)</p><p>First term \(\quad a = 3\).</p></div>
+<h4 class="callout-h">Example 2.48</h4>
+<p>How many terms of the series \(1 + 4 + 16 + \cdots\) make the sum 1365?</p>
+<h4 class="callout-h">Solution</h4>
+<p>Let \(n\) be the number of terms to be added to get the sum 1365</p>
+<div class="mathblock"><p>\(a = 1,\ r = \dfrac{4}{1} = 4 &gt; 1\)</p><p>\(S_n = 1365 \Rightarrow \dfrac{a(r^n - 1)}{r - 1} = 1365\)</p><p>\(\dfrac{1(4^n - 1)}{4 - 1} = 1365 \text{ so, } (4^n - 1) = 4095\)</p><p>\(4^n = 4096 \text{ then } 4^n = 4^6\)</p><p>\(n = 6\)</p></div>
+<h4 class="callout-h">Example 2.49</h4>
+<p>Find the sum \(3 + 1 + \dfrac{1}{3} + \ldots\infty\)</p>
+<h4 class="callout-h">Solution</h4>
+<p>Here \(a = 3,\ r = \dfrac{t_2}{t_1} = \dfrac{1}{3}\)</p>
+<div class="mathblock"><p>Sum of infinite terms \(\quad S_\infty = \dfrac{a}{1 - r} = \dfrac{3}{1 - \frac{1}{3}} = \dfrac{9}{2}\)</p></div>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<ol>
+<li>Sum to infinite number of terms of a G.P. is \(\underline{\qquad}\).</li>
+<li>For what values of \(r\), does the formula for infinite G.P. valid?</li>
+</ol>
+</div>
+<h4 class="callout-h">Example 2.50</h4>
+<p>Find the rational form of the number \(0.6666\ldots\)</p>
+<h4 class="callout-h">Solution</h4>
+<p>We can express the number \(0.6666\ldots\) as follows</p>
+<div class="mathblock"><p>\(0.6666\ldots = 0.6 + 0.06 + 0.006 + 0.0006 + \cdots\)</p></div>
+<p>We now see that numbers \(0.6, 0.06, 0.006 \ldots\) form a G.P. whose first term \(a = 0.6\) and common ratio \(r = \dfrac{0.06}{0.6} = 0.1\). Also \(-1 &lt; r = 0.1 &lt; 1\)</p>
+<p>Using the infinite G.P. formula, we have</p>
+<div class="mathblock"><p>\(0.6666\ldots = 0.6 + 0.06 + 0.006 + 0.0006 + \cdots = \dfrac{0.6}{1 - 0.1} = \dfrac{0.6}{0.9} = \dfrac{2}{3}\)</p></div>
+<p>Thus the rational number equivalent of \(0.6666\ldots\) is \(\dfrac{2}{3}\)</p>
+<div class="callout"><p class="callout-title">Activity 5</p>
+<figure class="fig side-fig"><img src="img/fig-fix-squares.webp" alt="A 10 cm square with nested squares formed by joining the mid points of the sides repeatedly" loading="lazy" width="347" height="349"><figcaption>Fig. 2.15</figcaption></figure>
+<p>The sides of a given square is 10 cm. The mid points of its sides are joined to form a new square. Again, the mid points of the sides of this new square are joined to form another square. This process is continued indefinitely. Find the sum of the areas and the sum of the perimeters of the squares formed through this process.</p>
+</div>
+<h4 class="callout-h">Example 2.51</h4>
+<p>Find the sum to \(n\) terms of the series \(5 + 55 + 555 + \cdots\)</p>
+<h4 class="callout-h">Solution</h4>
+<p>The series is neither Arithmetic nor Geometric series. So it can be split into two series and then find the sum.</p>
+<div class="mathblock"><p>\(\begin{aligned} 5 + 55 + 555 + \cdots + n \text{ terms} &amp;= 5[1 + 11 + 111 + \cdots + n \text{ terms}] \\ &amp;= \dfrac{5}{9}[9 + 99 + 999 + \cdots + n \text{ terms}] \\ &amp;= \dfrac{5}{9}[(10 - 1) + (100 - 1) + (1000 - 1) + \cdots + n \text{ terms}] \\ &amp;= \dfrac{5}{9}[(10 + 100 + 1000 + \cdots + n \text{ terms}) - n] \\ &amp;= \dfrac{5}{9}\left[\dfrac{10(10^n - 1)}{(10 - 1)} - n\right] = \dfrac{50(10^n - 1)}{81} - \dfrac{5n}{9} \end{aligned}\)</p></div>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<ol>
+<li>Is the series \(3 + 33 + 333 + \ldots\) a Geometric series?</li>
+<li>The value of \(r\), such that \(1 + r + r^2 + r^3 \ldots = \dfrac{3}{4}\) is \(\underline{\qquad}\).</li>
+</ol>
+</div>
+<h4 class="callout-h">Example 2.52</h4>
+<p>Find the least positive integer \(n\) such that \(1 + 6 + 6^2 + \cdots + 6^n &gt; 5000\)</p>
+<h4 class="callout-h">Solution</h4>
+<p>We have to find the least number of terms for which the sum must be greater than 5000.</p>
+<p>That is, to find the least value of \(n\). such that \(S_n &gt; 5000\)</p>
+<div class="mathblock"><p>We have, \(\quad S_n = \dfrac{a(r^n - 1)}{r - 1} = \dfrac{1(6^n - 1)}{6 - 1} = \dfrac{6^n - 1}{5}\)</p><p>\(S_n &gt; 5000 \Rightarrow \dfrac{6^n - 1}{5} &gt; 5000\)</p><p>\(6^n - 1 &gt; 25000 \Rightarrow 6^n &gt; 25001\)</p><p>\(\because \quad 6^5 = 7776 \text{ and } 6^6 = 46656\)</p></div>
+<p>The least positive value of \(n\) is 6 such that \(1 + 6 + 6^2 + \cdots + 6^n &gt; 5000\).</p>
+<h4 class="callout-h">Example 2.53</h4>
+<p>A person saved money every year, half as much as he could in the previous year. If he had totally saved &#8377; 7875 in 6 years then how much did he save in the first year?</p>
+<h4 class="callout-h">Solution</h4>
+<p>Total amount saved in 6 years is \(S_6 = 7875\)</p>
+<p>Since he saved half as much money as every year he saved in the previous year,</p>
+<p>We have \(r = \dfrac{1}{2} &lt; 1\)</p>
+<div class="mathblock"><p>\(\dfrac{a(1 - r^n)}{1 - r} = \dfrac{a\left(1 - \left(\frac{1}{2}\right)^6\right)}{1 - \frac{1}{2}} = 7875\)</p><p>\(\dfrac{a\left(1 - \frac{1}{64}\right)}{\frac{1}{2}} = 7875 \Rightarrow a \times \dfrac{63}{32} = 7875\)</p><p>\(a = \dfrac{7875 \times 32}{63}\)</p><p>\(a = 4000\)</p></div>
+<p>The amount saved in the first year is &#8377; 4000.</p>
+</article>
+<nav class="pager"><a class="" data-nav="prev" href="../../02-numbers-and-sequences/16-exercise-2.7/index.html"><span class="dir">← Previous</span><span class="t">Exercise 2.7</span><span class="ch">Numbers and Sequences</span></a><a class="nx" data-nav="next" href="../../02-numbers-and-sequences/18-exercise-2.8/index.html"><span class="dir">Next →</span><span class="t">Exercise 2.8</span><span class="ch">Numbers and Sequences</span></a></nav>
+</main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'\\(',right:'\\)',display:false},
+    {left:'$$',right:'$$',display:true},
+    {left:'\\[',right:'\\]',display:true}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']})"></script>
+<script src="../../../assets/book.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=3"></script>
+</body>
+</html>

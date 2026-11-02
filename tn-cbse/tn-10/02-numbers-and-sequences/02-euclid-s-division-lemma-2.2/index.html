@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2.2 Euclid’s Division Lemma — Numbers and Sequences</title>
+<meta name="description" content="Class 10 Mathematics · Numbers and Sequences · 2.2 Euclid’s Division Lemma">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="../../../assets/book.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 10 Mathematics</a></span>
+    <span class="c2">Numbers and Sequences · 2.2 Euclid’s Division Lemma</span>
+  </div>
+  <a class="tb-btn" data-nav="prev" href="../../02-numbers-and-sequences/01-chapter-opener/index.html" title="Chapter opener; 2.1 Introduction">←</a>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary>
+<div class="drawer-panel"><div class="dh">Numbers and Sequences</div><a href="../01-chapter-opener/index.html">Chapter opener; 2.1 Introduction</a><a href="../02-euclid-s-division-lemma-2.2/index.html" aria-current="page">2.2 Euclid’s Division Lemma</a><a href="../03-euclid-s-division-algorithm-2.3/index.html">2.3 Euclid’s Division Algorithm</a><a href="../04-exercise-2.1/index.html">Exercise 2.1</a><a href="../05-fundamental-theorem-of-arithmetic-2.4/index.html">2.4 Fundamental Theorem of Arithmetic</a><a href="../06-exercise-2.2/index.html">Exercise 2.2</a><a href="../07-modular-arithmetic-2.5/index.html">2.5 Modular Arithmetic</a><a href="../08-exercise-2.3/index.html">Exercise 2.3</a><a href="../09-sequences-2.6/index.html">2.6 Sequences</a><a href="../10-exercise-2.4/index.html">Exercise 2.4</a><a href="../11-arithmetic-progression-2.7/index.html">2.7 Arithmetic Progression</a><a href="../12-exercise-2.5/index.html">Exercise 2.5</a><a href="../13-series-2.8/index.html">2.8 Series</a><a href="../14-exercise-2.6/index.html">Exercise 2.6</a><a href="../15-geometric-progression-2.9/index.html">2.9 Geometric Progression</a><a href="../16-exercise-2.7/index.html">Exercise 2.7</a><a href="../17-sum-to-n-terms-of-a-geometric-progression-2.10/index.html">2.10 Sum to n terms of a Geometric progression</a><a href="../18-exercise-2.8/index.html">Exercise 2.8</a><a href="../19-special-series-2.11/index.html">2.11 Special Series</a><a href="../20-exercise-2.9/index.html">Exercise 2.9</a><a href="../21-exercise-2.10/index.html">Exercise 2.10</a><a href="../22-unit-exercise/index.html">Unit Exercise</a><a href="../23-summary/index.html">Points to Remember</a><a href="../24-ict-corner/index.html">ICT Corner</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../02-numbers-and-sequences/03-euclid-s-division-algorithm-2.3/index.html" title="2.3 Euclid’s Division Algorithm">→</a>
+  <button class="tb-btn" data-theme-toggle title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<div class="progress"><span style="width:13.7%"></span></div>
+</header>
+<main class="wrap">
+<div class="sec-head">
+  <p class="eyebrow"><a href="../index.html">Chapter 2 · Numbers and Sequences</a></p>
+  <h1>2.2 Euclid’s Division Lemma</h1>
+  <p class="sec-meta">Textbook pages 2–4</p>
+</div>
+<article class="prose">
+<p>Euclid, one of the most important mathematicians wrote an important book named &ldquo;Elements&rdquo; in 13 volumes. The first six volumes were devoted to Geometry and for this reason, Euclid is called the &ldquo;Father of Geometry&rdquo;. But in the next few volumes, he made fundamental contributions to understand the properties of numbers. One among them is the &ldquo;Euclid&rsquo;s Divison Lemma&rdquo;. This is a simplified version of the long division process that you were performing for division of numbers in earlier classes.</p>
+<p>Le us now discuss Euclid&rsquo;s Lemma and its application through an Algorithm termed as &ldquo;Euclid&rsquo;s Division Algorithm&rdquo;.</p>
+<div class="callout"><p>Lemma is an auxiliary result used for proving an important theorem. It is usually considered as a mini theorem.</p></div>
+<h3 id="s-theorem-1">Theorem 1: Euclid&rsquo;s Division Lemma</h3>
+<p>Let \(a\) and \(b\) be any two positive integers. Then, there exist unique integers \(q\) and \(r\) such that \(a = bq + r,\ 0 \le r &lt; b\).</p>
+<div class="callout"><p class="callout-title">Note</p>
+<ul>
+<li>The remainder is always less than the divisor.</li>
+<li>If \(r = 0\) then \(a = bq\) so \(b\) divides \(a\).</li>
+<li>Conversely, if \(b\) divides \(a\) then \(a = bq\)</li>
+</ul>
+</div>
+<h4 class="callout-h">Example 2.1</h4>
+<p>We have 34 cakes. Each box can hold 5 cakes only. How many boxes we need to pack and how many cakes are unpacked?</p>
+<h4 class="callout-h">Solution</h4>
+<p>We see that 6 boxes are required to pack 30 cakes with 4 cakes left over. This distribution of cakes can be understood as follows:</p>
+<table class="tbl">
+<thead><tr><th>34</th><th>\(=\)</th><th>5</th><th>\(\times\)</th><th>6</th><th>\(+\)</th><th>4</th></tr></thead>
+<tbody>
+<tr><td>Total number of cakes</td><td>\(=\)</td><td>Number of cakes in each box</td><td>\(\times\)</td><td>Number of boxes</td><td>\(+\)</td><td>Number of cakes left over</td></tr>
+<tr><td>\(\downarrow\)</td><td></td><td>\(\downarrow\)</td><td></td><td>\(\downarrow\)</td><td></td><td>\(\downarrow\)</td></tr>
+<tr><td>(Dividend) \(a\)</td><td>\(=\)</td><td>(Divisor) \(b\)</td><td>\(\times\)</td><td>(Quotient) \(q\)</td><td>\(+\)</td><td>(Remainder) \(r\)</td></tr>
+</tbody>
+</table>
+<div class="callout"><p class="callout-title">Note</p>
+<ul>
+<li>The above lemma is nothing but a restatement of the long division process, the integers \(q\) and \(r\) are called quotient and remainder respectively.</li>
+<li>When a positive integer is divided by 2 the remainder is either 0 or 1. So, any positive integer will of the form \(2k\), \(2k+1\) for some integer \(k\).</li>
+</ul>
+</div>
+<p>Euclid&rsquo;s Division Lemma can be generalised to any two integers.</p>
+<h3 id="s-generalised-form">Generalised form of Euclid&rsquo;s division lemma</h3>
+<p>If \(a\) and \(b\) are \((b \ne 0)\) any two integers then there exist unique integers \(q\) and \(r\) such that \(a = bq + r\), where \(0 \le r &lt; |b|\)</p>
+<h4 class="callout-h">Example 2.2</h4>
+<p>Find the quotient and remainder when \(a\) is divided by \(b\) in the following cases (i) \(a = -12,\ b = 5\) (ii) \(a = 17,\ b = -3\) (iii) \(a = -19,\ b = -4\)</p>
+<h4 class="callout-h">Solutions</h4>
+<ol type="i">
+<li>\(a = -12,\ b = 5\)
+<p>By Euclid&rsquo;s division lemma</p>
+<div class="mathblock"><p>\(a = bq + r, \text{ where } 0 \le r &lt; |b|\)</p><p>\(-12 = 5 \times (-3) + 3 \qquad 0 \le r &lt; |5|\)</p></div>
+<p>Therefore, Quotient \(q = -3\), Remainder \(r = 3\)</p></li>
+<li>\(a = 17,\ b = -3\)
+<p>By Euclid&rsquo;s division lemma</p>
+<div class="mathblock"><p>\(a = bq + r, \text{ where } 0 \le r &lt; |b|\)</p><p>\(17 = (-3) \times (-5) + 2, \quad 0 \le r &lt; |-3|\)</p></div>
+<p>Therefore Quotient \(q = -5\), Remainder \(r = 2\)</p></li>
+<li>\(a = -19,\ b = -4\)
+<p>By Euclid&rsquo;s division lemma</p>
+<div class="mathblock"><p>\(a = bq + r, \text{ where } 0 \le r &lt; |b|\)</p><p>\(-19 = (-4) \times (5) + 1, \quad 0 \le r &lt; |-4|\)</p></div>
+<p>Therefore Quotient \(q = 5\), Remainder \(r = 1\).</p></li>
+</ol>
+<div class="callout"><p class="callout-title">Thinking Corner</p>
+<p>When a positive integer is divided by 3</p>
+<ol>
+<li>What are the possible remainders?</li>
+<li>In which form can it be written?</li>
+</ol>
+</div>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<p>Find \(q\) and \(r\) for the following pairs of integers \(a\) and \(b\) satisfying \(a = bq + r\).</p>
+<ol>
+<li>\(a = 13,\ b = 3\)</li>
+<li>\(a = 18,\ b = 4\)</li>
+<li>\(a = 21,\ b = -4\)</li>
+<li>\(a = -32,\ b = -12\)</li>
+<li>\(a = -31,\ b = 7\)</li>
+</ol>
+</div>
+<h4 class="callout-h">Example 2.3</h4>
+<p>Show that the square of an odd integer is of the form \(4q + 1\), for some integer \(q\).</p>
+<h4 class="callout-h">Solution</h4>
+<p>Let \(x\) be any odd integer. Since any odd integer is one more than an even integer, we have \(x = 2k + 1\), for some integers \(k\).</p>
+<div class="mathblock"><p>\(\begin{aligned} x^2 &amp;= (2k+1)^2 \\ &amp;= 4k^2 + 4k + 1 \\ &amp;= 4k(k+1) + 1 \\ &amp;= 4q + 1, \text{ where } q = k(k+1) \text{ is some integer.} \end{aligned}\)</p></div>
+</article>
+<nav class="pager"><a class="" data-nav="prev" href="../../02-numbers-and-sequences/01-chapter-opener/index.html"><span class="dir">← Previous</span><span class="t">Chapter opener; 2.1 Introduction</span><span class="ch">Numbers and Sequences</span></a><a class="nx" data-nav="next" href="../../02-numbers-and-sequences/03-euclid-s-division-algorithm-2.3/index.html"><span class="dir">Next →</span><span class="t">2.3 Euclid’s Division Algorithm</span><span class="ch">Numbers and Sequences</span></a></nav>
+</main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'\\(',right:'\\)',display:false},
+    {left:'$$',right:'$$',display:true},
+    {left:'\\[',right:'\\]',display:true}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']})"></script>
+<script src="../../../assets/book.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=3"></script>
+</body>
+</html>

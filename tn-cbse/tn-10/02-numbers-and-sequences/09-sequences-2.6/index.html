@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2.6 Sequences — Numbers and Sequences</title>
+<meta name="description" content="Class 10 Mathematics · Numbers and Sequences · 2.6 Sequences">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="../../../assets/book.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 10 Mathematics</a></span>
+    <span class="c2">Numbers and Sequences · 2.6 Sequences</span>
+  </div>
+  <a class="tb-btn" data-nav="prev" href="../../02-numbers-and-sequences/08-exercise-2.3/index.html" title="Exercise 2.3">←</a>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary>
+<div class="drawer-panel"><div class="dh">Numbers and Sequences</div><a href="../01-chapter-opener/index.html">Chapter opener; 2.1 Introduction</a><a href="../02-euclid-s-division-lemma-2.2/index.html">2.2 Euclid’s Division Lemma</a><a href="../03-euclid-s-division-algorithm-2.3/index.html">2.3 Euclid’s Division Algorithm</a><a href="../04-exercise-2.1/index.html">Exercise 2.1</a><a href="../05-fundamental-theorem-of-arithmetic-2.4/index.html">2.4 Fundamental Theorem of Arithmetic</a><a href="../06-exercise-2.2/index.html">Exercise 2.2</a><a href="../07-modular-arithmetic-2.5/index.html">2.5 Modular Arithmetic</a><a href="../08-exercise-2.3/index.html">Exercise 2.3</a><a href="../09-sequences-2.6/index.html" aria-current="page">2.6 Sequences</a><a href="../10-exercise-2.4/index.html">Exercise 2.4</a><a href="../11-arithmetic-progression-2.7/index.html">2.7 Arithmetic Progression</a><a href="../12-exercise-2.5/index.html">Exercise 2.5</a><a href="../13-series-2.8/index.html">2.8 Series</a><a href="../14-exercise-2.6/index.html">Exercise 2.6</a><a href="../15-geometric-progression-2.9/index.html">2.9 Geometric Progression</a><a href="../16-exercise-2.7/index.html">Exercise 2.7</a><a href="../17-sum-to-n-terms-of-a-geometric-progression-2.10/index.html">2.10 Sum to n terms of a Geometric progression</a><a href="../18-exercise-2.8/index.html">Exercise 2.8</a><a href="../19-special-series-2.11/index.html">2.11 Special Series</a><a href="../20-exercise-2.9/index.html">Exercise 2.9</a><a href="../21-exercise-2.10/index.html">Exercise 2.10</a><a href="../22-unit-exercise/index.html">Unit Exercise</a><a href="../23-summary/index.html">Points to Remember</a><a href="../24-ict-corner/index.html">ICT Corner</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../02-numbers-and-sequences/10-exercise-2.4/index.html" title="Exercise 2.4">→</a>
+  <button class="tb-btn" data-theme-toggle title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<div class="progress"><span style="width:18.3%"></span></div>
+</header>
+<main class="wrap">
+<div class="sec-head">
+  <p class="eyebrow"><a href="../index.html">Chapter 2 · Numbers and Sequences</a></p>
+  <h1>2.6 Sequences</h1>
+  <p class="sec-meta">Textbook pages 17–20 · 2 figures</p>
+</div>
+<article class="prose">
+<p>Consider the following pictures.</p>
+<figure class="fig wide"><img src="img/fig-fix-pictures.webp" alt="Three pictures: apples arranged in rows of 1, 2, 3, 4, 5; a staircase with steps of height 0.5 ft each; squares arranged in groups of 1, 3, 5" loading="lazy" width="975" height="264"><figcaption>Fig. 2.9</figcaption></figure>
+<p>There is some pattern or arrangement in these pictures. In the first picture, the first row contains one apple, the second row contains two apples and in the third row there are three apples etc&hellip; The number of apples in each of the rows are 1, 2, 3, &hellip;</p>
+<p>In the second picture each step have 0.5 feet height. The total height of the steps from the base are 0.5 feet, 1 feet, 1.5 feet,&hellip; In the third picture one square, 3 squares, 5 squares, &hellip; These numbers belong to category called &ldquo;<strong>Sequences</strong>&rdquo;.</p>
+<div class="callout"><p class="callout-title">Definition</p>
+<p>A <strong>real valued sequence</strong> is a function defined on the set of natural numbers and taking real values.</p></div>
+<p>Each element in the sequence is called a <strong>term</strong> of the sequence. The element in the first position is called the <strong>first term</strong> of the sequence. The element in the second position is called <strong>second term</strong> of the sequence and so on.</p>
+<p>If the \(n^{th}\) term is denoted by \(a_n\), then \(a_1\) is the first term, \(a_2\) is the second term, and so on. A sequence can be written as \(a_1, a_2, a_3, \ldots, a_n, \ldots\)</p>
+<h3 id="s-illustration">Illustration</h3>
+<ol>
+<li>\(1, 3, 5, 7, \ldots\) is a sequence with general term \(a_n = 2n - 1\). When we put \(n = 1, 2, 3, \ldots\), we get \(a_1 = 1,\ a_2 = 3,\ a_3 = 5,\ a_4 = 7, \ldots\)</li>
+<li>\(\dfrac{1}{2}, \dfrac{1}{3}, \dfrac{1}{4}, \dfrac{1}{5}, \ldots\) is a sequence with general term \(\dfrac{1}{n+1}\). When we put \(n = 1, 2, 3, \ldots\) we get \(a_1 = \dfrac{1}{2},\ a_2 = \dfrac{1}{3},\ a_3 = \dfrac{1}{4},\ a_4 = \dfrac{1}{5}, \ldots\)</li>
+</ol>
+<p>If the number of elements in a sequence is finite then it is called a <strong>Finite sequence</strong>. If the number of elements in a sequence is infinite then it is called an <strong>Infinite sequence</strong>.</p>
+<h3 id="s-sequence-as-a-function">Sequence as a Function</h3>
+<figure class="fig side-fig"><img src="img/fig-p2-1.webp" alt="Arrow diagram of f from N to R mapping 1, 2, 3, 4, 5 to a1, a2, a3, a4, a5" loading="lazy" width="293" height="259"><figcaption>Fig. 2.10</figcaption></figure>
+<p>A sequence can be considered as a function defined on the set of natural numbers \(\mathbb{N}\). In particular, a sequence is a function \(f : \mathbb{N} \to \mathbb{R}\), where \(\mathbb{R}\) is the set of all real numbers.</p>
+<p>If the sequence is of the form \(a_1, a_2, a_3, \ldots\) then we can associate the function to the sequence \(a_1, a_2, a_3, \ldots\) by \(f(k) = a_k,\ k = 1, 2, 3, \ldots\)</p>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<ol>
+<li>Fill in the blanks for the following sequences
+<ol type="i">
+<li>\(7, 13, 19, \underline{\qquad}, \ldots\)</li>
+<li>\(2, \underline{\qquad}, 10, 17, 26, \ldots\)</li>
+<li>\(1000, 100, 10, 1, \underline{\qquad}, \ldots\)</li>
+</ol></li>
+<li>A sequence is a function defined on the set of \(\underline{\qquad}\).</li>
+<li>The \(n^{th}\) term of the sequence \(0, 2, 6, 12, 20, \ldots\) can be expressed as \(\underline{\qquad}\).</li>
+<li>Say True or False
+<ol type="i">
+<li>All sequences are functions</li>
+<li>All functions are sequences.</li>
+</ol></li>
+</ol>
+</div>
+<div class="callout"><p class="callout-title">Note</p>
+<p>Though all the sequences are functions, not all the functions are sequences.</p></div>
+<h4 class="callout-h">Example 2.19</h4>
+<p>Find the next three terms of the sequences</p>
+<p>(i) \(\dfrac{1}{2}, \dfrac{1}{6}, \dfrac{1}{10}, \dfrac{1}{14}, \ldots\) &emsp; (ii) \(5, 2, -1, -4, \ldots\) &emsp; (iii) \(1, 0.1, 0.01, \ldots\)</p>
+<h4 class="callout-h">Solution</h4>
+<ol type="i">
+<li><div class="mathblock"><p>\(\dfrac{1}{2},\ \dfrac{1}{6},\ \dfrac{1}{10},\ \dfrac{1}{14},\ \ldots \qquad \text{(denominators } 2 \xrightarrow{+4} 6 \xrightarrow{+4} 10 \xrightarrow{+4} 14\text{)}\)</p></div>
+<p>In the above sequence the numerators are same and the denominator is increased by 4.</p>
+<p>So the next three terms are</p>
+<div class="mathblock"><p>\(a_5 = \dfrac{1}{14 + 4} = \dfrac{1}{18}\)</p><p>\(a_6 = \dfrac{1}{18 + 4} = \dfrac{1}{22}\)</p><p>\(a_7 = \dfrac{1}{22 + 4} = \dfrac{1}{26}\)</p></div></li>
+<li><div class="mathblock"><p>\(5 \xrightarrow{-3} 2 \xrightarrow{-3} -1 \xrightarrow{-3} -4, \ldots\)</p></div>
+<p>Here each term is decreased by 3. So the next three terms are \(-7, -10, -13\).</p></li>
+<li><div class="mathblock"><p>\(1 \xrightarrow{\div 10} 0.1 \xrightarrow{\div 10} 0.01, \ldots\)</p></div>
+<p>Here each term is divided by 10. Hence, the next three terms are</p>
+<div class="mathblock"><p>\(a_4 = \dfrac{0.01}{10} = 0.001\)</p><p>\(a_5 = \dfrac{0.001}{10} = 0.0001\)</p><p>\(a_6 = \dfrac{0.0001}{10} = 0.00001\)</p></div></li>
+</ol>
+<h4 class="callout-h">Example 2.20</h4>
+<p>Find the general term for the following sequences</p>
+<p>(i) \(3, 6, 9, \ldots\) &emsp; (ii) \(\dfrac{1}{2}, \dfrac{2}{3}, \dfrac{3}{4}, \ldots\) &emsp; (iii) \(5, -25, 125, \ldots\)</p>
+<h4 class="callout-h">Solution</h4>
+<ol type="i">
+<li>\(3, 6, 9, \ldots\)
+<p>Here the terms are multiples of 3. So the general term is</p>
+<div class="mathblock"><p>\(a_n = 3n,\)</p></div></li>
+<li>\(\dfrac{1}{2}, \dfrac{2}{3}, \dfrac{3}{4}, \ldots\)
+<div class="mathblock"><p>\(a_1 = \dfrac{1}{2};\ a_2 = \dfrac{2}{3};\ a_3 = \dfrac{3}{4}\)</p></div>
+<p>We see that the numerator of \(n^{th}\) term is \(n\), and the denominator is one more than the numerator. Hence, \(a_n = \dfrac{n}{n+1},\ n \in \mathbb{N}\)</p></li>
+<li>\(5, -25, 125, \ldots\)
+<p>The terms of the sequence have \(+\) and \(-\) sign alternatively and also they are in powers of 5.</p>
+<p>So the general term \(a_n = (-1)^{n+1} 5^n,\ n \in \mathbb{N}\)</p></li>
+</ol>
+<h4 class="callout-h">Example 2.21</h4>
+<p>The general term of a sequence is defined as</p>
+<div class="mathblock"><p>\(a_n = \begin{cases} n(n+3); &amp; n \in \mathbb{N} \text{ is odd} \\ n^2 + 1; &amp; n \in \mathbb{N} \text{ is even} \end{cases}\)</p></div>
+<p>Find the eleventh and eighteenth terms.</p>
+<h4 class="callout-h">Solution</h4>
+<p>To find \(a_{11}\), since 11 is odd, we put \(n = 11\) in \(a_n = n(n+3)\)</p>
+<p>Thus, the eleventh term \(\quad a_{11} = 11(11 + 3) = 154\).</p>
+<p>To find \(a_{18}\), since 18 is even, we put \(n = 18\) in \(a_n = n^2 + 1\)</p>
+<p>Thus, the eighteenth term \(\quad a_{18} = 18^2 + 1 = 325\).</p>
+<h4 class="callout-h">Example 2.22</h4>
+<p>Find the first five terms of the following sequence.</p>
+<div class="mathblock"><p>\(a_1 = 1,\ a_2 = 1,\ a_n = \dfrac{a_{n-1}}{a_{n-2} + 3};\ n \ge 3,\ n \in \mathbb{N}\)</p></div>
+<h4 class="callout-h">Solution</h4>
+<p>The first two terms of this sequence are given by \(a_1 = 1,\ a_2 = 1\). The third term \(a_3\) depends on the first and second terms.</p>
+<div class="mathblock"><p>\(a_3 = \dfrac{a_{3-1}}{a_{3-2} + 3} = \dfrac{a_2}{a_1 + 3} = \dfrac{1}{1 + 3} = \dfrac{1}{4}\)</p></div>
+<p>Similarly the fourth term \(a_4\) depends upon \(a_2\) and \(a_3\).</p>
+<div class="mathblock"><p>\(a_4 = \dfrac{a_{4-1}}{a_{4-2} + 3} = \dfrac{a_3}{a_2 + 3} = \dfrac{\frac{1}{4}}{1 + 3} = \dfrac{\frac{1}{4}}{4} = \dfrac{1}{4} \times \dfrac{1}{4} = \dfrac{1}{16}\)</p></div>
+<p>In the same way, the fifth term \(a_5\) can be calculated as</p>
+<div class="mathblock"><p>\(a_5 = \dfrac{a_{5-1}}{a_{5-2} + 3} = \dfrac{a_4}{a_3 + 3} = \dfrac{\frac{1}{16}}{\frac{1}{4} + 3} = \dfrac{1}{16} \times \dfrac{4}{13} = \dfrac{1}{52}\)</p></div>
+<p>Therefore, the first five terms of the sequence are \(1, 1, \dfrac{1}{4}, \dfrac{1}{16}\) and \(\dfrac{1}{52}\)</p>
+</article>
+<nav class="pager"><a class="" data-nav="prev" href="../../02-numbers-and-sequences/08-exercise-2.3/index.html"><span class="dir">← Previous</span><span class="t">Exercise 2.3</span><span class="ch">Numbers and Sequences</span></a><a class="nx" data-nav="next" href="../../02-numbers-and-sequences/10-exercise-2.4/index.html"><span class="dir">Next →</span><span class="t">Exercise 2.4</span><span class="ch">Numbers and Sequences</span></a></nav>
+</main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'\\(',right:'\\)',display:false},
+    {left:'$$',right:'$$',display:true},
+    {left:'\\[',right:'\\]',display:true}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']})"></script>
+<script src="../../../assets/book.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=3"></script>
+</body>
+</html>

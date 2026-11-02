@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>5.2 Area of a Triangle — Coordinate Geometry</title>
+<meta name="description" content="Class 10 Mathematics · Coordinate Geometry · 5.2 Area of a Triangle">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="../../../assets/book.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 10 Mathematics</a></span>
+    <span class="c2">Coordinate Geometry · 5.2 Area of a Triangle</span>
+  </div>
+  <a class="tb-btn" data-nav="prev" href="../../05-coordinate-geometry/01-chapter-opener/index.html" title="Chapter opener; 5.1 Introduction">←</a>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary>
+<div class="drawer-panel"><div class="dh">Coordinate Geometry</div><a href="../01-chapter-opener/index.html">Chapter opener; 5.1 Introduction</a><a href="../02-area-of-a-triangle-5.2/index.html" aria-current="page">5.2 Area of a Triangle</a><a href="../03-area-of-a-quadrilateral-5.3/index.html">5.3 Area of a Quadrilateral</a><a href="../04-exercise-5.1/index.html">Exercise 5.1</a><a href="../05-inclination-of-a-line-5.4/index.html">5.4 Inclination of a Line</a><a href="../06-exercise-5.2/index.html">Exercise 5.2</a><a href="../07-straight-line-5.5/index.html">5.5 Straight Line</a><a href="../08-exercise-5.3/index.html">Exercise 5.3</a><a href="../09-general-form-of-a-straight-line-5.6/index.html">5.6 General Form of a Straight Line</a><a href="../10-exercise-5.4/index.html">Exercise 5.4</a><a href="../11-exercise-5.5/index.html">Exercise 5.5</a><a href="../12-unit-exercise/index.html">Unit Exercise</a><a href="../13-summary/index.html">Points to Remember</a><a href="../14-ict-corner/index.html">ICT Corner</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../05-coordinate-geometry/03-area-of-a-quadrilateral-5.3/index.html" title="5.3 Area of a Quadrilateral">→</a>
+  <button class="tb-btn" data-theme-toggle title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<div class="progress"><span style="width:64.7%"></span></div>
+</header>
+<main class="wrap">
+<div class="sec-head">
+  <p class="eyebrow"><a href="../index.html">Chapter 5 · Coordinate Geometry</a></p>
+  <h1>5.2 Area of a Triangle</h1>
+  <p class="sec-meta">Textbook pages 3-5 · 2 figures</p>
+</div>
+<article class="prose">
+<h2 id="s-5-2-area-of-a-triangle">5.2 Area of a Triangle</h2>
+<figure class="fig side-fig"><img src="img/fig-fix-5-6.webp" alt="Triangle ABC with vertices A(x1, y1), B(x2, y2), C(x3, y3) and sides a, b, c" loading="lazy" width="434" height="351"><figcaption>Fig. 5.6</figcaption></figure>
+<p>In your earlier classes, you have studied how to calculate the area of a triangle when its base and corresponding height (altitude) are given. You have used the formula.</p>
+<div class="mathblock"><p>\(\text{Area of triangle} = \dfrac{1}{2} \times \text{base} \times \text{altitude} \text{ sq.units.}\)</p></div>
+<p>With any three non-collinear points \(A(x_1, y_1)\), \(B(x_2, y_2)\) and \(C(x_3, y_3)\) on a plane, we can form a triangle \(ABC\).</p>
+<p>Using distance between two points formula, we can calculate \(AB = c\), \(BC = a\), \(CA = b\). \(a, b, c\) represent the lengths of the sides of the triangle \(ABC\).</p>
+<p>Using \(2s = a + b + c\), we can calculate the area of triangle \(ABC\) by using the Heron&rsquo;s formula \(\sqrt{s(s - a)(s - b)(s - c)}\). But this procedure of finding length of sides of \(\Delta ABC\) and then calculating its area will be a tedious procedure.</p>
+<figure class="fig side-fig"><img src="img/fig-fix-5-7.webp" alt="Triangle ABC with perpendiculars AP, BQ and CR drawn to the x-axis" loading="lazy" width="431" height="381"><figcaption>Fig. 5.7</figcaption></figure>
+<p>There is an elegant way of finding area of a triangle using the coordinates of its vertices. We shall discuss such a method below.</p>
+<p>Let \(ABC\) be any triangle whose vertices are at \(A(x_1, y_1)\), \(B(x_2, y_2)\) and \(C(x_3, y_3)\).</p>
+<p>Draw \(AP\), \(BQ\) and \(CR\) perpendiculars from \(A\), \(B\) and \(C\) to the \(x\)-axis, respectively.</p>
+<p>Clearly \(ABQP\), \(APRC\) and \(BQRC\) are all trapeziums.</p>
+<p>Now from Fig. 5.7, it is clear that</p>
+<p>Area of \(\Delta ABC\)</p>
+<p>= Area of trapezium \(ABQP\) + Area of trapezium \(APRC\) &minus; Area of trapezium \(BQRC\).</p>
+<p>You also know that, the area of trapezium</p>
+<div class="mathblock"><p>\(= \dfrac{1}{2} \times (\text{sum of parallel sides}) \times (\text{perpendicular distance between the parallel sides})\)</p></div>
+<p>Therefore, Area of \(\Delta ABC\)</p>
+<div class="mathblock"><p>\(= \dfrac{1}{2}(BQ + AP)QP + \dfrac{1}{2}(AP + CR)PR - \dfrac{1}{2}(BQ + CR)QR\)</p><p>\(= \dfrac{1}{2}(y_2 + y_1)(x_1 - x_2) + \dfrac{1}{2}(y_1 + y_3)(x_3 - x_1) - \dfrac{1}{2}(y_2 + y_3)(x_3 - x_2)\)</p><p>\(= \dfrac{1}{2}\left\{x_1(y_2 - y_3) + x_2(y_3 - y_1) + x_3(y_1 - y_2)\right\}\)</p></div>
+<p>Thus, the <strong>area of \(\Delta ABC\)</strong> is the absolute value of the expression</p>
+<div class="mathblock"><p>\(= \dfrac{1}{2}\left\{x_1(y_2 - y_3) + x_2(y_3 - y_1) + x_3(y_1 - y_2)\right\} \text{ sq.units.}\)</p></div>
+<p>The vertices \(A(x_1, y_1)\), \(B(x_2, y_2)\) and \(C(x_3, y_3)\) of \(\Delta ABC\) are said to be &ldquo;taken in order&rdquo; if \(A\), \(B\), \(C\) are taken in anticlockwise direction. If we do this, then area of \(\Delta ABC\) will never be negative.</p>
+<div class="callout"><p class="callout-title">Note</p>
+<p>&ldquo;As the area of a triangle can never be negative, we must take the absolute value, in case area happens to be negative&rdquo;.</p>
+</div>
+<h3 id="s-another-form">Another form</h3>
+<p>The following pictorial representation helps us to write the above formula very easily.</p>
+<div class="mathblock"><p>\(\text{Area of } \Delta ABC = \dfrac{1}{2}\left|\begin{array}{ccccccc} x_1 &amp; &amp; x_2 &amp; &amp; x_3 &amp; &amp; x_1 \\ &amp; \times &amp; &amp; \times &amp; &amp; \times &amp; \\ y_1 &amp; &amp; y_2 &amp; &amp; y_3 &amp; &amp; y_1 \end{array}\right|\)</p><p>\(= \dfrac{1}{2}\left\{(x_1y_2 + x_2y_3 + x_3y_1) - (x_2y_1 + x_3y_2 + x_1y_3)\right\} \text{ sq.units.}\)</p></div>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<p>The vertices of \(\Delta PQR\) are \(P(0, -4)\), \(Q(3, 1)\) and \(R(-8, 1)\)</p>
+<ol>
+<li>Draw \(\Delta PQR\) on a graph paper.</li>
+<li>Check if \(\Delta PQR\) is equilateral.</li>
+<li>Find the area of \(\Delta PQR\).</li>
+<li>Find the coordinates of \(M\), the mid-point of \(QP\).</li>
+<li>Find the coordinates of \(N\), the mid-point of \(QR\).</li>
+<li>Find the area of \(\Delta MPN\).</li>
+<li>What is the ratio between the areas of \(\Delta MPN\) and \(\Delta PQR\)?</li>
+</ol>
+</div>
+<h3 id="s-5-2-1-collinearity-of-three-points">5.2.1 Collinearity of three points</h3>
+<p>If three distinct points \(A(x_1, y_1)\), \(B(x_2, y_2)\) and \(C(x_3, y_3)\) are collinear, then we cannot form a triangle, because for such a triangle there will be no altitude (height). Therefore, three points \(A(x_1, y_1)\), \(B(x_2, y_2)\) and \(C(x_3, y_3)\) will be <strong>collinear</strong> if the area of \(\Delta ABC = 0\).</p>
+<div class="callout"><p class="callout-title">Note</p>
+<p><strong>Another condition for collinearity</strong></p>
+<p>If \(A(x_1, y_1)\), \(B(x_2, y_2)\) and \(C(x_3, y_3)\) are collinear points, then</p>
+<div class="mathblock"><p>\(x_1(y_2 - y_3) + x_2(y_3 - y_1) + x_3(y_1 - y_2) = 0\)</p><p>or \(x_1y_2 + x_2y_3 + x_3y_1 = x_1y_3 + x_2y_1 + x_3y_2\).</p></div>
+</div>
+<p>Similarly, if the area of \(\Delta ABC\) is zero, then the three points lie on the same straight line. Thus, three distinct points \(A(x_1, y_1)\), \(B(x_2, y_2)\) and \(C(x_3, y_3)\) will be collinear if and only if area of \(\Delta ABC = 0\).</p>
+</article>
+<nav class="pager"><a class="" data-nav="prev" href="../../05-coordinate-geometry/01-chapter-opener/index.html"><span class="dir">← Previous</span><span class="t">Chapter opener; 5.1 Introduction</span><span class="ch">Coordinate Geometry</span></a><a class="nx" data-nav="next" href="../../05-coordinate-geometry/03-area-of-a-quadrilateral-5.3/index.html"><span class="dir">Next →</span><span class="t">5.3 Area of a Quadrilateral</span><span class="ch">Coordinate Geometry</span></a></nav>
+</main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'\\(',right:'\\)',display:false},
+    {left:'$$',right:'$$',display:true},
+    {left:'\\[',right:'\\]',display:true}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']})"></script>
+<script src="../../../assets/book.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=3"></script>
+</body>
+</html>

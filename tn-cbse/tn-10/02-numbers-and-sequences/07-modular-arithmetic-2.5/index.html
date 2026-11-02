@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2.5 Modular Arithmetic — Numbers and Sequences</title>
+<meta name="description" content="Class 10 Mathematics · Numbers and Sequences · 2.5 Modular Arithmetic">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="../../../assets/book.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 10 Mathematics</a></span>
+    <span class="c2">Numbers and Sequences · 2.5 Modular Arithmetic</span>
+  </div>
+  <a class="tb-btn" data-nav="prev" href="../../02-numbers-and-sequences/06-exercise-2.2/index.html" title="Exercise 2.2">←</a>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary>
+<div class="drawer-panel"><div class="dh">Numbers and Sequences</div><a href="../01-chapter-opener/index.html">Chapter opener; 2.1 Introduction</a><a href="../02-euclid-s-division-lemma-2.2/index.html">2.2 Euclid’s Division Lemma</a><a href="../03-euclid-s-division-algorithm-2.3/index.html">2.3 Euclid’s Division Algorithm</a><a href="../04-exercise-2.1/index.html">Exercise 2.1</a><a href="../05-fundamental-theorem-of-arithmetic-2.4/index.html">2.4 Fundamental Theorem of Arithmetic</a><a href="../06-exercise-2.2/index.html">Exercise 2.2</a><a href="../07-modular-arithmetic-2.5/index.html" aria-current="page">2.5 Modular Arithmetic</a><a href="../08-exercise-2.3/index.html">Exercise 2.3</a><a href="../09-sequences-2.6/index.html">2.6 Sequences</a><a href="../10-exercise-2.4/index.html">Exercise 2.4</a><a href="../11-arithmetic-progression-2.7/index.html">2.7 Arithmetic Progression</a><a href="../12-exercise-2.5/index.html">Exercise 2.5</a><a href="../13-series-2.8/index.html">2.8 Series</a><a href="../14-exercise-2.6/index.html">Exercise 2.6</a><a href="../15-geometric-progression-2.9/index.html">2.9 Geometric Progression</a><a href="../16-exercise-2.7/index.html">Exercise 2.7</a><a href="../17-sum-to-n-terms-of-a-geometric-progression-2.10/index.html">2.10 Sum to n terms of a Geometric progression</a><a href="../18-exercise-2.8/index.html">Exercise 2.8</a><a href="../19-special-series-2.11/index.html">2.11 Special Series</a><a href="../20-exercise-2.9/index.html">Exercise 2.9</a><a href="../21-exercise-2.10/index.html">Exercise 2.10</a><a href="../22-unit-exercise/index.html">Unit Exercise</a><a href="../23-summary/index.html">Points to Remember</a><a href="../24-ict-corner/index.html">ICT Corner</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../02-numbers-and-sequences/08-exercise-2.3/index.html" title="Exercise 2.3">→</a>
+  <button class="tb-btn" data-theme-toggle title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<div class="progress"><span style="width:17.0%"></span></div>
+</header>
+<main class="wrap">
+<div class="sec-head">
+  <p class="eyebrow"><a href="../index.html">Chapter 2 · Numbers and Sequences</a></p>
+  <h1>2.5 Modular Arithmetic</h1>
+  <p class="sec-meta">Textbook pages 11–16 · 4 figures</p>
+</div>
+<article class="prose">
+<figure class="fig side-fig"><img src="img/fig-p1-2.webp" alt="A clock face showing the numbers 1 to 12" loading="lazy" width="291" height="283"><figcaption>Fig. 2.5</figcaption></figure>
+<p>In a clock, we use the numbers 1 to 12 to represent the time period of 24 hours. How is it possible to represent the 24 hours of a day in a 12 number format? We use 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 and after 12, we use 1 instead of 13 and 2 instead of 14 and so on. That is after 12 we again start from 1, 2, 3,&hellip; In this system the numbers wrap around 1 to 12. This type of wrapping around after hitting some value is called <strong>Modular Arithmetic</strong>.</p>
+<p>In Mathematics, modular arithmetic is a system of arithmetic for integers where numbers wrap around a certain value. Unlike normal arithmetic, Modular Arithmetic process cyclically. The ideas of Modular arithmetic was developed by great German mathematician Carl Friedrich Gauss, who is hailed as the &ldquo;Prince of mathematicians&rdquo;.</p>
+<p><strong>Examples</strong></p>
+<figure class="fig side-fig"><img src="img/fig-p1-4.webp" alt="Life cycle of a plant: fruit, seed, seedling, tree, dried plant, back to fruit" loading="lazy" width="301" height="276"><figcaption>Fig. 2.6 Life Cycle of Plant</figcaption></figure>
+<ol>
+<li>The day and night change repeatedly.</li>
+<li>The days of a week occur cyclically from Sunday to Saturday.</li>
+<li>The life cycle of a plant.</li>
+<li>The seasons of a year change cyclically. (Summer, Autumn, Winter, Spring)</li>
+<li>The railway and aeroplane timings also work cyclically. The railway time starts at 00:00 and continue. After reaching 23:59, the next minute will become 00:00 instead of 24:00.</li>
+</ol>
+<h3 id="s-2-5-1-congruence-modulo">2.5.1 Congruence Modulo</h3>
+<p>Two integers \(a\) and \(b\) are congruence modulo \(n\) if they differ by an integer multiple of \(n\). That \(a - b = kn\) for some integer \(k\). This can also be written as \(a \equiv b \pmod{n}\).</p>
+<p>Here the number \(n\) is called modulus. In other words, \(a \equiv b \pmod{n}\) means \(a - b\) is divisible by \(n\).</p>
+<p>For example, \(61 \equiv 5 \pmod{7}\) because \(61 - 5 = 56\) is divisible by 7.</p>
+<div class="callout"><p class="callout-title">Note</p>
+<ul>
+<li>When a positive integer is divided by \(n\), then the possible remainders are \(0, 1, 2, \ldots, n-1\).</li>
+<li>Thus, when we work with modulo \(n\), we replace all the numbers by their remainders upon division by \(n\), given by \(0, 1, 2, 3, \ldots, n-1\).</li>
+</ul>
+</div>
+<p>Two illustrations are provided to understand modulo concept more clearly.</p>
+<h3 id="s-illustration-1">Illustration 1</h3>
+<figure class="fig side-fig"><img src="img/fig-fix-spiral1.webp" alt="Clockwise spiral through 0, 1, 2, 3 then 4 to 8, landing at 0" loading="lazy" width="334" height="354"><figcaption>Fig. 2.7</figcaption></figure>
+<p>To find \(8 \pmod{4}\)</p>
+<p>With a modulus of 4 (since the possible remainders are 0, 1, 2, 3) we make a diagram like a clock with numbers 0, 1, 2, 3. We start at 0 and go through 8 numbers in a clockwise sequence 1, 2, 3, 0, 1, 2, 3, 0. After doing so cyclically, we end at 0.</p>
+<p>Therefore, \(8 \equiv 0 \pmod{4}\)</p>
+<h3 id="s-illustration-2">Illustration 2</h3>
+<figure class="fig side-fig"><img src="img/fig-fix-spiral2.webp" alt="Anti-clockwise spiral through 0, 2, 1 then 3, 4, 5, landing at 1" loading="lazy" width="346" height="303"><figcaption>Fig. 2.8</figcaption></figure>
+<p>To find \(-5 \pmod{3}\)</p>
+<p>With a modulus of 3 (since the possible remainders are 0, 1, 2) we make a diagram like a clock with numbers 0, 1, 2.</p>
+<p>We start at 0 and go through 5 numbers in anti-clockwise sequence 2, 1, 0, 2, 1. After doing so cyclically, we end at 1.</p>
+<p>Therefore, \(-5 \equiv 1 \pmod{3}\)</p>
+<h3 id="s-2-5-2">2.5.2 Connecting Euclid&rsquo;s Division lemma and Modular Arithmetic</h3>
+<p>Let \(m\) and \(n\) be integers, where \(m\) is positive. Then by Euclid&rsquo;s division lemma, we can write \(n = mq + r\) where \(0 \le r &lt; m\) and \(q\) is an integer. Instead of writing \(n = mq + r\) we can use the congruence notation in the following way.</p>
+<p>We say that \(n\) is congruent to \(r\) modulo \(m\), if \(n = mq + r\) for some integer \(q\).</p>
+<div class="mathblock"><p>\(\begin{aligned} n &amp;= mq + r \\ n - r &amp;= mq \\ n - r &amp;\equiv 0 \pmod{m} \\ n &amp;\equiv r \pmod{m} \end{aligned}\)</p></div>
+<p>Thus the equation \(n = mq + r\) through Euclid&rsquo;s Division lemma can also be written as \(n \equiv r \pmod{m}\).</p>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<ol>
+<li>Two integers \(a\) and \(b\) are congruent modulo \(n\) if \(\underline{\qquad\qquad}\).</li>
+<li>The set of all positive integers which leave remainder 5 when divided by 7 are \(\underline{\qquad\qquad}\).</li>
+</ol>
+</div>
+<div class="callout"><p class="callout-title">Note</p>
+<p>Two integers \(a\) and \(b\) are congruent modulo \(m\), written as \(a \equiv b \pmod{m}\), if they leave the same remainder when divided by \(m\).</p></div>
+<div class="callout"><p class="callout-title">Thinking Corner</p>
+<p>How many integers exist which leave a remainder of 2 when divided by 3?</p></div>
+<h3 id="s-2-5-3-modulo-operations">2.5.3 Modulo operations</h3>
+<p>Similar to basic arithmetic operations like addition, subtraction and multiplication performed on numbers we can think of performing same operations in modulo arithmetic. The following theorem provides the information of doing this.</p>
+<h3 id="s-theorem-5">Theorem 5</h3>
+<p>\(a\), \(b\), \(c\) and \(d\) are integers and \(m\) is a positive integer such that if \(a \equiv b \pmod{m}\) and \(c \equiv d \pmod{m}\) then</p>
+<ol type="i">
+<li>\((a + c) \equiv (b + d) \pmod{m}\)</li>
+<li>\((a - c) \equiv (b - d) \pmod{m}\)</li>
+<li>\((a \times c) \equiv (b \times d) \pmod{m}\)</li>
+</ol>
+<h3 id="s-illustration-3">Illustration 3</h3>
+<p>If \(17 \equiv 4 \pmod{13}\) and \(42 \equiv 3 \pmod{13}\) then from theorem 5,</p>
+<ol type="i">
+<li><div class="mathblock"><p>\(\begin{aligned} 17 + 42 &amp;\equiv 4 + 3 \pmod{13} \\ 59 &amp;\equiv 7 \pmod{13} \end{aligned}\)</p></div></li>
+<li><div class="mathblock"><p>\(\begin{aligned} 17 - 42 &amp;\equiv 4 - 3 \pmod{13} \\ -25 &amp;\equiv 1 \pmod{13} \end{aligned}\)</p></div></li>
+<li><div class="mathblock"><p>\(\begin{aligned} 17 \times 42 &amp;\equiv 4 \times 3 \pmod{13} \\ 714 &amp;\equiv 12 \pmod{13} \end{aligned}\)</p></div></li>
+</ol>
+<h3 id="s-theorem-6">Theorem 6</h3>
+<p>If \(a \equiv b \pmod{m}\) then</p>
+<ol type="i">
+<li>\(ac \equiv bc \pmod{m}\)</li>
+<li>\(a \pm c \equiv b \pm c \pmod{m}\) for any integer \(c\)</li>
+</ol>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<ol>
+<li>The positive values of \(k\) such that \((k - 3) \equiv 5 \pmod{11}\) are \(\underline{\qquad\qquad}\).</li>
+<li>If \(59 \equiv 3 \pmod{7}\), \(46 \equiv 4 \pmod{7}\) then \(105 \equiv \underline{\qquad} \pmod{7}\), \(13 \equiv \underline{\qquad} \pmod{7}\), \(413 \equiv \underline{\qquad} \pmod{7}\), \(368 \equiv \underline{\qquad} \pmod{7}\).</li>
+<li>The remainder when \(7 \times 13 \times 19 \times 23 \times 29 \times 31\) is divided by 6 is \(\underline{\qquad\qquad}\).</li>
+</ol>
+</div>
+<h4 class="callout-h">Example 2.11</h4>
+<p>Find the remainders when 70004 and 778 is divided by 7.</p>
+<h4 class="callout-h">Solution</h4>
+<p>Since 70000 is divisible by 7</p>
+<div class="mathblock"><p>\(\begin{aligned} 70000 &amp;\equiv 0 \pmod{7} \\ 70000 + 4 &amp;\equiv 0 + 4 \pmod{7} \\ 70004 &amp;\equiv 4 \pmod{7} \end{aligned}\)</p></div>
+<p>Therefore, the remainder when 70004 is divided by 7 is 4.</p>
+<p>\(\because\) 777 is divisible by 7</p>
+<div class="mathblock"><p>\(\begin{aligned} 777 &amp;\equiv 0 \pmod{7} \\ 777 + 1 &amp;\equiv 0 + 1 \pmod{7} \\ 778 &amp;\equiv 1 \pmod{7} \end{aligned}\)</p></div>
+<p>Therefore, the remainder when 778 is divided by 7 is 1.</p>
+<h4 class="callout-h">Example 2.12</h4>
+<p>Determine the value of \(d\) such that \(15 \equiv 3 \pmod{d}\).</p>
+<h4 class="callout-h">Solution</h4>
+<p>\(15 \equiv 3 \pmod{d}\) means \(15 - 3 = kd\), for some integer \(k\).</p>
+<div class="mathblock"><p>\(12 = kd.\)</p><p>\(\Rightarrow\ d\) divides 12.</p></div>
+<p>The divisors of 12 are 1, 2, 3, 4, 6, 12. But \(d\) should be larger than 3 and so the possible values for \(d\) are 4, 6, 12.</p>
+<h4 class="callout-h">Example 2.13</h4>
+<p>Find the least positive value of \(x\) such that</p>
+<p>(i) \(67 + x \equiv 1 \pmod{4}\) &emsp; (ii) \(98 \equiv (x + 4) \pmod{5}\)</p>
+<h4 class="callout-h">Solution</h4>
+<ol type="i">
+<li><div class="mathblock"><p>\(\begin{aligned} 67 + x &amp;\equiv 1 \pmod{4} \\ 67 + x - 1 &amp;= 4n, \text{ for some integer } n \\ 66 + x &amp;= 4n \end{aligned}\)</p></div>
+<p>\(66 + x\) is a multiple of 4.</p>
+<p>Therefore, the least positive value of \(x\) must be 2, since 68 is the nearest multiple of 4 more than 66.</p></li>
+<li><div class="mathblock"><p>\(\begin{aligned} 98 &amp;\equiv (x + 4) \pmod{5} \\ 98 - (x + 4) &amp;= 5n, \text{ for some integer } n. \\ 94 - x &amp;= 5n \end{aligned}\)</p></div>
+<p>\(94 - x\) is a multiple of 5.</p>
+<p>Therefore, the least positive value of \(x\) must be 4</p>
+<p>\(\because 94 - 4 = 90\) is the nearest multiple of 5 less than 94.</p></li>
+</ol>
+<div class="callout"><p class="callout-title">Note</p>
+<p>While solving congruent equations, we get infinitely many solutions compared to finite number of solutions in solving a polynomial equation in Algebra.</p></div>
+<h4 class="callout-h">Example 2.14</h4>
+<p>Solve \(8x \equiv 1 \pmod{11}\)</p>
+<h4 class="callout-h">Solution</h4>
+<p>\(8x \equiv 1 \pmod{11}\) can be written as \(8x - 1 = 11k\), for some integer \(k\).</p>
+<div class="mathblock"><p>\(x = \dfrac{11k + 1}{8}\)</p></div>
+<p>When we put \(k = 5, 13, 21, 29, \ldots\) then \(11k + 1\) is divisible by 8.</p>
+<div class="mathblock"><p>\(x = \dfrac{11 \times 5 + 1}{8} = 7\)</p><p>\(x = \dfrac{11 \times 13 + 1}{8} = 18\)</p></div>
+<p>\(\therefore\) The solutions are \(7, 18, 29, 40, \ldots\)</p>
+<h4 class="callout-h">Example 2.15</h4>
+<p>Compute \(x\), such that \(10^4 \equiv x \pmod{19}\)</p>
+<h4 class="callout-h">Solution</h4>
+<div class="mathblock"><p>\(10^2 = 100 \equiv 5 \pmod{19}\)</p><p>\(10^4 = (10^2)^2 \equiv 5^2 \pmod{19}\)</p><p>\(10^4 \equiv 25 \pmod{19}\)</p><p>\(10^4 \equiv 6 \pmod{19} \qquad (\because 25 \equiv 6 \pmod{19})\)</p><p>\(\therefore x = 6.\)</p></div>
+<h4 class="callout-h">Example 2.16</h4>
+<p>Find the number of integer solutions of \(3x \equiv 1 \pmod{15}\).</p>
+<h4 class="callout-h">Solution</h4>
+<p>\(3x \equiv 1 \pmod{15}\) can be written as</p>
+<div class="mathblock"><p>\(3x - 1 = 15k\) for some integer \(k\)</p><p>\(3x = 15k + 1\)</p><p>\(x = \dfrac{15k + 1}{3}\)</p><p>\(x = 5k + \dfrac{1}{3}\)</p></div>
+<p>\(\because 5k\) is an integer, \(5k + \dfrac{1}{3}\) cannot be an integer.</p>
+<p>So there is no integer solution.</p>
+<h4 class="callout-h">Example 2.17</h4>
+<p>A man starts his journey from Chennai to Delhi by train. He starts at 22.30 hours on Wednesday. If it takes 32 hours of travelling time and assuming that the train is not late, when will he reach Delhi?</p>
+<h4 class="callout-h">Solution</h4>
+<p>Starting time 22.30, Travelling time 32 hours. Here we use modulo 24.</p>
+<p>The reaching time is</p>
+<div class="mathblock"><p>\(\begin{aligned} 22.30 + 32 \pmod{24} &amp;\equiv 54.30 \pmod{24} \\ &amp;\equiv 6.30 \pmod{24} \quad \Big(\because 32 = \underbrace{(1 \times 24)}_{\text{Thursday}} + \underbrace{8}_{\text{Friday}}\Big) \end{aligned}\)</p></div>
+<p>Thus, he will reach Delhi on Friday at 6.30 hours.</p>
+<h4 class="callout-h">Example 2.18</h4>
+<p>Kala and Vani are friends. Kala says, &ldquo;Today is my birthday&rdquo; and she asks Vani, &ldquo;When will you celebrate your birthday?&rdquo; Vani replies, &ldquo;Today is Monday and I celebrated my birthday 75 days ago&rdquo;. Find the day when Vani celebrated her birthday.</p>
+<h4 class="callout-h">Solution</h4>
+<p>Let us associate the numbers 0, 1, 2, 3, 4, 5, 6 to represent the weekdays from Sunday to Saturday respectively.</p>
+<p>Vani says today is Monday. So the number for Monday is 1. Since Vani&rsquo;s birthday was 75 days ago, we have to subtract 75 from 1 and take the modulo 7, since a week contain 7 days.</p>
+<div class="mathblock"><p>\(-74 \pmod{7} \equiv -4 \pmod{7} \equiv 7 - 4 \pmod{7} \equiv 3 \pmod{7}\)</p><p>\((\because -74 - 3 = -77 \text{ is divisible by } 7)\)</p></div>
+<p>Thus, \(1 - 75 \equiv 3 \pmod{7}\)</p>
+<p>The day for the number 3 is Wednesday.</p>
+<p>Therefore, Vani&rsquo;s birthday must be on Wednesday.</p>
+</article>
+<nav class="pager"><a class="" data-nav="prev" href="../../02-numbers-and-sequences/06-exercise-2.2/index.html"><span class="dir">← Previous</span><span class="t">Exercise 2.2</span><span class="ch">Numbers and Sequences</span></a><a class="nx" data-nav="next" href="../../02-numbers-and-sequences/08-exercise-2.3/index.html"><span class="dir">Next →</span><span class="t">Exercise 2.3</span><span class="ch">Numbers and Sequences</span></a></nav>
+</main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'\\(',right:'\\)',display:false},
+    {left:'$$',right:'$$',display:true},
+    {left:'\\[',right:'\\]',display:true}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']})"></script>
+<script src="../../../assets/book.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=3"></script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2.7 Arithmetic Progression — Numbers and Sequences</title>
+<meta name="description" content="Class 10 Mathematics · Numbers and Sequences · 2.7 Arithmetic Progression">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="../../../assets/book.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 10 Mathematics</a></span>
+    <span class="c2">Numbers and Sequences · 2.7 Arithmetic Progression</span>
+  </div>
+  <a class="tb-btn" data-nav="prev" href="../../02-numbers-and-sequences/10-exercise-2.4/index.html" title="Exercise 2.4">←</a>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary>
+<div class="drawer-panel"><div class="dh">Numbers and Sequences</div><a href="../01-chapter-opener/index.html">Chapter opener; 2.1 Introduction</a><a href="../02-euclid-s-division-lemma-2.2/index.html">2.2 Euclid’s Division Lemma</a><a href="../03-euclid-s-division-algorithm-2.3/index.html">2.3 Euclid’s Division Algorithm</a><a href="../04-exercise-2.1/index.html">Exercise 2.1</a><a href="../05-fundamental-theorem-of-arithmetic-2.4/index.html">2.4 Fundamental Theorem of Arithmetic</a><a href="../06-exercise-2.2/index.html">Exercise 2.2</a><a href="../07-modular-arithmetic-2.5/index.html">2.5 Modular Arithmetic</a><a href="../08-exercise-2.3/index.html">Exercise 2.3</a><a href="../09-sequences-2.6/index.html">2.6 Sequences</a><a href="../10-exercise-2.4/index.html">Exercise 2.4</a><a href="../11-arithmetic-progression-2.7/index.html" aria-current="page">2.7 Arithmetic Progression</a><a href="../12-exercise-2.5/index.html">Exercise 2.5</a><a href="../13-series-2.8/index.html">2.8 Series</a><a href="../14-exercise-2.6/index.html">Exercise 2.6</a><a href="../15-geometric-progression-2.9/index.html">2.9 Geometric Progression</a><a href="../16-exercise-2.7/index.html">Exercise 2.7</a><a href="../17-sum-to-n-terms-of-a-geometric-progression-2.10/index.html">2.10 Sum to n terms of a Geometric progression</a><a href="../18-exercise-2.8/index.html">Exercise 2.8</a><a href="../19-special-series-2.11/index.html">2.11 Special Series</a><a href="../20-exercise-2.9/index.html">Exercise 2.9</a><a href="../21-exercise-2.10/index.html">Exercise 2.10</a><a href="../22-unit-exercise/index.html">Unit Exercise</a><a href="../23-summary/index.html">Points to Remember</a><a href="../24-ict-corner/index.html">ICT Corner</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../02-numbers-and-sequences/12-exercise-2.5/index.html" title="Exercise 2.5">→</a>
+  <button class="tb-btn" data-theme-toggle title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<div class="progress"><span style="width:19.6%"></span></div>
+</header>
+<main class="wrap">
+<div class="sec-head">
+  <p class="eyebrow"><a href="../index.html">Chapter 2 · Numbers and Sequences</a></p>
+  <h1>2.7 Arithmetic Progression</h1>
+  <p class="sec-meta">Textbook pages 20–26 · 1 figure</p>
+</div>
+<article class="prose">
+<p>Let us begin with the following two illustrations.</p>
+<h3 id="s-illustration-1">Illustration 1</h3>
+<figure class="fig side-fig"><img src="img/fig-fix-matchsticks.webp" alt="Four figures made of match sticks: one, two, three and four triangles in a row, using 3, 5, 7 and 9 sticks" loading="lazy" width="593" height="264"><figcaption>Fig. 2.11</figcaption></figure>
+<p>Make the following figures using match sticks</p>
+<ol type="i">
+<li>How many match sticks are required for each figure? 3, 5, 7 and 9.</li>
+<li>Can we find the difference between the successive numbers?
+<div class="mathblock"><p>\(5 - 3 = 7 - 5 = 9 - 7 = 2\)</p></div></li>
+</ol>
+<p>Therefore, the difference between successive numbers is always 2.</p>
+<h3 id="s-illustration-2">Illustration 2</h3>
+<p>A man got a job whose initial monthly salary is fixed at &#8377;10,000 with an annual increment of &#8377;2000. His salary during 1<sup>st</sup>, 2<sup>nd</sup> and 3<sup>rd</sup> years will be &#8377;10000, &#8377;12000 and &#8377;14000 respectively.</p>
+<p>If we now calculate the difference of the salaries for the successive years, we get \(12000 - 10000 = 2000;\ 14000 - 12000 = 2000\). Thus the difference between the successive numbers (salaries) is always 2000.</p>
+<p>Did you observe the common property behind these two illustrations? In these two examples, the difference between successive terms always remains constant. Moreover, each term is obtained by adding a fixed number (2 and 2000 in illustrations 1 and 2 presented above) to the preceding term except the <strong>first term</strong>. This fixed number which is a constant for the differences between successive terms is called the &ldquo;<strong>common difference</strong>&rdquo;.</p>
+<div class="callout"><p class="callout-title">Definition</p>
+<p>Let \(a\) and \(d\) be real numbers. Then the numbers of the form \(a,\ a + d,\ a + 2d,\ a + 3d,\ a + 4d, \ldots\) is said to form <strong>Arithmetic Progression</strong> denoted by A.P. The number &lsquo;\(a\)&rsquo; is called the <strong>first term</strong> and &lsquo;\(d\)&rsquo; is called the <strong>common difference</strong>.</p></div>
+<p>Simply, an Arithmetic Progression is a sequence whose successive terms differ by a constant number. Thus, for example, the set of even positive integers 2, 4, 6, 8, 10, 12,&hellip; is an A.P. whose first term is \(a = 2\) and common difference is also \(d = 2\) since \(4 - 2 = 2,\ 6 - 4 = 2,\ 8 - 6 = 2, \ldots\)</p>
+<p>Most of common real&ndash;life situations often produce numbers in A.P.</p>
+<div class="callout"><p class="callout-title">Note</p>
+<ul>
+<li>The difference between any two consecutive terms of an A.P. is always constant. That constant value is called the common difference.</li>
+<li>If there are finite numbers of terms in an A.P. then it is called Finite Arithmetic Progression. If there are infinitely many terms in an A.P. then it is called Infinite Arithmetic Progression.</li>
+</ul>
+</div>
+<h3 id="s-2-7-1">2.7.1 Terms and Common Difference of an A.P.</h3>
+<ol>
+<li>The terms of an A.P. can be written as
+<div class="mathblock"><p>\(t_1 = a = a + (1 - 1)d, \qquad t_2 = a + d = a + (2 - 1)d,\)</p><p>\(t_3 = a + 2d = a + (3 - 1)d, \qquad t_4 = a + 3d = a + (4 - 1)d, \ldots\)</p></div>
+<p>In general, the \(n^{th}\) term denoted by \(t_n\) can be written as \(t_n = a + (n - 1)d\).</p>
+<div class="callout"><p>In an AP, \(n^{th}\) term is, \(t_n = a + (n - 1)d\), here, \(a\) is the first term, \(d\) is the common difference.</p></div></li>
+<li>In general to find the common difference of an A.P. we should subtract first term from the second term, second from the third and so on.
+<p>For example, \(t_1 = a,\ t_2 = a + d\)</p>
+<div class="mathblock"><p>\(\therefore\ t_2 - t_1 = (a + d) - a = d\)</p></div>
+<p>Similarly, \(t_2 = a + d,\ t_3 = a + 2d, \ldots\)</p>
+<div class="mathblock"><p>\(\therefore\ t_3 - t_2 = (a + 2d) - (a + d) = d\)</p></div>
+<p>In general, \(d = t_2 - t_1 = t_3 - t_2 = t_4 - t_3 = \ldots\)</p>
+<div class="mathblock"><p>\(d = t_n - t_{n-1} \quad \text{for } n = 2, 3, 4, \ldots\)</p></div></li>
+</ol>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<ol>
+<li>The difference between any two consecutive terms of an A.P. is \(\underline{\qquad}\).</li>
+<li>If \(a\) and \(d\) are the first term and common difference of an A.P. then the \(8^{th}\) term is \(\underline{\qquad}\).</li>
+<li>If \(t_n\) is the \(n^{th}\) term of an A.P., then \(t_{2n} - t_n\) is \(\underline{\qquad}\).</li>
+</ol>
+</div>
+<p>Let us try to find the common differences of the following A.P.&rsquo;s</p>
+<ol type="i">
+<li>\(1, 4, 7, 10, \ldots\)
+<div class="mathblock"><p>\(d = 4 - 1 = 7 - 4 = 10 - 7 = \ldots = 3\)</p></div></li>
+<li>\(6, 2, -2, -6, \ldots\)
+<div class="mathblock"><p>\(d = 2 - 6 = -2 - 2 = -6 - (-2) = \ldots = -4\)</p></div></li>
+</ol>
+<div class="callout"><p class="callout-title">Do you know?</p>
+<p>The common difference of an A.P. can be positive, negative or zero.</p></div>
+<div class="callout"><p class="callout-title">Thinking Corner</p>
+<p>If \(t_n\) is the \(n^{th}\) term of an A.P. then the value of \(t_{n+1} - t_{n-1}\) is \(\underline{\qquad}\).</p></div>
+<h4 class="callout-h">Example 2.23</h4>
+<p>Check whether the following sequences are in A.P. or not?</p>
+<p>(i) \(x + 2,\ 2x + 3,\ 3x + 4, \ldots\) &emsp; (ii) \(2, 4, 8, 16, \ldots\) &emsp; (iii) \(3\sqrt{2}, 5\sqrt{2}, 7\sqrt{2}, 9\sqrt{2}, \ldots\)</p>
+<h4 class="callout-h">Solution</h4>
+<p>To check that the given sequence is in A.P., it is enough to check if the differences between the consecutive terms are equal or not.</p>
+<ol type="i">
+<li><div class="mathblock"><p>\(\begin{aligned} t_2 - t_1 &amp;= (2x + 3) - (x + 2) = x + 1 \\ t_3 - t_2 &amp;= (3x + 4) - (2x + 3) = x + 1 \\ t_2 - t_1 &amp;= t_3 - t_2 \end{aligned}\)</p></div>
+<p>Thus, the differences between consecutive terms are equal.</p>
+<p>Hence the sequence \(x + 2,\ 2x + 3,\ 3x + 4, \ldots\) is in A.P.</p></li>
+<li><div class="mathblock"><p>\(\begin{aligned} t_2 - t_1 &amp;= 4 - 2 = 2 \\ t_3 - t_2 &amp;= 8 - 4 = 4 \\ t_2 - t_1 &amp;\ne t_3 - t_2 \end{aligned}\)</p></div>
+<p>Thus, the differences between consecutive terms are not equal. Hence the terms of the sequence \(2, 4, 8, 16, \ldots\) are not in A.P.</p></li>
+<li><div class="mathblock"><p>\(\begin{aligned} t_2 - t_1 &amp;= 5\sqrt{2} - 3\sqrt{2} = 2\sqrt{2} \\ t_3 - t_2 &amp;= 7\sqrt{2} - 5\sqrt{2} = 2\sqrt{2} \\ t_4 - t_3 &amp;= 9\sqrt{2} - 7\sqrt{2} = 2\sqrt{2} \end{aligned}\)</p></div>
+<p>Thus, the differences between consecutive terms are equal. Hence the terms of the sequence \(3\sqrt{2}, 5\sqrt{2}, 7\sqrt{2}, 9\sqrt{2}, \ldots\) are in A.P.</p></li>
+</ol>
+<h4 class="callout-h">Example 2.24</h4>
+<p>Write an A.P. whose first term is 20 and common difference is 8.</p>
+<h4 class="callout-h">Solution</h4>
+<p>First term \(= a = 20\); common difference \(= d = 8\)</p>
+<p>Arithmetic Progression is \(a,\ a + d,\ a + 2d,\ a + 3d, \ldots\)</p>
+<p>In this case, we get \(20,\ 20 + 8,\ 20 + 2(8),\ 20 + 3(8), \ldots\)</p>
+<p>So, the required A.P. is 20, 28, 36, 44, &hellip;</p>
+<div class="callout"><p class="callout-title">Note</p>
+<p>An Arithmetic progression having a common difference of zero is called a constant arithmetic progression.</p></div>
+<div class="callout"><p class="callout-title">Activity 4</p>
+<p>There are five boxes here. You have to pick one number from each box and form five Arithmetic Progressions.</p>
+<table class="tbl">
+<thead><tr><th>Box 1</th><th>Box 2</th><th>Box 3</th><th>Box 4</th><th>Box 5</th></tr></thead>
+<tbody>
+<tr><td>8, 6, \(-8\), 12, 85</td><td>14, 1, 40, \(-5\), 2</td><td>26, 3.5, \(-14\), 7, 55</td><td>20, 11, \(-11\), \(-3\), 70</td><td>32, 8.5, \(-2\), 17, 100</td></tr>
+</tbody>
+</table>
+</div>
+<h4 class="callout-h">Example 2.25</h4>
+<p>Find the \(15^{th}\), \(24^{th}\) and \(n^{th}\) term (general term) of an A.P. given by 3, 15, 27, 39,&hellip;</p>
+<h4 class="callout-h">Solution</h4>
+<p>We have, first term \(= a = 3\) and common difference \(= d = 15 - 3 = 12\).</p>
+<p>We know that \(n^{th}\) term (general term) of an A.P. with first term \(a\) and common difference \(d\) is given by \(t_n = a + (n - 1)d\)</p>
+<div class="mathblock"><p>\(t_{15} = a + (15 - 1)d = a + 14d = 3 + 14(12) = 171 \qquad (\text{Here } a = 3 \text{ and } d = 12)\)</p><p>\(t_{24} = a + (24 - 1)d = a + 23d = 3 + 23(12) = 279\)</p></div>
+<p>The \(n^{th}\) (general term) term is given by \(t_n = a + (n - 1)d\)</p>
+<div class="mathblock"><p>Thus, \(\begin{aligned} t_n &amp;= 3 + (n - 1)12 \\ t_n &amp;= 12n - 9 \end{aligned}\)</p></div>
+<div class="callout"><p class="callout-title">Note</p>
+<p>In a finite A.P. whose first term is \(a\) and last term \(l\), then the number of terms in the A.P. is given by \(l = a + (n - 1)d \Rightarrow n = \left(\dfrac{l - a}{d}\right) + 1\)</p></div>
+<h4 class="callout-h">Example 2.26</h4>
+<p>Find the number of terms in the A.P. 3, 6, 9, 12,&hellip;, 111.</p>
+<h4 class="callout-h">Solution</h4>
+<p>First term \(a = 3\); common difference \(d = 6 - 3 = 3\); last term \(l = 111\)</p>
+<div class="mathblock"><p>We know that, \(n = \left(\dfrac{l - a}{d}\right) + 1\)</p><p>\(n = \left(\dfrac{111 - 3}{3}\right) + 1 = 37\)</p></div>
+<p>Thus the A.P. contain 37 terms.</p>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<ol>
+<li>The common difference of a constant A.P. is \(\underline{\qquad}\).</li>
+<li>If a and l are first and last terms of an A.P. then the number of terms is \(\underline{\qquad}\).</li>
+</ol>
+</div>
+<h4 class="callout-h">Example 2.27</h4>
+<p>Determine the general term of an A.P. whose \(7^{th}\) term is \(-1\) and \(16^{th}\) term is 17.</p>
+<h4 class="callout-h">Solution</h4>
+<p>Let the A.P. be \(t_1, t_2, t_3, t_4, \ldots\)</p>
+<p>It is given that \(t_7 = -1\) and \(t_{16} = 17\)</p>
+<div class="mathblock"><p>\(a + (7 - 1)d = -1 \text{ and } a + (16 - 1)d = 17\)</p><p>\(a + 6d = -1 \qquad \ldots(1)\)</p><p>\(a + 15d = 17 \qquad \ldots(2)\)</p></div>
+<p>Subtracting equation (1) from equation (2), we get \(9d = 18 \Rightarrow d = 2\)</p>
+<p>Putting \(d = 2\) in equation (1), we get \(a + 12 = -1\ \therefore\ a = -13\)</p>
+<div class="mathblock"><p>Hence, general term \(\begin{aligned} t_n &amp;= a + (n - 1)d \\ &amp;= -13 + (n - 1) \times 2 = 2n - 15 \end{aligned}\)</p></div>
+<h4 class="callout-h">Example 2.28</h4>
+<p>If \(l^{th}\), \(m^{th}\) and \(n^{th}\) terms of an A.P. are \(x, y, z\) respectively, then show that</p>
+<p>(i) \(x(m - n) + y(n - l) + z(l - m) = 0\) &emsp; (ii) \((x - y)n + (y - z)l + (z - x)m = 0\)</p>
+<h4 class="callout-h">Solution</h4>
+<ol type="i">
+<li>Let \(a\) be the first term and \(d\) be the common difference. It is given that
+<div class="mathblock"><p>\(t_l = x,\ t_m = y,\ t_n = z\)</p></div>
+<p>Using the general term formula</p>
+<div class="mathblock"><p>\(a + (l - 1)d = x \qquad \ldots(1)\)</p><p>\(a + (m - 1)d = y \qquad \ldots(2)\)</p><p>\(a + (n - 1)d = z \qquad \ldots(3)\)</p></div>
+<p>We have, \(x(m - n) + y(n - l) + z(l - m)\)</p>
+<div class="mathblock"><p>\(= a[(m - n) + (n - l) + (l - m)] + d[(m - n)(l - 1) + (n - l)(m - 1) + (l - m)(n - 1)]\)</p><p>\(= a[0] + d[lm - ln - m + n + mn - lm - n + l + ln - mn - l + m]\)</p><p>\(= a(0) + d(0) = 0\)</p></div></li>
+<li>On subtracting equation (2) from equation (1), equation (3) from equation (2) and equation (1) from equation (3), we get
+<div class="mathblock"><p>\(x - y = (l - m)d\)</p><p>\(y - z = (m - n)d\)</p><p>\(z - x = (n - l)d\)</p><p>\(\begin{aligned} (x - y)n + (y - z)l + (z - x)m &amp;= [(l - m)n + (m - n)l + (n - l)m]d \\ &amp;= [ln - mn + lm - nl + nm - lm]d = 0 \end{aligned}\)</p></div></li>
+</ol>
+<div class="callout"><p class="callout-title">Note</p>
+<p>In an Arithmetic Progression</p>
+<ul>
+<li>If every term is added or subtracted by a constant, then the resulting sequence is also an A.P.</li>
+<li>If every term is multiplied or divided by a non-zero number, then the resulting sequence is also an A.P.</li>
+<li>If the sum of three consecutive terms of an A.P. is given, then they can be taken as \(a - d,\ a\) and \(a + d\). Here the common difference is \(d\).</li>
+<li>If the sum of four consecutive terms of an A.P. is given then, they can be taken as \(a - 3d,\ a - d,\ a + d\) and \(a + 3d\). Here common difference is \(2d\).</li>
+</ul>
+</div>
+<h4 class="callout-h">Example 2.29</h4>
+<p>In an A.P., sum of four consecutive terms is 28 and the sum of their squares is 276. Find the four numbers.</p>
+<h4 class="callout-h">Solution</h4>
+<p>Let us take the four terms in the form \((a - 3d), (a - d), (a + d)\) and \((a + 3d)\).</p>
+<p>Since, sum of the four terms is 28,</p>
+<div class="mathblock"><p>\(a - 3d + a - d + a + d + a + 3d = 28\)</p><p>\(4a = 28 \Rightarrow a = 7\)</p></div>
+<p>Similarly, since sum of their squares is 276,</p>
+<div class="mathblock"><p>\((a - 3d)^2 + (a - d)^2 + (a + d)^2 + (a + 3d)^2 = 276.\)</p><p>\(a^2 - 6ad + 9d^2 + a^2 - 2ad + d^2 + a^2 + 2ad + d^2 + a^2 + 6ad + 9d^2 = 276\)</p><p>\(4a^2 + 20d^2 = 276 \Rightarrow 4(7)^2 + 20d^2 = 276.\)</p><p>\(d^2 = 4 \Rightarrow d = \pm\sqrt{4} \text{ then, } d = \pm 2\)</p></div>
+<p>If \(d = 2\) then the four numbers are \(7 - 3(2),\ 7 - 2,\ 7 + 2,\ 7 + 3(2)\)</p>
+<p>That is the four numbers are 1, 5, 9 and 13.</p>
+<p>If \(a = 7,\ d = -2\) then the four numbers are 13, 9, 5 and 1</p>
+<p>Therefore, the four consecutive terms of the A.P. are 1, 5, 9 and 13.</p>
+<h3 id="s-condition-three-numbers">Condition for three numbers to be in A.P.</h3>
+<p>If \(a, b, c\) are in A.P. then \(a = a,\ b = a + d,\ c = a + 2d\)</p>
+<div class="mathblock"><p>so \(\quad a + c = 2a + 2d = 2(a + d) = 2b\)</p><p>Thus, \(2b = a + c\)</p></div>
+<p>Similarly, if \(2b = a + c\), then \(b - a = c - b\) so \(a, b, c\) are in A.P.</p>
+<p>Thus three non-zero numbers \(a, b, c\) are in A.P. if and only if \(2b = a + c\)</p>
+<h4 class="callout-h">Example 2.30</h4>
+<p>A mother divides &#8377;207 into three parts such that the amount are in A.P. and gives it to her three children. The product of the two least amounts that the children had &#8377;4623. Find the amount received by each child.</p>
+<h4 class="callout-h">Solution</h4>
+<p>Let the amount received by the three children be in the form of A.P. is given by \(a - d,\ a,\ a + d\). Since, sum of the amount is &#8377;207, we have</p>
+<div class="mathblock"><p>\((a - d) + a + (a + d) = 207\)</p><p>\(3a = 207 \Rightarrow a = 69\)</p></div>
+<p>It is given that product of the two least amounts is 4623.</p>
+<div class="mathblock"><p>\((a - d)a = 4623\)</p><p>\((69 - d)69 = 4623\)</p><p>\(d = 2\)</p></div>
+<p>Therefore, amount given by the mother to her three children are &#8377;(69&minus;2), &#8377;69, &#8377;(69+2). That is, &#8377;67, &#8377;69 and &#8377;71.</p>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<ol>
+<li>If every term of an A.P. is multiplied by 3, then the common difference of the new A.P. is \(\underline{\qquad}\).</li>
+<li>Three numbers \(a\), \(b\) and \(c\) will be in A.P. if and only if \(\underline{\qquad}\).</li>
+</ol>
+</div>
+</article>
+<nav class="pager"><a class="" data-nav="prev" href="../../02-numbers-and-sequences/10-exercise-2.4/index.html"><span class="dir">← Previous</span><span class="t">Exercise 2.4</span><span class="ch">Numbers and Sequences</span></a><a class="nx" data-nav="next" href="../../02-numbers-and-sequences/12-exercise-2.5/index.html"><span class="dir">Next →</span><span class="t">Exercise 2.5</span><span class="ch">Numbers and Sequences</span></a></nav>
+</main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'\\(',right:'\\)',display:false},
+    {left:'$$',right:'$$',display:true},
+    {left:'\\[',right:'\\]',display:true}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']})"></script>
+<script src="../../../assets/book.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=3"></script>
+</body>
+</html>

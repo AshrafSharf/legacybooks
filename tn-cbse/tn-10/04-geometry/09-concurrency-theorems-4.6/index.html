@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>4.6 Concurrency Theorems — Geometry</title>
+<meta name="description" content="Class 10 Mathematics · Geometry · 4.6 Concurrency Theorems">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="../../../assets/book.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 10 Mathematics</a></span>
+    <span class="c2">Geometry · 4.6 Concurrency Theorems</span>
+  </div>
+  <a class="tb-btn" data-nav="prev" href="../../04-geometry/08-circles-and-tangents-4.5/index.html" title="4.5 Circles and Tangents">←</a>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary>
+<div class="drawer-panel"><div class="dh">Geometry</div><a href="../01-chapter-opener/index.html">Chapter opener; 4.1 Introduction</a><a href="../02-similarity-4.2/index.html">4.2 Similarity</a><a href="../03-exercise-4.1/index.html">Exercise 4.1</a><a href="../04-thales-theorem-and-angle-bisector-theorem-4.3/index.html">4.3 Thales Theorem and Angle Bisector Theorem</a><a href="../05-exercise-4.2/index.html">Exercise 4.2</a><a href="../06-pythagoras-theorem-4.4/index.html">4.4 Pythagoras Theorem</a><a href="../07-exercise-4.3/index.html">Exercise 4.3</a><a href="../08-circles-and-tangents-4.5/index.html">4.5 Circles and Tangents</a><a href="../09-concurrency-theorems-4.6/index.html" aria-current="page">4.6 Concurrency Theorems</a><a href="../10-exercise-4.4/index.html">Exercise 4.4</a><a href="../11-exercise-4.5/index.html">Exercise 4.5</a><a href="../12-unit-exercise/index.html">Unit Exercise</a><a href="../13-summary/index.html">Points to Remember</a><a href="../14-ict-corner/index.html">ICT Corner</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../04-geometry/10-exercise-4.4/index.html" title="Exercise 4.4">→</a>
+  <button class="tb-btn" data-theme-toggle title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<div class="progress"><span style="width:60.1%"></span></div>
+</header>
+<main class="wrap">
+<div class="sec-head">
+  <p class="eyebrow"><a href="../index.html">Chapter 4 · Geometry</a></p>
+  <h1>4.6 Concurrency Theorems</h1>
+  <p class="sec-meta">Textbook pages 35–37 · 6 figures</p>
+</div>
+<article class="prose">
+<div class="callout"><p class="callout-title">Definition</p>
+<figure class="fig side-fig"><img src="img/cevian.webp" alt="Triangle ABC with cevian AD" loading="lazy" width="276" height="234"></figure>
+<p>A cevian is a line segment that extends from one vertex of a triangle to the opposite side. In the diagram, AD is a cevian, from \(A\).</p>
+</div>
+<h3 id="s-special-cevians">Special cevians</h3>
+<ol type="i">
+<li>A median is a <strong>cevian</strong> that divides the opposite side into two congruent(equal) lengths.</li>
+<li>An altitude is a <strong>cevian</strong> that is perpendicular to the opposite side.</li>
+<li>An angle bisector is a <strong>cevian</strong> that bisects the corresponding angle.</li>
+</ol>
+<div class="callout"><p class="callout-title">Do you know?</p>
+<p>The term cevian comes from the name of Italian engineer Giovanni Ceva, who proved a well known theorem about cevians.</p>
+</div>
+<h3 id="s-cevas-theorem-without-proof">Ceva’s Theorem (without proof)</h3>
+<p><strong>Statement</strong></p>
+<figure class="fig side-fig"><img src="img/f470.webp" alt="Triangle ABC with concurrent cevians AD, BE, CF" loading="lazy" width="369" height="366"></figure>
+<p>Let ABC be a triangle and let \(D, E, F\) be points on lines \(BC\), \(CA\), \(AB\) respectively. Then the cevians \(AD\), \(BE\), \(CF\) are concurrent if and only if \(\dfrac{BD}{DC} \times \dfrac{CE}{EA} \times \dfrac{AF}{FB} = 1\) where the lengths are directed. This also works for the reciprocal of each of the ratios as the reciprocal of 1 is 1.</p>
+<div class="callout"><p class="callout-title">Do you know? — Giovanni Ceva (Dec 7, 1647 – June 15, 1734)</p>
+<p>In 1686, Ceva was designated as the professor of Mathematics, University of Mantua and worked there for the rest of the life. In 1678, he published an important theorem on synthetic geometry for a triangle called Ceva’s theorem.</p>
+<p>Ceva also rediscovered and published in the Journal Opuscula mathematica and Geometria motus in 1692. He applied these ideas in mechanics and hydraulics.</p>
+</div>
+<div class="callout"><p class="callout-title">Note</p>
+<p>The cevians do not necessarily lie within the triangle, although they do in the diagram.</p>
+</div>
+<h3 id="s-menelaus-theorem-without-proof">Menelaus Theorem (without proof)</h3>
+<p><strong>Statement</strong></p>
+<figure class="fig side-fig"><img src="img/f471.webp" alt="Triangle ABC with transversal through P on BC, R on AB and Q on CA extended" loading="lazy" width="378" height="414"></figure>
+<p>A necessary and sufficient condition for points \(P\), \(Q\), \(R\) on the respective sides BC, \(CA\), \(AB\) (or their extension) of a triangle \(ABC\) to be collinear is that \(\dfrac{BP}{PC} \times \dfrac{CQ}{QA} \times \dfrac{AR}{RB} = -1\) where all segments in the formula are directed segments.</p>
+<div class="callout"><p class="callout-title">Do you know? — Menelaus</p>
+<p>Menelaus was a Greek mathematician who lived during the Roman empire in both Alexandria and Rome during first century (CE). His work was largely on the geometry of spheres.</p>
+<p>Menelaus theorem was first discussed in his book, sphaerica and later mentioned by Ptolemy in his work Almagest.</p>
+<p>Menelaus theorem proves that spheres are made up of spherical triangles.</p>
+</div>
+<div class="callout"><p class="callout-title">Note</p>
+<ul>
+<li>Menelaus theorem can also be given as \(BP \times CQ \times AR = -PC \times QA \times RB\).</li>
+<li>If BP is replaced by \(PB\) (or) \(CQ\) by \(QC\) (or) \(AR\) by \(RA\), or if any one of the six directed line segments \(BP\), \(PC\), \(CQ\), \(QA\), \(AR\), \(RB\) is interchanged, then the product will be 1.</li>
+</ul>
+</div>
+<h4 class="callout-h" id="s-example-4-32">Example 4.32</h4>
+<p>Show that in a triangle, the medians are concurrent.</p>
+<figure class="fig side-fig"><img src="img/f472.webp" alt="Triangle ABC with medians AD, BE, CF" loading="lazy" width="339" height="420"></figure>
+<h4 class="callout-h" id="s-solution">Solution</h4>
+<p>Medians are line segments joining each vertex to the midpoint of the corresponding opposite sides.</p>
+<p>Thus medians are the cevians where \(D\), \(E\), \(F\) are midpoints of \(BC\), \(CA\) and \(AB\) respectively.</p>
+<div class="mathblock"><p>Since \(D\) is a midpoint of \(BC\), \(BD = DC\) so \(\dfrac{BD}{DC} = 1\) ...(1)</p><p>Since, \(E\) is a midpoint of \(CA\), \(CE = EA\) so \(\dfrac{CE}{EA} = 1\) ... (2)</p><p>Since, \(F\) is a midpoint of \(AB\), \(AF = FB\) so \(\dfrac{AF}{FB} = 1\) ... (3)</p></div>
+<p>Thus, multiplying (1), (2) and (3) we get,</p>
+<div class="mathblock"><p>\(\dfrac{BD}{DC} \times \dfrac{CE}{EA} \times \dfrac{AF}{FB} = 1 \times 1 \times 1 = 1\)</p></div>
+<p>And so, Ceva’s theorem is satisfied.</p>
+<p>Hence the Medians are concurrent.</p>
+<div class="callout"><p class="callout-title">Do you know?</p>
+<p>Centroid is the point of concurrence of the median of a triangle.</p>
+</div>
+<h4 class="callout-h" id="s-example-4-33">Example 4.33</h4>
+<p>In \(\Delta ABC\), points \(D, E, F\) lies on \(BC\), \(CA\), \(AB\) respectively. Suppose \(AB\), \(AC\) and \(BC\) have lengths 13, 14 and 15 respectively. If \(\dfrac{AF}{FB} = \dfrac{2}{5}\) and \(\dfrac{CE}{EA} = \dfrac{5}{8}\). Find \(BD\) and \(DC\).</p>
+<figure class="fig side-fig"><img src="img/f473.webp" alt="Triangle ABC with cevians AD, BE, CF; BD = x, DC = y" loading="lazy" width="399" height="366"></figure>
+<h4 class="callout-h" id="s-solution-2">Solution</h4>
+<p>Given that \(AB = 13\), \(AC = 14\) and \(BC = 15\).</p>
+<p>Let \(BD = x\) and \(DC = y\)</p>
+<div class="mathblock"><p>Using Ceva’s theorem, we have, \(\dfrac{BD}{DC} \times \dfrac{CE}{EA} \times \dfrac{AF}{FB} = 1\) ...(1)</p></div>
+<p>Substitute the values of \(\dfrac{AF}{FB}\) and \(\dfrac{CE}{EA}\) in (1),</p>
+<div class="mathblock"><p>we have \(\dfrac{BD}{DC} \times \dfrac{5}{8} \times \dfrac{2}{5} = 1\)</p><p>\(\dfrac{x}{y} \times \dfrac{10}{40} = 1\) we get, \(\dfrac{x}{y} \times \dfrac{1}{4} = 1\). Hence, \(x = 4y\) ...(2)</p><p>\(BC = BD + DC = 15\) so, \(x + y = 15\) ... (3)</p></div>
+<p>From (2), using \(x = 4y\) in (3) we get, \(4y + y = 15\) gives \(5y = 15\) then \(y = 3\)</p>
+<p>Substitute \(y = 3\) in (3) we get, \(x = 12\). Hence \(BD = 12\), \(DC = 3\).</p>
+<h4 class="callout-h" id="s-example-4-34">Example 4.34</h4>
+<p>In a garden containing several trees, three particular trees \(P\), \(Q\), \(R\) are located in the following way, \(BP = 2\) m, \(CQ = 3\) m, \(RA = 10\) m, \(PC = 6\) m, \(QA = 5\) m, \(RB = 2\) m, where \(A\), \(B\), \(C\) are points such that \(P\) lies on \(BC\), \(Q\) lies on \(AC\) and \(R\) lies on \(AB\). Check whether the trees P, \(Q\), \(R\) lie on a same straight line.</p>
+<figure class="fig side-fig"><img src="img/f474.webp" alt="Garden with trees: triangle ABC with P on BC, Q on AC and R on AB extended, P, Q, R joined by a line" loading="lazy" width="447" height="465"></figure>
+<h4 class="callout-h" id="s-solution-3">Solution</h4>
+<p>By Menelaus theorem, the trees \(P\), \(Q\), \(R\) will be collinear (lie on same straight line)</p>
+<div class="mathblock"><p>if \(\dfrac{BP}{PC} \times \dfrac{CQ}{QA} \times \dfrac{RA}{RB} = 1\) ...(1)</p></div>
+<p>Given \(BP = 2\) m, \(CQ = 3\) m, \(RA = 10\) m, \(PC = 6\) m, \(QA = 5\) m and \(RB = 2\) m</p>
+<div class="mathblock"><p>Substituting these values in (1) we get, \(\dfrac{BP}{PC} \times \dfrac{CQ}{QA} \times \dfrac{RA}{RB} = \dfrac{2}{6} \times \dfrac{3}{5} \times \dfrac{10}{2} = \dfrac{60}{60} = 1\)</p></div>
+<p>Hence the trees P, \(Q\), \(R\) lie on a same straight line.</p>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<ol>
+<li>A straight line that touches a circle at a common point is called a \(\underline{\qquad}\).</li>
+<li>A chord is a subsection of \(\underline{\qquad}\).</li>
+<li>The lengths of the two tangents drawn from \(\underline{\qquad}\) point to a circle are equal.</li>
+<li>No tangent can be drawn from \(\underline{\qquad}\) of the circle.</li>
+<li>\(\underline{\qquad}\) is a cevian that divides the angle, into two equal halves.</li>
+</ol>
+</div>
+</article>
+<nav class="pager"><a class="" data-nav="prev" href="../../04-geometry/08-circles-and-tangents-4.5/index.html"><span class="dir">← Previous</span><span class="t">4.5 Circles and Tangents</span><span class="ch">Geometry</span></a><a class="nx" data-nav="next" href="../../04-geometry/10-exercise-4.4/index.html"><span class="dir">Next →</span><span class="t">Exercise 4.4</span><span class="ch">Geometry</span></a></nav>
+</main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'\\(',right:'\\)',display:false},
+    {left:'$$',right:'$$',display:true},
+    {left:'\\[',right:'\\]',display:true}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']})"></script>
+<script src="../../../assets/book.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=3"></script>
+</body>
+</html>

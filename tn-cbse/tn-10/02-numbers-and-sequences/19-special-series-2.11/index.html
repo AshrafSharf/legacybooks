@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2.11 Special Series — Numbers and Sequences</title>
+<meta name="description" content="Class 10 Mathematics · Numbers and Sequences · 2.11 Special Series">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="../../../assets/book.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 10 Mathematics</a></span>
+    <span class="c2">Numbers and Sequences · 2.11 Special Series</span>
+  </div>
+  <a class="tb-btn" data-nav="prev" href="../../02-numbers-and-sequences/18-exercise-2.8/index.html" title="Exercise 2.8">←</a>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary>
+<div class="drawer-panel"><div class="dh">Numbers and Sequences</div><a href="../01-chapter-opener/index.html">Chapter opener; 2.1 Introduction</a><a href="../02-euclid-s-division-lemma-2.2/index.html">2.2 Euclid’s Division Lemma</a><a href="../03-euclid-s-division-algorithm-2.3/index.html">2.3 Euclid’s Division Algorithm</a><a href="../04-exercise-2.1/index.html">Exercise 2.1</a><a href="../05-fundamental-theorem-of-arithmetic-2.4/index.html">2.4 Fundamental Theorem of Arithmetic</a><a href="../06-exercise-2.2/index.html">Exercise 2.2</a><a href="../07-modular-arithmetic-2.5/index.html">2.5 Modular Arithmetic</a><a href="../08-exercise-2.3/index.html">Exercise 2.3</a><a href="../09-sequences-2.6/index.html">2.6 Sequences</a><a href="../10-exercise-2.4/index.html">Exercise 2.4</a><a href="../11-arithmetic-progression-2.7/index.html">2.7 Arithmetic Progression</a><a href="../12-exercise-2.5/index.html">Exercise 2.5</a><a href="../13-series-2.8/index.html">2.8 Series</a><a href="../14-exercise-2.6/index.html">Exercise 2.6</a><a href="../15-geometric-progression-2.9/index.html">2.9 Geometric Progression</a><a href="../16-exercise-2.7/index.html">Exercise 2.7</a><a href="../17-sum-to-n-terms-of-a-geometric-progression-2.10/index.html">2.10 Sum to n terms of a Geometric progression</a><a href="../18-exercise-2.8/index.html">Exercise 2.8</a><a href="../19-special-series-2.11/index.html" aria-current="page">2.11 Special Series</a><a href="../20-exercise-2.9/index.html">Exercise 2.9</a><a href="../21-exercise-2.10/index.html">Exercise 2.10</a><a href="../22-unit-exercise/index.html">Unit Exercise</a><a href="../23-summary/index.html">Points to Remember</a><a href="../24-ict-corner/index.html">ICT Corner</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../02-numbers-and-sequences/20-exercise-2.9/index.html" title="Exercise 2.9">→</a>
+  <button class="tb-btn" data-theme-toggle title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<div class="progress"><span style="width:24.8%"></span></div>
+</header>
+<main class="wrap">
+<div class="sec-head">
+  <p class="eyebrow"><a href="../index.html">Chapter 2 · Numbers and Sequences</a></p>
+  <h1>2.11 Special Series</h1>
+  <p class="sec-meta">Textbook pages 41–46 · 3 figures</p>
+</div>
+<article class="prose">
+<p>There are some series whose sum can be expressed by explicit formulae. Such series are called <strong>special series</strong>.</p>
+<p>Here we study some common special series like</p>
+<ol type="i">
+<li>Sum of first &lsquo;\(n\)&rsquo; natural numbers</li>
+<li>Sum of first &lsquo;\(n\)&rsquo; odd natural numbers.</li>
+<li>Sum of squares of first &lsquo;\(n\)&rsquo; natural numbers.</li>
+<li>Sum of cubes of first &lsquo;\(n\)&rsquo; natural numbers.</li>
+</ol>
+<p>We can derive the formula for sum of any powers of first \(n\) natural numbers using the expression \((x + 1)^{k+1} - x^{k+1}\). That is to find \(1^k + 2^k + 3^k + \ldots + n^k\) we can use the expression \((x + 1)^{k+1} - x^{k+1}\).</p>
+<h3 id="s-2-11-1">2.11.1 Sum of first <em>n</em> natural numbers</h3>
+<p>To find \(1 + 2 + 3 + \cdots + n\), let us consider the identity \((x + 1)^2 - x^2 = 2x + 1\)</p>
+<p>Where \(x = 1, 2, 3, \ldots, n - 1, n\)</p>
+<div class="mathblock"><p>\(\begin{aligned} x = 1,&amp;\quad 2^2 - 1^2 = 2(1) + 1 \\ x = 2,&amp;\quad 3^2 - 2^2 = 2(2) + 1 \\ x = 3,&amp;\quad 4^2 - 3^2 = 2(3) + 1 \\ &amp;\quad\ \vdots \\ x = n - 1,&amp;\quad n^2 - (n - 1)^2 = 2(n - 1) + 1 \\ x = n,&amp;\quad (n + 1)^2 - n^2 = 2(n) + 1 \end{aligned}\)</p></div>
+<p>Adding all these equations and cancelling the terms on the Left Hand side, we get,</p>
+<div class="mathblock"><p>\(\begin{aligned} (n + 1)^2 - 1^2 &amp;= 2(1 + 2 + 3 + \cdots + n) + n \\ n^2 + 2n &amp;= 2(1 + 2 + 3 + \cdots + n) + n \\ 2(1 + 2 + 3 + \cdots + n) &amp;= n^2 + n = n(n + 1) \\ 1 + 2 + 3 + \cdots + n &amp;= \dfrac{n(n + 1)}{2} \end{aligned}\)</p></div>
+<h3 id="s-2-11-2">2.11.2 Sum of first <em>n</em> odd natural numbers</h3>
+<p>\(1 + 3 + 5 + \cdots + (2n - 1)\)</p>
+<p>It is an A.P. with \(a = 1,\ d = 2\) and \(l = 2n - 1\)</p>
+<div class="mathblock"><p>\(\begin{aligned} S_n &amp;= \dfrac{n}{2}[a + l] \\ &amp;= \dfrac{n}{2}[1 + 2n - 1] \\ S_n &amp;= \dfrac{n}{2} \times 2n = n^2 \end{aligned}\)</p></div>
+<h3 id="s-2-11-3">2.11.3 Sum of squares of first <em>n</em> natural numbers</h3>
+<p>To find \(1^2 + 2^2 + 3^2 + \cdots + n^2\), let us consider the identity \((x + 1)^3 - x^3 = 3x^2 + 3x + 1\)</p>
+<p>Where \(x = 1, 2, 3, \ldots, n - 1, n\)</p>
+<div class="mathblock"><p>\(\begin{aligned} x = 1,&amp;\quad 2^3 - 1^3 = 3(1)^2 + 3(1) + 1 \\ x = 2,&amp;\quad 3^3 - 2^3 = 3(2)^2 + 3(2) + 1 \\ x = 3,&amp;\quad 4^3 - 3^3 = 3(3)^2 + 3(3) + 1 \\ &amp;\quad\ \vdots \\ x = n - 1,&amp;\quad n^3 - (n - 1)^3 = 3(n - 1)^2 + 3(n - 1) + 1 \\ x = n,&amp;\quad (n + 1)^3 - n^3 = 3n^2 + 3n + 1 \end{aligned}\)</p></div>
+<p>Adding all these equations and cancelling the terms on the Left Hand side, we get,</p>
+<div class="mathblock"><p>\(\begin{aligned} (n + 1)^3 - 1^3 &amp;= 3(1^2 + 2^2 + 3^2 + \cdots + n^2) + 3(1 + 2 + 3 + \cdots + n) + n \\ n^3 + 3n^2 + 3n &amp;= 3(1^2 + 2^2 + 3^2 + \cdots + n^2) + \dfrac{3n(n + 1)}{2} + n \\ 3(1^2 + 2^2 + 3^2 + \cdots + n^2) &amp;= n^3 + 3n^2 + 2n - \dfrac{3n(n + 1)}{2} = \dfrac{2n^3 + 6n^2 + 4n - 3n^2 - 3n}{2} \\ 3(1^2 + 2^2 + 3^2 + \ldots + n^2) &amp;= \dfrac{2n^3 + 3n^2 + n}{2} = \dfrac{n(2n^2 + 3n + 1)}{2} = \dfrac{n(n + 1)(2n + 1)}{2} \\ 1^2 + 2^2 + 3^2 + \cdots + n^2 &amp;= \dfrac{n(n + 1)(2n + 1)}{6} \end{aligned}\)</p></div>
+<h3 id="s-2-11-4">2.11.4 Sum of cubes of first <em>n</em> natural numbers</h3>
+<p>To find \(1^3 + 2^3 + 3^3 + \cdots + n^3\), let us consider the identity \((x + 1)^4 - x^4 = 4x^3 + 6x^2 + 4x + 1\)</p>
+<p>Where \(x = 1, 2, 3, \ldots, n - 1, n\)</p>
+<div class="mathblock"><p>\(\begin{aligned} x = 1,&amp;\quad 2^4 - 1^4 = 4(1)^3 + 6(1)^2 + 4(1) + 1 \\ x = 2,&amp;\quad 3^4 - 2^4 = 4(2)^3 + 6(2)^2 + 4(2) + 1 \\ x = 3,&amp;\quad 4^4 - 3^4 = 4(3)^3 + 6(3)^2 + 4(3) + 1 \\ &amp;\quad\ \vdots \\ x = n - 1,&amp;\quad n^4 - (n - 1)^4 = 4(n - 1)^3 + 6(n - 1)^2 + 4(n - 1) + 1 \\ x = n,&amp;\quad (n + 1)^4 - n^4 = 4n^3 + 6n^2 + 4n + 1 \end{aligned}\)</p></div>
+<p>Adding all these equations and cancelling the terms on the Left Hand side, we get,</p>
+<div class="mathblock"><p>\((n + 1)^4 - 1^4 = 4(1^3 + 2^3 + 3^3 + \cdots + n^3) + 6(1^2 + 2^2 + 3^2 + \cdots + n^2) + 4(1 + 2 + 3 + \cdots + n) + n\)</p><p>\(n^4 + 4n^3 + 6n^2 + 4n = 4(1^3 + 2^3 + 3^3 + \cdots + n^3) + 6 \times \dfrac{n(n + 1)(2n + 1)}{6} + 4 \times \dfrac{n(n + 1)}{2} + n\)</p><p>\(4(1^3 + 2^3 + 3^3 + \cdots + n^3) = n^4 + 4n^3 + 6n^2 + 4n - 2n^3 - n^2 - 2n^2 - n - 2n^2 - 2n - n\)</p><p>\(4(1^3 + 2^3 + 3^3 + \cdots + n^3) = n^4 + 2n^3 + n^2 = n^2(n^2 + 2n + 1) = n^2(n + 1)^2\)</p><p>\(1^3 + 2^3 + 3^3 + \cdots + n^3 = \left(\dfrac{n(n + 1)}{2}\right)^2\)</p></div>
+<div class="callout"><p class="callout-title">Do you know? &mdash; Ideal Friendship</p>
+<p>Consider the numbers 220 and 284.</p>
+<p>Sum of the divisors of 220 (excluding 220) \(= 1 + 2 + 4 + 5 + 10 + 11 + 20 + 22 + 44 + 55 + 110 = 284\)</p>
+<p>Sum of the divisors of 284 (excluding 284) \(= 1 + 2 + 4 + 71 + 142 = 220\).</p>
+<p>Thus, sum of divisors of one number excluding itself is the other. Such pair of numbers is called <strong>Amicable Numbers</strong> or <strong>Friendly Numbers</strong>.</p>
+<p>220 and 284 are least pair of Amicable Numbers. They were discovered by Pythagoras. We now know more than 12 million amicable pair of Numbers.</p></div>
+<div class="callout"><p class="callout-title">Activity 6</p>
+<p>Take a triangle like this</p>
+<figure class="fig side-fig"><img src="img/fig-fix-tri1.webp" alt="Orange circles arranged in a triangle with rows of 1, 2, 3, 4" loading="lazy" width="331" height="327"><figcaption>Fig. 2.16 \((1 + 2 + 3 + 4)\)</figcaption></figure>
+<p>Make another triangle like this.</p>
+<figure class="fig side-fig"><img src="img/fig-fix-tri2.webp" alt="Green circles arranged in an inverted triangle with rows of 4, 3, 2, 1" loading="lazy" width="329" height="326"><figcaption>Fig. 2.17 \((4 + 3 + 2 + 1)\)</figcaption></figure>
+<p>Join the second triangle with the first to get</p>
+<figure class="fig side-fig"><img src="img/fig-fix-rect.webp" alt="The two triangles joined into a 4 by 5 rectangle of orange and green circles" loading="lazy" width="407" height="327"><figcaption>Fig. 2.18</figcaption></figure>
+<p>Thus, two copies of \(1 + 2 + 3 + 4\) provide a rectangle of size \(4 \times 5\).</p>
+<p>We can write in numbers, what we did with pictures.</p>
+<div class="mathblock"><p>Let us write, \((4 + 3 + 2 + 1) + (1 + 2 + 3 + 4) = 4 \times 5\)</p><p>\(2(1 + 2 + 3 + 4) = 4 \times 5\)</p><p>Therefore, \(1 + 2 + 3 + 4 = \dfrac{4 \times 5}{2} = 10\)</p></div>
+<p>In a similar, fashion, try to find the sum of first 5 natural numbers. Can you relate these answers to any of the known formula?</p>
+</div>
+<div class="callout"><p class="callout-title">Do you know?</p>
+<ol>
+<li>The sum of first \(n\) natural numbers are also called <strong>Triangular Numbers</strong> because they form triangle shapes.</li>
+<li>The sum of squares of first \(n\) natural numbers are also called <strong>Square Pyramidal Numbers</strong> because they form pyramid shapes with square base.</li>
+</ol>
+</div>
+<div class="callout"><p class="callout-title">Thinking Corner</p>
+<ol>
+<li>How many squares are there in a standard chess board?</li>
+<li>How many rectangles are there in a standard chess board?</li>
+</ol>
+</div>
+<p>Here is a summary of list of some useful summation formulae which we discussed. These formulae are used in solving summation problems with finite terms.</p>
+<div class="mathblock"><p>\(\begin{aligned} \sum_{k=1}^{n} k = 1 + 2 + 3 + \cdots + n &amp;= \dfrac{n(n + 1)}{2} \\ \sum_{k=1}^{n} (2k - 1) = 1 + 3 + 5 + \cdots + (2n - 1) &amp;= n^2 \\ \sum_{k=1}^{n} k^2 = 1^2 + 2^2 + 3^2 + \cdots + n^2 &amp;= \dfrac{n(n + 1)(2n + 1)}{6} \\ \sum_{k=1}^{n} k^3 = 1^3 + 2^3 + 3^3 + \cdots + n^3 &amp;= \left[\dfrac{n(n + 1)}{2}\right]^2 \end{aligned}\)</p></div>
+<h4 class="callout-h">Example 2.54</h4>
+<p>Find the value of (i) \(1 + 2 + 3 + \ldots + 50\) (ii) \(16 + 17 + 18 + \ldots + 75\)</p>
+<h4 class="callout-h">Solution</h4>
+<ol type="i">
+<li>\(1 + 2 + 3 + \cdots + 50\)
+<div class="mathblock"><p>Using, \(\quad 1 + 2 + 3 + \cdots + n = \dfrac{n(n + 1)}{2}\)</p><p>\(1 + 2 + 3 + \cdots + 50 = \dfrac{50 \times (50 + 1)}{2} = 1275\)</p></div></li>
+<li><div class="mathblock"><p>\(\begin{aligned} 16 + 17 + 18 + \cdots + 75 &amp;= (1 + 2 + 3 + \cdots + 75) - (1 + 2 + 3 + \cdots + 15) \\ &amp;= \dfrac{75(75 + 1)}{2} - \dfrac{15(15 + 1)}{2} \\ &amp;= 2850 - 120 = 2730 \end{aligned}\)</p></div></li>
+</ol>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<ol>
+<li>The sum of cubes of first \(n\) natural numbers is \(\underline{\qquad\qquad}\) of the first \(n\) natural numbers.</li>
+<li>The average of first 100 natural numbers is \(\underline{\qquad\qquad}\).</li>
+</ol>
+</div>
+<h4 class="callout-h">Example 2.55</h4>
+<p>Find the sum of (i) \(1 + 3 + 5 + \cdots\) to 40 terms (ii) \(2 + 4 + 6 + \cdots + 80\) (iii) \(1 + 3 + 5 + \cdots + 55\)</p>
+<h4 class="callout-h">Solution</h4>
+<ol type="i">
+<li>\(1 + 3 + 5 + \cdots 40 \text{ terms} = 40^2 = 1600\)</li>
+<li>\(2 + 4 + 6 + \cdots + 80 = 2(1 + 2 + 3 + \cdots + 40) = 2 \times \dfrac{40 \times (40 + 1)}{2} = 1640\)</li>
+<li>\(1 + 3 + 5 + \cdots + 55\)
+<p>Here the number of terms is not given. Now we have to find the number of terms using the formula, \(n = \dfrac{(l - a)}{d} + 1 \Rightarrow n = \dfrac{(55 - 1)}{2} + 1 = 28\)</p>
+<p>Therefore, \(1 + 3 + 5 + \cdots + 55 = (28)^2 = 784\)</p></li>
+</ol>
+<h4 class="callout-h">Example 2.56</h4>
+<p>Find the sum of (i) \(1^2 + 2^2 + \cdots + 19^2\) (ii) \(5^2 + 10^2 + 15^2 + \cdots + 105^2\) (iii) \(15^2 + 16^2 + 17^2 + \cdots + 28^2\)</p>
+<h4 class="callout-h">Solution</h4>
+<ol type="i">
+<li>\(1^2 + 2^2 + \cdots + 19^2 = \dfrac{19 \times (19 + 1)(2 \times 19 + 1)}{6} = \dfrac{19 \times 20 \times 39}{6} = 2470\)</li>
+<li><div class="mathblock"><p>\(\begin{aligned} 5^2 + 10^2 + 15^2 + \cdots + 105^2 &amp;= 5^2(1^2 + 2^2 + 3^2 + \cdots + 21^2) \\ &amp;= 25 \times \dfrac{21 \times (21 + 1)(2 \times 21 + 1)}{6} \\ &amp;= \dfrac{25 \times 21 \times 22 \times 43}{6} = 82775 \end{aligned}\)</p></div></li>
+<li><div class="mathblock"><p>\(\begin{aligned} 15^2 + 16^2 + 17^2 + \cdots + 28^2 &amp;= (1^2 + 2^2 + 3^2 + \cdots + 28^2) - (1^2 + 2^2 + 3^2 + \cdots + 14^2) \\ &amp;= \dfrac{28 \times 29 \times 57}{6} - \dfrac{14 \times 15 \times 29}{6} = 7714 - 1015 = 6699 \end{aligned}\)</p></div></li>
+</ol>
+<h4 class="callout-h">Example 2.57</h4>
+<p>Find the sum of (i) \(1^3 + 2^3 + 3^3 + \cdots + 16^3\) (ii) \(9^3 + 10^3 + \cdots + 21^3\)</p>
+<h4 class="callout-h">Solution</h4>
+<ol type="i">
+<li>\(1^3 + 2^3 + 3^3 + \cdots + 16^3 = \left[\dfrac{16 \times (16 + 1)}{2}\right]^2 = (136)^2 = 18496\)</li>
+<li><div class="mathblock"><p>\(\begin{aligned} 9^3 + 10^3 + \cdots + 21^3 &amp;= (1^3 + 2^3 + 3^3 + \cdots + 21^3) - (1^3 + 2^3 + 3^3 + \cdots + 8^3) \\ &amp;= \left[\dfrac{21 \times (21 + 1)}{2}\right]^2 - \left[\dfrac{8 \times (8 + 1)}{2}\right]^2 = (231)^2 - (36)^2 = 52065 \end{aligned}\)</p></div></li>
+</ol>
+<h4 class="callout-h">Example 2.58</h4>
+<p>If \(1 + 2 + 3 + \cdots + n = 666\) then find \(n\).</p>
+<h4 class="callout-h">Solution</h4>
+<p>Since, \(1 + 2 + 3 + \ldots + n = \dfrac{n(n + 1)}{2}\), we have \(\dfrac{n(n + 1)}{2} = 666\)</p>
+<div class="mathblock"><p>\(n^2 + n - 1332 = 0 \Rightarrow (n + 37)(n - 36) = 0\)</p><p>So, \(n = -37\) or \(n = 36\)</p></div>
+<p>But \(n \ne -37\) (\(\because n\) is a natural number); Hence \(n = 36\).</p>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<p>Say True or False. Justify them.</p>
+<ol>
+<li>The sum of first \(n\) odd natural numbers is always an odd number.</li>
+<li>The sum of consecutive even numbers is always an even number.</li>
+<li>The difference between the sum of squares of first \(n\) natural numbers and the sum of first \(n\) natural numbers is always divisible by 2.</li>
+<li>The sum of cubes of the first \(n\) natural numbers is always a square number.</li>
+</ol>
+</div>
+</article>
+<nav class="pager"><a class="" data-nav="prev" href="../../02-numbers-and-sequences/18-exercise-2.8/index.html"><span class="dir">← Previous</span><span class="t">Exercise 2.8</span><span class="ch">Numbers and Sequences</span></a><a class="nx" data-nav="next" href="../../02-numbers-and-sequences/20-exercise-2.9/index.html"><span class="dir">Next →</span><span class="t">Exercise 2.9</span><span class="ch">Numbers and Sequences</span></a></nav>
+</main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'\\(',right:'\\)',display:false},
+    {left:'$$',right:'$$',display:true},
+    {left:'\\[',right:'\\]',display:true}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']})"></script>
+<script src="../../../assets/book.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=3"></script>
+</body>
+</html>

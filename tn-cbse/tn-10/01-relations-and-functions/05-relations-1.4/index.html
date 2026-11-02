@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>1.4 Relations — Relations and Functions</title>
+<meta name="description" content="Class 10 Mathematics · Relations and Functions · 1.4 Relations">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="../../../assets/book.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 10 Mathematics</a></span>
+    <span class="c2">Relations and Functions · 1.4 Relations</span>
+  </div>
+  <a class="tb-btn" data-nav="prev" href="../../01-relations-and-functions/04-exercise-1.1/index.html" title="Exercise 1.1">←</a>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary>
+<div class="drawer-panel"><div class="dh">Relations and Functions</div><a href="../01-chapter-opener/index.html">Chapter opener; 1.1 Introduction</a><a href="../02-ordered-pair-1.2/index.html">1.2 Ordered Pair</a><a href="../03-cartesian-product-1.3/index.html">1.3 Cartesian Product</a><a href="../04-exercise-1.1/index.html">Exercise 1.1</a><a href="../05-relations-1.4/index.html" aria-current="page">1.4 Relations</a><a href="../06-exercise-1.2/index.html">Exercise 1.2</a><a href="../07-functions-1.5/index.html">1.5 Functions</a><a href="../08-exercise-1.3/index.html">Exercise 1.3</a><a href="../09-representation-of-functions-1.6/index.html">1.6 Representation of Functions</a><a href="../10-types-of-functions-1.7/index.html">1.7 Types of Functions</a><a href="../11-special-cases-of-functions-1.8/index.html">1.8 Special Cases of Functions</a><a href="../12-exercise-1.4/index.html">Exercise 1.4</a><a href="../13-composition-of-functions-1.9/index.html">1.9 Composition of Functions</a><a href="../14-identifying-the-graphs-of-linear-quadratic-cubic-and-reciprocal-functions-1.10/index.html">1.10 Identifying the Graphs of Linear, Quadratic, Cubic and Reciprocal Functions</a><a href="../15-exercise-1.5/index.html">Exercise 1.5</a><a href="../16-exercise-1.6/index.html">Exercise 1.6</a><a href="../17-unit-exercise/index.html">Unit Exercise</a><a href="../18-summary/index.html">Points to Remember</a><a href="../19-ict-corner/index.html">ICT Corner</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../01-relations-and-functions/06-exercise-1.2/index.html" title="Exercise 1.2">→</a>
+  <button class="tb-btn" data-theme-toggle title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<div class="progress"><span style="width:3.3%"></span></div>
+</header>
+<main class="wrap">
+<div class="sec-head">
+  <p class="eyebrow"><a href="../index.html">Chapter 1 · Relations and Functions</a></p>
+  <h1>1.4 Relations</h1>
+  <p class="sec-meta">Textbook pages 6–9 · 4 figures</p>
+</div>
+<article class="prose">
+<p>Many day-to-day occurrences involve two objects that are connected with each other by some rule of correspondence. We say that the two objects are related under the specified rule. How shall we represent it? Here are some examples,</p>
+<table class="tbl">
+<thead><tr><th>Relationship</th><th>Expressing using the symbol R</th><th>Representation as ordered pair</th></tr></thead>
+<tbody>
+<tr><td>New Delhi <em>is the capital of</em> India</td><td>New Delhi R India</td><td>(New Delhi, India)</td></tr>
+<tr><td>Line \(AB\) <em>is perpendicular to</em> line \(XY\)</td><td>line \(AB\) R line \(XY\)</td><td>(line \(AB\), line \(XY\))</td></tr>
+<tr><td>\(-1\) <em>is greater than</em> \(-5\)</td><td>\(-1\) R \(-5\)</td><td>\((-1, -5)\)</td></tr>
+<tr><td>\(\ell\) <em>is a line of symmetry for</em> \(\Delta PQR\)</td><td>\(\ell\) R \(\Delta PQR\)</td><td>\((\ell, \Delta PQR)\)</td></tr>
+</tbody>
+</table>
+<p>How are New Delhi and India related? We may expect the response, &ldquo;New Delhi is the capital of India&rdquo;. But there are several ways in which &lsquo;New Delhi&rsquo; and &lsquo;India&rsquo; are related. Here are some possible answers.</p>
+<ul>
+<li>New Delhi is the capital of India.</li>
+<li>New Delhi is in the northern part of India.</li>
+<li>New Delhi is one of the largest cities of India etc.,</li>
+</ul>
+<p>So, when we wish to specify a particular relation, providing only one ordered pair (New Delhi, India) it may not be practically helpful. If we ask the relation in the following set of ordered pairs,</p>
+<p>{(New Delhi, India), (Washington, USA), (Beijing, China), (London, U.K.), (Kathmandu, Nepal)}</p>
+<p>then specifying the relation is easy.</p>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<p>Let \(A = \{1, 2, 3, 4\}\) and \(B = \{a, b, c\}\).</p>
+<table class="tbl">
+<thead><tr><th>1. Which of the following are relations from A to B?</th><th>2. Which of the following are relations from B to A?</th></tr></thead>
+<tbody>
+<tr><td>(i) \(\{(1, b), (1, c), (3, a), (4, b)\}\)</td><td>(i) \(\{(c, a), (c, b), (c, 1)\}\)</td></tr>
+<tr><td>(ii) \(\{(1, a), (b, 4), (c, 3)\}\)</td><td>(ii) \(\{(c, 1), (c, 2), (c, 3), (c, 4)\}\)</td></tr>
+<tr><td>(iii) \(\{(1, a), (a, 1), (2, b), (b, 2)\}\)</td><td>(iii) \(\{(a, 4), (b, 3), (c, 2)\}\)</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="s-illustration-4">Illustration 4</h3>
+<table class="tbl">
+<thead><tr><th>Students in a class</th><th>\(S_1\)</th><th>\(S_2\)</th><th>\(S_3\)</th><th>\(S_4\)</th><th>\(S_5\)</th><th>\(S_6\)</th><th>\(S_7\)</th><th>\(S_8\)</th><th>\(S_9\)</th><th>\(S_{10}\)</th></tr></thead>
+<tbody>
+<tr><td>Heights (in feet)</td><td>4.5</td><td>5.2</td><td>5</td><td>4.5</td><td>5</td><td>5.1</td><td>5.2</td><td>5</td><td>4.7</td><td>4.9</td></tr>
+</tbody>
+</table>
+<figure class="fig side-fig"><img src="img/fig-fix-p2-1.webp" alt="Arrow diagram from heights 4.5, 4.7, 4.9, 5, 5.1, 5.2 to students S1 to S10" loading="lazy" width="426" height="423"></figure>
+<p>Let us define a relation between heights of corresponding students. (Fig. 1.7)</p>
+<p>\(R = \{(\text{heights, students})\}\)</p>
+<div class="mathblock"><p>\(R = \{(4.5, S_1), (4.5, S_4), (4.7, S_9), (4.9, S_{10}), (5, S_3), (5, S_5), (5, S_8), (5.1, S_6), (5.2, S_2), (5.2, S_7)\}\)</p></div>
+<div class="callout"><p class="callout-title">Definition</p>
+<p>Let \(A\) and \(B\) be any two non-empty sets. A &lsquo;<strong>relation</strong>&rsquo; R from \(A\) to \(B\) is a subset of \(A \times B\) satisfying some specified conditions. If \(x \in A\) is related to \(y \in B\) through R, then we write it as \(x \,\text{R}\, y\). \(x \,\text{R}\, y\) if and only if \((x, y) \in \text{R}\).</p>
+</div>
+<p>The <strong>domain</strong> of the relation \(\text{R} = \{x \in A \mid x \,\text{R}\, y, \text{ for some } y \in B\}\)</p>
+<p>The <strong>co-domain</strong> of the relation R is \(B\)</p>
+<p>The <strong>range</strong> of the relation \(\text{R} = \{y \in B \mid x \,\text{R}\, y, \text{ for some } x \in A\}\)</p>
+<p>From these definitions, we note that domain of \(\text{R} \subseteq A\), co-domain of \(\text{R} = B\) and range of \(\text{R} \subseteq B\).</p>
+<h3 id="s-illustration-5">Illustration 5</h3>
+<figure class="fig side-fig"><img src="img/fig-p2-2.webp" alt="Arrow diagram of relation R from A = {1,2,3,4,5} to B = {Mathi, Arul, John}" loading="lazy" width="356" height="264"></figure>
+<p>Let \(A = \{1,2,3,4,5\}\) and \(B = \{\text{Mathi, Arul, John}\}\)</p>
+<p>A relation R between the above sets \(A\) and \(B\) can be represented by an arrow diagram (Fig. 1.8).</p>
+<p>Then, domain of \(\text{R} = \{1,2,3,4\}\)</p>
+<p>range of \(\text{R} = \{\text{Mathi, Arul, John}\} =\) co-domain of R.</p>
+<p>Note that domain of R is a proper subset of \(A\).</p>
+<div class="callout"><p class="callout-title">Activity 2</p>
+<p>Let \(A\) and \(B\) be the set of lines in \(xy\)-plane such that \(A\) consists of lines parallel to \(X\)-axis. For \(x \in A,\ y \in B\), let R be a relation from \(A\) to \(B\) defined by \(x \,\text{R}\, y\) if \(x\) is perpendicular to \(y\). Find the elements of \(B\) using a graph sheet.</p>
+</div>
+<h3 id="s-illustration-6">Illustration 6</h3>
+<p>Let \(A = \{1,3,5,7\}\) and \(B = \{4,8\}\). If R is a relation defined by &ldquo;is less than&rdquo; from \(A\) to \(B\), then 1R4 (\(\because\) 1 is less than 4). Similarly, it is observed that 1R8, 3R4, 3R8, 5R8, 7R8</p>
+<p>Equivalently \(\text{R} = \{(1,4), (1,8), (3,4), (3,8), (5,8), (7,8)\}\)</p>
+<div class="callout"><p class="callout-title">Note</p>
+<p>In the above illustration \(A \times B = \{(1,4), (1,8), (3,4), (3,8), (5,4), (5,8), (7,4), (7,8)\}\)</p>
+<p>\(\text{R} = \{(1,4), (1,8), (3,4), (3,8), (5,8), (7,8)\}\). We see that R is a subset of \(A \times B\).</p>
+</div>
+<h3 id="s-illustration-7">Illustration 7</h3>
+<figure class="fig side-fig"><img src="img/fig-fix-p3-1.webp" alt="Arrow diagram from number of boys 0, 1, 2 to families A to J" loading="lazy" width="432" height="558"></figure>
+<p>In a particular area of a town, let us consider ten families \(A, B, C, D, E, F, G, H, I\) and \(J\) with two children. Among these, families \(B, F, I\) have two girls; \(D, G, J\) have one boy and one girl; the remaining have two boys. Let us define a relation R by \(x \,\text{R}\, y\), where \(x\) denote the number of boys and \(y\) denote the family with \(x\) number of boys. Represent this situation as a relation through ordered pairs and arrow diagram.</p>
+<p>Since the domain of the relation R is concerned about the number of boys, and we are considering families with two children, the domain of R will consist of three elements given by {0,1,2}, where 0, 1, 2 represent the number of boys say no, one, two boys respectively. We note that families with two girls are the ones with no boys. Hence the relation R is given by</p>
+<div class="mathblock"><p>\(\text{R} = \{(0,B), (0,F), (0,I), (1,D), (1,G), (1,J), (2,A), (2,C), (2,E), (2,H)\}\)</p></div>
+<p>This relation is shown in an arrow diagram (Fig. 1.9).</p>
+<h4 class="callout-h">Example 1.4</h4>
+<p>Let \(A = \{3,4,7,8\}\) and \(B = \{1,7,10\}\). Which of the following sets are relations from \(A\) to \(B\)?</p>
+<ol type="i">
+<li>\(\text{R}_1 = \{(3,7), (4,7), (7,10), (8,1)\}\)</li>
+<li>\(\text{R}_2 = \{(3,1), (4,12)\}\)</li>
+<li>\(\text{R}_3 = \{(3,7), (4,10), (7,7), (7,8), (8,11), (8,7), (8,10)\}\)</li>
+</ol>
+<h4 class="callout-h">Solution</h4>
+<p>\(A \times B = \{(3,1), (3,7), (3,10), (4,1), (4,7), (4,10), (7,1), (7,7), (7,10), (8,1), (8,7), (8,10)\}\)</p>
+<ol type="i">
+<li>We note that, \(\text{R}_1 \subseteq A \times B\). Thus, \(\text{R}_1\) is a relation from \(A\) to \(B\).</li>
+<li>Here, \((4,12) \in \text{R}_2\), but \((4,12) \notin A \times B\). So, \(\text{R}_2\) is not a relation from \(A\) to \(B\).</li>
+<li>Here, \((7,8) \in \text{R}_3\), but \((7,8) \notin A \times B\). So, \(\text{R}_3\) is not a relation from \(A\) to \(B\).</li>
+</ol>
+<div class="callout"><p class="callout-title">Note</p>
+<ul>
+<li>A relation may be represented algebraically either by the roster method or by the set builder method.</li>
+<li>An arrow diagram is a visual representation of a relation.</li>
+</ul>
+</div>
+<h4 class="callout-h">Example 1.5</h4>
+<p>The arrow diagram shows (Fig. 1.10) a relationship between the sets \(P\) and \(Q\). Write the relation in (i) Set builder form (ii) Roster form (iii) What is the domain and range of R.</p>
+<figure class="fig side-fig"><img src="img/fig-fix-p4-1.webp" alt="Arrow diagram from P = {5,6,7,8} to Q = {3,4,5}: 5→3, 6→4, 7→5" loading="lazy" width="372" height="300"></figure>
+<h4 class="callout-h">Solution</h4>
+<ol type="i">
+<li>Set builder form of \(\text{R} = \{(x, y) \mid y = x - 2,\ x \in P, y \in Q\}\)</li>
+<li>Roster form \(\text{R} = \{(5,3), (6,4), (7,5)\}\)</li>
+<li>Domain of \(\text{R} = \{5,6,7\}\) and range of \(\text{R} = \{3,4,5\}\)</li>
+</ol>
+<div class="callout"><p class="callout-title">&lsquo;Null relation&rsquo;</p>
+<p>Let us consider the following example. Suppose \(A = \{-3,-2,-1\}\) and \(B = \{1,2,3,4\}\). A relation from \(A\) to \(B\) is defined as \(a - b = 8\) i.e., there is no pair \((a, b)\) such that \(a - b = 8\). Thus R contain no element and so \(\text{R} = \phi\).</p>
+<p>A relation which contains no element is called a &ldquo;<strong>Null relation</strong>&rdquo;.</p>
+</div>
+<div class="callout"><p class="callout-title">Do you know?</p>
+<p>If \(n(A) = p\), \(n(B) = q\), then the total number of relations that exist from \(A\) to \(B\) is \(2^{pq}\).</p>
+</div>
+</article>
+<nav class="pager"><a class="" data-nav="prev" href="../../01-relations-and-functions/04-exercise-1.1/index.html"><span class="dir">← Previous</span><span class="t">Exercise 1.1</span><span class="ch">Relations and Functions</span></a><a class="nx" data-nav="next" href="../../01-relations-and-functions/06-exercise-1.2/index.html"><span class="dir">Next →</span><span class="t">Exercise 1.2</span><span class="ch">Relations and Functions</span></a></nav>
+</main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'\\(',right:'\\)',display:false},
+    {left:'$$',right:'$$',display:true},
+    {left:'\\[',right:'\\]',display:true}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']})"></script>
+<script src="../../../assets/book.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=3"></script>
+</body>
+</html>

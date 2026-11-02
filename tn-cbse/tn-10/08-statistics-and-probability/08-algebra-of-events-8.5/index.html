@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>8.5 Algebra of Events — Statistics and Probability</title>
+<meta name="description" content="Class 10 Mathematics · Statistics and Probability · 8.5 Algebra of Events">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="../../../assets/book.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 10 Mathematics</a></span>
+    <span class="c2">Statistics and Probability · 8.5 Algebra of Events</span>
+  </div>
+  <a class="tb-btn" data-nav="prev" href="../../08-statistics-and-probability/07-exercise-8.3/index.html" title="Exercise 8.3">←</a>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary>
+<div class="drawer-panel"><div class="dh">Statistics and Probability</div><a href="../01-chapter-opener/index.html">Chapter opener; 8.1 Introduction</a><a href="../02-measures-of-dispersion-8.2/index.html">8.2 Measures of Dispersion</a><a href="../03-exercise-8.1/index.html">Exercise 8.1</a><a href="../04-coefficient-of-variation-8.3/index.html">8.3 Coefficient of Variation</a><a href="../05-exercise-8.2/index.html">Exercise 8.2</a><a href="../06-probability-8.4/index.html">8.4 Probability</a><a href="../07-exercise-8.3/index.html">Exercise 8.3</a><a href="../08-algebra-of-events-8.5/index.html" aria-current="page">8.5 Algebra of Events</a><a href="../09-addition-theorem-of-probability-8.6/index.html">8.6 Addition Theorem of Probability</a><a href="../10-exercise-8.4/index.html">Exercise 8.4</a><a href="../11-exercise-8.5/index.html">Exercise 8.5</a><a href="../12-unit-exercise/index.html">Unit Exercise</a><a href="../13-summary/index.html">Points to Remember</a><a href="../14-ict-corner/index.html">ICT Corner</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../08-statistics-and-probability/09-addition-theorem-of-probability-8.6/index.html" title="8.6 Addition Theorem of Probability">→</a>
+  <button class="tb-btn" data-theme-toggle title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<div class="progress"><span style="width:94.8%"></span></div>
+</header>
+<main class="wrap">
+<div class="sec-head">
+  <p class="eyebrow"><a href="../index.html">Chapter 8 · Statistics and Probability</a></p>
+  <h1>8.5 Algebra of Events</h1>
+  <p class="sec-meta">Textbook pages 23–24 · 5 figures</p>
+</div>
+<article class="prose">
+<h2 id="s-8-5-algebra-of-events">8.5 Algebra of Events</h2>
+<p>In a random experiment, let S be the sample space. Let \(A \subseteq S\) and \(B \subseteq S\) be the events in S. We say that</p>
+<ol type="i">
+<li>\((A \cap B)\) is an event that occurs only when both \(A\) and \(B\) occurs.
+<figure class="fig"><img src="img/fig-fix-p1-1.webp" alt="Venn diagram with the intersection of A and B shaded" loading="lazy" width="381" height="351"></figure></li>
+<li>\((A \cup B)\) is an event that occurs when either one of \(A\) or \(B\) occurs.
+<figure class="fig"><img src="img/fig-fix-p1-2.webp" alt="Venn diagram with the union of A and B shaded" loading="lazy" width="375" height="351"></figure></li>
+<li>\(\overline{A}\) is an event that occurs only when \(A\) doesn’t occur.
+<figure class="fig"><img src="img/fig-fix-p1-3.webp" alt="Venn diagram with the region of S outside A shaded" loading="lazy" width="384" height="351"></figure></li>
+</ol>
+<div class="callout"><p class="callout-title">Note</p>
+<ul>
+<li>\(A \cap \overline{A} = \phi\)</li>
+<li>\(A \cup \overline{A} = S\)</li>
+<li>If \(A, B\) are mutually exclusive events, then \(P(A \cup B) = P(A) + P(B)\)</li>
+<li>\(P(\text{Union of mutually exclusive events}) = \sum (\text{Probability of events})\)</li>
+</ul>
+</div>
+<h4 class="callout-h" id="s-theorem-1">Theorem 1</h4>
+<p>If \(A\) and \(B\) are two events associated with a random experiment, then prove that</p>
+<figure class="fig side-fig"><img src="img/fig-fix-p2-1.webp" alt="Venn diagram with A minus B shaded" loading="lazy" width="390" height="351"></figure>
+<ol type="i">
+<li>\(P(A \cap \overline{B}) = P(\text{only } A) = P(A) - P(A \cap B)\)</li>
+<li>\(P(\overline{A} \cap B) = P(\text{only } B) = P(B) - P(A \cap B)\)</li>
+</ol>
+<h4 class="callout-h" id="s-proof">Proof</h4>
+<p>(i) By Distributive property of sets,</p>
+<ol>
+<li>\((A \cap B) \cup (A \cap \overline{B}) = A \cap (B \cup \overline{B}) = A \cap S = A\)</li>
+<li>\((A \cap B) \cap (A \cap \overline{B}) = A \cap (B \cap \overline{B}) = A \cap \phi = \phi\)</li>
+</ol>
+<p>Therefore, the events \(A \cap B\) and \(A \cap \overline{B}\) are mutually exclusive whose union is \(A\).</p>
+<div class="mathblock"><p>\[\begin{aligned} \text{Therefore,} \quad P(A) &amp;= P[(A \cap B) \cup (A \cap \overline{B})] \\ P(A) &amp;= P(A \cap B) + P(A \cap \overline{B}) \\ \text{Therefore,} \quad P(A \cap \overline{B}) &amp;= P(A) - P(A \cap B) \\ \text{That is, } P(A \cap \overline{B}) = P(\text{only } A) &amp;= P(A) - P(A \cap B) \end{aligned}\]</p></div>
+<figure class="fig side-fig"><img src="img/fig-fix-p2-2.webp" alt="Venn diagram with B minus A shaded" loading="lazy" width="390" height="327"></figure>
+<p>(ii) By Distributive property of sets,</p>
+<ol>
+<li>\((A \cap B) \cup (\overline{A} \cap B) = (A \cup \overline{A}) \cap B = S \cap B = B\)</li>
+<li>\((A \cap B) \cap (\overline{A} \cap B) = (A \cap \overline{A}) \cap B = \phi \cap B = \phi\)</li>
+</ol>
+<p>Therefore, the events \(A \cap B\) and \(\overline{A} \cap B\) are mutually exclusive whose union is \(B\).</p>
+<div class="mathblock"><p>\[\begin{aligned} P(B) &amp;= P[(A \cap B) \cup (\overline{A} \cap B)] \\ P(B) &amp;= P(A \cap B) + P(\overline{A} \cap B) \\ \text{Therefore,} \quad P(\overline{A} \cap B) &amp;= P(B) - P(A \cap B) \\ \text{That is, } P(\overline{A} \cap B) = P(\text{only } B) &amp;= P(B) - P(A \cap B) \end{aligned}\]</p></div>
+<div class="callout"><p class="callout-title">Progress Check</p>
+<ol>
+<li>\(P(\text{only } A) =\) ________.</li>
+<li>\(P(\overline{A} \cap B) =\) ________.</li>
+<li>\(A \cap B\) and \(\overline{A} \cap B\) are _______ events.</li>
+<li>\(P(\overline{A} \cap \overline{B}) =\) ________.</li>
+<li>If \(A\) and \(B\) are mutually exclusive events then \(P(A \cap B) =\) _______.</li>
+<li>If \(P(A \cap B) = 0.3,\ P(\overline{A} \cap B) = 0.45\) then \(P(B) =\) _______.</li>
+</ol>
+</div>
+</article>
+<nav class="pager"><a class="" data-nav="prev" href="../../08-statistics-and-probability/07-exercise-8.3/index.html"><span class="dir">← Previous</span><span class="t">Exercise 8.3</span><span class="ch">Statistics and Probability</span></a><a class="nx" data-nav="next" href="../../08-statistics-and-probability/09-addition-theorem-of-probability-8.6/index.html"><span class="dir">Next →</span><span class="t">8.6 Addition Theorem of Probability</span><span class="ch">Statistics and Probability</span></a></nav>
+</main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'\\(',right:'\\)',display:false},
+    {left:'$$',right:'$$',display:true},
+    {left:'\\[',right:'\\]',display:true}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']})"></script>
+<script src="../../../assets/book.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=3"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>8.6 Addition Theorem of Probability — Statistics and Probability</title>
+<meta name="description" content="Class 10 Mathematics · Statistics and Probability · 8.6 Addition Theorem of Probability">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="../../../assets/book.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 10 Mathematics</a></span>
+    <span class="c2">Statistics and Probability · 8.6 Addition Theorem of Probability</span>
+  </div>
+  <a class="tb-btn" data-nav="prev" href="../../08-statistics-and-probability/08-algebra-of-events-8.5/index.html" title="8.5 Algebra of Events">←</a>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary>
+<div class="drawer-panel"><div class="dh">Statistics and Probability</div><a href="../01-chapter-opener/index.html">Chapter opener; 8.1 Introduction</a><a href="../02-measures-of-dispersion-8.2/index.html">8.2 Measures of Dispersion</a><a href="../03-exercise-8.1/index.html">Exercise 8.1</a><a href="../04-coefficient-of-variation-8.3/index.html">8.3 Coefficient of Variation</a><a href="../05-exercise-8.2/index.html">Exercise 8.2</a><a href="../06-probability-8.4/index.html">8.4 Probability</a><a href="../07-exercise-8.3/index.html">Exercise 8.3</a><a href="../08-algebra-of-events-8.5/index.html">8.5 Algebra of Events</a><a href="../09-addition-theorem-of-probability-8.6/index.html" aria-current="page">8.6 Addition Theorem of Probability</a><a href="../10-exercise-8.4/index.html">Exercise 8.4</a><a href="../11-exercise-8.5/index.html">Exercise 8.5</a><a href="../12-unit-exercise/index.html">Unit Exercise</a><a href="../13-summary/index.html">Points to Remember</a><a href="../14-ict-corner/index.html">ICT Corner</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../08-statistics-and-probability/10-exercise-8.4/index.html" title="Exercise 8.4">→</a>
+  <button class="tb-btn" data-theme-toggle title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<div class="progress"><span style="width:95.4%"></span></div>
+</header>
+<main class="wrap">
+<div class="sec-head">
+  <p class="eyebrow"><a href="../index.html">Chapter 8 · Statistics and Probability</a></p>
+  <h1>8.6 Addition Theorem of Probability</h1>
+  <p class="sec-meta">Textbook pages 25–28 · 1 figure</p>
+</div>
+<article class="prose">
+<h2 id="s-8-6-addition-theorem-of-probability">8.6 Addition Theorem of Probability</h2>
+<ol type="i">
+<li>If \(A\) and \(B\) are any two events then
+<div class="mathblock"><p>\(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</p></div></li>
+<li>If \(A, B\) and \(C\) are any three events then
+<div class="mathblock"><p>\(P(A \cup B \cup C) = P(A) + P(B) + P(C) - P(A \cap B) - P(B \cap C) - P(A \cap C) + P(A \cap B \cap C)\)</p></div></li>
+</ol>
+<h4 class="callout-h" id="s-proof">Proof</h4>
+<p>(i) Let \(A\) and \(B\) be any two events of a random experiment with sample space \(S\).</p>
+<p>From the Venn diagram, we have the events only \(A\), \(A \cap B\) and only \(B\) are mutually exclusive and their union is \(A \cup B\)</p>
+<div class="mathblock"><p>\[\begin{aligned} \text{Therefore, } P(A \cup B) &amp;= P[(\text{only } A) \cup (A \cap B) \cup (\text{only } B)] \\ &amp;= P(\text{only } A) + P(A \cap B) + P(\text{only } B) \\ &amp;= [P(A) - P(A \cap B)] + P(A \cap B) + [P(B) - P(A \cap B)] \\ P(A \cup B) &amp;= P(A) + P(B) - P(A \cap B) \end{aligned}\]</p></div>
+<p>(ii) Let \(A, B, C\) are any three events of a random experiment with sample space \(S\).</p>
+<figure class="fig side-fig"><img src="img/fig-fix-p1-1.webp" alt="Venn diagram of A and B marking only A, A ∩ B and only B" loading="lazy" width="372" height="336"></figure>
+<div class="mathblock"><p>\[\begin{aligned} \text{Let} \quad D &amp;= B \cup C \\ P(A \cup B \cup C) &amp;= P(A \cup D) \\ &amp;= P(A) + P(D) - P(A \cap D) \\ &amp;= P(A) + P(B \cup C) - P[A \cap (B \cup C)] \\ &amp;= P(A) + P(B) + P(C) - P(B \cap C) - P[(A \cap B) \cup (A \cap C)] \\ &amp;= P(A) + P(B) + P(C) - P(B \cap C) - P(A \cap B) - P(A \cap C) + P[(A \cap B) \cap (A \cap C)] \\ P(A \cup B \cup C) &amp;= P(A) + P(B) + P(C) - P(A \cap B) - P(B \cap C) - P(C \cap A) + P(A \cap B \cap C) \end{aligned}\]</p></div>
+<div class="callout"><p class="callout-title">Activity 5</p>
+<p>The addition theorem of probability can be written easily using the following way.</p>
+<div class="mathblock"><p>\(P(A \cup B) = S_1 - S_2\)</p><p>\(P(A \cup B \cup C) = S_1 - S_2 + S_3\)</p></div>
+<p>Where \(S_1 \rightarrow\) Sum of probability of events taken one at a time.<br>\(S_2 \rightarrow\) Sum of probability of events taken two at a time.<br>\(S_3 \rightarrow\) Sum of probability of events taken three at a time.</p>
+<div class="mathblock"><p>\(P(A \cup B) = \underbrace{P(A) + P(B)}_{S_1}\ \underbrace{-P(A \cap B)}_{S_2}\)</p><p>\(P(A \cup B \cup C) = \underbrace{P(A) + P(B) + P(C)}_{S_1}\ \underbrace{-(P(A \cap B) + P(B \cap C) + P(A \cap C))}_{S_2}\ \underbrace{+P(A \cap B \cap C)}_{S_3}\)</p></div>
+<p>Find the probability of \(P(A \cup B \cup C \cup D)\) using the above way. Can you find a pattern for the number of terms in the formula?</p>
+</div>
+<h4 class="callout-h" id="s-example-8-25">Example 8.25</h4>
+<p>If \(P(A) = 0.37,\ P(B) = 0.42,\ P(A \cap B) = 0.09\) then find \(P(A \cup B)\).</p>
+<h4 class="callout-h" id="s-solution-8-25">Solution</h4>
+<p>\(P(A) = 0.37,\ P(B) = 0.42,\ P(A \cap B) = 0.09\)</p>
+<div class="mathblock"><p>\[\begin{aligned} P(A \cup B) &amp;= P(A) + P(B) - P(A \cap B) \\ P(A \cup B) &amp;= 0.37 + 0.42 - 0.09 = 0.7 \end{aligned}\]</p></div>
+<h4 class="callout-h" id="s-example-8-26">Example 8.26</h4>
+<p>A flower is selected at random from a basket containing 80 yellow, 70 red and 50 white flowers. Find the probability of selecting a yellow or red flower?</p>
+<h4 class="callout-h" id="s-solution-8-26">Solution</h4>
+<p>Total number of flowers \(n(S) = 80 + 70 + 50 = 200\)</p>
+<p>No. of yellow flowers \(n(Y) = 80 \ \therefore P(Y) = \dfrac{n(Y)}{n(S)} = \dfrac{80}{200}\)</p>
+<p>No. of red flowers \(n(R) = 70 \ \therefore P(R) = \dfrac{n(R)}{n(S)} = \dfrac{70}{200}\)</p>
+<p>Y and R are mutually exclusive \(P(Y \cup R) = P(Y) + P(R)\)</p>
+<p>Probability of drawing either a yellow or red flower</p>
+<div class="mathblock"><p>\(P(Y \cup R) = \dfrac{80}{200} + \dfrac{70}{200} = \dfrac{150}{200} = \dfrac{3}{4}\)</p></div>
+<div class="callout"><p class="callout-title">Thinking Corner</p>
+<p>\(P(A \cup B) + P(A \cap B)\) is _____.</p>
+</div>
+<h4 class="callout-h" id="s-example-8-27">Example 8.27</h4>
+<p>Two dice are rolled together. Find the probability of getting a doublet or sum of faces as 4.</p>
+<h4 class="callout-h" id="s-solution-8-27">Solution</h4>
+<p>When two dice are rolled together, there will be \(6 \times 6 = 36\) outcomes. Let \(S\) be the sample space. Then \(n(S) = 36\)</p>
+<p>Let \(A\) be the event of getting a doublet and \(B\) be the event of getting face sum 4.</p>
+<div class="mathblock"><p>\[\begin{aligned} \text{Then} \quad A &amp;= \{(1,1), (2,2), (3,3), (4,4), (5,5), (6,6)\} \\ B &amp;= \{(1,3), (2,2), (3,1)\} \\ \therefore \ A \cap B &amp;= \{(2,2)\} \end{aligned}\]</p></div>
+<p>Then, \(n(A) = 6,\ n(B) = 3,\ n(A \cap B) = 1\).</p>
+<div class="mathblock"><p>\[\begin{aligned} P(A) &amp;= \frac{n(A)}{n(S)} = \frac{6}{36} \\ P(B) &amp;= \frac{n(B)}{n(S)} = \frac{3}{36} \\ P(A \cap B) &amp;= \frac{n(A \cap B)}{n(S)} = \frac{1}{36} \end{aligned}\]</p></div>
+<p>\(\therefore P\) (getting a doublet or a total of 4) \(= P(A \cup B)\)</p>
+<div class="mathblock"><p>\[\begin{aligned} P(A \cup B) &amp;= P(A) + P(B) - P(A \cap B) \\ &amp;= \frac{6}{36} + \frac{3}{36} - \frac{1}{36} = \frac{8}{36} = \frac{2}{9} \end{aligned}\]</p></div>
+<p>Hence, the required probability is \(\dfrac{2}{9}\).</p>
+<h4 class="callout-h" id="s-example-8-28">Example 8.28</h4>
+<p>If \(A\) and \(B\) are two events such that \(P(A) = \dfrac{1}{4},\ P(B) = \dfrac{1}{2}\) and \(P(A \text{ and } B) = \dfrac{1}{8}\), find (i) \(P(A \text{ or } B)\) (ii) \(P(\text{not } A \text{ and not } B)\).</p>
+<h4 class="callout-h" id="s-solution-8-28">Solution</h4>
+<div class="mathblock"><p>\[\begin{aligned} \text{(i)} \quad P(A \text{ or } B) &amp;= P(A \cup B) \\ &amp;= P(A) + P(B) - P(A \cap B) \\ P(A \text{ or } B) &amp;= \frac{1}{4} + \frac{1}{2} - \frac{1}{8} = \frac{5}{8} \\ \text{(ii)} \quad P(\text{not } A \text{ and not } B) &amp;= P(\overline{A} \cap \overline{B}) \\ &amp;= P(\overline{A \cup B}) \\ &amp;= 1 - P(A \cup B) \\ P(\text{not } A \text{ and not } B) &amp;= 1 - \frac{5}{8} = \frac{3}{8} \end{aligned}\]</p></div>
+<h4 class="callout-h" id="s-example-8-29">Example 8.29</h4>
+<p>In an apartment, in selecting a house from door numbers 1 to 100 randomly, find the probability of getting the door number of the house to be an even number or a perfect square number or a perfect cube number</p>
+<h4 class="callout-h" id="s-solution-8-29">Solution</h4>
+<p>Total number of houses \(n(S) = 100\)</p>
+<p>Let A be the event of getting door number even.</p>
+<div class="mathblock"><p>\(A = \{2, 4, 6, 8, \ldots, 100\}\)</p><p>\(n(A) = 50\)</p><p>\(P(A) = \dfrac{n(A)}{n(S)} = \dfrac{50}{100}\)</p></div>
+<p>Let B be the event of getting door number perfect square.</p>
+<div class="mathblock"><p>\(B = \{1, 4, 9, 16, 25, 36, 49, 64, 81, 100\}\)</p><p>\(\therefore n(B) = 10\)</p><p>\(P(B) = \dfrac{n(B)}{n(S)} = \dfrac{10}{100}\)</p></div>
+<p>Let C be the event of getting door number perfect cube.</p>
+<div class="mathblock"><p>\(C = \{1, 8, 27, 64\}\)</p><p>\(\therefore n(C) = 4\)</p><p>\(P(C) = \dfrac{n(C)}{n(S)} = \dfrac{4}{100}\)</p></div>
+<div class="mathblock"><p>\[\begin{aligned} P(A \cap B) &amp;= P[\text{getting even perfect square number}] = \frac{5}{100} \\ P(B \cap C) &amp;= P[\text{getting a perfect square and perfect cube number}] = \frac{2}{100} \\ P(A \cap C) &amp;= P[\text{getting even perfect cube number}] = \frac{2}{100} \\ P(A \cap B \cap C) &amp;= P[\text{getting even perfect square and perfect cube number}] = \frac{1}{100} \end{aligned}\]</p></div>
+<p>Required probability</p>
+<div class="mathblock"><p>\[\begin{aligned} P(A \cup B \cup C) &amp;= P(A) + P(B) + P(C) - P(A \cap B) - P(B \cap C) - P(A \cap C) + P(A \cap B \cap C) \\ &amp;= \frac{50}{100} + \frac{10}{100} + \frac{4}{100} - \frac{5}{100} - \frac{2}{100} - \frac{2}{100} + \frac{1}{100} = \frac{65}{100} - \frac{9}{100} = \frac{56}{100} = \frac{14}{25} \end{aligned}\]</p></div>
+<h4 class="callout-h" id="s-example-8-30">Example 8.30</h4>
+<p>In a class of 50 students, 28 opted for NCC, 30 opted for NSS and 18 opted both NCC and NSS. One of the students is selected at random. Find the probability that</p>
+<ol type="i">
+<li>The student opted for NCC but not NSS.</li>
+<li>The student opted for NSS but not NCC.</li>
+<li>The student opted for exactly one of them.</li>
+</ol>
+<h4 class="callout-h" id="s-solution-8-30">Solution</h4>
+<p>Total number of students \(n(S) = 50\).</p>
+<p>Let \(A\) and \(B\) be the events of students opted for NCC and NSS respectively.</p>
+<div class="mathblock"><p>\(n(A) = 28,\ n(B) = 30,\ n(A \cap B) = 18\)</p><p>\(P(A) = \dfrac{n(A)}{n(S)} = \dfrac{28}{50};\quad P(B) = \dfrac{n(B)}{n(S)} = \dfrac{30}{50}\)</p><p>\(P(A \cap B) = \dfrac{n(A \cap B)}{n(S)} = \dfrac{18}{50}\)</p></div>
+<ol type="i">
+<li>Probability of the students opted for NCC but not NSS
+<div class="mathblock"><p>\(P(A \cap \overline{B}) = P(A) - P(A \cap B) = \dfrac{28}{50} - \dfrac{18}{50} = \dfrac{1}{5}\)</p></div></li>
+<li>Probability of the students opted for NSS but not NCC.
+<div class="mathblock"><p>\(P(\overline{A} \cap B) = P(B) - P(A \cap B) = \dfrac{30}{50} - \dfrac{18}{50} = \dfrac{6}{25}\)</p></div></li>
+<li>Probability of the students opted for exactly one of them
+<div class="mathblock"><p>\(= P[(A \cap \overline{B}) \cup (\overline{A} \cap B)]\)</p><p>\(= P(A \cap \overline{B}) + P(\overline{A} \cap B) = \dfrac{1}{5} + \dfrac{6}{25} = \dfrac{11}{25}\)</p></div>
+(Note that \((A \cap \overline{B}), (\overline{A} \cap B)\) are mutually exclusive events)</li>
+</ol>
+<h4 class="callout-h" id="s-example-8-31">Example 8.31</h4>
+<p>\(A\) and \(B\) are two candidates seeking admission to IIT. The probability that A getting selected is 0.5 and the probability that both \(A\) and \(B\) getting selected is 0.3. Prove that the probability of \(B\) being selected is atmost 0.8.</p>
+<h4 class="callout-h" id="s-solution-8-31">Solution</h4>
+<p>\(P(A) = 0.5,\ P(A \cap B) = 0.3\)</p>
+<div class="mathblock"><p>\[\begin{aligned} \text{We have} \quad P(A \cup B) &amp;\le 1 \\ P(A) + P(B) - P(A \cap B) &amp;\le 1 \\ 0.5 + P(B) - 0.3 &amp;\le 1 \\ P(B) &amp;\le 1 - 0.2 \\ P(B) &amp;\le 0.8 \end{aligned}\]</p></div>
+<p>Therefore, probability of \(B\) getting selected is atmost 0.8.</p>
+</article>
+<nav class="pager"><a class="" data-nav="prev" href="../../08-statistics-and-probability/08-algebra-of-events-8.5/index.html"><span class="dir">← Previous</span><span class="t">8.5 Algebra of Events</span><span class="ch">Statistics and Probability</span></a><a class="nx" data-nav="next" href="../../08-statistics-and-probability/10-exercise-8.4/index.html"><span class="dir">Next →</span><span class="t">Exercise 8.4</span><span class="ch">Statistics and Probability</span></a></nav>
+</main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'\\(',right:'\\)',display:false},
+    {left:'$$',right:'$$',display:true},
+    {left:'\\[',right:'\\]',display:true}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']})"></script>
+<script src="../../../assets/book.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=3"></script>
+</body>
+</html>
