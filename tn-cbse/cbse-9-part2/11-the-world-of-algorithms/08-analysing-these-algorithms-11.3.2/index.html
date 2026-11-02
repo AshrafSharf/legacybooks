@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>11.3.2 Analysing these Algorithms — The World of Algorithms</title>
+<meta name="description" content="Class 9 Mathematics · Part 2 · The World of Algorithms · 11.3.2 Analysing these Algorithms">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="../../../assets/book.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 9 Mathematics · Part 2</a></span>
+    <span class="c2">The World of Algorithms · 11.3.2 Analysing these Algorithms</span>
+  </div>
+  <a class="tb-btn" data-nav="prev" href="../../11-the-world-of-algorithms/07-exercise-set-11.3/index.html" title="Exercise Set 11.3">←</a>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary>
+<div class="drawer-panel"><div class="dh">The World of Algorithms</div><a href="../01-adding-numbers-11.1/index.html">11.1 Adding Numbers</a><a href="../02-exercise-set-11.1/index.html">Exercise Set 11.1</a><a href="../03-greatest-common-divisor-11.2/index.html">11.2 Greatest Common Divisor</a><a href="../04-data-structures-11.3/index.html">11.3 Data Structures</a><a href="../05-exercise-set-11.2/index.html">Exercise Set 11.2</a><a href="../06-improving-the-algorithm-11.3.1/index.html">11.3.1 Improving the Algorithm</a><a href="../07-exercise-set-11.3/index.html">Exercise Set 11.3</a><a href="../08-analysing-these-algorithms-11.3.2/index.html" aria-current="page">11.3.2 Analysing these Algorithms</a><a href="../09-end-of-chapter-exercises/index.html">End-of-Chapter Exercises</a><a href="../10-chapter-summary/index.html">Chapter Summary</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../11-the-world-of-algorithms/09-end-of-chapter-exercises/index.html" title="End-of-Chapter Exercises">→</a>
+  <button class="tb-btn" data-theme-toggle title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<div class="progress"><span style="width:34.4%"></span></div>
+</header>
+<main class="wrap">
+<div class="sec-head">
+  <p class="eyebrow"><a href="../index.html">Chapter 11 · The World of Algorithms</a></p>
+  <h1>11.3.2 Analysing these Algorithms</h1>
+  <p class="sec-meta">Textbook pages 9–13 · 3 figures</p>
+</div>
+<article class="prose">
+<p>We started with a very basic algorithm. Since this was derived directly from the definition of gcd, it is easy to justify that the result it computes is actually the gcd.</p>
+<p>Each successive refinement that we have proposed improves the efficiency but does not substantially change what is being computed. Hence, we can argue that all of the algorithms we have seen so far compute the correct value.</p>
+<p>How efficient are these algorithms? Even in the final version, where we eliminated lists, we had to examine all numbers from 1 to \(\min(m, n)\). This is similar to what we saw when adding numbers by counting. If the smaller number goes from 3 digits to 4 digits, we have to scan 10 times as many values to find the common divisors. If we go from 3 digits to 5 digits, the work grows by a factor of 100.</p>
+<p>As we did for adding, can we find an algorithm for gcd where the effort is proportional to the number of digits in the number, rather than the value of the number?</p>
+<h3 id="s-11-3-3-euclid-s-subtraction-algorithm">11.3.3 Euclid’s Subtraction Algorithm</h3>
+<p>An elegant solution to achieve this was written down by Euclid, in his book <em>Elements</em>. Historians believe that other Greek mathematicians knew of this algorithm before Euclid, but he was the first to put it down in writing.</p>
+<h3 id="s-reducing-a-problem-to-a-simpler-one">Reducing a problem to a simpler one</h3>
+<p>The original version of Euclid’s algorithm makes use of the following observation. Let us assume that \(m \ge n\). Then, \(\gcd(m, n)\) is the same as \(\gcd(n, m - n)\).</p>
+<p>Why is this the case?</p>
+<ul>
+<li>Let \(d\) be a common divisor of \(m\) and \(n\). Then we can write \(m\) as \(ad\) and \(n\) as \(bd\), where \(a\) and \(b\) are natural numbers. This means that \(m - n = ad - bd = (a - b)d\), so \(d\) is also a divisor of \(m - n\).</li>
+<li>On the other hand, if \(d\) divides both \(n\) and \(m - n\), then \(n = xd\) and \(m - n = yd\) for some natural numbers \(x\) and \(y\). This means that \(n + (m - n) = m = xd + yd = (x + y)d\), so \(d\) also divides \(m\).</li>
+</ul>
+<p>This is shown visually below. If we can ‘tile’ \(m\) and \(n\) using blocks of size \(d\), we can also tile \(m - n\) by blocks of the same size. In fact, Euclid used a similar pictorial proof to justify his algorithm.</p>
+<figure class="fig wide"><img src="img/fig-p2-1.webp" alt="Fig. 11.1: Justification for Euclid’s gcd algorithm" loading="lazy" width="890" height="209"><figcaption>Fig. 11.1: Justification for Euclid’s gcd algorithm</figcaption></figure>
+<p>This observation tells us that any common divisor of \(m\) and \(n\) is also a common divisor of \(n\) and \(m - n\), and the converse is also true. Hence the set of common divisors are the same in both cases, which means that \(\gcd(m, n) = \gcd(n, m - n)\).</p>
+<p>Euclid’s algorithm reduces the problem of finding \(\gcd(m, n)\) to that of finding \(\gcd(n, m - n)\). The second problem involves smaller numbers, so it should be a simpler problem to solve.</p>
+<p>How do we solve it? We apply the same strategy: reduce it to \(\gcd(x, y)\) where \(x = \min(n, m - n)\) and \(y\) is the difference between \(n\) and \(m - n\).</p>
+<p>When do we stop? Suppose we compute the gcd of a number with itself, say \(\gcd(23, 23)\). The answer should clearly be 23. When we reduce this we get \(\gcd(23, 0)\). In other words, if we reach \(\gcd(m, 0)\), the answer is \(m\).</p>
+<p><em>Euclid’s algorithm for \(\gcd(m, n)\)</em></p>
+<ol>
+<li><code>If m &lt; n, reverse the numbers and compute gcd(n,m)</code></li>
+<li><code>If n = 0, report the answer as m</code></li>
+<li><code>Otherwise, reduce the problem to compute gcd(n,m−n)</code></li>
+</ol>
+<p>Let us apply this algorithm to \(\gcd(375, 825)\), the problem that we saw before.</p>
+<ul>
+<li>Since \(375 &lt; 825\), Step 1 asks us to reverse the numbers and compute \(\gcd(825, 375)\).</li>
+<li>Since \(825 - 375 = 450\), Step 3 asks us to reduce the problem to computing \(\gcd(375, 450)\).</li>
+<li>Since \(375 &lt; 450\), Step 1 asks us to reverse the numbers and compute \(\gcd(450, 375)\).</li>
+<li>Step 3 asks us to reduce the problem to computing \(\gcd(375, 75)\).</li>
+<li>Step 3 asks us to reduce the problem to computing \(\gcd(75, 300)\).</li>
+<li>Since \(75 &lt; 300\), Step 1 asks us to reverse the numbers and compute \(\gcd(300, 75)\).</li>
+<li>Step 3 asks us to reduce the problem to computing \(\gcd(75, 225)\).</li>
+<li>Since \(75 &lt; 225\), Step 1 asks us to reverse the numbers and compute \(\gcd(225, 75)\).</li>
+<li>Step 3 asks us to reduce the problem to computing \(\gcd(75, 150)\).</li>
+<li>Since \(75 &lt; 150\), Step 1 asks us to reverse the numbers and compute \(\gcd(150, 75)\).</li>
+<li>Step 3 asks us to reduce the problem to computing \(\gcd(75, 75)\).</li>
+<li>Step 3 asks us to reduce the problem to computing \(\gcd(75, 0)\).</li>
+<li>Since \(n = 0\), Step 2 tells us the answer is 75.</li>
+</ul>
+<p>In the example above, we reduced the problem 7 times before finding the answer. Are we close to our original goal of finding an algorithm where the effort is proportional to the number of digits? Unfortunately, no.</p>
+<p>Consider \(\gcd(99, 2)\). This will reduce successively to \(\gcd(97, 2)\), \(\gcd(95, 2)\), \(\gcd(93, 2)\), … , \(\gcd(5, 2)\), \(\gcd(3, 2)\), \(\gcd(2, 1)\), \(\gcd(1, 1)\), and \(\gcd(1, 0)\) eventually giving us the answer 1. In general, if we start with an odd number \(2k + 1\), \(\gcd(2k + 1, 2)\) will require about \(k\) reductions before we get the answer 1. This means the number of steps is proportional to the value we start with, rather than the number of digits used to write down the value.</p>
+<h3 id="s-11-3-4-ryabha-a-s-division-algorithm">11.3.4 Āryabhaṭa’s Division Algorithm</h3>
+<p>In Indian treatises like Āryabhaṭa’s Āryabhaṭīya (499 CE), we see the “long division” method for finding GCD using Indian place value numerals. It makes an efficient use of repeated “division by remainder” in place of repeated subtraction. For example, when one starts with 99 and subtracts 2 repeatedly, what remains, once one cannot subtract 2 anymore, is the remainder when 99 is divided by 2.</p>
+<p>Hence, to improve the performance of Euclid’s algorithm, we can change the reduction step: instead of reducing \(\gcd(m, n)\) to \(\gcd(n, m - n)\), we reduce it to \(\gcd(n, m \bmod n)\), where \(m \bmod n\) stands for the remainder when \(m\) is divided by \(n\). For example, \(17 \bmod 5\) is 2 and \(33 \bmod 7\) is 5.</p>
+<p>We saw earlier that a divisor \(d\) ‘tiles’ both \(m\) and \(n\) if and only if it ‘tiles’ both \(n\) and \(m - n\). In a similar way, we can argue that \(d\) ‘tiles’ \(m\) and \(n\) if and only if it tiles \(m\) and \(m \bmod n\). This justifies reducing \(\gcd(m, n)\) to \(\gcd(n, m \bmod n)\).</p>
+<p>Here is the modified algorithm. Notice that the only change is in the third statement. The stopping condition is the same as before.</p>
+<ol>
+<li><code>If m &lt; n, reverse the numbers and compute gcd(n,m)</code></li>
+<li><code>If n = 0, report the answer as m</code></li>
+<li><code>Otherwise, reduce the problem to computing gcd(n, m mod n)</code></li>
+</ol>
+<p>Consider the earlier example \(\gcd(99, 2)\) that took a long time to converge. Here is what happens when we execute the improved algorithm.</p>
+<ul>
+<li>Step 3 asks us to reduce the problem to computing \(\gcd(2, 1)\).</li>
+<li>Step 3 asks us to reduce the problem to computing \(\gcd(1, 0)\).</li>
+<li>Since \(n = 0\), Step 2 tells us the answer is 1.</li>
+</ul>
+<p>In other words, we needed only two reduction steps to get to the final answer. Check that this would happen for any similar problem of the form \(\gcd(2k + 1, 2)\).</p>
+<p>The above modified algorithm can be carried out concisely using the “long division” method given by Indians at least from the time of Āryabhaṭa. We illustrate the method through the following examples—</p>
+<figure class="fig wide"><img src="img/fig-fix-p5-1.webp" alt="Long division for gcd(99, 2) and gcd(825, 375)" loading="lazy"></figure>
+<p>Here is another example—</p>
+<figure class="fig"><img src="img/fig-fix-p5-2.webp" alt="Long division for gcd(60, 16)" loading="lazy"></figure>
+<p>In fact, it can be shown that the number of reductions needed in Āryabhaṭa’s division algorithm is now proportional to the number of digits in \(m\) and \(n\). Unfortunately, the justification for this fact is too involved to present here, but you will learn about it in future grades.</p>
+<h3 id="s-a-pinch-of-history">A Pinch of History</h3>
+<p>The influential Persian mathematician Al-Khwārizmī (780–850 CE), a scholar at the “House of Wisdom” in Baghdad, developed a great liking for Indian mathematics. He learnt Sanskrit, and around 820 CE wrote a detailed treatise expounding the Indian place value number system and the Indian procedures for the four fundamental operations — addition, subtraction, multiplication, and division. His original is lost, but its 12th-century Latin translation, <em>Liber Algorismi de numero Indorum</em> (“The Book of Al-Khwārizmī on Indian Numerals”), survives and played a major role in spreading Indian arithmetic through medieval Europe. Al-Khwārizmī’s name became so closely tied to these methods that the word algorismus — from Algoritmi, the Latin form of his name — came to mean any Indian method for numerical computation; it later contracted to algorism and then algorithm. Etymologically, then, “algorithm” originally denoted an Indian method of arithmetic, before it broadened to mean any well-defined, step-by-step systematic procedure for solving a class of problems.</p>
+</article>
+<nav class="pager"><a class="" data-nav="prev" href="../../11-the-world-of-algorithms/07-exercise-set-11.3/index.html"><span class="dir">← Previous</span><span class="t">Exercise Set 11.3</span><span class="ch">The World of Algorithms</span></a><a class="nx" data-nav="next" href="../../11-the-world-of-algorithms/09-end-of-chapter-exercises/index.html"><span class="dir">Next →</span><span class="t">End-of-Chapter Exercises</span><span class="ch">The World of Algorithms</span></a></nav>
+</main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'\\(',right:'\\)',display:false},
+    {left:'$$',right:'$$',display:true},
+    {left:'\\[',right:'\\]',display:true}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']})"></script>
+<script src="../../../assets/book.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=3"></script>
+</body>
+</html>

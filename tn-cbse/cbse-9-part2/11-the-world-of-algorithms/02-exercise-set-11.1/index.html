@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exercise Set 11.1 — The World of Algorithms</title>
+<meta name="description" content="Class 9 Mathematics · Part 2 · The World of Algorithms · Exercise Set 11.1">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="../../../assets/book.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 9 Mathematics · Part 2</a></span>
+    <span class="c2">The World of Algorithms · Exercise Set 11.1</span>
+  </div>
+  <a class="tb-btn" data-nav="prev" href="../../11-the-world-of-algorithms/01-adding-numbers-11.1/index.html" title="11.1 Adding Numbers">←</a>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary>
+<div class="drawer-panel"><div class="dh">The World of Algorithms</div><a href="../01-adding-numbers-11.1/index.html">11.1 Adding Numbers</a><a href="../02-exercise-set-11.1/index.html" aria-current="page">Exercise Set 11.1</a><a href="../03-greatest-common-divisor-11.2/index.html">11.2 Greatest Common Divisor</a><a href="../04-data-structures-11.3/index.html">11.3 Data Structures</a><a href="../05-exercise-set-11.2/index.html">Exercise Set 11.2</a><a href="../06-improving-the-algorithm-11.3.1/index.html">11.3.1 Improving the Algorithm</a><a href="../07-exercise-set-11.3/index.html">Exercise Set 11.3</a><a href="../08-analysing-these-algorithms-11.3.2/index.html">11.3.2 Analysing these Algorithms</a><a href="../09-end-of-chapter-exercises/index.html">End-of-Chapter Exercises</a><a href="../10-chapter-summary/index.html">Chapter Summary</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../11-the-world-of-algorithms/03-greatest-common-divisor-11.2/index.html" title="11.2 Greatest Common Divisor">→</a>
+  <button class="tb-btn" data-theme-toggle title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<div class="progress"><span style="width:25.0%"></span></div>
+</header>
+<main class="wrap">
+<div class="sec-head">
+  <p class="eyebrow"><a href="../index.html">Chapter 11 · The World of Algorithms</a></p>
+  <h1>Exercise Set 11.1</h1>
+  <p class="sec-meta">Textbook pages 2–3</p>
+</div>
+<article class="prose">
+<ol>
+<li>Add two 4-digit numbers using the steps we have written down. Make sure you follow the steps precisely; do not perform any action that is not explicitly mentioned. Are you able to obtain the correct result?</li>
+<li>What happens if you add a 5-digit number to a 3-digit number. Do our steps handle this situation correctly?</li>
+<li>Why is it important to align the columns from right to left?</li>
+<li>In Step 3, why cannot the value of carry be more than 1?</li>
+<li>What happens if we do not include the fifth step in the algorithm above? Give examples where the algorithm will work correctly and where it will fail to work.</li>
+</ol>
+<p>There is also an important assumption in this algorithm, namely, that we know how to add single digit numbers without counting them out. Typically, any algorithm is built using such basic steps that we assume we can perform directly.</p>
+<p>The main advantage of this algorithm is that it is much faster than counting explicitly. For instance, if we move from adding 3-digit numbers to adding 4-digit numbers, we have 10 times as many dots to draw and count. On the other hand, if we add the digits right to left, as in the algorithm above, we only have to add 1 more column. Likewise, 5-digit numbers would generate 100 times as many dots as 3-digit numbers, but only 2 more columns to be added.</p>
+<p>In concrete terms, suppose we can count one dot per second. To count the dots in \(33 + 27\) would take a minute, to count \(334 + 272\) would take about ten minutes, while \(3347 + 2729\) would take over one hour and forty minutes.</p>
+<p>On the other hand, suppose we work slowly and carefully and take 15 seconds to add two single digit numbers with a carry. Adding \(33 + 27\) would take about half a minute, while \(334 + 272\) would take about 45 seconds, while \(3347 + 2729\) would take about one minute.</p>
+<p>Whenever we provide an algorithm, we also have to justify why it works. Combining the dots and counting the sum is how addition is defined. Why does adding individual digits from right to left result in the sum of the two numbers? The key idea is that we are grouping each number into units, tens, hundreds, … and adding each group separately. Whenever a smaller group, say units, generates a large group of ten, we carry over the newly formed ten to the tens group.</p>
+<p><strong>Think and Reflect</strong></p>
+<ol>
+<li>See if you can complete the argument about grouping by units, tens, hundreds, … to justify why the addition algorithm works.</li>
+<li>How would you modify the algorithm to add two decimal fractions?</li>
+</ol>
+<p>In the rest of this chapter, we will explore the idea of an algorithm in more detail and in some other contexts.</p>
+</article>
+<nav class="pager"><a class="" data-nav="prev" href="../../11-the-world-of-algorithms/01-adding-numbers-11.1/index.html"><span class="dir">← Previous</span><span class="t">11.1 Adding Numbers</span><span class="ch">The World of Algorithms</span></a><a class="nx" data-nav="next" href="../../11-the-world-of-algorithms/03-greatest-common-divisor-11.2/index.html"><span class="dir">Next →</span><span class="t">11.2 Greatest Common Divisor</span><span class="ch">The World of Algorithms</span></a></nav>
+</main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'\\(',right:'\\)',display:false},
+    {left:'$$',right:'$$',display:true},
+    {left:'\\[',right:'\\]',display:true}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']})"></script>
+<script src="../../../assets/book.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=3"></script>
+</body>
+</html>

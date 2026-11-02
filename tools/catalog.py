@@ -1,7 +1,7 @@
 """Discover books / chapters / sections from the split-PDF tree."""
 import os, re, json
 
-SRC_ROOT = "/Users/apple/lesson-ws/robogebra-books/tn_cbse"
+SRC_ROOT = os.environ.get("TN_CBSE_SRC", "/Users/apple/lesson-ws/robogebra-books/tn_cbse")
 
 SMALL = {"a", "an", "and", "as", "at", "by", "for", "from", "in", "of", "on",
          "or", "the", "to", "with", "into", "using"}
@@ -36,7 +36,8 @@ def book_meta(parent_rel):
         grade, part = m.group(1), m.group(2)
         slug = "cbse-%s" % grade + ("-part%s" % part if part else "")
         title = "Class %s Mathematics" % grade + (" · Part %s" % part if part else "")
-        return dict(slug=slug, title=title, board="NCERT / CBSE — Ganita Prakash",
+        series = "Ganita Manjari" if grade == "9" else "Ganita Prakash"
+        return dict(slug=slug, title=title, board="NCERT / CBSE — " + series,
                     board_short="CBSE", grade=int(grade), term=int(part) if part else 0)
     slug = re.sub(r'[^a-z0-9]+', '-', p.lower()).strip('-')
     return dict(slug=slug, title=titlecase(os.path.basename(p)), board="Other",

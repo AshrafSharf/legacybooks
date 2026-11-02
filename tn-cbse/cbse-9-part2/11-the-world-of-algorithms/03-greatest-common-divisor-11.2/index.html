@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>11.2 Greatest Common Divisor — The World of Algorithms</title>
+<meta name="description" content="Class 9 Mathematics · Part 2 · The World of Algorithms · 11.2 Greatest Common Divisor">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📘</text></svg>">
+<link rel="stylesheet" href="../../../assets/book.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+</head>
+<body>
+<header class="topbar">
+<div class="topbar-in">
+  <div class="crumb">
+    <span class="c1"><a href="../../../index.html">Library</a> · <a href="../../index.html">Class 9 Mathematics · Part 2</a></span>
+    <span class="c2">The World of Algorithms · 11.2 Greatest Common Divisor</span>
+  </div>
+  <a class="tb-btn" data-nav="prev" href="../../11-the-world-of-algorithms/02-exercise-set-11.1/index.html" title="Exercise Set 11.1">←</a>
+  <details class="drawer"><summary class="tb-btn" title="Sections in this chapter">☰</summary>
+<div class="drawer-panel"><div class="dh">The World of Algorithms</div><a href="../01-adding-numbers-11.1/index.html">11.1 Adding Numbers</a><a href="../02-exercise-set-11.1/index.html">Exercise Set 11.1</a><a href="../03-greatest-common-divisor-11.2/index.html" aria-current="page">11.2 Greatest Common Divisor</a><a href="../04-data-structures-11.3/index.html">11.3 Data Structures</a><a href="../05-exercise-set-11.2/index.html">Exercise Set 11.2</a><a href="../06-improving-the-algorithm-11.3.1/index.html">11.3.1 Improving the Algorithm</a><a href="../07-exercise-set-11.3/index.html">Exercise Set 11.3</a><a href="../08-analysing-these-algorithms-11.3.2/index.html">11.3.2 Analysing these Algorithms</a><a href="../09-end-of-chapter-exercises/index.html">End-of-Chapter Exercises</a><a href="../10-chapter-summary/index.html">Chapter Summary</a></div></details>
+  <a class="tb-btn" data-nav="next" href="../../11-the-world-of-algorithms/04-data-structures-11.3/index.html" title="11.3 Data Structures">→</a>
+  <button class="tb-btn" data-theme-toggle title="Toggle light / dark" aria-label="Toggle light or dark theme">◐</button>
+</div>
+<div class="progress"><span style="width:26.6%"></span></div>
+</header>
+<main class="wrap">
+<div class="sec-head">
+  <p class="eyebrow"><a href="../index.html">Chapter 11 · The World of Algorithms</a></p>
+  <h1>11.2 Greatest Common Divisor</h1>
+  <p class="sec-meta">Textbook pages 3–7</p>
+</div>
+<article class="prose">
+<p>Let us look at a familiar problem: computing the <strong>greatest common divisor (gcd) or highest common factor (hcf)</strong> of two numbers. We have already learned different ways to solve this problem, using prime factorisation and other methods.</p>
+<p>How can we solve the problem from the definition of gcd? How do we write down an algorithm for this?</p>
+<p>The first step is to understand what is required and break down the problem into smaller pieces that we know how to solve.</p>
+<ul>
+<li>We want the greatest common divisor of two numbers.</li>
+<li>For this, we need to first compute the divisors of both numbers and note them down.</li>
+<li>Once we have done this, we need to compare the two collections of divisors and find the largest number that is present in both collections.</li>
+</ul>
+<h3 id="s-11-2-1-computing-the-divisors-of-a-number">11.2.1 Computing the Divisors of a Number</h3>
+<p>Suppose we want to compute \(\gcd(375, 825)\).</p>
+<p>How do we find the divisors of 375? The divisors of a number are just the factors of that number. Clearly any divisor, or factor, must lie between 1 and 375. The simplest way to find the divisors is to check each number between 1 and 375 and see if it divides 375.</p>
+<p>We also have to keep track of the divisors of 375 so that we can compare them with the divisors of 825. We can maintain each of these in a sequence, or a <strong>list</strong>. How do we create the list of divisors of a number? When we start, we do not know any divisors, so the list of divisors is initially empty. Every time we find a new divisor, we add it at the end of the list.</p>
+<p>Here is how we can write down this algorithm to find the list of divisors of any number \(n\).</p>
+<p><em>Algorithm to find the divisors of \(n\)</em></p>
+<ol>
+<li><code>Start with an empty list-of-divisors.</code></li>
+<li><code>For each number j in the sequence 1,2,3, … ,n</code>
+<ul>
+<li><code>if j divides n, add j to the list-of-divisors.</code></li>
+</ul></li>
+</ol>
+<p>Notice how we use names <code>list-of-divisors</code> and <code>j</code> to identify the values that we keep track of in this algorithm. If we do not use <code>j</code> to identify the number we are checking next as a possible divisor, it would be clumsy to describe what to do each time we find a divisor.</p>
+<p>Running through an algorithm step by step is also called <strong>executing</strong> the algorithm. Let us execute this algorithm for a small number, say 18. We use square brackets to denote a list of values — for instance, [1, 4, 9, 16].</p>
+<p>Let us see how this algorithm works for a small number, say 18.</p>
+<ul>
+<li>Initially <code>list-of-divisors</code> is empty [ ].</li>
+<li>1 divides 18, so we update <code>list-of-divisors</code> to [1].</li>
+<li>2 divides 18, so we update <code>list-of-divisors</code> to [1, 2].</li>
+<li>3 divides 18, so we update <code>list-of-divisors</code> to [1, 2, 3].</li>
+<li>4 does not divide 18, so we leave <code>list-of-divisors</code> unchanged as [1, 2, 3].</li>
+<li>5 does not divide 18, so we leave <code>list-of-divisors</code> unchanged as [1, 2, 3].</li>
+<li>6 divides 18, so we update <code>list-of-divisors</code> to [1, 2, 3, 6].</li>
+<li>7 and 8 do not divide 18, so we leave <code>list-of-divisors</code> unchanged as [1, 2, 3, 6].</li>
+<li>9 divides 18, so we update <code>list-of-divisors</code> to [1, 2, 3, 6, 9].</li>
+<li>10, 11, 12, … , 17 do not divide 18, so we keep <code>list-of-divisors</code> unchanged as [1, 2, 3, 6, 9].</li>
+<li>18 divides 18, so we update <code>list-of-divisors</code> to [1, 2, 3, 6, 9, 18].</li>
+</ul>
+<p>Thus, at the end of the algorithm we have divisors(18) = [1, 2, 3, 6, 9, 18]. Notice that the list is also in increasing order, because we checked for divisors systematically, from 1 to 18.</p>
+<p>What is the basic step that we assumed in this algorithm? It is that we know how to compute when a smaller number divides a larger number.</p>
+<p>If we go through the steps of the algorithm, we get the following answers.</p>
+<ul>
+<li>divisors(375) = [1, 3, 5, 15, 25, 75, 125, 375]</li>
+<li>divisors(825) = [1, 3, 5, 11, 15, 25, 33, 55, 75, 165, 275, 825]</li>
+</ul>
+<p><strong>Think and Reflect</strong></p>
+<p>Try to execute the algorithm to compute the divisors of 15, 135, and 775. How does the amount of work increase as the numbers grow?</p>
+<h3 id="s-11-2-2-finding-the-greatest-common-divisor">11.2.2 Finding the Greatest Common Divisor</h3>
+<p>The second step in our procedure to find the gcd is to compare the lists of divisors of the two numbers and find the largest number that appears in both lists.</p>
+<p>If we look through the divisiors of 375 and 825 above, we see that the answer is 75. What if the numbers were 54000 and 81000?</p>
+<ul>
+<li>divisors(54000) = [1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, 16, 18, 20, 24, 25, 27, 30, 36, 40, 45, 48, 50, 54, 60, 72, 75, 80, 90, 100, 108, 120, 125, 135, 144, 150, 180, 200, 216, 225, 240, 250, 270, 300, 360, 375, 400, 432, 450, 500, 540, 600, 675, 720, 750, 900, 1000, 1080, 1125, 1200, 1350, 1500, 1800, 2000, 2160, 2250, 2700, 3000, 3375, 3600, 4500, 5400, 6000, 6750, 9000, 10800, 13500, 18000, 27000, 54000]</li>
+<li>divisors(81000) = [1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, 18, 20, 24, 25, 27, 30, 36, 40, 45, 50, 54, 60, 72, 75, 81, 90, 100, 108, 120, 125, 135, 150, 162, 180, 200, 216, 225, 250, 270, 300, 324, 360, 375, 405, 450, 500, 540, 600, 648, 675, 750, 810, 900, 1000, 1080, 1125, 1350, 1500, 1620, 1800, 2025, 2250, 2700, 3000, 3240, 3375, 4050, 4500, 5400, 6750, 8100, 9000, 10125, 13500, 16200, 20250, 27000, 40500, 81000]</li>
+</ul>
+<p>It is no longer so simple to just inspect the lists to find the largest element common to both of them! We need to do this systematically.</p>
+<p>We compute a new list, the list of common divisors. As before, when we compute the list of divisors, this list is initially empty. For each divisor in the first list, we check if it belongs to the second list. If it does, we add it to the list of common divisors. Notice that 1 divides every number, so the list of common divisors will have at least one entry, 1.</p>
+<p>Using this, we can compute the list of common divisors of 54000 and 81000, to be [1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, 18, 20, 24, 25, 27, 30, 36, 40, 45, 50, 54, 60, 72, 75, 90, 100, 108, 120, 125, 135, 150, 180, 200, 216, 225, 250, 270, 300, 360, 375, 450, 500, 540, 600, 675, 750, 900, 1000, 1080, 1125, 1350, 1500, 1800, 2250, 2700, 3000, 3375, 4500, 5400, 6750, 9000, 13500, 27000].</p>
+<p>Since we know that each list of divisors is in increasing order, it must be the case that the list of common divisors is also in increasing order. Hence the largest common divisor is the rightmost element in the list. In other words the gcd of 54000 and 81000 is 27000.</p>
+<h3 id="s-11-2-3-first-algorithm-for-gcd">11.2.3 First Algorithm for gcd</h3>
+<p>Combining the steps above, we can write out a complete algorithm to compute the gcd of two numbers \(m\) and \(n\). This makes use of the earlier algorithm to compute the list of divisors of a number.</p>
+<p><em>Algorithm to find \(\gcd(m, n)\)</em></p>
+<ol>
+<li><code>Let divisors-of-m be the list obtained by computing divisors(m)</code></li>
+<li><code>Let divisors-of-n be the list obtained by computing divisors(n)</code></li>
+<li><code>Start with an empty list common-divisors</code></li>
+<li><code>For each number x in the list of divisors-of-m</code>
+<ul>
+<li><code>If x also appears in the list of divisors-of-n,add x to the list common-divisors</code></li>
+</ul></li>
+<li><code>Report the rightmost element of the list common-divisors as gcd(m,n)</code></li>
+</ol>
+<p>When we execute this algorithm for \(\gcd(375, 825)\) we check whether each of the divisors [1, 3, 5, 15, 25, 75, 125, 375] of 375 appears in the list of divisors [1, 3, 5, 11, 15, 25, 33, 55, 75, 165, 275, 825] of 825. We see that 1, 3, 5, 15, 25 and 75 are in the second list while 125 and 375 are not. So we compute the list of common divisors to be [1, 3, 5, 15, 25, 75]. Since 75 is the rightmost element in this list, \(\gcd(375, 825) = 75\).</p>
+</article>
+<nav class="pager"><a class="" data-nav="prev" href="../../11-the-world-of-algorithms/02-exercise-set-11.1/index.html"><span class="dir">← Previous</span><span class="t">Exercise Set 11.1</span><span class="ch">The World of Algorithms</span></a><a class="nx" data-nav="next" href="../../11-the-world-of-algorithms/04-data-structures-11.3/index.html"><span class="dir">Next →</span><span class="t">11.3 Data Structures</span><span class="ch">The World of Algorithms</span></a></nav>
+</main><footer class="site">Generated from the source textbook PDFs · text, figures and exercises belong to their respective publishers.</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+  onload="renderMathInElement(document.body,{delimiters:[
+    {left:'\\(',right:'\\)',display:false},
+    {left:'$$',right:'$$',display:true},
+    {left:'\\[',right:'\\]',display:true}],throwOnError:false,ignoredTags:['script','noscript','style','textarea','pre','code']})"></script>
+<script src="../../../assets/book.js"></script>
+<script defer src="../../../../assets/search.js?v=1789782771"></script>
+<script defer src="../../../../assets/screenshot.js?v=3"></script>
+</body>
+</html>
